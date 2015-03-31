@@ -1,0 +1,21 @@
+@startuml
+activate Joueur
+Joueur -> Carte : getCarte()
+activate Carte
+Carte -> Cellule : getCellule()
+activate Cellule
+note right of Carte
+    Loop sur le nombre de cellule
+    En fonction du type en entrée
+    on crééera soit une 
+    celluleTransport, soit une 
+    celluleAccessible, soit une 
+    celluleObstacle.
+end note
+Cellule -> Cellule : afficherCellule()
+activate Cellule
+deactivate Cellule
+deactivate Cellule
+deactivate Carte
+deactivate Joueur
+@enduml

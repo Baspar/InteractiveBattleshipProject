@@ -1,0 +1,28 @@
+@startuml
+activate Jeu
+Jeu -> Monde :initialiserMonde()
+activate Monde
+Monde -> Carte : initialiserCarte()
+activate Carte
+note right of Monde
+    Loop sur le nombre de carte
+end note
+deactivate Carte
+deactivate Monde
+
+Jeu -> Joueur: initialiserJoueur()
+activate Joueur
+activate Carte
+Carte <- Joueur  : placerJoueur()
+deactivate Carte
+deactivate Joueur
+
+Jeu -> PersonnagesNonDeplacable : initialiserPersonnageNonDeplacable()
+activate PersonnagesNonDeplacable
+activate Carte
+Carte <- PersonnagesNonDeplacable : placerPND()
+deactivate Carte
+deactivate PersonnagesNonDeplacable
+
+deactivate Jeu
+@enduml
