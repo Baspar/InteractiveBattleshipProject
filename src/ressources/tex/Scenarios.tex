@@ -1,0 +1,111 @@
+\chapter{Scénarios}
+    \section{InitialiserJeu}
+        Pour initialiser le jeu, il nous faudra initialiser:
+        \begin{itemize}
+            \item Les personnages non-déplacables
+            \item Le joueur qui peut être soit un humain soit une IA
+            \item Le monde
+        \end{itemize}
+        \subsection{InitialiserJoueursNonDeplacables}
+            Pour chaque Personnage Non Deplacable, on va initialiser leur différents attributs:
+            \begin{itemize}
+                \item Leur \textbf{nom} a une valeur donnée.
+                \item Leur \textbf{position} a NULL.
+                \item Leur \textbf{carte} a NULL.
+            \end{itemize}
+            Leur position et leur carte seront redéfinis par la suite, lorsque le monde aura été crée.\\
+        \subsection{InitialiserJoueur}
+            Le joueur pourra être de 2 types diff\'erents:
+            \begin{itemize}
+                \item Un joueur humain.
+                \item Une IA.
+            \end{itemize}
+            Puis nous initialiserons notre heros de la même manière que les Personnage Non Deplacables, avec une specification de sa m\'ethode de jouer en fonction de son type (IA ou humain).
+        \subsection{InitialiserMonde}
+            Pour chaque carte du monde, nous initialiserons cette carte, puis nous placerons les joueurs.
+            \subsubsection{InitialiserCarte}
+                Pour initialiser la carte, on récupèrera la taille (largeur et hauteur).\\
+                Ensuite, on initialisera chaque cellule de cette carte d'une des trois manières possibles:
+                \begin{itemize}
+                    \item Cellule \textbf{transport}.
+                    \item Cellule \textbf{obstacle}.
+                    \item Cellule \textbf{accessible}.
+                \end{itemize}
+            \subsubsection{PlacerJoueurs}
+                Pour chaque joueur déjà initialisé, on le placera a sa position dans sa carte, en vérifiant que le placement est valide.\\
+                De plus, on mettra a jour ses attributs position et carte.
+                \subsubsection{PlacementValide}
+                    Pour le placement du joueur, on vérifiera:
+                    \begin{itemize}
+                        \item Si la nouvelle position est dans la carte.
+                        \item Si la nouvelle cellule est accessible, et ne contient pas déjà un personnage.
+                    \end{itemize}
+    \section{Jouer}
+        On \textbf{affiche la carte}, puis on propose au \textbf{joueur de se déplacer}.\\
+        On \textbf{lancera une action} si besoin est.
+        \subsection{AfficherCarte}
+            Pour afficher la carte, on commence par récuperer la carte du Héros.\\
+            Une fois récupérée, chaque cellule sera affichée.
+        \subsection{Déplacer}
+            Pour déplacer le héros, on demandera tout d'abord au joueur de \textbf{choisir son déplacement}, puis on vérifiera que \textbf{ce déplacement est valide}.\\
+            Une fois cette vérification faite, on appliquera le déplacement.
+            \subsubsection{SaisieDéplacement}
+                Le joueur humain rentrera les coordonnées du déplacement souhaité.
+	    Le joueur IA choisira les coordonnées de son déplacement. 
+            \subsubsection{PlacementValide}
+                Ce scénario reste le même que celui précedemment detaillé.
+        \subsection{LancerAction}
+            Si la cellule dans laquelle se trouve maintenant le héros est associée à une action, alors cette action est effectuée.
+    \section{Combat}
+        Pour jouer un combat, on commence par \textbf{initialiser le combat}, pour ensuite \textbf{jouer des coups} tant que le jeu n'est pas terminé.
+        \subsection{InitialiserCombat}
+            Pour initialiser le combat, qui est dans notre cas une Bataille Navale, il faut:
+            \begin{itemize}
+                \item Initialiser le plateau.
+                \item Placer les bateaux.
+            \end{itemize}
+            \subsubsection{InitialiserGrilles}
+                Pour chacun des deux joueurs en lice, on va initialiser sa grille. On r\'ecupèrera donc la taille de sa grille, pour ensuite créer toutes les cases.
+            \subsubsection{PlacerBateaux}
+                Une fois les grilles initialisées, chacun des joueurs placera ses bateaux.\\
+                Dans le cas des Personnage Non Deplacable, cela fait automatiquement, alors que dans le cas du héros une saisie sera demandée.
+                \subsubsection{ChangerCarte}
+                    Si le héros se trouve sur une cellule transport, il est d\'eplacé sur la carte correspondante, aux coordonnées corespondantes.
+                \subsubsection{MettreAJourComp\'etences}
+                    À l'issue d'un combat, le joueur victorieux r\'ecupère des comp\'etences suppl\'ementaires.
+                \subsubsection{JouerCombat}
+                    Détails ci-dessous.
+        \subsection{JouerCombat}
+            À chaque tour de jeu, on \textbf{affiche les deux grilles}, puis le joueur courant \textbf{joue son coup} tant que la \textbf{partie n'est pas finie}.
+            \subsubsection{AfficherCombat}
+                On affiche deux grilles:
+                \begin{itemize}
+                    \item La grille du joueur courant (compl\'etement dévoilée)
+                    \item La grille du joueur adverse (dont seule les cases déjà visées seront montrées)
+                \end{itemize}
+            \subsubsection{JouerCoup}
+                Jouer un coup consiste en:
+                \begin{itemize}
+                    \item Une choix de coup
+                    \item Une vérification de la validité du coup
+                    \item Le placement du coup
+                    \item Le changement du joueur courant
+                \end{itemize}
+                    \subsubsection{SaisirCoup}
+                        Le joueur courant humain saisie les coordonnées du tir tandis que l'IA calcule les coordonnées de son coup. 
+                    \subsection{CoupValide}
+                        On vérifie que:
+                        \begin{itemize}
+                            \item les coordonnées appartiennent bien à la grille.
+                            \item La case n'a pas déjà été visée.
+                        \end{itemize}
+                    \subsection{PlacerCoup}
+                        On effectue les changements associés à ce coup sur la grille:
+                        \begin{itemize}
+                            \item Rév\'elation de la case visée.
+                            \item Si cette case contient un bateau auquel retire un point de vie.
+                        \end{itemize}
+                    \subsection{ChangerJoueur}
+                        Le joueur courant devient le joueur adverse et vice-versa.
+            \subsubsection{PartieFinie}
+                On vérifie si tous les bateaux d'un des joueurs ont été coulés.

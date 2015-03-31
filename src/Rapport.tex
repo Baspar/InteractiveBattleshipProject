@@ -1,0 +1,25 @@
+\documentclass{report}
+
+\usepackage{ressources/packages/miseEnPage}
+\usepackage{ressources/vocabulaire/vocabulaire}
+
+\input{ressources/packages/packages}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{graphicx, titlesec}
+
+\begin{document}
+
+\couverture{}
+\pagestyle{pageNormale}
+
+\setcounter{page}{1}
+\tableofcontents{}
+\input{ressources/tex/CasDUtilisation.tex}
+\input{ressources/tex/DiagrammeDeClasse.tex}
+\input{ressources/tex/Scenarios.tex}
+\input{ressources/tex/DiagrammesDeSequence.tex}
+\pageQuatriemeCouverture{}
+\end{document}
