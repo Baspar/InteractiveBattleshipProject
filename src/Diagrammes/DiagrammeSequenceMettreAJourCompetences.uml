@@ -1,0 +1,16 @@
+@startuml
+activate Joueur
+note right of Joueur
+    On prend le joueur dont on veut  
+    modifier les competences
+    en entrée et on reset ses
+    competences.
+    Il y aura donc surcharge
+    de la fonction pour les
+    différentes competences
+end note
+Joueur -> Joueur :setCompetence(competence)
+activate Joueur
+deactivate Joueur
+deactivate Joueur
+@enduml

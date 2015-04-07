@@ -1,0 +1,19 @@
+@startuml 
+activate Controleur 
+activate Vue 
+Controleur -> Vue : saisirPlacementBateau() 
+Controleur <- Vue 
+deactivate Vue 
+activate GrilleBN 
+Controleur -> GrilleBN: PlacementBateauValide() 
+Controleur <- GrilleBN
+deactivate GrilleBN 
+activate BatailleNavale
+Controleur -> BatailleNavale: PlacerBateau() 
+Controleur <- BatailleNavale
+deactivate BatailleNavale 
+activate Vue 
+Controleur -> Vue: afficherGrille() 
+deactivate Vue 
+deactivate Controleur 
+@enduml

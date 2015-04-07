@@ -1,22 +1,10 @@
 @startuml
 activate Monde
-Monde -> Carte : initialiserCarte(int longueur, int largeur)
-activate Carte
-note right of Monde
-    Loop sur le nombre de carte
-end note
-
-Carte -> Cellule : creerCellule(String type)
-activate Cellule
-note right of Carte
-    Loop sur le nombre de cellule
-    En fonction du type en entrée
-    on crééera soit une 
-    celluleTransport, soit une 
-    celluleAccessible, soit une 
-    celluleObstacle.
-end note
-deactivate Cellule
-deactivate Carte
+    loop Pour toutes les cartes du monde
+        Monde -> Carte : initialiserCarte(int longueur, int largeur)
+        activate Carte
+            Monde <-- Carte
+        deactivate Carte
+    end loop
 deactivate Monde
 @enduml

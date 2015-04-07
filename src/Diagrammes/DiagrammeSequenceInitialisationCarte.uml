@@ -1,0 +1,17 @@
+@startuml
+activate Carte
+    loop Pour chaque cellule de la carte
+        Carte -> Cellule : creerCellule(String type)
+        activate Cellule
+            note right of Carte
+                En fonction du type en entrée
+                on crééera soit une 
+                celluleTransport, soit une 
+                celluleAccessible, soit une 
+                celluleObstacle.
+            end note
+            Carte <-- Cellule
+        deactivate Cellule
+    end
+deactivate Carte
+@enduml

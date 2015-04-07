@@ -1,0 +1,36 @@
+Diagramme de séquence déjà réalisé: 
+    * ( OK) InitialiserJeu
+    * ( OK) InitialiserMonde
+    Damien:
+    * ( OK) TourDeJeuBN
+    * ( OK) TourDeJeu
+    * ( OK) AfficherCarte
+    * ( OK) AfficherBN
+    * ( OK) PartieFinie
+    * ( OK) DeplacementHumain
+    * ( OK) SaisieCoupHumain
+    * ( OK) PlacerBateauHumain
+    * (>OK) DeplacementIA
+    * (>OK) SaisieCoupIA
+    * (>OK) PlacerBateauIA
+
+
+
+
+
+Clementine
+    * (NOK) InitialiserCarte
+    * (NOK) InitialiserBatailleNavale
+    * (NOK) InitialiserGrilleBatailleNavale
+Ann
+Leo
+Kevin
+    * (NOK) DéplacementValide
+    * (NOK) MettreAJourCompetences
+    * (NOK) CoupValide
+Thibaut
+    * (NOK) JouerCoup
+    * (NOK) ChangerJoueur
+Bastien
+    * (NOK) LancerActionCombat
+    * (NOK) LancerAction

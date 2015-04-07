@@ -1,0 +1,16 @@
+@startuml 
+activate IHM 
+    IHM->Jeu : getCarteCourant() 
+    activate Jeu 
+        IHM<--Jeu : carteCourante
+    deactivate Jeu 
+
+    IHM -> IHM : afficherCarte(carteCourante)
+    activate IHM
+        note right of IHM
+            La méthode afficherCarte() va dépendre de l'IHM choisie
+        end note
+    deactivate IHM
+
+deactivate IHM 
+@enduml

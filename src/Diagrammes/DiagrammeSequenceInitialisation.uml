@@ -2,26 +2,27 @@
 activate Jeu
     Jeu -> Monde :initialiserMonde()
     activate Monde
-        Monde -> Carte : initialiserCarte()
-        activate Carte
-            note right of Monde
-                Loop sur le nombre de carte
-            end note
-        deactivate Carte
+        Jeu <-- Monde
     deactivate Monde
 
     Jeu -> Joueur: initialiserJoueur()
     activate Joueur
-        activate Carte
-            Carte <- Joueur  : placerJoueur()
-        deactivate Carte
+        Monde <- Joueur  : placerJoueur()
+        activate Monde
+            Monde --> Joueur
+        deactivate Monde
+        Jeu <-- Joueur
     deactivate Joueur
 
-    Jeu -> PersonnagesNonDeplacable : initialiserPersonnageNonDeplacable()
-    activate PersonnagesNonDeplacable
-        activate Carte
-            Carte <- PersonnagesNonDeplacable : placerPND()
-        deactivate Carte
-    deactivate PersonnagesNonDeplacable
+    loop Pour tous les PND de toutes les cartes
+        Jeu -> PersonnagesNonDeplacable : initialiserPersonnageNonDeplacable()
+        activate PersonnagesNonDeplacable
+            Monde <- PersonnagesNonDeplacable : placerPND()
+            activate Monde
+                Monde --> PersonnagesNonDeplacable
+            deactivate Monde
+            Jeu <-- PersonnagesNonDeplacable
+        deactivate PersonnagesNonDeplacable
+    end loop
 deactivate Jeu
 @enduml
