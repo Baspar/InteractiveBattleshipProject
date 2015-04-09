@@ -1,0 +1,23 @@
+@startuml
+activate Controleur
+    Controleur -> Jeu : getJoueurCourant()
+    activate Jeu
+        Controleur <-- Jeu : joueurCourant
+    deactivate Jeu
+
+
+    Controleur -> Jeu : getJoueurAdverseLieACaseCourante()
+    activate Jeu
+        Controleur <-- Jeu : joueurAdverse
+    deactivate Jeu
+
+    create Combat
+    Controleur -> Combat : nouveauCombat(joueurCourant, joueurAdverse)
+    activate Combat
+        Combat -> Combat : jouerCombat()
+        activate Combat
+        deactivate Combat
+        Controleur <-- Combat : joueurGagnant
+    deactivate Combat
+deactivate Controleur
+@enduml
