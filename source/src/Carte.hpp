@@ -2,7 +2,7 @@
 #define CARTE_H
 
 /// \file Carte.hpp
-/// \brief representant carte
+/// \brief représentant carte
 /// \author
 
 #include "Personnage.hpp"
@@ -14,16 +14,16 @@
 using namespace std;
 
 /// \class Carte
-/// \brief classe representant une carte
-/// La classe represente une carte 
+/// \brief classe représentant une carte
+/// La classe représente une carte 
 
 class Carte{
 
     private:
 
-        int id; ///identifiant, numero de la carte
+        int id; ///identifiant, numéro de la carte
         TailleGrille tailleGrille; /// taille de la grille de la carte
-        vector<vector<Cellule> > cellules; /// tableau de cellule (carte composee de plusieurs cellules)
+        vector<vector<Cellule> > cellules; /// tableau de cellule (carte composée de plusieurs cellules)
 
     public:
 
@@ -35,10 +35,10 @@ class Carte{
 	Carte(int id, TailleGrille tailleGrille);
 
 	/// \fn void deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees)
-	/// \brief deplace le personnage
-	/// Methode permettant de supprimer le personnage en entree de sa case de depart, et le place sur la case associee aux coordonnees en entree
+	/// \brief déplace le personnage
+	/// Méthode permettant de supprimer le personnage en entrée de sa case de départ, et le place sur la case associée aux coordonnées en entrée
 	/// \param personnage: pointeur sur personnage
-	/// \param coordonnees: coordonnees destination
+	/// \param coordonnees: coordonnées destination
         void deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees);
 
 };

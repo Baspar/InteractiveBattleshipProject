@@ -16,8 +16,8 @@ using namespace std;
 /// \class BatailleNavale
 /// \brief classe combat bataille navale
 
-/// La classe gere la partie: l'initialise, cree les grilles, place les bateaux, 
-/// permet aux joueurs de viser les cases, et modifie les grilles a chaque tour
+/// La classe gère la partie: l'initialise, crée les grilles, place les bateaux, 
+/// permet aux joueurs de viser les cases, et modifie les grilles à chaque tour
 
 class BatailleNavale : public Combat{
 
@@ -29,7 +29,7 @@ class BatailleNavale : public Combat{
 
 	/// \fn void changerJoueur()
 	/// \brief Changer de joueur
-	/// Methode permettant de modifier le joueur courant et la grille courante
+	/// Méthode permettant de modifier le joueur courant et la grille courante
         void changerJoueur();
 
     public:
@@ -37,17 +37,17 @@ class BatailleNavale : public Combat{
 	/// \fn BatailleNavale(PersonnageBN joueur1, PersonnageBN joueur2)
 	/// \brief Constructeur
 	/// Constructeur de la classe Bataille Navale
-	/// Initialise les 2 joueurs, cree les 2 grilles de taille tailleGrille 
-	///a partir des joueurs puis va demander aux joueurs de placer leurs bateaux 
-	/// via la methode placerBateaux
-	/// \param joueur1, joueur2 : 2 joueur de type PersonnageBN
+	/// Initialise les 2 joueurs, crée les 2 grilles de taille tailleGrille 
+	/// à partir des joueurs puis va demander aux joueurs de placer leurs bateaux 
+	/// via la méthode placerBateaux
+	/// \param joueur1, joueur2 : 2 joueurs de type PersonnageBN
         BatailleNavale(PersonnageBN joueur1, PersonnageBN joueur2);
 
 	/// \fn void jouer(Coordonnees coordonnees)
  	/// \brief Joueur vise case choisie
-	/// Le joueur courant vise la case a jouer et tire avec son arme 
-	/// (actualisation les grilles) puis changement de joueur courant
-	/// \param coordonnes: coordonnees choisies par le joueur
+	/// Le joueur courant vise la case à jouer et tire avec son arme 
+	/// (actualisation des grilles) puis changement de joueur courant
+	/// \param coordonnes: coordonnées choisies par le joueur
         void jouer(Coordonnees coordonnees);
 
 };

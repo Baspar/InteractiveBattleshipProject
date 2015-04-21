@@ -11,10 +11,12 @@
 using namespace std;
 
 /// \class CelluleCombat
-/// \brief CelluleAccessible permettant d'engager un COmbat
+/// \brief CelluleAccessible permettant d'engager un Combat
 class CelluleCombat : public CelluleAccessible{
+
     private:
         Personnage* adversaire; /// Joueur adverse que le joueur sur la Case affrontera
+
     public:
 	/// \fn void Cellule()
 	/// \brief Construit une Cellule

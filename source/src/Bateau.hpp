@@ -2,19 +2,19 @@
 #define BATEAU_H
 
 /// \file Bateau.hpp
-/// \brief definition bateaux bataille navale
+/// \brief définition bateaux bataille navale
 /// \author
 
 using namespace std;
 
 /// \class Bateau
-/// \brief classe representant bateaux
-/// La classe definit les bateaux de la bataille navale
+/// \brief classe représentant bateaux
+/// La classe définit les bateaux de la bataille navale
 
 class Bateau {
 
     private:
-        int PV; /// nb case du bateau non touchees
+        int PV; /// nb case du bateau non touchées
         bool coule; /// vrai si bateu coule, faux sinon
         int taille; /// entier taille du bateau
 
@@ -27,14 +27,14 @@ class Bateau {
 	Bateau(int taille);
 
 	/// \fn bool estCoule()
-	/// \brief bateau coule ou non
-	/// methode permettant de dire si un bateau est coule ou non
+	/// \brief bateau coulé ou non
+	/// méthode permettant de dire si un bateau est coulé ou non
 	/// \return true si bateau a 0 point de vie, faux sinon
         bool estCoule();
 
 	/// \fn void retirerPV()
-	/// \brief enleve point de vie au bateau 
-	/// methode retire un point de vie au bateau s'il a ete touche
+	/// \brief enlève point de vie au bateau 
+	/// méthode retire un point de vie au bateau s'il a été touché
         void retirerPV();
 
 };

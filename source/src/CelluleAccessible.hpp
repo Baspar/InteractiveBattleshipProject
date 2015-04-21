@@ -11,17 +11,20 @@
 using namespace std;
 
 /// \class CelluleAccessible
-/// \brief classe representant les Cellules du monde auquel les Personnage peuvent acceder
+/// \brief classe représentant les cellules du monde auquelles les personnages peuvent accéder
 
 class CelluleAccessible:public Cellule{
+
     private:
         Personnage* occupant; /// Pointeur sur le personnage qui se trouve dans la cellule
+
     public :
 	/// \fn void CelluleAccessible()
 	/// \brief Construit une CelluleAccessible
 	void CelluleAccessible();
+
 	/// \fn virtual bool estAccessible()
-	/// \brief Verifie si une classe est bien accessible
+	/// \brief Vérifie si une classe est bien accessible
 	/// \return un booleen vrai si la classe est accessible, faux sinon
         virtual bool estAccessible();
 };

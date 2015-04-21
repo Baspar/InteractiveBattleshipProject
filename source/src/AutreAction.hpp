@@ -2,7 +2,7 @@
 #define AUTREACTION_H
 
 /// \file AutreAction.hpp
-/// \brief Autres actions (non specifiees precedemment)
+/// \brief Autres actions (non specifiées précédemment)
 /// \author
 
 #include "Action.hpp"

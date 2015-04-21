@@ -10,19 +10,27 @@
 using namespace std;
 
 /// \class Cellule
-/// \brief Cellule composant les Zone du Monde ou le joueur se deplace
+/// \brief Cellule composant les Zones du Monde où le joueur se déplace
 class Cellule{
     private:
-        Action* action; /// action: pointeur sur une action qui sera appliquee au joueur
+
+        Action* action; /// action: pointeur sur une action qui sera appliquée au joueur
+
     public:
-	void Cellule();
+
 	/// \fn void Cellule()
-	/// \brief Lance l action et effectue les modification necessaire suite a cette action
-        void lancerAction();
+	/// \brief Construit une Cellule
+	void Cellule();
+
 	/// \fn void lancerAction()
-	/// \brief Verifie si le Cellule est Accessible ou non
-	/// Cette methode est virtuelle car la classe est abstraite, elle sera 
-	/// implementee dans les classes fille
+	/// \brief Lance l'action et effectue les modifications nécessaires suite à cette action
+
+        void lancerAction();
+
+	/// \fn virtual bool estAccessible();
+	/// \brief Vérifie si la Cellule est Accessible ou non
+	/// Cette méthode est virtuelle car la classe est abstraite, elle sera 
+	/// implémentée dans les classes filles
 	/// \return un booleen: vrai si la cellule est accessible, faux sinon
         virtual bool estAccessible();
 };
