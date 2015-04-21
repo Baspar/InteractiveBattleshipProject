@@ -16,19 +16,22 @@ using namespace std;
 /// Cette classe gère les informations concernant l'arme du joueur
 
 class Arme{
+    private:
+        ///nom de l'arme
+        string nomArme;
+
     public:
+        /// \fn void tirer(Coordonnees coordonnees)
         /// \brief Attaque
         ///
         /// tire sur une case et inflige des dégâts en fonction de l'arme utilisée
         /// \param coordonnees : coordonnées de la case que le joueur souhaite viser
         void tirer(Coordonnees coordonnees);
 
+        /// \fn Arme()
         /// \brief Constructeur
         ///
         /// Constructeur de la classe Arme
         Arme();
-    private:
-        ///nom de l'arme
-        string nomArme;
 };
 #endif

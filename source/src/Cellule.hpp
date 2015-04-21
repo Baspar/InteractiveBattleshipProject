@@ -25,7 +25,6 @@ class Cellule{
 
         /// \fn void lancerAction()
         /// \brief Lance l'action et effectue les modifications nécessaires suite à cette action
-
         void lancerAction();
 
         /// \fn virtual bool estAccessible();

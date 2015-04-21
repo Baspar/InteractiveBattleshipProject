@@ -19,6 +19,7 @@ class JoueurHumain : public PersonnageJouable, PersonnageBNHumain{
 
 	public :
 
+        /// \fn JoueurHumain(string nom)
         /// \brief Constructeur paramétré
         ///
         /// Constructeur de la classe JoueurHumain avec le nom en attribut

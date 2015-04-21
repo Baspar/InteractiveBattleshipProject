@@ -17,7 +17,8 @@ using namespace std;
 class IHMJeu{
 
     private:
-        Jeu* jeu; /// jeu
+        /// jeu
+        Jeu* jeu;
 
         /// \fn void afficherInteraction()
         /// \brief affichage texte du jeu
@@ -43,7 +44,8 @@ class IHMJeu{
         /// \brief Saisie deplacement
         ///
         /// Demande au joueur de saisir le déplacement qu'il souhaite effectuer
-        /// et renvoie les coordonnées de la case où il va
+        /// et renvoie les coordonnees de la case où il va
+        /// \return Les coordonnees saisies
         Coordonnees saisieDeplacement();
 
         /// \fn void afficherJeu()

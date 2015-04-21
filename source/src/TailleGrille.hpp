@@ -8,21 +8,21 @@
 using namespace std;
 
 /// \class TailleGrille
-/// \brief Classe représentant la taille de la grille.
+/// \brief Clase representant la taille de la Grille
 ///
-/// La classe gère la création de la taille de la grille.
+/// La classe gere la creation de la taille de la grille
 class TailleGrille{
-    public:
-        /// \brief Constructeur de la classe TailleGrille
-        /// \param lon : longueur de la grille
-        ///	\param hau : hauteur de la grille
-        TailleGrille(int lon, int hau);
     private:
-        ///Longueur de la grille
+        /// Longueur de la grille
         int longueur;
-
-        ///Hauteur de la grille
+        /// Hauteur de la grille
         int hauteur;
 
+    public:
+        /// \fn TailleGrille(int lon, int haut)
+        /// \brief Constructeur de la classe TailleGrille
+        /// \param lon : longueur de la grille
+        /// \param hau : hauteur de la grille
+        TailleGrille(int lon, int haut);
 };
 #endif

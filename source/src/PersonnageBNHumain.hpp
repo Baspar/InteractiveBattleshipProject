@@ -22,7 +22,7 @@ class PersonnageBNHumain : public PersonnageBN{
         /// Demande au joueur de placer ses bateaux
         /// \return une grille avec les bateaux placés
         Grille placerBateaux();
-        //
+
         /// \brief Attaque du PNJ
         ///
         /// Demande où le joueur souhaite attaquer
@@ -30,6 +30,7 @@ class PersonnageBNHumain : public PersonnageBN{
         Coordonnees caseAViser();
 
 	public :
+        /// \fn PersonnageBNHumain()
         /// \brief Constructeur
         ///
         /// Constructeur de la classe PersonnageBNHumain

@@ -38,7 +38,7 @@ class Jeu{
 
 	/// \fn bool partieFinie()
 	/// \brief voir si partie finie
-	/// Renvoie vrai si le jeu est fini, sinon faux
+	/// \return Renvoie vrai si le jeu est fini, sinon faux
         bool partieFinie();
 
 	/// \fn void jouer(Coordonnees coordonnees)
@@ -48,10 +48,12 @@ class Jeu{
 
 	/// \fn Action getActionEnCours()
     /// \brief Getter actionEnCours
+    /// \return Action en cours
         Action getActionEnCours();
 
 	/// \fn PersonnageJouable getPersonnageJouable()
     /// \brief Getter personnageJouable
+    /// \return Personnage jouable
         PersonnageJouable getPersonnageJouable();
 };
 #endif

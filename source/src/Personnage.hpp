@@ -50,7 +50,7 @@ class Personnage{
 
         /// \fn Carte getCarte()
         /// \brief Getter Carte
-        /// \return la carte du personnage
+        /// \return Un pointeur sur la carte du personnage
         Carte* getCarte();
 };
 #endif

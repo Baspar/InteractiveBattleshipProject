@@ -16,6 +16,12 @@ using namespace std;
 ///
 /// La classe Grille contient une grille qui correspondraà la grille d'n joueur pendant une bataille navale
 class Grille{
+    private:
+        /// Taille de la grille
+        TailleGrille tailleGrille;
+        /// Liste 2D de toutes les grilles
+        vector<vector<Case> > cases;
+
     public:
         /// \fn Grille(int longueur, int hauteur)
         /// \brief Constructeur
@@ -24,11 +30,6 @@ class Grille{
         /// \param longueur : longueur de la grille
         /// \param hauteur : hauteur de la grille
         Grille(int longueur, int hauteur);
-    private:
-        /// Taille de la grille
-        TailleGrille tailleGrille;
-        /// Liste 2D de toutes les grilles
-        vector<vector<Case> > cases;
 };
 
 #endif

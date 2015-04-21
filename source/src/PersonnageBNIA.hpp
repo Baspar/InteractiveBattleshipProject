@@ -29,6 +29,7 @@ class PersonnageBNIA : public PersonnageBN{
         /// \return les coordonnées de la case à attaquer
         Coordonnees caseAViser();
 	public :
+        /// \fn PersonnageBNIA()
         /// \brief Constructeur
         ///
         /// Constructeur de la classe PersonnageBNIA

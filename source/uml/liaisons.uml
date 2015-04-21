@@ -47,3 +47,6 @@ BatailleNavale o-- Grille
 Grille o--Case
 
 Bateau -o Case
+
+hide empty methods
+hide empty attributes

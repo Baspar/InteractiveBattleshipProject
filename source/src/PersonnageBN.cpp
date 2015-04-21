@@ -9,7 +9,7 @@
 #include <vector>
 
 using namespace std;
-void PersonnageBN(){
+PersonnageBN(){
 }
 
 Grille PersonnageBN::placerBateaux(){

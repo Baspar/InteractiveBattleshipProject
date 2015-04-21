@@ -32,6 +32,7 @@ class Case{
 
         /// \fn void tirerDessus()
         /// \brief Effectue les changements lorsqu'on tire sur une Case
+        ///
         /// Révèle la case, modifie le boolean touche, indique au bateau qu'il s'est fait toucher
         void tirerDessus();
 };

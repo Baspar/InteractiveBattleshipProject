@@ -20,7 +20,6 @@ class CelluleObstacle :public Cellule{
     public:
         /// \fn CelluleObstacle(string nomObstacle)
         /// \brief Constructeur de notre classe
-        /// \param nomObstacle: nom correspondant à notre obstacle(mur, eau, ...)
         CelluleObstacle();
 
         /// \fn virtual bool estAccessible()

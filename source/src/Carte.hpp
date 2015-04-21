@@ -48,7 +48,7 @@ class Carte{
 
         /// \fn vector<vector<Cellule> > getCellules()
         /// \brief Getter Cellules
-        /// return La liste des cellules de la carte
+        /// \return La liste des cellules de la carte
         vector<vector<Cellule> > getCellules();
 };
 #endif

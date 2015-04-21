@@ -26,11 +26,13 @@ class ActionChangementCarte : public Action{
         Coordonnees coordonnees;
 
     public:
+        /// \fn virtual void lancerAction()
         /// \brief Changement de carte
         ///
         /// Cette classe gère le changement de carte quand le joueur accède à une case qui permet de changer de carte
         virtual void lancerAction();
 
+        /// \fn ActionChangementCarte()
         /// \brief Constructeur
         ///
         /// Constructeur de la classe ActionChangementCarte
