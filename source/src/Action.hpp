@@ -26,6 +26,11 @@ class Action{
         /// Constructeur de la classe Action
         Action();
 
+        /// \fn string getTexteInteraction()
+        /// \brief Getter texteInteraction
+        /// \return Le texte correspondant à l'action
+        string getTexteInteraction();
+
     private:
         ///Cette chaine de caractère est affichée au début de l'action, il peut s'agir d'un dialogue, d'un conseil, d'une règle du jeu...
         string texteInteraction;

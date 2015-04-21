@@ -46,5 +46,9 @@ class Carte{
         /// \param coordonnees: coordonnées destination
         void deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees);
 
+        /// \fn vector<vector<Cellule> > getCellules()
+        /// \brief Getter Cellules
+        /// return La liste des cellules de la carte
+        vector<vector<Cellule> > getCellules();
 };
 #endif

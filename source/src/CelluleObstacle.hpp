@@ -17,14 +17,11 @@ using namespace std;
 /// ne peut donc pas accéder
 
 class CelluleObstacle :public Cellule{
-    private:
-        ///Chaine de caractère contenant le nom de l'obstacle
-        string nomObstacle;
     public:
         /// \fn CelluleObstacle(string nomObstacle)
         /// \brief Constructeur de notre classe
         /// \param nomObstacle: nom correspondant à notre obstacle(mur, eau, ...)
-        CelluleObstacle(string nomObstacle);
+        CelluleObstacle();
 
         /// \fn virtual bool estAccessible()
         /// \brief vérifie si une case est accessible

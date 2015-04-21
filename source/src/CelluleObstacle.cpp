@@ -4,8 +4,8 @@
 #include <iostream>
 
 using namespace std;
-CelluleObstacle::CelluleObstacle(string nomObstacle){
-	
+CelluleObstacle::CelluleObstacle(){
+
 }
 
 bool CelluleObstacle::estAccessible(){

@@ -13,9 +13,10 @@ using namespace std;
 /// \brief Cellule composant les Zones du Monde où le joueur se déplace
 class Cellule{
     private:
-
-        /// action: pointeur sur une action qui sera appliquée au joueur
+        /// Pointeur sur une action qui sera appliquée au joueur
         Action* action;
+        // Type de cellule
+        int typeDeCellule;
 
     public:
         /// \fn void Cellule()
@@ -34,5 +35,10 @@ class Cellule{
         /// implémentée dans les classes filles
         /// \return un booleen: vrai si la cellule est accessible, faux sinon
         virtual bool estAccessible() = 0;
+
+        /// \fn int getTypeDeCellule()
+        /// \brief Getter typeDeCellule
+        /// \return Type de cellule
+        int getTypeDeCellule();
 };
 #endif

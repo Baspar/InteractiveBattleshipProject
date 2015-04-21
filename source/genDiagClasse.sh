@@ -16,6 +16,8 @@ do
 
     constr=""
     meth=""
+    getter=""
+    setter=""
     attribut=""
 
     while read line
@@ -50,7 +52,15 @@ do
                     constr="$constr        $etat$ligne\n"
                 elif [ "$(echo $ligne | grep "(")" ]
                 then
-                    meth="$meth        $etat$ligne\n"
+                    if [ "$(echo $ligne | grep -e "^ *set")" ]
+                    then
+                        setter="$setter        $etat$ligne\n"
+                    elif [ "$(echo $ligne | grep -e "^ *get")" ]
+                    then
+                        getter="$getter        $etat$ligne\n"
+                    else
+                        meth="$meth        $etat$ligne\n"
+                    fi
                 else
                     attribut="$attribut        $etat$ligne\n"
                 fi
