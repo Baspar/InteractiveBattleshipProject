@@ -17,7 +17,8 @@ using namespace std;
 
 class ActionCombat : public Action{
     private:
-        Personnage* adversaire; /// Joueur contre lequel le joueur va effectuer un combat
+        /// Joueur contre lequel le joueur va effectuer un combat
+        Personnage* adversaire;
     public:
         /// \brief Lancement de l'action
         ///

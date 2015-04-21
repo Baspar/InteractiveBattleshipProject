@@ -18,8 +18,10 @@ using namespace std;
 
 class Combat{
      private:
-        Personnage* personnage1; /// Personnage représentant le premier joueur du combat
-        Personnage* personnage2; /// Personnage représentant le deuxième joueur du combat
+        /// Personnage représentant le premier joueur du combat
+        Personnage* personnage1;
+        /// Personnage représentant le deuxième joueur du combat
+        Personnage* personnage2;
 
      public:
         /// \fn Combat(Personnage joueur1, Personnage joueur2)

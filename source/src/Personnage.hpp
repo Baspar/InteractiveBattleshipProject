@@ -19,10 +19,13 @@ class Carte;
 
 class Personnage{
 
-	    private:
-        Carte* carte; /// pointeur sur la carte ou se trouve le personnage
-        Coordonnees coord; /// coordonnées ou se situe le personnage
-        string nom; /// nom du personnage
+    private:
+        /// pointeur sur la carte ou se trouve le personnage
+        Carte* carte;
+        /// coordonnées ou se situe le personnage
+        Coordonnees coord;
+        /// nom du personnage
+        string nom;
 
 	public:
         /// \fn Personnage(string nom)

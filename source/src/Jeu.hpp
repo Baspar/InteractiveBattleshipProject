@@ -19,11 +19,16 @@ using namespace std;
 class Jeu{
 
     private:
-        Action actionEnCours; /// action en cours
-        vector<PersonnageNonJouable*> personnagesNonJouables; ///liste de personnages non jouables
-        PersonnageJouable* personnageJouable; /// pointeur sur un personnage jouable
-        Monde monde; /// monde
-        Combat combat; /// combat
+        /// action en cours
+        Action actionEnCours;
+        ///liste de personnages non jouables
+        vector<PersonnageNonJouable*> personnagesNonJouables;
+        /// pointeur sur un personnage jouable
+        PersonnageJouable* personnageJouable;
+        /// monde
+        Monde monde;
+        /// combat
+        Combat combat;
 
     public:
 

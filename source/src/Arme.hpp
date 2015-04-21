@@ -28,6 +28,7 @@ class Arme{
         /// Constructeur de la classe Arme
         Arme();
     private:
-        string nomArme;///nom de l'arme
+        ///nom de l'arme
+        string nomArme;
 };
 #endif

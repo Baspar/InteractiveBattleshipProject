@@ -21,10 +21,14 @@ using namespace std;
 class PersonnageBN{
 
     private:
-        TailleGrille tailleGrille; ///taille des 2 grilles permettant de jouer à la Bataille Navale
-        string nom; /// nom du PersonnageBN
-        Arme* arme; /// arme: pointeur sur une arme (exemple:différents pointeurs de visée...)
-        vector<Bateau*> bateaux; ///bateaux : vecteur de pointeur sur bateaux(représentant l'ensemble des bateaux du PersonnageBN)
+        ///taille des 2 grilles permettant de jouer à la Bataille Navale
+        TailleGrille tailleGrille;
+        /// nom du PersonnageBN
+        string nom;
+        /// arme: pointeur sur une arme (exemple:différents pointeurs de visée...)
+        Arme* arme;
+        ///bateaux : vecteur de pointeur sur bateaux(représentant l'ensemble des bateaux du PersonnageBN)
+        vector<Bateau*> bateaux;
 
     public:
         /// \fn void PersonnageBN()

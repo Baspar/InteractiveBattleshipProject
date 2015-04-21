@@ -21,10 +21,14 @@ class Controleur{
 /// Le Controleur contient le jeu courant et la bataille navale en cours
 
 	private:
-        IHMJeu* ihmJeu; ///IHM gérant la partie correspondant au déplacement sur la carte
-        IHMBN* ihmBN; ///IHM gérant la partie Bataille Navale de notre jeu
-        Jeu* jeu; ///Jeu en cours
-        BatailleNavale* batailleNavale; ///Bataille Navale en cours ou null si il n'y en a pas
+        ///IHM gérant la partie correspondant au déplacement sur la carte
+        IHMJeu* ihmJeu;
+        ///IHM gérant la partie Bataille Navale de notre jeu
+        IHMBN* ihmBN;
+        ///Jeu en cours
+        Jeu* jeu;
+        ///Bataille Navale en cours ou null si il n'y en a pas
+        BatailleNavale* batailleNavale;
     public:
         /// \fn Controleur()
         /// \brief Constructeur

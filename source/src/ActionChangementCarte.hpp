@@ -20,8 +20,10 @@ using namespace std;
 
 class ActionChangementCarte : public Action{
     private:
-        Carte* carte; ///Carte sur laquelle le joueur se déplace
-        Coordonnees coordonnees; ///Une abscisse et une ordonnée qui référencient de manière non ambiguë le placement du joueur sur la carte
+        ///Carte sur laquelle le joueur se déplace
+        Carte* carte;
+        ///Une abscisse et une ordonnée qui référencient de manière non ambiguë le placement du joueur sur la carte
+        Coordonnees coordonnees;
 
     public:
         /// \brief Changement de carte

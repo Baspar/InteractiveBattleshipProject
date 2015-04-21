@@ -15,7 +15,8 @@ using namespace std;
 class CelluleCombat : public CelluleAccessible{
 
     private:
-        Personnage* adversaire; /// Joueur adverse que le joueur sur la Case affrontera
+        /// Joueur adverse que le joueur sur la Case affrontera
+        Personnage* adversaire;
 
     public:
         /// \fn void CelluleCombat()

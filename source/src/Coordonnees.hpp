@@ -15,8 +15,10 @@ using namespace std;
 
 class Coordonnees {
     private:
-        int abscisse; ///entier correspondant à l'abscisse
-        int ordonnee; ///entier correspondant à l'ordonnée
+        ///entier correspondant à l'abscisse
+        int abscisse;
+        ///entier correspondant à l'ordonnée
+        int ordonnee;
 
     public:
         /// \fn  Coordonnees(int abs, int ord)

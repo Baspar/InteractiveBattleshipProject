@@ -14,11 +14,12 @@ using namespace std;
 /// La classe gère la création de la taille de la grille.
 class TailleGrille {
     private:
-        int longueur; ///Longueur de la grille
-        int hauteur; ///Hauteur de la grille
+        ///Longueur de la grille
+        int longueur;
+        ///Hauteur de la grille
+        int hauteur;
 
     public:
-
         /// \brief Constructeur de la classe TailleGrille
         /// \param lon : longueur de la grille
         ///	\param hau : hauteur de la grille

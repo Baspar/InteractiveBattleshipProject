@@ -27,7 +27,9 @@ class Action{
         Action();
 
     private:
-        string texteInteraction; ///Cette chaine de caractère est affichée au début de l'action, il peut s'agir d'un dialogue, d'un conseil, d'une règle du jeu...
-        bool active; ///Ce booléen est true par défaut mais devient false une fois que l'action a eu lieu
+        ///Cette chaine de caractère est affichée au début de l'action, il peut s'agir d'un dialogue, d'un conseil, d'une règle du jeu...
+        string texteInteraction;
+        ///Ce booléen est true par défaut mais devient false une fois que l'action a eu lieu
+        bool active;
 };
 #endif

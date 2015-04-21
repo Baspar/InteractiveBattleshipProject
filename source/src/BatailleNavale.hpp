@@ -21,9 +21,12 @@ using namespace std;
 
 class BatailleNavale : public Combat{
     private:
-        int joueurCourant; /// indice joueur courant
-        vector<PersonnageBN*> joueurs; /// liste des 2 personnages bataille navale
-        vector<Grille> grilles; /// liste des 2 grilles des joueurs
+        /// indice joueur courant
+        int joueurCourant;
+        /// liste des 2 personnages bataille navale
+        vector<PersonnageBN*> joueurs;
+        /// liste des 2 grilles des joueurs
+        vector<Grille> grilles;
 
         /// \fn void changerJoueur()
         /// \brief Changer de joueur

@@ -18,16 +18,17 @@ using namespace std;
 
 class CelluleObstacle :public Cellule{
     private:
-        string nomObstacle; ///Chaine de caractère contenant le nom de l'obstacle
+        ///Chaine de caractère contenant le nom de l'obstacle
+        string nomObstacle;
     public:
-    /// \fn CelluleObstacle(string nomObstacle)
-    /// \brief Constructeur de notre classe
-    /// \param nomObstacle: nom correspondant à notre obstacle(mur, eau, ...)
-		CelluleObstacle(string nomObstacle);
+        /// \fn CelluleObstacle(string nomObstacle)
+        /// \brief Constructeur de notre classe
+        /// \param nomObstacle: nom correspondant à notre obstacle(mur, eau, ...)
+        CelluleObstacle(string nomObstacle);
 
-    /// \fn virtual bool estAccessible()
-    /// \brief vérifie si une case est accessible
-    /// \return retourne faux car la cellule contient un obstacle
+        /// \fn virtual bool estAccessible()
+        /// \brief vérifie si une case est accessible
+        /// \return retourne faux car la cellule contient un obstacle
         virtual bool estAccessible();
 };
 #endif

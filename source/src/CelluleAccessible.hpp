@@ -16,7 +16,8 @@ using namespace std;
 class CelluleAccessible:public Cellule{
 
     private:
-        Personnage* occupant; /// Pointeur sur le personnage qui se trouve dans la cellule
+        /// Pointeur sur le personnage qui se trouve dans la cellule
+        Personnage* occupant;
 
     public :
         /// \fn void CelluleAccessible()

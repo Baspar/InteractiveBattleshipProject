@@ -19,10 +19,10 @@ class JoueurHumain : public PersonnageJouable, PersonnageBNHumain{
 
 	public :
 
-		/// \brief Constructeur paramétré
+        /// \brief Constructeur paramétré
         ///
-		/// Constructeur de la classe JoueurHumain avec le nom en attribut
-		/// \param nom : string nom du joueur
-		JoueurHumain(string nom);
+        /// Constructeur de la classe JoueurHumain avec le nom en attribut
+        /// \param nom : string nom du joueur
+        JoueurHumain(string nom);
 };
 #endif

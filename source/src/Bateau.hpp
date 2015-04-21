@@ -14,9 +14,12 @@ using namespace std;
 
 class Bateau {
     private:
-        int PV; /// nb case du bateau non touchées
-        bool coule; /// vrai si bateu coule, faux sinon
-        int taille; /// entier taille du bateau
+        /// nb case du bateau non touchées
+        int PV;
+        /// vrai si bateu coule, faux sinon
+        bool coule;
+        /// entier taille du bateau
+        int taille;
 
     public:
         /// \fn Bateau(int taille)

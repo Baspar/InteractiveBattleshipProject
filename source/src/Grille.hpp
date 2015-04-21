@@ -25,8 +25,10 @@ class Grille{
         /// \param hauteur : hauteur de la grille
         Grille(int longueur, int hauteur);
     private:
-        TailleGrille tailleGrille; /// Taille de la grille
-        vector<vector<Case> > cases; /// Liste 2D de toutes les grilles
+        /// Taille de la grille
+        TailleGrille tailleGrille;
+        /// Liste 2D de toutes les grilles
+        vector<vector<Case> > cases;
 };
 
 #endif

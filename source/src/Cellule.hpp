@@ -14,7 +14,8 @@ using namespace std;
 class Cellule{
     private:
 
-        Action* action; /// action: pointeur sur une action qui sera appliquée au joueur
+        /// action: pointeur sur une action qui sera appliquée au joueur
+        Action* action;
 
     public:
         /// \fn void Cellule()

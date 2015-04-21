@@ -18,7 +18,8 @@ using namespace std;
 class Monde{
 
 	private :
-        vector<Carte> cartes; /// liste des cartes accessible du monde
+        /// liste des cartes accessible du monde
+        vector<Carte> cartes;
 
     public:
         /// \fn Monde()

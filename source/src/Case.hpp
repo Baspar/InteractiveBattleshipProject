@@ -15,8 +15,10 @@ using namespace std;
 class Case{
 
     private:
-        bool touche; ///A-t-on déjà tiré sur la Case ou non.
-        Bateau* bateau; ///Pointeur sur le bateau présent dans la Case
+        ///A-t-on déjà tiré sur la Case ou non.
+        bool touche;
+        ///Pointeur sur le bateau présent dans la Case
+        Bateau* bateau;
 
     public:
         /// \fn Case()

@@ -36,6 +36,7 @@ do
                                             s/>/>\ /g;
                                             s/\ (/(/g')
                 echo "     $etat$ligne" >> uml/Classes.uml
+                echo "     $etat$ligne"
 
                 #nbPar=$(echo "$ligne" | sed 's/[^(]//g' | wc -c)
                 #nbEsp=$(echo "$ligne" | sed 's/[^ ]//g' | wc -c)
@@ -48,7 +49,8 @@ do
                 #fi
             fi
         else
-            echo $line | egrep " *class *$name" >/dev/null && debut=1
+            echo $line | egrep " *class *$name" | egrep -v "^///" >/dev/null && debut=1
+
         fi
     done < $i
     echo "}" >> uml/Classes.uml

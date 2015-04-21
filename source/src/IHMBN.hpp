@@ -50,6 +50,7 @@ class IHMBN{
         ///
         /// Affiche la grille où les bateaux du joueur courant sont placés
         void afficherGrilleBateau();
-        BatailleNavale* batailleNavale; // Pointeur sur la bataille navale affichée
+        // Pointeur sur la bataille navale affichée
+        BatailleNavale* batailleNavale;
 };
 #endif
