@@ -44,8 +44,13 @@ class Personnage{
         void deplacer(Coordonnees coordonnees, Carte* carte);
 
         /// \fn Coordonnees getCoordonnees()
-        /// \brief Getter coordonnees
+        /// \brief Getter Coordonnees
         /// \return Les coordonnees du personnage
         Coordonnees getCoordonnees();
+
+        /// \fn Carte getCarte()
+        /// \brief Getter Carte
+        /// \return la carte du personnage
+        Carte* getCarte();
 };
 #endif
