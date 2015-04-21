@@ -1,0 +1,49 @@
+Action <|-- ActionChangementCarte
+Action <|-- ActionCombat
+Action <|-- AutreAction
+
+Cellule <|-- CelluleAccessible
+Cellule <|-- CelluleObstacle
+CelluleAccessible <|-- CelluleCombat
+
+Action -o Cellule
+
+Monde o-- Carte
+Carte o-- Cellule
+
+Monde -o Jeu
+
+IHMBN --o Controleur
+IHMJeu --o Controleur
+Controleur o-- Jeu
+
+Jeu o--PersonnageNonJouable
+Jeu o--PersonnageJouable
+
+PersonnageNonJouable -|> Personnage
+Personnage <|- PersonnageJouable
+
+PersonnageJouable <|--JoueurHumain
+PersonnageJouable <|--JoueurIA
+
+PersonnageNonJouable --|>PersonnageBNIA
+PersonnageBNIA <|- JoueurIA
+
+JoueurHumain --|>PersonnageBNHumain
+PersonnageBNIA --|>PersonnageBN
+PersonnageBNHumain --|>PersonnageBN
+
+PersonnageBN o-- Arme
+PersonnageBN o-- Bateau
+
+Jeu o- Combat
+
+Combat <|-- BatailleNavale
+
+PersonnageBN -o BatailleNavale
+
+BatailleNavale o-- Grille
+
+Grille o--Case
+
+Bateau -o Case
