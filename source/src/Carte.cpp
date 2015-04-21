@@ -7,6 +7,7 @@
 #include <vector>
 
 using namespace std;
-
+ Carte::Carte(int id, TailleGrille tailleGrille){
+ }
 //void Carte::deplacerPersonnage(Personnage personnage, Coordonnees coordonnees){
 //}

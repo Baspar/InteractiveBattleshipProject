@@ -10,7 +10,8 @@
 
 using namespace std;
 
-void  Jeu::initialiserJeu(){
+
+Jeu::Jeu(){
 }
 bool Jeu::partieFinie(){
     return true;
