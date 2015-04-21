@@ -32,11 +32,12 @@ class IHMJeu{
         void afficherCarteCourante();
 
     public:
-        /// \fn IHMJeu(Jeu jeu)
+        /// \fn IHMJeu(Jeu* jeu)
         /// \brief Constructeur
         ///
         /// Constructeur de la classe IHMJeu, initialise le jeu
-        IHMJeu(Jeu jeu);
+        /// \param jeu : jeu donné en entrée
+        IHMJeu(Jeu* jeu);
 
         /// \fn Coordonnees saisieDeplacement()
         /// \brief Saisie deplacement

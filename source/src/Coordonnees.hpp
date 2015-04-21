@@ -29,5 +29,18 @@ class Coordonnees {
         /// \param ord: entier correspondant à l'ordonnée
         Coordonnees(int abs, int ord);
 
+        /// \fn int getAbscisse()
+        /// \brief getteur de l'abscisse
+        /// \return entier correspondant à l'abscisse
+        int getAbscisse();
+
+        /// \fn int getOrdonnee()
+        /// \brief getteur de l'ordonnée
+        /// \return entier correspondant à l'ordonnée
+        int getOrdonnee();
+
+
+
+
 };
 #endif
