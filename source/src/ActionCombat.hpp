@@ -1,8 +1,8 @@
 #ifndef ACTIONCOMBAT_H
 #define ACTIONCOMBAT_H
 
-/// \file ActionChangementCarte.hpp
-/// \brief Change la carte si besoin
+/// \file ActionCombat.hpp
+/// \brief Lance un combat quand besoin
 /// \author
 
 #include "Personnage.hpp"
