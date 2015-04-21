@@ -33,14 +33,35 @@ void IHMJeu::afficherJeu (){
 
 
 void IHMJeu::afficherSaisie (){
+    cout<<endl;
+    cout<<"Affichage de la zone de saisie";
+    cout<<endl;
 }
 
 
 void IHMJeu::afficherInteraction(){
-
+    cout<<endl;
+    cout<<"Affichage de l'action en cours";
+    cout<<endl;
+    cout <<jeu->getActionEnCours().getTexteInteraction();
+    cout<<endl;
 }
 
 
 void IHMJeu::afficherCarteCourante(){
-
+    cout<<endl;
+    cout<<"Affichage de la carte courante";
+    cout<<endl;
+    for(vector<Cellule> cels : jeu->getPersonnageJouable().getCarte()->getCellules()) {
+        for(Cellule cel : cels) {
+            switch (cel.getTypeDeCellule()) {
+                case 0 : {
+                            if(cel.estAccessible()) cout<< "ô";
+                            else cout<< " ";
+                          }
+                case 1 : cout<< "X";
+            }
+            cout<<endl;
+        }
+    }
 }
