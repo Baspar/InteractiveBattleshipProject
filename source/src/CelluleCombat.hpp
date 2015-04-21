@@ -18,8 +18,8 @@ class CelluleCombat : public CelluleAccessible{
         Personnage* adversaire; /// Joueur adverse que le joueur sur la Case affrontera
 
     public:
-	/// \fn void Cellule()
-	/// \brief Construit une Cellule
-	void Cellule();
+        /// \fn void Cellule()
+        /// \brief Construit une Cellule
+        CelluleCombat();
 };
 #endif

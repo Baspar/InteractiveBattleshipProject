@@ -4,7 +4,7 @@
 
 /// \file TailleGrille.hpp
 /// \brief Fichier de la classe TailleGrille
-/// \author 
+/// \author
 
 using namespace std;
 
@@ -17,10 +17,9 @@ class TailleGrille {
 
     public:
 
-		/// \brief Constructeur de la classe TailleGrille
-		/// \param lon : longueur de la grille
-		///	\param hau : hauteur de la grille
+        /// \brief Constructeur de la classe TailleGrille
+        /// \param lon : longueur de la grille
+        ///	\param hau : hauteur de la grille
         TailleGrille(int lon, int hau);
-    
 };
 #endif

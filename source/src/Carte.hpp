@@ -15,7 +15,8 @@ using namespace std;
 
 /// \class Carte
 /// \brief classe représentant une carte
-/// La classe représente une carte 
+///
+/// La classe représente une carte
 
 class Carte{
 
@@ -29,6 +30,7 @@ class Carte{
 
 	/// \fn Carte(int id, TailleGrille tailleGrille)
 	/// \brief Constructeur
+///
 	/// Constructeur de la classe Carte
 	/// \param id: entier numero carte
 	/// \param tailleGrille: taille de la grille
@@ -36,6 +38,7 @@ class Carte{
 
 	/// \fn void deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees)
 	/// \brief déplace le personnage
+///
 	/// Méthode permettant de supprimer le personnage en entrée de sa case de départ, et le place sur la case associée aux coordonnées en entrée
 	/// \param personnage: pointeur sur personnage
 	/// \param coordonnees: coordonnées destination

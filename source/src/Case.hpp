@@ -16,17 +16,17 @@ class Case{
 
     private:
         bool touche; ///A-t-on déjà tiré sur la Case ou non.
-        Bateau* bateau; ///Pointeur sur le bateau présent dans la Case 
+        Bateau* bateau; ///Pointeur sur le bateau présent dans la Case
 
     public:
 	/// \fn Case()
 	/// \brief Construit une Case Vide
-	Case(); 
+        Case();
 
 	/// \fn Case(bateau)
-	/// \brief Construit une Case et l'associe à un bateau 
+	/// \brief Construit une Case et l'associe à un bateau
 	/// \param bateau: pointeur sur le bateau à associer à la Case
-	Case(bateau);
+        Case(bateau);
 
 	/// \fn void tirerDessus()
 	/// \brief Effectue les changements lorsqu'on tire sur une Case

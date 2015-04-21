@@ -11,6 +11,7 @@ using namespace std;
 
 /// \class PersonnageJouable
 /// \brief classe definissant un personnage jouable
+///
 /// La classe représente un personnage jouable
 class PersonnageJouable : public Personnage{
 };

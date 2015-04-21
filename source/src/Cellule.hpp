@@ -17,21 +17,21 @@ class Cellule{
         Action* action; /// action: pointeur sur une action qui sera appliquée au joueur
 
     public:
+        /// \fn void Cellule()
+        /// \brief Construit une Cellule
+        Cellule();
 
-	/// \fn void Cellule()
-	/// \brief Construit une Cellule
-	void Cellule();
-
-	/// \fn void lancerAction()
-	/// \brief Lance l'action et effectue les modifications nécessaires suite à cette action
+        /// \fn void lancerAction()
+        /// \brief Lance l'action et effectue les modifications nécessaires suite à cette action
 
         void lancerAction();
 
-	/// \fn virtual bool estAccessible();
-	/// \brief Vérifie si la Cellule est Accessible ou non
-	/// Cette méthode est virtuelle car la classe est abstraite, elle sera 
-	/// implémentée dans les classes filles
-	/// \return un booleen: vrai si la cellule est accessible, faux sinon
+        /// \fn virtual bool estAccessible();
+        /// \brief Vérifie si la Cellule est Accessible ou non
+        ///
+        /// Cette méthode est virtuelle car la classe est abstraite, elle sera
+        /// implémentée dans les classes filles
+        /// \return un booleen: vrai si la cellule est accessible, faux sinon
         virtual bool estAccessible();
 };
 #endif

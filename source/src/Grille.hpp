@@ -18,6 +18,7 @@ class Grille{
     public:
         /// \fn Grille(int longueur, int hauteur)
         /// \brief Constructeur
+        ///
         /// Constructeur paramétré de la classe Grille
         /// \param longueur : longueur de la grille
         /// \param hauteur : hauteur de la grille

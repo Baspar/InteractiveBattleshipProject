@@ -3,7 +3,7 @@
 
 /// \file CelluleAccessible.hpp
 /// \brief Fichier contenant la classe CelluleAccessible
-/// \author 
+/// \author
 
 #include "Personnage.hpp"
 #include "Cellule.hpp"
@@ -19,13 +19,13 @@ class CelluleAccessible:public Cellule{
         Personnage* occupant; /// Pointeur sur le personnage qui se trouve dans la cellule
 
     public :
-	/// \fn void CelluleAccessible()
-	/// \brief Construit une CelluleAccessible
-	void CelluleAccessible();
+        /// \fn void CelluleAccessible()
+        /// \brief Construit une CelluleAccessible
+        CelluleAccessible();
 
-	/// \fn virtual bool estAccessible()
-	/// \brief Vérifie si une classe est bien accessible
-	/// \return un booleen vrai si la classe est accessible, faux sinon
+        /// \fn virtual bool estAccessible()
+        /// \brief Vérifie si une classe est bien accessible
+        /// \return un booleen vrai si la classe est accessible, faux sinon
         virtual bool estAccessible();
 };
 #endif

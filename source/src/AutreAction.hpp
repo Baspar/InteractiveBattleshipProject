@@ -9,15 +9,14 @@
 
 using namespace std;
 
-
 /// \class AutreAction
 /// \brief lance autre action
+///
+/// Exemple d'action a suivre pour creer son action
 class AutreAction : public Action{
-
     public:
-
-	/// \fn virtual void lancerAction()
-	/// \brief lancer autre action
+        /// \fn virtual void lancerAction()
+        /// \brief lancer autre action
         virtual void lancerAction();
 };
 #endif

@@ -24,25 +24,27 @@ class PersonnageBN{
         TailleGrille tailleGrille; ///taille des 2 grilles permettant de jouer à la Bataille Navale
         string nom; /// nom du PersonnageBN
         Arme* arme; /// arme: pointeur sur une arme (exemple:différents pointeurs de visée...)
-        vector<Bateau*> bateaux; ///bateaux : vecteur de pointeur sur bateaux(représentant l'ensemble des bateaux du PersonnageBN) 
+        vector<Bateau*> bateaux; ///bateaux : vecteur de pointeur sur bateaux(représentant l'ensemble des bateaux du PersonnageBN)
 
     public:
-	/// \fn void PersonnageBN()
-	/// \brief crée un PersonnageBN
-	void PersonnageBN();
+        /// \fn void PersonnageBN()
+        /// \brief crée un PersonnageBN
+        void PersonnageBN();
 
-	/// \fn virtual Grille placerBateaux ()	
-	/// \brief le PersonnageBN place les Bateaux sur sa Grille
-	/// Cette méthode est virtuelle car cette classe est abstraite, elle sera
-	/// implémentée dans les classes filles
-	/// \return Grille dotée de tous les bateaux placés
-        virtual Grille placerBateaux(); 
+        /// \fn virtual Grille placerBateaux ()
+        /// \brief le PersonnageBN place les Bateaux sur sa Grille
+        ///
+        /// Cette méthode est virtuelle car cette classe est abstraite, elle sera
+        /// implémentée dans les classes filles
+        /// \return Grille dotée de tous les bateaux placés
+        virtual Grille placerBateaux();
 
-	/// \fn virtual Coordonnees caseAViser()
-	/// \brief le PersonnageBN veux tirer sur la grille du joueur adverse
-	/// Cette méthode est virtuelle car cette classe est abstraite, elle sera
-	/// implémentée dans les classes filles
-	/// \return Coordonnees de la case à viser
+        /// \fn virtual Coordonnees caseAViser()
+        /// \brief le PersonnageBN veux tirer sur la grille du joueur adverse
+        ///
+        /// Cette méthode est virtuelle car cette classe est abstraite, elle sera
+        /// implémentée dans les classes filles
+        /// \return Coordonnees de la case à viser
         virtual Coordonnees caseAViser();
 };
 #endif
