@@ -4,7 +4,10 @@
 #include <iostream>
 
 using namespace std;
+CelluleObstacle::CelluleObstacle(string nomObstacle){
+	
+}
 
 bool CelluleObstacle::estAccessible(){
-    return true;
+    return false;
 }
