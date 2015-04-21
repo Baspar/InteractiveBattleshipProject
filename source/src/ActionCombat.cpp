@@ -5,5 +5,5 @@
 
 using namespace std;
 
-void ActionCombat::lancerAction(){
-}
+void ActionCombat::lancerAction(){}
+ActionCombat::ActionCombat(){}

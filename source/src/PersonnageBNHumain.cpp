@@ -3,3 +3,4 @@
 #include "PersonnageBN.hpp"
 
 using namespace std;
+PersonnageBNHumain::PersonnageBNHumain(){}
