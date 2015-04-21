@@ -4,3 +4,6 @@
 #include "PersonnageBNHumain.hpp"
 
 using namespace std;
+
+JoueurHumain::JoueurHumain(string nom){
+}

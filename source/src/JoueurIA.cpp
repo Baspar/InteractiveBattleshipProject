@@ -4,3 +4,6 @@
 #include "PersonnageBNIA.hpp"
 
 using namespace std;
+
+JoueurIA::JoueurIA(string nom){
+}

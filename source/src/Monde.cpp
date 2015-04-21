@@ -5,5 +5,8 @@
 
 using namespace std;
 
+Monde::Monde(){
+}
+
 void Monde::placerJoueurs(){
 }
