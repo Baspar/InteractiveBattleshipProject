@@ -4,3 +4,5 @@
 #include "CelluleAccessible.hpp"
 
 using namespace std;
+
+void Cellule();
