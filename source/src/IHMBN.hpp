@@ -3,7 +3,7 @@
 
 /// \file IHMBN.hpp
 /// \brief Fichier contenant la classe IHMBN
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 #include "BatailleNavale.hpp"
 #include "Coordonnees.hpp"
 #include "Grille.hpp"

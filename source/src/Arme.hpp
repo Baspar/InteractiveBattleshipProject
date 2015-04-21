@@ -3,7 +3,7 @@
 
 /// \file Arme.hpp
 /// \brief Gestion des armes
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Coordonnees.hpp"
 #include <iostream>

@@ -3,7 +3,7 @@
 
  /// \file Controleur.hpp
  /// \brief Controleur de notre jeu
- /// \author
+ /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "IHMJeu.hpp"
 #include "IHMBN.hpp"

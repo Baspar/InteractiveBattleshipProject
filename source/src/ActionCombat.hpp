@@ -3,7 +3,7 @@
 
 /// \file ActionCombat.hpp
 /// \brief Lance un combat quand besoin
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Personnage.hpp"
 #include "Action.hpp"

@@ -3,7 +3,7 @@
 
 /// \file IHMJeu.hpp
 /// \brief IHM gerant jeu
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Jeu.hpp"
 #include "Coordonnees.hpp"

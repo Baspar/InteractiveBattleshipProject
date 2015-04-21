@@ -3,7 +3,7 @@
 
 /// \file BatailleNavale.hpp
 /// \brief Gestion d'un combat bataille navale
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Combat.hpp"
 #include "Grille.hpp"

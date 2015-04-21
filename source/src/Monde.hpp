@@ -3,7 +3,7 @@
 
 /// \file Monde.hpp
 /// \brief classe du monde du jeu
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Carte.hpp"
 #include <vector>
@@ -12,6 +12,7 @@ using namespace std;
 
 /// \class Monde
 /// \brief classe définissant un monde
+///
 /// La classe représente un monde constitué de carte sur lequel évolue le joueur
 
 class Monde{

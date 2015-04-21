@@ -3,7 +3,7 @@
 
 /// \file Carte.hpp
 /// \brief représentant carte
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Personnage.hpp"
 #include "Coordonnees.hpp"

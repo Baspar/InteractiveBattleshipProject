@@ -2,7 +2,7 @@
 #define GRILLE_H
 /// \file Grille.hpp
 /// \brief Fichier contenant la classe Grille
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 #include "TailleGrille.hpp"
 #include "Case.hpp"
 
@@ -13,6 +13,7 @@ using namespace std;
 
 /// \class Grille
 /// \brief Grille de bataille navale
+///
 /// La classe Grille contient une grille qui correspondraà la grille d'n joueur pendant une bataille navale
 class Grille{
     public:

@@ -3,7 +3,7 @@
 
 /// \file PersonnageBNHumain.hpp
 /// \brief Personnages de bataille navale dotés d'une intelligence artificielle
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "PersonnageBN.hpp"
 

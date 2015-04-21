@@ -3,7 +3,7 @@
 
 /// \file Cellule.hpp
 /// \brief Fichier contenant la classe Cellule
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Action.hpp"
 

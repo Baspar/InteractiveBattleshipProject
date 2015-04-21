@@ -3,7 +3,7 @@
 
 /// \file Jeu.hpp
 /// \brief fichier contenant la case Jeu
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "PersonnageNonJouable.hpp"
 #include "PersonnageJouable.hpp"

@@ -3,7 +3,7 @@
 
  /// \file Combat.hpp
  /// \brief Gestion d'un combat à deux joueurs
- /// \author
+ /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Personnage.hpp"
 

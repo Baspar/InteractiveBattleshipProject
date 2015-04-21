@@ -3,7 +3,7 @@
 
 /// \file PersonnageBN.hpp
 /// \brief Fichier contenant la classe PersonnageBN
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Grille.hpp"
 #include "Coordonnees.hpp"

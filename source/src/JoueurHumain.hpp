@@ -3,7 +3,7 @@
 
 /// \file JoueurHumain.hpp
 /// \brief classe joueur humain
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 
 #include "PersonnageJouable.hpp"

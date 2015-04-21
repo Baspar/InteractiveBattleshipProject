@@ -3,7 +3,7 @@
 
 /// \file CelluleCombat.hpp
 /// \brief Fichier contenant le classe CelluleCombat
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Personnage.hpp"
 #include "CelluleAccessible.hpp"

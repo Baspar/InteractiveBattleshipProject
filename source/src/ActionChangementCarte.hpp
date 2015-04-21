@@ -3,7 +3,7 @@
 
 /// \file ActionChangementCarte.hpp
 /// \brief Change la carte si besoin
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Carte.hpp"
 #include "Coordonnees.hpp"

@@ -3,7 +3,7 @@
 
 /// \file Bateau.hpp
 /// \brief définition bateaux bataille navale
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 using namespace std;
 

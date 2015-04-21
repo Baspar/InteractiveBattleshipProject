@@ -3,7 +3,7 @@
 
 /// \file PersonnageNonJouable.hpp
 /// \brief classe personnage non jouable
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Personnage.hpp"
 #include "PersonnageBNIA.hpp"

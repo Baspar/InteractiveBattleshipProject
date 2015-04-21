@@ -3,7 +3,7 @@
 
 /// \file Action.hpp
 /// \brief Lance l'action associée à la case
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include <iostream>
 

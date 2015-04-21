@@ -3,7 +3,7 @@
 
 /// \file Personnage.hpp
 /// \brief classe d'un personnage du jeu
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Coordonnees.hpp"
 #include <iostream>

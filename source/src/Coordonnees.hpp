@@ -3,7 +3,7 @@
 
  /// \file Coordonnees.hpp
  /// \brief Coordonnées sur une carte
- /// \author
+ /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 using namespace std;
 

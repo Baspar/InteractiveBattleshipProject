@@ -3,7 +3,7 @@
 
 /// \file AutreAction.hpp
 /// \brief Autres actions (non specifiées précédemment)
-/// \author
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Action.hpp"
 
