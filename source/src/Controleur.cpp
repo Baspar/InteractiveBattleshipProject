@@ -4,6 +4,8 @@
 #include "IHMBN.hpp"
 
 using namespace std;
+Controleur::Controleur(){
+}	
 
 void Controleur::tourDeJeu (){
 }
