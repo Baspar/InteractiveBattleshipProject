@@ -46,5 +46,12 @@ class Jeu{
 	///  Déplace notre héros puis lance l'action
         void jouer(Coordonnees coordonnees);
 
+	/// \fn Action getActionEnCours()
+    /// \brief Getter actionEnCours
+        Action getActionEnCours();
+
+	/// \fn PersonnageJouable getPersonnageJouable()
+    /// \brief Getter personnageJouable
+        PersonnageJouable getPersonnageJouable();
 };
 #endif

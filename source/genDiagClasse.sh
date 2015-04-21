@@ -4,7 +4,7 @@ echo "@startuml" >> uml/Classes.uml
 echo "!include skin.uml" >> uml/Classes.uml
 echo "!include liaisons.uml" >> uml/Classes.uml
 
-for i in src/*.hpp
+for i in $(ls src/*.hpp | sort -r)
 do
     name=$(basename -s .hpp $i)
 
@@ -12,7 +12,12 @@ do
     debut=0
 
     echo "class $name{" >> uml/Classes.uml
-    echo "Classe $name"
+    echo -e "\nClasse $name"
+
+    constr=""
+    meth=""
+    attribut=""
+
     while read line
     do
         if [ $debut -eq 1 ]
@@ -25,36 +30,56 @@ do
             echo $line | egrep " *protected *:" >/dev/null && etat="#" && ecriture=0
             echo $line | egrep " *//" >/dev/null && ecriture=0
 
-            if [ $ecriture -eq 1 ] && [ "$line" ]
+            test=$(echo $line | sed 's/ //g')
+
+            if [ $ecriture -eq 1 ] && [ "$test" ]
             then
-                ligne=$(echo "$line" | sed 's/\ +/\ /g;
-                                            s/;\ *$//g;
-                                            s/\([a-zA-Z0-9*]\)\ \([^a-zA-Z0-9*]\)/\1\2/g;
-                                            s/\([^a-zA-Z0-9*]\)\ \([a-zA-Z0-9*]\)/\1\2/g;
-                                            s/\([^a-zA-Z0-9*]\)\ \([a-zA-Z0-9*]\)/\1\2/g;
+                # Traitement Ligne
+                ligne=$(echo "$line" | sed 's/ +/ /g;
+                                            s/;//g;
+                                            s/\([a-zA-Z0-9*]\) \([^a-zA-Z0-9*]\)/\1\2/g;
+                                            s/\([^a-zA-Z0-9*]\) \([a-zA-Z0-9*]\)/\1\2/g;
+                                            s/\([^a-zA-Z0-9*]\) \([a-zA-Z0-9*]\)/\1\2/g;
                                             s/,/, /g;
-                                            s/>/>\ /g;
-                                            s/\ (/(/g')
-                echo "     $etat$ligne" >> uml/Classes.uml
-                echo "     $etat$ligne"
+                                            s/virtual/{abstract}/g;
+                                            s/>/> /g')
 
-                #nbPar=$(echo "$ligne" | sed 's/[^(]//g' | wc -c)
-                #nbEsp=$(echo "$ligne" | sed 's/[^ ]//g' | wc -c)
-
-                #if [ $nbPar -eq 1 ]
-                #then
-                    #nom=$(echo "$ligne" | cut -d ' ' -f $nbEsp-)
-                    #ext=$(echo "$ligne" | cut -d ' ' -f -$(( $nbEsp-1 )) )
-                    #echo "$ext : $nom"
-                #fi
+                # Reconnaissance du type de ligne
+                if [ "$(echo $ligne | egrep "^$name\(")" ]
+                then
+                    constr="$constr        $etat$ligne\n"
+                elif [ "$(echo $ligne | grep "(")" ]
+                then
+                    meth="$meth        $etat$ligne\n"
+                else
+                    attribut="$attribut        $etat$ligne\n"
+                fi
             fi
         else
             echo $line | egrep " *class *$name" | egrep -v "^///" >/dev/null && debut=1
-
         fi
     done < $i
+
+
+    if [ !"$attribut" ]
+    then
+        echo "    --Attribut(s)--" >> uml/Classes.uml
+        echo -en "$attribut" >> uml/Classes.uml
+    fi
+    if [ !"$constr" ]
+    then
+        echo "    --Constructeur(s)--" >> uml/Classes.uml
+        echo -en "$constr" >> uml/Classes.uml
+    fi
+    if [ !"$meth" ]
+    then
+        echo "    --Methode(s)--" >> uml/Classes.uml
+        echo -en "$meth" >> uml/Classes.uml
+    fi
+
     echo "}" >> uml/Classes.uml
 done
+
 echo "@enduml" >> uml/Classes.uml
 echo "Fichier .uml generé. Création du fichier PNG en cours..."
 java -jar plantuml.jar uml/Classes.uml

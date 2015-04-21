@@ -15,7 +15,7 @@ using namespace std;
 /// \class ActionChangementCarte
 /// \brief gestion changement de carte
 ///
-/// Cette classe gère le changement de carte quand le joueur accède à une case qui permet de changer de carte
+/// Cette classe gère le changement de Carte quand le joueur accède à une Cellule qui permet de changer de Carte
 
 
 class ActionChangementCarte : public Action{

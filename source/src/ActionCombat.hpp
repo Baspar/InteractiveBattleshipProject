@@ -13,7 +13,7 @@ using namespace std;
 /// \class ActionCombat
 /// \brief gestion lancement du combat
 ///
-/// Cette classe lance un combat lorsque le joueur se trouve sur une case où il est menacé
+/// Cette classe lance un Combat lorsque le Joueur se trouve sur une case où il est menacé
 
 class ActionCombat : public Action{
     private:

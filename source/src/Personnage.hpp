@@ -42,5 +42,10 @@ class Personnage{
         /// \param coordonnees : coordonnées de destination
         /// \param carte : pointeur sur la carte de destination
         void deplacer(Coordonnees coordonnees, Carte* carte);
+
+        /// \fn Coordonnees getCoordonnees()
+        /// \brief Getter coordonnees
+        /// \return Les coordonnees du personnage
+        Coordonnees getCoordonnees();
 };
 #endif

@@ -1,4 +1,3 @@
-
 #ifndef TAILLEGRILLE_H
 #define TAILLEGRILLE_H
 
@@ -12,17 +11,18 @@ using namespace std;
 /// \brief Classe représentant la taille de la grille.
 ///
 /// La classe gère la création de la taille de la grille.
-class TailleGrille {
-    private:
-        ///Longueur de la grille
-        int longueur;
-        ///Hauteur de la grille
-        int hauteur;
-
+class TailleGrille{
     public:
         /// \brief Constructeur de la classe TailleGrille
         /// \param lon : longueur de la grille
         ///	\param hau : hauteur de la grille
         TailleGrille(int lon, int hau);
+    private:
+        ///Longueur de la grille
+        int longueur;
+
+        ///Hauteur de la grille
+        int hauteur;
+
 };
 #endif
