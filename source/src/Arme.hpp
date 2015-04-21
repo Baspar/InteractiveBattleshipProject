@@ -20,7 +20,7 @@ class Arme{
         /// \brief Attaque
         ///
         /// tire sur une case et inflige des dégâts en fonction de l'arme utilisée
-        /// \param Coordonnees : coordonnées de la case que le joueur souhaite viser
+        /// \param coordonnees : coordonnées de la case que le joueur souhaite viser
         void tirer(Coordonnees coordonnees);
 
         /// \brief Constructeur

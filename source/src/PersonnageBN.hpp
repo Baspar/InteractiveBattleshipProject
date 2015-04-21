@@ -1,5 +1,5 @@
 #ifndef PERSONNAGEBN_H
-#define PERSONNAGEBN_H.
+#define PERSONNAGEBN_H
 
 /// \file PersonnageBN.hpp
 /// \brief Fichier contenant la classe PersonnageBN

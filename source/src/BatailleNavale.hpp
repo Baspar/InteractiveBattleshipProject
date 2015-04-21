@@ -39,7 +39,8 @@ class BatailleNavale : public Combat{
         /// Initialise les 2 joueurs, crée les 2 grilles de taille tailleGrille
         /// à partir des joueurs puis va demander aux joueurs de placer leurs bateaux
         /// via la méthode placerBateaux
-        /// \param joueur1, joueur2 : 2 joueurs de type PersonnageBN
+        /// \param joueur1 : joueur de type PersonnageBN
+        /// \param joueur2 : joueur de type PersonnageBN
         BatailleNavale(PersonnageBN joueur1, PersonnageBN joueur2);
 
         /// \fn void jouer(Coordonnees coordonnees)
@@ -47,7 +48,7 @@ class BatailleNavale : public Combat{
         ///
         /// Le joueur courant vise la case à jouer et tire avec son arme
         /// (actualisation des grilles) puis changement de joueur courant
-        /// \param coordonnes: coordonnées choisies par le joueur
+        /// \param coordonnees: coordonnées choisies par le joueur
         void jouer(Coordonnees coordonnees);
 
 };
