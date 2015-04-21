@@ -4,5 +4,8 @@
 
 using namespace std;
 
+void Cellule(){
+}
+
 void Cellule::lancerAction(){
 }

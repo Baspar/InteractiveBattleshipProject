@@ -9,6 +9,8 @@
 #include <vector>
 
 using namespace std;
+void PersonnageBN(){
+}
 
 Grille PersonnageBN::placerBateaux(){
     return Grille();
