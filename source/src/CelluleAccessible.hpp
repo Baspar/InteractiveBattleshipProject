@@ -24,9 +24,18 @@ class CelluleAccessible:public Cellule{
         /// \brief Construit une CelluleAccessible
         CelluleAccessible();
 
+        /// \fn void CelluleAccessible()
+        /// \brief Construit une CelluleAccessible
+        CelluleAccessible(Action actionInit);
+
         /// \fn virtual bool estAccessible()
         /// \brief Vérifie si une classe est bien accessible
         /// \return un booleen vrai si la classe est accessible, faux sinon
         virtual bool estAccessible();
+
+        /// \fn void setPersonnage(Personnage* personnage)
+        /// \brief place un personnage sur une cellule
+        /// \param Personnage* pointeur sur personnage à placer sur la cellule
+        void setPersonnage(Personnage* personnage);
 };
 #endif

@@ -6,6 +6,7 @@
 /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Carte.hpp"
+#include "Personnage.hpp"
 #include <vector>
 
 using namespace std;
@@ -28,10 +29,10 @@ class Monde{
         /// Constructeur de la classe Monde par défaut
         Monde();
 
-        /// \fn void placerJoueurs ()
+        /// \fn void placerJoueurs(vector<Personnage> listePerso, vector<int> listeIdCarte, vector<Coordonnees> listeCoord)
         /// \brief Methode placerJoueurs
         ///
         /// méthode qui place les joueurs dans le monde
-        void placerJoueurs ();
+        void placerJoueurs(vector<Personnage*> listePerso, vector<int> listeIdCarte, vector<Coordonnees> listeCoord);
 };
 #endif

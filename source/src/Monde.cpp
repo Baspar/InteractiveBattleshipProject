@@ -6,7 +6,24 @@
 using namespace std;
 
 Monde::Monde(){
+    int nbCartes=2;
+    cartes=new vector<Carte>();
+
+    for(i=0;i<nbCartes;i++) cartes.add(new Carte(i));
+
 }
 
-void Monde::placerJoueurs(){
+void Monde::placerJoueurs(vector<Personnage*> listePerso, vector<int> listeIdCarte, vector<Coordonnees> listeCoord){
+    int i=0;
+    if(!(listePerso.empty()))
+        for (Personnage* perso : listePerso){
+
+            Coordonnees coord = listeCoord[i];
+            Carte carte = cartes[listeIdCarte[i]];
+            i++;
+
+            perso->setCoordonnees(coord);
+            perso->setCarte(carte);
+            perso->getCarte()->getCel(coord).setPersonnage(perso);
+        }
 }

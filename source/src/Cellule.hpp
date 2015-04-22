@@ -15,13 +15,17 @@ class Cellule{
     private:
         /// Pointeur sur une action qui sera appliquée au joueur
         Action* action;
-        // Type de cellule
+        /// Type de cellule (0=accessible, 1=obstacle)
         int typeDeCellule;
 
     public:
-        /// \fn void Cellule()
+        /// \fn Cellule()
         /// \brief Construit une Cellule
         Cellule();
+
+        /// \fn Cellule(Action actionInit, int typeCell)
+        /// \brief Construit une Cellule de manière paramétrée
+        Cellule(Action actionInit, int typeCell);
 
         /// \fn void lancerAction()
         /// \brief Lance l'action et effectue les modifications nécessaires suite à cette action
@@ -39,5 +43,10 @@ class Cellule{
         /// \brief Getter typeDeCellule
         /// \return Type de cellule
         int getTypeDeCellule();
+
+        /// \fn int getActionCellule()
+        /// \brief Getter Action
+        /// \return action de la cellule
+        Action* getActionCellule();
 };
 #endif

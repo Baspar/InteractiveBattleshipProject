@@ -52,5 +52,15 @@ class Personnage{
         /// \brief Getter Carte
         /// \return Un pointeur sur la carte du personnage
         Carte* getCarte();
+
+        /// \fn vodi setCoordonnees(Coordonnees coordSet)
+        /// \brief Setter Coordonnees
+        /// \param Les coordonnees du personnage
+        void setCoordonnees(Coordonnees coordSet);
+
+        /// \fn void setCarte(Carte carteSet)
+        /// \brief Setter Carte
+        /// \param la carte à pointer en attribut
+        void setCarte(Carte carteSet);
 };
 #endif

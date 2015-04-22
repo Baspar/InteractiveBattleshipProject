@@ -29,31 +29,38 @@ class Jeu{
         Monde monde;
         /// combat
         Combat combat;
+        /// partie terminee?
+        bool terminee;
 
     public:
 
 	/// \fn Jeu()
 	/// \brief Constructeur
-        Jeu();
+    Jeu();
 
 	/// \fn bool partieFinie()
 	/// \brief voir si partie finie
 	/// \return Renvoie vrai si le jeu est fini, sinon faux
-        bool partieFinie();
+    bool partieFinie();
 
 	/// \fn void jouer(Coordonnees coordonnees)
 	/// \brief déplacement héros, lancement action
 	///  Déplace notre héros puis lance l'action
-        void jouer(Coordonnees coordonnees);
+    void jouer(Coordonnees coordonnees);
 
 	/// \fn Action getActionEnCours()
     /// \brief Getter actionEnCours
     /// \return Action en cours
-        Action getActionEnCours();
+    Action getActionEnCours();
 
 	/// \fn PersonnageJouable getPersonnageJouable()
     /// \brief Getter personnageJouable
     /// \return Personnage jouable
-        PersonnageJouable getPersonnageJouable();
+    PersonnageJouable getPersonnageJouable();
+
+    /// \fn void setTerminee()
+    /// \brief Setter terminee
+    /// \param la valeur de terminee
+    void setTerminee(bool bol);
 };
 #endif

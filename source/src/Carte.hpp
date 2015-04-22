@@ -36,7 +36,7 @@ class Carte{
         /// Constructeur de la classe Carte
         /// \param id: entier numero carte
         /// \param tailleGrille: taille de la grille
-        Carte(int id, TailleGrille tailleGrille);
+        Carte(int id, TailleGrille tailleGrilleInit);
 
         /// \fn void deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees)
         /// \brief déplace le personnage
@@ -50,5 +50,12 @@ class Carte{
         /// \brief Getter Cellules
         /// \return La liste des cellules de la carte
         vector<vector<Cellule> > getCellules();
+
+
+        /// \fn Cellule getCel()
+        /// \brief Getter Cel
+        /// \param coord : coordonnées de la cellule
+        /// \return la cellule de coordonnées coord
+        Cellule getCel(Coordonnees coord);
 };
 #endif
