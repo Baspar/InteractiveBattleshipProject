@@ -16,8 +16,6 @@ class Bateau {
     private:
         /// nb case du bateau non touchées
         int PV;
-        /// vrai si bateu coule, faux sinon
-        bool coule;
         /// entier taille du bateau
         int taille;
 

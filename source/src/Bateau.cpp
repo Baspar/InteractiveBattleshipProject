@@ -2,11 +2,16 @@
 
 using namespace std;
 
-Bateau::Bateau(int taille){
-}	
+// PV, coule, taill
+Bateau::Bateau(int tailleIn){
+    taille = tailleIn;
+    PV = tailleIn;
+}
 
 bool Bateau::estCoule(){
-    return true;
+    return (PV==0);
 }
 void Bateau::retirerPV (){
+    if(PV>0)
+        PV--;
 }
