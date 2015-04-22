@@ -11,7 +11,7 @@ Personnage::Personnage(string nom){
 
 void Personnage::deplacer(Coordonnees coordonnees, Carte* carteEntree){
     carteEntree->deplacerPersonnage(this, coordonnees);
-    coord=coordonnees;
+    coord(coordonnees);
     carte=carteEntree;
 }
 
@@ -25,7 +25,7 @@ Carte* Personnage::getCarte(){
 }
 
 void Personnage::setCoordonnees(Coordonnees coordSet){
-    coord=coordSet;
+    coord(coordSet);
 }
 
 

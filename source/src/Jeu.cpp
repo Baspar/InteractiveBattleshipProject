@@ -38,7 +38,7 @@ bool Jeu::partieFinie(){
 void Jeu::jouer(Coordonnees coordonnees){
     personnageJouable->deplacer(coordonnees);
     actionEnCours = personnageJouable->getCarte()->getCel((personnageJouable->getCoordonnees())).getActionCellule();
-    actionEnCours.lancerAction();
+    if(actionEnCours!=nullptr) actionEnCours.lancerAction();
 }
 
 

@@ -7,9 +7,8 @@ using namespace std;
 
 Monde::Monde(){
     int nbCartes=2;
-    cartes=new vector<Carte>();
 
-    for(i=0;i<nbCartes;i++) cartes.add(new Carte(i));
+    for(i=0;i<nbCartes;i++) cartes.push_back(Carte(i));
 
 }
 

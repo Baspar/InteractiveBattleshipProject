@@ -19,8 +19,8 @@ using namespace std;
     }
  }
 
-void Carte::deplacerPersonnage(Personnage personnage, Coordonnees coordonnees){
-    personnage.getCarte()->getCel(personnage.getCoordonnees()).setPersonnage(NULL);
+void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){
+    personnage.getCarte()->getCel(personnage->getCoordonnees()).setPersonnage(NULL);
     getCel(coordonnees).setPersonnage(personnage);
 }
 
