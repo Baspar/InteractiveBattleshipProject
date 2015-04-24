@@ -11,8 +11,7 @@
 using namespace std;
 
 
-Jeu::Jeu():Jeu(nullptr){
-
+Jeu::Jeu(){
 }
 
 
@@ -38,7 +37,8 @@ bool Jeu::partieFinie(){
 void Jeu::jouer(Coordonnees coordonnees){
     personnageJouable->deplacer(coordonnees);
     actionEnCours = personnageJouable->getCarte()->getCel((personnageJouable->getCoordonnees())).getActionCellule();
-    if(actionEnCours!=nullptr) actionEnCours.lancerAction();
+    if(&actionEnCours!=nullptr)
+        actionEnCours.lancerAction();
 }
 
 
@@ -47,7 +47,7 @@ Action Jeu::getActionEnCours(){
 }
 
 
-PersonnageJouable Jeu::getPersonnageJouable(){
+*PersonnageJouable Jeu::getPersonnageJouable(){
     return personnageJouable;
 }
 

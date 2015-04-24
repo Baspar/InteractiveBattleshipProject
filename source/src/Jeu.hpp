@@ -56,7 +56,7 @@ class Jeu{
 	/// \fn PersonnageJouable getPersonnageJouable()
     /// \brief Getter personnageJouable
     /// \return Personnage jouable
-    PersonnageJouable getPersonnageJouable();
+    *PersonnageJouable getPersonnageJouable();
 
     /// \fn void setTerminee()
     /// \brief Setter terminee
