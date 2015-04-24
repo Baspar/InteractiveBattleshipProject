@@ -24,5 +24,20 @@ class TailleGrille{
         /// \param lon : longueur de la grille
         /// \param hau : hauteur de la grille
         TailleGrille(int lon, int haut);
+
+        /// \fn TailleGrille(Taillegrille &tailleGrilleCp)
+        /// \brief Constructeur par recopie de la classe TailleGrille
+        /// \param tailleGrilleCp : TailleGrill a recopier
+        TailleGrille::TailleGrille(TailleGrille &tailleGrileCp);
+
+        /// \fn int getLongueur()
+        /// \brief Getter de longueur
+        /// return La longueur de la Grille
+        int getLongueur();
+
+        /// \fn int getHauteur()
+        /// \brief Getter de hauteur
+        /// return La hauteur de la Grille
+        int getHauteur();
 };
 #endif

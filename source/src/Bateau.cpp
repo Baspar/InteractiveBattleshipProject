@@ -2,7 +2,6 @@
 
 using namespace std;
 
-// PV, coule, taill
 Bateau::Bateau(int tailleIn){
     taille = tailleIn;
     PV = tailleIn;

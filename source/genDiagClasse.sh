@@ -42,11 +42,12 @@ do
             then
                 # Traitement Ligne
                 ligne=$(echo "$line" | sed 's/ +/ /g;
-                                            s/;//g;
+                                            s/ *;//g;
                                             s/\([a-zA-Z0-9*]\) \([^a-zA-Z0-9*]\)/\1\2/g;
                                             s/\([^a-zA-Z0-9*]\) \([a-zA-Z0-9*]\)/\1\2/g;
                                             s/\([^a-zA-Z0-9*]\) \([a-zA-Z0-9*]\)/\1\2/g;
                                             s/,/, /g;
+                                            s/ *=0//g;
                                             s/virtual/{abstract}/g;
                                             s/>/> /g')
 
@@ -56,17 +57,40 @@ do
                     constr="$constr        $etat$ligne\n"
                 elif [ "$(echo $ligne | grep "(")" ]
                 then
-                    if [ "$(echo $ligne | grep -e " set")" ]
+                    nbMot=$(echo $ligne | sed 's/[^ ]//g' | wc -c)
+                    out=""
+                    for j in $(seq 1 $nbMot)
+                    do
+                        tmp=$(echo $ligne | cut -d ' ' -f $j-)
+                        nbOuv=$(echo $tmp | sed 's/[^(]//g' | wc -c)
+                        nbFer=$(echo $tmp | sed 's/[^)]//g' | wc -c)
+                        if [ $nbOuv -ne $nbFer ] && [[ $out == "" ]]
+                        then
+                            out=$(echo $ligne | cut -d ' ' -f -$(($j-2)))
+                            fonction=$(echo $ligne | cut -d ' ' -f $(($j-1))-)
+                        fi
+                    done
+
+                    if [[ $out == "" ]]
                     then
-                        setter="$setter        $etat$ligne\n"
-                    elif [ "$(echo $ligne | grep -e " get")" ]
+                        out=$(echo $ligne | cut -d ' ' -f -$(($nbMot-1)))
+                        fonction=$(echo $ligne | cut -d ' ' -f $(($nbMot))-)
+                    fi
+
+                    if [ "$(echo $fonction | grep -e "^set")" ]
                     then
-                        getter="$getter        $etat$ligne\n"
+                        setter="$setter        $etat$fonction : $out\n"
+                    elif [ "$(echo $fonction | grep -e "^get")" ]
+                    then
+                        getter="$getter        $etat$fonction : $out\n"
                     else
-                        meth="$meth        $etat$ligne\n"
+                        meth="$meth        $etat$fonction : $out\n"
                     fi
                 else
-                    attribut="$attribut        $etat$ligne\n"
+                    nbMot=$(echo $ligne | sed 's/[^ ]//g' | wc -c)
+                    out=$(echo $ligne | cut -d ' ' -f -$(($nbMot-1)))
+                    nom=$(echo $ligne | cut -d ' ' -f $(($nbMot))-)
+                    attribut="$attribut        $etat$nom : $out\n"
                 fi
             fi
         else
