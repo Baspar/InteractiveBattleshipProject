@@ -28,7 +28,7 @@ class TailleGrille{
         /// \fn TailleGrille(Taillegrille &tailleGrilleCp)
         /// \brief Constructeur par recopie de la classe TailleGrille
         /// \param tailleGrilleCp : TailleGrill a recopier
-        TailleGrille::TailleGrille(TailleGrille &tailleGrileCp);
+        TailleGrille(TailleGrille &tailleGrileCp);
 
         /// \fn int getLongueur()
         /// \brief Getter de longueur

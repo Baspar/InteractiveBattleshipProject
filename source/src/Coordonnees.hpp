@@ -27,20 +27,23 @@ class Coordonnees {
         /// Constructeur permettant d'instancier une coordonnée avec une abscisse et une ordonnée
         /// \param abs: entier correspondant à l'abscisse
         /// \param ord: entier correspondant à l'ordonnée
-        Coordonnees(int abs, int ord);
+        Coordonnees(const int abs, const int ord);
+
+        /// \fn Coordonnees(const Coordonnees)
+        /// \brief Contructeur par recopie
+        ///
+        /// Constructeur permettant d'instancier une coordonnée avec instance de Coordonnees
+        /// \param coord : Coordonnees a recopier
+        Coordonnees(const Coordonnees&);
 
         /// \fn int getAbscisse()
         /// \brief getteur de l'abscisse
         /// \return entier correspondant à l'abscisse
-        int getAbscisse();
+        int getAbscisse() const;
 
         /// \fn int getOrdonnee()
         /// \brief getteur de l'ordonnée
         /// \return entier correspondant à l'ordonnée
-        int getOrdonnee();
-
-
-
-
+        int getOrdonnee() const;
 };
 #endif

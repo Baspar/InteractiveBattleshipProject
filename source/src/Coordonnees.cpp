@@ -2,15 +2,20 @@
 
 using namespace std;
 
-Coordonnees::Coordonnees(int abs, int ord){
+Coordonnees::Coordonnees(const int abs, const int ord){
     abscisse = abs;
     ordonnee = ord;
 }
 
-int Coordonnees::getAbscisse(){
-    return abs;
+Coordonnees::Coordonnees(const Coordonnees& coord){
+    abscisse = coord.getAbscisse();
+    ordonnee = coord.getOrdonnee();
 }
 
-int Coordonnees::getOrdonnee(){
-    return ord;
+int Coordonnees::getAbscisse() const{
+    return abscisse;
+}
+
+int Coordonnees::getOrdonnee() const{
+    return ordonnee;
 }
