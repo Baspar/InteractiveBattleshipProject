@@ -25,11 +25,11 @@ class Cellule{
 
         /// \fn Cellule(Action actionInit, int typeCell)
         /// \brief Construit une Cellule de manière paramétrée
-        Cellule(Action actionInit, int typeCell);
+        Cellule(Action* actionInit, int typeCell);
 
         /// \fn void lancerAction()
         /// \brief Lance l'action et effectue les modifications nécessaires suite à cette action
-        void lancerAction();
+        void lancerAction() const;
 
         /// \fn virtual bool estAccessible();
         /// \brief Vérifie si la Cellule est Accessible ou non
@@ -37,16 +37,16 @@ class Cellule{
         /// Cette méthode est virtuelle car la classe est abstraite, elle sera
         /// implémentée dans les classes filles
         /// \return un booleen: vrai si la cellule est accessible, faux sinon
-        virtual bool estAccessible() = 0;
+        virtual bool estAccessible() const;
 
         /// \fn int getTypeDeCellule()
         /// \brief Getter typeDeCellule
         /// \return Type de cellule
-        int getTypeDeCellule();
+        int getTypeDeCellule() const;
 
         /// \fn int getActionCellule()
         /// \brief Getter Action
         /// \return action de la cellule
-        Action* getActionCellule();
+        Action* getActionCellule() const;
 };
 #endif
