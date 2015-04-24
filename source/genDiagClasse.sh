@@ -98,31 +98,30 @@ do
         fi
     done < $i
 
-
     if [ "$attribut" != "" ]
     then
         echo "    ==<b>Attribut(s)</b>==" >> uml/Classes.uml
-        echo -en "$attribut" >> uml/Classes.uml
+        echo -en "$attribut" |sort >> uml/Classes.uml
     fi
     if [ "$constr" != "" ]
     then
         echo "    ==<b>Constructeur(s)</b>==" >> uml/Classes.uml
-        echo -en "$constr" >> uml/Classes.uml
+        echo -en "$constr" |sort >> uml/Classes.uml
     fi
     if [ "$setter" != "" ]
     then
         echo "    ==<b>Setter(s)</b>==" >> uml/Classes.uml
-        echo -en "$setter" >> uml/Classes.uml
+        echo -en "$setter" |sort >> uml/Classes.uml
     fi
     if [ "$getter" != "" ]
     then
         echo "    ==<b>Getter(s)</b>==" >> uml/Classes.uml
-        echo -en "$getter" >> uml/Classes.uml
+        echo -en "$getter" |sort >> uml/Classes.uml
     fi
     if [ "$meth" != "" ]
     then
         echo "    ==<b>Methode(s)</b>==" >> uml/Classes.uml
-        echo -en "$meth" >> uml/Classes.uml
+        echo -en "$meth" |sort >> uml/Classes.uml
     fi
 
     echo "}" >> uml/Classes.uml
