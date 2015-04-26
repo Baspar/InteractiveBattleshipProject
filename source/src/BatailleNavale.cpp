@@ -8,5 +8,9 @@
 
 using namespace std;
 
-void BatailleNavale::jouer(Coordonnees coordonnees){
+void BatailleNavale::jouer(Coordonnees coordonnees){//TODO
+}
+void BatailleNavale::changerJoueur(){//TODO
+}
+BatailleNavale::BatailleNavale(PersonnageBN joueur1, PersonnageBN joueur2){//TODO
 }

@@ -30,7 +30,7 @@ class ActionChangementCarte : public Action{
         /// \brief Changement de carte
         ///
         /// Cette classe gère le changement de carte quand le joueur accède à une case qui permet de changer de carte
-        virtual void lancerAction();
+        void lancerAction();
 
         /// \fn ActionChangementCarte()
         /// \brief Constructeur

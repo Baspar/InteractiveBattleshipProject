@@ -5,5 +5,5 @@
 
 using namespace std;
 
-JoueurHumain::JoueurHumain(string nom){
+JoueurHumain::JoueurHumain(string nom){//TODO
 }

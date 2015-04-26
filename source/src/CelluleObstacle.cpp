@@ -4,10 +4,9 @@
 #include <iostream>
 
 using namespace std;
-CelluleObstacle::CelluleObstacle(){
-
+CelluleObstacle::CelluleObstacle(){//TODO
 }
 
-bool CelluleObstacle::estAccessible(){
+bool CelluleObstacle::estAccessible(){//DONE
     return false;
 }

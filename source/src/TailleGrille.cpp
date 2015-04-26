@@ -2,17 +2,17 @@
 
 using namespace std;
 
-int TailleGrille::getHauteur() const{
+int TailleGrille::getHauteur() const{//DONE
     return hauteur;
 }
-int TailleGrille::getLongueur() const{
+int TailleGrille::getLongueur() const{//DONE
     return longueur;
 }
-TailleGrille::TailleGrille(const TailleGrille &tailleGrileCp){
+TailleGrille::TailleGrille(const TailleGrille &tailleGrileCp){//DONE
     longueur = tailleGrileCp.getLongueur();
     hauteur = tailleGrileCp.getHauteur();
 }
-TailleGrille::TailleGrille(int lon, int hau){
+TailleGrille::TailleGrille(int lon, int hau){//DONE
     longueur=lon;
     hauteur=hau;
 }

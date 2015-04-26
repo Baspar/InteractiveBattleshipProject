@@ -38,6 +38,11 @@ class Jeu{
 	/// \brief Constructeur
     Jeu();
 
+	/// \fn Jeu(Combat comb)
+	/// \brief Constructeur parametre
+    /// \param comb : combat à utiliser
+    Jeu(Combat comb);
+
 	/// \fn bool partieFinie()
 	/// \brief voir si partie finie
 	/// \return Renvoie vrai si le jeu est fini, sinon faux

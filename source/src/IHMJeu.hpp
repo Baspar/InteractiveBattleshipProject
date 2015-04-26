@@ -38,7 +38,7 @@ class IHMJeu{
         ///
         /// Constructeur de la classe IHMJeu, initialise le jeu
         /// \param jeu : jeu donné en entrée
-        IHMJeu(Jeu* jeu);
+        IHMJeu(Jeu* jeuEntree);
 
         /// \fn Coordonnees saisieDeplacement()
         /// \brief Saisie deplacement

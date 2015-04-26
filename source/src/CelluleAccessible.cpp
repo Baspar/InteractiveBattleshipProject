@@ -5,17 +5,17 @@
 
 using namespace std;
 
-CelluleAccessible::Cellule():Cellule(NULL,0){
+CelluleAccessible::CelluleAccessible(){//TODO
 }
 
-CelluleAccessible::Cellule(Action actionInit):Cellule(actionInit,0){
+CelluleAccessible::CelluleAccessible(Action actionInit):Cellule(actionInit,0){//TODO
     occupant=NULL;
 }
 
-bool CelluleAccessible::estAccessible(){
+bool CelluleAccessible::estAccessible(){//TODO
     return true;
 }
 
-void CelluleAccessible::setPersonnage(personnage){
+void CelluleAccessible::setPersonnage(Personnage* personnage){//DONE
     occupant= personnage;
 }

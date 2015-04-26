@@ -5,5 +5,7 @@
 
 using namespace std;
 
-void Arme::tirer(Coordonnees coordonnees){}
-Arme::Arme(){}
+void Arme::tirer(Coordonnees coordonnees){//TODO
+}
+Arme::Arme(){//TODO
+}

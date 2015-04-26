@@ -5,30 +5,29 @@
 
 using namespace std;
 
-Personnage::Personnage(string nom){
-	
+Personnage::Personnage(string nom){//TODO
 }
 
-void Personnage::deplacer(Coordonnees coordonnees, Carte* carteEntree){
+void Personnage::deplacer(Coordonnees coordonnees, Carte* carteEntree){//TODO
     carteEntree->deplacerPersonnage(this, coordonnees);
     coord(coordonnees);
     carte=carteEntree;
 }
 
 
-Coordonnees Personnage::getCoordonnees(){
+Coordonnees Personnage::getCoordonnees(){//DONE
 	return coord;
 }
 
-Carte* Personnage::getCarte(){
+Carte* Personnage::getCarte(){//DONE
 	return carte;
 }
 
-void Personnage::setCoordonnees(Coordonnees coordSet){
+void Personnage::setCoordonnees(Coordonnees coordSet){//DONE
     coord(coordSet);
 }
 
 
-void Personnage::setCarte(Carte carteSet){
+void Personnage::setCarte(Carte carteSet){//DONE
     carte = &carteSet;
 }

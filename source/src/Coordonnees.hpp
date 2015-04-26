@@ -34,7 +34,7 @@ class Coordonnees {
         ///
         /// Constructeur permettant d'instancier une coordonnée avec instance de Coordonnees
         /// \param coord : Coordonnees a recopier
-        Coordonnees(const Coordonnees&);
+        Coordonnees(const Coordonnees& coord);
 
         /// \fn int getAbscisse()
         /// \brief getteur de l'abscisse

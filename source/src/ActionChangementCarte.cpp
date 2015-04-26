@@ -6,5 +6,7 @@
 
 using namespace std;
 
-void ActionChangementCarte::lancerAction(){}
-ActionChangementCarte::ActionChangementCarte(){}
+void ActionChangementCarte::lancerAction(){//TODO
+}
+ActionChangementCarte::ActionChangementCarte(){//TODO
+}

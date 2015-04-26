@@ -17,6 +17,6 @@ class AutreAction : public Action{
     public:
         /// \fn virtual void lancerAction()
         /// \brief lancer autre action
-        virtual void lancerAction();
+        void lancerAction();
 };
 #endif

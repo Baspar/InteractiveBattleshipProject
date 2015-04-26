@@ -31,7 +31,7 @@ class CelluleAccessible:public Cellule{
         /// \fn virtual bool estAccessible()
         /// \brief Vérifie si une classe est bien accessible
         /// \return un booleen vrai si la classe est accessible, faux sinon
-        virtual bool estAccessible();
+        bool estAccessible();
 
         /// \fn void setPersonnage(Personnage* personnage)
         /// \brief place un personnage sur une cellule

@@ -3,4 +3,9 @@
 #include "PersonnageBN.hpp"
 
 using namespace std;
-PersonnageBNHumain::PersonnageBNHumain(){}
+PersonnageBNHumain::PersonnageBNHumain(){//TODO
+}
+Grille PersonnageBNHumain::placerBateaux(){//TODO
+}
+Coordonnees PersonnageBNHumain::caseAViser(){//TODO
+}

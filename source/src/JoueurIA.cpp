@@ -5,5 +5,5 @@
 
 using namespace std;
 
-JoueurIA::JoueurIA(string nom){
+JoueurIA::JoueurIA(string nom){//TODO
 }

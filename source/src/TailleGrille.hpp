@@ -23,7 +23,7 @@ class TailleGrille{
         /// \brief Constructeur de la classe TailleGrille
         /// \param lon : longueur de la grille
         /// \param hau : hauteur de la grille
-        TailleGrille(int lon, int haut);
+        TailleGrille(int lon, int hau);
 
         /// \fn TailleGrille(Taillegrille &tailleGrilleCp)
         /// \brief Constructeur par recopie de la classe TailleGrille

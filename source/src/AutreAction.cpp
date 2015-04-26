@@ -4,6 +4,5 @@
 
 using namespace std;
 
-void AutreAction::lancerAction(){
+void AutreAction::lancerAction(){//TODO
 }
-

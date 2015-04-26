@@ -41,7 +41,7 @@ class Personnage{
         /// Permet le déplacement d'un personnage sur la carte et les coordonnées en entrée
         /// \param coordonnees : coordonnées de destination
         /// \param carte : pointeur sur la carte de destination
-        void deplacer(Coordonnees coordonnees, Carte* carte);
+        void deplacer(Coordonnees coordonnees, Carte* carteEntree);
 
         /// \fn Coordonnees getCoordonnees()
         /// \brief Getter Coordonnees

@@ -2,15 +2,14 @@
 
 using namespace std;
 
-Bateau::Bateau(int tailleIn){
+Bateau::Bateau(int tailleIn){//DONE
     taille = tailleIn;
     PV = tailleIn;
 }
-
-bool Bateau::estCoule(){
+bool Bateau::estCoule(){//DONE
     return (PV==0);
 }
-void Bateau::retirerPV (){
+void Bateau::retirerPV (){//DONE
     if(PV>0)
         PV--;
 }

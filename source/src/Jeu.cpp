@@ -11,12 +11,12 @@
 using namespace std;
 
 
-Jeu::Jeu(){
+Jeu::Jeu(){//TODO
 }
 
 
 
-Jeu::Jeu(Combat comb) : JoueurHumain("Test1"){
+Jeu::Jeu(Combat comb) : JoueurHumain("Test1"){//WIP
     int nbPersonnageNonJouables=0;
     vector<int> listeIdCarte = vector<int>();
     vector<Coordonnees> listeCoord = vector<Coordonnees>();
@@ -29,12 +29,12 @@ Jeu::Jeu(Combat comb) : JoueurHumain("Test1"){
 }
 
 
-bool Jeu::partieFinie(){
+bool Jeu::partieFinie(){//DONE
     return terminee;
 }
 
 
-void Jeu::jouer(Coordonnees coordonnees){
+void Jeu::jouer(Coordonnees coordonnees){//TODO
     personnageJouable->deplacer(coordonnees);
     actionEnCours = personnageJouable->getCarte()->getCel((personnageJouable->getCoordonnees())).getActionCellule();
     if(&actionEnCours!=nullptr)
@@ -42,15 +42,15 @@ void Jeu::jouer(Coordonnees coordonnees){
 }
 
 
-Action Jeu::getActionEnCours(){
+Action Jeu::getActionEnCours(){//DONE
     return actionEnCours;
 }
 
 
-*PersonnageJouable Jeu::getPersonnageJouable(){
+*PersonnageJouable Jeu::getPersonnageJouable(){//DONE
     return personnageJouable;
 }
 
-void Jeu::setTerminee(bool bol){
+void Jeu::setTerminee(bool bol){//DONE
     terminee=bol;
 }

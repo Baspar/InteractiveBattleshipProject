@@ -25,7 +25,7 @@ class Bateau {
         ///
         /// Constructeur de la classe Bateau
         /// \param taille: entier taille du bateau
-        Bateau(int taille);
+        Bateau(int tailleIn);
 
         /// \fn bool estCoule()
         /// \brief bateau coulé ou non

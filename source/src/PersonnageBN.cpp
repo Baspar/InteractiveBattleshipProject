@@ -9,12 +9,5 @@
 #include <vector>
 
 using namespace std;
-PersonnageBN(){
-}
-
-Grille PersonnageBN::placerBateaux(){
-    return Grille();
-}
-Coordonnees PersonnageBN::caseAViser(){
-    return Coordonnees(0,0);
+PersonnageBN::PersonnageBN(){//TODO
 }

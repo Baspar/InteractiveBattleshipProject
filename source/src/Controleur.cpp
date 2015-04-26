@@ -4,13 +4,13 @@
 #include "IHMBN.hpp"
 
 using namespace std;
-Controleur::Controleur(){
+Controleur::Controleur(){//TODO
     jeu = new Jeu();
     ihmJeu = new IHMJeu(jeu);
     lancerjeu();
-}	
+}
 
-void Controleur::tourDeJeu (){
+void Controleur::tourDeJeu(){//TODO
     ihmJeu->afficherJeu();
     jeu->jouer(ihmJeu->saisieDeplacement());
     //code pour lancer la partie controleur correspondant à l'action effectuée (si besoin)
@@ -18,15 +18,14 @@ void Controleur::tourDeJeu (){
 }
 
 
-void Controleur::lancerJeu (){
+void Controleur::lancerJeu(){//DONE
     while(!jeu->partieFinie())
         tourDeJeu();
 }
 
-
-void Controleur::actionBatailleNavale (){
+void Controleur::actionBatailleNavale(){//TODO
 }
 
 
-void Controleur::tourDeJeuBatailleNavale (){
+void Controleur::tourDeJeuBatailleNavale(){//TODO
 }

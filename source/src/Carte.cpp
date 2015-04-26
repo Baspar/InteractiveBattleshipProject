@@ -8,7 +8,8 @@
 #include <vector>
 
 using namespace std;
-Carte::Carte(int id, TailleGrille tailleGrilleInit) : tailleGrille(tailleGrilleInit){
+
+Carte::Carte(int id, TailleGrille tailleGrilleInit) : tailleGrille(tailleGrilleInit){//WIP
     switch (id){
             case 1 :{
             //on fait la carte préfaites n°1!
@@ -19,7 +20,7 @@ Carte::Carte(int id, TailleGrille tailleGrilleInit) : tailleGrille(tailleGrilleI
     }
  }
 
-void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){
+void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){//WIP
     Carte* carte = personnage->getCarte();
     Coordonnees coord = personnage->getCoordonnees();
     CelluleAccessible* cell = carte->getCel(coord);
@@ -28,11 +29,11 @@ void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){
 }
 
 
-Cellule Carte::getCel(Coordonnees coord){
+Cellule Carte::getCel(Coordonnees coord){//DONE
     return cellules[coord.getAbscisse()][coord.getOrdonnee()];
 }
 
 
-vector<vector<Cellule> > Carte::getCellules(){
+vector<vector<Cellule> > Carte::getCellules(){//DONE
      return cellules;
 }

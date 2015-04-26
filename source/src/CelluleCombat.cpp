@@ -5,4 +5,5 @@
 
 using namespace std;
 
-void Cellule();
+CelluleCombat::CelluleCombat(){//TODO
+}

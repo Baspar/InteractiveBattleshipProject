@@ -2,4 +2,8 @@
 #include <iostream>
 
 using namespace std;
-Action::Action(){}
+Action::Action(){//TODO
+}
+string Action::getTexteInteraction(){//TODO
+    return "";
+}

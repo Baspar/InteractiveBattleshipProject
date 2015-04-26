@@ -7,12 +7,12 @@
 
 using namespace std;
 
-IHMJeu::IHMJeu (Jeu* jeuEntree){
+IHMJeu::IHMJeu (Jeu* jeuEntree){//WIP
     jeu=jeuEntree;
 }
 
 
-Coordonnees IHMJeu::saisieDeplacement (){
+Coordonnees IHMJeu::saisieDeplacement (){//WIP
     int deplacement=0;
     cin>> deplacement;
     switch (deplacement){
@@ -25,21 +25,21 @@ Coordonnees IHMJeu::saisieDeplacement (){
     }
 }
 
-void IHMJeu::afficherJeu (){
+void IHMJeu::afficherJeu (){//WIP
     this->afficherCarteCourante();
     this->afficherInteraction();
     this->afficherSaisie();
 }
 
 
-void IHMJeu::afficherSaisie (){
+void IHMJeu::afficherSaisie (){//WIP
     cout<<endl;
     cout<<"Affichage de la zone de saisie";
     cout<<endl;
 }
 
 
-void IHMJeu::afficherInteraction(){
+void IHMJeu::afficherInteraction(){//WIP
     cout<<endl;
     cout<<"Affichage de l'action en cours";
     cout<<endl;
@@ -48,7 +48,7 @@ void IHMJeu::afficherInteraction(){
 }
 
 
-void IHMJeu::afficherCarteCourante(){
+void IHMJeu::afficherCarteCourante(){//WIP
     cout<<endl;
     cout<<"Affichage de la carte courante";
     cout<<endl;

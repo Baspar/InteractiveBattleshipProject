@@ -4,9 +4,11 @@
 
 using namespace std;
 
-Case::Case(){
+Case::Case(){//DONE
     touche=false;
     bateau=0;
 }
-void Case::tirerDessus (){
+Case::Case(Bateau* bateau){//TODO
+}
+void Case::tirerDessus (){//TODO
 }

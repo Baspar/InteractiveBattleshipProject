@@ -24,7 +24,7 @@ class ActionCombat : public Action{
         /// \brief Lancement de l'action
         ///
         /// Cette classe gère le lancement du combat en fonction de la case où le joueur se trouve
-        virtual void lancerAction();
+        void lancerAction();
 
         /// \fn ActionCombat()
         /// \brief Constructeur

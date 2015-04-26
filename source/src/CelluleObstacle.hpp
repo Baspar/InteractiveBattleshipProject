@@ -25,6 +25,6 @@ class CelluleObstacle :public Cellule{
         /// \fn virtual bool estAccessible()
         /// \brief vérifie si une case est accessible
         /// \return retourne faux car la cellule contient un obstacle
-        virtual bool estAccessible();
+        bool estAccessible();
 };
 #endif
