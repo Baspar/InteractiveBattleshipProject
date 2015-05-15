@@ -137,8 +137,8 @@ class Controleur{
     ==<b>Constructeur(s)</b>==
         +<color:green>Controleur()</color>
     ==<b>Methode(s)</b>==
-        +<color:green><color:red><color:green><color:red>actionBatailleNavale() : void</color>
-        +<color:green><color:red><color:green><color:red><color:red>tourDeJeuBatailleNavale() : void</color>
+        +<color:green><color:red><color:green><color:green>actionBatailleNavale() : void</color>
+        +<color:green><color:red><color:green><color:green><color:green>tourDeJeuBatailleNavale() : void</color>
         +<color:green><color:red><color:green>lancerJeu() : void</color>
         +<color:green><color:red>tourDeJeu() : void</color>
 }
@@ -166,13 +166,15 @@ class IHMBN{
     ==<b>Attribut(s)</b>==
         -<color:red><color:red>batailleNavale : BatailleNavale*
     ==<b>Constructeur(s)</b>==
-        +<color:red>IHMBN(BatailleNavale* batailleNavale)</color>
+        +<color:green>IHMBN(BatailleNavale* bn)</color>
     ==<b>Methode(s)</b>==
+        +<color:green><color:orange>afficherJeu() : void</color>
+        +<color:green><color:orange><color:red>afficherFinBN() : void</color>
+        +<color:green><color:orange><color:red><color:red>afficherResultatTour() : void</color>
+        +<color:green><color:orange><color:red><color:red><color:green><color:red>saisirPlacementBateaux(Personnage* pers) : Grille</color>
+        +<color:green><color:orange><color:red><color:red><color:green>saisieCoup() : Coordonnees</color>
         -<color:red>afficherGrilleRadar() : void</color>
-        -<color:red><color:red>afficherGrilleBateau() : void</color>
-        +<color:red><color:red>afficherJeu() : void</color>
-        +<color:red><color:red><color:red><color:red>saisirPlacementBateaux() : Grille</color>
-        +<color:red><color:red><color:red>saisieCoup() : Coordonnees</color>
+        -<color:red><color:red>afficherGrilleBateaux() : void</color>
 }
 class IHMJeu{
     ==<b>Attribut(s)</b>==

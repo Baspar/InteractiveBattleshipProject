@@ -3,19 +3,47 @@
 #include "Coordonnees.hpp"
 #include "Grille.hpp"
 #include "BatailleNavale.hpp"
+#include <iostream>
 
 using namespace std;
-IHMBN::IHMBN(BatailleNavale* batailleNavale){//TODO
+IHMBN::IHMBN (BatailleNavale* bn){//DONE
+	batailleNavale=bn;
 }
-void IHMBN::afficherJeu (){//TODO
+
+void IHMBN::afficherJeu (){//WIP
+	afficherGrilleBateaux();
+	afficherGrilleRadar();
 }
-Coordonnees IHMBN::saisieCoup (){//TODO
-    return Coordonnees(0, 0);
+
+Coordonnees IHMBN::saisieCoup (){//DONE
+	cout << "Veuillez saisir les coordonnées de la case que vous souhaitez viser";
+	int x;
+	int y;
+	cin >> x;
+	cin >> y;
+	Coordonnees coord(x, y);
+    return coord;
 }
-Grille IHMBN::saisirPlacementBateaux (){//TODO
+
+Grille IHMBN::saisirPlacementBateaux (Personnage* pers){//TODO
+	for (Bateau bat : pers->
     return Grille();
 }
-void IHMBN::afficherGrilleBateau(){//TODO
+
+void IHMBN::afficherGrilleBateaux(){//TODO
+
 }
+
 void IHMBN::afficherGrilleRadar(){//TODO
+
 }
+
+void IHMBN::afficherFinBN(){//TODO
+
+}
+
+void IHMBN::afficherResultatTour(){//TODO
+
+}
+
+
