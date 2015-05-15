@@ -11,10 +11,7 @@ Controleur::Controleur(){//DONE
     lancerJeu();
 }
 
-void Controleur::getPersonnage1(){//TODO
-}
-void Controleur::getPersonnage2(){//TODO
-}
+
 void Controleur::tourDeJeu(){//TODO
     ihmJeu->afficherJeu();
     jeu->jouer(ihmJeu->saisieDeplacement());

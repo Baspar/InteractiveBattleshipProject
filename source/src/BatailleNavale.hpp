@@ -54,5 +54,28 @@ class BatailleNavale : public Combat{
         /// \param coordonnees: coordonnées choisies par le joueur
         void jouer(Coordonnees coordonnees);
 
+        PersonnageBN* getPersonnage1();
+        /// \fn PersonnageBN* getPersonnage1()
+        /// \brief Getter du Joueur 1
+        ///
+        /// \return PersonnageBN*: pointeur sur personnage 1
+
+        PersonnageBN* getPersonnage2();
+        /// \fn PersonnageBN* getPersonnage2()
+        /// \brief Getter du Joueur 2
+        ///
+        /// \return PersonnageBN*: pointeur sur personnage 2
+
+        Grille getGrille1();
+        /// \fn Grille getGrille1()
+        /// \brief Getter de la grille 1
+        ///
+        /// \return Grille: grille 1
+
+        Grille getGrille2();
+        /// \fn Grille getGrille2()
+        /// \brief Getter de la grille 2
+        ///
+        /// \return Grille: grille 2
 };
 #endif
