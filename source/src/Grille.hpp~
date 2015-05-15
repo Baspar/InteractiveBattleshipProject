@@ -64,7 +64,7 @@ class Grille{
 	Case getCaseElt(Coordonnees coordonnees);
 
 
-	/// \fn void placerBateau(*Bateau bateau, Coordonnees caseDepart, Coordonnees caseArrivee)
+	/// \fn void placerBateau(*Bateau bateau, Case caseDepart, Case caseArrivee)
 	/// \brief place le bateau
 	///
 	/// \param bateau : bateau à placer sur la case
@@ -73,22 +73,14 @@ class Grille{
 	void placerBateau(Bateau *bateau, const Coordonnees caseDepart, const Coordonnees caseArrivee);
 
 
-	/// \fn bool placementBateauValide(*Bateau bateau, Coordonnnes caseDepart, Coordonnes caseArrivee)
-	/// \brief vérifie le placement bateau
+	/// \fn bool placementBateauValide(*Bateau bateau, Case caseDepart, Case caseArrivee)
+	/// \brief vérifie le placement baeaut
 	///
 	/// \param bateau : bateau à placer sur la case
 	/// \param caseDepart : case de départ sur laquelle nous placons le bateau
 	/// \param caseArrivee : case d'arrivee sur laquelle nous placons le bateau
 	/// \return bool : retourne vrai si on peut placer le bateau faux sinon
 	bool placementBateauValide(Bateau *bateau, const Coordonnees caseDepart, const Coordonnees caseArrivee);
-
-
-	/// \fn bool coupValide(const Coordonnees kase)
-	/// \brief vérifie la validité du coup
-	///
-	/// \param kase : case que l'on veux vérifier
-	/// \return bool : retourne vrai si on peut toucher la case
-	bool placementBateauValide(const Coordonnees kase);
 
 
 	/// \fn void copy(Grille grille)
