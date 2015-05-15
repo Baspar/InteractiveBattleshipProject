@@ -120,6 +120,11 @@ class Grille{
         /// \brief Getter de tailleGrille
         /// \return tailleGrille : tailleGrille de notre grille
         TailleGrille getTailleGrille() const;
+
+        /// \fn bool grilleVide() const;
+        /// \brief Vérifie si une Grille est vide ou non
+        /// \return bool : true si grille est vide, false sinon 
+        bool grilleVide() const;
 };
 
 #endif
