@@ -39,5 +39,12 @@ class Bateau {
         ///
         /// méthode retire un point de vie au bateau s'il a été touché
         void retirerPV();
+
+	/// \fn int getTailleBateau()
+	/// \brief renvoie la taille du bateau 
+	///
+	/// getter de taille bateau
+	/// \return int: la taille du bateau
+	int getTailleBateau() const;
 };
 #endif

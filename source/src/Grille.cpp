@@ -4,6 +4,7 @@
 #include "Coordonnees.hpp"
 #include "Case.hpp"
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -14,10 +15,18 @@ Grille::Grille(int longueur, int hauteur) : tailleGrille(longueur, hauteur){//DO
 	}
 }
 
+Grille::Grille(const Grille& grille) :tailleGrille(grille.getTailleGrille().getLongueur(), grille.getTailleGrille().getHauteur()){
+	cases.resize(grille.getTailleGrille().getLongueur());
+	for(int i=0; i<grille.getTailleGrille().getLongueur(); i++){
+		cases[i].resize(grille.getTailleGrille().getHauteur());
+	}
+	setCases(grille.getCases());	
+}
 
-Case Grille::getCase(Coordonnees coordonnees){//DONE
+
+Case Grille::getCaseElt(const Coordonnees coordonnees){//DONE
 	Case c;
-	c=cases.at(coordonnees.getAbscisse()).at(coordonnees.getOrdonnee());
+	c.copy(cases.at(coordonnees.getAbscisse()).at(coordonnees.getOrdonnee()));
 	return c;
 }
 
@@ -52,6 +61,91 @@ void Grille::placerBateau(Bateau *bateau, const Coordonnees caseDepart, const Co
 	}
 }
 
-void Grille::copy(const Grille grille){
+void Grille::copy(const Grille grille){//DONE
+	setTailleGrille(grille.getTailleGrille());
+	cases.resize(grille.getTailleGrille().getLongueur());
+	for(int i=0; i<grille.getTailleGrille().getLongueur(); i++){
+		cases[i].resize(grille.getTailleGrille().getHauteur());
+	}
+	setCases(grille.getCases());	
+}
 
+
+void Grille::setTailleGrille(const TailleGrille tailleGrillecp){
+	tailleGrille=tailleGrille;
+}
+
+void Grille::setCases(const vector<vector<Case> > casescp){
+	cases=casescp;
+}
+	
+vector<vector<Case> > Grille::getCases() const{
+	return cases;
+}
+	
+TailleGrille Grille::getTailleGrille() const{
+	return tailleGrille;
+}
+
+bool Grille::verifierPlacement( Bateau *bateau, const Coordonnees caseDepart, const Coordonnees caseArrivee){
+	//Verification de la taille du bateau
+	if (!(bateau->getTailleBateau()==abs(caseDepart.getAbscisse()-caseArrivee.getAbscisse()))||(bateau->getTailleBateau()==abs(caseDepart.getOrdonnee()-caseArrivee.getOrdonnee())))
+		return false;
+
+	//Bateau en colonne
+	if(caseDepart.getAbscisse()==caseArrivee.getAbscisse()){
+		//caseArrivee a gauche
+		if(caseDepart.getOrdonnee()>caseArrivee.getOrdonnee()){
+			for(int i=caseArrivee.getOrdonnee();i<(caseDepart.getOrdonnee()+1);i++)
+				if(cases.at(caseDepart.getAbscisse()).at(i).getBateau()==0)
+				return false;
+		}
+		//caseArrivee a droite
+		else {
+			for(int i=caseDepart.getOrdonnee();i<(caseArrivee.getOrdonnee()+1);i++)
+				if(cases.at(caseDepart.getAbscisse()).at(i).getBateau()==0)
+				return false;
+		}
+	}
+	//Bateau en ligne
+	else {
+		//caseArrivee en haut
+		if(caseDepart.getAbscisse()>caseArrivee.getAbscisse()){
+			for(int i=caseArrivee.getAbscisse();i<(caseDepart.getAbscisse()+1);i++)
+				if(cases.at(i).at(caseDepart.getOrdonnee()).getBateau()==0)
+				return false;
+		}
+		//caseArrivee en bas
+		else {
+			for(int i=caseDepart.getAbscisse();i<(caseArrivee.getAbscisse()+1);i++)
+				if(cases.at(i).at(caseArrivee.getOrdonnee()).getBateau()==0)
+				return false;
+		}
+
+	}	
+	return true;
+
+}
+
+bool Grille::verifierCase(const Coordonnees caseDepart, const Coordonnees caseArrivee){
+	//Abscisse de depart dans la grille
+	if (!(caseDepart.getAbscisse() < getTailleGrille().getLongueur()))
+		return false;
+	//Ordonnee de depart dans la grille
+	if (!(caseDepart.getOrdonnee() < getTailleGrille().getHauteur()))
+		return false;
+	//Abscisse d arrivee dans la grille
+	if (!(caseArrivee.getAbscisse() < getTailleGrille().getLongueur()))
+		return false;
+	//Ordonnee d arrivee dans la grille
+	if (!(caseArrivee.getOrdonnee() < getTailleGrille().getHauteur()))
+		return false;
+	//Alignement des cases
+	if (!((caseArrivee.getAbscisse()==caseDepart.getAbscisse())||(caseArrivee.getOrdonnee()==caseDepart.getOrdonnee())))
+		return false;
+	return true;
+}
+
+bool Grille::placementBateauValide(Bateau *bateau, const Coordonnees caseDepart, const Coordonnees caseArrivee){
+	return (verifierPlacement(bateau,caseDepart,caseArrivee)&&verifierCase(caseDepart,caseArrivee));
 }
