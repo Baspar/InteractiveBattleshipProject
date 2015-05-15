@@ -26,6 +26,10 @@ vector<Bateau*> PersonnageBN::getBateaux(){//DONE
 	return bateaux;
 }
 
+void PersonnageBN::setNom(string nvnom){//DONE
+	nom=nvnom;
+}
+
 void PersonnageBN::setTailleGrille(TailleGrille tg){//DONE
 	tailleGrille = tg;
 }

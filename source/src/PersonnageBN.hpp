@@ -31,6 +31,8 @@ class PersonnageBN{
         vector<Bateau*> bateaux;
 
     public:
+	PersonnageBN();
+	
         /// \fn TailleGrille getTailleGrille()
         /// \brief getters de tailleGrille
         ///
@@ -42,6 +44,12 @@ class PersonnageBN{
         ///
         /// \return string nom du PersonnageBN
         string getNom();
+
+	/// \fn void setNom(string nvnom);
+        /// \brief Setter du nom
+        ///
+        /// \param nvnom: nom du PersonnageBN
+        void setNom(string nvnom);
 
         /// \fn Arme* getArme()
         /// \brief getters du pointeur sur Arme

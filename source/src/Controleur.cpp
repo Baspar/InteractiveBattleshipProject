@@ -50,16 +50,22 @@ void Controleur::actionBatailleNavale(){//DONE
 
 
 void Controleur::tourDeJeuBatailleNavale(){//DONE
+	Coordonnees coord=Coordonnees(-1,-1);
 
 	//Affiche les grilles des joueurs
 	ihmBN->afficherJeu();
 
 	//caseAViser renvoie null si c'est un joueur humain, et des coordonnees si c'est joueurIA
-	if (batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser().coordonneesVides())
-		batailleNavale->jouer(ihmBN->saisieCoup());
-	else batailleNavale->jouer(batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser());
+	if (batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser().coordonneesVides()){
+		coord.copy(ihmBN->saisieCoup());
+		batailleNavale->jouer(coord);
+	}
+	else { 
+		coord.copy(batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser());
+		batailleNavale->jouer(coord);
+	}
 
 	//Affiche le résultat du tour
-	ihmBN->afficherResultatTour();
+	ihmBN->afficherResultatTour(coord);
 }
 

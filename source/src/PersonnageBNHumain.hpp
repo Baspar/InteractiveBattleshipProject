@@ -6,6 +6,11 @@
 /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "PersonnageBN.hpp"
+#include "TailleGrille.hpp"
+#include "Arme.hpp"
+#include "Coordonnees.hpp"
+#include "Bateau.hpp"
+#include <vector>
 
 using namespace std;
 
@@ -30,10 +35,16 @@ class PersonnageBNHumain : public PersonnageBN{
         Coordonnees coordonneesAViser();
 
 	public :
-        /// \fn PersonnageBNHumain()
+	
+
+        /// \fn PersonnageBNHumain(TailleGrille nvtailleGrille, string nvNom, Arme* nvArme, vector<Bateau*> nvbateaux)
         /// \brief Constructeur
         ///
         /// Constructeur de la classe PersonnageBNHumain
-        PersonnageBNHumain();
+	/// \param nvtailleGrille : nouvelle taille de grille
+	/// \param nvNom : nom du personnageBN
+	/// \param nvArme : nom de l'arme du presonnageBN
+	/// \param bateaux: bateaux à ajouter
+        PersonnageBNHumain(TailleGrille nvtailleGrille, string nvNom, Arme* nvArme, vector<Bateau*> nvbateaux);
 };
 #endif

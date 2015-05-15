@@ -64,7 +64,7 @@ class IHMBN{
         /// \brief Affichage phrase après tour
         ///
         /// Affiche le résultat du coup joué
-        void afficherResultatTour();
+        void afficherResultatTour(Coordonnees coord);
 
 
         /// \fn Coordonnees saisieCoup()
