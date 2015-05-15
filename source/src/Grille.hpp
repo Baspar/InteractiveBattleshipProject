@@ -92,23 +92,23 @@ class Grille{
 	/// \fn setTailleGrille(const TailleGrille tailleGrille)
 	/// \brief setter de tailleGrille
 	/// \param tailleGrille : tailleGrille de notre grille
-	void setTailleGrille(const TailleGrille tailleGrille);
+	void setTailleGrille(const TailleGrille tailleGrillecp);
 
 	/// \fn setCases(const vector<vector<Case> > cases)
 	/// \brief setter de cases
-	/// \param cases : cases de notre grille 
-	void setCases(const vector<vector<Case> > cases);
+	/// \param cases : cases de notre grille
+	void setCases(const vector<vector<Case> > casescp);
 
 	/// \fn vector<vector<Case> > getCases() const
 	/// \brief Getter de cases
-	/// \return cases : cases de notre grille 
+	/// \return cases : cases de notre grille
 	vector<vector<Case> > getCases() const;
 
 	/// \fn TailleGrille getTailleGrille() const
 	/// \brief Getter de tailleGrille
 	/// \return tailleGrille : tailleGrille de notre grille
 	TailleGrille getTailleGrille() const;
-		
+
 };
 
 #endif

@@ -9,5 +9,3 @@
 #include <vector>
 
 using namespace std;
-PersonnageBN::PersonnageBN(){//TODO
-}

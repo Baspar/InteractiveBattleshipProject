@@ -20,7 +20,7 @@ Grille::Grille(const Grille& grille) :tailleGrille(grille.getTailleGrille().getL
 	for(int i=0; i<grille.getTailleGrille().getLongueur(); i++){
 		cases[i].resize(grille.getTailleGrille().getHauteur());
 	}
-	setCases(grille.getCases());	
+	setCases(grille.getCases());
 }
 
 
@@ -67,27 +67,27 @@ void Grille::copy(const Grille grille){//DONE
 	for(int i=0; i<grille.getTailleGrille().getLongueur(); i++){
 		cases[i].resize(grille.getTailleGrille().getHauteur());
 	}
-	setCases(grille.getCases());	
+	setCases(grille.getCases());
 }
 
 
-void Grille::setTailleGrille(const TailleGrille tailleGrillecp){
+void Grille::setTailleGrille(const TailleGrille tailleGrillecp){//DONE
 	tailleGrille=tailleGrille;
 }
 
-void Grille::setCases(const vector<vector<Case> > casescp){
+void Grille::setCases(const vector<vector<Case> > casescp){//DONE
 	cases=casescp;
 }
-	
-vector<vector<Case> > Grille::getCases() const{
+
+vector<vector<Case> > Grille::getCases() const{//DONE
 	return cases;
 }
-	
-TailleGrille Grille::getTailleGrille() const{
+
+TailleGrille Grille::getTailleGrille() const{//DONE
 	return tailleGrille;
 }
 
-bool Grille::verifierPlacement( Bateau *bateau, const Coordonnees caseDepart, const Coordonnees caseArrivee){
+bool Grille::verifierPlacement(Bateau *bateau, const Coordonnees caseDepart, const Coordonnees caseArrivee){//DONE
 	//Verification de la taille du bateau
 	if (!(bateau->getTailleBateau()==abs(caseDepart.getAbscisse()-caseArrivee.getAbscisse()))||(bateau->getTailleBateau()==abs(caseDepart.getOrdonnee()-caseArrivee.getOrdonnee())))
 		return false;
@@ -122,12 +122,12 @@ bool Grille::verifierPlacement( Bateau *bateau, const Coordonnees caseDepart, co
 				return false;
 		}
 
-	}	
+	}
 	return true;
 
 }
 
-bool Grille::verifierCase(const Coordonnees caseDepart, const Coordonnees caseArrivee){
+bool Grille::verifierCase(const Coordonnees caseDepart, const Coordonnees caseArrivee){//DONE
 	//Abscisse de depart dans la grille
 	if (!(caseDepart.getAbscisse() < getTailleGrille().getLongueur()))
 		return false;
@@ -146,6 +146,6 @@ bool Grille::verifierCase(const Coordonnees caseDepart, const Coordonnees caseAr
 	return true;
 }
 
-bool Grille::placementBateauValide(Bateau *bateau, const Coordonnees caseDepart, const Coordonnees caseArrivee){
+bool Grille::placementBateauValide(Bateau *bateau, const Coordonnees caseDepart, const Coordonnees caseArrivee){//DONE
 	return (verifierPlacement(bateau,caseDepart,caseArrivee)&&verifierCase(caseDepart,caseArrivee));
 }

@@ -41,7 +41,7 @@ class Bateau {
         void retirerPV();
 
 	/// \fn int getTailleBateau()
-	/// \brief renvoie la taille du bateau 
+	/// \brief renvoie la taille du bateau
 	///
 	/// getter de taille bateau
 	/// \return int: la taille du bateau

@@ -31,10 +31,6 @@ class PersonnageBN{
         vector<Bateau*> bateaux;
 
     public:
-        /// \fn PersonnageBN()
-        /// \brief crée un PersonnageBN
-        PersonnageBN();
-
         /// \fn virtual Grille placerBateaux ()
         /// \brief le PersonnageBN place les Bateaux sur sa Grille
         ///

@@ -13,6 +13,6 @@ void Bateau::retirerPV (){//DONE
     if(PV>0)
         PV--;
 }
-int Bateau::getTailleBateau() const{//WIP
+int Bateau::getTailleBateau() const{//DONE
 	return taille;
 }
