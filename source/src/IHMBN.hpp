@@ -34,12 +34,19 @@ class IHMBN{
 
 
     public:
+
         /// \fn IHMBN(BatailleNavale* bn)
         /// \brief Constructeur paramétré
         ///
         /// Constructeur parametré de la classe IHMBN
         /// \param bn : la bataille navale utilisée
         IHMBN(BatailleNavale* bn);
+
+        /// \fn batailleNavale* getBN()
+        /// \brief getter de bataille navale
+        ///
+        /// \return batailleNavale* : pointeur sur bataille navale
+        BatailleNavale* getBN();
 
         /// \fn void afficherJeu()
         /// \brief Affichage jeu

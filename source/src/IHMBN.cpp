@@ -10,6 +10,10 @@ IHMBN::IHMBN (BatailleNavale* bn){//DONE
 	batailleNavale=bn;
 }
 
+BatailleNavale* IHMBN::getBN(){//DONE
+	return batailleNavale;
+}
+
 void IHMBN::afficherJeu (){//WIP
 	afficherGrilleBateaux();
 	afficherGrilleRadar();
@@ -28,7 +32,7 @@ Coordonnees IHMBN::saisieCoup () const{//DONE
 Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
 	Grille grille(pers->getTailleGrille().getLongueur(),pers->getTailleGrille().getHauteur());
 	for (Bateau* bat : pers->getBateaux()){
-		cout << "Veuillez placer le bateau de longueur "<< bat->getLongueur();
+		cout << "Veuillez placer le bateau de longueur "<< bat->getTailleBateau();
 		cout << "Veuillez saisir les coordonnées de départ";
 		int x,y;
 		cin >> x;
@@ -48,7 +52,7 @@ Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
 }
 
 void IHMBN::afficherGrilleBateaux(){//DONE
-	Grille grille(bn->getGrilles()[bn->getIndiceJoueurCourant()]);
+	Grille grille(getBN()->getGrilles()[getBN()->getIndiceJoueurCourant()]);
 
 	cout << endl << "Grille personnelle" << endl;
 
@@ -73,7 +77,7 @@ void IHMBN::afficherGrilleBateaux(){//DONE
 }
 
 void IHMBN::afficherGrilleRadar(){//DONE
-	Grille grille(bn->getGrilles()[(bn->getIndiceJoueurCourant()+1)%2]);
+	Grille grille(getBN()->getGrilles()[(getBN()->getIndiceJoueurCourant()+1)%2]);
 
 	cout << endl << "Grille adversaire" << endl;
 
@@ -98,8 +102,8 @@ void IHMBN::afficherGrilleRadar(){//DONE
 }
 
 void IHMBN::afficherFinBN(){//DONE
-	cout << "La partie est terminée, la flotte de " << bn->getJoueurs()[bn->getIndiceJoueurCourant()] << "a été coulée!" << endl;
-	cout << "La flotte de " << bn->getJoueurs()[(bn->getIndiceJoueurCourant()+1)%2] << "a été victorieuse!" << endl;
+	cout << "La partie est terminée, la flotte de " << getBN()->getJoueurs()[getBN()->getIndiceJoueurCourant()] << "a été coulée!" << endl;
+	cout << "La flotte de " << getBN()->getJoueurs()[(getBN()->getIndiceJoueurCourant()+1)%2] << "a été victorieuse!" << endl;
 }
 
 void IHMBN::afficherResultatTour(){//TODO
