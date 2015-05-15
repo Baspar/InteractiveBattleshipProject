@@ -90,5 +90,15 @@ class BatailleNavale : public Combat{
         ///
         /// \return vector<Grille>: Ensemble des grilles
         vector<Grille> getGrilles() const;
+
+        /// \fn Personnage retournerGagnant(Personnage joueur1, Personnage joueur2)
+        /// \brief Retourner Gagnant
+        /// \param joueur1: représente le premier joueur initial de notre combat
+        /// \param joueur2: représente le deuxième joueur initial de notre combat
+        ///
+        /// Méthode qui renvoie le gagnant du combat
+        /// \return un personnage correspondant au gagnant et null si la partie n'est pas finie
+        Personnage* retournerGagnant(Personnage* joueur1, Personnage* joueur2);
+
 };
 #endif

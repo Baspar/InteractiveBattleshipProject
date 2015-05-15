@@ -32,6 +32,9 @@ int BatailleNavale::getIndiceJoueurCourant() const {//DONE
     return indiceJoueurCourant;
 }
 
+Personnage* BatailleNavale::retournerGagnant(Personnage* joueur1, Personnage* joueur2){//TODO
+	return nullptr;
+}
 
 void BatailleNavale::jouer(Coordonnees coordonnees){//TODO
 }

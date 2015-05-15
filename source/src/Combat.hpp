@@ -18,13 +18,6 @@ using namespace std;
 
 class Combat{
      public:
-        /// \fn Combat()
-        /// \brief Constructeur
-        ///
-        /// Constructeur paramétré de la classe Combat
-        /// Initialise les deux joueurs et lance le combat
-        Combat();
-
         /// \fn Personnage retournerGagnant(Personnage joueur1, Personnage joueur2)
         /// \brief Retourner Gagnant
         /// \param joueur1: représente le premier joueur initial de notre combat
@@ -32,7 +25,7 @@ class Combat{
         ///
         /// Méthode qui renvoie le gagnant du combat
         /// \return un personnage correspondant au gagnant et null si la partie n'est pas finie
-        Personnage* retournerGagnant(Personnage* joueur1, Personnage* joueur2);
+        virtual Personnage* retournerGagnant(Personnage* joueur1, Personnage* joueur2);
 
 
 };
