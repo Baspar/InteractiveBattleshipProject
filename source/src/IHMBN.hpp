@@ -20,8 +20,8 @@ class IHMBN{
         /// \brief Constructeur paramétré
         ///
         /// Constructeur parametré de la classe IHMBN
-        /// \param batailleNavale : la bataille navale utilisée
-        IHMBN(BatailleNavale batailleNavale);
+        /// \param batailleNavale : pointeur sur la bataille navale utilisée
+        IHMBN(BatailleNavale* batailleNavale);
 
         /// \fn void afficherJeu()
         /// \brief Affichage jeu

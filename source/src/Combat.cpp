@@ -4,7 +4,8 @@
 
 using namespace std;
 
-Personnage Combat::retournerGagnant(){//TODO
+Combat::Combat(){//TODO
 }
-Combat::Combat(Personnage joueur1, Personnage joueur2){//TODO
+Personnage* retournerGagnant(Personnage* joueur1, Personnage* joueur2){//TODO
+    return joueur1;
 }

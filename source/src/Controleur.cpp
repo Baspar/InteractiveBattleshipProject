@@ -4,10 +4,10 @@
 #include "IHMBN.hpp"
 
 using namespace std;
-Controleur::Controleur(){//TODO
+Controleur::Controleur(){//DONE
     jeu = new Jeu();
     ihmJeu = new IHMJeu(jeu);
-    lancerjeu();
+    lancerJeu();
 }
 
 void Controleur::tourDeJeu(){//TODO

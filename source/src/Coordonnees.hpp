@@ -35,6 +35,10 @@ class Coordonnees {
         /// Constructeur permettant d'instancier une coordonnée avec instance de Coordonnees
         /// \param coord : Coordonnees a recopier
         Coordonnees(const Coordonnees& coord);
+        //
+        /// \fn void copy(const Coordonnees coordcp)
+        /// \brief Copieur de coordonnes
+        void copy(const Coordonnees coordcp);
 
         /// \fn int getAbscisse()
         /// \brief getteur de l'abscisse

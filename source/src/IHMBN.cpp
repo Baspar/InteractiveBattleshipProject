@@ -5,7 +5,7 @@
 #include "BatailleNavale.hpp"
 
 using namespace std;
-IHMBN::IHMBN (BatailleNavale batailleNavale){//TODO
+IHMBN::IHMBN(BatailleNavale* batailleNavale){//TODO
 }
 void IHMBN::afficherJeu (){//TODO
 }

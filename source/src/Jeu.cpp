@@ -16,7 +16,7 @@ Jeu::Jeu(){//TODO
 
 
 
-Jeu::Jeu(Combat comb) : JoueurHumain("Test1"){//WIP
+Jeu::Jeu(Combat comb){//WIP
     int nbPersonnageNonJouables=0;
     vector<int> listeIdCarte = vector<int>();
     vector<Coordonnees> listeCoord = vector<Coordonnees>();
@@ -35,19 +35,19 @@ bool Jeu::partieFinie(){//DONE
 
 
 void Jeu::jouer(Coordonnees coordonnees){//TODO
-    personnageJouable->deplacer(coordonnees);
+    personnageJouable->deplacer(coordonnees, personnageJouable->getCarte());
     actionEnCours = personnageJouable->getCarte()->getCel((personnageJouable->getCoordonnees())).getActionCellule();
-    if(&actionEnCours!=nullptr)
-        actionEnCours.lancerAction();
+    if(actionEnCours!=0)
+        actionEnCours->lancerAction();
 }
 
 
-Action Jeu::getActionEnCours(){//DONE
+Action* Jeu::getActionEnCours(){//DONE
     return actionEnCours;
 }
 
 
-*PersonnageJouable Jeu::getPersonnageJouable(){//DONE
+PersonnageJouable* Jeu::getPersonnageJouable(){//DONE
     return personnageJouable;
 }
 

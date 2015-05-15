@@ -1,0 +1,282 @@
+@startuml
+!include skin.uml
+!include liaisons.uml
+class ActionChangementCarte{
+    ==<b>Attribut(s)</b>==
+        -carte : Carte*
+        -coordonnees : Coordonnees
+    ==<b>Constructeur(s)</b>==
+        +<color:red><color:red>ActionChangementCarte()</color>
+    ==<b>Methode(s)</b>==
+        +<color:red>lancerAction() : void</color>
+}
+class ActionCombat{
+    ==<b>Attribut(s)</b>==
+        -adversaire : Personnage*
+    ==<b>Constructeur(s)</b>==
+        +<color:red><color:red>ActionCombat()</color>
+    ==<b>Methode(s)</b>==
+        +<color:red>lancerAction() : void</color>
+}
+class Action{
+    ==<b>Attribut(s)</b>==
+        -active : bool
+        -texteInteraction : string
+    ==<b>Constructeur(s)</b>==
+        +<color:green><color:red>Action()</color>
+    ==<b>Getter(s)</b>==
+        +<color:green><color:red><color:red>getTexteInteraction() : string</color>
+    ==<b>Methode(s)</b>==
+        +<color:green>lancerAction() : {abstract} void</color>
+}
+class Arme{
+    ==<b>Attribut(s)</b>==
+        -nomArme : string
+    ==<b>Constructeur(s)</b>==
+        +<color:red><color:red>Arme()</color>
+    ==<b>Methode(s)</b>==
+        +<color:red>tirer(Coordonnees coordonnees) : void</color>
+}
+class AutreAction{
+    ==<b>Methode(s)</b>==
+        +<color:red>lancerAction() : void</color>
+}
+class BatailleNavale{
+    ==<b>Attribut(s)</b>==
+        -grilles : vector<Grille>
+        -joueurCourant : int
+        -joueurs : vector<PersonnageBN*>
+    ==<b>Constructeur(s)</b>==
+        +<color:red>BatailleNavale(PersonnageBN joueur1, PersonnageBN joueur2)</color>
+    ==<b>Methode(s)</b>==
+        -<color:red>changerJoueur() : void</color>
+        +<color:red><color:red>jouer(Coordonnees coordonnees) : void</color>
+}
+class Bateau{
+    ==<b>Attribut(s)</b>==
+        -PV : int
+        -taille : int
+    ==<b>Constructeur(s)</b>==
+        +<color:green>Bateau(int tailleIn)</color>
+    ==<b>Methode(s)</b>==
+        +<color:green><color:green><color:green>retirerPV() : void</color>
+        +<color:green><color:green>estCoule() : bool</color>
+}
+class Carte{
+    ==<b>Attribut(s)</b>==
+        -cellules : vector<vector<Cellule>  >
+        -id : int
+        -tailleGrille : TailleGrille
+    ==<b>Constructeur(s)</b>==
+        +<color:orange>Carte(int id, TailleGrille tailleGrilleInit)</color>
+    ==<b>Getter(s)</b>==
+        +<color:orange><color:orange><color:green><color:green>getCel(Coordonnees coord) : Cellule</color>
+        +<color:orange><color:orange><color:green>getCellules() : vector<vector<Cellule> ></color>
+    ==<b>Methode(s)</b>==
+        +<color:orange><color:orange>deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees) : void</color>
+}
+class Case{
+    ==<b>Attribut(s)</b>==
+        -bateau : Bateau*
+        -touche : bool
+    ==<b>Constructeur(s)</b>==
+        +<color:green>Case()</color>
+        +<color:green><color:red>Case(Bateau* bateau)</color>
+    ==<b>Methode(s)</b>==
+        +<color:green><color:red><color:red>tirerDessus() : void</color>
+}
+class CelluleAccessible{
+    ==<b>Attribut(s)</b>==
+        -occupant : Personnage*
+    ==<b>Constructeur(s)</b>==
+        +<color:red>CelluleAccessible()</color>
+        +<color:red><color:red>CelluleAccessible(Action actionInit)</color>
+    ==<b>Setter(s)</b>==
+        +<color:red><color:red><color:red><color:green>setPersonnage(Personnage* personnage) : void</color>
+    ==<b>Methode(s)</b>==
+        +<color:red><color:red><color:red>estAccessible() : bool</color>
+}
+class CelluleCombat{
+    ==<b>Attribut(s)</b>==
+        -adversaire : Personnage*
+    ==<b>Constructeur(s)</b>==
+        +<color:red>CelluleCombat()</color>
+}
+class Cellule{
+    ==<b>Attribut(s)</b>==
+        -action : Action*
+        -typeDeCellule : int
+    ==<b>Constructeur(s)</b>==
+        +<color:red>Cellule()</color>
+        +<color:red><color:red>Cellule(Action* actionInit, int typeCell)</color>
+    ==<b>Getter(s)</b>==
+        +<color:red><color:red><color:green><color:green><color:green><color:green>getActionCellule()const : Action*</color>
+        +<color:red><color:red><color:green><color:green><color:green>getTypeDeCellule()const : int</color>
+    ==<b>Methode(s)</b>==
+        +<color:red><color:red><color:green><color:green>estAccessible()const : {abstract} bool</color>
+        +<color:red><color:red><color:green>lancerAction()const : void</color>
+}
+class CelluleObstacle{
+    ==<b>Constructeur(s)</b>==
+        +<color:red>CelluleObstacle()</color>
+    ==<b>Methode(s)</b>==
+        +<color:red><color:green>estAccessible() : bool</color>
+}
+class Combat{
+    ==<b>Constructeur(s)</b>==
+        +<color:red>Combat()</color>
+    ==<b>Methode(s)</b>==
+        +<color:red><color:white>retournerGagnant(Personnage* joueur1, Personnage* joueur2) : Personnage*</color>
+}
+class Controleur{
+    ==<b>Attribut(s)</b>==
+        -batailleNavale : BatailleNavale*
+        -ihmBN : IHMBN*
+        -ihmJeu : IHMJeu*
+        -jeu : Jeu*
+    ==<b>Constructeur(s)</b>==
+        +<color:green>Controleur()</color>
+    ==<b>Methode(s)</b>==
+        +<color:green><color:red><color:green><color:red>actionBatailleNavale() : void</color>
+        +<color:green><color:red><color:green><color:red><color:red>tourDeJeuBatailleNavale() : void</color>
+        +<color:green><color:red><color:green>lancerJeu() : void</color>
+        +<color:green><color:red>tourDeJeu() : void</color>
+}
+class Coordonnees{
+    ==<b>Attribut(s)</b>==
+        -abscisse : int
+        -ordonnee : int
+    ==<b>Constructeur(s)</b>==
+        +<color:green><color:green>Coordonnees(const Coordonnees& coord)</color>
+        +<color:green>Coordonnees(const int abs, const int ord)</color>
+    ==<b>Getter(s)</b>==
+        +<color:green><color:green><color:green><color:green><color:green>getOrdonnee()const : int</color>
+        +<color:green><color:green><color:green><color:green>getAbscisse()const : int</color>
+    ==<b>Methode(s)</b>==
+        +<color:green><color:green><color:green>copy(const Coordonnees coordcp) : void</color>
+}
+class Grille{
+    ==<b>Attribut(s)</b>==
+        -cases : vector<vector<Case>  >
+        -tailleGrille : TailleGrille
+    ==<b>Constructeur(s)</b>==
+        +<color:red>Grille(int longueur, int hauteur)</color>
+}
+class IHMBN{
+    ==<b>Attribut(s)</b>==
+        -<color:red><color:red>batailleNavale : BatailleNavale*
+    ==<b>Constructeur(s)</b>==
+        +<color:red>IHMBN(BatailleNavale* batailleNavale)</color>
+    ==<b>Methode(s)</b>==
+        -<color:red>afficherGrilleRadar() : void</color>
+        -<color:red><color:red>afficherGrilleBateau() : void</color>
+        +<color:red><color:red>afficherJeu() : void</color>
+        +<color:red><color:red><color:red><color:red>saisirPlacementBateaux() : Grille</color>
+        +<color:red><color:red><color:red>saisieCoup() : Coordonnees</color>
+}
+class IHMJeu{
+    ==<b>Attribut(s)</b>==
+        -jeu : Jeu*
+    ==<b>Constructeur(s)</b>==
+        +<color:green>IHMJeu(Jeu* jeuEntree)</color>
+    ==<b>Methode(s)</b>==
+        -<color:green>afficherInteraction() : void</color>
+        +<color:green><color:green><color:green>afficherJeu() : void</color>
+        +<color:green><color:green>saisieDeplacement() : Coordonnees</color>
+        -<color:green><color:orange>afficherCarteCourante() : void</color>
+        -<color:green><color:orange><color:green>afficherSaisie() : void</color>
+}
+class Jeu{
+    ==<b>Attribut(s)</b>==
+        -actionEnCours : Action*
+        -combat : Combat
+        -monde : Monde
+        -personnageJouable : PersonnageJouable*
+        -personnagesNonJouables : vector<PersonnageNonJouable*>
+        -terminee : bool
+    ==<b>Constructeur(s)</b>==
+        +<color:red><color:orange>Jeu(Combat comb)</color>
+        +<color:red>Jeu()</color>
+    ==<b>Setter(s)</b>==
+        +<color:red><color:orange><color:green><color:red><color:green><color:green><color:green>setTerminee(bool bol) : void</color>
+    ==<b>Getter(s)</b>==
+        +<color:red><color:orange><color:green><color:red><color:green><color:green>getPersonnageJouable() : PersonnageJouable*</color>
+        +<color:red><color:orange><color:green><color:red><color:green>getActionEnCours() : Action*</color>
+    ==<b>Methode(s)</b>==
+        +<color:red><color:orange><color:green><color:red>jouer(Coordonnees coordonnees) : void</color>
+        +<color:red><color:orange><color:green>partieFinie() : bool</color>
+}
+class JoueurHumain{
+    ==<b>Constructeur(s)</b>==
+        +<color:red>JoueurHumain(string nom)</color>
+}
+class JoueurIA{
+    ==<b>Constructeur(s)</b>==
+        +<color:red>JoueurIA(string nom)</color>
+}
+class Monde{
+    ==<b>Attribut(s)</b>==
+        -cartes : vector<Carte>
+    ==<b>Constructeur(s)</b>==
+        +<color:orange>Monde()</color>
+    ==<b>Methode(s)</b>==
+        +<color:orange><color:orange>placerJoueurs(vector<Personnage*> listePerso, vector<int> listeIdCarte, vector<Coordonnees> listeCoord) : void</color>
+}
+class PersonnageBN{
+    ==<b>Attribut(s)</b>==
+        -arme : Arme*
+        -bateaux : vector<Bateau*>
+        -nom : string
+        -tailleGrille : TailleGrille
+    ==<b>Constructeur(s)</b>==
+        +<color:red>PersonnageBN()</color>
+    ==<b>Methode(s)</b>==
+        +<color:red><color:green><color:green>caseAViser() : {abstract} Coordonnees</color>
+        +<color:red><color:green>placerBateaux() : {abstract} Grille</color>
+}
+class PersonnageBNHumain{
+    ==<b>Constructeur(s)</b>==
+        +<color:red>PersonnageBNHumain()</color>
+    ==<b>Methode(s)</b>==
+        -<color:red><color:red>caseAViser() : Coordonnees</color>
+        -<color:red>placerBateaux() : Grille</color>
+}
+class PersonnageBNIA{
+    ==<b>Constructeur(s)</b>==
+        +<color:red>PersonnageBNIA()</color>
+    ==<b>Methode(s)</b>==
+        -<color:red><color:red>caseAViser() : Coordonnees</color>
+        -<color:red>placerBateaux() : Grille</color>
+}
+class Personnage{
+    ==<b>Attribut(s)</b>==
+        -carte : Carte*
+        -coord : Coordonnees
+        -nom : string
+    ==<b>Constructeur(s)</b>==
+        +<color:green>Personnage(string nomcp)</color>
+    ==<b>Setter(s)</b>==
+        +<color:green><color:green><color:green><color:green><color:green><color:green>setCarte(Carte carteSet) : void</color>
+        +<color:green><color:green><color:green><color:green><color:green>setCoordonnees(Coordonnees coordSet) : void</color>
+    ==<b>Getter(s)</b>==
+        +<color:green><color:green><color:green><color:green>getCarte() : Carte*</color>
+        +<color:green><color:green><color:green>getCoordonnees() : Coordonnees</color>
+    ==<b>Methode(s)</b>==
+        +<color:green><color:green>deplacer(Coordonnees coordonnees, Carte* carteEntree) : void</color>
+}
+class PersonnageJouable{
+}
+class PersonnageNonJouable{
+}
+class TailleGrille{
+    ==<b>Attribut(s)</b>==
+        -hauteur : int
+        -longueur : int
+    ==<b>Constructeur(s)</b>==
+        +<color:green><color:green>TailleGrille(const TailleGrille& tailleGrileCp)</color>
+        +<color:green>TailleGrille(int lon, int hau)</color>
+    ==<b>Getter(s)</b>==
+        +<color:green><color:green><color:green><color:green>getHauteur()const : int</color>
+        +<color:green><color:green><color:green>getLongueur()const : int</color>
+}
+@enduml

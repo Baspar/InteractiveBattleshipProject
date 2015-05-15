@@ -7,46 +7,41 @@
 
 using namespace std;
 
-IHMJeu::IHMJeu (Jeu* jeuEntree){//WIP
+IHMJeu::IHMJeu (Jeu* jeuEntree){//DONE
     jeu=jeuEntree;
 }
 
-
-Coordonnees IHMJeu::saisieDeplacement (){//WIP
+Coordonnees IHMJeu::saisieDeplacement (){//DONE
     int deplacement=0;
-    cin>> deplacement;
-    switch (deplacement){
-        case 8 : return Coordonnees(jeu->getPersonnageJouable().getCoordonnees().getAbscisse(), this->jeu->getPersonnageJouable().getCoordonnees().getOrdonnee()+1);
-        case 4 : return Coordonnees(jeu->getPersonnageJouable().getCoordonnees().getAbscisse-1, this->jeu->getPersonnageJouable().getCoordonnees().getOrdonnee);
-        case 2 : return Coordonnees(jeu->getPersonnageJouable().getCoordonnees().getAbscisse, this->jeu->getPersonnageJouable().getCoordonnees().getOrdonnee-1);
-        case 6 : return Coordonnees(jeu->getPersonnageJouable().getCoordonnees().getAbscisse+1, this->jeu->getPersonnageJouable().getCoordonnees().getOrdonnee);
-        default : return Coordonnees(jeu->getPersonnageJouable().getCoordonnees().getAbscisse, this->jeu->getPersonnageJouable().getCoordonnees().getOrdonnee);
+    cin >> deplacement;
 
+    Coordonnees coord(jeu->getPersonnageJouable()->getCoordonnees());
+
+    switch (deplacement){
+        case 8 : return Coordonnees(coord.getAbscisse(), coord.getOrdonnee()+1);
+        case 4 : return Coordonnees(coord.getAbscisse()-1, coord.getOrdonnee());
+        case 2 : return Coordonnees(coord.getAbscisse(), coord.getOrdonnee()-1);
+        case 6 : return Coordonnees(coord.getAbscisse()+1, coord.getOrdonnee());
+        default : return Coordonnees(coord.getAbscisse(), coord.getOrdonnee());
     }
 }
 
-void IHMJeu::afficherJeu (){//WIP
+void IHMJeu::afficherJeu (){//DONE
     this->afficherCarteCourante();
     this->afficherInteraction();
     this->afficherSaisie();
 }
 
-
-void IHMJeu::afficherSaisie (){//WIP
+void IHMJeu::afficherSaisie (){//DONE
     cout<<endl;
     cout<<"Affichage de la zone de saisie";
     cout<<endl;
 }
 
-
-void IHMJeu::afficherInteraction(){//WIP
-    cout<<endl;
-    cout<<"Affichage de l'action en cours";
-    cout<<endl;
-    cout <<jeu->getActionEnCours().getTexteInteraction();
-    cout<<endl;
+void IHMJeu::afficherInteraction(){//DONE
+    cout << "Affichage de l'action en cours" << endl;
+    cout << jeu->getActionEnCours()->getTexteInteraction() << endl;
 }
-
 
 void IHMJeu::afficherCarteCourante(){//WIP
     cout<<endl;

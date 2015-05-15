@@ -32,6 +32,12 @@ class IHMJeu{
         /// Methode affichant chaque cellule de la carte ou se trouve le joueur
         void afficherCarteCourante();
 
+        /// \fn void afficherSaisie()
+        /// \brief introduction zone saisie
+        ///
+        /// Introduit la zone de saisie
+        void afficherSaisie();
+
     public:
         /// \fn IHMJeu(Jeu* jeu)
         /// \brief Constructeur
@@ -53,12 +59,6 @@ class IHMJeu{
         ///
         /// Affiche le jeu (utilise afficherCarte, afficherInteraction et afficherSaisie)
         void afficherJeu();
-
-        /// \fn void afficherSaisie()
-        /// \brief introduction zone saisie
-        ///
-        /// Introduit la zone de saisie
-        void afficherSaisie();
 
 
 };
