@@ -28,7 +28,7 @@ class TailleGrille{
         /// \fn TailleGrille(Taillegrille &tailleGrilleCp)
         /// \brief Constructeur par recopie de la classe TailleGrille
         /// \param tailleGrilleCp : TailleGrill a recopier
-        TailleGrille(const TailleGrille& tailleGrileCp);
+        TailleGrille(const TailleGrille& tailleGrilleCp);
 
         /// \fn int getLongueur()
         /// \brief Getter de longueur
@@ -50,10 +50,10 @@ class TailleGrille{
         /// \param La hauteur de la Grille
         void setHauteur(const int hauteurcp);
 
-	/// \fn copy(TailleGrille tailleGrille)
-	/// \brief copie de tailleGrille
-	/// \param tailleGrille : tailleGrille que l'on veut copier
-	/// Effectue la copie de la tailleGrille en entrée dans notre tailleGrille
-	void copy(const TailleGrille tailleGrille);
+        /// \fn copy(TailleGrille tailleGrille)
+        /// \brief copie de tailleGrille
+        /// \param tailleGrille : tailleGrille que l'on veut copier
+        /// Effectue la copie de la tailleGrille en entrée dans notre tailleGrille
+        void copy(const TailleGrille tailleGrille);
 };
 #endif

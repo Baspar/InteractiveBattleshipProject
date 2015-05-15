@@ -15,7 +15,7 @@ Grille::Grille(int longueur, int hauteur) : tailleGrille(longueur, hauteur){//DO
 }
 
 
-Case Grille::getCase(Coordonnees coordonnees){//DONE
+Case Grille::getCaseElt(Coordonnees coordonnees){//DONE
 	Case c;
 	c=cases.at(coordonnees.getAbscisse()).at(coordonnees.getOrdonnee());
 	return c;
