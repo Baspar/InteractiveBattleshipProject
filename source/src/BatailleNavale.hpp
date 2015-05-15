@@ -22,7 +22,7 @@ using namespace std;
 class BatailleNavale : public Combat{
     private:
         /// indice joueur courant
-        int joueurCourant;
+        int indiceJoueurCourant;
         /// liste des 2 personnages bataille navale
         vector<PersonnageBN*> joueurs;
         /// liste des 2 grilles des joueurs
@@ -54,5 +54,41 @@ class BatailleNavale : public Combat{
         /// \param coordonnees: coordonnées choisies par le joueur
         void jouer(Coordonnees coordonnees);
 
+        /// \fn PersonnageBN* getPersonnage1() const
+        /// \brief Getter du Joueur 1
+        ///
+        /// \return PersonnageBN*: pointeur sur personnage 1
+        PersonnageBN* getPersonnage1() const ;
+
+        /// \fn PersonnageBN* getPersonnage2() const
+        /// \brief Getter du Joueur 2
+        ///
+        /// \return PersonnageBN*: pointeur sur personnage 2
+        PersonnageBN* getPersonnage2() const ;
+
+        /// \fn Grille getGrille1() const
+        /// \brief Getter de la grille 1
+        ///
+        /// \return Grille: grille 1
+        Grille getGrille1() const ;
+
+        /// \fn Grille getGrille2() const
+        /// \brief Getter de la grille 2
+        ///
+        /// \return Grille: grille 2
+        Grille getGrille2() const ;
+
+
+        /// \fn int getIndiceJoueurCourant() const
+        /// \brief Getter de l indice du joueur courant
+        ///
+        /// \return int:indice du personnage courant
+        int getIndiceJoueurCourant() const;
+
+        /// \fn vector<Grille> getGrilles() const;
+        /// \brief Getter de l'ensemble des grilles
+        ///
+        /// \return vector<Grille>: Ensemble des grilles
+        vector<Grille> getGrilles() const;
 };
 #endif
