@@ -21,37 +21,30 @@ class Arme{
         ///nom de l'arme
         string nomArme;
 
-	/// \fn void tirerClassique(Coordonnees coordonnees, Grille *grille)
-	/// \brief Attaque classique
-	///
-	///tire sur une case et inflige des dégats sur ladite case
-	/// \param coordonnees : coordonnées de la case que le joueur souhaite viser
-	/// \param *grille : pointeur sur la grille sur lequel le joueur tire
-	void tirerClassique(const Coordonnees coordonnees, Grille *grille);
+	
 
     public:
-        /// \fn Arme()
-        /// \brief Constructeur
+        /// \fn string getNomArme() const
+        /// \brief getter de nomArme
         ///
-        /// Constructeur de la classe Arme
-        Arme();
+        /// retourne le nom de l'Arme
+        /// \return string nom de l'arme
+        string getNomArme() const;
 
-
-	/// \fn Arme(string nomArme)
-        /// \brief Constructeur
+        /// \fn void setNomArme(const string nvNomArme)
+        /// \brief setter de nomArme
         ///
-        /// Constructeur parmetre de la classe Arme
-	/// \param nomArme : nom de l'Arme 
-        Arme(string nomArme);
-
-
+        /// modifie le nom de l'Arme
+        /// \param nvNomArme: nom de l'Arme
+        void setNomArme(const string nvNomArme);
+       
         /// \fn void tirer(Coordonnees coordonnees)
         /// \brief Attaque
         ///
         /// tire sur une case et inflige des dégâts en fonction de l'arme utilisée
         /// \param coordonnees : coordonnées de la case que le joueur souhaite viser
 	/// \param *grille : pointeur sur la grille sur lequel le joueur tire
-        void tirer(const Coordonnees coordonnees, Grille *grille);
+        virtual void tirer(const Coordonnees coordonnees, Grille *grille);
 
 
 };

@@ -5,23 +5,13 @@
 
 using namespace std;
 
-
-
-Arme::Arme(){//DONE
-	nomArme="";
+string Arme::getNomArme() const{
+	return nomArme;
 }
 
-Arme::Arme(string nomArme){//DONE
-	nomArme=nomArme;
+void Arme::setNomArme(const string nvNomArme){
+	nomArme = nvNomArme;
 }
 
-void Arme::tirer(const Coordonnees coordonnees, Grille *grille){//DONE
-	if (nomArme == "classique"){
-		tirerClassique(coordonnees,grille);
-	}
-}
 
-void Arme::tirerClassique(const Coordonnees coordonnees, Grille *grille){//DONE
-	(*grille).getCaseElt(coordonnees).tirerDessus();
-}
 
