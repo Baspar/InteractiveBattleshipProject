@@ -54,6 +54,6 @@ class TailleGrille{
 	/// \brief copie de tailleGrille
 	/// \param tailleGrille : tailleGrille que l'on veut copier
 	/// Effectue la copie de la tailleGrille en entrée dans notre tailleGrille
-	void copy(const TailleGrille tailleGrille);
+	void copy(TailleGrille tailleGrille);
 };
 #endif

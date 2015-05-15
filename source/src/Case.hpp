@@ -2,7 +2,7 @@
 #define CASE_H
 
 /// \file Case.hpp
-/// \brief FIchier contenant la classe Case
+/// \brief Fichier contenant la classe Case
 /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Bateau.hpp"
@@ -33,7 +33,35 @@ class Case{
         /// \fn void tirerDessus()
         /// \brief Effectue les changements lorsqu'on tire sur une Case
         ///
-        /// Révèle la case, modifie le boolean touche, indique au bateau qu'il s'est fait toucher
+        /// Modifie le boolean touche, indique au bateau qu'il s'est fait toucher
         void tirerDessus();
+
+
+	/// \fn void setBateau(*Bateau bateaucp)
+        /// \brief Setter de bateau
+        /// \param bateaucp : bateau à placer sur la case
+	void setBateau(Bateau *bateaucp);
+
+
+	/// \fn void Case::setTouche(bool touchecp)
+	/// \brief Setter de touche
+        /// \param touchecp est la valeau de touche
+	void setTouche(bool touchecp);
+
+	/// \fn bool getTouche() const
+	/// \brief Getter de touche
+        /// \return la valeur de touche
+	bool getTouche() const;
+
+	/// \fn *Bateau getBateau() const
+	/// \brief Getter de bateau
+        /// \return la valeur de bateau
+	Bateau* getBateau() const;
+
+	/// \fn void copy(const Case kase)
+	/// \brief copie la kase
+        /// \param kase la case a preparer
+	void copy(const Case kase);
+
 };
 #endif

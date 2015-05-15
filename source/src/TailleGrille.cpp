@@ -16,3 +16,16 @@ TailleGrille::TailleGrille(int lon, int hau){//DONE
     longueur=lon;
     hauteur=hau;
 }
+
+void TailleGrille::setHauteur(const int hauteurcp){//DONE
+	hauteur=hauteurcp;
+}
+
+void TailleGrille::setLongueur(const int longueurcp){//DONE
+       longueur=longueurcp;
+}
+
+void TailleGrille::copy(const TailleGrille tailleGrille){//DONE
+	setLongueur(tailleGrille.getLongueur());
+	setHauteur(tailleGrille.getHauteur());
+}
