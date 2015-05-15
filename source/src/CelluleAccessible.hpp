@@ -20,13 +20,13 @@ class CelluleAccessible:public Cellule{
         Personnage* occupant;
 
     public :
-        /// \fn void CelluleAccessible()
+        /// \fn CelluleAccessible()
         /// \brief Construit une CelluleAccessible
         CelluleAccessible();
 
-        /// \fn void CelluleAccessible()
+        /// \fn CelluleAccessible(Actionù actionInit)
         /// \brief Construit une CelluleAccessible
-        CelluleAccessible(Action actionInit);
+        CelluleAccessible(Action* actionInit);
 
         /// \fn virtual bool estAccessible()
         /// \brief Vérifie si une classe est bien accessible

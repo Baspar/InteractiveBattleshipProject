@@ -61,7 +61,8 @@ class Grille{
 	/// \brief récupere la case à partir de Coordonnees
 	///
 	/// \param coordonnees : coordonnees de la case
-	Case getCaseElt(const Coordonnees coordonnees);
+	Case getCaseElt(Coordonnees coordonnees);
+
 
 	/// \fn void placerBateau(*Bateau bateau, Case caseDepart, Case caseArrivee)
 	/// \brief place le bateau
@@ -85,7 +86,7 @@ class Grille{
 	/// \fn void copy(Grille grille)
 	/// \brief copie la grille
 	/// \param grille : grille que l'on va copier
-	/// copie toutes les données de la grille en entrée dans notre grille 
+	/// copie toutes les données de la grille en entrée dans notre grille
 	void copy(const Grille grille);
 
 	/// \fn setTailleGrille(const TailleGrille tailleGrille)

@@ -8,9 +8,9 @@ int TailleGrille::getHauteur() const{//DONE
 int TailleGrille::getLongueur() const{//DONE
     return longueur;
 }
-TailleGrille::TailleGrille(const TailleGrille &tailleGrileCp){//DONE
-    longueur = tailleGrileCp.getLongueur();
-    hauteur = tailleGrileCp.getHauteur();
+TailleGrille::TailleGrille(const TailleGrille &tailleGrilleCp){//DONE
+    longueur = tailleGrilleCp.getLongueur();
+    hauteur = tailleGrilleCp.getHauteur();
 }
 TailleGrille::TailleGrille(int lon, int hau){//DONE
     longueur=lon;

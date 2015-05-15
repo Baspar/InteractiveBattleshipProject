@@ -8,7 +8,7 @@ using namespace std;
 CelluleAccessible::CelluleAccessible(){//TODO
 }
 
-CelluleAccessible::CelluleAccessible(Action actionInit):Cellule(actionInit,0){//TODO
+CelluleAccessible::CelluleAccessible(Action* actionInit):Cellule(actionInit,0){//TODO
     occupant=NULL;
 }
 

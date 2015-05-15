@@ -25,21 +25,81 @@ Coordonnees IHMBN::saisieCoup (){//DONE
     return coord;
 }
 
-Grille IHMBN::saisirPlacementBateaux (Personnage* pers){//TODO
-	for (Bateau bat : pers->
-    return Grille();
+Grille IHMBN::saisirPlacementBateaux (Personnage* pers){//DONE
+	Grille grille(pers->getTailleGrille().getLongueur(),pers->getTailleGrille().getHauteur());
+	for (Bateau* bat : pers->getBateaux()){
+		cout << "Veuillez placer le bateau de longueur "<< bat->getLongueur();
+		cout << "Veuillez saisir les coordonnées de départ";
+		int x,y;
+		cin >> x;
+		cin >> y;
+		Coordonnees coordDepart(x,y);
+
+		cout << "Veuillez saisir les coordonnées d'arrivée";
+		int a,b;
+		cin >> a;
+		cin >> b;
+		Coordonnees coordArrivee(a,b);
+
+		grille.placerBateau(bat,coordDepart,coordArrivee);
+	}
+
+    return grille;
 }
 
-void IHMBN::afficherGrilleBateaux(){//TODO
+void IHMBN::afficherGrilleBateaux(){//DONE
+	Grille grille(bn->getGrilles()[bn->getIndiceJoueurCourant()]);
 
+	cout << endl << "Grille personnelle" << endl;
+
+	for (int i=0;i<grille.getTailleGrille().getHauteur();i++){
+		for (int j=0;j<grille.getTailleGrille().getLongueur();j++){
+			Coordonnees coord(i,j);
+			cout << "|";
+			if(grille.getCaseElt(coord).getBateau()==nullptr){
+				if(grille.getCaseElt(coord).getTouche()==false)
+					cout << "o";				
+				else cout << "x";
+			}
+			else {
+				if(grille.getCaseElt(coord).getTouche()==false)
+					cout << " ";				
+				else cout << "-";
+			}
+		}
+		cout << "|" << endl;
+	}
+	cout<< endl << endl;
 }
 
-void IHMBN::afficherGrilleRadar(){//TODO
+void IHMBN::afficherGrilleRadar(){//DONE
+	Grille grille(bn->getGrilles()[(bn->getIndiceJoueurCourant()+1)%2]);
 
+	cout << endl << "Grille adversaire" << endl;
+
+	for (int i=0;i<grille.getTailleGrille().getHauteur();i++){
+		for (int j=0;j<grille.getTailleGrille().getLongueur();j++){
+			Coordonnees coord(i,j);
+			cout << "|";
+			if(grille.getCaseElt(coord).getBateau()==nullptr){
+				if(grille.getCaseElt(coord).getTouche()==false)
+					cout << " ";				
+				else cout << "x";
+			}
+			else {
+				if(grille.getCaseElt(coord).getTouche()==false)
+					cout << " ";				
+				else cout << "-";
+			}
+		}
+		cout << "|" << endl;
+	}
+	cout<< endl << endl;
 }
 
-void IHMBN::afficherFinBN(){//TODO
-
+void IHMBN::afficherFinBN(){//DONE
+	cout << "La partie est terminée, la flotte de " << bn->getJoueurs()[bn->getIndiceJoueurCourant()] << "a été coulée!" << endl;
+	cout << "La flotte de " << bn->getJoueurs()[(bn->getIndiceJoueurCourant()+1)%2] << "a été victorieuse!" << endl;
 }
 
 void IHMBN::afficherResultatTour(){//TODO

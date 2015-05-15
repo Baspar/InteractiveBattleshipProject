@@ -52,10 +52,10 @@ class Carte{
         vector<vector<Cellule> > getCellules();
 
 
-        /// \fn Cellule getCel()
+        /// \fn Cellule* getCel(Coordonnees coord)
         /// \brief Getter Cel
         /// \param coord : coordonnées de la cellule
         /// \return la cellule de coordonnées coord
-        Cellule getCel(Coordonnees coord);
+        Cellule* getCel(Coordonnees coord);
 };
 #endif

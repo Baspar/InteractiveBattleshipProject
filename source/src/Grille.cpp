@@ -24,7 +24,7 @@ Grille::Grille(const Grille& grille) :tailleGrille(grille.getTailleGrille().getL
 }
 
 
-Case Grille::getCaseElt(const Coordonnees coordonnees){//DONE
+Case Grille::getCaseElt(Coordonnees coordonnees){//DONE
 	Case c;
 	c.copy(cases.at(coordonnees.getAbscisse()).at(coordonnees.getOrdonnee()));
 	return c;

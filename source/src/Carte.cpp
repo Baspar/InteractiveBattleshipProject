@@ -21,16 +21,22 @@ Carte::Carte(int id, TailleGrille tailleGrilleInit) : tailleGrille(tailleGrilleI
  }
 
 void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){//WIP
+    // On recupere la carte
     Carte* carte = personnage->getCarte();
+    // On recupere les coordonnees du joueur
     Coordonnees coord = personnage->getCoordonnees();
-    CelluleAccessible* cell = carte->getCel(coord);
-    cell.setPersonnage(NULL);
-    getCel(coordonnees).setPersonnage(personnage);
+    // On recup sa cellule
+    CelluleAccessible* cell =  (CelluleAccessible*)carte->getCel(coord);
+    // On le retire
+    cell->setPersonnage(NULL);
+    // On le rajoute
+    CelluleAccessible* cell2 = (CelluleAccessible*)getCel(coordonnees);
+    cell2->setPersonnage(personnage);
 }
 
 
-Cellule Carte::getCel(Coordonnees coord){//DONE
-    return cellules[coord.getAbscisse()][coord.getOrdonnee()];
+Cellule* Carte::getCel(Coordonnees coord){//DONE
+    return &cellules[coord.getAbscisse()][coord.getOrdonnee()];
 }
 
 
