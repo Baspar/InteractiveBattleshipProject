@@ -1,16 +1,18 @@
 #include "Personnage.hpp"
 #include "Carte.hpp"
+#include "Coordonnees.hpp"
 
 #include <iostream>
 
 using namespace std;
 
-Personnage::Personnage(string nom){//TODO
+Personnage::Personnage(string nomcp): coord(0, 0){//DONE
+    nom=nomcp;
 }
 
-void Personnage::deplacer(Coordonnees coordonnees, Carte* carteEntree){//TODO
+void Personnage::deplacer(Coordonnees coordonnees, Carte* carteEntree){//DONE
     carteEntree->deplacerPersonnage(this, coordonnees);
-    coord(coordonnees);
+    coord.copy(coordonnees);
     carte=carteEntree;
 }
 
@@ -24,7 +26,7 @@ Carte* Personnage::getCarte(){//DONE
 }
 
 void Personnage::setCoordonnees(Coordonnees coordSet){//DONE
-    coord(coordSet);
+    coord.copy(coordSet);
 }
 
 

@@ -16,6 +16,10 @@ int Coordonnees::getAbscisse() const{//DONE
     return abscisse;
 }
 
+void Coordonnees::copy(const Coordonnees coordcp){//DONE
+    abscisse = coordcp.getAbscisse();
+    ordonnee = coordcp.getOrdonnee();
+}
 int Coordonnees::getOrdonnee() const{//DONE
     return ordonnee;
 }

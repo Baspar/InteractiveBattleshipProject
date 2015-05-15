@@ -20,7 +20,7 @@ class Jeu{
 
     private:
         /// action en cours
-        Action actionEnCours;
+        Action* actionEnCours;
         ///liste de personnages non jouables
         vector<PersonnageNonJouable*> personnagesNonJouables;
         /// pointeur sur un personnage jouable
@@ -56,12 +56,12 @@ class Jeu{
 	/// \fn Action getActionEnCours()
     /// \brief Getter actionEnCours
     /// \return Action en cours
-    Action getActionEnCours();
+    Action* getActionEnCours();
 
-	/// \fn PersonnageJouable getPersonnageJouable()
+	/// \fn PersonnageJouable* getPersonnageJouable()
     /// \brief Getter personnageJouable
     /// \return Personnage jouable
-    *PersonnageJouable getPersonnageJouable();
+    PersonnageJouable* getPersonnageJouable();
 
     /// \fn void setTerminee()
     /// \brief Setter terminee
