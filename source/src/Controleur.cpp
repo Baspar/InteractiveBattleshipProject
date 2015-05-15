@@ -35,12 +35,12 @@ void Controleur::actionBatailleNavale(){//DONE
 
 	//si placerBateaux renvoie NULL, on demande une saisie dans l'IHM sinon on copie les données de l'IA
 	if (batailleNavale->getPersonnage1()->placerBateaux()==nullptr)
-		batailleNavale->grille1.copy(ihmBN->saisirPlacementBateaux(batailleNavale->getPersonnage1()));
-	else batailleNavale->grille1.copy(batailleNavale->getPersonnage1()->placerBateaux();
+		batailleNavale->getGrille1().copy(ihmBN->saisirPlacementBateaux(batailleNavale->getPersonnage1()));
+	else batailleNavale->getGrille1().copy(batailleNavale->getPersonnage1()->placerBateaux();
 
 	if (batailleNavale->getPersonnage2()->placerBateaux()==nullptr)
-		batailleNavale->grille2.copy(ihmBN->saisirPlacementBateaux(batailleNavale->getPersonnage2()));
-	else batailleNavale->grille2.copy(batailleNavale->getPersonnage2()->placerBateaux();
+		batailleNavale->getGrille2().copy(ihmBN->saisirPlacementBateaux(batailleNavale->getPersonnage2()));
+	else batailleNavale->getGrille2().copy(batailleNavale->getPersonnage2()->placerBateaux();
 
 	//Verifie si la BN est finie, sinon continue la partie
 	while(!batailleNavale->BNFinie())
