@@ -37,10 +37,10 @@ class Case{
         void tirerDessus();
 
 
-	/// \fn void setBateau(*Bateau bateaucp)
+        /// \fn void setBateau(Bateau *bateaucp)
         /// \brief Setter de bateau
         /// \param bateaucp : bateau à placer sur la case
-	void setBateau(Bateau *bateaucp);
+        void setBateau(Bateau *bateaucp);
 
 
 	/// \fn void Case::setTouche(bool touchecp)

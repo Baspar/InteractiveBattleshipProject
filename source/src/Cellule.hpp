@@ -23,7 +23,7 @@ class Cellule{
         /// \brief Construit une Cellule
         Cellule();
 
-        /// \fn Cellule(Action actionInit, int typeCell)
+        /// \fn Cellule(Action* actionInit, int typeCell)
         /// \brief Construit une Cellule de manière paramétrée
         Cellule(Action* actionInit, int typeCell);
 

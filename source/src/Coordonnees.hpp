@@ -29,7 +29,7 @@ class Coordonnees {
         /// \param ord: entier correspondant à l'ordonnée
         Coordonnees(const int abs, const int ord);
 
-        /// \fn Coordonnees(const Coordonnees)
+        /// \fn Coordonnees(const Coordonnees& coord)
         /// \brief Contructeur par recopie
         ///
         /// Constructeur permettant d'instancier une coordonnée avec instance de Coordonnees

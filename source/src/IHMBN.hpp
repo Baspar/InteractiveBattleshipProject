@@ -35,7 +35,7 @@ class IHMBN{
         /// Affiche le gagnant
         void afficherFinBN();
 
-	/// \fn void afficherResultatTour()
+        /// \fn void afficherResultatTour()
         /// \brief Affichage phrase après tour
         ///
         /// Affiche le résultat du coup joué

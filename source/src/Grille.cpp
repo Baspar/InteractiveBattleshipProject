@@ -150,8 +150,7 @@ bool Grille::placementBateauValide(Bateau *bateau, const Coordonnees caseDepart,
 	return (verifierPlacement(bateau,caseDepart,caseArrivee)&&verifierCase(caseDepart,caseArrivee));
 }
 
-
-bool Grille::placementBateauValide(const Coordonnees kase){//DONE
+bool Grille::coupValide(const Coordonnees kase){//DONE
 	//Abscisse de depart dans la grille
 	if (!(kase.getAbscisse() < getTailleGrille().getLongueur()))
 		return false;

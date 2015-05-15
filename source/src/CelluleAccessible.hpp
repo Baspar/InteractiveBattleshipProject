@@ -24,7 +24,7 @@ class CelluleAccessible:public Cellule{
         /// \brief Construit une CelluleAccessible
         CelluleAccessible();
 
-        /// \fn CelluleAccessible(Actionù actionInit)
+        /// \fn CelluleAccessible(Action* actionInit)
         /// \brief Construit une CelluleAccessible
         CelluleAccessible(Action* actionInit);
 
