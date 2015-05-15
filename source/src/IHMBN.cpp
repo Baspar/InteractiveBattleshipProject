@@ -25,7 +25,7 @@ Coordonnees IHMBN::saisieCoup (){//DONE
     return coord;
 }
 
-Grille IHMBN::saisirPlacementBateaux (Personnage* pers){//DONE
+Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
 	Grille grille(pers->getTailleGrille().getLongueur(),pers->getTailleGrille().getHauteur());
 	for (Bateau* bat : pers->getBateaux()){
 		cout << "Veuillez placer le bateau de longueur "<< bat->getLongueur();

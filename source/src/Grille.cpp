@@ -162,3 +162,11 @@ bool Grille::coupValide(const Coordonnees kase){//DONE
 		return false;
 	return true;
 }
+
+bool Grille::grilleVide() const{
+	bool bol=false;
+	if((getTailleGrille().getHauteur()==0) && (getTailleGrille().getLongueur()==0)){
+		bol=true;
+	}
+	return bol;
+}

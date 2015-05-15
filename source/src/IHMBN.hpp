@@ -49,13 +49,13 @@ class IHMBN{
         /// \return Les coordonnees du coup saisi
         Coordonnees saisieCoup();
 
-        /// \fn Grille saisirPlacementBateaux(Personnage* pers)
+        /// \fn Grille saisirPlacementBateaux(PersonnageBN* pers)
         /// \brief Saisie placements bateaux
         ///
         /// Permet une saisie des placements de chacun des bateaux du joueur
 	/// \param pers : personnage plaçant ses bateaux
         /// \return La grille après placement des bateaux
-        Grille saisirPlacementBateaux(Personnage* pers);
+        Grille saisirPlacementBateaux(PersonnageBN* pers);
 
     private:
         /// \fn void afficherGrilleRadar ()

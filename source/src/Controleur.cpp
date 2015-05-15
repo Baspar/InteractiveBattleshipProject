@@ -26,16 +26,16 @@ void Controleur::lancerJeu(){//DONE
 }
 
 
-void Controleur::actionBatailleNavale(){//DONE
+void Controleur::actionBatailleNavale(){//WIP
 	batailleNavale = new BatailleNavale();
 	ihmBN = new IHMBN(batailleNavale);
 
 	//si placerBateaux renvoie NULL, on demande une saisie dans l'IHM sinon on copie les données de l'IA
-	if (batailleNavale->getPersonnage1()->placerBateaux()==nullptr)
+	if (batailleNavale->getPersonnage1()->placerBateaux().grilleVide())
 		batailleNavale->getGrille1().copy(ihmBN->saisirPlacementBateaux(batailleNavale->getPersonnage1()));
 	else batailleNavale->getGrille1().copy(batailleNavale->getPersonnage1()->placerBateaux();
 
-	if (batailleNavale->getPersonnage2()->placerBateaux()==nullptr)
+	if (batailleNavale->getPersonnage2()->placerBateaux().grilleVide())
 		batailleNavale->getGrille2().copy(ihmBN->saisirPlacementBateaux(batailleNavale->getPersonnage2()));
 	else batailleNavale->getGrille2().copy(batailleNavale->getPersonnage2()->placerBateaux();
 
@@ -49,7 +49,7 @@ void Controleur::actionBatailleNavale(){//DONE
 }
 
 
-void Controleur::tourDeJeuBatailleNavale(){//DONE
+void Controleur::tourDeJeuBatailleNavale(){//WIP
 
 	//Affiche les grilles des joueurs
 	ihmBN->afficherJeu();
