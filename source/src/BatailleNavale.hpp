@@ -85,20 +85,26 @@ class BatailleNavale : public Combat{
         /// \return int:indice du personnage courant
         int getIndiceJoueurCourant() const;
 
+	/// \fn vector<PersonnageBN*> getJoueurs() const
+        /// \brief Getter de la liste de Joueurs
+        ///
+        /// \return vector<PersonnageBN*>:vecteur des 2 joueurs s'affrontant à la Bataille Navale
+	vector<PersonnageBN*> getJoueurs() const;
+
         /// \fn vector<Grille> getGrilles() const;
         /// \brief Getter de l'ensemble des grilles
         ///
         /// \return vector<Grille>: Ensemble des grilles
         vector<Grille> getGrilles() const;
 
-        /// \fn Personnage retournerGagnant(Personnage joueur1, Personnage joueur2)
+        /// \fn Personnage retournerGagnant(PersonnageBN* joueur1, PersonnageBN* joueur2)
         /// \brief Retourner Gagnant
         /// \param joueur1: représente le premier joueur initial de notre combat
         /// \param joueur2: représente le deuxième joueur initial de notre combat
         ///
         /// Méthode qui renvoie le gagnant du combat
         /// \return un personnage correspondant au gagnant et null si la partie n'est pas finie
-        Personnage* retournerGagnant(Personnage* joueur1, Personnage* joueur2);
+        Personnage* retournerGagnant(PersonnageBN* joueur1, PersonnageBN* joueur2);
 
 };
 #endif

@@ -20,6 +20,14 @@ void Coordonnees::copy(const Coordonnees coordcp){//DONE
     abscisse = coordcp.getAbscisse();
     ordonnee = coordcp.getOrdonnee();
 }
+
 int Coordonnees::getOrdonnee() const{//DONE
     return ordonnee;
+}
+
+bool Coordonnees::coordonneesVides(){//DONE
+	bool bol=false;
+	if((getAbscisse()==-1)&&(getOrdonnee()==-1)){
+		bol=true;
+	}
 }

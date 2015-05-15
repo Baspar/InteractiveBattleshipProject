@@ -15,6 +15,24 @@ using namespace std;
 ///
 /// Interface Homme Machine utilisée pour afficher la Bataille Navale et capturer les coups.
 class IHMBN{
+	private:
+        /// \fn void afficherGrilleRadar ()
+        /// \brief Affichage grille radar
+        ///
+        /// Affiche la grille radar du joueur courant
+        void afficherGrilleRadar();
+
+        /// \fn void afficherGrilleBateaux ()
+        /// \brief Affichage grille bateaux
+        ///
+        /// Affiche la grille où les bateaux du joueur courant sont placés
+        void afficherGrilleBateaux();
+
+        // Pointeur sur la bataille navale affichée
+        BatailleNavale* batailleNavale;
+
+
+
     public:
         /// \fn IHMBN(BatailleNavale* bn)
         /// \brief Constructeur paramétré
@@ -47,7 +65,7 @@ class IHMBN{
         ///
         /// Permet une saisie du coup
         /// \return Les coordonnees du coup saisi
-        Coordonnees saisieCoup();
+        Coordonnees saisieCoup() const;
 
         /// \fn Grille saisirPlacementBateaux(PersonnageBN* pers)
         /// \brief Saisie placements bateaux
@@ -57,21 +75,7 @@ class IHMBN{
         /// \return La grille après placement des bateaux
         Grille saisirPlacementBateaux(PersonnageBN* pers);
 
-    private:
-        /// \fn void afficherGrilleRadar ()
-        /// \brief Affichage grille radar
-        ///
-        /// Affiche la grille radar du joueur courant
-        void afficherGrilleRadar();
-
-        /// \fn void afficherGrilleBateaux ()
-        /// \brief Affichage grille bateaux
-        ///
-        /// Affiche la grille où les bateaux du joueur courant sont placés
-        void afficherGrilleBateaux();
-
-        // Pointeur sur la bataille navale affichée
-        BatailleNavale* batailleNavale;
+   
 
 };
 #endif

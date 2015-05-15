@@ -27,7 +27,7 @@ class PersonnageBNIA : public PersonnageBN{
         ///
         /// Indique où le PNJ attaque
         /// \return les coordonnées de la case à attaquer
-        Coordonnees caseAViser();
+        Coordonnees coordonneesAViser();
 	public :
         /// \fn PersonnageBNIA()
         /// \brief Constructeur

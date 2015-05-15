@@ -27,7 +27,7 @@ class PersonnageBNHumain : public PersonnageBN{
         ///
         /// Demande où le joueur souhaite attaquer
         /// \return les coordonnées de la case à attaquer
-        Coordonnees caseAViser();
+        Coordonnees coordonneesAViser();
 
 	public :
         /// \fn PersonnageBNHumain()

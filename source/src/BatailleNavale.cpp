@@ -32,7 +32,11 @@ int BatailleNavale::getIndiceJoueurCourant() const {//DONE
     return indiceJoueurCourant;
 }
 
-Personnage* BatailleNavale::retournerGagnant(Personnage* joueur1, Personnage* joueur2){//TODO
+vector<PersonnageBN*> BatailleNavale::getJoueurs() const {//DONE
+	return joueurs;
+}
+
+Personnage* BatailleNavale::retournerGagnant(PersonnageBN* joueur1, PersonnageBN* joueur2){//TODO
 	return nullptr;
 }
 

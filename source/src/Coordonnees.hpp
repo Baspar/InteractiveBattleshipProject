@@ -49,5 +49,12 @@ class Coordonnees {
         /// \brief getteur de l'ordonnée
         /// \return entier correspondant à l'ordonnée
         int getOrdonnee() const;
+
+        /// \fn Coordonnees coordonneesVides()
+        /// \brief vérifie si la coordonnee est vide ou non(créé par un IA ou non) 
+        /// \return bool true si la coordonnee est vide, false sinon
+        bool coordonneesVides();
+
+
 };
 #endif

@@ -26,7 +26,7 @@ void Controleur::lancerJeu(){//DONE
 }
 
 
-void Controleur::actionBatailleNavale(){//WIP
+void Controleur::actionBatailleNavale(){//DONE
 	batailleNavale = new BatailleNavale();
 	ihmBN = new IHMBN(batailleNavale);
 
@@ -40,7 +40,7 @@ void Controleur::actionBatailleNavale(){//WIP
 	else batailleNavale->getGrille2().copy(batailleNavale->getPersonnage2()->placerBateaux());
 
 	//Verifie si la BN est finie, sinon continue la partie
-	while(!batailleNavale->BNFinie())
+	while(batailleNavale->retournerGagnant(batailleNavale->getPersonnage1(),batailleNavale->getPersonnage2())==nullptr)
 		tourDeJeuBatailleNavale();
 
 	//Affiche gagnant
@@ -49,15 +49,15 @@ void Controleur::actionBatailleNavale(){//WIP
 }
 
 
-void Controleur::tourDeJeuBatailleNavale(){//WIP
+void Controleur::tourDeJeuBatailleNavale(){//DONE
 
 	//Affiche les grilles des joueurs
 	ihmBN->afficherJeu();
 
 	//caseAViser renvoie null si c'est un joueur humain, et des coordonnees si c'est joueurIA
-	if (batailleNavale->joueurCourant->caseAViser()==NULLPTR)
-		batailleNavale->jouer(ihmBN->saisieCoup);
-	else batailleNavale->jouer(batailleNavale->joueurCourant->caseAViser());
+	if (batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser().coordonneesVides())
+		batailleNavale->jouer(ihmBN->saisieCoup());
+	else batailleNavale->jouer(batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser());
 
 	//Affiche le résultat du tour
 	ihmBN->afficherResultatTour();

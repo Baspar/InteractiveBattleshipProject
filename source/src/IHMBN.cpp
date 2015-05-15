@@ -15,7 +15,7 @@ void IHMBN::afficherJeu (){//WIP
 	afficherGrilleRadar();
 }
 
-Coordonnees IHMBN::saisieCoup (){//DONE
+Coordonnees IHMBN::saisieCoup () const{//DONE
 	cout << "Veuillez saisir les coordonnées de la case que vous souhaitez viser";
 	int x;
 	int y;

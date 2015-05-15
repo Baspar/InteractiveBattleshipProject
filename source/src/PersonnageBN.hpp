@@ -39,12 +39,12 @@ class PersonnageBN{
         /// \return Grille dotée de tous les bateaux placés
         virtual Grille placerBateaux();
 
-        /// \fn virtual Coordonnees caseAViser()
+        /// \fn virtual Coordonnees coordonneesAViser()
         /// \brief le PersonnageBN veux tirer sur la grille du joueur adverse
         ///
         /// Cette méthode est virtuelle car cette classe est abstraite, elle sera
         /// implémentée dans les classes filles
         /// \return Coordonnees de la case à viser
-        virtual Coordonnees caseAViser();
+        virtual Coordonnees coordonneesAViser();
 };
 #endif

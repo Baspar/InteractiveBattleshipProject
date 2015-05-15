@@ -5,7 +5,7 @@
 using namespace std;
 PersonnageBNIA::PersonnageBNIA(){//TODO
 }
-Coordonnees PersonnageBNIA::caseAViser(){//TODO
+Coordonnees PersonnageBNIA::coordonneesAViser(){//TODO
 }
 Grille PersonnageBNIA::placerBateaux(){//TODO
 }

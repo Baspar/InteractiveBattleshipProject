@@ -7,5 +7,5 @@ PersonnageBNHumain::PersonnageBNHumain(){//TODO
 }
 Grille PersonnageBNHumain::placerBateaux(){//TODO
 }
-Coordonnees PersonnageBNHumain::caseAViser(){//TODO
+Coordonnees PersonnageBNHumain::coordonneesAViser(){//TODO
 }
