@@ -1,4 +1,5 @@
 #include "Controleur.hpp"
+#include "BatailleNavale.hpp"
 
 #include "IHMJeu.hpp"
 #include "IHMBN.hpp"
@@ -10,6 +11,10 @@ Controleur::Controleur(){//DONE
     lancerJeu();
 }
 
+void Controleur::getPersonnage1(){//TODO
+}
+void Controleur::getPersonnage2(){//TODO
+}
 void Controleur::tourDeJeu(){//TODO
     ihmJeu->afficherJeu();
     jeu->jouer(ihmJeu->saisieDeplacement());
@@ -26,16 +31,16 @@ void Controleur::lancerJeu(){//DONE
 
 void Controleur::actionBatailleNavale(){//DONE
 	batailleNavale = new BatailleNavale();
-	ihmBN = new IHMBN(batailleNavale);	
+	ihmBN = new IHMBN(batailleNavale);
 
 	//si placerBateaux renvoie NULL, on demande une saisie dans l'IHM sinon on copie les données de l'IA
-	if (batailleNavale->personnage1->placerBateaux()==NULLPTR)
-		batailleNavale->grille1.copy(ihmBN->saisirPlacementBateaux(batailleNavale->personnage1));
-	else batailleNavale->grille1.copy(batailleNavale->personnage1->placerBateaux();
+	if (batailleNavale->getPersonnage1()->placerBateaux()==nullptr)
+		batailleNavale->grille1.copy(ihmBN->saisirPlacementBateaux(batailleNavale->getPersonnage1()));
+	else batailleNavale->grille1.copy(batailleNavale->getPersonnage1()->placerBateaux();
 
-	if (batailleNavale->personnage2->placerBateaux()==NULLPTR)
-		batailleNavale->grille2.copy(ihmBN->saisirPlacementBateaux(batailleNavale->personnage2));
-	else batailleNavale->grille2.copy(batailleNavale->personnage2->placerBateaux();
+	if (batailleNavale->getPersonnage2()->placerBateaux()==nullptr)
+		batailleNavale->grille2.copy(ihmBN->saisirPlacementBateaux(batailleNavale->getPersonnage2()));
+	else batailleNavale->grille2.copy(batailleNavale->getPersonnage2()->placerBateaux();
 
 	//Verifie si la BN est finie, sinon continue la partie
 	while(!batailleNavale->BNFinie())
@@ -56,7 +61,7 @@ void Controleur::tourDeJeuBatailleNavale(){//DONE
 	if (batailleNavale->joueurCourant->caseAViser()==NULLPTR)
 		batailleNavale->jouer(ihmBN->saisieCoup);
 	else batailleNavale->jouer(batailleNavale->joueurCourant->caseAViser());
-	
+
 	//Affiche le résultat du tour
 	ihmBN->afficherResultatTour();
 }

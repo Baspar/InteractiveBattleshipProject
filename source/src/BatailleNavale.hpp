@@ -44,7 +44,7 @@ class BatailleNavale : public Combat{
         /// via la méthode placerBateaux
         /// \param joueur1 : joueur de type PersonnageBN
         /// \param joueur2 : joueur de type PersonnageBN
-        BatailleNavale(PersonnageBN joueur1, PersonnageBN joueur2);
+        BatailleNavale();
 
         /// \fn void jouer(Coordonnees coordonnees)
         /// \brief Joueur vise case choisie
