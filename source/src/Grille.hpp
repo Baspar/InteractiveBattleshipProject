@@ -94,17 +94,17 @@ class Grille{
         bool coupValide(const Coordonnees kase);
 
 
-        /// \fn void copy(Grille grille)
+        /// \fn void copy(const Grille grilleCp)
         /// \brief copie la grille
-        /// \param grille : grille que l'on va copier
+        /// \param grilleCp : grille que l'on va copier
         ///
         /// copie toutes les données de la grille en entrée dans notre grille
-        void copy(const Grille grille);
+        void copy(const Grille grilleCp);
 
-        /// \fn setTailleGrille(const TailleGrille tailleGrille)
+        /// \fn setTailleGrille(const TailleGrille tailleGrilleCp)
         /// \brief setter de tailleGrille
-        /// \param tailleGrille : tailleGrille de notre grille
-        void setTailleGrille(const TailleGrille tailleGrillecp);
+        /// \param tailleGrilleCp : tailleGrille de notre grille
+        void setTailleGrille(const TailleGrille tailleGrilleCp);
 
         /// \fn setCases(const vector<vector<Case> > cases)
         /// \brief setter de cases

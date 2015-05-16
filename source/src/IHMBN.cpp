@@ -51,7 +51,7 @@ Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
 		cin >> b;
 		Coordonnees coordArrivee(a,b);
 		grille.placerBateau(bat,coordDepart,coordArrivee);
-		
+
 		while(batailleNavale->getGrilles()[batailleNavale->getIndiceJoueurCourant()].placementBateauValide(bat,coordDepart,coordArrivee)==false){
 			cout << "Erreur! Veuillez replacer le bateau de longueur "<< bat->getTailleBateau();
 			cout << "Veuillez resaisir les coordonnées de départ";
@@ -59,8 +59,8 @@ Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
 			cin >> x;
 			cin >> y;
 			coordDepart.copy(Coordonnees(x,y));
-			
-			cout << "Veuillez resaisir les coordonnées d'arrivée";		
+
+			cout << "Veuillez resaisir les coordonnées d'arrivée";
 			int a,b;
 			cin >> a;
 			cin >> b;
@@ -78,22 +78,39 @@ void IHMBN::afficherGrilleBateaux(){//DONE
 
 	cout << endl << "Grille personnelle" << endl;
 
+	for (int i=0;i<grille.getTailleGrille().getLongueur();i++){
+        cout << "|";
+        if(i/10 == 0)
+            cout << " ";
+        else
+            cout << i/10;
+
+    }
+    cout << "|" << endl;
+
+	for (int i=0;i<grille.getTailleGrille().getLongueur();i++)
+        cout << "|" << i%10;
+    cout << "|" << endl;
+
+	for (int i=0;i<grille.getTailleGrille().getLongueur();i++)
+        cout << "--";
+    cout << "-" << endl;
 	for (int i=0;i<grille.getTailleGrille().getHauteur();i++){
 		for (int j=0;j<grille.getTailleGrille().getLongueur();j++){
-			Coordonnees coord(i,j);
+			Coordonnees coord(j,i);
 			cout << "|";
-			if(grille.getCaseElt(coord).getBateau()==nullptr){
+			if(grille.getCaseElt(coord).getBateau()!=nullptr){
 				if(grille.getCaseElt(coord).getTouche()==false)
-					cout << "o";				
+					cout << "o";
 				else cout << "x";
 			}
 			else {
 				if(grille.getCaseElt(coord).getTouche()==false)
-					cout << " ";				
+					cout << " ";
 				else cout << "-";
 			}
 		}
-		cout << "|" << endl;
+		cout << "|" << i << endl;
 	}
 	cout<< endl << endl;
 }
@@ -109,12 +126,12 @@ void IHMBN::afficherGrilleRadar(){//DONE
 			cout << "|";
 			if(grille.getCaseElt(coord).getBateau()==nullptr){
 				if(grille.getCaseElt(coord).getTouche()==false)
-					cout << " ";				
+					cout << " ";
 				else cout << "x";
 			}
 			else {
 				if(grille.getCaseElt(coord).getTouche()==false)
-					cout << " ";				
+					cout << " ";
 				else cout << "-";
 			}
 		}
