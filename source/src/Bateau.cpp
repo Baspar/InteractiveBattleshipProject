@@ -17,3 +17,10 @@ int Bateau::getTailleBateau() const{//DONE
 	return taille;
 }
 
+int Bateau::getPV() const{//DONE
+	return PV;
+}
+
+void Bateau::restaurerPV(){//DONE
+        PV=getTailleBateau();	
+}

@@ -27,6 +27,12 @@ class Bateau {
         /// \param taille: entier taille du bateau
         Bateau(int tailleIn);
 
+        /// \fn int getPV() const;
+        /// \brief Getter de PV
+        ///
+        /// \return int les PV restant au bateau
+        int getPV() const;
+
         /// \fn bool estCoule()
         /// \brief bateau coulé ou non
         ///
@@ -39,6 +45,12 @@ class Bateau {
         ///
         /// méthode retire un point de vie au bateau s'il a été touché
         void retirerPV();
+
+        /// \fn void restaurerPV()
+        /// \brief ajoute point de vie au bateau
+        ///
+        /// méthode restaure un point de vie au bateau
+        void restaurerPV();
 
 	/// \fn int getTailleBateau()
 	/// \brief renvoie la taille du bateau
