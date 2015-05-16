@@ -101,6 +101,11 @@ class Grille{
         /// copie toutes les données de la grille en entrée dans notre grille
         void copy(const Grille grilleCp);
 
+        /// \fn void tirerDessus(const Coordonnees coordonnees)
+        /// \brief Tire sur la case indiquée
+        /// \param coordonnees : les coordonnees de la case sur laquelle tirer
+        void tirerDessus(const Coordonnees coordonnees);
+
         /// \fn setTailleGrille(const TailleGrille tailleGrilleCp)
         /// \brief setter de tailleGrille
         /// \param tailleGrilleCp : tailleGrille de notre grille

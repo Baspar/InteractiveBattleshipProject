@@ -103,8 +103,7 @@ int main(){
     cout << "   Debordement Hauteur min: " << (grilleCopy.coupValide(Coordonnees(0, -1))?"Pas OK":"OK") << endl;
     cout << "   Debordement Largeur max: " << (grilleCopy.coupValide(Coordonnees(15, 0))?"Pas OK":"OK") << endl;
     cout << "   Debordement Largeur min: " << (grilleCopy.coupValide(Coordonnees(-1, 0))?"Pas OK":"OK") << endl;
-    grilleCopy.getCases().at(0).at(0).tirerDessus();
-    cout << (grilleCopy.getCases().at(0).at(0).getTouche()?"Oui":"Non");
+    grilleCopy.tirerDessus(Coordonnees(0, 0));
     cout << "   Case deja touchée: " << (grilleCopy.coupValide(Coordonnees(0, 0))?"Pas OK":"OK") << endl;
 
     return 0;

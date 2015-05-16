@@ -12,5 +12,5 @@ ArmeClassique::ArmeClassique(){//DONE
 }
 
 void ArmeClassique::tirer(const Coordonnees coordonnees, Grille *grille){//DONE
-	(*grille).getCaseElt(coordonnees).tirerDessus();
+    grille->tirerDessus(coordonnees);
 }

@@ -12,5 +12,4 @@ kase.tirerDessus();
 cout << "le bateau a (PV) " << bat->getPV() << endl;
 kase.tirerDessus();
 cout << "le bateau a (PV) " << bat->getPV() << endl;
-cout << "Case touche? " << (kase.getTouche()?"Oui":"Non") << endl;
 }

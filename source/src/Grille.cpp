@@ -31,6 +31,10 @@ Case Grille::getCaseElt(Coordonnees coordonnees){//DONE
 	return c;
 }
 
+void Grille::tirerDessus(const Coordonnees coordonnees){//DONE
+    cases[coordonnees.getAbscisse()][coordonnees.getOrdonnee()].tirerDessus();
+}
+
 
 void Grille::placerBateau(Bateau *bateau, const Coordonnees caseDepart, const Coordonnees caseArrivee){//DONE
 	//Bateau en colonne
