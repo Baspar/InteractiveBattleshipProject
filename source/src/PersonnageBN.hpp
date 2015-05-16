@@ -37,49 +37,49 @@ class PersonnageBN{
         /// \brief getters de tailleGrille
         ///
         /// \return TailleGrille
-        TailleGrille getTailleGrille();
+        TailleGrille getTailleGrille() const;
 
         /// \fn string getNom()
         /// \brief getters du nom
         ///
         /// \return string nom du PersonnageBN
-        string getNom();
+        string getNom() const;
 
 	/// \fn void setNom(string nvnom);
         /// \brief Setter du nom
         ///
         /// \param nvnom: nom du PersonnageBN
-        void setNom(string nvnom);
+        void setNom(const string nvnom);
 
         /// \fn Arme* getArme()
         /// \brief getters du pointeur sur Arme
         ///
         /// \return Arme* pointeur sur Arme
-        Arme* getArme();
+        Arme* getArme() const;
 
 	/// \fn vector<Bateau*> getBateaux()
         /// \brief getters du vecteur de pointeurs sur Bateaux
         ///
         /// \return vector<Bateau*> vecteur de pointeurs sur Bateaux
-        vector<Bateau*> getBateaux();
+        vector<Bateau*> getBateaux() const;
 
 	/// \fn void setTailleGrille(TailleGrille tg)
         /// \brief setters de tailleGrille
         ///
         /// \param tg: nouvelle taille de grille
-        void setTailleGrille(TailleGrille tg);
+        void setTailleGrille(const TailleGrille tg);
 
 	/// \fn void setArme(Arme* nvArme)
         /// \brief setters d'Arme
         ///
         /// \param nvArme: nouvel Arme(pointeur)
-        void setArme(Arme* nvArme);
+        void setArme(const Arme* nvArme);
 
 	/// \fn void setBateau(vector<Bateau*> nvBateaux)
         /// \brief setters de bateaux
         ///
         /// \param nvBateaux: nouveau vecteur de pointeurs sur Bateau
-        void setBateaux(vector<Bateau*> nvBateaux);
+        void setBateaux(const vector<Bateau*> nvBateaux);
 
         /// \fn virtual Grille placerBateaux ()
         /// \brief le PersonnageBN place les Bateaux sur sa Grille

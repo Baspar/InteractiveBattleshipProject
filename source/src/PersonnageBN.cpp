@@ -10,35 +10,35 @@
 
 using namespace std;
 
-TailleGrille PersonnageBN::getTailleGrille(){//DONE
+TailleGrille PersonnageBN::getTailleGrille() const{//DONE
 	return tailleGrille;
 }
 
-string PersonnageBN::getNom(){//DONE
+string PersonnageBN::getNom() const{//DONE
 	return nom;
 }
 
-Arme* PersonnageBN::getArme(){//DONE
+Arme* PersonnageBN::getArme() const{//DONE
 	return arme;
 }
 
-vector<Bateau*> PersonnageBN::getBateaux(){//DONE
+vector<Bateau*> PersonnageBN::getBateaux() const{//DONE
 	return bateaux;
 }
 
-void PersonnageBN::setNom(string nvnom){//DONE
+void PersonnageBN::setNom(const string nvnom){//DONE
 	nom=nvnom;
 }
 
-void PersonnageBN::setTailleGrille(TailleGrille tg){//DONE
+void PersonnageBN::setTailleGrille(const TailleGrille tg){//DONE
 	tailleGrille = tg;
 }
 
-void PersonnageBN::setArme(Arme* nvArme){//DONE
+void PersonnageBN::setArme(const Arme* nvArme){//DONE
 	arme = nvArme;
 }
 
-void PersonnageBN::setBateaux(vector<Bateau*> nvBateaux){//DONE
+void PersonnageBN::setBateaux(const vector<Bateau*> nvBateaux){//DONE
 	bateaux = nvBateaux;
 }
 
