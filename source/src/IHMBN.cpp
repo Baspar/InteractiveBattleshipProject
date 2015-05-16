@@ -14,7 +14,7 @@ BatailleNavale* IHMBN::getBN(){//DONE
 	return batailleNavale;
 }
 
-void IHMBN::afficherJeu (){//WIP
+void IHMBN::afficherJeu (){//DONE
 	afficherGrilleBateaux();
 	afficherGrilleRadar();
 }
@@ -68,6 +68,7 @@ Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
 
 			grille.placerBateau(bat,coordDepart,coordArrivee);
 		}
+	afficherJeu();
 	}
 
     return grille;
