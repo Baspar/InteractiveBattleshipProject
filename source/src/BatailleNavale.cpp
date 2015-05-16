@@ -50,7 +50,7 @@ BatailleNavale::BatailleNavale(){//DONE
 }
 
 
-void BatailleNavale::initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageBN* joueur2){//WIP
+void BatailleNavale::initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageBN* joueur2){//DONE
 	joueurs[0]=joueur1;
 	joueurs[1]=joueur2;
 	indiceJoueurCourant =0;
@@ -62,12 +62,12 @@ void BatailleNavale::initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageB
 }
 
 
-void BatailleNavale::jouer(Coordonnees coordonnees){//WIP
+void BatailleNavale::jouer(Coordonnees coordonnees){//DONE
 	getJoueurs()[getIndiceJoueurCourant()]->getArme()->tirer(coordonnees, &getGrilles()[(getIndiceJoueurCourant()+1)%2]);
 }
 
 
-PersonnageBN* BatailleNavale::retournerGagnant(PersonnageBN* joueur1, PersonnageBN* joueur2){//WIP
+PersonnageBN* BatailleNavale::retournerGagnant(PersonnageBN* joueur1, PersonnageBN* joueur2){//DONE
 	if(joueur1->flotteCoulee()) return joueur2;
 	else if (joueur2->flotteCoulee()) return joueur1;
 	else return nullptr;
