@@ -34,11 +34,21 @@ void PersonnageBN::setTailleGrille(const TailleGrille tg){//DONE
 	tailleGrille = tg;
 }
 
-void PersonnageBN::setArme(const Arme* nvArme){//DONE
+void PersonnageBN::setArme(Arme* nvArme ){//DONE
 	arme = nvArme;
 }
 
 void PersonnageBN::setBateaux(const vector<Bateau*> nvBateaux){//DONE
 	bateaux = nvBateaux;
+}
+
+void PersonnageBN::restaurerBateaux(){//DONE
+	for(Bateau* bat : getBateaux()) bat->restaurerPV();
+}
+
+bool PersonnageBN::flotteCoulee(){//DONE
+	for(Bateau* bat : getBateaux())
+		if(!(bat->estCoule())) return false;
+	return true;
 }
 

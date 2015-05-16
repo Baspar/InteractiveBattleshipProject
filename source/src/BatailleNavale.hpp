@@ -35,15 +35,13 @@ class BatailleNavale : public Combat{
         void changerJoueur();
 
     public:
-        /// \fn BatailleNavale(PersonnageBN joueur1, PersonnageBN joueur2)
+        /// \fn BatailleNavale()
         /// \brief Constructeur
         ///
         /// Constructeur de la classe Bataille Navale
         /// Initialise les 2 joueurs, crée les 2 grilles de taille tailleGrille
         /// à partir des joueurs puis va demander aux joueurs de placer leurs bateaux
         /// via la méthode placerBateaux
-        /// \param joueur1 : joueur de type PersonnageBN
-        /// \param joueur2 : joueur de type PersonnageBN
         BatailleNavale();
 
         /// \fn void jouer(Coordonnees coordonnees)
@@ -85,7 +83,14 @@ class BatailleNavale : public Combat{
         /// \return int:indice du personnage courant
         int getIndiceJoueurCourant() const;
 
-	/// \fn vector<PersonnageBN*> getJoueurs() const
+
+	  /// \fn void setIndiceJoueurCourant(const int nvIndice)
+        /// \brief Setter de l indice du joueur courant
+        ///
+        /// \param nbIndice:indice du personnage courant
+        void setIndiceJoueurCourant(const int nvIndice);
+
+	/// \fn vector<PersonnageBN*> getJoueurs() const;
         /// \brief Getter de la liste de Joueurs
         ///
         /// \return vector<PersonnageBN*>:vecteur des 2 joueurs s'affrontant à la Bataille Navale
@@ -97,14 +102,22 @@ class BatailleNavale : public Combat{
         /// \return vector<Grille>: Ensemble des grilles
         vector<Grille> getGrilles() const;
 
-        /// \fn Personnage retournerGagnant(PersonnageBN* joueur1, PersonnageBN* joueur2)
+        /// \fn PersonnageBN* retournerGagnant(PersonnageBN* joueur1, PersonnageBN* joueur2)
         /// \brief Retourner Gagnant
         /// \param joueur1: représente le premier joueur initial de notre combat
         /// \param joueur2: représente le deuxième joueur initial de notre combat
         ///
         /// Méthode qui renvoie le gagnant du combat
         /// \return un personnage correspondant au gagnant et null si la partie n'est pas finie
-        Personnage* retournerGagnant(PersonnageBN* joueur1, PersonnageBN* joueur2);
+        PersonnageBN* retournerGagnant(PersonnageBN* joueur1, PersonnageBN* joueur2);
+
+	/// \fn void initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageBN* joueur2);
+	/// \brief initialise le joueur et les grilles
+	/// \param joueur1 : représente le premier joueur du combat
+	/// \param joueur2 : représente le deuxième joueur du combat
+	///
+	/// Méthode qui initialise les joueurs
+	void initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageBN* joueur2);
 
 };
 #endif

@@ -21,18 +21,19 @@ void IHMBN::afficherJeu (){//WIP
 
 Coordonnees IHMBN::saisieCoup () const{//DONE
 
+	Coordonnees coord(-1, -1);
 	do{
-		if(batailleNavale->getGrilles()[batailleNavale->getIndiceJoueurCourant()].coupValide(batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser()))
-			cout << "Veuillez saisir les coordonnées de la case que vous souhaitez viser";
-		else cout << "Erreur! Veuillez resaisir les coordonnées de la case que vous souhaitez viser";
+		cout << "Veuillez saisir les coordonnées de la case que vous souhaitez viser";
 		int x;
 		int y;
 		cin >> x;
 		cin >> y;
-		Coordonnees coord(x, y);
-		return coord;
+		coord.copy(Coordonnees(x,y));
+		if(batailleNavale->getGrilles()[batailleNavale->getIndiceJoueurCourant()].coupValide(coord)==false)
+			cout << "Erreur! ";
 	}
-	while(batailleNavale->getGrilles()[batailleNavale->getIndiceJoueurCourant()].coupValide(batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser())==false);
+	while(batailleNavale->getGrilles()[batailleNavale->getIndiceJoueurCourant()].coupValide(coord)==false);
+	return coord;
 }
 
 Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
@@ -57,13 +58,13 @@ Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
 			int x,y;
 			cin >> x;
 			cin >> y;
-			Coordonnees coordDepart(x,y);
+			coordDepart.copy(Coordonnees(x,y));
 			
 			cout << "Veuillez resaisir les coordonnées d'arrivée";		
 			int a,b;
 			cin >> a;
 			cin >> b;
-			Coordonnees coordArrivee(a,b);
+			coordArrivee.copy(Coordonnees(a,b));
 
 			grille.placerBateau(bat,coordDepart,coordArrivee);
 		}
