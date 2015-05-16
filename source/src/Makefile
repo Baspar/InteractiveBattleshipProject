@@ -1,12 +1,14 @@
-CompileMainTestGrille: Grille.o TailleGrille.o Coordonnees.o Case.o Bateau.o
-	g++ -std=c++11 MainTestGrille.cpp $^ -o MainTestGrille
-CompileMainTestBateau: Bateau.o
-	g++ -std=c++11 MainTestBateau.cpp $^ -o MainTestBateau
+FLAGS=-std=c++11 -I ./
 
-MainTestBateau: CompileMainTestBateau
-	./MainTestBateau
+CompileMainTestGrille: Grille.o TailleGrille.o Coordonnees.o Case.o Bateau.o
+	g++ $(FLAGS) tests/MainTestGrille.cpp $^ -o test/MainTestGrille
 MainTestGrille: CompileMainTestGrille
-	./MainTestGrille
+	tests/MainTestGrille
+
+CompileMainTestBateau: Bateau.o
+	g++ $(FLAGS) tests/MainTestBateau.cpp $^ -o tests/MainTestBateau
+MainTestBateau: CompileMainTestBateau
+	tests/MainTestBateau
 
 clean:
-	rm -rf *.o ; echo $(ls);
+	rm -rf *.o ; find ./tests/ -type f ! -name "*.*" -exec rm {} \;
