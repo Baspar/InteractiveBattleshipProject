@@ -106,7 +106,7 @@ void IHMBN::afficherFinBN(){//DONE
 	cout << "La flotte de " << getBN()->getJoueurs()[(getBN()->getIndiceJoueurCourant()+1)%2] << "a été victorieuse!" << endl;
 }
 
-void IHMBN::afficherResultatTour(Coordonnees coord){//WIP
+void IHMBN::afficherResultatTour(Coordonnees coord){//DONE
 	Grille grille(getBN()->getGrilles()[getBN()->getIndiceJoueurCourant()]);
 	if(grille.getCaseElt(coord).getBateau()==nullptr)
 		cout << "A l'eau !!";
