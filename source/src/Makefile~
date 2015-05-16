@@ -1,7 +1,7 @@
 FLAGS=-std=c++11 -I ./
 
 CompileMainTestGrille: Grille.o TailleGrille.o Coordonnees.o Case.o Bateau.o
-	g++ $(FLAGS) tests/MainTestGrille.cpp $^ -o tests/MainTestGrille
+	g++ $(FLAGS) tests/MainTestGrille.cpp $^ -o test/MainTestGrille
 MainTestGrille: CompileMainTestGrille
 	tests/MainTestGrille
 
