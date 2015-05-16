@@ -25,10 +25,10 @@ class Case{
         /// \brief Construit une Case Vide
         Case();
 
-        /// \fn Case(Bateau* bateau)
+        /// \fn Case(Bateau* bat)
         /// \brief Construit une Case et l'associe à un bateau
-        /// \param bateau: pointeur sur le bateau à associer à la Case
-        Case(Bateau* bateau);
+        /// \param bat: pointeur sur le bateau à associer à la Case
+        Case(Bateau* bat);
 
         /// \fn void tirerDessus()
         /// \brief Effectue les changements lorsqu'on tire sur une Case

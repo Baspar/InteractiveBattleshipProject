@@ -8,9 +8,9 @@ Case::Case(){//DONE
 	touche=false;
 	bateau=0;
 }
-Case::Case(Bateau* bateau){//DONE
+Case::Case(Bateau* bat){//DONE
 	touche=false;
-	bateau=bateau;
+	bateau=bat;
 }
 
 void Case::tirerDessus(){//DONE
