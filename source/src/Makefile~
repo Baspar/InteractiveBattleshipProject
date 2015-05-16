@@ -1,10 +1,7 @@
 FLAGS=-std=c++11 -I ./
 
-%.o: %.cpp
-	g++ -c $(FLAGS) $<
-
 CompileMainTestGrille: Grille.o TailleGrille.o Coordonnees.o Case.o Bateau.o
-	g++ $(FLAGS) tests/MainTestGrille.cpp $^ -o tests/MainTestGrille
+	g++ $(FLAGS) tests/MainTestGrille.cpp $^ -o test/MainTestGrille
 MainTestGrille: CompileMainTestGrille
 	tests/MainTestGrille
 
@@ -19,4 +16,4 @@ MainTestCase: CompileMainTestCase
 	tests/MainTestCase
 
 clean:
-	rm -rf *.o *~ ; find ./tests/ -type f ! -name "*.*" -exec rm {} \;
+	rm -rf *.o ; find ./tests/ -type f ! -name "*.*" -exec rm {} \;
