@@ -6,10 +6,6 @@
 
 using namespace std;
 
-Personnage::Personnage(string nomcp): coord(0, 0){//DONE
-    nom=nomcp;
-}
-
 void Personnage::deplacer(Coordonnees coordonnees, Carte* carteEntree){//DONE
     carteEntree->deplacerPersonnage(this, coordonnees);
     coord.copy(coordonnees);

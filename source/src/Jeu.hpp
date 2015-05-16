@@ -63,9 +63,9 @@ class Jeu{
     /// \return Personnage jouable
     PersonnageJouable* getPersonnageJouable();
 
-    /// \fn void setTerminee()
+    /// \fn void setTerminee(bool bol)
     /// \brief Setter terminee
-    /// \param la valeur de terminee
+    /// \param bol :la valeur de terminee
     void setTerminee(bool bol);
 };
 #endif

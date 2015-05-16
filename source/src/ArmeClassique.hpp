@@ -21,23 +21,21 @@ using namespace std;
 
 class ArmeClassique : public Arme{
     public:
-       /// \fn ArmeClassique()
-	/// \brief COnstruit une Arme ne tirant que sur la Case à Viser
-	///
-	///Arme tirant sur une case et inflige des dégats sur ladite case
-	ArmeClassique();
+        /// \fn ArmeClassique()
+        /// \brief COnstruit une Arme ne tirant que sur la Case à Viser
+        ///
+        /// Arme tirant sur une case et inflige des dégats sur ladite case
+        ArmeClassique();
 
 
-	/// \fn void tirer(Coordonnees coordonnees, Grille *grille)
-	/// \brief Attaque classique
-	///
-	///tire sur une case et inflige des dégats sur ladite case
-	/// \param coordonnees : coordonnées de la case que le joueur souhaite viser
-	/// \param *grille : pointeur sur la grille sur lequel le joueur tire
-	void tirer(const Coordonnees coordonnees, Grille *grille);
-
-
+        /// \fn void tirer(Coordonnees coordonnees, Grille *grille)
+        /// \brief Attaque classique
+        ///
+        ///tire sur une case et inflige des dégats sur ladite case
+        /// \param coordonnees : coordonnées de la case que le joueur souhaite viser
+        /// \param *grille : pointeur sur la grille sur lequel le joueur tire
+        void tirer(const Coordonnees coordonnees, Grille *grille);
 };
 #endif
 
-	
+

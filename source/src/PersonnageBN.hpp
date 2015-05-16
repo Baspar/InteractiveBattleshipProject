@@ -31,8 +31,6 @@ class PersonnageBN{
         vector<Bateau*> bateaux;
 
     public:
-	PersonnageBN();
-	
         /// \fn TailleGrille getTailleGrille()
         /// \brief getters de tailleGrille
         ///
@@ -45,7 +43,7 @@ class PersonnageBN{
         /// \return string nom du PersonnageBN
         string getNom();
 
-	/// \fn void setNom(string nvnom);
+        /// \fn void setNom(string nvnom);
         /// \brief Setter du nom
         ///
         /// \param nvnom: nom du PersonnageBN
@@ -57,25 +55,25 @@ class PersonnageBN{
         /// \return Arme* pointeur sur Arme
         Arme* getArme();
 
-	/// \fn vector<Bateau*> getBateaux()
+        /// \fn vector<Bateau*> getBateaux()
         /// \brief getters du vecteur de pointeurs sur Bateaux
         ///
         /// \return vector<Bateau*> vecteur de pointeurs sur Bateaux
         vector<Bateau*> getBateaux();
 
-	/// \fn void setTailleGrille(TailleGrille tg)
+        /// \fn void setTailleGrille(TailleGrille tg)
         /// \brief setters de tailleGrille
         ///
         /// \param tg: nouvelle taille de grille
         void setTailleGrille(TailleGrille tg);
 
-	/// \fn void setArme(Arme* nvArme)
+        /// \fn void setArme(Arme* nvArme)
         /// \brief setters d'Arme
         ///
         /// \param nvArme: nouvel Arme(pointeur)
         void setArme(Arme* nvArme);
 
-	/// \fn void setBateau(vector<Bateau*> nvBateaux)
+        /// \fn void setBateaux(vector<Bateau*> nvBateaux)
         /// \brief setters de bateaux
         ///
         /// \param nvBateaux: nouveau vecteur de pointeurs sur Bateau
@@ -94,7 +92,7 @@ class PersonnageBN{
         ///
         /// Cette méthode est virtuelle car cette classe est abstraite, elle sera
         /// implémentée dans les classes filles
-	/// \param grilleAdverse : grille de l'adversaire à viser
+        /// \param grilleAdverse : grille de l'adversaire à viser
         /// \return Coordonnees de la case à viser
         virtual Coordonnees coordonneesAViser(Grille* grilleAdverse);
 };
