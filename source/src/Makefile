@@ -9,4 +9,4 @@ MainTestGrille: CompileMainTestGrille
 	./MainTestGrille
 
 clean:
-	rm -rf *.o
+	rm -rf *.o ; echo $(ls);
