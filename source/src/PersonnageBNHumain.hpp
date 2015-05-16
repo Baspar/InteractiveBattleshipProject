@@ -31,8 +31,9 @@ class PersonnageBNHumain : public PersonnageBN{
         /// \brief Attaque du PNJ
         ///
         /// Demande où le joueur souhaite attaquer
+	/// \param grilleAdverse : grille de l'adversaire
         /// \return les coordonnées de la case à attaquer
-        Coordonnees coordonneesAViser();
+        Coordonnees coordonneesAViser(Grille* grilleAdverse);
 
 
       

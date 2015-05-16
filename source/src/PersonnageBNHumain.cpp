@@ -15,6 +15,6 @@ Grille PersonnageBNHumain::placerBateaux(){//DONE
 	return Grille(t.getLongueur(),t.getHauteur());
 }
 
-Coordonnees PersonnageBNHumain::coordonneesAViser(){//DONE
+Coordonnees PersonnageBNHumain::coordonneesAViser(Grille* grilleAdverse){//DONE
 	return Coordonnees(-1,-1);
 }
