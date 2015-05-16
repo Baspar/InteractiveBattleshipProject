@@ -96,18 +96,18 @@ class PersonnageBN{
         /// \return Coordonnees de la case à viser
         virtual Coordonnees coordonneesAViser(Grille* grilleAdverse);
 
-	/// \fn void restaurerBateaux()
+        /// \fn void restaurerBateaux()
         /// \brief restaure les PV des bateaux
         ///
         /// restaure les PV des bateaux
-	void restaurerBateaux();
+        void restaurerBateaux();
 
 
-	/// \fn bool flotteCoulee()
+        /// \fn bool flotteCoulee()
         /// \brief verifie si la flotte est coulee
         ///
         /// renvoie vrai si la flotte est coulee
-	/// \return bool vrai si flotte est coulee, faux sinon
-	bool flotteCoulee();
+        /// \return bool vrai si flotte est coulee, faux sinon
+        bool flotteCoulee();
 };
 #endif

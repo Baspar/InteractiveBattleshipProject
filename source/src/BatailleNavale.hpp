@@ -84,17 +84,17 @@ class BatailleNavale : public Combat{
         int getIndiceJoueurCourant() const;
 
 
-	  /// \fn void setIndiceJoueurCourant(const int nvIndice)
+        /// \fn void setIndiceJoueurCourant(const int nvIndice)
         /// \brief Setter de l indice du joueur courant
         ///
-        /// \param nbIndice:indice du personnage courant
+        /// \param nvIndice : indice du personnage courant
         void setIndiceJoueurCourant(const int nvIndice);
 
-	/// \fn vector<PersonnageBN*> getJoueurs() const;
+        /// \fn vector<PersonnageBN*> getJoueurs() const;
         /// \brief Getter de la liste de Joueurs
         ///
         /// \return vector<PersonnageBN*>:vecteur des 2 joueurs s'affrontant à la Bataille Navale
-	vector<PersonnageBN*> getJoueurs() const;
+        vector<PersonnageBN*> getJoueurs() const;
 
         /// \fn vector<Grille> getGrilles() const;
         /// \brief Getter de l'ensemble des grilles
