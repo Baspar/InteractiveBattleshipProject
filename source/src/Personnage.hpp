@@ -28,13 +28,6 @@ class Personnage{
         string nom;
 
 	public:
-        /// \fn Personnage(string nom)
-        /// \brief Constructeur paramétré
-        ///
-        /// Constructeur de la classe Personnage avec le nom en attribut
-        /// \param nom : string nom du personnage
-        Personnage(string nomcp);
-
         /// \fn void deplacer(Coordonnees coordonnees, Carte* carte)
         /// \brief fonction déplacer
         ///
@@ -55,12 +48,12 @@ class Personnage{
 
         /// \fn vodi setCoordonnees(Coordonnees coordSet)
         /// \brief Setter Coordonnees
-        /// \param Les coordonnees du personnage
+        /// \param coordSet Les coordonnees du personnage
         void setCoordonnees(Coordonnees coordSet);
 
         /// \fn void setCarte(Carte carteSet)
         /// \brief Setter Carte
-        /// \param la carte à pointer en attribut
+        /// \param carteSet : la carte à pointer en attribut
         void setCarte(Carte carteSet);
 };
 #endif

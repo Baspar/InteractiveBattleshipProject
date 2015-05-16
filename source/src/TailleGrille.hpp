@@ -19,7 +19,7 @@ class TailleGrille{
         int hauteur;
 
     public:
-        /// \fn TailleGrille(int lon, int haut)
+        /// \fn TailleGrille(int lon, int hau)
         /// \brief Constructeur de la classe TailleGrille
         /// \param lon : longueur de la grille
         /// \param hau : hauteur de la grille
@@ -40,14 +40,14 @@ class TailleGrille{
         /// return La hauteur de la Grille
         int getHauteur() const;
 
-        /// \fn void setLongueur(const int longueur)
+        /// \fn void setLongueur(const int longueurcp)
         /// \brief Setter de longueur
-        /// \param La longueur de la Grille
+        /// \param longueurcp : La longueur de la Grille
        	void setLongueur(const int longueurcp) ;
 
-        /// \fn int setHauteur(const int hauteur)
+        /// \fn int setHauteur(const int hauteurcp)
         /// \brief Setter de hauteur
-        /// \param La hauteur de la Grille
+        /// \param hauteurcp : La hauteur de la Grille
         void setHauteur(const int hauteurcp);
 
         /// \fn copy(TailleGrille tailleGrille)

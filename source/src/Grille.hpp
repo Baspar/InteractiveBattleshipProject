@@ -56,7 +56,7 @@ class Grille{
         /// \brief Constructeur par recopie
         ///
         /// Constructeur par recopie de la classe Grille
-        /// \param longueur : longueur de la grille
+        /// \param grille : Grille à recopier
         Grille(const Grille& grille);
 
         /// \fn Case getCaseElt(Coordonnees coordonnees)
@@ -123,7 +123,7 @@ class Grille{
 
         /// \fn bool grilleVide() const;
         /// \brief Vérifie si une Grille est vide ou non
-        /// \return bool : true si grille est vide, false sinon 
+        /// \return bool : true si grille est vide, false sinon
         bool grilleVide() const;
 };
 

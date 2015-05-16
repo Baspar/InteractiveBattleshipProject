@@ -33,6 +33,7 @@ JoueurHumain --|>PersonnageBNHumain
 PersonnageBNIA --|>PersonnageBN
 PersonnageBNHumain --|>PersonnageBN
 
+Arme <|-- ArmeClassique
 PersonnageBN o-- Arme
 PersonnageBN o-- Bateau
 

@@ -35,7 +35,7 @@ class CelluleAccessible:public Cellule{
 
         /// \fn void setPersonnage(Personnage* personnage)
         /// \brief place un personnage sur une cellule
-        /// \param Personnage* pointeur sur personnage à placer sur la cellule
+        /// \param personnage : pointeur sur personnage à placer sur la cellule
         void setPersonnage(Personnage* personnage);
 };
 #endif
