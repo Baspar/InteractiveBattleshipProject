@@ -8,12 +8,7 @@
 #include <vector>
 
 using namespace std;
-PersonnageBNHumain::PersonnageBNHumain(TailleGrille nvtailleGrille, string nvNom, Arme* nvArme, vector<Bateau*> nvbateaux){//DONE
-	setTailleGrille(nvtailleGrille);
-        setNom(nvNom);
-        setArme(nvArme);
-	setBateaux(nvbateaux);
-}
+
 
 Grille PersonnageBNHumain::placerBateaux(){//DONE
 	TailleGrille t=TailleGrille(0,0);

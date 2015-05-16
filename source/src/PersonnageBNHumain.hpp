@@ -34,17 +34,7 @@ class PersonnageBNHumain : public PersonnageBN{
         /// \return les coordonnées de la case à attaquer
         Coordonnees coordonneesAViser();
 
-	public :
-	
 
-        /// \fn PersonnageBNHumain(TailleGrille nvtailleGrille, string nvNom, Arme* nvArme, vector<Bateau*> nvbateaux)
-        /// \brief Constructeur
-        ///
-        /// Constructeur de la classe PersonnageBNHumain
-	/// \param nvtailleGrille : nouvelle taille de grille
-	/// \param nvNom : nom du personnageBN
-	/// \param nvArme : nom de l'arme du presonnageBN
-	/// \param bateaux: bateaux à ajouter
-        PersonnageBNHumain(TailleGrille nvtailleGrille, string nvNom, Arme* nvArme, vector<Bateau*> nvbateaux);
+      
 };
 #endif
