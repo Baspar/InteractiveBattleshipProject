@@ -8,7 +8,7 @@ using namespace std;
 Monde::Monde(){//WIP
     int nbCartes=2;
 
-    for(i=0;i<nbCartes;i++) cartes.push_back(Carte(i));
+    for(int i=0;i<nbCartes;i++) cartes.push_back(Carte(i));
 
 }
 
@@ -23,6 +23,6 @@ void Monde::placerJoueurs(vector<Personnage*> listePerso, vector<int> listeIdCar
 
             perso->setCoordonnees(coord);
             perso->setCarte(carte);
-            perso->getCarte()->getCel(coord).setPersonnage(perso);
+            perso->getCarte()->getCel(coord)->setPersonnage(perso);
         }
 }

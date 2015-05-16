@@ -47,7 +47,7 @@ void IHMJeu::afficherCarteCourante(){//WIP
     cout<<endl;
     cout<<"Affichage de la carte courante";
     cout<<endl;
-    for(vector<Cellule> cels : jeu->getPersonnageJouable().getCarte()->getCellules()) {
+    for(vector<Cellule> cels : jeu->getPersonnageJouable()->getCarte()->getCellules()) {
         for(Cellule cel : cels) {
             switch (cel.getTypeDeCellule()) {
                 case 0 : {

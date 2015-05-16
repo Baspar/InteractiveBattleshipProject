@@ -71,7 +71,7 @@ class PersonnageBN{
         /// \brief setters d'Arme
         ///
         /// \param nvArme: nouvel Arme(pointeur)
-        void setArme(const Arme* nvArme);
+        void setArme(Arme* nvArme);
 
         /// \fn void setBateaux(const vector<Bateau*> nvBateaux)
         /// \brief setters de bateaux
@@ -95,5 +95,19 @@ class PersonnageBN{
         /// \param grilleAdverse : grille de l'adversaire à viser
         /// \return Coordonnees de la case à viser
         virtual Coordonnees coordonneesAViser(Grille* grilleAdverse);
+
+	/// \fn void restaurerBateaux()
+        /// \brief restaure les PV des bateaux
+        ///
+        /// restaure les PV des bateaux
+	void restaurerBateaux();
+
+
+	/// \fn bool flotteCoulee()
+        /// \brief verifie si la flotte est coulee
+        ///
+        /// renvoie vrai si la flotte est coulee
+	/// \return bool vrai si flotte est coulee, faux sinon
+	bool flotteCoulee();
 };
 #endif

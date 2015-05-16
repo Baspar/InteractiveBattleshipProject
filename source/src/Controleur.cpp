@@ -56,12 +56,12 @@ void Controleur::tourDeJeuBatailleNavale(){//DONE
 	ihmBN->afficherJeu();
 
 	//caseAViser renvoie null si c'est un joueur humain, et des coordonnees si c'est joueurIA
-	if (batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser().coordonneesVides()){
+	if (batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser(nullptr).coordonneesVides()){
 		coord.copy(ihmBN->saisieCoup());
 		batailleNavale->jouer(coord);
 	}
 	else { 
-		coord.copy(batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser());
+		coord.copy(batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser(&batailleNavale->getGrilles()[(batailleNavale->getIndiceJoueurCourant()+1)%2]));
 		batailleNavale->jouer(coord);
 	}
 

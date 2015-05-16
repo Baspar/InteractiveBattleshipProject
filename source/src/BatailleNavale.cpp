@@ -36,13 +36,39 @@ vector<PersonnageBN*> BatailleNavale::getJoueurs() const {//DONE
 	return joueurs;
 }
 
-Personnage* BatailleNavale::retournerGagnant(PersonnageBN* joueur1, PersonnageBN* joueur2){//TODO
-	return nullptr;
+void BatailleNavale::setIndiceJoueurCourant(const int nvIndice){//DONE
+	indiceJoueurCourant=nvIndice;
 }
 
-void BatailleNavale::jouer(Coordonnees coordonnees){//TODO
+void BatailleNavale::changerJoueur(){//DONE
+	setIndiceJoueurCourant((getIndiceJoueurCourant()+1)%2);
 }
-void BatailleNavale::changerJoueur(){//TODO
+
+
+BatailleNavale::BatailleNavale(){//DONE
+	for(PersonnageBN* jou : joueurs) jou=nullptr;
 }
-BatailleNavale::BatailleNavale(){//TODO
+
+
+void BatailleNavale::initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageBN* joueur2){//WIP
+	joueurs[0]=joueur1;
+	joueurs[1]=joueur2;
+	indiceJoueurCourant =0;
+	grilles[0].copy(Grille(joueur1->getTailleGrille().getLongueur(),joueur1->getTailleGrille().getHauteur()));
+	grilles[1].copy(Grille(joueur2->getTailleGrille().getLongueur(),joueur2->getTailleGrille().getHauteur()));
+
+	for(PersonnageBN* jou : joueurs)
+		jou->restaurerBateaux();
+}
+
+
+void BatailleNavale::jouer(Coordonnees coordonnees){//WIP
+	getJoueurs()[getIndiceJoueurCourant()]->getArme()->tirer(coordonnees, &getGrilles()[(getIndiceJoueurCourant()+1)%2]);
+}
+
+
+PersonnageBN* BatailleNavale::retournerGagnant(PersonnageBN* joueur1, PersonnageBN* joueur2){//WIP
+	if(joueur1->flotteCoulee()) return joueur2;
+	else if (joueur2->flotteCoulee()) return joueur1;
+	else return nullptr;
 }
