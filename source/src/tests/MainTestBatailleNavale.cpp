@@ -130,30 +130,26 @@ int main(){
 	cout << "Coulee?? " << bn.getPersonnage2()->flotteCoulee() << endl;
 	cout << "indice du joueurCourant" << bn.getIndiceJoueurCourant() << endl;
 	cout << "Grille du joueur 1 :" << endl;
-	afficherGrille(bn.getGrille1());
+	afficherGrille(*bn.getGrille1());
 	cout << "Grille du joueur 2 :" << endl;
-	afficherGrille(bn.getGrille2());
+	afficherGrille(*bn.getGrille2());
 
 	cout << "Placement des bateaux" << endl;
 
 
-	bn.getVGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[0],Coordonnees(0,0),Coordonnees(0,1));
-	bn.getGrille1().placerBateau(bn.getPersonnage1()->getBateaux()[1],Coordonnees(1,0),Coordonnees(1,2));
-	bn.getVGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[2],Coordonnees(2,0),Coordonnees(2,2));
-	bn.getVGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[3],Coordonnees(3,0),Coordonnees(3,3));
-	bn.getVGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[3],Coordonnees(4,0),Coordonnees(4,4));
+	bn.getGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[0],Coordonnees(0,0),Coordonnees(0,1));
+	bn.getGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[1],Coordonnees(1,0),Coordonnees(1,2));
+	bn.getGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[2],Coordonnees(2,0),Coordonnees(2,2));
+	bn.getGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[3],Coordonnees(3,0),Coordonnees(3,3));
+	bn.getGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[3],Coordonnees(4,0),Coordonnees(4,4));
 	cout << "Grille du joueur 1 :" << endl;
-	Bateau bat(4);
-	cout << &bat<< endl;
-	bn.getVGrille1()->getVCaseElt(Coordonnees(1,1))->setBateau(&bat);
-	cout << "LOOOOOOLOLOLOLOL" << endl<< bn.getVGrille1()->getVCaseElt(Coordonnees(1,1))->getBateau();
-	afficherGrille(bn.getGrille1());
+	afficherGrille(*bn.getGrilles()[0]);
 
 	cout << "Affichage des grilles radars" << endl;
 	cout << "joueur 1" << endl;
-	afficherGrilleRadar(bn.getGrille1());
+	afficherGrilleRadar(*bn.getGrille1());
 	cout << "joueur 2" << endl;
-	afficherGrilleRadar(bn.getGrille2());
+	afficherGrilleRadar(*bn.getGrille2());
 
 	cout << "Le joueur 1 tape en (0,0))" << endl;
 	bn.jouer(Coordonnees(0,0));

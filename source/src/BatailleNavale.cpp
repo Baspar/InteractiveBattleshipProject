@@ -16,20 +16,21 @@ PersonnageBN* BatailleNavale::getPersonnage2() const {//DONE
     return joueurs[1];
 }
 
-Grille BatailleNavale::getGrille1()  {//DONE
-    return grilles[0];
-}
 
-Grille* BatailleNavale::getVGrille1()  {//DONE
+Grille* BatailleNavale::getGrille1() {//DONE
     return &grilles[0];
 }
 
-Grille BatailleNavale::getGrille2() const {//DONE
-    return grilles[1];
+Grille* BatailleNavale::getGrille2()  {//DONE
+    return &grilles[1];
 }
 
-vector<Grille> BatailleNavale::getGrilles() const {//DONE
-    return grilles;
+vector<Grille*> BatailleNavale::getGrilles() {//DONE
+    vector<Grille*> g;
+	g.clear();
+	g.push_back(getGrille1());
+	g.push_back(getGrille2());
+    return g;
 }
 
 int BatailleNavale::getIndiceJoueurCourant() const {//DONE
@@ -71,7 +72,7 @@ void BatailleNavale::initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageB
 
 
 void BatailleNavale::jouer(Coordonnees coordonnees){//DONE
-	getJoueurs()[getIndiceJoueurCourant()]->getArme()->tirer(coordonnees, &getGrilles()[(getIndiceJoueurCourant()+1)%2]);
+	getJoueurs()[getIndiceJoueurCourant()]->getArme()->tirer(coordonnees, getGrilles()[(getIndiceJoueurCourant()+1)%2]);
 }
 
 

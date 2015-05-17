@@ -38,12 +38,12 @@ void Controleur::actionBatailleNavale(){//DONE
 
 	//si placerBateaux renvoie NULL, on demande une saisie dans l'IHM sinon on copie les données de l'IA
 	if (batailleNavale->getPersonnage1()->placerBateaux().grilleVide())
-		batailleNavale->getGrille1().copy(ihmBN->saisirPlacementBateaux(batailleNavale->getPersonnage1()));
-	else batailleNavale->getGrille1().copy(batailleNavale->getPersonnage1()->placerBateaux());
+		batailleNavale->getGrille1()->copy(ihmBN->saisirPlacementBateaux(batailleNavale->getPersonnage1()));
+	else batailleNavale->getGrille1()->copy(batailleNavale->getPersonnage1()->placerBateaux());
 
 	if (batailleNavale->getPersonnage2()->placerBateaux().grilleVide())
-		batailleNavale->getGrille2().copy(ihmBN->saisirPlacementBateaux(batailleNavale->getPersonnage2()));
-	else batailleNavale->getGrille2().copy(batailleNavale->getPersonnage2()->placerBateaux());
+		batailleNavale->getGrille2()->copy(ihmBN->saisirPlacementBateaux(batailleNavale->getPersonnage2()));
+	else batailleNavale->getGrille2()->copy(batailleNavale->getPersonnage2()->placerBateaux());
 
 	//Verifie si la BN est finie, sinon continue la partie
 	while(batailleNavale->retournerGagnant(batailleNavale->getPersonnage1(),batailleNavale->getPersonnage2())==nullptr)
@@ -67,7 +67,7 @@ void Controleur::tourDeJeuBatailleNavale(){//DONE
 		batailleNavale->jouer(coord);
 	}
 	else { 
-		coord.copy(batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser(&batailleNavale->getGrilles()[(batailleNavale->getIndiceJoueurCourant()+1)%2]));
+		coord.copy(batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser(batailleNavale->getGrilles()[(batailleNavale->getIndiceJoueurCourant()+1)%2]));
 		batailleNavale->jouer(coord);
 	}
 

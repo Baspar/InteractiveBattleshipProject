@@ -66,13 +66,6 @@ class Grille{
         /// \return Coordonnees
         Case getCaseElt(Coordonnees coordonnees);
 
-	/// \fn Case* getVCaseElt(Coordonnees coordonnees)
-        /// \brief récupere la case à partir de Coordonnees
-        ///
-        /// \param coordonnees : coordonnees de la case
-        /// \return Coordonnees
-        Case* getVCaseElt(Coordonnees coordonnees);
-
 
         /// \fn void placerBateau(Bateau* bateau, const Coordonnees caseDepart, const Coordonnees caseArrivee)
         /// \brief place le bateau

@@ -68,19 +68,14 @@ class BatailleNavale : public Combat{
         /// \brief Getter de la grille 1
         ///
         /// \return Grille: grille 1
-        Grille getGrille1() ;
+        Grille* getGrille1() ;
 
-        /// \fn Grille* getVGrille1()
-        /// \brief Getter de la grille 1
-        ///
-        /// \return Grille: grille 1
-        Grille* getVGrille1() ;
 
         /// \fn Grille getGrille2() const
         /// \brief Getter de la grille 2
         ///
         /// \return Grille: grille 2
-        Grille getGrille2() const ;
+        Grille* getGrille2()  ;
 
 
         /// \fn int getIndiceJoueurCourant() const
@@ -106,7 +101,7 @@ class BatailleNavale : public Combat{
         /// \brief Getter de l'ensemble des grilles
         ///
         /// \return vector<Grille>: Ensemble des grilles
-        vector<Grille> getGrilles() const;
+        vector<Grille*> getGrilles() ;
 
         /// \fn PersonnageBN* retournerGagnant(PersonnageBN* joueur1, PersonnageBN* joueur2)
         /// \brief Retourner Gagnant

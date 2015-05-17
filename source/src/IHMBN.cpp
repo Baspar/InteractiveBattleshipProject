@@ -29,10 +29,10 @@ Coordonnees IHMBN::saisieCoup () const{//DONE
 		cin >> x;
 		cin >> y;
 		coord.copy(Coordonnees(x,y));
-		if(batailleNavale->getGrilles()[batailleNavale->getIndiceJoueurCourant()].coupValide(coord)==false)
+		if(batailleNavale->getGrilles()[batailleNavale->getIndiceJoueurCourant()]->coupValide(coord)==false)
 			cout << "Erreur! ";
 	}
-	while(batailleNavale->getGrilles()[batailleNavale->getIndiceJoueurCourant()].coupValide(coord)==false);
+	while(batailleNavale->getGrilles()[batailleNavale->getIndiceJoueurCourant()]->coupValide(coord)==false);
 	return coord;
 }
 
@@ -52,7 +52,7 @@ Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
 		Coordonnees coordArrivee(a,b);
 		grille.placerBateau(bat,coordDepart,coordArrivee);
 
-		while(batailleNavale->getGrilles()[batailleNavale->getIndiceJoueurCourant()].placementBateauValide(bat,coordDepart,coordArrivee)==false){
+		while(batailleNavale->getGrilles()[batailleNavale->getIndiceJoueurCourant()]->placementBateauValide(bat,coordDepart,coordArrivee)==false){
 			cout << "Erreur! Veuillez replacer le bateau de longueur "<< bat->getTailleBateau();
 			cout << "Veuillez resaisir les coordonnées de départ";
 			int x,y;
@@ -75,7 +75,7 @@ Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
 }
 
 void IHMBN::afficherGrilleBateaux(){//DONE
-	Grille grille(getBN()->getGrilles()[getBN()->getIndiceJoueurCourant()]);
+	Grille grille(*getBN()->getGrilles()[getBN()->getIndiceJoueurCourant()]);
 
 	cout << endl << "Grille personnelle" << endl;
 
@@ -118,7 +118,7 @@ void IHMBN::afficherGrilleBateaux(){//DONE
 }
 
 void IHMBN::afficherGrilleRadar(){//DONE
-	Grille grille(getBN()->getGrilles()[(getBN()->getIndiceJoueurCourant()+1)%2]);
+	Grille grille(*getBN()->getGrilles()[(getBN()->getIndiceJoueurCourant()+1)%2]);
 
 	if(grille.getTailleGrille().getLongueur()>10){
 		for (int i=0;i<grille.getTailleGrille().getLongueur();i++){
@@ -165,7 +165,7 @@ void IHMBN::afficherFinBN(){//DONE
 }
 
 void IHMBN::afficherResultatTour(Coordonnees coord){//DONE
-	Grille grille(getBN()->getGrilles()[getBN()->getIndiceJoueurCourant()]);
+	Grille grille(*getBN()->getGrilles()[getBN()->getIndiceJoueurCourant()]);
 	if(grille.getCaseElt(coord).getBateau()==nullptr)
 		cout << "A l'eau !!";
 	else{
