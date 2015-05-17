@@ -27,17 +27,27 @@ class Action{
         ///
         /// Cette classe gère le lancement de l'action en fonction de la case où le joueur se trouve
         /// Cette méthode est abstraite, elle sera réimplémentée dans les classes héritant de Action
-        virtual void lancerAction ();
+        virtual void lancerAction(){};
 
         /// \fn Action()
         /// \brief Constructeur
         ///
+        /// \param txtInteraction : le texte d'interaction
         /// Constructeur de la classe Action
-        Action();
+        Action(string txtInteraction);
 
         /// \fn string getTexteInteraction()
         /// \brief Getter texteInteraction
         /// \return Le texte correspondant à l'action
         string getTexteInteraction();
+
+        /// \fn void toggleActive()
+        /// \brief Passe la variable active de VRAI a FAUX et vise verca
+        void toggleActive();
+
+        /// \fn bool isActive()
+        /// \brief dit si l'action est active
+        /// \return L'état de l'action
+        bool isActive();
 };
 #endif

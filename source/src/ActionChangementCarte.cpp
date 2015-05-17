@@ -25,7 +25,7 @@ void ActionChangementCarte::lancerAction(){//DONE
     cellDest->setPersonnage(perso);
 
 }
-ActionChangementCarte::ActionChangementCarte(Carte* carteInit, Carte* carteDest, Coordonnees coordInit, Coordonnees coordDest) : coordonneesInitiales(coordInit),coordonneesDestination(coordDest) {//DONE
+ActionChangementCarte::ActionChangementCarte(Carte* carteInit, Carte* carteDest, Coordonnees coordInit, Coordonnees coordDest) : coordonneesInitiales(coordInit),coordonneesDestination(coordDest), Action("Vous changez de carte"){//DONE
     carteInitiale = carteInit;
     carteDestination = carteDest;
 }
