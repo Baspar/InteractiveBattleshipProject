@@ -41,7 +41,7 @@ class Jeu{
 	/// \fn Jeu(Combat comb)
 	/// \brief Constructeur parametre
     /// \param comb : combat à utiliser
-    Jeu(Combat comb);
+    Jeu(Combat* comb);
 
 	/// \fn bool partieFinie()
 	/// \brief voir si partie finie

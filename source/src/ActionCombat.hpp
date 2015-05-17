@@ -20,12 +20,13 @@ class ActionCombat : public Action{
         /// Joueur contre lequel le joueur va effectuer un combat
         Personnage* adversaire;
     public:
-        /// \fn ActionCombat(string texte)
+        /// \fn ActionCombat(Personnage* adversairenv,string texte)
         /// \brief Constructeur
         ///
         /// Constructeur de la classe ActionCombat
 	/// \param texte: texte a afficher
-        ActionCombat(string texte);
+	/// \param adversairenv: adversaire a affronter
+        ActionCombat(Personnage* adversairenv, string texte);
 
         /// \fn void lancerAction()
         /// \brief Lancement de l'action

@@ -79,7 +79,7 @@ void IHMBN::afficherGrilleBateaux(){//DONE
 
 	cout << endl << "Grille personnelle" << endl;
 
-	if(g.getTailleGrille().getLongueur()>10){
+	if(grille.getTailleGrille().getLongueur()>10){
 		for (int i=0;i<grille.getTailleGrille().getLongueur();i++){
        			 cout << "|";
       			  if(i/10 == 0)
@@ -120,8 +120,8 @@ void IHMBN::afficherGrilleBateaux(){//DONE
 void IHMBN::afficherGrilleRadar(){//DONE
 	Grille grille(getBN()->getGrilles()[(getBN()->getIndiceJoueurCourant()+1)%2]);
 
-	if(g.getTailleGrille().getLongueur()>10){
-		for (int i=0;i<g.getTailleGrille().getLongueur();i++){
+	if(grille.getTailleGrille().getLongueur()>10){
+		for (int i=0;i<grille.getTailleGrille().getLongueur();i++){
        			 cout << "|";
       		         if(i/10 == 0)
       			      cout << " ";
@@ -131,25 +131,25 @@ void IHMBN::afficherGrilleRadar(){//DONE
                 }
 	    cout << "|" << endl;
 	}
-	for (int i=0;i<g.getTailleGrille().getLongueur();i++)
+	for (int i=0;i<grille.getTailleGrille().getLongueur();i++)
 		cout << "|" << i%10;
         cout << "|" << endl;
 
-        for (int i=0;i<g.getTailleGrille().getLongueur();i++)
+        for (int i=0;i<grille.getTailleGrille().getLongueur();i++)
 		cout << "--";
         cout << "-" << endl;
 
-	for (int i=0;i<g.getTailleGrille().getHauteur();i++){
-		for (int j=0;j<g.getTailleGrille().getLongueur();j++){
+	for (int i=0;i<grille.getTailleGrille().getHauteur();i++){
+		for (int j=0;j<grille.getTailleGrille().getLongueur();j++){
 			Coordonnees coord(j,i);
 			cout << "|";
-			if(g.getCaseElt(coord).getBateau()!=nullptr){
-				if(g.getCaseElt(coord).getTouche()==false)
+			if(grille.getCaseElt(coord).getBateau()!=nullptr){
+				if(grille.getCaseElt(coord).getTouche()==false)
 					cout << " ";
 				else cout << "x";
 			}
 			else {
-				if(g.getCaseElt(coord).getTouche()==false)
+				if(grille.getCaseElt(coord).getTouche()==false)
 					cout << " ";
 				else cout << "-";
 			}

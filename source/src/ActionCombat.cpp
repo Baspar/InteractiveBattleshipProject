@@ -10,6 +10,7 @@ ActionCombat::ActionCombat(Personnage* adversairenv, string texte):Action(texte)
 }
 
 void ActionCombat::lancerAction(){//DONE
+
 }
 
 
