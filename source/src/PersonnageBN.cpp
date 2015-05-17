@@ -4,6 +4,7 @@
 #include "Coordonnees.hpp"
 #include "TailleGrille.hpp"
 #include "Arme.hpp"
+#include "ArmeClassique.hpp"
 #include "Bateau.hpp"
 #include <iostream>
 #include <vector>
@@ -13,6 +14,15 @@ using namespace std;
 
 PersonnageBN::PersonnageBN(string nomnv):tailleGrille(10,10){//WIP
 	nomBN=nomnv;
+	
+	arme=new ArmeClassique();
+
+	bateaux=vector<Bateau*>();
+	bateaux.push_back(new Bateau(2));
+	bateaux.push_back(new Bateau(3));
+	bateaux.push_back(new Bateau(3));
+	bateaux.push_back(new Bateau(4));
+	bateaux.push_back(new Bateau(5));
 }
 
 
