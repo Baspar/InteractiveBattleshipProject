@@ -16,8 +16,12 @@ PersonnageBN* BatailleNavale::getPersonnage2() const {//DONE
     return joueurs[1];
 }
 
-Grille BatailleNavale::getGrille1() const {//DONE
+Grille BatailleNavale::getGrille1()  {//DONE
     return grilles[0];
+}
+
+Grille* BatailleNavale::getVGrille1()  {//DONE
+    return &grilles[0];
 }
 
 Grille BatailleNavale::getGrille2() const {//DONE
@@ -46,16 +50,20 @@ void BatailleNavale::changerJoueur(){//DONE
 
 
 BatailleNavale::BatailleNavale(){//DONE
+	joueurs.resize(2);
 	for(PersonnageBN* jou : joueurs) jou=nullptr;
 }
 
 
 void BatailleNavale::initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageBN* joueur2){//DONE
+	cout << "test" <<endl;
 	joueurs[0]=joueur1;
 	joueurs[1]=joueur2;
+	cout << "test" <<endl;
 	indiceJoueurCourant =0;
-	grilles[0].copy(Grille(joueur1->getTailleGrille().getLongueur(),joueur1->getTailleGrille().getHauteur()));
-	grilles[1].copy(Grille(joueur2->getTailleGrille().getLongueur(),joueur2->getTailleGrille().getHauteur()));
+	grilles.clear();
+	grilles.push_back(Grille(joueur1->getTailleGrille().getLongueur(),joueur1->getTailleGrille().getHauteur()));
+	grilles.push_back(Grille(joueur2->getTailleGrille().getLongueur(),joueur2->getTailleGrille().getHauteur()));
 
 	for(PersonnageBN* jou : joueurs)
 		jou->restaurerBateaux();

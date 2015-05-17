@@ -40,7 +40,7 @@ CompileMainTestAutreAction: AutreAction.o
 MainTestAutreAction: CompileMainTestAutreAction
 	tests/MainTestAutreAction
 
-CompileMainTestBatailleNavale: Combat.o BatailleNavale.o Grille.o PersonnageBN.o TailleGrille.o Coordonnees.o Case.o Bateau.o Personnage.o Carte.o CelluleAccessible.o Cellule.o
+CompileMainTestBatailleNavale: Combat.o BatailleNavale.o Grille.o PersonnageBN.o TailleGrille.o Coordonnees.o Case.o Bateau.o Personnage.o Carte.o CelluleAccessible.o Cellule.o ArmeClassique.o Arme.o
 	g++ $(FLAGS) tests/MainTestBatailleNavale.cpp $^ -o tests/MainTestBatailleNavale
 MainTestBatailleNavale: CompileMainTestBatailleNavale
 	tests/MainTestBatailleNavale

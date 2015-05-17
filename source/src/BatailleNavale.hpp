@@ -64,11 +64,17 @@ class BatailleNavale : public Combat{
         /// \return PersonnageBN*: pointeur sur personnage 2
         PersonnageBN* getPersonnage2() const ;
 
-        /// \fn Grille getGrille1() const
+        /// \fn Grille getGrille1()
         /// \brief Getter de la grille 1
         ///
         /// \return Grille: grille 1
-        Grille getGrille1() const ;
+        Grille getGrille1() ;
+
+        /// \fn Grille* getVGrille1()
+        /// \brief Getter de la grille 1
+        ///
+        /// \return Grille: grille 1
+        Grille* getVGrille1() ;
 
         /// \fn Grille getGrille2() const
         /// \brief Getter de la grille 2

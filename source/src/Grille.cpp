@@ -26,9 +26,11 @@ Grille::Grille(const Grille& grille) :tailleGrille(grille.getTailleGrille().getL
 
 
 Case Grille::getCaseElt(Coordonnees coordonnees){//DONE
-	Case c;
-	c.copy(cases.at(coordonnees.getAbscisse()).at(coordonnees.getOrdonnee()));
-	return c;
+	return cases.at(coordonnees.getAbscisse()).at(coordonnees.getOrdonnee());
+}
+
+Case* Grille::getVCaseElt(Coordonnees coordonnees){//DONE
+	return &cases.at(coordonnees.getAbscisse()).at(coordonnees.getOrdonnee());
 }
 
 void Grille::tirerDessus(const Coordonnees coordonnees){//DONE
