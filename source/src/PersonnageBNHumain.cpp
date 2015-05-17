@@ -10,6 +10,10 @@
 using namespace std;
 
 
+PersonnageBNHumain::PersonnageBNHumain(string nomnv):PersonnageBN(nomnv){//WIP
+}
+
+
 Grille PersonnageBNHumain::placerBateaux(){//DONE
 	TailleGrille t=TailleGrille(0,0);
 	return Grille(t.getLongueur(),t.getHauteur());

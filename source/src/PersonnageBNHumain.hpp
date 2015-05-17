@@ -21,6 +21,16 @@ using namespace std;
 
 class PersonnageBNHumain : public PersonnageBN{
 
+
+	public:
+	/// \fn PersonnageBNHumain(string nomnv)
+        /// \brief Constructeur des persoBNHumain
+        ///
+        /// Constructeur des persoBNHumain
+	/// \param nomnv:nom du joueur
+        PersonnageBNHumain(string nomnv);
+		
+
     private:
         /// \brief Place les bateaux
         ///
@@ -29,8 +39,8 @@ class PersonnageBNHumain : public PersonnageBN{
         Grille placerBateaux();
 
         /// \brief Attaque du PNJ
-        ///
-        /// Demande où le joueur souhaite attaquer
+	///
+	/// Demande où le joueur souhaite attaquer
 	/// \param grilleAdverse : grille de l'adversaire
         /// \return les coordonnées de la case à attaquer
         Coordonnees coordonneesAViser(Grille* grilleAdverse);

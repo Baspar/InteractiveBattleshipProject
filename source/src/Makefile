@@ -145,7 +145,7 @@ CompileMainTestPersonnage: Personnage.o
 MainTestPersonnage: CompileMainTestPersonnage
 	tests/MainTestPersonnage
 
-CompileMainTestPersonnageJouable: PersonnageJouable.o
+CompileMainTestPersonnageJouable: PersonnageJouable.o Personnage.o Coordonnees.o Carte.o TailleGrille.o CelluleAccessible.o Cellule.o
 	g++ $(FLAGS) tests/MainTestPersonnageJouable.cpp $^ -o tests/MainTestPersonnageJouable
 MainTestPersonnageJouable: CompileMainTestPersonnageJouable
 	tests/MainTestPersonnageJouable

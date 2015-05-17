@@ -28,6 +28,14 @@ class Personnage{
         string nom;
 
 	public:
+
+	/// \fn Personnage(string nomnv)
+        /// \brief constructeur
+        ///
+        /// \param nomnv : nom du joueur
+	Personnage(string nomnv);
+
+
         /// \fn void deplacer(Coordonnees coordonnees, Carte* carte)
         /// \brief fonction déplacer
         ///

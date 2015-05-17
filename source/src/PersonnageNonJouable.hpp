@@ -15,5 +15,15 @@ using namespace std;
 ///
 /// La classe représente un personnage non jouable
 class PersonnageNonJouable : public Personnage, PersonnageBNIA{
+
+
+
+
+	/// \fn PersonnageNonJouable(string nomnv);
+	/// \brief constructeur de PNJ
+	///
+	/// \param nomnv: nom du personnage
+	PersonnageNonJouable(string nomnv);
+
 };
 #endif

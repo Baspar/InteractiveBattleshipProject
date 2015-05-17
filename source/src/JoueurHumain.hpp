@@ -19,11 +19,18 @@ class JoueurHumain : public PersonnageJouable, PersonnageBNHumain{
 
 	public :
 
-        /// \fn JoueurHumain(string nom)
+        /// \fn JoueurHumain(string nomnv)
         /// \brief Constructeur paramétré
         ///
         /// Constructeur de la classe JoueurHumain avec le nom en attribut
-        /// \param nom : string nom du joueur
-        JoueurHumain(string nom);
+        /// \param nomnv : string nom du joueur
+        JoueurHumain(string nomnv);
+
+	/// \fn ~JoueurHumain()
+        /// \brief Destructeur paramétré
+        ///
+        /// Destructeur de la classe JoueurHumain avec le nom en attribut
+        ~JoueurHumain(){};
+	
 };
 #endif

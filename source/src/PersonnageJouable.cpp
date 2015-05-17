@@ -4,3 +4,8 @@
 #include "Coordonnees.hpp"
 
 using namespace std;
+
+
+PersonnageJouable::PersonnageJouable(string nomnv):Personnage(nomnv) { //WIP	
+
+}
