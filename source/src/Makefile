@@ -25,6 +25,11 @@ CompileMainTestArmeClassique:  ArmeClassique.o Coordonnees.o Grille.o  Case.o Ta
 MainTestArmeClassique: CompileMainTestArmeClassique
 	tests/MainTestArmeClassique
 
+CompileMainTestArmeCroix:  ArmeCroix.o Coordonnees.o Grille.o  Case.o TailleGrille.o Bateau.o Arme.o
+	g++ $(FLAGS) tests/MainTestArmeCroix.cpp $^ -o tests/MainTestArmeCroix
+MainTestArmeCroix: CompileMainTestArmeCroix
+	tests/MainTestArmeCroix
+
 CompileMainTestArme: Arme.o
 	g++ $(FLAGS) tests/MainTestArme.cpp $^ -o tests/MainTestArme
 MainTestArme: CompileMainTestArme
@@ -161,4 +166,4 @@ MainTestTailleGrille: CompileMainTestTailleGrille
 	tests/MainTestTailleGrille
 
 clean:
-	rm -rf *.o *~ ; find ./tests/ -type f ! -name "*.*" -exec rm {} \;
+	rm -rf *.o *~ tests/*~; find ./tests/ -type f ! -name "*.*" -exec rm {} \;
