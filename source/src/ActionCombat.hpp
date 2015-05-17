@@ -20,16 +20,25 @@ class ActionCombat : public Action{
         /// Joueur contre lequel le joueur va effectuer un combat
         Personnage* adversaire;
     public:
-        /// \fn virtual void lancerAction()
+        /// \fn ActionCombat(string texte)
+        /// \brief Constructeur
+        ///
+        /// Constructeur de la classe ActionCombat
+	/// \param texte: texte a afficher
+        ActionCombat(string texte);
+
+        /// \fn void lancerAction()
         /// \brief Lancement de l'action
         ///
         /// Cette classe gère le lancement du combat en fonction de la case où le joueur se trouve
         void lancerAction();
 
-        /// \fn ActionCombat()
-        /// \brief Constructeur
+
+	/// \fn Personnage* getAdversaire() const
+        /// \brief getter
         ///
-        /// Constructeur de la classe ActionCombat
-        ActionCombat();
+        /// \return adversaire
+        Personnage* getAdversaire() const;
+
 };
 #endif
