@@ -29,7 +29,7 @@ Case Grille::getCaseElt(Coordonnees coordonnees){//DONE
 	return cases.at(coordonnees.getAbscisse()).at(coordonnees.getOrdonnee());
 }
 
-void Grille::tirerDessus(const Coordonnees coordonnees){//DONE
+void Grille::tirerDessus(const Coordonnees coordonnees){//DONE	
     cases[coordonnees.getAbscisse()][coordonnees.getOrdonnee()].tirerDessus();
 }
 

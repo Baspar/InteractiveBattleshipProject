@@ -73,6 +73,7 @@ void BatailleNavale::initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageB
 
 void BatailleNavale::jouer(Coordonnees coordonnees){//DONE
 	getJoueurs()[getIndiceJoueurCourant()]->getArme()->tirer(coordonnees, getGrilles()[(getIndiceJoueurCourant()+1)%2]);
+	changerJoueur();
 }
 
 

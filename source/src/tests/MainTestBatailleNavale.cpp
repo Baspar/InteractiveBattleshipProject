@@ -6,9 +6,7 @@ using namespace std;
 
 
 void afficherGrille(Grille grille){
-    cout << endl << endl << "Affichage grille" << endl << endl;
-
-	for (int i=0;i<grille.getTailleGrille().getLongueur();i++){
+   	for (int i=0;i<grille.getTailleGrille().getLongueur();i++){
         cout << "|";
         if(i/10 == 0)
             cout << " ";
@@ -136,14 +134,21 @@ int main(){
 
 	cout << "Placement des bateaux" << endl;
 
-
 	bn.getGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[0],Coordonnees(0,0),Coordonnees(0,1));
 	bn.getGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[1],Coordonnees(1,0),Coordonnees(1,2));
 	bn.getGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[2],Coordonnees(2,0),Coordonnees(2,2));
 	bn.getGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[3],Coordonnees(3,0),Coordonnees(3,3));
-	bn.getGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[3],Coordonnees(4,0),Coordonnees(4,4));
+	bn.getGrille1()->placerBateau(bn.getPersonnage1()->getBateaux()[4],Coordonnees(4,0),Coordonnees(4,4));
 	cout << "Grille du joueur 1 :" << endl;
 	afficherGrille(*bn.getGrilles()[0]);
+
+	bn.getGrille2()->placerBateau(bn.getPersonnage2()->getBateaux()[0],Coordonnees(0,0),Coordonnees(0,1));
+	bn.getGrille2()->placerBateau(bn.getPersonnage2()->getBateaux()[1],Coordonnees(1,0),Coordonnees(1,2));
+	bn.getGrille2()->placerBateau(bn.getPersonnage2()->getBateaux()[2],Coordonnees(2,0),Coordonnees(2,2));
+	bn.getGrille2()->placerBateau(bn.getPersonnage2()->getBateaux()[3],Coordonnees(3,0),Coordonnees(3,3));
+	bn.getGrille2()->placerBateau(bn.getPersonnage2()->getBateaux()[4],Coordonnees(4,0),Coordonnees(4,4));
+	cout << "Grille du joueur 2 :" << endl;
+	afficherGrille(*bn.getGrilles()[1]);
 
 	cout << "Affichage des grilles radars" << endl;
 	cout << "joueur 1" << endl;
@@ -151,7 +156,74 @@ int main(){
 	cout << "joueur 2" << endl;
 	afficherGrilleRadar(*bn.getGrille2());
 
+
+	cout << "indice du joueurCourant" << bn.getIndiceJoueurCourant() << endl;
 	cout << "Le joueur 1 tape en (0,0))" << endl;
 	bn.jouer(Coordonnees(0,0));
+	cout << "indice du joueurCourant" << bn.getIndiceJoueurCourant() << endl;
+
+	cout << "affichage de la grille radar" << endl;
+	afficherGrilleRadar(*bn.getGrille2());
+
 	
+	cout << "Le joueur 2 tape en (8,0))" << endl;
+	bn.jouer(Coordonnees(8,0));
+	cout << "indice du joueurCourant" << bn.getIndiceJoueurCourant() << endl;
+	cout << "affichage de la grille radar" << endl;
+	afficherGrilleRadar(*bn.getGrille1());
+	cout << "Méthode jouer ok" << endl;
+
+	cout<< "Gagnant null ?" << endl; 		
+	cout << (bn.retournerGagnant(bn.getPersonnage1(),bn.getPersonnage2())==nullptr) << endl;
+
+	cout << "On coule toute la flotte du joueur 2" << endl;
+	bn.jouer(Coordonnees(0,1));
+	bn.jouer(Coordonnees(0,1));
+	bn.jouer(Coordonnees(1,0));
+	bn.jouer(Coordonnees(1,0));
+	bn.jouer(Coordonnees(1,1));
+	bn.jouer(Coordonnees(1,1));
+	bn.jouer(Coordonnees(1,2));
+	bn.jouer(Coordonnees(1,2));
+	bn.jouer(Coordonnees(2,0));
+	bn.jouer(Coordonnees(2,0));
+	bn.jouer(Coordonnees(2,1));
+	bn.jouer(Coordonnees(2,1));
+	bn.jouer(Coordonnees(2,2));
+	bn.jouer(Coordonnees(2,2));
+	bn.jouer(Coordonnees(3,0));
+	bn.jouer(Coordonnees(3,0));
+	bn.jouer(Coordonnees(3,1));
+	bn.jouer(Coordonnees(3,1));
+	bn.jouer(Coordonnees(3,2));
+	bn.jouer(Coordonnees(3,2));
+	bn.jouer(Coordonnees(3,3));
+	bn.jouer(Coordonnees(3,3));
+	bn.jouer(Coordonnees(4,0));
+	bn.jouer(Coordonnees(4,0));
+	bn.jouer(Coordonnees(4,1));
+	bn.jouer(Coordonnees(4,1));
+	bn.jouer(Coordonnees(4,2));
+	bn.jouer(Coordonnees(4,2));
+	bn.jouer(Coordonnees(4,3));
+	bn.jouer(Coordonnees(4,3));
+	bn.jouer(Coordonnees(4,4));
+	bn.jouer(Coordonnees(4,4));
+
+	cout << "affichage de la grille radar" << endl;
+	afficherGrilleRadar(*bn.getGrille2());
+	
+	
+	
+
+	cout<< "Gagnant JOUEUR 1?" << endl; 		
+	cout << (bn.retournerGagnant(bn.getPersonnage1(),bn.getPersonnage2())==bn.getPersonnage1()) << endl;
+	
+	cout << "On restaure un bateau au joueur 2 "<< endl; 
+	bn.getPersonnage2()->getBateaux()[0]->restaurerPV();;
+	cout << "On tue le joueur 1" << endl;
+	bn.jouer(Coordonnees(0,0));
+	bn.jouer(Coordonnees(0,0));
+	cout<< "Gagnant JOUEUR 2?" << endl; 		
+	cout << (bn.retournerGagnant(bn.getPersonnage1(),bn.getPersonnage2())==bn.getPersonnage2()) << endl;
 }
