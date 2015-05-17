@@ -6,6 +6,14 @@
 
 using namespace std;
 
+
+
+Personnage::Personnage(string nomnv):coord(-1,-1) { //WIP 	
+	carte=nullptr;
+	nomnv=nom;
+}
+
+
 void Personnage::deplacer(Coordonnees coordonnees, Carte* carteEntree){//DONE
     carteEntree->deplacerPersonnage(this, coordonnees);
     coord.copy(coordonnees);

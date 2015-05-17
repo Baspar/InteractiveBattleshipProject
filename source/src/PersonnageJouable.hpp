@@ -14,5 +14,13 @@ using namespace std;
 ///
 /// La classe représente un personnage jouable
 class PersonnageJouable : public Personnage{
+
+	public :
+	/// \fn PersonnageJouable(string nomnv)
+        /// \brief constructeur
+        ///
+        /// \param nomnv : nom du joueur
+	PersonnageJouable(string nomnv);
+
 };
 #endif
