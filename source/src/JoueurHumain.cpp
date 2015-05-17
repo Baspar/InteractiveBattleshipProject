@@ -1,7 +1,9 @@
 #include "JoueurHumain.hpp"
 
+#include "ArmeClassique.hpp"
 #include "PersonnageJouable.hpp"
 #include "PersonnageBNHumain.hpp"
+#include "Bateau.hpp"
 
 using namespace std;
 
@@ -11,7 +13,7 @@ JoueurHumain::JoueurHumain(string nomnv):PersonnageJouable(nomnv),PersonnageBNHu
 
 	setArme(new ArmeClassique());
 
-	setBateaux(new vector<bateau>());
+	setBateaux(vector<Bateau*>());
 	getBateaux().push_back(new Bateau(2));
 	getBateaux().push_back(new Bateau(3));
 	getBateaux().push_back(new Bateau(3));

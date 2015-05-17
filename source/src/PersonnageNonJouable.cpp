@@ -2,22 +2,23 @@
 
 #include "Personnage.hpp"
 #include "PersonnageBNIA.hpp"
+#include "ArmeClassique.hpp"
+#include "Bateau.hpp"
 
 using namespace std;
 
 
-PersonnageNonJouable::PersonnageNonJouable(string nomnv):TailleGrille(10,10) {//WIP
-	carte=nullptr;
-	coord.copy(coord(-1,-1));
-	nom=nomnv;
-	nomBN=nomnv;
+PersonnageNonJouable::PersonnageNonJouable(string nomnv):PersonnageBNIA(nomnv),Personnage(nomnv) {//WIP
 
-	arme = new ArmeClassique();
+	setTailleGrille(TailleGrille(10,10));
 
-	bateaux = new vector<bateau>();
-	bateaux.push_back(new Bateau(2));
-	bateaux.push_back(new Bateau(3));
-	bateaux.push_back(new Bateau(3));
-	bateaux.push_back(new Bateau(4));
-	bateaux.push_back(new Bateau(5));
+	setArme(new ArmeClassique());
+
+	setBateaux(vector<Bateau*>());
+	getBateaux().push_back(new Bateau(2));
+	getBateaux().push_back(new Bateau(3));
+	getBateaux().push_back(new Bateau(3));
+	getBateaux().push_back(new Bateau(4));
+	getBateaux().push_back(new Bateau(5));
+
 }

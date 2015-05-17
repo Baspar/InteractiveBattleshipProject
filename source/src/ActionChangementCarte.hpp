@@ -5,8 +5,8 @@
 /// \brief Change la carte si besoin
 /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
-#include "Carte.hpp"
 #include "Coordonnees.hpp"
+#include "Carte.hpp"
 
 
 
@@ -20,10 +20,14 @@ using namespace std;
 
 class ActionChangementCarte : public Action{
     private:
-        ///Carte sur laquelle le joueur se déplace
-        Carte* carte;
-        ///Une abscisse et une ordonnée qui référencient de manière non ambiguë le placement du joueur sur la carte
-        Coordonnees coordonnees;
+        /// Carte d'origine
+        Carte* carteInitiale;
+        /// Coordonnees d'origine
+        Coordonnees coordonneesInitiales;
+        /// Carte de destination
+        Carte* carteDestination;
+        /// Coordonnees de destination
+        Coordonnees coordonneesDestination;
 
     public:
         /// \fn virtual void lancerAction()
@@ -32,10 +36,14 @@ class ActionChangementCarte : public Action{
         /// Cette classe gère le changement de carte quand le joueur accède à une case qui permet de changer de carte
         void lancerAction();
 
-        /// \fn ActionChangementCarte()
-        /// \brief Constructeur
+        /// \fn ActionChangementCarte(Carte* carteInit, Carte* carteDest, Coordonnees coordInit, Coordonnees coordDest)
+        /// \brief Constructeur parametre
         ///
         /// Constructeur de la classe ActionChangementCarte
-        ActionChangementCarte();
+        /// \param carteInit : Carte d'origine
+        /// \param carteDest : Carte de destination
+        /// \param coordInit : Coordonnees d'origine
+        /// \param coordDest : Coordonnees de destination
+        ActionChangementCarte(Carte* carteInit, Carte* carteDest, Coordonnees coordInit, Coordonnees coordDest);
 };
 #endif
