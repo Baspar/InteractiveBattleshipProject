@@ -23,7 +23,7 @@ int main(){
     coordonnees.copy(coordonneesNulle);
     cout << "   Coordonnees nulle? " << coordonnees.getAbscisse() << coordonnees.getOrdonnee()<< endl;
     cout << "   coordonneesNulle nulle? " << coordonneesNulle.getAbscisse() << coordonneesNulle.getOrdonnee() << endl;
-    cout << "   tailleGrilleCopy nulle? " << coordonneesCopy.getAbscisse() << coordonneesCopy.getOrdonnee() << endl;
+    cout << "   coordonneesCopy nulle? " << coordonneesCopy.getAbscisse() << coordonneesCopy.getOrdonnee() << endl;
 
     return 0;
 }
