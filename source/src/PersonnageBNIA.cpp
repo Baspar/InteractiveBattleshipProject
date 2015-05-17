@@ -5,6 +5,11 @@
 #include <time.h> 
 
 using namespace std;
+
+PersonnageBNIA::PersonnageBNIA(string nomnv):PersonnageBN(nomnv){//WIP
+}
+
+
 Coordonnees PersonnageBNIA::coordonneesAViser(Grille* grilleAdverse){ //DONE
 	Coordonnees impact(-1,-1);
 	do {

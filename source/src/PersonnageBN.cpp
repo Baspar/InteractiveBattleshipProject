@@ -11,7 +11,7 @@
 using namespace std;
 
 
-PersonnageBNHumain::PersonnageBN(string nomnv){//WIP
+PersonnageBN::PersonnageBN(string nomnv):tailleGrille(10,10){//WIP
 	nomBN=nomnv;
 }
 

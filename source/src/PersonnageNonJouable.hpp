@@ -18,7 +18,7 @@ class PersonnageNonJouable : public Personnage, PersonnageBNIA{
 
 
 
-
+	public :
 	/// \fn PersonnageNonJouable(string nomnv);
 	/// \brief constructeur de PNJ
 	///
