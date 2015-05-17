@@ -34,6 +34,7 @@ PersonnageBNIA --|>PersonnageBN
 PersonnageBNHumain --|>PersonnageBN
 
 Arme <|-- ArmeClassique
+Arme <|-- ArmeCroix
 PersonnageBN o-- Arme
 PersonnageBN o-- Bateau
 
