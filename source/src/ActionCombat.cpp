@@ -5,7 +5,16 @@
 
 using namespace std;
 
-void ActionCombat::lancerAction(){//TODO
+ActionCombat::ActionCombat(Personnage* adversairenv, string texte):Action(texte){//DONE
+	adversaire=adversairenv;
 }
-ActionCombat::ActionCombat(){//TODO
+
+void ActionCombat::lancerAction(){//DONE
+
 }
+
+
+Personnage* ActionCombat::getAdversaire() const{//DONE
+	return adversaire;
+}
+

@@ -3,6 +3,8 @@
 
 #include "IHMJeu.hpp"
 #include "IHMBN.hpp"
+#include "ActionCombat.hpp"
+#include "PersonnageBN.hpp"
 
 using namespace std;
 Controleur::Controleur(){//DONE
@@ -14,11 +16,13 @@ Controleur::Controleur(){//DONE
 }
 
 
-void Controleur::tourDeJeu(){//TODO
+void Controleur::tourDeJeu(){//DONE
     ihmJeu->afficherJeu();
     jeu->jouer(ihmJeu->saisieDeplacement());
     //code pour lancer la partie controleur correspondant à l'action effectuée (si besoin)
-    //si bataille navale : this.action bataille navale etc...
+	ihmJeu->afficherJeu();
+	if(jeu->getActionEnCours()->getTexteInteraction()=="COMBAT!!!")
+		actionBatailleNavale();
 }
 
 
@@ -28,10 +32,9 @@ void Controleur::lancerJeu(){//DONE
 }
 
 
-void Controleur::actionBatailleNavale(){//WIP
+void Controleur::actionBatailleNavale(){//DONE
 	
-	//INITIALISER LES BATAILLE NAVALES AVEC LES JOUEURS
-	//batailleNavale.initialiserJoueurCourant(J1,J2);
+	batailleNavale->initialiserJoueurCourant((PersonnageBN*) jeu->getPersonnageJouable(),(PersonnageBN*) ((ActionCombat*) jeu->getActionEnCours())->getAdversaire());
 
 	//si placerBateaux renvoie NULL, on demande une saisie dans l'IHM sinon on copie les données de l'IA
 	if (batailleNavale->getPersonnage1()->placerBateaux().grilleVide())
