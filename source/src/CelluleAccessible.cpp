@@ -19,3 +19,8 @@ bool CelluleAccessible::estAccessible(){//TODO
 void CelluleAccessible::setPersonnage(Personnage* personnage){//DONE
     occupant= personnage;
 }
+
+
+Personnage* CelluleAccessible:: getPersonnage(CelluleAccessible celluleAccessible){//DONE
+    return occupant;
+}
