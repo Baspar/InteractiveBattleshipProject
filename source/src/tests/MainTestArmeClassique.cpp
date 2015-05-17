@@ -58,14 +58,22 @@ afficherGrille(g);
 cout <<"On tape en (0,0) et (0,1)" << endl << endl; 
 arme.tirer(Coordonnees(0,0),&g);
 arme.tirer(Coordonnees(0,1),&g);
-
+ cout << "   Bateau coule " << (bat.estCoule()?"Oui":"Non") << endl;
 afficherGrille(g);
 
+cout << "On tape en (0,2)" << endl ; 
 arme.tirer(Coordonnees(0,2),&g);
+ cout << "   Bateau coule " << (bat.estCoule()?"Oui":"Non") << endl;
+cout << "On tape en (0,3) " << endl ; 
 arme.tirer(Coordonnees(0,3),&g);
+ cout << "   Bateau coule " << (bat.estCoule()?"Oui":"Non") << endl;
+cout << "On tape en (0,4)" << endl ; 
 arme.tirer(Coordonnees(0,4),&g);
+ cout << "   Bateau coule " << (bat.estCoule()?"Oui":"Non") << endl <<endl;
 
-cout << "On tape en (0,2), (0,3) et (0,4)" << endl << endl; 
+
 
 afficherGrille(g);
+
+
 }

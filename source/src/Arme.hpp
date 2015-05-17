@@ -49,7 +49,7 @@ class Arme{
 	/// \fn Arme(string nom)
 	/// \brief Constructeur parametre de la classe Arme
 	/// \param nom : nom de l'arme
-	Arme(string nom){};
+	Arme(string nom);
 
 };
 #endif
