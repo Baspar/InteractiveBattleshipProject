@@ -17,12 +17,19 @@ Jeu::Jeu(){//TODO
 
 
 Jeu::Jeu(Combat comb){//WIP
-    int nbPersonnageNonJouables=0;
+
+    int nbPersonnageNonJouables=1;
     vector<int> listeIdCarte = vector<int>();
     vector<Coordonnees> listeCoord = vector<Coordonnees>();
-    personnagesNonJouables();
 
-    combat=comb;
+
+	actionEnCours = nullptr;
+
+	personnagesNonJouables = new vector<PersonnageNonJouable()>;
+	personnagesNonJouables[0]= new PersonnageNonJouable();//a faire
+
+	personnageJouable = new JoueurHumain();// ou new JoueurIA();
+
 
 
     monde.placerJoueurs(personnageNonJouable,listeIdCarte, listeCoord);

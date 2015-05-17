@@ -18,6 +18,16 @@ using namespace std;
 
 class PersonnageBNIA : public PersonnageBN{
 
+
+	public:
+	/// \fn PersonnageBNIA(string nomnv)
+        /// \brief Constructeur des persoBNIA
+        ///
+        /// Constructeur des persoBNIA
+	/// \param nomnv:nom du joueur
+        PersonnageBNIA(string nomnv);
+
+
     private:
         /// \brief Place les bateaux
         ///

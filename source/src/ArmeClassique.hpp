@@ -35,6 +35,8 @@ class ArmeClassique : public Arme{
         /// \param coordonnees : coordonnées de la case que le joueur souhaite viser
         /// \param *grille : pointeur sur la grille sur lequel le joueur tire
         void tirer(const Coordonnees coordonnees, Grille *grille);
+
+	~ArmeClassique(){};
 };
 #endif
 

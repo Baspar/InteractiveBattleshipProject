@@ -1,7 +1,7 @@
 #include "Case.hpp"
 
 #include "Bateau.hpp"
-
+#include <iostream>
 using namespace std;
 
 Case::Case(){//DONE
@@ -16,7 +16,8 @@ Case::Case(Bateau* bat){//DONE
 void Case::tirerDessus(){//DONE
 	if(touche==false){
 		touche=true;
-		(*bateau).retirerPV();
+		if(bateau!=nullptr)
+			(*bateau).retirerPV();
 	}
 }
 

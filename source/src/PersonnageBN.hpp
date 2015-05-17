@@ -24,30 +24,38 @@ class PersonnageBN{
         ///taille des 2 grilles permettant de jouer à la Bataille Navale
         TailleGrille tailleGrille;
         /// nom du PersonnageBN
-        string nom;
+        string nomBN;
         /// arme: pointeur sur une arme (exemple:différents pointeurs de visée...)
         Arme* arme;
         ///bateaux : vecteur de pointeur sur bateaux(représentant l'ensemble des bateaux du PersonnageBN)
         vector<Bateau*> bateaux;
 
     public:
+
+	/// \fn PersonnageBN(string nomnv)
+        /// \brief Constructeur des persoBN
+        ///
+        /// Constructeur des persoBN
+	/// \param nomnv : nom du joueur
+        PersonnageBN(string nomnv);
+	
         /// \fn TailleGrille getTailleGrille() const
         /// \brief getters de tailleGrille
         ///
         /// \return TailleGrille
         TailleGrille getTailleGrille() const;
 
-        /// \fn string getNom() const
-        /// \brief getters du nom
+        /// \fn string getNomBN() const
+        /// \brief getters du nomBN
         ///
-        /// \return string nom du PersonnageBN
-        string getNom() const;
+        /// \return string nomBN du PersonnageBN
+        string getNomBN() const;
 
-        /// \fn void setNom(const string nvnom);
-        /// \brief Setter du nom
+        /// \fn void setNomBN(const string nvnom);
+        /// \brief Setter du nomBN
         ///
         /// \param nvnom: nom du PersonnageBN
-        void setNom(const string nvnom);
+        void setNomBN(const string nvnom);
 
         /// \fn Arme* getArme() const
         /// \brief getters du pointeur sur Arme
@@ -85,7 +93,7 @@ class PersonnageBN{
         /// Cette méthode est virtuelle car cette classe est abstraite, elle sera
         /// implémentée dans les classes filles
         /// \return Grille dotée de tous les bateaux placés
-        virtual Grille placerBateaux();
+        virtual Grille placerBateaux(){};
 
         /// \fn virtual Coordonnees coordonneesAViser(Grille* grilleAdverse)
         /// \brief le PersonnageBN veux tirer sur la grille du joueur adverse
@@ -94,7 +102,7 @@ class PersonnageBN{
         /// implémentée dans les classes filles
         /// \param grilleAdverse : grille de l'adversaire à viser
         /// \return Coordonnees de la case à viser
-        virtual Coordonnees coordonneesAViser(Grille* grilleAdverse);
+        virtual Coordonnees coordonneesAViser(Grille* grilleAdverse){};
 
         /// \fn void restaurerBateaux()
         /// \brief restaure les PV des bateaux

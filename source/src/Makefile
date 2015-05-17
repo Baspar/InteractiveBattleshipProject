@@ -20,10 +20,15 @@ CompileMainTestAction: Action.o
 MainTestAction: CompileMainTestAction
 	tests/MainTestAction
 
-CompileMainTestArmeClassique: ArmeClassique.o
+CompileMainTestArmeClassique:  ArmeClassique.o Coordonnees.o Grille.o  Case.o TailleGrille.o Bateau.o Arme.o
 	g++ $(FLAGS) tests/MainTestArmeClassique.cpp $^ -o tests/MainTestArmeClassique
 MainTestArmeClassique: CompileMainTestArmeClassique
 	tests/MainTestArmeClassique
+
+CompileMainTestArmeCroix:  ArmeCroix.o Coordonnees.o Grille.o  Case.o TailleGrille.o Bateau.o Arme.o
+	g++ $(FLAGS) tests/MainTestArmeCroix.cpp $^ -o tests/MainTestArmeCroix
+MainTestArmeCroix: CompileMainTestArmeCroix
+	tests/MainTestArmeCroix
 
 CompileMainTestArme: Arme.o
 	g++ $(FLAGS) tests/MainTestArme.cpp $^ -o tests/MainTestArme
@@ -35,7 +40,7 @@ CompileMainTestAutreAction: AutreAction.o
 MainTestAutreAction: CompileMainTestAutreAction
 	tests/MainTestAutreAction
 
-CompileMainTestBatailleNavale: BatailleNavale.o
+CompileMainTestBatailleNavale: Combat.o BatailleNavale.o Grille.o PersonnagegBN.o TailleGrille.o Coordonnees.o Case.o Bateau.o Personnage.o Carte.o
 	g++ $(FLAGS) tests/MainTestBatailleNavale.cpp $^ -o tests/MainTestBatailleNavale
 MainTestBatailleNavale: CompileMainTestBatailleNavale
 	tests/MainTestBatailleNavale
@@ -145,7 +150,7 @@ CompileMainTestPersonnage: Personnage.o
 MainTestPersonnage: CompileMainTestPersonnage
 	tests/MainTestPersonnage
 
-CompileMainTestPersonnageJouable: PersonnageJouable.o
+CompileMainTestPersonnageJouable: PersonnageJouable.o Personnage.o Coordonnees.o Carte.o TailleGrille.o CelluleAccessible.o Cellule.o
 	g++ $(FLAGS) tests/MainTestPersonnageJouable.cpp $^ -o tests/MainTestPersonnageJouable
 MainTestPersonnageJouable: CompileMainTestPersonnageJouable
 	tests/MainTestPersonnageJouable
@@ -161,4 +166,4 @@ MainTestTailleGrille: CompileMainTestTailleGrille
 	tests/MainTestTailleGrille
 
 clean:
-	rm -rf *.o *~ ; find ./tests/ -type f ! -name "*.*" -exec rm {} \;
+	rm -rf *.o *~ tests/*~; find ./tests/ -type f ! -name "*.*" -exec rm {} \;

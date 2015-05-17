@@ -7,8 +7,7 @@
 
 using namespace std;
 
-ArmeClassique::ArmeClassique(){//DONE
-	setNomArme("Arme Classique");
+ArmeClassique::ArmeClassique() : Arme("Arme Classique"){//DONE
 }
 
 void ArmeClassique::tirer(const Coordonnees coordonnees, Grille *grille){//DONE
