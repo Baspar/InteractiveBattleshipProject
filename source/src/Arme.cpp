@@ -13,5 +13,6 @@ void Arme::setNomArme(const string nvNomArme){
 	nomArme = nvNomArme;
 }
 
-
-
+Arme::Arme(string nom){
+	nomArme=nom;
+}

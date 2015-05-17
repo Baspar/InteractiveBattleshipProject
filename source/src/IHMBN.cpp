@@ -123,7 +123,7 @@ void IHMBN::afficherGrilleRadar(){//DONE
 
 	for (int i=0;i<grille.getTailleGrille().getHauteur();i++){
 		for (int j=0;j<grille.getTailleGrille().getLongueur();j++){
-			Coordonnees coord(i,j);
+			Coordonnees coord(j,i);
 			cout << "|";
 			if(grille.getCaseElt(coord).getBateau()==nullptr){
 				if(grille.getCaseElt(coord).getTouche()==false)
