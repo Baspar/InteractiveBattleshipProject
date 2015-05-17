@@ -23,6 +23,7 @@ int main(){
 	pbn.getBateaux()[3]->retirerPV();
 	pbn.getBateaux()[3]->retirerPV();
 	pbn.getBateaux()[3]->retirerPV();
+	cout << "Coulee?? " << pbn.flotteCoulee() << endl;
 
 	pbn.getBateaux()[4]->retirerPV();
 	pbn.getBateaux()[4]->retirerPV();
