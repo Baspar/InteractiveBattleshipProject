@@ -119,5 +119,6 @@ class BatailleNavale : public Combat{
 	/// Méthode qui initialise les joueurs
 	void initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageBN* joueur2);
 
+
 };
 #endif

@@ -25,8 +25,8 @@ class Combat{
         ///
         /// Méthode qui renvoie le gagnant du combat
         /// \return un personnage correspondant au gagnant et null si la partie n'est pas finie
-        virtual Personnage* retournerGagnant(Personnage* joueur1, Personnage* joueur2);
+        virtual Personnage* retournerGagnant(Personnage* joueur1, Personnage* joueur2){};
 
-
+	Combat(){};
 };
 #endif

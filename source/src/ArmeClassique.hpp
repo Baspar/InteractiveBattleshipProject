@@ -22,7 +22,7 @@ using namespace std;
 class ArmeClassique : public Arme{
     public:
         /// \fn ArmeClassique()
-        /// \brief COnstruit une Arme ne tirant que sur la Case à Viser
+        /// \brief Construit une Arme ne tirant que sur la Case à Viser
         ///
         /// Arme tirant sur une case et inflige des dégats sur ladite case
         ArmeClassique();
@@ -36,6 +36,8 @@ class ArmeClassique : public Arme{
         /// \param *grille : pointeur sur la grille sur lequel le joueur tire
         void tirer(const Coordonnees coordonnees, Grille *grille);
 
+	// \fn ~ArmeClassique()
+        /// \brief Destructeur de l'arme
 	~ArmeClassique(){};
 };
 #endif
