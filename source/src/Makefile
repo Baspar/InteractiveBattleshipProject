@@ -20,7 +20,7 @@ CompileMainTestAction: Action.o
 MainTestAction: CompileMainTestAction
 	tests/MainTestAction
 
-CompileMainTestArmeClassique: ArmeClassique.o
+CompileMainTestArmeClassique:  ArmeClassique.o Coordonnees.o Grille.o  Case.o TailleGrille.o Bateau.o Arme.o
 	g++ $(FLAGS) tests/MainTestArmeClassique.cpp $^ -o tests/MainTestArmeClassique
 MainTestArmeClassique: CompileMainTestArmeClassique
 	tests/MainTestArmeClassique
@@ -35,7 +35,7 @@ CompileMainTestAutreAction: AutreAction.o
 MainTestAutreAction: CompileMainTestAutreAction
 	tests/MainTestAutreAction
 
-CompileMainTestBatailleNavale: BatailleNavale.o
+CompileMainTestBatailleNavale: Combat.o BatailleNavale.o Grille.o PersonnagegBN.o TailleGrille.o Coordonnees.o Case.o Bateau.o Personnage.o Carte.o
 	g++ $(FLAGS) tests/MainTestBatailleNavale.cpp $^ -o tests/MainTestBatailleNavale
 MainTestBatailleNavale: CompileMainTestBatailleNavale
 	tests/MainTestBatailleNavale
