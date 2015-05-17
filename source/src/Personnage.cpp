@@ -8,7 +8,7 @@ using namespace std;
 
 
 
-Personnage::Personnage(string nomnv):coord(-1,-1) { //WIP 	
+Personnage::Personnage(string nomnv):coord(-1,-1) { //WIP
 	carte=nullptr;
 	nomnv=nom;
 }
@@ -34,6 +34,6 @@ void Personnage::setCoordonnees(Coordonnees coordSet){//DONE
 }
 
 
-void Personnage::setCarte(Carte carteSet){//DONE
-    carte = &carteSet;
+void Personnage::setCarte(Carte* carteSet){//DONE
+    carte = carteSet;
 }
