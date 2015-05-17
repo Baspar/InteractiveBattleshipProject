@@ -59,9 +59,9 @@ class Personnage{
         /// \param coordSet Les coordonnees du personnage
         void setCoordonnees(Coordonnees coordSet);
 
-        /// \fn void setCarte(Carte carteSet)
+        /// \fn void setCarte(Carte* carteSet)
         /// \brief Setter Carte
         /// \param carteSet : la carte à pointer en attribut
-        void setCarte(Carte carteSet);
+        void setCarte(Carte* carteSet);
 };
 #endif

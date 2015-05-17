@@ -20,5 +20,4 @@ PersonnageNonJouable::PersonnageNonJouable(string nomnv):PersonnageBNIA(nomnv),P
 	getBateaux().push_back(new Bateau(3));
 	getBateaux().push_back(new Bateau(4));
 	getBateaux().push_back(new Bateau(5));
-
 }

@@ -6,8 +6,10 @@
 
 using namespace std;
 Controleur::Controleur(){//DONE
-    jeu = new Jeu();
+    batailleNavale = new BatailleNavale();
+    jeu = new Jeu(batailleNavale);
     ihmJeu = new IHMJeu(jeu);
+    ihmBN = new IHMBN(batailleNavale);
     lancerJeu();
 }
 
@@ -26,9 +28,10 @@ void Controleur::lancerJeu(){//DONE
 }
 
 
-void Controleur::actionBatailleNavale(){//DONE
-	batailleNavale = new BatailleNavale();
-	ihmBN = new IHMBN(batailleNavale);
+void Controleur::actionBatailleNavale(){//WIP
+	
+	//INITIALISER LES BATAILLE NAVALES AVEC LES JOUEURS
+	//batailleNavale.initialiserJoueurCourant(J1,J2);
 
 	//si placerBateaux renvoie NULL, on demande une saisie dans l'IHM sinon on copie les données de l'IA
 	if (batailleNavale->getPersonnage1()->placerBateaux().grilleVide())

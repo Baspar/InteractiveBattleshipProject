@@ -21,6 +21,6 @@ void CelluleAccessible::setPersonnage(Personnage* personnage){//DONE
 }
 
 
-Personnage* CelluleAccessible:: getPersonnage(CelluleAccessible celluleAccessible){//DONE
+Personnage* CelluleAccessible:: getPersonnage(){//DONE
     return occupant;
 }

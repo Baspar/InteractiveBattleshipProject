@@ -130,7 +130,7 @@ CompileMainTestMonde: Monde.o
 MainTestMonde: CompileMainTestMonde
 	tests/MainTestMonde
 
-CompileMainTestPersonnageBN: PersonnageBN.o
+CompileMainTestPersonnageBN: PersonnageBN.o TailleGrille.o ArmeClassique.o Bateau.o Arme.o Coordonnees.o Grille.o Case.o
 	g++ $(FLAGS) tests/MainTestPersonnageBN.cpp $^ -o tests/MainTestPersonnageBN
 MainTestPersonnageBN: CompileMainTestPersonnageBN
 	tests/MainTestPersonnageBN
