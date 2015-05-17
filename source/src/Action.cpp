@@ -2,8 +2,17 @@
 #include <iostream>
 
 using namespace std;
-Action::Action(){//TODO
+
+void Action::toggleActive(){//DONE
+    active=!active;
 }
-string Action::getTexteInteraction(){//TODO
-    return "";
+bool Action::isActive(){//DONE
+    return active;
+}
+Action::Action(string txtInteraction){//DONE
+    active=true;
+    texteInteraction = txtInteraction;
+}
+string Action::getTexteInteraction(){//DONE
+    return texteInteraction;
 }
