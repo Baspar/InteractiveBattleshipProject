@@ -38,10 +38,9 @@ class CelluleAccessible:public Cellule{
         /// \param personnage : pointeur sur personnage à placer sur la cellule
         void setPersonnage(Personnage* personnage);
 
-        /// \fn getPersonnage(CelluleAccessible celluleAccessible);
+        /// \fn getPersonnage();
         /// \brief Getter de Cellule Accessible
-        /// \param celluleAccessible : une cellule accessible
         /// \return personnage : pointeur sur un personnage
-        Personnage* getPersonnage(CelluleAccessible celluleAccessible);
+        Personnage* getPersonnage();
 };
 #endif
