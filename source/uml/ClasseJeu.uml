@@ -2,7 +2,7 @@
 class Jeu{
     ==<b>Attributs</b>==
         -actionEnCours : Action*
-        -combat : Combat
+        -*combat : Combat
         -monde : Monde
         -personnageJouable : PersonnageJouable*
         -personnagesNonJouables : vector<PersonnageNonJouable*>
@@ -20,5 +20,5 @@ class Jeu{
         +<color:orange>jouer(Coordonnees coordonnees) : void</color>
 }
 @enduml
-'3f5bfc6ab684055c5c3a260fc2b8b19d  src/Jeu.hpp
+'d186dc2b0c0825c5a6a1659f6dcda716  src/Jeu.hpp
 'cfbb4f8c338bfa4c610cb4beb1dfe71c  src/Jeu.cpp

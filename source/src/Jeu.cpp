@@ -4,6 +4,7 @@
 #include "Action.hpp"
 #include "PersonnageNonJouable.hpp"
 #include "PersonnageJouable.hpp"
+#include "JoueurHumain.hpp"
 #include "Monde.hpp"
 #include "Combat.hpp"
 #include <vector>
@@ -23,16 +24,17 @@ Jeu::Jeu(Combat* comb){//WIP
     vector<Coordonnees> listeCoord = vector<Coordonnees>();
 
 
-	actionEnCours = nullptr;
+    actionEnCours = nullptr;
 
-	personnagesNonJouables = new vector<PersonnageNonJouable()>;
-	personnagesNonJouables[0]= new PersonnageNonJouable();//a faire
+    personnagesNonJouables.push_back( new PersonnageNonJouable("Ann"));//a faire
+	
 
-	personnageJouable = new JoueurHumain();// ou new JoueurIA();
+    personnageJouable=new JoueurHumain("Ann");// ou new JoueurIA();
 
-
-
-    monde.placerJoueurs(personnageNonJouable,listeIdCarte, listeCoord);
+    vector<Personnage*> listPers= vector<Personnage*>();
+    listPers.push_back(personnagesNonJouables[0]); //FAIRE UNE BOUCLE SUR TOUS LES PERSOS
+    listPers.push_back(personnageJouable);
+    monde.placerJoueurs(listPers,listeIdCarte, listeCoord);
 }
 
 
@@ -43,7 +45,7 @@ bool Jeu::partieFinie(){//DONE
 
 void Jeu::jouer(Coordonnees coordonnees){//WIP
     personnageJouable->deplacer(coordonnees, personnageJouable->getCarte());
-    actionEnCours = personnageJouable->getCarte()->getCel((personnageJouable->getCoordonnees())).getActionCellule();
+    actionEnCours = personnageJouable->getCarte()->getCel((personnageJouable->getCoordonnees()))->getActionCellule();
     if(actionEnCours!=0)
         actionEnCours->lancerAction();
 }

@@ -77,11 +77,11 @@ void BatailleNavale::jouer(Coordonnees coordonnees){//DONE
 }
 
 
-PersonnageBN* BatailleNavale::retournerGagnant(){
+PersonnageBN* BatailleNavale::retournerGagnant(){//DONE
 	if(getJoueurs()[0]->flotteCoulee())
-        return getJoueurs()[0];
-	else if(getJoueurs()[1]->flotteCoulee())
         return getJoueurs()[1];
+	else if(getJoueurs()[1]->flotteCoulee())
+        return getJoueurs()[0];
 	else
         return nullptr;
 }

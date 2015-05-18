@@ -1,6 +1,7 @@
 #include "Monde.hpp"
 
 #include "Carte.hpp"
+#include "CelluleAccessible.hpp"
 #include <vector>
 
 using namespace std;
@@ -8,7 +9,7 @@ using namespace std;
 Monde::Monde(){//WIP
     int nbCartes=2;
 
-    for(int i=0;i<nbCartes;i++) cartes.push_back(Carte(i));
+    for(int i=0;i<nbCartes;i++) cartes.push_back(Carte(i,TailleGrille(10,10)));
 
 }
 
@@ -22,7 +23,7 @@ void Monde::placerJoueurs(vector<Personnage*> listePerso, vector<int> listeIdCar
             i++;
 
             perso->setCoordonnees(coord);
-            perso->setCarte(carte);
-            perso->getCarte()->getCel(coord)->setPersonnage(perso);
+            perso->setCarte(&carte);
+            ((CelluleAccessible*) perso->getCarte()->getCel(coord))->setPersonnage(perso);
         }
 }

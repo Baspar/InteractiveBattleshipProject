@@ -10,6 +10,8 @@
 #include "Monde.hpp"
 #include "Combat.hpp"
 #include "Coordonnees.hpp"
+#include "JoueurHumain.hpp"
+#include <vector>
 
 using namespace std;
 

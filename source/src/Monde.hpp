@@ -7,6 +7,7 @@
 
 #include "Carte.hpp"
 #include "Personnage.hpp"
+#include "CelluleAccessible.hpp"
 #include <vector>
 
 using namespace std;

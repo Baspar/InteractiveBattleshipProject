@@ -2,6 +2,7 @@
 
 #include "PersonnageBN.hpp"
 #include <random>
+#include <iostream>
 
 using namespace std;
 
@@ -11,16 +12,24 @@ PersonnageBNIA::PersonnageBNIA(string nomnv):PersonnageBN(nomnv){//DONE
 
 Coordonnees PersonnageBNIA::coordonneesAViser(Grille* grilleAdverse){ //DONE
 	Coordonnees impact(-1,-1);
-    int nbCases = grilleAdverse->getTailleGrille().getHauteur()* grilleAdverse->getTailleGrille().getLongueur();
+    int hauteur = grilleAdverse->getTailleGrille().getHauteur();
+    int longueur = grilleAdverse->getTailleGrille().getLongueur();
+    int nbCases = hauteur*longueur;
+
 
     random_device rd;
     default_random_engine generator(rd());
-    uniform_int_distribution<int> pointRandom(0, nbCases);
+    uniform_int_distribution<int> pointRandom(0, nbCases-1);
 
 	do {
-		srand(time(NULL));
 		int pointVise = pointRandom(generator);
-		impact.copy(Coordonnees(pointVise%grilleAdverse->getTailleGrille().getHauteur(),pointVise/grilleAdverse->getTailleGrille().getLongueur()));
+		impact.copy(
+                Coordonnees(
+                    pointVise%longueur,
+                    pointVise/longueur
+                    )
+                );
+        //cout << hauteur << "x" << longueur << " = " << nbCases << "   point vise :" << pointVise << " (" << impact.getAbscisse() << ", " << impact.getOrdonnee() << ")" << endl;
 	}
 	while (!grilleAdverse->coupValide(impact));
 	return impact ;
