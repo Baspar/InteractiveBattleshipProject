@@ -1,0 +1,20 @@
+@startuml
+class IHMBN{
+    ==<b>Attributs</b>==
+        -batailleNavale : BatailleNavale*
+    ==<b>Constructeurs</b>==
+        +<color:green>IHMBN(BatailleNavale* bn)</color>
+    ==<b>Getters</b>==
+        +<color:green>getBN() : BatailleNavale*</color>
+    ==<b>Methodes</b>==
+        +<color:green>afficherFinBN() : void</color>
+        -<color:green>afficherGrilleBateaux() : void</color>
+        -<color:green>afficherGrilleRadar() : void</color>
+        +<color:green>afficherJeu() : void</color>
+        +<color:green>afficherResultatTour(Coordonnees coord) : void</color>
+        +<color:green>saisieCoup()const : Coordonnees</color>
+        +<color:green>saisirPlacementBateaux(PersonnageBN pers) : Grille</color>
+}
+@enduml
+'e4e82624d6f934dfa4b876bea11dc7f9  src/IHMBN.hpp
+'d6a12e1803ee289d04bd039627a68424  src/IHMBN.cpp

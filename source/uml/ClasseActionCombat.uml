@@ -1,0 +1,14 @@
+@startuml
+class ActionCombat{
+    ==<b>Attributs</b>==
+        -adversaire : Personnage*
+    ==<b>Constructeurs</b>==
+        +<color:green>ActionCombat(Personnage* adversairenv, string texte)</color>
+    ==<b>Getters</b>==
+        +<color:green>getAdversaire()const : Personnage*</color>
+    ==<b>Methodes</b>==
+        +<color:green>lancerAction() : void</color>
+}
+@enduml
+'9625b30307fc8691225ecb275dc93220  src/ActionCombat.hpp
+'63e3e4fb5460115b51e388740f7510f1  src/ActionCombat.cpp

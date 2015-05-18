@@ -1,0 +1,10 @@
+@startuml
+class CelluleObstacle{
+    ==<b>Constructeurs</b>==
+        +<color:red>CelluleObstacle()</color>
+    ==<b>Methodes</b>==
+        +<color:green>estAccessible() : bool</color>
+}
+@enduml
+'fa294d42c906a7638897288fe3e23344  src/CelluleObstacle.hpp
+'161f30c818bd51448c2284885c4525b4  src/CelluleObstacle.cpp

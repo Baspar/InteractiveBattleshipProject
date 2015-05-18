@@ -1,0 +1,18 @@
+@startuml
+class Bateau{
+    ==<b>Attributs</b>==
+        -PV : int
+        -taille : int
+    ==<b>Constructeurs</b>==
+        +<color:green>Bateau(int tailleIn)</color>
+    ==<b>Getters</b>==
+        +<color:green>getPV()const : int</color>
+        +<color:green>getTailleBateau()const : int</color>
+    ==<b>Methodes</b>==
+        +<color:green>estCoule() : bool</color>
+        +<color:green>restaurerPV() : void</color>
+        +<color:green>retirerPV() : void</color>
+}
+@enduml
+'cf27c760f82d46cc45508186ece8f20b  src/Bateau.hpp
+'ee4b3f7a3947311328e22c70b0db5564  src/Bateau.cpp

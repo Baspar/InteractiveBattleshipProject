@@ -1,0 +1,18 @@
+@startuml
+class Controleur{
+    ==<b>Attributs</b>==
+        -batailleNavale : BatailleNavale*
+        -ihmBN : IHMBN*
+        -ihmJeu : IHMJeu*
+        -jeu : Jeu*
+    ==<b>Constructeurs</b>==
+        +<color:green>Controleur()</color>
+    ==<b>Methodes</b>==
+        +<color:green>actionBatailleNavale() : void</color>
+        +<color:green>lancerJeu() : void</color>
+        +<color:green>tourDeJeuBatailleNavale() : void</color>
+        +<color:green>tourDeJeu() : void</color>
+}
+@enduml
+'cc2314900c0c012483fe3fd33e0923da  src/Controleur.hpp
+'fb3b20ec009f1c9fafe10ecc81a25274  src/Controleur.cpp

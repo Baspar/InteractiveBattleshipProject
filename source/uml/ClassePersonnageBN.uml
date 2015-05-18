@@ -1,0 +1,28 @@
+@startuml
+class PersonnageBN{
+    ==<b>Attributs</b>==
+        -arme : Arme*
+        -bateaux : vector<Bateau*>
+        -nomBN : string
+        -tailleGrille : TailleGrille
+    ==<b>Constructeurs</b>==
+        +<color:orange>PersonnageBN(string nomnv)</color>
+    ==<b>Setters</b>==
+        +<color:green>setArme(Arme nvArme) : void</color>
+        +<color:green>setBateaux(const vector<Bateau> nvBateaux) : void</color>
+        +<color:green>setNomBN(const string nvnom) : void</color>
+        +<color:green>setTailleGrille(const TailleGrille tg) : void</color>
+    ==<b>Getters</b>==
+        +<color:green>getArme()const : Arme*</color>
+        +<color:green>getNomBN()const : string</color>
+        +<color:green>getTailleGrille()const : TailleGrille</color>
+        +<color:green>vector<Bateau> getBateaux()const : vector<Bateau*></color>
+    ==<b>Methodes</b>==
+        +<color:green>{abstract}coordonneesAViser(Grille grilleAdverse) : Coordonnees</color>
+        +<color:green>{abstract}placerBateaux() : Grille</color>
+        +<color:green>flotteCoulee() : bool</color>
+        +<color:green>restaurerBateaux() : void</color>
+}
+@enduml
+'c93bf6fecaeb02b3510806268ee62b8a  src/PersonnageBN.hpp
+'03a05306bc9aea30a63ffe5a4fa19e9a  src/PersonnageBN.cpp

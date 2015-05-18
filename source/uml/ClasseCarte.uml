@@ -1,0 +1,17 @@
+@startuml
+class Carte{
+    ==<b>Attributs</b>==
+        -cellules : vector<vector<Cellule>>
+        -id : int
+        -tailleGrille : TailleGrille
+    ==<b>Constructeurs</b>==
+        +<color:orange>Carte(int id, TailleGrille tailleGrilleInit)</color>
+    ==<b>Getters</b>==
+        +<color:green>getCel(Coordonnees coord) : Cellule*</color>
+        +<color:green>getCellules() : vector<vector<Cellule>></color>
+    ==<b>Methodes</b>==
+        +<color:orange>deplacerPersonnage(Personnage personnage, Coordonnees coordonnees) : void</color>
+}
+@enduml
+'65fd9369f19ac8aeea764f65d6bc9737  src/Carte.hpp
+'485330b3662102c021c3c2b089368530  src/Carte.cpp

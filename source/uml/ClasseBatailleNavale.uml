@@ -1,0 +1,27 @@
+@startuml
+class BatailleNavale{
+    ==<b>Attributs</b>==
+        -grilles : vector<Grille>
+        -indiceJoueurCourant : int
+        -joueurs : vector<PersonnageBN*>
+    ==<b>Constructeurs</b>==
+        +<color:green>BatailleNavale()</color>
+    ==<b>Setters</b>==
+        +<color:green>setIndiceJoueurCourant(const int nvIndice) : void</color>
+    ==<b>Getters</b>==
+        +<color:green>getGrille1() : Grille*</color>
+        +<color:green>getGrille2() : Grille*</color>
+        +<color:green>getIndiceJoueurCourant()const : int</color>
+        +<color:green>getPersonnage1()const : PersonnageBN*</color>
+        +<color:green>getPersonnage2()const : PersonnageBN*</color>
+        +<color:green>vector<Grille> getGrilles() : vector<Grille*></color>
+        +<color:green>vector<PersonnageBN> getJoueurs()const : vector<PersonnageBN*></color>
+    ==<b>Methodes</b>==
+        -<color:green>changerJoueur() : void</color>
+        +<color:green>initialiserJoueurCourant(PersonnageBN joueur1, PersonnageBN joueur2) : void</color>
+        +<color:green>jouer(Coordonnees coordonnees) : void</color>
+        +<color:green>retournerGagnant(PersonnageBN joueur1, PersonnageBN joueur2) : PersonnageBN*</color>
+}
+@enduml
+'053ea271e8227ee4cc531dfda37c6ea1  src/BatailleNavale.hpp
+'14dc468770f2eb6a9215402d3dcd8307  src/BatailleNavale.cpp

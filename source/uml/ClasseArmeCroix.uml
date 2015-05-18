@@ -1,0 +1,10 @@
+@startuml
+class ArmeCroix{
+    ==<b>Constructeurs</b>==
+        +<color:green>ArmeCroix()</color>
+    ==<b>Methodes</b>==
+        +<color:green>tirer(const Coordonnees coordonnees, Grillegrille) : void</color>
+}
+@enduml
+'6a1efb45bb6bd3ab92a58e476983cc9e  src/ArmeCroix.hpp
+'394b59976e2c9f18ab0940cc10a9fd06  src/ArmeCroix.cpp

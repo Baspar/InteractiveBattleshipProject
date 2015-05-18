@@ -6,6 +6,6 @@
 using namespace std;
 
 
-PersonnageJouable::PersonnageJouable(string nomnv):Personnage(nomnv) { //WIP	
+PersonnageJouable::PersonnageJouable(string nomnv):Personnage(nomnv) {//WIP
 
 }

@@ -1,0 +1,11 @@
+@startuml
+class PersonnageBNHumain{
+    ==<b>Constructeurs</b>==
+        +<color:orange>PersonnageBNHumain(string nomnv)</color>
+    ==<b>Methodes</b>==
+        -<color:green>coordonneesAViser(Grille grilleAdverse) : Coordonnees</color>
+        -<color:green>placerBateaux() : Grille</color>
+}
+@enduml
+'5ce527e719c660e149d254e00ce5fa5a  src/PersonnageBNHumain.hpp
+'e128a7476b925eafd5ab1c80d96b6159  src/PersonnageBNHumain.cpp

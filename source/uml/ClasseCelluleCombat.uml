@@ -1,0 +1,10 @@
+@startuml
+class CelluleCombat{
+    ==<b>Attributs</b>==
+        -adversaire : Personnage*
+    ==<b>Constructeurs</b>==
+        +<color:red>CelluleCombat()</color>
+}
+@enduml
+'f4edaa70000ad94947972db00a669e38  src/CelluleCombat.hpp
+'850907611eb00085ea57d52b8084b0da  src/CelluleCombat.cpp

@@ -1,0 +1,17 @@
+@startuml
+class Action{
+    ==<b>Attributs</b>==
+        -active : bool
+        -texteInteraction : string
+    ==<b>Constructeurs</b>==
+        +<color:green>Action(string txtInteraction)</color>
+    ==<b>Getters</b>==
+        +<color:green>getTexteInteraction() : string</color>
+    ==<b>Methodes</b>==
+        +<color:green>{abstract}lancerAction() : void</color>
+        +<color:green>isActive() : bool</color>
+        +<color:green>toggleActive() : void</color>
+}
+@enduml
+'f5f8386524a079e5edaa31b0feaba769  src/Action.hpp
+'ff27ba35efee73ea4051616ee57d2e7d  src/Action.cpp

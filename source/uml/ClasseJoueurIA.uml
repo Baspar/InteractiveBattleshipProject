@@ -1,0 +1,8 @@
+@startuml
+class JoueurIA{
+    ==<b>Constructeurs</b>==
+        +<color:orange>JoueurIA(string nomnv)</color>
+}
+@enduml
+'d62446215f17eb162ba7c9c4a9328d72  src/JoueurIA.hpp
+'07c6d35dbb37c400a87c7505d2023c45  src/JoueurIA.cpp

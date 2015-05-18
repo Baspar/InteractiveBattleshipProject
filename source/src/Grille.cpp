@@ -16,7 +16,7 @@ Grille::Grille(int longueur, int hauteur) : tailleGrille(longueur, hauteur){//DO
 	}
 }
 
-Grille::Grille(const Grille& grille) :tailleGrille(grille.getTailleGrille().getLongueur(), grille.getTailleGrille().getHauteur()){
+Grille::Grille(const Grille& grille) :tailleGrille(grille.getTailleGrille().getLongueur(), grille.getTailleGrille().getHauteur()){//DONE
 	cases.resize(grille.getTailleGrille().getLongueur());
 	for(int i=0; i<grille.getTailleGrille().getLongueur(); i++){
 		cases[i].resize(grille.getTailleGrille().getHauteur());
@@ -29,7 +29,7 @@ Case Grille::getCaseElt(Coordonnees coordonnees){//DONE
 	return cases.at(coordonnees.getAbscisse()).at(coordonnees.getOrdonnee());
 }
 
-void Grille::tirerDessus(const Coordonnees coordonnees){//DONE	
+void Grille::tirerDessus(const Coordonnees coordonnees){//DONE
     cases[coordonnees.getAbscisse()][coordonnees.getOrdonnee()].tirerDessus();
 }
 
@@ -174,7 +174,7 @@ bool Grille::coupValide(const Coordonnees kase){//DONE
 	return true;
 }
 
-bool Grille::grilleVide() const{
+bool Grille::grilleVide() const{//DONE
 	bool bol=false;
 	if((getTailleGrille().getHauteur()==0) && (getTailleGrille().getLongueur()==0)){
 		bol=true;

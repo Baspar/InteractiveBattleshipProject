@@ -1,0 +1,18 @@
+@startuml
+class Cellule{
+    ==<b>Attributs</b>==
+        -action : Action*
+        -typeDeCellule : int
+    ==<b>Constructeurs</b>==
+        +<color:red>Cellule(Action* actionInit, int typeCell)</color>
+        +<color:red>Cellule()</color>
+    ==<b>Getters</b>==
+        +<color:green>getActionCellule()const : Action*</color>
+        +<color:green>getTypeDeCellule()const : int</color>
+    ==<b>Methodes</b>==
+        +<color:green>{abstract}estAccessible()const : bool</color>
+        +<color:green>lancerAction()const : void</color>
+}
+@enduml
+'eef73a59f9cdef4f54f723fda0ac0e35  src/Cellule.hpp
+'4d6fc9bf497eda5b3708607c1c65cab2  src/Cellule.cpp

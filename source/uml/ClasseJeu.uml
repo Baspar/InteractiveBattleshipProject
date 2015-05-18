@@ -1,0 +1,24 @@
+@startuml
+class Jeu{
+    ==<b>Attributs</b>==
+        -actionEnCours : Action*
+        -combat : Combat
+        -monde : Monde
+        -personnageJouable : PersonnageJouable*
+        -personnagesNonJouables : vector<PersonnageNonJouable*>
+        -terminee : bool
+    ==<b>Constructeurs</b>==
+        +<color:orange>Jeu(Combat* comb)</color>
+        +<color:red>Jeu()</color>
+    ==<b>Setters</b>==
+        +<color:green>setTerminee(bool bol) : void</color>
+    ==<b>Getters</b>==
+        +<color:green>getActionEnCours() : Action*</color>
+        +<color:green>getPersonnageJouable() : PersonnageJouable*</color>
+    ==<b>Methodes</b>==
+        +<color:green>partieFinie() : bool</color>
+        +<color:orange>jouer(Coordonnees coordonnees) : void</color>
+}
+@enduml
+'3f5bfc6ab684055c5c3a260fc2b8b19d  src/Jeu.hpp
+'cfbb4f8c338bfa4c610cb4beb1dfe71c  src/Jeu.cpp
