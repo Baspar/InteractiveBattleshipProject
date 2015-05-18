@@ -100,10 +100,10 @@ do
                             nomFonction=$(echo "$ligne" | sed 's/ /\n/g; s/(/(\n/g' | grep "(" | sed 's/(//g' )
                             fonction=$(echo "$ligne" | sed "s/$out//1; s/ *\*//g; s/ +/ /g; s/^ //g")
 
-                            # On rajoute le 
-                            if [ "$(echo $fonction | grep '= *0')" ]
+                            # On rajoute le abstract
+                            if [ "$(echo $fonction | grep '= *0')$(echo $fonction | grep '{' | grep '}')" ]
                             then
-                                fonction="{abstract}$(echo $fonction | sed 's/= *0//g')"
+                                fonction="{abstract}$(echo $fonction | sed 's/= *0//g; s/{.*}//g')"
                             fi
                         fi
 
