@@ -18,7 +18,7 @@ using namespace std;
 
 class Monde{
 
-	private :
+    private :
         /// liste des cartes accessible du monde
         vector<Carte> cartes;
 

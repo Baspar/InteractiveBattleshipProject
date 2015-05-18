@@ -34,31 +34,31 @@ class Jeu{
 
     public:
 
-	/// \fn Jeu()
-	/// \brief Constructeur
+    /// \fn Jeu()
+    /// \brief Constructeur
     Jeu();
 
-	/// \fn Jeu(Combat comb)
-	/// \brief Constructeur parametre
+    /// \fn Jeu(Combat comb)
+    /// \brief Constructeur parametre
     /// \param comb : combat à utiliser
     Jeu(Combat* comb);
 
-	/// \fn bool partieFinie()
-	/// \brief voir si partie finie
-	/// \return Renvoie vrai si le jeu est fini, sinon faux
+    /// \fn bool partieFinie()
+    /// \brief voir si partie finie
+    /// \return Renvoie vrai si le jeu est fini, sinon faux
     bool partieFinie();
 
-	/// \fn void jouer(Coordonnees coordonnees)
-	/// \brief déplacement héros, lancement action
-	///  Déplace notre héros puis lance l'action
+    /// \fn void jouer(Coordonnees coordonnees)
+    /// \brief déplacement héros, lancement action
+    ///  Déplace notre héros puis lance l'action
     void jouer(Coordonnees coordonnees);
 
-	/// \fn Action getActionEnCours()
+    /// \fn Action getActionEnCours()
     /// \brief Getter actionEnCours
     /// \return Action en cours
     Action* getActionEnCours();
 
-	/// \fn PersonnageJouable* getPersonnageJouable()
+    /// \fn PersonnageJouable* getPersonnageJouable()
     /// \brief Getter personnageJouable
     /// \return Personnage jouable
     PersonnageJouable* getPersonnageJouable();

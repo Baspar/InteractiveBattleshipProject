@@ -44,7 +44,7 @@ class Arme{
         /// tire sur une case et inflige des dégâts en fonction de l'arme utilisée
         /// \param coordonnees : coordonnées de la case que le joueur souhaite viser
         /// \param *grille : pointeur sur la grille sur lequel le joueur tire
-        virtual void tirer(const Coordonnees coordonnees, Grille *grille){};
+        virtual void tirer(const Coordonnees coordonnees, Grille *grille)=0;
 
         /// \fn Arme(string nom)
         /// \brief Constructeur parametre de la classe Arme

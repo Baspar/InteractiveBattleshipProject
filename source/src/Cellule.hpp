@@ -37,7 +37,7 @@ class Cellule{
         /// Cette méthode est virtuelle car la classe est abstraite, elle sera
         /// implémentée dans les classes filles
         /// \return un booleen: vrai si la cellule est accessible, faux sinon
-        virtual bool estAccessible() const{};
+        virtual bool estAccessible() const=0;
 
         /// \fn int getTypeDeCellule()
         /// \brief Getter typeDeCellule

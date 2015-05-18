@@ -32,13 +32,13 @@ class PersonnageBN{
 
     public:
 
-	/// \fn PersonnageBN(string nomnv)
+    /// \fn PersonnageBN(string nomnv)
         /// \brief Constructeur des persoBN
         ///
         /// Constructeur des persoBN
-	/// \param nomnv : nom du joueur
+    /// \param nomnv : nom du joueur
         PersonnageBN(string nomnv);
-	
+
         /// \fn TailleGrille getTailleGrille() const
         /// \brief getters de tailleGrille
         ///
@@ -93,7 +93,7 @@ class PersonnageBN{
         /// Cette méthode est virtuelle car cette classe est abstraite, elle sera
         /// implémentée dans les classes filles
         /// \return Grille dotée de tous les bateaux placés
-        virtual Grille placerBateaux(){};
+        virtual Grille placerBateaux()=0;
 
         /// \fn virtual Coordonnees coordonneesAViser(Grille* grilleAdverse)
         /// \brief le PersonnageBN veux tirer sur la grille du joueur adverse
@@ -102,7 +102,7 @@ class PersonnageBN{
         /// implémentée dans les classes filles
         /// \param grilleAdverse : grille de l'adversaire à viser
         /// \return Coordonnees de la case à viser
-        virtual Coordonnees coordonneesAViser(Grille* grilleAdverse){};
+        virtual Coordonnees coordonneesAViser(Grille* grilleAdverse)=0;
 
         /// \fn void restaurerBateaux()
         /// \brief restaure les PV des bateaux

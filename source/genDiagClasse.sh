@@ -13,7 +13,7 @@ do
     indic=$(($indic + 1)) # Numero du fichier traité
     name=$(basename -s .hpp $i) # Nom du fichier sans extenstion
 
-    echo "[$indic/$nbFichier]  Classe $name" # Debug
+    echo "[$indic/$nbFichier]  Classe $name ($i)" # Debug
 
     debut=0
     constr=""
@@ -29,13 +29,13 @@ do
         if [ $debut -eq 1 ]
         then
             #On est en dectection
-            echo $line | egrep " *} *;" >/dev/null && break
+            echo $line | grep "^ *} *;" >/dev/null && break
 
             ecriture=1
-            echo $line | egrep " *public *:" >/dev/null && etat="+" && ecriture=0
-            echo $line | egrep " *private *:" >/dev/null && etat="-" && ecriture=0
-            echo $line | egrep " *protected *:" >/dev/null && etat="#" && ecriture=0
-            echo $line | egrep " *//" >/dev/null && ecriture=0
+            echo $line | egrep "^ *public *:" >/dev/null && etat="+" && ecriture=0
+            echo $line | egrep "^ *private *:" >/dev/null && etat="-" && ecriture=0
+            echo $line | egrep "^ *protected *:" >/dev/null && etat="#" && ecriture=0
+            echo $line | egrep "^ *//" >/dev/null && ecriture=0
 
             test=$(echo "$line" | sed 's/ //g')
 
@@ -44,16 +44,14 @@ do
                 # Traitement Ligne
                 ligne=$(echo "$line" | sed 's/ +/ /g;
                                             s/ *;//g;
-                                            s/\*/\\\*/g;
                                             s/\([a-zA-Z0-9*]\) \([^a-zA-Z0-9*]\)/\1\2/g;
                                             s/\([^a-zA-Z0-9*]\) \([a-zA-Z0-9*]\)/\1\2/g;
                                             s/\([^a-zA-Z0-9*]\) \([a-zA-Z0-9*]\)/\1\2/g;
                                             s/,/, /g;
-                                            s/ *=0//g;
-                                            s/virtual/{abstract}/g;
+                                            s/virtual//g;
                                             s/>/> /g;
+                                            s/> *>/>>/g;
                                             s/&/& /g')
-
                 # Reconnaissance du type de ligne
                 if [ "$(echo "$ligne" | grep '(' )" ]
                 then
@@ -61,68 +59,72 @@ do
                     if [ "$(echo $ligne | egrep "^$name\(")" ]
                     then
                         out=""
-                        fonction=$ligne
+                        fonction="$ligne"
+                        nomFonction="$name"
+                    elif [ "$(echo $ligne | egrep "^~$name\(")" ]
+                    then
+                        out=""
+                        fonction="$ligne"
+                        nomFonction="~$name"
                     else
                         #Detection du type de sortie et du nom de fonction
-                        nbMot=$(echo $ligne | sed 's/[^ ]//g' | wc -c)
-                        out=""
-                        for j in $(seq 1 $nbMot)
-                        do
-                            tmp=$(echo $ligne | cut -d ' ' -f $j-)
-                            nbOuv=$(echo $tmp | sed 's/[^(]//g' | wc -c)
-                            nbFer=$(echo $tmp | sed 's/[^)]//g' | wc -c)
-                            if [ $nbOuv -ne $nbFer ] && [[ $out == "" ]]
-                            then
-                                out=$(echo $ligne | cut -d ' ' -f -$(($j-2)))
-                                fonction=$(echo $ligne | cut -d ' ' -f $(($j-1))-)
-                            fi
-                        done
-                        if [[ $out == "" ]]
+                        out=$(echo "$ligne" | sed 's/const//g; s/  / /g; s/^ //g' | cut -d " " -f 1 )
+                        nomFonction=$(echo "$ligne" | sed 's/ /\n/g; s/(/(\n/g' | grep "(" | sed 's/(//g' )
+                        fonction=$(echo "$ligne" | sed "s/const//g; s/$out//1; s/  / /g; s/^ //g")
+
+                        # On rajoute le 
+                        if [ "$(echo $fonction | grep '= *0')" ]
                         then
-                            out=$(echo $ligne | cut -d ' ' -f -$(($nbMot-1)))
-                            fonction=$(echo $ligne | cut -d ' ' -f $(($nbMot))-)
+                            fonction="{abstract}$(echo $fonction | sed 's/= *0//g')"
                         fi
                     fi
 
+                    fonction=$(echo "$fonction" | sed 's/^\* *//g')
+
                     #Detection de l'avancement du code
-                    if [[ $(echo "$out" | grep abstract ) == "" ]]
+                    if [[ $(echo "$fonction" | grep abstract ) != "" ]] 
                     then
-                        newOut="$(echo "$out" | sed 's/ //g')"
-                        newFonction="$(echo "$fonction" | sed 's/ //g')"
-                        result=$(echo "$cpp" | grep "$newOut$name::$newFonction")
+                        fonction="<color:green>$fonction"
+                        out="$out</color>"
+                    else
+                        concat=$(echo "$ligne" | sed "s/\*/\\\\*/g; s/\t//g; s/ //g; s/$nomFonction/$name::$nomFonction/1")
+                        result=$(echo "$cpp" | grep "$concat")
+
                         if [[ $result == "" ]]
                         then
                             echo "    Erreur avec la méthode $ligne"
-                            etat="$etat<color:white>"
+                            fonction="<color:white>$fonction"
                             out="$out</color>"
                         else
                             if [[ $result == *"//TODO" ]]
                             then
-                                etat="$etat<color:red>"
+                                fonction="<color:red>$fonction"
                                 out="$out</color>"
                             elif [[ $result == *"//WIP" ]]
                             then
-                                etat="$etat<color:orange>"
+                                fonction="<color:orange>$fonction"
                                 out="$out</color>"
                             elif [[ $result == *"//DONE" ]]
                             then
-                                etat="$etat<color:green>"
+                                fonction="<color:green>$fonction"
                                 out="$out</color>"
+                            else
+                                echo "  Pas de progres pour $ligne"
                             fi
                         fi
-                    else
-                        etat="$etat<color:green>"
-                        out="$out</color>"
                     fi
 
                     #Ajout de la fonction à la bonne liste
-                    if [ "$(echo "$fonction" | egrep "^$name\(")" ]
+                    if [ "$(echo $nomFonction | egrep "^$name")" ]
                     then
-                        constr="$constr        $etat$ligne$out\n"
-                    elif [ "$(echo $fonction | grep -e "^set")" ]
+                        constr="$constr        $etat$fonction$out\n"
+                    elif [ "$(echo $nomFonction | egrep "^~$name")" ]
+                    then
+                        destr="$destr        $etat$fonction$out\n"
+                    elif [ "$(echo $nomFonction | grep -e "^set")" ]
                     then
                         setter="$setter        $etat$fonction : $out\n"
-                    elif [ "$(echo $fonction | grep -e "^get")" ]
+                    elif [ "$(echo $nomFonction| grep -e "^get")" ]
                     then
                         getter="$getter        $etat$fonction : $out\n"
                     else
@@ -146,27 +148,32 @@ do
 
         if [ "$attribut" != "" ]
         then
-            echo "    ==<b>Attribut(s)</b>==" >> uml/Classes.uml
+            echo "    ==<b>Attributs</b>==" >> uml/Classes.uml
             echo -en "$attribut" | sed 's/\\\*/\*/g'|sort >> uml/Classes.uml
         fi
         if [ "$constr" != "" ]
         then
-            echo "    ==<b>Constructeur(s)</b>==" >> uml/Classes.uml
+            echo "    ==<b>Constructeurs</b>==" >> uml/Classes.uml
             echo -en "$constr" | sed 's/\\\*/\*/g'|sort >> uml/Classes.uml
+        fi
+        if [ "$destr" != "" ]
+        then
+            echo "    ==<b>Destructeurs</b>==" >> uml/Classes.uml
+            echo -en "$destr" | sed 's/\\\*/\*/g'|sort >> uml/Classes.uml
         fi
         if [ "$setter" != "" ]
         then
-            echo "    ==<b>Setter(s)</b>==" >> uml/Classes.uml
+            echo "    ==<b>Setters</b>==" >> uml/Classes.uml
             echo -en "$setter" | sed 's/\\\*/\*/g'|sort >> uml/Classes.uml
         fi
         if [ "$getter" != "" ]
         then
-            echo "    ==<b>Getter(s)</b>==" >> uml/Classes.uml
+            echo "    ==<b>Getters</b>==" >> uml/Classes.uml
             echo -en "$getter" | sed 's/\\\*/\*/g'|sort >> uml/Classes.uml
         fi
         if [ "$meth" != "" ]
         then
-            echo "    ==<b>Methode(s)</b>==" >> uml/Classes.uml
+            echo "    ==<b>Methodes</b>==" >> uml/Classes.uml
             echo -en "$meth" | sed 's/\\\*/\*/g'|sort >> uml/Classes.uml
         fi
         echo "}" >> uml/Classes.uml
@@ -176,3 +183,4 @@ echo "@enduml" >> uml/Classes.uml
 echo "Fichier .uml generé. Création du fichier PNG en cours..."
 java -jar plantuml.jar uml/Classes.uml
 mv uml/Classes.png .
+#rm uml/Classes.uml

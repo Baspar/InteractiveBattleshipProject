@@ -15,7 +15,7 @@ using namespace std;
 ///
 /// Interface Homme Machine utilisée pour afficher la Bataille Navale et capturer les coups.
 class IHMBN{
-	private:
+    private:
         /// \fn void afficherGrilleRadar ()
         /// \brief Affichage grille radar
         ///
@@ -78,7 +78,7 @@ class IHMBN{
         /// \brief Saisie placements bateaux
         ///
         /// Permet une saisie des placements de chacun des bateaux du joueur
-	/// \param pers : personnage plaçant ses bateaux
+    /// \param pers : personnage plaçant ses bateaux
         /// \return La grille après placement des bateaux
         Grille saisirPlacementBateaux(PersonnageBN* pers);
 

@@ -43,25 +43,25 @@ class Case{
         void setBateau(Bateau *bateaucp);
 
 
-	/// \fn void Case::setTouche(bool touchecp)
-	/// \brief Setter de touche
+    /// \fn void Case::setTouche(bool touchecp)
+    /// \brief Setter de touche
         /// \param touchecp est la valeau de touche
-	void setTouche(bool touchecp);
+    void setTouche(bool touchecp);
 
-	/// \fn bool getTouche() const
-	/// \brief Getter de touche
+    /// \fn bool getTouche() const
+    /// \brief Getter de touche
         /// \return la valeur de touche
-	bool getTouche() const;
+    bool getTouche() const;
 
-	/// \fn *Bateau getBateau() const
-	/// \brief Getter de bateau
+    /// \fn *Bateau getBateau() const
+    /// \brief Getter de bateau
         /// \return la valeur de bateau
-	Bateau* getBateau() const;
+    Bateau* getBateau() const;
 
-	/// \fn void copy(const Case kase)
-	/// \brief copie la kase
+    /// \fn void copy(const Case kase)
+    /// \brief copie la kase
         /// \param kase la case a preparer
-	void copy(const Case kase);
+    void copy(const Case kase);
 
 };
 #endif

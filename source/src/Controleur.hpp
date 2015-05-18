@@ -20,7 +20,7 @@ class Controleur{
 /// Classe Controleur permettant la connexion entre notre modèle et notre vue
 /// Le Controleur contient le jeu courant et la bataille navale en cours
 
-	private:
+    private:
         ///IHM gérant la partie correspondant au déplacement sur la carte
         IHMJeu* ihmJeu;
         ///IHM gérant la partie Bataille Navale de notre jeu

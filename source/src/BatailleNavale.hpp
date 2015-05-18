@@ -112,13 +112,13 @@ class BatailleNavale : public Combat{
         /// \return un personnage correspondant au gagnant et null si la partie n'est pas finie
         PersonnageBN* retournerGagnant(PersonnageBN* joueur1, PersonnageBN* joueur2);
 
-	/// \fn void initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageBN* joueur2);
-	/// \brief initialise le joueur et les grilles
-	/// \param joueur1 : représente le premier joueur du combat
-	/// \param joueur2 : représente le deuxième joueur du combat
-	///
-	/// Méthode qui initialise les joueurs
-	void initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageBN* joueur2);
+        /// \fn void initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageBN* joueur2);
+        /// \brief initialise le joueur et les grilles
+        /// \param joueur1 : représente le premier joueur du combat
+        /// \param joueur2 : représente le deuxième joueur du combat
+        ///
+        /// Méthode qui initialise les joueurs
+        void initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageBN* joueur2);
 
 
 };

@@ -27,7 +27,7 @@ class Action{
         ///
         /// Cette classe gère le lancement de l'action en fonction de la case où le joueur se trouve
         /// Cette méthode est abstraite, elle sera réimplémentée dans les classes héritant de Action
-        virtual void lancerAction(){};
+        virtual void lancerAction()=0;
 
         /// \fn Action()
         /// \brief Constructeur

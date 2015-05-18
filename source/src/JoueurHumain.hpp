@@ -17,7 +17,7 @@ using namespace std;
 /// La classe représente un joueur humain se déplaçant sur la carte
 class JoueurHumain : public PersonnageJouable, PersonnageBNHumain{
 
-	public :
+    public :
 
         /// \fn JoueurHumain(string nomnv)
         /// \brief Constructeur paramétré
@@ -26,11 +26,10 @@ class JoueurHumain : public PersonnageJouable, PersonnageBNHumain{
         /// \param nomnv : string nom du joueur
         JoueurHumain(string nomnv);
 
-	/// \fn ~JoueurHumain()
+        /// \fn ~JoueurHumain()
         /// \brief Destructeur paramétré
         ///
         /// Destructeur de la classe JoueurHumain avec le nom en attribut
-        ~JoueurHumain(){};
-	
+
 };
 #endif

@@ -5,14 +5,14 @@
 
 using namespace std;
 
-string Arme::getNomArme() const{
+string Arme::getNomArme() const{//DONE
 	return nomArme;
 }
 
-void Arme::setNomArme(const string nvNomArme){
+void Arme::setNomArme(const string nvNomArme){//DONE
 	nomArme = nvNomArme;
 }
 
-Arme::Arme(string nom){
+Arme::Arme(string nom){//DONE
 	nomArme=nom;
 }

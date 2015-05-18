@@ -52,11 +52,11 @@ class Bateau {
         /// méthode restaure un point de vie au bateau
         void restaurerPV();
 
-	/// \fn int getTailleBateau()
-	/// \brief renvoie la taille du bateau
-	///
-	/// getter de taille bateau
-	/// \return int: la taille du bateau
-	int getTailleBateau() const;
+    /// \fn int getTailleBateau()
+    /// \brief renvoie la taille du bateau
+    ///
+    /// getter de taille bateau
+    /// \return int: la taille du bateau
+    int getTailleBateau() const;
 };
 #endif

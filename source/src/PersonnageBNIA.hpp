@@ -19,12 +19,12 @@ using namespace std;
 class PersonnageBNIA : public PersonnageBN{
 
 
-	public:
-	/// \fn PersonnageBNIA(string nomnv)
+    public:
+    /// \fn PersonnageBNIA(string nomnv)
         /// \brief Constructeur des persoBNIA
         ///
         /// Constructeur des persoBNIA
-	/// \param nomnv:nom du joueur
+    /// \param nomnv:nom du joueur
         PersonnageBNIA(string nomnv);
 
 
@@ -38,9 +38,9 @@ class PersonnageBNIA : public PersonnageBN{
         /// \brief Attaque du PNJ
         ///
         /// Indique où le PNJ attaque
-	/// \param grilleAdverse : grille sur laquelle le joueur visr
+    /// \param grilleAdverse : grille sur laquelle le joueur visr
         /// \return les coordonnées de la case à attaquer
         Coordonnees coordonneesAViser(Grille* grilleAdverse);
-	public :
+    public :
 };
 #endif

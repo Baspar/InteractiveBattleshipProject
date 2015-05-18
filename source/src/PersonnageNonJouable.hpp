@@ -18,12 +18,12 @@ class PersonnageNonJouable : public Personnage, PersonnageBNIA{
 
 
 
-	public :
-	/// \fn PersonnageNonJouable(string nomnv);
-	/// \brief constructeur de PNJ
-	///
-	/// \param nomnv: nom du personnage
-	PersonnageNonJouable(string nomnv);
+    public :
+    /// \fn PersonnageNonJouable(string nomnv);
+    /// \brief constructeur de PNJ
+    ///
+    /// \param nomnv: nom du personnage
+    PersonnageNonJouable(string nomnv);
 
 };
 #endif

@@ -17,26 +17,24 @@ using namespace std;
 /// \class ArmeCroix
 /// \brief gestion de l'Arme Croix
 ///
-/// Cette classe gère les informations concernant l'arme du joueur lorsqu'il utilise celle en Croix
+/// Cette classe gere les informations concernant l'arme du joueur lorsqu'il utilise celle en Croix
 
 class ArmeCroix : public Arme{
     public:
         /// \fn ArmeCroix()
-        /// \brief Construit une Arme ne tirant en forme de croix sur la Case à Viser
+        /// \brief Construit une Arme ne tirant en forme de croix sur la Case a Viser
         ///
-        /// Arme tirant sur une case et inflige des dégats sur ladite case et celles adjacentes
+        /// Arme tirant sur une case et inflige des degats sur ladite case et celles adjacentes
         ArmeCroix();
 
 
         /// \fn void tirer(Coordonnees coordonnees, Grille *grille)
         /// \brief Attaque en croix
         ///
-        ///tire sur une case et inflige des dégats sur ladite case et celles adjacentes
-        /// \param coordonnees : coordonnées de la case que le joueur souhaite viser
+        ///tire sur une case et inflige des degats sur ladite case et celles adjacentes
+        /// \param coordonnees : coordonnees de la case que le joueur souhaite viser
         /// \param *grille : pointeur sur la grille sur lequel le joueur tire
         void tirer(const Coordonnees coordonnees, Grille *grille);
-
-	~ArmeCroix(){};
 };
 #endif
 
