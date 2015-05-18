@@ -6,7 +6,7 @@ class CelluleAccessible{
         +<color:red>CelluleAccessible(Action* actionInit)</color>
         +<color:red>CelluleAccessible()</color>
     ==<b>Setters</b>==
-        +<color:green>setPersonnage(Personnage personnage) : void</color>
+        +<color:green>setPersonnage(Personnage* personnage) : void</color>
     ==<b>Getters</b>==
         +<color:green>getPersonnage() : Personnage*</color>
     ==<b>Methodes</b>==

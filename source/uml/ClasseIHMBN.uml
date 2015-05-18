@@ -13,7 +13,7 @@ class IHMBN{
         +<color:green>afficherJeu() : void</color>
         +<color:green>afficherResultatTour(Coordonnees coord) : void</color>
         +<color:green>saisieCoup()const : Coordonnees</color>
-        +<color:green>saisirPlacementBateaux(PersonnageBN pers) : Grille</color>
+        +<color:green>saisirPlacementBateaux(PersonnageBN* pers) : Grille</color>
 }
 @enduml
 'e4e82624d6f934dfa4b876bea11dc7f9  src/IHMBN.hpp

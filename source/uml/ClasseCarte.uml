@@ -10,7 +10,7 @@ class Carte{
         +<color:green>getCel(Coordonnees coord) : Cellule*</color>
         +<color:green>getCellules() : vector<vector<Cellule>></color>
     ==<b>Methodes</b>==
-        +<color:orange>deplacerPersonnage(Personnage personnage, Coordonnees coordonnees) : void</color>
+        +<color:orange>deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees) : void</color>
 }
 @enduml
 '65fd9369f19ac8aeea764f65d6bc9737  src/Carte.hpp

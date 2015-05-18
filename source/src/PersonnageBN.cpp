@@ -12,9 +12,9 @@
 using namespace std;
 
 
-PersonnageBN::PersonnageBN(string nomnv):tailleGrille(10,10){//WIP
+PersonnageBN::PersonnageBN(string nomnv):tailleGrille(10,10){//DONE
 	nomBN=nomnv;
-	
+
 	arme=new ArmeClassique();
 
 	bateaux=vector<Bateau*>();

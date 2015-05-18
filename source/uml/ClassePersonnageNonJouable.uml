@@ -4,5 +4,5 @@ class PersonnageNonJouable{
         +<color:orange>PersonnageNonJouable(string nomnv)</color>
 }
 @enduml
-'1b05c1b270e677fa897dcb4db56b46dc  src/PersonnageNonJouable.hpp
-'a638ef025a3b17bbe08cd90ff81a2cbb  src/PersonnageNonJouable.cpp
+'3c5d182238ad677af0973d8ffe81cea6  src/PersonnageNonJouable.hpp
+'d6f505d6cb112364f558fb7481cbf4b0  src/PersonnageNonJouable.cpp

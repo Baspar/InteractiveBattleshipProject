@@ -3,7 +3,7 @@ class ArmeCroix{
     ==<b>Constructeurs</b>==
         +<color:green>ArmeCroix()</color>
     ==<b>Methodes</b>==
-        +<color:green>tirer(const Coordonnees coordonnees, Grillegrille) : void</color>
+        +<color:green>tirer(const Coordonnees coordonnees, Grille *grille) : void</color>
 }
 @enduml
 '6a1efb45bb6bd3ab92a58e476983cc9e  src/ArmeCroix.hpp

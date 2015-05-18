@@ -1,11 +1,11 @@
 @startuml
 class PersonnageBNIA{
     ==<b>Constructeurs</b>==
-        +<color:orange>PersonnageBNIA(string nomnv)</color>
+        +<color:green>PersonnageBNIA(string nomnv)</color>
     ==<b>Methodes</b>==
-        -<color:green>coordonneesAViser(Grille grilleAdverse) : Coordonnees</color>
-        -<color:green>placerBateaux() : Grille</color>
+        +<color:green>coordonneesAViser(Grille* grilleAdverse) : Coordonnees</color>
+        +<color:green>placerBateaux() : Grille</color>
 }
 @enduml
-'ee67ef4e9373b8f955c5a7a1ecc051d3  src/PersonnageBNIA.hpp
-'ba25625b834ba44f08fee71ccc5d0ff5  src/PersonnageBNIA.cpp
+'fb3df2c1a4ed410658be64497c5f6175  src/PersonnageBNIA.hpp
+'2c796e9ed3f5ca7274fe96d2374d4a21  src/PersonnageBNIA.cpp

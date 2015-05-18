@@ -9,7 +9,7 @@ class Arme{
     ==<b>Getters</b>==
         +<color:green>getNomArme()const : string</color>
     ==<b>Methodes</b>==
-        +<color:green>{abstract}tirer(const Coordonnees coordonnees, Grillegrille) : void</color>
+        +<color:green>{abstract}tirer(const Coordonnees coordonnees, Grille *grille) : void</color>
 }
 @enduml
 '08e26ae533a4d060389fc8e2298f1644  src/Arme.hpp

@@ -15,7 +15,7 @@ using namespace std;
 /// \brief classe définissant un joueur humain
 ///
 /// La classe représente un joueur humain se déplaçant sur la carte
-class JoueurHumain : public PersonnageJouable, PersonnageBNHumain{
+class JoueurHumain : public PersonnageJouable, public PersonnageBNHumain{
 
     public :
 

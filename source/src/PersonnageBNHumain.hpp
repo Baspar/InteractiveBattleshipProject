@@ -29,9 +29,7 @@ class PersonnageBNHumain : public PersonnageBN{
         /// Constructeur des persoBNHumain
     /// \param nomnv:nom du joueur
         PersonnageBNHumain(string nomnv);
-        
 
-    private:
         /// \brief Place les bateaux
         ///
         /// Demande au joueur de placer ses bateaux
@@ -46,6 +44,6 @@ class PersonnageBNHumain : public PersonnageBN{
         Coordonnees coordonneesAViser(Grille* grilleAdverse);
 
 
-      
+
 };
 #endif

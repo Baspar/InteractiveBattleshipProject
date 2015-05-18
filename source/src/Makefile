@@ -40,7 +40,7 @@ CompileMainTestAutreAction: AutreAction.o
 MainTestAutreAction: CompileMainTestAutreAction
 	tests/MainTestAutreAction
 
-CompileMainTestBatailleNavale: Combat.o BatailleNavale.o Grille.o PersonnageBN.o TailleGrille.o Coordonnees.o Case.o Bateau.o Personnage.o Carte.o CelluleAccessible.o Cellule.o ArmeClassique.o Arme.o
+CompileMainTestBatailleNavale: PersonnageJouable.o Combat.o BatailleNavale.o Grille.o PersonnageBN.o TailleGrille.o Coordonnees.o Case.o Bateau.o Personnage.o Carte.o CelluleAccessible.o Cellule.o ArmeClassique.o Arme.o PersonnageNonJouable.o PersonnageBNIA.o
 	g++ $(FLAGS) tests/MainTestBatailleNavale.cpp $^ -o tests/MainTestBatailleNavale
 MainTestBatailleNavale: CompileMainTestBatailleNavale
 	tests/MainTestBatailleNavale
@@ -115,12 +115,12 @@ CompileMainTestJeu: Jeu.o
 MainTestJeu: CompileMainTestJeu
 	tests/MainTestJeu
 
-CompileMainTestJoueurHumain: JoueurHumain.o
+CompileMainTestJoueurHumain: JoueurHumain.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNHumain.o JoueurHumain.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o
 	g++ $(FLAGS) tests/MainTestJoueurHumain.cpp $^ -o tests/MainTestJoueurHumain
 MainTestJoueurHumain: CompileMainTestJoueurHumain
 	tests/MainTestJoueurHumain
 
-CompileMainTestJoueurIA: JoueurIA.o
+CompileMainTestJoueurIA: JoueurIA.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNIA.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o 
 	g++ $(FLAGS) tests/MainTestJoueurIA.cpp $^ -o tests/MainTestJoueurIA
 MainTestJoueurIA: CompileMainTestJoueurIA
 	tests/MainTestJoueurIA
@@ -155,7 +155,7 @@ CompileMainTestPersonnageJouable: PersonnageJouable.o Personnage.o Coordonnees.o
 MainTestPersonnageJouable: CompileMainTestPersonnageJouable
 	tests/MainTestPersonnageJouable
 
-CompileMainTestPersonnageNonJouable: PersonnageNonJouable.o
+CompileMainTestPersonnageNonJouable: PersonnageNonJouable.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNIA.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o 
 	g++ $(FLAGS) tests/MainTestPersonnageNonJouable.cpp $^ -o tests/MainTestPersonnageNonJouable
 MainTestPersonnageNonJouable: CompileMainTestPersonnageNonJouable
 	tests/MainTestPersonnageNonJouable

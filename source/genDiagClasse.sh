@@ -98,7 +98,7 @@ do
                             #Detection du type de sortie et du nom de fonction
                             out=$(echo "$ligne" | sed 's/  / /g; s/^ //g' | cut -d " " -f 1 )
                             nomFonction=$(echo "$ligne" | sed 's/ /\n/g; s/(/(\n/g' | grep "(" | sed 's/(//g' )
-                            fonction=$(echo "$ligne" | sed "s/$out//1; s/ *\*//g; s/ +/ /g; s/^ //g")
+                            fonction=$(echo "$ligne" | sed "s/$out//1; s/^ *\*//g; s/ +/ /g; s/^ //g")
 
                             # On rajoute le abstract
                             if [ "$(echo $fonction | grep '= *0')$(echo $fonction | grep '{' | grep '}')" ]

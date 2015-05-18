@@ -14,7 +14,7 @@ using namespace std;
 /// \brief classe définissant un joueur IA
 ///
 /// La classe représente un joueur IA se déplaçant sur la carte
-class JoueurIA : public PersonnageJouable, PersonnageBNIA{
+class JoueurIA : public PersonnageJouable, public PersonnageBNIA{
     public:
         /// \fn JoueurIA(string nomnv)
         /// \brief Constructeur paramétré

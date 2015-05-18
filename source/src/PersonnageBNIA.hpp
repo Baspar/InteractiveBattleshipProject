@@ -6,8 +6,8 @@
 /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "PersonnageBN.hpp"
-#include <stdlib.h>     
-#include <time.h> 
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
@@ -27,8 +27,6 @@ class PersonnageBNIA : public PersonnageBN{
     /// \param nomnv:nom du joueur
         PersonnageBNIA(string nomnv);
 
-
-    private:
         /// \brief Place les bateaux
         ///
         /// Place les bateaux de manière aléatoire
@@ -41,6 +39,5 @@ class PersonnageBNIA : public PersonnageBN{
     /// \param grilleAdverse : grille sur laquelle le joueur visr
         /// \return les coordonnées de la case à attaquer
         Coordonnees coordonneesAViser(Grille* grilleAdverse);
-    public :
 };
 #endif

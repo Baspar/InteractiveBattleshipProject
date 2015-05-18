@@ -5,7 +5,7 @@ class Monde{
     ==<b>Constructeurs</b>==
         +<color:orange>Monde()</color>
     ==<b>Methodes</b>==
-        +<color:orange>placerJoueurs(vector<Personnage> listePerso, vector<int> listeIdCarte, vector<Coordonnees> listeCoord) : void</color>
+        +<color:orange>placerJoueurs(vector<Personnage*> listePerso, vector<int> listeIdCarte, vector<Coordonnees> listeCoord) : void</color>
 }
 @enduml
 '85b157f5c75a37bd71462343ee7b190f  src/Monde.hpp

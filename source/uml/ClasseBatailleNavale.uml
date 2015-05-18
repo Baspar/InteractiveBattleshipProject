@@ -14,14 +14,14 @@ class BatailleNavale{
         +<color:green>getIndiceJoueurCourant()const : int</color>
         +<color:green>getPersonnage1()const : PersonnageBN*</color>
         +<color:green>getPersonnage2()const : PersonnageBN*</color>
-        +<color:green>vector<Grille> getGrilles() : vector<Grille*></color>
-        +<color:green>vector<PersonnageBN> getJoueurs()const : vector<PersonnageBN*></color>
+        +<color:green>vector<Grille*> getGrilles() : vector<Grille*></color>
+        +<color:green>vector<PersonnageBN*> getJoueurs()const : vector<PersonnageBN*></color>
     ==<b>Methodes</b>==
         -<color:green>changerJoueur() : void</color>
-        +<color:green>initialiserJoueurCourant(PersonnageBN joueur1, PersonnageBN joueur2) : void</color>
+        +<color:green>initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageBN* joueur2) : void</color>
         +<color:green>jouer(Coordonnees coordonnees) : void</color>
-        +<color:green>retournerGagnant(Personnage joueur1, Personnage joueur2) : Personnage*</color>
+        +<color:green>retournerGagnant(Personnage* joueur1, Personnage* joueur2) : Personnage*</color>
 }
 @enduml
 'c1a3a12a461e944a6bb500cc700192f3  src/BatailleNavale.hpp
-'520f6b7be16a562429f533039437c268  src/BatailleNavale.cpp
+'a8d1840375965fb5c29d547d22c1cbe6  src/BatailleNavale.cpp

@@ -7,7 +7,7 @@ class Case{
         +<color:green>Case(Bateau* bat)</color>
         +<color:green>Case()</color>
     ==<b>Setters</b>==
-        +<color:green>setBateau(Bateaubateaucp) : void</color>
+        +<color:green>setBateau(Bateau *bateaucp) : void</color>
         +<color:green>setTouche(bool touchecp) : void</color>
     ==<b>Getters</b>==
         +<color:green>getBateau()const : Bateau*</color>

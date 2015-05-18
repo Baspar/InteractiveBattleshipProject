@@ -10,7 +10,7 @@
 using namespace std;
 
 
-PersonnageBNHumain::PersonnageBNHumain(string nomnv):PersonnageBN(nomnv){//WIP
+PersonnageBNHumain::PersonnageBNHumain(string nomnv):PersonnageBN(nomnv){//DONE
 }
 
 

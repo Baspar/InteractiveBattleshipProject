@@ -14,7 +14,7 @@ using namespace std;
 /// \brief classe définissant un personnage non jouable
 ///
 /// La classe représente un personnage non jouable
-class PersonnageNonJouable : public Personnage, PersonnageBNIA{
+class PersonnageNonJouable : public Personnage, public PersonnageBNIA{
 
 
 

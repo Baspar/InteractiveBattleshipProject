@@ -1,40 +1,48 @@
 #include "PersonnageBNIA.hpp"
 
 #include "PersonnageBN.hpp"
-#include <stdlib.h>     
-#include <time.h> 
+#include <random>
 
 using namespace std;
 
-PersonnageBNIA::PersonnageBNIA(string nomnv):PersonnageBN(nomnv){//WIP
+PersonnageBNIA::PersonnageBNIA(string nomnv):PersonnageBN(nomnv){//DONE
 }
 
 
 Coordonnees PersonnageBNIA::coordonneesAViser(Grille* grilleAdverse){ //DONE
 	Coordonnees impact(-1,-1);
+    int nbCases = grilleAdverse->getTailleGrille().getHauteur()* grilleAdverse->getTailleGrille().getLongueur();
+
+    random_device rd;
+    default_random_engine generator(rd());
+    uniform_int_distribution<int> pointRandom(0, nbCases);
+
 	do {
-		srand(time(NULL)); 
-		int nbCases = grilleAdverse->getTailleGrille().getHauteur()* grilleAdverse->getTailleGrille().getLongueur(); 
-		int pointVise = rand()%nbCases; 
+		srand(time(NULL));
+		int pointVise = pointRandom(generator);
 		impact.copy(Coordonnees(pointVise%grilleAdverse->getTailleGrille().getHauteur(),pointVise/grilleAdverse->getTailleGrille().getLongueur()));
 	}
 	while (!grilleAdverse->coupValide(impact));
-	return impact ; 
+	return impact ;
 }
 
 Grille PersonnageBNIA::placerBateaux(){//DONE
-	
 	Grille grilleIA(getTailleGrille().getLongueur(), getTailleGrille().getHauteur());
 	Coordonnees coordDebut(-1,-1), coordFin(-1,-1);
-	srand(time(NULL));
 	int nbCases = grilleIA.getTailleGrille().getHauteur() * grilleIA.getTailleGrille().getLongueur();
+
+    random_device rd;
+    default_random_engine generator(rd());
+    uniform_int_distribution<int> directionRandom(1,4);
+    uniform_int_distribution<int> pointRandom(0, nbCases);
+
 	for (Bateau* bat : getBateaux()){
 		bool toutvabien = false;
 		while (toutvabien == false)
 		{
-			int pointDepart = rand()%nbCases;
+			int pointDepart = pointRandom(generator);
 			coordDebut.copy(Coordonnees(pointDepart%grilleIA.getTailleGrille().getHauteur(), pointDepart/grilleIA.getTailleGrille().getLongueur()));
-			int direction = rand()%4;
+			int direction = directionRandom(generator);
 			int x,y;
 			switch(direction)
 			{
@@ -60,4 +68,6 @@ Grille PersonnageBNIA::placerBateaux(){//DONE
 		}
 		grilleIA.placerBateau(bat, coordDebut, coordFin);
 	}
+
+    return grilleIA;
 }

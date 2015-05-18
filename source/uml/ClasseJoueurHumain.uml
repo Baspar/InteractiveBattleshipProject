@@ -4,5 +4,5 @@ class JoueurHumain{
         +<color:orange>JoueurHumain(string nomnv)</color>
 }
 @enduml
-'cb12a855b718c1fd6a66ccecd60f7ce2  src/JoueurHumain.hpp
-'1ccd358841bd34aabefd6a41ebaca18c  src/JoueurHumain.cpp
+'ad83fae12c5e0a3b5f8d5d6466cc54f3  src/JoueurHumain.hpp
+'45ac00e300831a50c5a145dfc1db6faa  src/JoueurHumain.cpp

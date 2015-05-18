@@ -7,10 +7,9 @@
 
 
 int main(){
+    JoueurHumain jh("pôl");
 
-JoueurHumain jh("pôl");
+    cout << "nom du joueur " << jh.getNomBN() << endl;
 
-//cout << "nom du joueur " << jh.getNomBN() << endl;
-
-//cout << "Le PV initial du bateau 2" << jh.getBateaux()[2]->getPV() << endl;
+    cout << "Les PV initiaux du bateau 2" << jh.getBateaux()[2]->getPV() << endl;
 }
