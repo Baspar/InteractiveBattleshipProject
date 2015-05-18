@@ -46,7 +46,7 @@ void Controleur::actionBatailleNavale(){//DONE
 	else batailleNavale->getGrille2()->copy(batailleNavale->getPersonnage2()->placerBateaux());
 
 	//Verifie si la BN est finie, sinon continue la partie
-	while(batailleNavale->retournerGagnant(batailleNavale->getPersonnage1(),batailleNavale->getPersonnage2())==nullptr)
+	while(batailleNavale->retournerGagnant()==nullptr)
 		tourDeJeuBatailleNavale();
 
 	//Affiche gagnant

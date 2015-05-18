@@ -28,7 +28,7 @@ class Jeu{
         /// monde
         Monde monde;
         /// combat
-        Combat combat;
+        Combat *combat;
         /// partie terminee?
         bool terminee;
 

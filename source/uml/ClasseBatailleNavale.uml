@@ -21,7 +21,8 @@ class BatailleNavale{
         +<color:green>initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageBN* joueur2) : void</color>
         +<color:green>jouer(Coordonnees coordonnees) : void</color>
         +<color:green>retournerGagnant(Personnage* joueur1, Personnage* joueur2) : Personnage*</color>
+        +retournerGagnant() : PersonnageBN*
 }
 @enduml
-'c1a3a12a461e944a6bb500cc700192f3  src/BatailleNavale.hpp
-'a8d1840375965fb5c29d547d22c1cbe6  src/BatailleNavale.cpp
+'92174ed2b2f151cbc8f0ebc365f0cfca  src/BatailleNavale.hpp
+'119ae5fef89e3fa13021e9cc80d2cb77  src/BatailleNavale.cpp
