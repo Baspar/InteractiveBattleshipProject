@@ -1,5 +1,7 @@
 #include <iostream>
+#include <algorithm>
 #include "BatailleNavale.hpp"
+#include <cstdlib>
 #include "PersonnageNonJouable.hpp"
 
 using namespace std;
@@ -45,42 +47,67 @@ void afficher(Grille* grille, Grille* grilleAdverse){
     cout << "-     ";
     if(grilleAdverse->getTailleGrille().getHauteur()>10)
         cout << " ";
-    for (int i=0;i<grilleAdverse->getTailleGrille().getLongueur();i++)
+    for (int i=0;i<grille->getTailleGrille().getLongueur();i++)
         cout << "--";
     cout << "-" << endl;
 
     // Affichage tableau
-    for (int i=0;i<grilleAdverse->getTailleGrille().getHauteur();i++){
-        for (int j=0;j<grilleAdverse->getTailleGrille().getLongueur();j++){
-            Coordonnees coord(j,i);
-            cout << "|";
-            if(grilleAdverse->getCaseElt(coord).getBateau()!=nullptr){
-                if(grilleAdverse->getCaseElt(coord).getTouche()==false)
-                    cout << " ";
-                else cout << "x";
+    for (int i=0;i<max(grilleAdverse->getTailleGrille().getHauteur(), grille->getTailleGrille().getHauteur());i++){
+        if(i<grilleAdverse->getTailleGrille().getHauteur()){
+            for (int j=0;j<grilleAdverse->getTailleGrille().getLongueur();j++){
+                Coordonnees coord(j,i);
+                cout << "|";
+                if(grilleAdverse->getCaseElt(coord).getBateau()!=nullptr){
+                    if(grilleAdverse->getCaseElt(coord).getTouche()==false)
+                        cout << " ";
+                    else cout << "x";
+                }
+                else {
+                    if(grilleAdverse->getCaseElt(coord).getTouche()==false)
+                        cout << " ";
+                    else cout << "-";
+                }
             }
-            else {
-                if(grilleAdverse->getCaseElt(coord).getTouche()==false)
-                    cout << " ";
-                else cout << "-";
-            }
-        }
-        cout << "|" << i  << "    ";
-        if(i<10)
-            cout << " ";
-		for (int j=0;j<grille->getTailleGrille().getLongueur();j++){
-			Coordonnees coord(j,i);
-			cout << "|";
-			if(grille->getCaseElt(coord).getBateau()!=nullptr){
-				if(grille->getCaseElt(coord).getTouche()==false)
-					cout << "o";
-				else cout << "x";
-			}
-			else {
+            cout << "|" << i  << "    ";
+            if(i<10 && grilleAdverse->getTailleGrille().getHauteur()>10)
                 cout << " ";
-			}
-		}
-        cout << "|" << i << endl;
+        } else {
+            for (int j=0;j<grilleAdverse->getTailleGrille().getLongueur();j++)
+                cout << "  ";
+            cout << "     ";
+            if(grilleAdverse->getTailleGrille().getHauteur()>10)
+                cout << "  ";
+            else
+                cout << " ";
+        }
+        if(i<grille->getTailleGrille().getHauteur()){
+            for (int j=0;j<grille->getTailleGrille().getLongueur();j++){
+                Coordonnees coord(j,i);
+                cout << "|";
+                if(grille->getCaseElt(coord).getBateau()!=nullptr){
+                    if(grille->getCaseElt(coord).getTouche()==false)
+                        cout << "o";
+                    else cout << "x";
+                }
+                else {
+                    if(grille->getCaseElt(coord).getTouche()==false)
+                        cout << " ";
+                    else cout << "-";
+                }
+            }
+            cout << "|" << i  << "    ";
+            if(i<10 && grille->getTailleGrille().getHauteur()>10)
+                cout << " ";
+        } else {
+            for (int j=0;j<grille->getTailleGrille().getLongueur();j++)
+                cout << "  ";
+            cout << "     ";
+            if(i<10 && grille->getTailleGrille().getHauteur()>10)
+                cout << "  ";
+            if(grille->getTailleGrille().getHauteur()>10)
+                cout << " ";
+        }
+        cout << endl;
     }
 }
 
@@ -89,8 +116,8 @@ int main(){
     PersonnageNonJouable pbn1("Joueur1");
     PersonnageNonJouable pbn2("Joueur2");
 
-    //pbn1.setTailleGrille(TailleGrille(25, 25));
-    //pbn2.setTailleGrille(TailleGrille(25, 25));
+    pbn1.setTailleGrille(TailleGrille(25, 23));
+    pbn2.setTailleGrille(TailleGrille(15, 13));
 
     bn.initialiserJoueurCourant((PersonnageBN*)&pbn1,(PersonnageBN*)&pbn2);
 
@@ -99,6 +126,10 @@ int main(){
 
     int coups=0;
     while(bn.retournerGagnant() == nullptr){
+        if(coups%2==0){
+            system("sleep 0.1");
+            system("clear");
+        }
         coups++;
         int joueurCourant = bn.getIndiceJoueurCourant();
         int joueurNonCourant = (joueurCourant+1)%2;
