@@ -33,6 +33,10 @@ bool Case::getTouche() const{//DONE
 	return touche;
 }
 
+bool Case::getToucheBateau() const{//DONE
+	return touche && bateau!=nullptr;
+}
+
 Bateau* Case::getBateau() const{//DONE
 	return bateau;
 }
