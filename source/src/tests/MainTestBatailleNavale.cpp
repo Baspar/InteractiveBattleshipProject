@@ -3,6 +3,7 @@
 #include "BatailleNavale.hpp"
 #include <cstdlib>
 #include "JoueurIA.hpp"
+#include "ArmeCroix.hpp"
 #include "JoueurIACheate.hpp"
 
 using namespace std;
@@ -119,6 +120,7 @@ int main(){
     //JoueurIA pbn1("Joueur1");
 
     pbn1.setTailleGrille(TailleGrille(25, 23));
+    pbn1.setArme(new ArmeCroix());
     pbn2.setTailleGrille(TailleGrille(15, 13));
 
     bn.initialiserJoueurCourant((PersonnageBN*)&pbn1,(PersonnageBN*)&pbn2);
