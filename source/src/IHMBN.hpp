@@ -26,7 +26,8 @@ class IHMBN{
         /// \brief Affichage grille bateaux
         ///
         /// Affiche la grille où les bateaux du joueur courant sont placés
-        void afficherGrilleBateaux();
+	/// \param Grille* que l'on 
+        void afficherGrilleBateaux(Grille grille);
 
         // Pointeur sur la bataille navale affichée
         BatailleNavale* batailleNavale;
