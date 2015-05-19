@@ -65,7 +65,7 @@ CompileMainTestCelluleAccessible: CelluleAccessible.o
 MainTestCelluleAccessible: CompileMainTestCelluleAccessible
 	tests/MainTestCelluleAccessible
 
-CompileMainTestCelluleCombat: CelluleCombat.o Personnage.o ActionCombat.o CelluleAccessible.o Coordonnees.o Carte.o Action.o Cellule.o
+CompileMainTestCelluleCombat: CelluleCombat.o Personnage.o ActionCombat.o CelluleAccessible.o Coordonnees.o Carte.o Action.o Cellule.o TailleGrille.o
 	g++ $(FLAGS) tests/MainTestCelluleCombat.cpp $^ -o tests/MainTestCelluleCombat
 MainTestCelluleCombat: CompileMainTestCelluleCombat
 	tests/MainTestCelluleCombat
