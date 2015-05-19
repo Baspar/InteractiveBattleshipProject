@@ -35,20 +35,20 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){ //DO
 	return impact ;
 }
 
-Coordonnees PersonnageBNIAAvance::coordonneesAViserCoulerBateau(Grille* grilleAdverse,Coordonnees coordonneesTouchee){
+Coordonnees PersonnageBNIAAvance::coordonneesAViserCoulerBateau(Grille* grilleAdverse,Coordonnees coordonneesTouchee){//WIP
 
     Coordonnees coordonneesN(coordonneesTouchee.getAbscisse(),coordonneesTouchee.getOrdonnee()+1);
     Coordonnees coordonneesS(coordonneesTouchee.getAbscisse(),coordonneesTouchee.getOrdonnee()-1);
     Coordonnees coordonneesE(coordonneesTouchee.getAbscisse()+1,coordonneesTouchee.getOrdonnee());
     Coordonnees coordonneesO(coordonneesTouchee.getAbscisse()-1,coordonneesTouchee.getOrdonnee());
 
-    while (!grilleAdverse.getCaseElt(coordonneesTouchee).getBateau().estCoule()){
-       if (grilleAdverse->coupValide(coordonneesN) return coordonneesN else
-           if (grilleAdverse->coupValide(coordonneesS) return coordonneesS else
-               if (grilleAdverse->coupValide(coordonneesE) return coordonneesE else
-                   if (grilleAdverse->coupValide(coordonneesO) return coordonneesO
-    }
-    return coordonneesAViser(Grille* grilleAdverse);
+    while (!grilleAdverse->getCaseElt(coordonneesTouchee).getBateau()->estCoule()){
+       if (grilleAdverse->coupValide(coordonneesN)) return coordonneesN; else
+           if (grilleAdverse->coupValide(coordonneesS)) return coordonneesS; else
+               if (grilleAdverse->coupValide(coordonneesE)) return coordonneesE; else
+                   if (grilleAdverse->coupValide(coordonneesO)) return coordonneesO;
+    };
+    return coordonneesAViser(grilleAdverse);
 }
 
 

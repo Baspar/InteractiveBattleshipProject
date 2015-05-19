@@ -24,12 +24,13 @@ PersonnageNonJouable -|> Personnage
 Personnage <|- PersonnageJouable
 
 PersonnageJouable <|--JoueurHumain
-PersonnageJouable <|--JoueurIA
+PersonnageJouable <|--JoueurDhumainBNia
 
-PersonnageNonJouable --|> JoueurDiaBNia
-PersonnageNonJouable --|> JoueurDiaBNiaAvance
-PersonnageNonJouable --|> JoueurDiaBNiaAvance --|> 
-PersonnageBNIA <|- JoueurIA
+PersonnageNonJouable <|-- JoueurIA
+PersonnageNonJouable <|-- JoueurIAAvance
+JoueurIA --|> PersonnageBNIA
+JoueurIAAvance --|> PersonnageBNIAAvance
+PersonnageBNIA <|- JoueurDhumainBNia
 
 JoueurHumain --|>PersonnageBNHumain
 PersonnageBNIA --|>PersonnageBN
