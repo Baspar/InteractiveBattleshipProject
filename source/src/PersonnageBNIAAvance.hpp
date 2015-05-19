@@ -44,8 +44,16 @@ class PersonnageBNIAAvance : public PersonnageBN{
         ///
         /// Indique où le PNJ attaque
         /// \param grilleAdverse : grille sur laquelle le joueur vise
-        /// \param coordoonneesTouchee : case touchee precedemment
+        /// \param coordonneesTouchee : case touchee precedemment
         /// \return les coordonnees de la case à attaquer
         Coordonnees coordonneesAViserCoulerBateau(Grille* grilleAdverse,Coordonnees coordonneesTouchee);
+
+        /// \brief Booleen autour d une case
+        ///
+        /// Indique si auncune case autour est touchee
+        /// \param grilleAdverse : grille sur laquelle le joueur vise
+        /// \param coordonnees : case
+        /// \return booleen
+        Coordonnees aucuneToucheeAutour(Grille* grille,Coordonnees coordonneesCT);
 };
 #endif
