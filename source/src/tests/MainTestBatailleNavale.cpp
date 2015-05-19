@@ -63,7 +63,10 @@ void afficher(Grille* grille, Grille* grilleAdverse){
                 if(grilleAdverse->getCaseElt(coord).getBateau()!=nullptr){
                     if(grilleAdverse->getCaseElt(coord).getTouche()==false)
                         cout << " ";
-                    else cout << "x";
+                    else if(grilleAdverse->getCaseElt(coord).getBateau()->estCoule()==false)
+                        cout << "x";
+                    else
+                        cout << "#";
                 }
                 else {
                     if(grilleAdverse->getCaseElt(coord).getTouche()==false)
@@ -90,7 +93,10 @@ void afficher(Grille* grille, Grille* grilleAdverse){
                 if(grille->getCaseElt(coord).getBateau()!=nullptr){
                     if(grille->getCaseElt(coord).getTouche()==false)
                         cout << "o";
-                    else cout << "x";
+                    else if(grille->getCaseElt(coord).getBateau()->estCoule()==false)
+                        cout << "x";
+                    else
+                        cout << "#";
                 }
                 else {
                     if(grille->getCaseElt(coord).getTouche()==false)
@@ -121,9 +127,11 @@ int main(){
     //JoueurIACheate pbn2("Joueur2");
     //JoueurIA pbn1("Joueur1");
 
-    pbn1.setTailleGrille(TailleGrille(25, 23));
-    //pbn1.setArme(new ArmeCroix());
-    pbn2.setTailleGrille(TailleGrille(15, 13));
+    //pbn1.setTailleGrille(TailleGrille(15, 10));
+    pbn1.setTailleGrille(TailleGrille(15, 10));
+    //pbn2.setArme(new ArmeCroix());
+    //pbn2.setTailleGrille(TailleGrille(10, 15));
+    pbn2.setTailleGrille(TailleGrille(10, 15));
 
     bn.initialiserJoueurCourant((PersonnageBN*)&pbn1,(PersonnageBN*)&pbn2);
 

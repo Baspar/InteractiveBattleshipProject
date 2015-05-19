@@ -40,7 +40,7 @@ class PersonnageBNIAAvance : public PersonnageBN{
         /// Indique où le PNJ attaque
         /// \param grilleAdverse : grille sur laquelle le joueur vise
         /// \return les coordonnées de la case à attaquer
-        Coordonnees coordonneesAViser1(Grille* grilleAdverse);
+        Coordonnees tirerAleatoirement(Grille* grilleAdverse);
 
         /// \brief Attaque du PNJ lorsqu un bateau est touche
         ///
