@@ -53,19 +53,19 @@ Coordonnees PersonnageBNIAAvance::tirerAleatoirement(Grille* grilleAdverse){ //D
 Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
 
     Coordonnees solution(0,0);
-    cout<<"Entree";
+    cout<<"Entree"<<endl;
 //Si la case precedente est touchee je rentre dans la boucle
     if (grilleAdverse->getCaseElt(casePrecedente).getToucheBateau()){
-    cout<<"salut léo";
+    cout<<"salut léo"<<endl;
 //Je prepare le sondage des cases aux alentours
     Coordonnees coordonneesN(casePrecedente.getAbscisse(),casePrecedente.getOrdonnee()+1);
     Coordonnees coordonneesS(casePrecedente.getAbscisse(),casePrecedente.getOrdonnee()-1);
     Coordonnees coordonneesE(casePrecedente.getAbscisse()+1,casePrecedente.getOrdonnee());
     Coordonnees coordonneesO(casePrecedente.getAbscisse()-1,casePrecedente.getOrdonnee());
-    cout<<"Affectation réussie";
+    cout<<"Affectation réussie"<<endl;
         //Tant que le bateau n'est pas coule je le sonde
         if (!grilleAdverse->getCaseElt(casePrecedente).getBateau()->estCoule()){
-    cout<<"Entree dans la boucle de sondage";
+    cout<<"Entree dans la boucle de sondage"<<endl;
             //Si aucune case autour de la case touchee nest touchee je teste la validite
             if (aucuneToucheeAutour(grilleAdverse,casePrecedente).coordonneesVides()){
                 if (grilleAdverse->coupValide(coordonneesN))
@@ -79,7 +79,7 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
                         else
                             if (grilleAdverse->coupValide(coordonneesO))
                                 solution.copy(coordonneesO);
-                cout<<"Sortie dans la boucle de sondage";
+                cout<<"Sortie dans la boucle de sondage"<< endl;
             }
 
 
@@ -88,7 +88,7 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
 
             //Sinon je sonde de haut en bas si le cas est échéant
             if (aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse()==casePrecedente.getAbscisse()){
-                cout<<"Entree dans la boucle de vertical";
+                cout<<"Entree dans la boucle de vertical"<<endl;
                 solution.setAbscisse(aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse());
                 solution.setOrdonnee(aucuneToucheeAutour(grilleAdverse,casePrecedente).getOrdonnee()+1);
             //Tant que la case est touchee j'avance
@@ -121,12 +121,12 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
                 if (!grilleAdverse->coupValide(solution))
                     solution.copy(tirerAleatoirement(grilleAdverse));
             }
-                cout<<"Sortie du double sondage";
+                cout<<"Sortie du double sondage"<<endl;
         }
-        cout<<"Sortie du sondage";
+        cout<<"Sortie du sondage"<<endl;
         }
             casePrecedente.copy(solution);
-            cout<<"Fin";
+            cout<<"Fin"<<endl;
             return solution;
         }
 
