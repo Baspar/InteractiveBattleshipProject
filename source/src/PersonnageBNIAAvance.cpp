@@ -1,16 +1,25 @@
 #include "PersonnageBNIAAvance.hpp"
 
+#include "Coordonnees.hpp"
 #include "PersonnageBN.hpp"
 #include <random>
 #include <iostream>
 
 using namespace std;
 
-PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv):PersonnageBN(nomnv){//DONE
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv):PersonnageBN(nomnv),caseTouchee(-1,-1){//DONE
+}
+
+Coordonnees PersonnageBNIAAvance::getCaseTouchee(){//Done
+    return caseTouchee;
+}
+
+void PersonnageBNIAAvance::setCaseTouchee(Coordonnees c){//Done
+    caseTouchee.copy(c);
 }
 
 
-Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){ //DONE
+Coordonnees PersonnageBNIAAvance::coordonneesAViser1(Grille* grilleAdverse){ //DONE
 	Coordonnees impact(-1,-1);
     int hauteur = grilleAdverse->getTailleGrille().getHauteur();
     int longueur = grilleAdverse->getTailleGrille().getLongueur();
@@ -35,12 +44,14 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){ //DO
 	return impact ;
 }
 
-Coordonnees PersonnageBNIAAvance::coordonneesAViserCoulerBateau(Grille* grilleAdverse,Coordonnees coordonneesTouchee){//WIP
+Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
     Coordonnees coordAViser(-1,-1);
+    Coordonnees coordonneesTouchee(caseTouchee);
     Coordonnees coordonneesN(coordonneesTouchee.getAbscisse(),coordonneesTouchee.getOrdonnee()+1);
     Coordonnees coordonneesS(coordonneesTouchee.getAbscisse(),coordonneesTouchee.getOrdonnee()-1);
     Coordonnees coordonneesE(coordonneesTouchee.getAbscisse()+1,coordonneesTouchee.getOrdonnee());
     Coordonnees coordonneesO(coordonneesTouchee.getAbscisse()-1,coordonneesTouchee.getOrdonnee());
+
 
     while (!grilleAdverse->getCaseElt(coordonneesTouchee).getBateau()->estCoule()){
         if (aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).coordonneesVides()){
@@ -69,7 +80,7 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViserCoulerBateau(Grille* grilleAd
                 coordAViser.setOrdonnee(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getOrdonnee()-1);
                 while (grilleAdverse->getCaseElt(coordAViser).getTouche())
                     coordAViser.setOrdonnee(coordAViser.getOrdonnee()-1);
-            if (!grilleAdverse->coupValide(coordAViser)) return coordonneesAViser(grilleAdverse);
+            if (!grilleAdverse->coupValide(coordAViser)) return coordonneesAViser1(grilleAdverse);
         }
         else{
             coordAViser.setOrdonnee(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getAbscisse());
@@ -80,13 +91,13 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViserCoulerBateau(Grille* grilleAd
                     coordAViser.setAbscisse(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getAbscisse()-1);
                     while (!grilleAdverse->coupValide(coordAViser))
                         coordAViser.setAbscisse(coordAViser.getAbscisse()-1);
-            if (!grilleAdverse->coupValide(coordAViser)) return coordonneesAViser(grilleAdverse);
+            if (!grilleAdverse->coupValide(coordAViser)) return coordonneesAViser1grilleAdverse);
         }
     }
     if (!coordAViser.coordonneesVides())
         return coordAViser;
     else
-        return coordonneesAViser(grilleAdverse);
+        return coordonneesAViser1(grilleAdverse);
 }
 
 Coordonnees PersonnageBNIAAvance::aucuneToucheeAutour(Grille* grille,Coordonnees coordonneesCT){//Done
