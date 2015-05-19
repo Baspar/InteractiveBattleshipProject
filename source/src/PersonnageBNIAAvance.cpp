@@ -35,6 +35,23 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){ //DO
 	return impact ;
 }
 
+Coordonnees PersonnageBNIAAvance::coordonneesAViserCoulerBateau(Grille* grilleAdverse,Coordonnees coordonneesTouchee){
+
+    Coordonnees coordonneesN(coordonneesTouchee.getAbscisse(),coordonneesTouchee.getOrdonnee()+1);
+    Coordonnees coordonneesS(coordonneesTouchee.getAbscisse(),coordonneesTouchee.getOrdonnee()-1);
+    Coordonnees coordonneesE(coordonneesTouchee.getAbscisse()+1,coordonneesTouchee.getOrdonnee());
+    Coordonnees coordonneesO(coordonneesTouchee.getAbscisse()-1,coordonneesTouchee.getOrdonnee());
+
+    while (!grilleAdverse.getCaseElt(coordonneesTouchee).getBateau().estCoule()){
+       if (grilleAdverse->coupValide(coordonneesN) return coordonneesN else
+           if (grilleAdverse->coupValide(coordonneesS) return coordonneesS else
+               if (grilleAdverse->coupValide(coordonneesE) return coordonneesE else
+                   if (grilleAdverse->coupValide(coordonneesO) return coordonneesO
+    }
+    return coordonneesAViser(Grille* grilleAdverse);
+}
+
+
 Grille PersonnageBNIAAvance::placerBateaux(){//DONE
 	Grille grilleIA(getTailleGrille().getLongueur(), getTailleGrille().getHauteur());
 	Coordonnees coordDebut(-1,-1), coordFin(-1,-1);
