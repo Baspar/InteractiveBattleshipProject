@@ -110,17 +110,17 @@ class PersonnageBNIAAvance : public PersonnageBN{
         /// \return booleen
         Coordonnees aucuneToucheeAutour(Grille* grille,Coordonnees coordonneesCT);
 
-        /// \brief Getter de case touchee
-        ///
-        /// Getter de la case touchee
-        /// \return case touchee
-        Coordonnees getCaseTouchee();
-
-        /// \brief Setter de case touchee
-        ///
-        /// Setter de la case touchee
-        /// \param  case touchee
-         void setCaseTouchee(Coordonnees c);
+//        /// \brief Getter de case touchee
+//        ///
+//        /// Getter de la case touchee
+//        /// \return case touchee
+//        Coordonnees getCaseTouchee();
+//
+//        /// \brief Setter de case touchee
+//        ///
+//        /// Setter de la case touchee
+//        /// \param  case touchee
+//         void setCaseTouchee(Coordonnees c);
 
         /// \brief Getter de case precedente
         ///

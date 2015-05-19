@@ -64,7 +64,7 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
     Coordonnees coordonneesO(casePrecedente.getAbscisse()-1,casePrecedente.getOrdonnee());
     cout<<"Affectation réussie";
         //Tant que le bateau n'est pas coule je le sonde
-        while (!grilleAdverse->getCaseElt(casePrecedente).getBateau()->estCoule()){
+        if (!grilleAdverse->getCaseElt(casePrecedente).getBateau()->estCoule()){
     cout<<"Entree dans la boucle de sondage";
             //Si aucune case autour de la case touchee nest touchee je teste la validite
             if (aucuneToucheeAutour(grilleAdverse,casePrecedente).coordonneesVides()){
