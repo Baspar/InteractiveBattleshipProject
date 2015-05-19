@@ -93,13 +93,13 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
                 solution.setAbscisse(aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse());
                 solution.setOrdonnee(aucuneToucheeAutour(grilleAdverse,casePrecedente).getOrdonnee()+1);
             //Tant que la case est touchee j'avance
-                while (grilleAdverse->getCaseElt(solution).getToucheBateau())
+                while (grilleAdverse->coupValide(solution)&&grilleAdverse->getCaseElt(solution).getToucheBateau())
                     solution.setOrdonnee(solution.getOrdonnee()+1);
             //Si la case trouvee n'est pas valide je parcours dans l'autre sens
                 if (!grilleAdverse->coupValide(solution))
                     solution.setOrdonnee(aucuneToucheeAutour(grilleAdverse,casePrecedente).getOrdonnee()-1);
             //Tant que la case est touchee je continue
-                while (grilleAdverse->getCaseElt(solution).getToucheBateau())
+                while (grilleAdverse->coupValide(solution)&&grilleAdverse->getCaseElt(solution).getToucheBateau())
                     solution.setOrdonnee(solution.getOrdonnee()-1);
             //Si la case est non valide la solution est au hasard
                 if (!grilleAdverse->coupValide(solution)) solution.copy(tirerAleatoirement(grilleAdverse));
@@ -110,13 +110,13 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
                 solution.setOrdonnee(aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse());
                 solution.setAbscisse(aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse()+1);
             //Tant que la case est touchee j'avance
-                while (grilleAdverse->getCaseElt(solution).getToucheBateau())
+                while (grilleAdverse->coupValide(solution)&&grilleAdverse->getCaseElt(solution).getToucheBateau())
                     solution.setOrdonnee(solution.getAbscisse()+1);
             //Si la case trouvee n'est pas valide je parcours dans l'autre sens
                 if (!grilleAdverse->coupValide(solution))
                     solution.setAbscisse(aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse()-1);
             //Tant que la case est touchee je continue
-                while (!grilleAdverse->coupValide(solution))
+                while (grilleAdverse->coupValide(solution)&&grilleAdverse->getCaseElt(solution).getToucheBateau())
                     solution.setAbscisse(solution.getAbscisse()-1);
             //Si la case est non valide la solution est au hasard
                 if (!grilleAdverse->coupValide(solution))
