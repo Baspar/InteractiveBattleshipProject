@@ -27,7 +27,7 @@ class Carte{
         /// taille de la grille de la carte
         TailleGrille tailleGrille;
         /// tableau de cellule (carte composée de plusieurs cellules)
-        vector<vector<Cellule> > cellules;
+        vector<vector<Cellule*> > cellules;
 
     public:
         /// \fn Carte(int id, TailleGrille tailleGrille)
@@ -49,7 +49,7 @@ class Carte{
         /// \fn vector<vector<Cellule> > getCellules()
         /// \brief Getter Cellules
         /// \return La liste des cellules de la carte
-        vector<vector<Cellule> > getCellules();
+        vector<vector<Cellule*> > getCellules();
 
 
         /// \fn Cellule* getCel(Coordonnees coord)

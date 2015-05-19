@@ -1,5 +1,5 @@
 #include <iostream>
-#include "JoueurIA.hpp"
+#include "JoueurDhumainBNia.hpp"
 
 #include "PersonnageJouable.hpp"
 #include "PersonnageBNIA.hpp"
@@ -7,7 +7,7 @@
 
 
 int main(){
-    JoueurIA ja("pôl");
+    JoueurDhumainBNia ja("pôl");
 
     cout << "nom du joueur " << ja.getNomBN() << endl;
 

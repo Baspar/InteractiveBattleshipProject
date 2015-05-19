@@ -1,7 +1,7 @@
 #ifndef JOUEURIA_H
 #define JOUEURIA_H
 
-/// \file JoueurIA.hpp
+/// \file JoueurDhumainBNia.hpp
 /// \brief classe joueur IA
 /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
@@ -10,18 +10,18 @@
 
 using namespace std;
 
-/// \class JoueurIA
+/// \class JoueurDhumainBNia
 /// \brief classe définissant un joueur IA
 ///
 /// La classe représente un joueur IA se déplaçant sur la carte
-class JoueurIA : public PersonnageJouable, public PersonnageBNIA{
+class JoueurDhumainBNia : public PersonnageJouable, public PersonnageBNIA{
     public:
-        /// \fn JoueurIA(string nomnv)
+        /// \fn JoueurDhumainBNia(string nomnv)
         /// \brief Constructeur paramétré
         ///
-        /// Constructeur de la classe JoueurIA avec le nom en attribut
+        /// Constructeur de la classe JoueurDhumainBNia avec le nom en attribut
         /// \param nomnv : string nom du joueur
-        JoueurIA(string nomnv);
+        JoueurDhumainBNia(string nomnv);
 };
 
 #endif
