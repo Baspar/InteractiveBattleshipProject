@@ -57,10 +57,8 @@ BatailleNavale::BatailleNavale(){//DONE
 
 
 void BatailleNavale::initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageBN* joueur2){//DONE
-	cout << "test" <<endl;
 	joueurs[0]=joueur1;
 	joueurs[1]=joueur2;
-	cout << "test" <<endl;
 	indiceJoueurCourant =0;
 	grilles.clear();
 	grilles.push_back(Grille(joueur1->getTailleGrille().getLongueur(),joueur1->getTailleGrille().getHauteur()));
