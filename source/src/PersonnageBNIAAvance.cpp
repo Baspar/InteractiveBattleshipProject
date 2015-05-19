@@ -104,6 +104,7 @@ if (grilleAdverse->getCaseElt(coordonneesTouchee).getTouche()){
     solution.copy(coordAViser);
 else
     solution.copy(coordonneesAViser1(grilleAdverse));
+    caseTouchee.copy(solution);
 
 }
 else
