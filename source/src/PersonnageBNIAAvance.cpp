@@ -52,6 +52,9 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
     Coordonnees coordonneesE(coordonneesTouchee.getAbscisse()+1,coordonneesTouchee.getOrdonnee());
     Coordonnees coordonneesO(coordonneesTouchee.getAbscisse()-1,coordonneesTouchee.getOrdonnee());
     Coordonnees solution(0,0);
+    Coordonnees casePrecedente(0,0);
+
+if (grilleAdverse->getCaseElt(casePrecedente).getTouche()) caseTouchee.copy(casePrecedente);
 
 if (grilleAdverse->getCaseElt(coordonneesTouchee).getTouche()){
     while (!grilleAdverse->getCaseElt(coordonneesTouchee).getBateau()->estCoule()){
@@ -105,7 +108,7 @@ else
 }
 else
     solution.copy(coordonneesAViser1(grilleAdverse));
-    caseTouchee.copy(solution);
+    casePrecedente.copy(solution);
     return solution;
 }
 
