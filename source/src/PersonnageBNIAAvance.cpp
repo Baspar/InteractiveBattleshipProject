@@ -91,7 +91,8 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
                     coordAViser.setAbscisse(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getAbscisse()-1);
                     while (!grilleAdverse->coupValide(coordAViser))
                         coordAViser.setAbscisse(coordAViser.getAbscisse()-1);
-            if (!grilleAdverse->coupValide(coordAViser)) return coordonneesAViser1grilleAdverse);
+            if (!grilleAdverse->coupValide(coordAViser))
+                return coordonneesAViser1(grilleAdverse);
         }
     }
     if (!coordAViser.coordonneesVides())

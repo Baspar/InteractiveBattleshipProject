@@ -1,5 +1,5 @@
-#ifndef PERSONNAGEBNIA_H
-#define PERSONNAGEBNIA_H
+#ifndef PERSONNAGEBNIAAVANCE_H
+#define PERSONNAGEBNIAAVANCE_H
 
 /// \file PersonnageBNIAAvance.hpp
 /// \brief Personnages de bataille navale dotés d'une intelligence artificielle
