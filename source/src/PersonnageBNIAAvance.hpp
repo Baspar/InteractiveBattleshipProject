@@ -23,11 +23,64 @@ class PersonnageBNIAAvance : public PersonnageBN{
 
     public:
         /// \fn PersonnageBNIAAvance(string nomnv)
-        /// \brief Constructeur des persoBNIA
+        /// \brief Constructeur des persoBNIAAvance
         ///
-        /// Constructeur des persoBNIA
-        /// \param nomnv:nom du joueur
+        /// Constructeur des persoBNIAAvance
+        /// \param nomnv : nom du joueur
         PersonnageBNIAAvance(string nomnv);
+
+        /// \fn PersonnageBNIAAvance(string nomnv, int l, int h, Arme* a)
+        /// \brief Constructeur (très) parametre de personnageBNIAAvance
+        /// \param nomnv : nom du personnage
+        /// \param l : longueur de la grille
+        /// \param h : hauteur de la grille
+        /// \param a : pointeur sur l'arme souhaitée
+        PersonnageBNIAAvance(string nomnv, int l, int h, Arme* a);
+
+        /// \fn PersonnageBNIAAvance(string nomnv, Arme* a)
+        /// \brief Constructeur (très) parametre de personnageBNIAAvance
+        /// \param nomnv : nom du personnage
+        /// \param a : pointeur sur l'arme souhaitée
+        PersonnageBNIAAvance(string nomnv, Arme* a);
+
+        /// \fn PersonnageBNIAAvance(string nomnv, int l, int h)
+        /// \brief Constructeur (très) parametre de personnageBNIAAvance
+        /// \param nomnv : nom du personnage
+        /// \param l : longueur de la grille
+        /// \param h : hauteur de la grille
+        PersonnageBNIAAvance(string nomnv, int l, int h);
+
+        /// \fn PersonnageBNIAAvance(string nomnv, vector<int> tBateaux)
+        /// \brief Constructeur des persoBNIAAvance
+        ///
+        /// Constructeur des persoBNIAAvance
+        /// \param tBateaux : vector de taille de bateaux
+        /// \param nomnv : nom du joueur
+        PersonnageBNIAAvance(string nomnv, vector<int> tBateaux);
+
+        /// \fn PersonnageBNIAAvance(string nomnv, int l, int h, vector<int> tBateaux, Arme* a)
+        /// \brief Constructeur (très) parametre de personnageBNIAAvance
+        /// \param nomnv : nom du personnage
+        /// \param tBateaux : vector de taille de bateaux
+        /// \param l : longueur de la grille
+        /// \param h : hauteur de la grille
+        /// \param a : pointeur sur l'arme souhaitée
+        PersonnageBNIAAvance(string nomnv, int l, int h, vector<int> tBateaux, Arme* a);
+
+        /// \fn PersonnageBNIAAvance(string nomnv, vector<int> tBateaux, Arme* a)
+        /// \brief Constructeur (très) parametre de personnageBNIAAvance
+        /// \param tBateaux : vector de taille de bateaux
+        /// \param nomnv : nom du personnage
+        /// \param a : pointeur sur l'arme souhaitée
+        PersonnageBNIAAvance(string nomnv, vector<int> tBateaux, Arme* a);
+
+        /// \fn PersonnageBNIAAvance(string nomnv, int l, int h, vector<int> tBateaux)
+        /// \brief Constructeur (très) parametre de personnageBNIAAvance
+        /// \param nomnv : nom du personnage
+        /// \param tBateaux : vector de taille de bateaux
+        /// \param l : longueur de la grille
+        /// \param h : hauteur de la grille
+        PersonnageBNIAAvance(string nomnv, int l, int h, vector<int> tBateaux);
 
         /// \brief Place les bateaux
         ///

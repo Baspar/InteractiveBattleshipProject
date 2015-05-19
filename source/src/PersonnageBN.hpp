@@ -30,14 +30,74 @@ class PersonnageBN{
         ///bateaux : vecteur de pointeur sur bateaux(représentant l'ensemble des bateaux du PersonnageBN)
         vector<Bateau*> bateaux;
 
-    public:
+        /// \fn void reinitialiserFlotteClassique()
+        /// \brief Reinitialise la flotte classique
+        void reinitialiserFlotteClassique();
 
-    /// \fn PersonnageBN(string nomnv)
+        /// \fn void reinitialiserFlotteParam(vector<int> tBateaux);
+        /// \brief Reinitialise la flotte aux bateaux indiqués
+        void reinitialiserFlotteParam(vector<int> tBateaux);
+
+    public:
+        /// \fn PersonnageBN(string nomnv)
         /// \brief Constructeur des persoBN
         ///
         /// Constructeur des persoBN
-    /// \param nomnv : nom du joueur
+        /// \param nomnv : nom du joueur
         PersonnageBN(string nomnv);
+
+        /// \fn PersonnageBN(string nomnv, int l, int h, Arme* a)
+        /// \brief Constructeur (très) parametre de personnageBN
+        /// \param nomnv : nom du personnage
+        /// \param l : longueur de la grille
+        /// \param h : hauteur de la grille
+        /// \param a : pointeur sur l'arme souhaitée
+        PersonnageBN(string nomnv, int l, int h, Arme* a);
+
+        /// \fn PersonnageBN(string nomnv, Arme* a)
+        /// \brief Constructeur (très) parametre de personnageBN
+        /// \param nomnv : nom du personnage
+        /// \param a : pointeur sur l'arme souhaitée
+        PersonnageBN(string nomnv, Arme* a);
+
+        /// \fn PersonnageBN(string nomnv, int l, int h)
+        /// \brief Constructeur (très) parametre de personnageBN
+        /// \param nomnv : nom du personnage
+        /// \param l : longueur de la grille
+        /// \param h : hauteur de la grille
+        PersonnageBN(string nomnv, int l, int h);
+
+        /// \fn PersonnageBN(string nomnv, vector<int> tBateaux)
+        /// \brief Constructeur des persoBN
+        ///
+        /// Constructeur des persoBN
+        /// \param tBateaux : vector de taille de bateaux
+        /// \param nomnv : nom du joueur
+        PersonnageBN(string nomnv, vector<int> tBateaux);
+
+        /// \fn PersonnageBN(string nomnv, int l, int h, vector<int> tBateaux, Arme* a)
+        /// \brief Constructeur (très) parametre de personnageBN
+        /// \param nomnv : nom du personnage
+        /// \param tBateaux : vector de taille de bateaux
+        /// \param l : longueur de la grille
+        /// \param h : hauteur de la grille
+        /// \param a : pointeur sur l'arme souhaitée
+        PersonnageBN(string nomnv, int l, int h, vector<int> tBateaux, Arme* a);
+
+        /// \fn PersonnageBN(string nomnv, vector<int> tBateaux, Arme* a)
+        /// \brief Constructeur (très) parametre de personnageBN
+        /// \param tBateaux : vector de taille de bateaux
+        /// \param nomnv : nom du personnage
+        /// \param a : pointeur sur l'arme souhaitée
+        PersonnageBN(string nomnv, vector<int> tBateaux, Arme* a);
+
+        /// \fn PersonnageBN(string nomnv, int l, int h, vector<int> tBateaux)
+        /// \brief Constructeur (très) parametre de personnageBN
+        /// \param nomnv : nom du personnage
+        /// \param tBateaux : vector de taille de bateaux
+        /// \param l : longueur de la grille
+        /// \param h : hauteur de la grille
+        PersonnageBN(string nomnv, int l, int h, vector<int> tBateaux);
 
         /// \fn TailleGrille getTailleGrille() const
         /// \brief getters de tailleGrille
