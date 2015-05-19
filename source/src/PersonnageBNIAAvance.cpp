@@ -52,7 +52,7 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
     Coordonnees coordonneesE(coordonneesTouchee.getAbscisse()+1,coordonneesTouchee.getOrdonnee());
     Coordonnees coordonneesO(coordonneesTouchee.getAbscisse()-1,coordonneesTouchee.getOrdonnee());
 
-
+if (grilleAdverse->getCaseElt(coordonneesTouchee).getTouche()){
     while (!grilleAdverse->getCaseElt(coordonneesTouchee).getBateau()->estCoule()){
         if (aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).coordonneesVides()){
             if (grilleAdverse->coupValide(coordonneesN))
@@ -95,10 +95,15 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
                 return coordonneesAViser1(grilleAdverse);
         }
     }
-    if (!coordAViser.coordonneesVides())
-        return coordAViser;
-    else
-        return coordonneesAViser1(grilleAdverse);
+
+ if (!coordAViser.coordonneesVides())
+    return coordAViser;
+else
+    return coordonneesAViser1(grilleAdverse);
+
+}
+else
+    return coordonneesAViser(grilleAdverse);
 }
 
 Coordonnees PersonnageBNIAAvance::aucuneToucheeAutour(Grille* grille,Coordonnees coordonneesCT){//Done
