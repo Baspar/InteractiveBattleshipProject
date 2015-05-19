@@ -56,6 +56,7 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
     cout<<"Entree"<<endl;
 //Si la case precedente est touchee je rentre dans la boucle
     if (grilleAdverse->getCaseElt(casePrecedente).getToucheBateau()){
+    caseTouchee.copy(casePrecedente);
     cout<<"salut léo"<<endl;
 //Je prepare le sondage des cases aux alentours
     Coordonnees coordonneesN(casePrecedente.getAbscisse(),casePrecedente.getOrdonnee()+1);
@@ -64,7 +65,7 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
     Coordonnees coordonneesO(casePrecedente.getAbscisse()-1,casePrecedente.getOrdonnee());
     cout<<"Affectation réussie"<<endl;
         //Tant que le bateau n'est pas coule je le sonde
-        if (!grilleAdverse->getCaseElt(casePrecedente).getBateau()->estCoule()){
+        if (!grilleAdverse->getCaseElt(caseTouchee).getBateau()->estCoule()){
     cout<<"Entree dans la boucle de sondage"<<endl;
             //Si aucune case autour de la case touchee nest touchee je teste la validite
             if (aucuneToucheeAutour(grilleAdverse,casePrecedente).coordonneesVides()){
@@ -96,18 +97,15 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
                 while (grilleAdverse->coupValide(solution)&&grilleAdverse->getCaseElt(solution).getToucheBateau())
                     solution.setOrdonnee(solution.getOrdonnee()+1);
             //Si la case trouvee n'est pas valide je parcours dans l'autre sens
-                if (!grilleAdverse->coupValide(solution))
+                if (!grilleAdverse->coupValide(solution)){
                     solution.setOrdonnee(aucuneToucheeAutour(grilleAdverse,casePrecedente).getOrdonnee()-1);
             //Tant que la case est touchee je continue
                 while (grilleAdverse->coupValide(solution)&&grilleAdverse->getCaseElt(solution).getToucheBateau())
                     solution.setOrdonnee(solution.getOrdonnee()-1);
             //Si la case est non valide la solution est au hasard
-                if (!grilleAdverse->coupValide(solution)){
-
+                if (!grilleAdverse->coupValide(solution))
                  solution.copy(tirerAleatoirement(grilleAdverse));
-                 marqueur=0;
                 }
-
             }
             else{
             //Sinon je sonde de gauche à droite
@@ -117,16 +115,16 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
                 while (grilleAdverse->coupValide(solution)&&grilleAdverse->getCaseElt(solution).getToucheBateau())
                     solution.setOrdonnee(solution.getAbscisse()+1);
             //Si la case trouvee n'est pas valide je parcours dans l'autre sens
-                if (!grilleAdverse->coupValide(solution))
+                if (!grilleAdverse->coupValide(solution)){
                     solution.setAbscisse(aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse()-1);
             //Tant que la case est touchee je continue
                 while (grilleAdverse->coupValide(solution)&&grilleAdverse->getCaseElt(solution).getToucheBateau())
                     solution.setAbscisse(solution.getAbscisse()-1);
             //Si la case est non valide la solution est au hasard
-                if (!grilleAdverse->coupValide(solution)){
+                if (!grilleAdverse->coupValide(solution))
                     solution.copy(tirerAleatoirement(grilleAdverse));
-                    marqueur=0;
-                }
+
+            }
             }
                 cout<<"Sortie du double sondage"<<endl;
         }
@@ -136,13 +134,10 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
             cout<<"Fin"<<endl;
             return solution;
         }
-
-    else{
+//La case précédente n'est pas touchée
+    else
         solution.copy(tirerAleatoirement(grilleAdverse));
-        marqueur=0;
-    }
-    if (marqueur==1)
-        caseTouchee.copy(solution);
+
     casePrecedente.copy(solution);
     return solution;
 }
