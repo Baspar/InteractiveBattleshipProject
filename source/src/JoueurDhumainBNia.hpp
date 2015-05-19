@@ -1,5 +1,5 @@
-#ifndef JOUEURIA_H
-#define JOUEURIA_H
+#ifndef JOUEURDHUMAINBNIA_H
+#define JOUEURDHUMAINBNIA_H
 
 /// \file JoueurDhumainBNia.hpp
 /// \brief classe joueur IA

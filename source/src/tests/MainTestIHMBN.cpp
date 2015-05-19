@@ -21,7 +21,9 @@ int main(){
 	bn.getGrilles()[0]->copy(pbn1.placerBateaux());
     bn.getGrilles()[1]->copy(i->saisirPlacementBateaux(bn.getJoueurs()[1]));
 
-	afficher(bn.getGrilles()[0],bn.getGrilles()[1]);
-	afficher(bn.getGrilles()[1],bn.getGrilles()[0]);
+	ihm->afficherJeu();
+	bn.jouer(pbn1.coordonneesAViser(bn.getGrilles()[(bn.getIndiceJoueurCourant()+1)%2]));
+	ihm->afficherJeu();
+	bn.jouer(i->saisieCoup());
     
 }

@@ -46,7 +46,7 @@ class Cellule{
         /// \return Type de cellule
         string getTypeDeCellule() const;
 
-        /// \fn int getActionCellule()
+        /// \fn Action* getActionCellule()
         /// \brief Getter Action
         /// \return action de la cellule
         Action* getActionCellule() const;
