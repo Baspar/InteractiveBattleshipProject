@@ -31,7 +31,7 @@ PersonnageNonJouable <|-- JoueurIACheate
 JoueurIA --|> PersonnageBNIA
 JoueurIAAvance --|> PersonnageBNIAAvance
 JoueurIACheate --|> PersonnageBNIACheate
-PersonnageBNIA <|- JoueurDhumainBNia
+JoueurDhumainBNia --|> PersonnageBNIA 
 
 JoueurHumain --|>PersonnageBNHumain
 PersonnageBNIA --|>PersonnageBN

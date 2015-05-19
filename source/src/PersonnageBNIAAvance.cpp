@@ -7,22 +7,44 @@
 
 using namespace std;
 
-PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv):PersonnageBN(nomnv),caseTouchee(0,0),casePrecedente(0,0){//DONE
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv):PersonnageBN(nomnv), caseTouchee(0, 0), casePrecedente(0, 0){//DONE
 }
 
-Coordonnees PersonnageBNIAAvance::getCaseTouchee(){//Done
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, int l, int h, Arme* a):PersonnageBN(nomnv, l, h, a), caseTouchee(0, 0), casePrecedente(0, 0){//DONE
+}
+
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, Arme* a):PersonnageBN(nomnv, a), caseTouchee(0, 0), casePrecedente(0, 0){//DONE
+}
+
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, int l, int h):PersonnageBN(nomnv, l, h), caseTouchee(0, 0), casePrecedente(0, 0){//DONE
+}
+
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, vector<int> tBateaux):PersonnageBN(nomnv, tBateaux), caseTouchee(0, 0), casePrecedente(0, 0){//DONE
+}
+
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, int l, int h, vector<int> tBateaux, Arme* a):PersonnageBN(nomnv, l, h, tBateaux, a), caseTouchee(0, 0), casePrecedente(0, 0){//DONE
+}
+
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, vector<int> tBateaux, Arme* a):PersonnageBN(nomnv, tBateaux, a), caseTouchee(0, 0), casePrecedente(0, 0){//DONE
+}
+
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, int l, int h, vector<int> tBateaux):PersonnageBN(nomnv, l, h, tBateaux), caseTouchee(0, 0), casePrecedente(0, 0){//DONE
+}
+
+
+Coordonnees PersonnageBNIAAvance::getCaseTouchee(){//DONE
     return caseTouchee;
 }
 
-void PersonnageBNIAAvance::setCaseTouchee(Coordonnees c){//Done
+void PersonnageBNIAAvance::setCaseTouchee(Coordonnees c){//DONE
     caseTouchee.copy(c);
 }
 
-Coordonnees PersonnageBNIAAvance::getCasePrecedente(){//Done
+Coordonnees PersonnageBNIAAvance::getCasePrecedente(){//DONE
     return casePrecedente;
 }
 
-void PersonnageBNIAAvance::setCasePrecedente(Coordonnees c){//Done
+void PersonnageBNIAAvance::setCasePrecedente(Coordonnees c){//DONE
     casePrecedente.copy(c);
 }
 
@@ -50,99 +72,8 @@ Coordonnees PersonnageBNIAAvance::tirerAleatoirement(Grille* grilleAdverse){ //D
     return impact ;
 }
 
-Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
-    int marqueur=1;
-    Coordonnees solution(0,0);
-    cout<<"Entree"<<endl;
-//Si la case precedente est touchee je rentre dans la boucle
-    if (grilleAdverse->getCaseElt(casePrecedente).getToucheBateau()){
-    caseTouchee.copy(casePrecedente);
-    cout<<"salut léo"<<endl;
-//Je prepare le sondage des cases aux alentours
-    Coordonnees coordonneesN(casePrecedente.getAbscisse(),casePrecedente.getOrdonnee()+1);
-    Coordonnees coordonneesS(casePrecedente.getAbscisse(),casePrecedente.getOrdonnee()-1);
-    Coordonnees coordonneesE(casePrecedente.getAbscisse()+1,casePrecedente.getOrdonnee());
-    Coordonnees coordonneesO(casePrecedente.getAbscisse()-1,casePrecedente.getOrdonnee());
-    cout<<"Affectation réussie"<<endl;
-        //Tant que le bateau n'est pas coule je le sonde
-        if (!grilleAdverse->getCaseElt(caseTouchee).getBateau()->estCoule()){
-    cout<<"Entree dans la boucle de sondage"<<endl;
-            //Si aucune case autour de la case touchee nest touchee je teste la validite
-            if (aucuneToucheeAutour(grilleAdverse,casePrecedente).coordonneesVides()){
-                if (grilleAdverse->coupValide(coordonneesN))
-                    solution.copy(coordonneesN);
-                else
-                    if (grilleAdverse->coupValide(coordonneesS))
-                        solution.copy(coordonneesS);
-                    else
-                        if (grilleAdverse->coupValide(coordonneesE))
-                            solution.copy(coordonneesE);
-                        else
-                            if (grilleAdverse->coupValide(coordonneesO))
-                                solution.copy(coordonneesO);
-                cout<<"Sortie dans la boucle de sondage"<< endl;
-                cout<<aucuneToucheeAutour(grilleAdverse,casePrecedente).coordonneesVides();
-            }
 
-
-
-            else{
-
-            //Sinon je sonde de haut en bas si le cas est échéant
-            if (aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse()==casePrecedente.getAbscisse()){
-                cout<<"Entree dans la boucle de vertical"<<endl;
-                solution.setAbscisse(aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse());
-                solution.setOrdonnee(aucuneToucheeAutour(grilleAdverse,casePrecedente).getOrdonnee()+1);
-            //Tant que la case est touchee j'avance
-                while (grilleAdverse->coupValide(solution)&&grilleAdverse->getCaseElt(solution).getToucheBateau())
-                    solution.setOrdonnee(solution.getOrdonnee()+1);
-            //Si la case trouvee n'est pas valide je parcours dans l'autre sens
-                if (!grilleAdverse->coupValide(solution)){
-                    solution.setOrdonnee(aucuneToucheeAutour(grilleAdverse,casePrecedente).getOrdonnee()-1);
-            //Tant que la case est touchee je continue
-                while (grilleAdverse->coupValide(solution)&&grilleAdverse->getCaseElt(solution).getToucheBateau())
-                    solution.setOrdonnee(solution.getOrdonnee()-1);
-            //Si la case est non valide la solution est au hasard
-                if (!grilleAdverse->coupValide(solution))
-                 solution.copy(tirerAleatoirement(grilleAdverse));
-                }
-            }
-            else{
-            //Sinon je sonde de gauche à droite
-                solution.setOrdonnee(aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse());
-                solution.setAbscisse(aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse()+1);
-            //Tant que la case est touchee j'avance
-                while (grilleAdverse->coupValide(solution)&&grilleAdverse->getCaseElt(solution).getToucheBateau())
-                    solution.setOrdonnee(solution.getAbscisse()+1);
-            //Si la case trouvee n'est pas valide je parcours dans l'autre sens
-                if (!grilleAdverse->coupValide(solution)){
-                    solution.setAbscisse(aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse()-1);
-            //Tant que la case est touchee je continue
-                while (grilleAdverse->coupValide(solution)&&grilleAdverse->getCaseElt(solution).getToucheBateau())
-                    solution.setAbscisse(solution.getAbscisse()-1);
-            //Si la case est non valide la solution est au hasard
-                if (!grilleAdverse->coupValide(solution))
-                    solution.copy(tirerAleatoirement(grilleAdverse));
-
-            }
-            }
-                cout<<"Sortie du double sondage"<<endl;
-        }
-        cout<<"Sortie du sondage"<<endl;
-        }
-
-            cout<<"Fin"<<endl;
-            return solution;
-        }
-//La case précédente n'est pas touchée
-    else
-        solution.copy(tirerAleatoirement(grilleAdverse));
-
-    casePrecedente.copy(solution);
-    return solution;
-}
-
-/*Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//DONE
+Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//DONE
     int hauteur=grilleAdverse->getTailleGrille().getHauteur();
     int longueur=grilleAdverse->getTailleGrille().getLongueur();
     for(int i=0; i<hauteur; i++){
@@ -181,7 +112,7 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
         }
     }
     return tirerAleatoirement(grilleAdverse);
-}*/
+}
 
 Coordonnees PersonnageBNIAAvance::aucuneToucheeAutour(Grille* grille,Coordonnees coordonneesCT){//DONE
     Coordonnees coordVides(-1, -1);

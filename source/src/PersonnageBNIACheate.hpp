@@ -89,7 +89,7 @@ class PersonnageBNIACheate : public PersonnageBN{
         /// \brief Attaque du PNJ
         ///
         /// Indique où le PNJ attaque
-    /// \param grilleAdverse : grille sur laquelle le joueur visr
+        /// \param grilleAdverse : grille sur laquelle le joueur visr
         /// \return les coordonnées de la case à attaquer
         Coordonnees coordonneesAViser(Grille* grilleAdverse);
 };

@@ -122,16 +122,8 @@ void afficher(Grille* grille, Grille* grilleAdverse){
 
 int main(){
     BatailleNavale bn=BatailleNavale();
-    JoueurIA pbn1("Joueur1");
-    JoueurIAAvance pbn2("Joueur2");
-    //JoueurIACheate pbn2("Joueur2");
-    //JoueurIA pbn1("Joueur1");
-
-    //pbn1.setTailleGrille(TailleGrille(15, 10));
-    pbn1.setTailleGrille(TailleGrille(15, 10));
-    //pbn2.setArme(new ArmeCroix());
-    //pbn2.setTailleGrille(TailleGrille(10, 15));
-    pbn2.setTailleGrille(TailleGrille(10, 15));
+    JoueurIA pbn1("Joueur1", 15, 10, {2, 2}, new ArmeCroix());
+    JoueurIAAvance pbn2("Joueur2", 10, 15);
 
     bn.initialiserJoueurCourant((PersonnageBN*)&pbn1,(PersonnageBN*)&pbn2);
 

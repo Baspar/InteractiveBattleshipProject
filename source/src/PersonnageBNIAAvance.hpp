@@ -120,7 +120,7 @@ class PersonnageBNIAAvance : public PersonnageBN{
         ///
         /// Setter de la case touchee
         /// \param  case touchee
-         void setCaseTouchee(Coordonnees c);
+        void setCaseTouchee(Coordonnees c);
 
         /// \brief Getter de case precedente
         ///
@@ -132,7 +132,7 @@ class PersonnageBNIAAvance : public PersonnageBN{
         ///
         /// Setter de la case precedente
         /// \param  case precedente
-         void setCasePrecedente(Coordonnees c);
+        void setCasePrecedente(Coordonnees c);
 
 };
 #endif
