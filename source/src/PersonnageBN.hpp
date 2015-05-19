@@ -45,6 +45,13 @@ class PersonnageBN{
         /// \return TailleGrille
         TailleGrille getTailleGrille() const;
 
+
+        /// \fn void ajouterBateau(const int taille)
+        /// \brief Ajoute un baeatu à la flotte
+        ///
+        /// \param taille : taille du bateau
+        void ajouterBateau(const int taille);
+
         /// \fn string getNomBN() const
         /// \brief getters du nomBN
         ///

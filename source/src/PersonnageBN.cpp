@@ -25,6 +25,10 @@ PersonnageBN::PersonnageBN(string nomnv):tailleGrille(10,10){//DONE
 	bateaux.push_back(new Bateau(5));
 }
 
+void PersonnageBN::ajouterBateau(const int taille){//DONE
+    bateaux.push_back(new Bateau(taille));
+}
+
 
 TailleGrille PersonnageBN::getTailleGrille() const{//DONE
 	return tailleGrille;
