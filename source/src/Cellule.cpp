@@ -4,12 +4,12 @@
 
 using namespace std;
 
-Cellule::Cellule(){//TODO
+Cellule::Cellule(){//DONE
     action=nullptr;
     typeDeCellule=0;
 }
 
-Cellule::Cellule(Action* actionInit, int typeCell){//TODO
+Cellule::Cellule(Action* actionInit, char typeCell){//DONE
     action=actionInit;
     typeDeCellule=typeCell;
 }
@@ -22,6 +22,6 @@ Action* Cellule::getActionCellule() const{//DONE
     return action;
 }
 
-int Cellule::getTypeDeCellule() const{//DONE
+char Cellule::getTypeDeCellule() const{//DONE
     return typeDeCellule;
 }

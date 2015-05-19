@@ -5,5 +5,9 @@
 
 using namespace std;
 
-CelluleCombat::CelluleCombat(){//TODO
+CelluleCombat::CelluleCombat():CelluleAccessible(){//DONE
+}
+
+CelluleCombat::CelluleCombat(Personnage* adv, Action* actionCombat):CelluleAccessible(Action* actionCombat){//DONE
+	adversaire=adv;
 }
