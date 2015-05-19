@@ -10,13 +10,13 @@ using namespace std;
 PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv):PersonnageBN(nomnv),caseTouchee(0,0),casePrecedente(0,0){//DONE
 }
 
-//Coordonnees PersonnageBNIAAvance::getCaseTouchee(){//Done
-//    return caseTouchee;
-//}
-//
-//void PersonnageBNIAAvance::setCaseTouchee(Coordonnees c){//Done
-//    caseTouchee.copy(c);
-//}
+Coordonnees PersonnageBNIAAvance::getCaseTouchee(){//Done
+    return caseTouchee;
+}
+
+void PersonnageBNIAAvance::setCaseTouchee(Coordonnees c){//Done
+    caseTouchee.copy(c);
+}
 
 Coordonnees PersonnageBNIAAvance::getCasePrecedente(){//Done
     return casePrecedente;
@@ -51,7 +51,7 @@ Coordonnees PersonnageBNIAAvance::tirerAleatoirement(Grille* grilleAdverse){ //D
 }
 
 Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
-
+    int marqueur=1;
     Coordonnees solution(0,0);
     cout<<"Entree"<<endl;
 //Si la case precedente est touchee je rentre dans la boucle
@@ -102,7 +102,11 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
                 while (grilleAdverse->coupValide(solution)&&grilleAdverse->getCaseElt(solution).getToucheBateau())
                     solution.setOrdonnee(solution.getOrdonnee()-1);
             //Si la case est non valide la solution est au hasard
-                if (!grilleAdverse->coupValide(solution)) solution.copy(tirerAleatoirement(grilleAdverse));
+                if (!grilleAdverse->coupValide(solution)){
+
+                 solution.copy(tirerAleatoirement(grilleAdverse));
+                 marqueur=0;
+                }
 
             }
             else{
@@ -119,22 +123,27 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
                 while (grilleAdverse->coupValide(solution)&&grilleAdverse->getCaseElt(solution).getToucheBateau())
                     solution.setAbscisse(solution.getAbscisse()-1);
             //Si la case est non valide la solution est au hasard
-                if (!grilleAdverse->coupValide(solution))
+                if (!grilleAdverse->coupValide(solution)){
                     solution.copy(tirerAleatoirement(grilleAdverse));
+                    marqueur=0;
+                }
             }
                 cout<<"Sortie du double sondage"<<endl;
         }
         cout<<"Sortie du sondage"<<endl;
         }
-            casePrecedente.copy(solution);
+
             cout<<"Fin"<<endl;
             return solution;
         }
 
     else{
         solution.copy(tirerAleatoirement(grilleAdverse));
-    casePrecedente.copy(solution);
+        marqueur=0;
     }
+    if (marqueur==1)
+        caseTouchee.copy(solution);
+    casePrecedente.copy(solution);
     return solution;
 }
 
