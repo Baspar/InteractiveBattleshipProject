@@ -73,7 +73,7 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
                             if (grilleAdverse->coupValide(coordonneesO))
                                 solution.copy(coordonneesO);
             }
-
+            else{
 
             if (aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getAbscisse()==coordonneesTouchee.getAbscisse()){
                 coordAViser.setAbscisse(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getAbscisse());
@@ -101,7 +101,7 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
                     solution.copy(coordonneesAViser1(grilleAdverse));
             }
         }
-
+        }
         if (!coordAViser.coordonneesVides())
             solution.copy(coordAViser);
         else
