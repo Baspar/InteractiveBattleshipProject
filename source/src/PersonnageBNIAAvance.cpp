@@ -130,9 +130,10 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
             return solution;
         }
 
-    else
+    else{
         solution.copy(tirerAleatoirement(grilleAdverse));
     casePrecedente.copy(solution);
+    }
     return solution;
 }
 
