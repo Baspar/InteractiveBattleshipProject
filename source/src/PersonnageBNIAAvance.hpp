@@ -20,11 +20,11 @@ class PersonnageBNIAAvance : public PersonnageBN{
 
 
     public:
-    /// \fn PersonnageBNIAAvance(string nomnv)
+        /// \fn PersonnageBNIAAvance(string nomnv)
         /// \brief Constructeur des persoBNIA
         ///
         /// Constructeur des persoBNIA
-    /// \param nomnv:nom du joueur
+        /// \param nomnv:nom du joueur
         PersonnageBNIAAvance(string nomnv);
 
         /// \brief Place les bateaux
@@ -36,8 +36,15 @@ class PersonnageBNIAAvance : public PersonnageBN{
         /// \brief Attaque du PNJ
         ///
         /// Indique où le PNJ attaque
-    /// \param grilleAdverse : grille sur laquelle le joueur visr
+        /// \param grilleAdverse : grille sur laquelle le joueur vise
         /// \return les coordonnées de la case à attaquer
         Coordonnees coordonneesAViser(Grille* grilleAdverse);
-};
+
+        /// \brief Attaque du PNJ lorsqu un bateau est touche
+        ///
+        /// Indique où le PNJ attaque
+        /// \param grilleAdverse : grille sur laquelle le joueur vise
+        /// \param coordoonneesTouchee : case touchee precedemment
+        /// \return les coordonnees de la case à attaquer
+        Coordonnees coordonneesAViserCoulerBateau(Grille* grilleAdverse,Coordonnees coordonneesTouchee);
 #endif
