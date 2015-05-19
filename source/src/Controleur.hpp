@@ -7,6 +7,7 @@
 
 #include "IHMJeu.hpp"
 #include "IHMBN.hpp"
+#include "ControleurBN.hpp"
 #include "Jeu.hpp"
 #include "BatailleNavale.hpp"
 
@@ -27,6 +28,8 @@ class Controleur{
         IHMBN* ihmBN;
         ///Jeu en cours
         Jeu* jeu;
+        ///Controleur de la bataille navale
+        ControleurBN* controlBN;
         ///Bataille Navale en cours ou null si il n'y en a pas
         BatailleNavale* batailleNavale;
     public:

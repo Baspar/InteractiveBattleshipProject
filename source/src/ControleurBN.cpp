@@ -5,44 +5,17 @@
 #include "IHMBN.hpp"
 #include "ActionCombat.hpp"
 #include "PersonnageBN.hpp"
-#include "ControleurBN.hpp"
 
 using namespace std;
-Controleur::Controleur(){//DONE
-    batailleNavale = new BatailleNavale();
-    jeu = new Jeu(batailleNavale);
-    ihmJeu = new IHMJeu(jeu);
-    controlBN= new ControleurBN(batailleNavale);
-    lancerJeu();
+ControleurBN::ControleurBN(BatailleNavale* batnav){//DONE
+	batailleNavale=batnav;
 }
 
 
-void Controleur::tourDeJeu(){//DONE
-    ihmJeu->afficherJeu();
-    jeu->jouer(ihmJeu->saisieDeplacement());
-    //code pour lancer la partie controleur correspondant à l'action effectuée (si besoin)
-	ihmJeu->afficherJeu();
+
+void ControleurBN::actionBatailleNavale(){//DONE
 	
-	
-	//Si l'action est un Combaaat
-	if(jeu->getActionEnCours()->getTexteInteraction()=="COMBAT!!!") {
-		batailleNavale->initialiserJoueurCourant((PersonnageBN*) jeu->getPersonnageJouable(),(PersonnageBN*) ((ActionCombat*) jeu->getActionEnCours())->getAdversaire());
-		controlBN->actionBatailleNavale();
-		if (batailleNavale->retournerGagnant((Personnage*) jeu->getPersonnageJouable(),(Personnage*) ((ActionCombat*) jeu->getActionEnCours())->getAdversaire())==jeu->getPersonnageJouable())
-			jeu->getActionEnCours()->toggleActive();
-	}
-}
-
-
-void Controleur::lancerJeu(){//DONE
-    while(!jeu->partieFinie())
-        tourDeJeu();
-}
-
-
-void Controleur::actionBatailleNavale(){//DONE
-	
-	batailleNavale->initialiserJoueurCourant((PersonnageBN*) jeu->getPersonnageJouable(),(PersonnageBN*) ((ActionCombat*) jeu->getActionEnCours())->getAdversaire());
+	IHMBN* ihmBN = new IHMBN(batailleNavale);
 
 	//si placerBateaux renvoie NULL, on demande une saisie dans l'IHM sinon on copie les données de l'IA
 	if (batailleNavale->getPersonnage1()->placerBateaux().grilleVide())
@@ -55,15 +28,16 @@ void Controleur::actionBatailleNavale(){//DONE
 
 	//Verifie si la BN est finie, sinon continue la partie
 	while(batailleNavale->retournerGagnant()==nullptr)
-		tourDeJeuBatailleNavale();
+		tourDeJeuBatailleNavale(ihmBN);
 
 	//Affiche gagnant
 	ihmBN->afficherFinBN();
+	
 
 }
 
 
-void Controleur::tourDeJeuBatailleNavale(){//DONE
+void ControleurBN::tourDeJeuBatailleNavale(IHMBN* ihmBN){//DONE
 	Coordonnees coord=Coordonnees(-1,-1);
 
 	//Affiche les grilles des joueurs
@@ -82,4 +56,3 @@ void Controleur::tourDeJeuBatailleNavale(){//DONE
 	//Affiche le résultat du tour
 	ihmBN->afficherResultatTour(coord);
 }
-
