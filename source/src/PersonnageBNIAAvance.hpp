@@ -47,4 +47,5 @@ class PersonnageBNIAAvance : public PersonnageBN{
         /// \param coordoonneesTouchee : case touchee precedemment
         /// \return les coordonnees de la case à attaquer
         Coordonnees coordonneesAViserCoulerBateau(Grille* grilleAdverse,Coordonnees coordonneesTouchee);
+};
 #endif
