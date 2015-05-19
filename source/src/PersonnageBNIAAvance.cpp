@@ -67,32 +67,21 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViserCoulerBateau(Grille* grilleAd
             }
             if (!grilleAdverse->coupValide(coordAViser))
                 coordAViser.setOrdonnee(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getOrdonnee()-1);
-            else
                 while (grilleAdverse->getCaseElt(coordAViser).getTouche())
                     coordAViser.setOrdonnee(coordAViser.getOrdonnee()-1);
-
-
             if (!grilleAdverse->coupValide(coordAViser)) return coordonneesAViser(grilleAdverse);
-
-
         }
         else{
             coordAViser.setOrdonnee(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getAbscisse());
             coordAViser.setAbscisse(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getAbscisse()+1);
-            while (grilleAdverse->getCaseElt(coordAViser).getTouche()){
+            while (grilleAdverse->getCaseElt(coordAViser).getTouche())
                 coordAViser.setOrdonnee(coordAViser.getAbscisse()+1);
-            };
             if (!grilleAdverse->coupValide(coordAViser))
                     coordAViser.setAbscisse(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getAbscisse()-1);
-            else
                     while (!grilleAdverse->coupValide(coordAViser))
                         coordAViser.setAbscisse(coordAViser.getAbscisse()-1);
-
-
             if (!grilleAdverse->coupValide(coordAViser)) return coordonneesAViser(grilleAdverse);
         }
-
-
     }
     if (!coordAViser.coordonneesVides())
         return coordAViser;
