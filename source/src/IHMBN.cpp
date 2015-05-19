@@ -70,7 +70,10 @@ void IHMBN::afficherJeu(){//DONE
                 if(grilleAdverse->getCaseElt(coord).getBateau()!=nullptr){
                     if(grilleAdverse->getCaseElt(coord).getTouche()==false)
                         cout << " ";
-                    else cout << "x";
+                    else if(grilleAdverse->getCaseElt(coord).getBateau()->estCoule()==false)
+                        cout << "x";
+                    else
+                        cout << "#";
                 }
                 else {
                     if(grilleAdverse->getCaseElt(coord).getTouche()==false)
@@ -97,7 +100,10 @@ void IHMBN::afficherJeu(){//DONE
                 if(grille->getCaseElt(coord).getBateau()!=nullptr){
                     if(grille->getCaseElt(coord).getTouche()==false)
                         cout << "o";
-                    else cout << "x";
+                    else if(grille->getCaseElt(coord).getBateau()->estCoule()==false)
+                        cout << "x";
+                    else
+                        cout << "#";
                 }
                 else {
                     if(grille->getCaseElt(coord).getTouche()==false)
@@ -184,7 +190,7 @@ void IHMBN::afficherGrilleBateaux(Grille grille ){//DONE
       			  if(i/10 == 0)
         			    cout << " ";
        			 else
-        			    cout << i/10;	
+        			    cout << i/10;
     			}
     			cout << "|" << endl;
 	}
