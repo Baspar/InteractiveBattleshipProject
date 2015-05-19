@@ -7,7 +7,7 @@
 
 using namespace std;
 
-PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv):PersonnageBN(nomnv),caseTouchee(-1,-1){//DONE
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv):PersonnageBN(nomnv),caseTouchee(0,0){//DONE
 }
 
 Coordonnees PersonnageBNIAAvance::getCaseTouchee(){//Done
@@ -51,21 +51,22 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
     Coordonnees coordonneesS(coordonneesTouchee.getAbscisse(),coordonneesTouchee.getOrdonnee()-1);
     Coordonnees coordonneesE(coordonneesTouchee.getAbscisse()+1,coordonneesTouchee.getOrdonnee());
     Coordonnees coordonneesO(coordonneesTouchee.getAbscisse()-1,coordonneesTouchee.getOrdonnee());
+    Coordonnees solution(0,0);
 
 if (grilleAdverse->getCaseElt(coordonneesTouchee).getTouche()){
     while (!grilleAdverse->getCaseElt(coordonneesTouchee).getBateau()->estCoule()){
         if (aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).coordonneesVides()){
             if (grilleAdverse->coupValide(coordonneesN))
-                return coordonneesN;
+                solution.copy(coordonneesN);
             else
                 if (grilleAdverse->coupValide(coordonneesS))
-                    return coordonneesS;
+                    solution.copy(coordonneesS);
                 else
                     if (grilleAdverse->coupValide(coordonneesE))
-                        return coordonneesE;
+                        solution.copy(coordonneesE);
                     else
                         if (grilleAdverse->coupValide(coordonneesO))
-                            return coordonneesO;
+                            solution.copy(coordonneesO);
         }
 
 
@@ -80,7 +81,7 @@ if (grilleAdverse->getCaseElt(coordonneesTouchee).getTouche()){
                 coordAViser.setOrdonnee(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getOrdonnee()-1);
                 while (grilleAdverse->getCaseElt(coordAViser).getTouche())
                     coordAViser.setOrdonnee(coordAViser.getOrdonnee()-1);
-            if (!grilleAdverse->coupValide(coordAViser)) return coordonneesAViser1(grilleAdverse);
+            if (!grilleAdverse->coupValide(coordAViser)) solution.copy(coordonneesAViser1(grilleAdverse));
         }
         else{
             coordAViser.setOrdonnee(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getAbscisse());
@@ -92,18 +93,20 @@ if (grilleAdverse->getCaseElt(coordonneesTouchee).getTouche()){
                     while (!grilleAdverse->coupValide(coordAViser))
                         coordAViser.setAbscisse(coordAViser.getAbscisse()-1);
             if (!grilleAdverse->coupValide(coordAViser))
-                return coordonneesAViser1(grilleAdverse);
+                solution.copy(coordonneesAViser1(grilleAdverse));
         }
     }
 
  if (!coordAViser.coordonneesVides())
-    return coordAViser;
+    solution.copy(coordAViser);
 else
-    return coordonneesAViser1(grilleAdverse);
+    solution.copy(coordonneesAViser1(grilleAdverse));
 
 }
 else
-    return coordonneesAViser(grilleAdverse);
+    solution.copy(coordonneesAViser1(grilleAdverse));
+    caseTouchee.copy(solution);
+    return solution;
 }
 
 Coordonnees PersonnageBNIAAvance::aucuneToucheeAutour(Grille* grille,Coordonnees coordonneesCT){//Done
