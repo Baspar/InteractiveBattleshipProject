@@ -27,13 +27,16 @@ PersonnageJouable <|--JoueurDhumainBNia
 
 PersonnageNonJouable <|-- JoueurIA
 PersonnageNonJouable <|-- JoueurIAAvance
+PersonnageNonJouable <|-- JoueurIACheate
 JoueurIA --|> PersonnageBNIA
 JoueurIAAvance --|> PersonnageBNIAAvance
+JoueurIACheate --|> PersonnageBNIACheate
 PersonnageBNIA <|- JoueurDhumainBNia
 
 JoueurHumain --|>PersonnageBNHumain
 PersonnageBNIA --|>PersonnageBN
 PersonnageBNIAAvance --|>PersonnageBN
+PersonnageBNIACheate --|>PersonnageBN
 PersonnageBNHumain --|>PersonnageBN
 
 Arme <|-- ArmeClassique

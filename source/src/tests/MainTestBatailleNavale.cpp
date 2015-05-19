@@ -2,7 +2,8 @@
 #include <algorithm>
 #include "BatailleNavale.hpp"
 #include <cstdlib>
-#include "PersonnageNonJouable.hpp"
+#include "JoueurIA.hpp"
+#include "JoueurIACheate.hpp"
 
 using namespace std;
 
@@ -113,8 +114,9 @@ void afficher(Grille* grille, Grille* grilleAdverse){
 
 int main(){
     BatailleNavale bn=BatailleNavale();
-    PersonnageNonJouable pbn1("Joueur1");
-    PersonnageNonJouable pbn2("Joueur2");
+    JoueurIA pbn1("Joueur1");
+    JoueurIACheate pbn2("Joueur2");
+    //JoueurIA pbn1("Joueur1");
 
     pbn1.setTailleGrille(TailleGrille(25, 23));
     pbn2.setTailleGrille(TailleGrille(15, 13));

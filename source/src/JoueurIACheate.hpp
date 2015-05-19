@@ -1,12 +1,12 @@
-#ifndef JOUEURIAAVANCE_H
-#define JOUEURIAAVANCE_H
+#ifndef JOUEURIACHEATE_H
+#define JOUEURIACHEATE_H
 
 /// \file JoueurDhumainBNia.hpp
 /// \brief classe joueur IA
 /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "PersonnageNonJouable.hpp"
-#include "PersonnageBNIAAvance.hpp"
+#include "PersonnageBNIACheate.hpp"
 
 using namespace std;
 
@@ -14,14 +14,14 @@ using namespace std;
 /// \brief classe définissant un joueur IA
 ///
 /// La classe représente un joueur IA se déplaçant sur la carte
-class JoueurIAAvance: public PersonnageNonJouable, public PersonnageBNIAAvance{
+class JoueurIACheate: public PersonnageNonJouable, public PersonnageBNIACheate{
     public:
-        /// \fn JoueurIAAvance(string nomnv)
+        /// \fn JoueurIACheate(string nomnv)
         /// \brief Constructeur paramétré
         ///
-        /// Constructeur de la classe JoueurIAAvance avec le nom en attribut
+        /// Constructeur de la classe JoueurIACheate avec le nom en attribut
         /// \param nomnv : string nom du joueur
-        JoueurIAAvance(string nomnv);
+        JoueurIACheate(string nomnv);
 };
 
 #endif
