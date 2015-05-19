@@ -50,8 +50,19 @@ class Coordonnees {
         /// \return entier correspondant à l'ordonnée
         int getOrdonnee() const;
 
+        /// \fn int setOrdonnee()
+        /// \brief setteur de l'ordonnée
+        /// \param entier correspondant à l'ordonnée
+        void setOrdonnee(const int o);
+
+        /// \fn int setAbscisse()
+        /// \brief setteur de l'abscisse
+        /// \param entier correspondant à l'abscisse
+        void setAbscisse(const int a);
+
+
         /// \fn Coordonnees coordonneesVides()
-        /// \brief vérifie si la coordonnee est vide ou non(créé par un IA ou non) 
+        /// \brief vérifie si la coordonnee est vide ou non(créé par un IA ou non)
         /// \return bool true si la coordonnee est vide, false sinon
         bool coordonneesVides();
 

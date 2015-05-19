@@ -93,6 +93,13 @@ class Grille{
         /// \return bool : retourne vrai si on peut toucher la case
         bool coupValide(const Coordonnees kase);
 
+         /// \fn bool caseValide(const Coordonnees kase)
+        /// \brief vérifie la validité d une case
+        ///
+        /// \param kase : case que l'on veux vérifier
+        /// \return bool : retourne vrai si on peut toucher la case
+        bool caseValide(const Coordonnees kase);
+
 
         /// \fn void copy(const Grille grilleCp)
         /// \brief copie la grille

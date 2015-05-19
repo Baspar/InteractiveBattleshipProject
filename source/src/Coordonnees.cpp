@@ -12,6 +12,15 @@ Coordonnees::Coordonnees(const Coordonnees& coord){//DONE
     ordonnee = coord.getOrdonnee();
 }
 
+void Coordonnees::setAbscisse(const int a){//Done
+    abscisse=a;
+}
+
+void Coordonnees::setOrdonnee(const int o){//Done
+    ordonnee=o;
+}
+
+
 int Coordonnees::getAbscisse() const{//DONE
     return abscisse;
 }

@@ -174,6 +174,16 @@ bool Grille::coupValide(const Coordonnees kase){//DONE
 	return true;
 }
 
+bool Grille::caseValide(const Coordonnees kase){//DONE
+	//Abscisse de depart dans la grille
+	if ((kase.getAbscisse()<0)|| (kase.getAbscisse() >= getTailleGrille().getLongueur()))
+		return false;
+	//Ordonnee de depart dans la Grille
+	if ((kase.getOrdonnee()<0)|| (kase.getOrdonnee() >= getTailleGrille().getHauteur()))
+		return false;
+	return true;
+}
+
 bool Grille::grilleVide() const{//DONE
 	bool bol=false;
 	if((getTailleGrille().getHauteur()==0) && (getTailleGrille().getLongueur()==0)){
