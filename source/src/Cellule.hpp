@@ -6,6 +6,8 @@
 /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Action.hpp"
+#include <iostream>
+
 
 using namespace std;
 
@@ -16,16 +18,16 @@ class Cellule{
         /// Pointeur sur une action qui sera appliquée au joueur
         Action* action;
         /// Type de cellule (0=accessible, 1=obstacle)
-        char typeDeCellule;
+        string typeDeCellule;
 
     public:
         /// \fn Cellule()
         /// \brief Construit une Cellule
         Cellule();
 
-        /// \fn Cellule(Action* actionInit, int typeCell)
+        /// \fn Cellule(Action* actionInit, string typeCell)
         /// \brief Construit une Cellule de manière paramétrée
-        Cellule(Action* actionInit, char typeCell);
+        Cellule(Action* actionInit, string typeCell);
 
         /// \fn void lancerAction()
         /// \brief Lance l'action et effectue les modifications nécessaires suite à cette action
