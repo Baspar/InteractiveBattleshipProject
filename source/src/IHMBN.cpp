@@ -14,9 +14,111 @@ BatailleNavale* IHMBN::getBN(){//DONE
 	return batailleNavale;
 }
 
-void IHMBN::afficherJeu (){//DONE
-	afficherGrilleBateaux();
-	afficherGrilleRadar();
+void IHMBN::afficherJeu(){//DONE
+	 // Affichage dizaines
+   Grille* grille=getBN()->getGrilles()[getBN()->getIndiceJoueurCourant()];
+   Grille* grilleAdverse=getBN()->getGrilles()[(getBN()->getIndiceJoueurCourant()+1)%2];
+    if(grilleAdverse->getTailleGrille().getLongueur()>10 || grille->getTailleGrille().getLongueur()>10 ){
+        for (int i=0;i<grilleAdverse->getTailleGrille().getLongueur();i++){
+            cout << "|";
+            if(i/10 == 0)
+                cout << " ";
+            else
+                cout << i/10;
+
+        }
+        cout << "|     ";
+        if(grilleAdverse->getTailleGrille().getHauteur()>10)
+            cout << " ";
+        for (int i=0;i<grille->getTailleGrille().getLongueur();i++){
+            cout << "|";
+            if(i/10 == 0)
+                cout << " ";
+            else
+                cout << i/10;
+
+        }
+        cout << "|" << endl;
+    }
+
+    // Affichage unités
+    for (int i=0;i<grilleAdverse->getTailleGrille().getLongueur();i++)
+        cout << "|" << i%10;
+    cout << "|     ";
+    if(grilleAdverse->getTailleGrille().getHauteur()>10)
+        cout << " ";
+    for (int i=0;i<grille->getTailleGrille().getLongueur();i++)
+        cout << "|" << i%10;
+    cout << "|" << endl;
+
+    // Affichage ligne separation
+    for (int i=0;i<grilleAdverse->getTailleGrille().getLongueur();i++)
+        cout << "--";
+    cout << "-     ";
+    if(grilleAdverse->getTailleGrille().getHauteur()>10)
+        cout << " ";
+    for (int i=0;i<grille->getTailleGrille().getLongueur();i++)
+        cout << "--";
+    cout << "-" << endl;
+
+    // Affichage tableau
+    for (int i=0;i<max(grilleAdverse->getTailleGrille().getHauteur(), grille->getTailleGrille().getHauteur());i++){
+        if(i<grilleAdverse->getTailleGrille().getHauteur()){
+            for (int j=0;j<grilleAdverse->getTailleGrille().getLongueur();j++){
+                Coordonnees coord(j,i);
+                cout << "|";
+                if(grilleAdverse->getCaseElt(coord).getBateau()!=nullptr){
+                    if(grilleAdverse->getCaseElt(coord).getTouche()==false)
+                        cout << " ";
+                    else cout << "x";
+                }
+                else {
+                    if(grilleAdverse->getCaseElt(coord).getTouche()==false)
+                        cout << " ";
+                    else cout << "-";
+                }
+            }
+            cout << "|" << i  << "    ";
+            if(i<10 && grilleAdverse->getTailleGrille().getHauteur()>10)
+                cout << " ";
+        } else {
+            for (int j=0;j<grilleAdverse->getTailleGrille().getLongueur();j++)
+                cout << "  ";
+            cout << "     ";
+            if(grilleAdverse->getTailleGrille().getHauteur()>10)
+                cout << "  ";
+            else
+                cout << " ";
+        }
+        if(i<grille->getTailleGrille().getHauteur()){
+            for (int j=0;j<grille->getTailleGrille().getLongueur();j++){
+                Coordonnees coord(j,i);
+                cout << "|";
+                if(grille->getCaseElt(coord).getBateau()!=nullptr){
+                    if(grille->getCaseElt(coord).getTouche()==false)
+                        cout << "o";
+                    else cout << "x";
+                }
+                else {
+                    if(grille->getCaseElt(coord).getTouche()==false)
+                        cout << " ";
+                    else cout << "-";
+                }
+            }
+            cout << "|" << i  << "    ";
+            if(i<10 && grille->getTailleGrille().getHauteur()>10)
+                cout << " ";
+        } else {
+            for (int j=0;j<grille->getTailleGrille().getLongueur();j++)
+                cout << "  ";
+            cout << "     ";
+            if(i<10 && grille->getTailleGrille().getHauteur()>10)
+                cout << "  ";
+            if(grille->getTailleGrille().getHauteur()>10)
+                cout << " ";
+        }
+        cout << endl;
+    }
 }
 
 Coordonnees IHMBN::saisieCoup () const{//DONE
@@ -39,8 +141,8 @@ Coordonnees IHMBN::saisieCoup () const{//DONE
 Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
 	Grille grille(pers->getTailleGrille().getLongueur(),pers->getTailleGrille().getHauteur());
 	for (Bateau* bat : pers->getBateaux()){
-		cout << "Veuillez placer le bateau de longueur "<< bat->getTailleBateau();
-		cout << "Veuillez saisir les coordonnées de départ";
+		cout << "Veuillez placer le bateau de longueur "<< bat->getTailleBateau() << endl;
+		cout << "Veuillez saisir les coordonnées de départ"<< endl;
 		int x,y;
 		cin >> x;
 		cin >> y;
@@ -50,10 +152,10 @@ Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
 		cin >> a;
 		cin >> b;
 		Coordonnees coordArrivee(a,b);
-		grille.placerBateau(bat,coordDepart,coordArrivee);
-
-		while(batailleNavale->getGrilles()[batailleNavale->getIndiceJoueurCourant()]->placementBateauValide(bat,coordDepart,coordArrivee)==false){
-			cout << "Erreur! Veuillez replacer le bateau de longueur "<< bat->getTailleBateau();
+		while(grille.placementBateauValide(bat,coordDepart,coordArrivee)==false){
+			cout << coordDepart.getAbscisse() << "   " << coordDepart.getOrdonnee() << endl;
+			cout << coordArrivee.getAbscisse() << "   " << coordArrivee.getOrdonnee() << endl;
+			cout << "Erreur! Veuillez replacer le bateau de longueur "<< bat->getTailleBateau() <<endl;
 			cout << "Veuillez resaisir les coordonnées de départ";
 			int x,y;
 			cin >> x;
@@ -66,16 +168,16 @@ Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
 			cin >> b;
 			coordArrivee.copy(Coordonnees(a,b));
 
-			grille.placerBateau(bat,coordDepart,coordArrivee);
+			
 		}
-	afficherJeu();
+	grille.placerBateau(bat,coordDepart,coordArrivee);
+	afficherGrilleBateaux(grille);
 	}
 
     return grille;
 }
 
-void IHMBN::afficherGrilleBateaux(){//DONE
-	Grille grille(*getBN()->getGrilles()[getBN()->getIndiceJoueurCourant()]);
+void IHMBN::afficherGrilleBateaux(Grille grille ){//DONE
 
 	cout << endl << "Grille personnelle" << endl;
 

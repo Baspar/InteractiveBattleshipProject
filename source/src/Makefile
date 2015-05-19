@@ -100,7 +100,7 @@ CompileMainTestGrille: Grille.o TailleGrille.o Coordonnees.o Case.o Bateau.o
 MainTestGrille: CompileMainTestGrille
 	tests/MainTestGrille
 
-CompileMainTestIHMBN: IHMBN.o
+CompileMainTestIHMBN: IHMBN.o Coordonnees.o Grille.o BatailleNavale.o PersonnageBN.o IHMBN.o Bateau.o TailleGrille.o Case.o ArmeClassique.o Arme.o PersonnageNonJouable.o JoueurHumain.o PersonnageBN.o PersonnageBNHumain.o PersonnageBNIA.o Personnage.o PersonnageJouable.o Carte.o CelluleAccessible.o Cellule.o
 	g++ $(FLAGS) tests/MainTestIHMBN.cpp $^ -o tests/MainTestIHMBN
 MainTestIHMBN: CompileMainTestIHMBN
 	tests/MainTestIHMBN
