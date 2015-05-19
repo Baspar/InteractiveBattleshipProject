@@ -41,7 +41,7 @@ class Cellule{
         /// \return un booleen: vrai si la cellule est accessible, faux sinon
         virtual bool estAccessible() const{return true;};
 
-        /// \fn string getTypeDeCellule()
+        /// \fn string getTypeDeCellule() const
         /// \brief Getter typeDeCellule
         /// \return Type de cellule
         string getTypeDeCellule() const;
