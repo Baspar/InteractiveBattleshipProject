@@ -9,7 +9,7 @@ Cellule::Cellule(){//DONE
     typeDeCellule=0;
 }
 
-Cellule::Cellule(Action* actionInit, char typeCell){//DONE
+Cellule::Cellule(Action* actionInit, string typeCell){//DONE
     action=actionInit;
     typeDeCellule=typeCell;
 }
@@ -22,6 +22,6 @@ Action* Cellule::getActionCellule() const{//DONE
     return action;
 }
 
-char Cellule::getTypeDeCellule() const{//DONE
+string Cellule::getTypeDeCellule() const{//DONE
     return typeDeCellule;
 }
