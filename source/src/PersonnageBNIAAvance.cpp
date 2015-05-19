@@ -7,7 +7,7 @@
 
 using namespace std;
 
-PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv):PersonnageBN(nomnv),caseTouchee(0,0){//DONE
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv):PersonnageBN(nomnv),caseTouchee(0,0),casePrecedente(0,0){//DONE
 }
 
 Coordonnees PersonnageBNIAAvance::getCaseTouchee(){//Done
@@ -16,6 +16,14 @@ Coordonnees PersonnageBNIAAvance::getCaseTouchee(){//Done
 
 void PersonnageBNIAAvance::setCaseTouchee(Coordonnees c){//Done
     caseTouchee.copy(c);
+}
+
+Coordonnees PersonnageBNIAAvance::getCasePrecedente(){//Done
+    return casePrecedente;
+}
+
+void PersonnageBNIAAvance::setCasePrecedente(Coordonnees c){//Done
+    casePrecedente.copy(c);
 }
 
 Coordonnees PersonnageBNIAAvance::tirerAleatoirement(Grille* grilleAdverse){ //DONE
@@ -45,7 +53,7 @@ Coordonnees PersonnageBNIAAvance::tirerAleatoirement(Grille* grilleAdverse){ //D
 Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
 
     Coordonnees solution(0,0);
-    Coordonnees casePrecedente(0,0);
+
 
     if (grilleAdverse->getCaseElt(casePrecedente).getToucheBateau())
         caseTouchee.copy(casePrecedente);

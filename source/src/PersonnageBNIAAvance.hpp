@@ -19,7 +19,7 @@ using namespace std;
 class PersonnageBNIAAvance : public PersonnageBN{
     private:
         Coordonnees caseTouchee;
-
+        Coordonnees casePrecedente;
 
     public:
         /// \fn PersonnageBNIAAvance(string nomnv)
@@ -121,6 +121,18 @@ class PersonnageBNIAAvance : public PersonnageBN{
         /// Setter de la case touchee
         /// \param  case touchee
          void setCaseTouchee(Coordonnees c);
+
+        /// \brief Getter de case precedente
+        ///
+        /// Getter de la case precedente
+        /// \return case precedente
+        Coordonnees getCasePrecedente();
+
+        /// \brief Setter de case precedente
+        ///
+        /// Setter de la case precedente
+        /// \param  case precedente
+         void setCasePrecedente(Coordonnees c);
 
 };
 #endif
