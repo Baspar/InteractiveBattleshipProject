@@ -6,6 +6,8 @@
 /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Action.hpp"
+#include <iostream>
+
 
 using namespace std;
 
@@ -16,16 +18,16 @@ class Cellule{
         /// Pointeur sur une action qui sera appliquée au joueur
         Action* action;
         /// Type de cellule (0=accessible, 1=obstacle)
-        char typeDeCellule;
+        string typeDeCellule;
 
     public:
         /// \fn Cellule()
         /// \brief Construit une Cellule
         Cellule();
 
-        /// \fn Cellule(Action* actionInit, int typeCell)
+        /// \fn Cellule(Action* actionInit, string typeCell)
         /// \brief Construit une Cellule de manière paramétrée
-        Cellule(Action* actionInit, char typeCell);
+        Cellule(Action* actionInit, string typeCell);
 
         /// \fn void lancerAction()
         /// \brief Lance l'action et effectue les modifications nécessaires suite à cette action
@@ -39,12 +41,12 @@ class Cellule{
         /// \return un booleen: vrai si la cellule est accessible, faux sinon
         virtual bool estAccessible() const{return true;};
 
-        /// \fn int getTypeDeCellule()
+        /// \fn string getTypeDeCellule()
         /// \brief Getter typeDeCellule
         /// \return Type de cellule
-        char getTypeDeCellule() const;
+        string getTypeDeCellule() const;
 
-        /// \fn int getActionCellule()
+        /// \fn Action* getActionCellule()
         /// \brief Getter Action
         /// \return action de la cellule
         Action* getActionCellule() const;

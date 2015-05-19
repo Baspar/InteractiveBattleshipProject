@@ -13,7 +13,6 @@ Carte o-- Cellule
 
 Monde -o Jeu
 
-IHMBN --o Controleur
 IHMJeu --o Controleur
 Controleur o-- Jeu
 
@@ -47,6 +46,9 @@ Jeu o- Combat
 Combat <|-- BatailleNavale
 
 PersonnageBN -o BatailleNavale
+
+BatailleNavale -o ControleurBN
+ControleurBN o- IHMBN
 
 BatailleNavale o-- Grille
 

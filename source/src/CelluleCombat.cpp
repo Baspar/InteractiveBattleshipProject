@@ -8,6 +8,6 @@ using namespace std;
 CelluleCombat::CelluleCombat():CelluleAccessible(){//DONE
 }
 
-CelluleCombat::CelluleCombat(Personnage* adv, Action* actionCombat):CelluleAccessible(Action* actionCombat){//DONE
+CelluleCombat::CelluleCombat(Personnage* adv, Action* actionCombat):CelluleAccessible(actionCombat){//DONE
 	adversaire=adv;
 }
