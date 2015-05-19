@@ -20,5 +20,5 @@ class Jeu{
         +<color:orange>jouer(Coordonnees coordonnees) : void</color>
 }
 @enduml
-'d186dc2b0c0825c5a6a1659f6dcda716  src/Jeu.hpp
-'cfbb4f8c338bfa4c610cb4beb1dfe71c  src/Jeu.cpp
+'6b9be033002a59158a326301f97a65d7  src/Jeu.hpp
+'3c148b316f6f3029672cd829262af4cf  src/Jeu.cpp
