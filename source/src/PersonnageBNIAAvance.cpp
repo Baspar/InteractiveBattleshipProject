@@ -10,13 +10,13 @@ using namespace std;
 PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv):PersonnageBN(nomnv),caseTouchee(0,0),casePrecedente(0,0){//DONE
 }
 
-Coordonnees PersonnageBNIAAvance::getCaseTouchee(){//Done
-    return caseTouchee;
-}
-
-void PersonnageBNIAAvance::setCaseTouchee(Coordonnees c){//Done
-    caseTouchee.copy(c);
-}
+//Coordonnees PersonnageBNIAAvance::getCaseTouchee(){//Done
+//    return caseTouchee;
+//}
+//
+//void PersonnageBNIAAvance::setCaseTouchee(Coordonnees c){//Done
+//    caseTouchee.copy(c);
+//}
 
 Coordonnees PersonnageBNIAAvance::getCasePrecedente(){//Done
     return casePrecedente;
@@ -54,19 +54,21 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
 
     Coordonnees solution(0,0);
 
+//Si la case precedente est touchee je rentre dans la boucle
+    if (grilleAdverse->getCaseElt(casePrecedente).getToucheBateau()){
 
-    if (grilleAdverse->getCaseElt(casePrecedente).getToucheBateau())
-        caseTouchee.copy(casePrecedente);
+//Je prepare le sondage des cases aux alentours
+    Coordonnees coordonneesN(casePrecedente.getAbscisse(),casePrecedente.getOrdonnee()+1);
+    Coordonnees coordonneesS(casePrecedente.getAbscisse(),casePrecedente.getOrdonnee()-1);
+    Coordonnees coordonneesE(casePrecedente.getAbscisse()+1,casePrecedente.getOrdonnee());
+    Coordonnees coordonneesO(casePrecedente.getAbscisse()-1,casePrecedente.getOrdonnee());
 
-    Coordonnees coordonneesTouchee(caseTouchee);
-    Coordonnees coordonneesN(coordonneesTouchee.getAbscisse(),coordonneesTouchee.getOrdonnee()+1);
-    Coordonnees coordonneesS(coordonneesTouchee.getAbscisse(),coordonneesTouchee.getOrdonnee()-1);
-    Coordonnees coordonneesE(coordonneesTouchee.getAbscisse()+1,coordonneesTouchee.getOrdonnee());
-    Coordonnees coordonneesO(coordonneesTouchee.getAbscisse()-1,coordonneesTouchee.getOrdonnee());
+        //Tant que le bateau n'est pas coule je le sonde
+        while (!grilleAdverse->getCaseElt(casePrecedente).getBateau()->estCoule()){
 
-    if (grilleAdverse->getCaseElt(coordonneesTouchee).getToucheBateau()){
-        while (!grilleAdverse->getCaseElt(coordonneesTouchee).getBateau()->estCoule()){
-            if (aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).coordonneesVides()){
+
+            //Si aucune case autour de la case touchee nest touchee je teste la validite
+            if (aucuneToucheeAutour(grilleAdverse,casePrecedente).coordonneesVides()){
                 if (grilleAdverse->coupValide(coordonneesN))
                     solution.copy(coordonneesN);
                 else
@@ -79,46 +81,50 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
                             if (grilleAdverse->coupValide(coordonneesO))
                                 solution.copy(coordonneesO);
             }
+
+
+
             else{
-
-            if (aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getAbscisse()==coordonneesTouchee.getAbscisse()){
-                solution.setAbscisse(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getAbscisse());
-                solution.setOrdonnee(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getOrdonnee()+1);
-
+            //Sinon je sonde de haut en bas si le cas est échéant
+            if (aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse()==casePrecedente.getAbscisse()){
+                solution.setAbscisse(aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse());
+                solution.setOrdonnee(aucuneToucheeAutour(grilleAdverse,casePrecedente).getOrdonnee()+1);
+            //Tant que la case est touchee j'avance
                 while (grilleAdverse->getCaseElt(solution).getToucheBateau())
                     solution.setOrdonnee(solution.getOrdonnee()+1);
+            //Si la case trouvee n'est pas valide je parcours dans l'autre sens
                 if (!grilleAdverse->coupValide(solution))
-                    solution.setOrdonnee(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getOrdonnee()-1);
+                    solution.setOrdonnee(aucuneToucheeAutour(grilleAdverse,casePrecedente).getOrdonnee()-1);
+            //Tant que la case est touchee je continue
                 while (grilleAdverse->getCaseElt(solution).getToucheBateau())
                     solution.setOrdonnee(solution.getOrdonnee()-1);
+            //Si la case est non valide la solution est au hasard
                 if (!grilleAdverse->coupValide(solution)) solution.copy(tirerAleatoirement(grilleAdverse));
 
             }
             else{
-                solution.setOrdonnee(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getAbscisse());
-                solution.setAbscisse(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getAbscisse()+1);
+            //Sinon je sonde de gauche à droite
+                solution.setOrdonnee(aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse());
+                solution.setAbscisse(aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse()+1);
+            //Tant que la case est touchee j'avance
                 while (grilleAdverse->getCaseElt(solution).getToucheBateau())
                     solution.setOrdonnee(solution.getAbscisse()+1);
+            //Si la case trouvee n'est pas valide je parcours dans l'autre sens
                 if (!grilleAdverse->coupValide(solution))
-                    solution.setAbscisse(aucuneToucheeAutour(grilleAdverse,coordonneesTouchee).getAbscisse()-1);
+                    solution.setAbscisse(aucuneToucheeAutour(grilleAdverse,casePrecedente).getAbscisse()-1);
+            //Tant que la case est touchee je continue
                 while (!grilleAdverse->coupValide(solution))
                     solution.setAbscisse(solution.getAbscisse()-1);
+            //Si la case est non valide la solution est au hasard
                 if (!grilleAdverse->coupValide(solution))
                     solution.copy(tirerAleatoirement(grilleAdverse));
             }
         }
         }
-        if (!solution.coordonneesVides()){
             casePrecedente.copy(solution);
             return solution;
         }
-        else{
-            solution.copy(tirerAleatoirement(grilleAdverse));
-            caseTouchee.copy(solution);
-            casePrecedente.copy(solution);
-            return solution;
-        }
-    }
+
     else
         solution.copy(tirerAleatoirement(grilleAdverse));
     casePrecedente.copy(solution);
