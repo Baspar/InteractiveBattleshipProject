@@ -4,7 +4,7 @@
 #include <iostream>
 
 using namespace std;
-CelluleObstacle::CelluleObstacle(){//TODO
+CelluleObstacle::CelluleObstacle():Cellule(nullptr,"#"){//DONE
 }
 
 bool CelluleObstacle::estAccessible(){//DONE

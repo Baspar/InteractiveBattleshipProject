@@ -5,14 +5,15 @@
 
 using namespace std;
 
-CelluleAccessible::CelluleAccessible(){//TODO
+CelluleAccessible::CelluleAccessible():Cellule(nullptr," "){//DONE
+	occupant=nullptr;
 }
 
-CelluleAccessible::CelluleAccessible(Action* actionInit):Cellule(actionInit,0){//TODO
-    occupant=NULL;
+CelluleAccessible::CelluleAccessible(Action* actionInit):Cellule(actionInit," "){//DONE
+	occupant=nullptr;
 }
 
-bool CelluleAccessible::estAccessible(){//TODO
+bool CelluleAccessible::estAccessible(){//DONE
     return true;
 }
 

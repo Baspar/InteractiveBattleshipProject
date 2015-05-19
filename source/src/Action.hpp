@@ -29,12 +29,12 @@ class Action{
         /// Cette méthode est abstraite, elle sera réimplémentée dans les classes héritant de Action
         virtual void lancerAction()=0;
 
-        /// \fn Action()
+        /// \fn Action(string txtInt)
         /// \brief Constructeur
         ///
         /// \param txtInteraction : le texte d'interaction
         /// Constructeur de la classe Action
-        Action(string txtInteraction);
+        Action(string txtInt);
 
         /// \fn string getTexteInteraction()
         /// \brief Getter texteInteraction

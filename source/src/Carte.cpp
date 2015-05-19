@@ -28,7 +28,7 @@ void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){
     // On recup sa cellule
     CelluleAccessible* cell =  (CelluleAccessible*)carte->getCel(coord);
     // On le retire
-    cell->setPersonnage(NULL);
+    cell->setPersonnage(nullptr);
     // On le rajoute
     CelluleAccessible* cell2 = (CelluleAccessible*)getCel(coordonnees);
     cell2->setPersonnage(personnage);
@@ -36,10 +36,10 @@ void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){
 
 
 Cellule* Carte::getCel(Coordonnees coord){//DONE
-    return &cellules[coord.getAbscisse()][coord.getOrdonnee()];
+    return cellules[coord.getAbscisse()][coord.getOrdonnee()];
 }
 
 
-vector<vector<Cellule> > Carte::getCellules(){//DONE
+vector<vector<Cellule*> > Carte::getCellules(){//DONE
      return cellules;
 }

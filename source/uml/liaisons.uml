@@ -24,13 +24,17 @@ PersonnageNonJouable -|> Personnage
 Personnage <|- PersonnageJouable
 
 PersonnageJouable <|--JoueurHumain
-PersonnageJouable <|--JoueurIA
+PersonnageJouable <|--JoueurDhumainBNia
 
-PersonnageNonJouable --|>PersonnageBNIA
-PersonnageBNIA <|- JoueurIA
+PersonnageNonJouable <|-- JoueurIA
+PersonnageNonJouable <|-- JoueurIAAvance
+JoueurIA --|> PersonnageBNIA
+JoueurIAAvance --|> PersonnageBNIAAvance
+PersonnageBNIA <|- JoueurDhumainBNia
 
 JoueurHumain --|>PersonnageBNHumain
 PersonnageBNIA --|>PersonnageBN
+PersonnageBNIAAvance --|>PersonnageBN
 PersonnageBNHumain --|>PersonnageBN
 
 Arme <|-- ArmeClassique
