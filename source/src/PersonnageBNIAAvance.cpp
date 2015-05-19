@@ -80,6 +80,7 @@ Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
                             if (grilleAdverse->coupValide(coordonneesO))
                                 solution.copy(coordonneesO);
                 cout<<"Sortie dans la boucle de sondage"<< endl;
+                cout<<aucuneToucheeAutour(grilleAdverse,casePrecedente).coordonneesVides();
             }
 
 
