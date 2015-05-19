@@ -6,7 +6,7 @@ using namespace std;
 
 Cellule::Cellule(){//DONE
     action=nullptr;
-    typeDeCellule=0;
+    typeDeCellule="0";
 }
 
 Cellule::Cellule(Action* actionInit, string typeCell){//DONE
