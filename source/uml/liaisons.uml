@@ -1,6 +1,6 @@
 Action <|-- ActionChangementCarte
 Action <|-- ActionCombat
-Action <|-- AutreAction
+Action <|-- ActionVide
 
 Cellule <|-- CelluleAccessible
 Cellule <|-- CelluleObstacle
