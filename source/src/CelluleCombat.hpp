@@ -19,13 +19,9 @@ class CelluleCombat : public CelluleAccessible{
         Personnage* adversaire;
 
     public:
-        /// \fn CelluleCombat()
-        /// \brief Construit une Cellule
-        CelluleCombat();
-
         /// \fn CelluleCombat(Personnage* adv, Action* actionCombat)
         /// \brief Construit une Cellule
-        CelluleCombat(Personnage* adv, Action* actionCombat);
+        CelluleCombat(Personnage* adv);
 
 };
 #endif

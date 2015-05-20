@@ -14,7 +14,13 @@ int main(){
 
     batailleNavale->initialiserJoueurCourant(
             (PersonnageBN*)new JoueurIACheate("JoueurCheate"),
-            (PersonnageBN*)new JoueurHumain("JoueurLooser", 20, 20, new ArmeCroix()));
+            (PersonnageBN*)new JoueurIACheate("JoueurCheate1", 20, 20, new ArmeCroix()));
+
+    controleurBN.actionBatailleNavale();
+
+    batailleNavale->initialiserJoueurCourant(
+            (PersonnageBN*)new JoueurIA("JoueurIA", 15, 15),
+            (PersonnageBN*)new JoueurIA("JoueurIA", 20, 20));
 
     controleurBN.actionBatailleNavale();
 }

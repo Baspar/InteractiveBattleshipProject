@@ -5,6 +5,7 @@ Action <|-- ActionVide
 Cellule <|-- CelluleAccessible
 Cellule <|-- CelluleObstacle
 CelluleAccessible <|-- CelluleCombat
+CelluleAccessible <|-- CelluleChangementCarte
 
 Action -o Cellule
 

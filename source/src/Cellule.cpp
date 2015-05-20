@@ -4,14 +4,12 @@
 
 using namespace std;
 
-Cellule::Cellule(){//DONE
-    action=nullptr;
-    typeDeCellule="0";
-
+void Cellule::setAction(Action* const actionCp){//DONE
+    action=actionCp;
 }
 
-Cellule::Cellule(Action* actionInit, string typeCell){//DONE
-    action=actionInit;
+Cellule::Cellule(string typeCell){//DONE
+    action=nullptr;
     typeDeCellule=typeCell;
 }
 

@@ -24,9 +24,10 @@ class CelluleAccessible:public Cellule{
         /// \brief Construit une CelluleAccessible
         CelluleAccessible();
 
-        /// \fn CelluleAccessible(Action* actionInit)
+        /// \fn CelluleAccessible(Personnage* perso)
         /// \brief Construit une CelluleAccessible
-        CelluleAccessible(Action* actionInit);
+        /// \param perso : Personnage a affecter
+        CelluleAccessible(Personnage* perso);
 
         /// \fn virtual bool estAccessible()
         /// \brief Vérifie si une classe est bien accessible

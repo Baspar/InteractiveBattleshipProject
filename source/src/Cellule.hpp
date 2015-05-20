@@ -21,13 +21,13 @@ class Cellule{
         string typeDeCellule;
 
     public:
-        /// \fn Cellule()
-        /// \brief Construit une Cellule
-        Cellule();
-
         /// \fn Cellule(Action* actionInit, string typeCell)
         /// \brief Construit une Cellule de manière paramétrée
-        Cellule(Action* actionInit, string typeCell);
+        Cellule(string typeCell);
+
+        /// \fn void setAction(const Action* const actionCp)
+        /// \brief set l'action
+        void setAction(Action* const actionCp);
 
         /// \fn void lancerAction()
         /// \brief Lance l'action et effectue les modifications nécessaires suite à cette action
@@ -39,7 +39,7 @@ class Cellule{
         /// Cette méthode est virtuelle car la classe est abstraite, elle sera
         /// implémentée dans les classes filles
         /// \return un booleen: vrai si la cellule est accessible, faux sinon
-        virtual bool estAccessible() const{return true;};
+        virtual bool estAccessible() const=0;
 
         /// \fn string getTypeDeCellule() const
         /// \brief Getter typeDeCellule

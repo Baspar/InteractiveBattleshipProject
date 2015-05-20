@@ -2,12 +2,11 @@
 
 #include "Personnage.hpp"
 #include "CelluleAccessible.hpp"
+#include "ActionCombat.hpp"
 
 using namespace std;
 
-CelluleCombat::CelluleCombat():CelluleAccessible(){//DONE
-}
-
-CelluleCombat::CelluleCombat(Personnage* adv, Action* actionCombat):CelluleAccessible(actionCombat){//DONE
+CelluleCombat::CelluleCombat(Personnage* adv):CelluleAccessible(){//DONE
 	adversaire=adv;
+    setAction(new ActionCombat(adv, "J'aime les shorts"));
 }

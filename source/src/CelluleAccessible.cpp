@@ -5,11 +5,11 @@
 
 using namespace std;
 
-CelluleAccessible::CelluleAccessible():Cellule(nullptr," "){//DONE
-	occupant=nullptr;
+CelluleAccessible::CelluleAccessible(Personnage* perso):Cellule(" "){//DONE
+	occupant=perso;
 }
 
-CelluleAccessible::CelluleAccessible(Action* actionInit):Cellule(actionInit," "){//DONE
+CelluleAccessible::CelluleAccessible():Cellule(" "){//DONE
 	occupant=nullptr;
 }
 

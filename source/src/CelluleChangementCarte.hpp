@@ -8,22 +8,16 @@
 #include "CelluleAccessible.hpp"
 #include "Carte.hpp"
 #include "Coordonnees.hpp"
+#include "ActionChangementCarte.hpp"
 
 using namespace std;
 
 /// \class CelluleChangementCarte
 /// \brief CelluleAccessible permettant d'engager un ChangementCarte
 class CelluleChangementCarte : public CelluleAccessible{
-
-    private:
-        /// Carte de destination
-        Carte* carte;
-        /// Coordonnees de desination
-        Coordonnees coordonnees;
-
     public:
-        /// \fn CelluleChangementCarte(Carte* carteCp, Coordonnees coordCp)
+        /// \fn CelluleChangementCarte(Carte* carteInit, Carte* carteDest, Coordonnees coordInit, Coordonnees coordDest)
         /// \brief Construit une Cellule
-        CelluleChangementCarte(Carte* carteCp, Coordonnees coordCp);
+        CelluleChangementCarte(Carte* carteInit, Carte* carteDest, Coordonnees coordInit, Coordonnees coordDest);
 };
 #endif
