@@ -41,7 +41,7 @@ PersonnageBNHumain --|>PersonnageBN
 
 Arme <|-- ArmeClassique
 Arme <|-- ArmeCroix
-PersonnageBN o-- Arme
+Arme o- PersonnageBN
 PersonnageBN o-- Bateau
 
 Jeu o- Combat
