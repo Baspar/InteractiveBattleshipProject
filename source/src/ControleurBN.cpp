@@ -1,4 +1,4 @@
-#include "Controleur.hpp"
+#include "ControleurBN.hpp"
 #include "BatailleNavale.hpp"
 
 #include "IHMJeu.hpp"
@@ -14,7 +14,7 @@ ControleurBN::ControleurBN(BatailleNavale* batnav){//DONE
 
 
 void ControleurBN::actionBatailleNavale(){//DONE
-	
+
 	IHMBN* ihmBN = new IHMBN(batailleNavale);
 
 	//si placerBateaux renvoie NULL, on demande une saisie dans l'IHM sinon on copie les données de l'IA
@@ -32,7 +32,7 @@ void ControleurBN::actionBatailleNavale(){//DONE
 
 	//Affiche gagnant
 	ihmBN->afficherFinBN();
-	
+
 
 }
 
@@ -44,11 +44,11 @@ void ControleurBN::tourDeJeuBatailleNavale(IHMBN* ihmBN){//DONE
 	ihmBN->afficherJeu();
 
 	//caseAViser renvoie null si c'est un joueur humain, et des coordonnees si c'est joueurIA
-	if (batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser(nullptr).coordonneesVides()){
+	if (batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser(batailleNavale->getGrilles()[batailleNavale->getIndiceJoueurCourant()]).coordonneesVides()){
 		coord.copy(ihmBN->saisieCoup());
 		batailleNavale->jouer(coord);
 	}
-	else { 
+	else {
 		coord.copy(batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser(batailleNavale->getGrilles()[(batailleNavale->getIndiceJoueurCourant()+1)%2]));
 		batailleNavale->jouer(coord);
 	}

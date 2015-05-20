@@ -165,5 +165,11 @@ CompileMainTestTailleGrille: TailleGrille.o
 MainTestTailleGrille: CompileMainTestTailleGrille
 	tests/MainTestTailleGrille
 
+CompileMainTestControleurBN: ControleurBN.o  BatailleNavale.o IHMBN.o Grille.o Coordonnees.o TailleGrille.o PersonnageBN.o Bateau.o JoueurIA.o JoueurIACheate.o Case.o PersonnageBNIA.o PersonnageNonJouable.o ArmeClassique.o PersonnageBNIACheate.o  Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o ArmeCroix.o JoueurHumain.o  PersonnageJouable.o PersonnageBNHumain.o 
+	g++ $(FLAGS) tests/MainTestControleurBN.cpp $^ -o tests/MainTestControleurBN
+MainTestControleurBN: CompileMainTestControleurBN
+	tests/MainTestControleurBN
+
 clean:
 	rm -rf *.o *~ tests/*~; find ./tests/ -type f ! -name "*.*" -exec rm {} \;
+
