@@ -29,17 +29,21 @@ class Cellule{
         /// \brief set l'action
         void setAction(Action* const actionCp);
 
+        /// \fn void setTypeDeCellule(const string type)
+        /// \brief set l'action
+        void setTypeDeCellule(const string type);
+
         /// \fn void lancerAction()
         /// \brief Lance l'action et effectue les modifications nécessaires suite à cette action
         void lancerAction() const;
 
-        /// \fn virtual bool estAccessible();
+        /// \fn bool estAccessible();
         /// \brief Vérifie si la Cellule est Accessible ou non
         ///
         /// Cette méthode est virtuelle car la classe est abstraite, elle sera
         /// implémentée dans les classes filles
         /// \return un booleen: vrai si la cellule est accessible, faux sinon
-        virtual bool estAccessible() const=0;
+        virtual bool estAccessible() const;
 
         /// \fn string getTypeDeCellule() const
         /// \brief Getter typeDeCellule

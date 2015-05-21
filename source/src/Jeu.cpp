@@ -19,21 +19,31 @@ Jeu::Jeu(){//TODO
 
 Jeu::Jeu(Combat* comb){//WIP
 
-    int nbPersonnageNonJouables=1;
-    vector<int> listeIdCarte = vector<int>();
-    vector<Coordonnees> listeCoord = vector<Coordonnees>();
+    //int nbPersonnageNonJouables=1;
+    vector<int> listeIdCarte;
+    vector<Coordonnees> listeCoord;
+    vector<Personnage*> listPers;
 
+    listeIdCarte.clear();
+    listeCoord.clear();
+    listPers.clear();
 
     actionEnCours = nullptr;
 
-    personnagesNonJouables.push_back( new PersonnageNonJouable("Ann"));//a faire
-	
+    combat=comb;
 
-    personnageJouable=new JoueurHumain("Ann");// ou new JoueurIA();
+    //personnagesNonJouables.push_back( new PersonnageNonJouable("Ann"));//a faire
 
-    vector<Personnage*> listPers= vector<Personnage*>();
-    listPers.push_back(personnagesNonJouables[0]); //FAIRE UNE BOUCLE SUR TOUS LES PERSOS
-    listPers.push_back(personnageJouable);
+
+    personnageJouable=new JoueurHumain("Testo");// ou new JoueurIA();
+
+
+
+    listPers.push_back(personnageJouable); //FAIRE UNE BOUCLE SUR TOUS LES PERSOS
+    listeCoord.push_back(Coordonnees(2,5));
+    listeIdCarte.push_back(1);
+    listeIdCarte.push_back(1);
+
     monde.placerJoueurs(listPers,listeIdCarte, listeCoord);
 }
 
@@ -46,8 +56,9 @@ bool Jeu::partieFinie(){//DONE
 void Jeu::jouer(Coordonnees coordonnees){//WIP
     personnageJouable->deplacer(coordonnees, personnageJouable->getCarte());
     actionEnCours = personnageJouable->getCarte()->getCel((personnageJouable->getCoordonnees()))->getActionCellule();
-    if(actionEnCours!=0)
+    if(actionEnCours!=nullptr){
         actionEnCours->lancerAction();
+    }
 }
 
 

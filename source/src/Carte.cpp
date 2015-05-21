@@ -5,20 +5,43 @@
 #include "TailleGrille.hpp"
 #include "Cellule.hpp"
 #include "CelluleAccessible.hpp"
+#include "CelluleObstacle.hpp"
+#include "CelluleChangementCarte.hpp"
 #include <vector>
 
 using namespace std;
 
 Carte::Carte(int id, TailleGrille tailleGrilleInit) : tailleGrille(tailleGrilleInit){//WIP
     switch (id){
-            case 1 :{
-            //on fait la carte préfaites n°1!
-        }
-            case 2 :{
-            //on fait la carte préfaites n°2! etc...
-        }
+        case 0 :{
+                    cellules.clear();
+                    cellules.resize(10);
+                    for(int i=0; i<10; i++){
+                        cellules[i].clear();
+                    }
+                }
+        case 1 :{
+                    cellules.clear();
+                    cellules.resize(10);
+                    for(int i=0;i<10;i++) cellules[0].push_back(new CelluleObstacle());
+                    //for(int i=0;i<10;i++) cellules[9].push_back(new CelluleObstacle());
+                    for(int i=1;i<9;i++) {
+                        cellules[i].push_back(new CelluleObstacle());
+                        for (int j=1;j<9;j++)
+                            if(i==j)
+                                cellules[i].push_back(new CelluleObstacle());
+                            else
+                                if(i==3 && j==5)
+                                    cellules[i].push_back(new CelluleChangementCarte(this, this, Coordonnees(3, 5), Coordonnees(9, 8)));
+                                else
+                                    cellules[i].push_back(new CelluleAccessible());
+                        cellules[i].push_back(new CelluleObstacle());
+                    }
+                    for(int i=0;i<10;i++) cellules[9].push_back(new CelluleObstacle());
+                    break;
+                }
     }
- }
+}
 
 void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){//WIP
     // On recupere la carte
@@ -41,5 +64,5 @@ Cellule* Carte::getCel(Coordonnees coord){//DONE
 
 
 vector<vector<Cellule*> > Carte::getCellules(){//DONE
-     return cellules;
+    return cellules;
 }

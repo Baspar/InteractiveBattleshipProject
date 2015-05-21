@@ -47,12 +47,12 @@ void ControleurBN::tourDeJeuBatailleNavale(IHMBN* ihmBN){//DONE
 	if (batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser(batailleNavale->getGrilles()[batailleNavale->getIndiceJoueurCourant()]).coordonneesVides()){
 		coord.copy(ihmBN->saisieCoup());
 		batailleNavale->jouer(coord);
+        //Affiche le résultat du tour
+        ihmBN->afficherResultatTour(coord);
 	}
 	else {
 		coord.copy(batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser(batailleNavale->getGrilles()[(batailleNavale->getIndiceJoueurCourant()+1)%2]));
 		batailleNavale->jouer(coord);
 	}
 
-	//Affiche le résultat du tour
-	ihmBN->afficherResultatTour(coord);
 }

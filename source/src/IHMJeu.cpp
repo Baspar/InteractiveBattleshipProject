@@ -2,6 +2,7 @@
 
 #include "Jeu.hpp"
 #include "Coordonnees.hpp"
+#include "CelluleAccessible.hpp"
 #include <iostream>
 
 
@@ -18,17 +19,17 @@ Coordonnees IHMJeu::saisieDeplacement (){//DONE
     Coordonnees coord(jeu->getPersonnageJouable()->getCoordonnees());
 
     switch (deplacement){
-        case 8 : return Coordonnees(coord.getAbscisse(), coord.getOrdonnee()+1);
-        case 4 : return Coordonnees(coord.getAbscisse()-1, coord.getOrdonnee());
-        case 2 : return Coordonnees(coord.getAbscisse(), coord.getOrdonnee()-1);
-        case 6 : return Coordonnees(coord.getAbscisse()+1, coord.getOrdonnee());
+        case 8 : return Coordonnees(coord.getAbscisse()-1, coord.getOrdonnee());
+        case 4 : return Coordonnees(coord.getAbscisse(), coord.getOrdonnee()-1);
+        case 2 : return Coordonnees(coord.getAbscisse()+1, coord.getOrdonnee());
+        case 6 : return Coordonnees(coord.getAbscisse(), coord.getOrdonnee()+1);
         default : return Coordonnees(coord.getAbscisse(), coord.getOrdonnee());
     }
 }
 
 void IHMJeu::afficherJeu (){//DONE
     this->afficherCarteCourante();
-    this->afficherInteraction();
+    //this->afficherInteraction();
     this->afficherSaisie();
 }
 
@@ -47,16 +48,18 @@ void IHMJeu::afficherCarteCourante(){//WIP
     cout<<endl;
     cout<<"Affichage de la carte courante";
     cout<<endl;
-    for(vector<Cellule> cels : jeu->getPersonnageJouable()->getCarte()->getCellules()) {
-        for(Cellule cel : cels) {
-            switch (cel.getTypeDeCellule()) {
-                case 0 : {
-                            if(cel.estAccessible()) cout<< "ô";
-                            else cout<< " ";
-                          }
-                case 1 : cout<< "X";
-            }
-            cout<<endl;
+    for(vector<Cellule*> cels : jeu->getPersonnageJouable()->getCarte()->getCellules()) {
+        for(Cellule* cel : cels) {
+			string type = cel->getTypeDeCellule();
+			
+			if(type==" ")
+				if( ((CelluleAccessible*) cel)->getPersonnage()!=nullptr)
+					cout << "ô";
+				else cout<<type;
+				
+			else cout << type;
+		cout <<" ";
         }
+        cout<< endl;
     }
 }
