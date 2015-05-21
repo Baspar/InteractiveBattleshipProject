@@ -128,10 +128,7 @@ class PersonnageBNIAAvance : public PersonnageBN{
         /// \param cases : cases de notre grille
         void addCases(const Coordonnees c);
 
-        /// \fn vector<vector<Case> > getCases() const
-        /// \brief Getter de cases
-        /// \return cases : cases de notre grille
-       Coordonnees getCases(const int c) const;
+
 
 };
 #endif
