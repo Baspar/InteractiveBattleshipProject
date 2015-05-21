@@ -40,6 +40,7 @@ PersonnageBNIAAvance --|>PersonnageBN
 PersonnageBNIACheate --|>PersonnageBN
 PersonnageBNHumain --|>PersonnageBN
 
+Arme <|-- ArmeFatale
 Arme <|-- ArmeClassique
 Arme <|-- ArmeCroix
 Arme o- PersonnageBN
