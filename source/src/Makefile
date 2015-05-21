@@ -10,6 +10,11 @@ CompileMainTestActionChangementCarte: ActionChangementCarte.o TailleGrille.o Coo
 MainTestActionChangementCarte: CompileMainTestActionChangementCarte
 	tests/MainTestActionChangementCarte
 
+CompileBestMainEver: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o Controleur.o CelluleObstacle.o Jeu.o Grille.o BatailleNavale.o IHMBN.o Case.o Bateau.o PersonnageBN.o IHMJeu.o Monde.o PersonnageBN.o ActionCombat.o ArmeClassique.o Arme.o ControleurBN.o JoueurHumain.o  PersonnageBNHumain.o PersonnageJouable.o
+	g++ $(FLAGS) tests/bestMainEver.cpp $^ -o tests/bestMainEver
+MainBestMainEver: CompileBestMainEver
+	tests/bestMainEver
+
 CompileMainTestActionCombat: ActionCombat.o
 	g++ $(FLAGS) tests/MainTestActionCombat.cpp $^ -o tests/MainTestActionCombat
 MainTestActionCombat: CompileMainTestActionCombat
