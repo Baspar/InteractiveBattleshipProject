@@ -80,7 +80,7 @@ int i;
 if (grilleAdverse->caseValide(casePrecedente)&&grilleAdverse->getCaseElt(casePrecedente).getToucheBateau())
     addCases(casePrecedente);
 for (i=0;i<casesT.size();i++){
-    if (grilleAdverse->getCaseElt(casePrecedente).getBateau()->estCoule())
+    if (grilleAdverse->getCaseElt(casesT[i]).getBateau()->estCoule())
         casesT.erase(casesT.begin()+i-1);
 }
  //On tire aléatoirement si la case precedente n'a pas ete touchee
