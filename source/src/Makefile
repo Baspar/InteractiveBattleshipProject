@@ -51,7 +51,7 @@ CompileMainTestActionVide: ActionVide.o
 MainTestActionVide: CompileMainTestActionVide
 	tests/MainTestActionVide
 
-CompileMainTestBatailleNavale: PersonnageJouable.o Combat.o BatailleNavale.o Grille.o PersonnageBN.o TailleGrille.o Coordonnees.o Case.o Bateau.o Personnage.o Carte.o CelluleAccessible.o Cellule.o ArmeClassique.o Arme.o PersonnageNonJouable.o PersonnageBNIA.o JoueurIA.o JoueurIACheate.o PersonnageBNIACheate.o ArmeCroix.o PersonnageBNIAAvance.o JoueurIAAvance.o
+CompileMainTestBatailleNavale: PersonnageJouable.o Combat.o BatailleNavale.o Grille.o PersonnageBN.o TailleGrille.o Coordonnees.o Case.o Bateau.o Personnage.o Carte.o CelluleAccessible.o Cellule.o ArmeClassique.o Arme.o PersonnageNonJouable.o PersonnageBNIA.o JoueurIA.o JoueurIACheate.o PersonnageBNIACheate.o ArmeCroix.o PersonnageBNIAAvance.o JoueurIAAvance.o CelluleObstacle.o
 	g++ $(FLAGS) tests/MainTestBatailleNavale.cpp $^ -o tests/MainTestBatailleNavale
 MainTestBatailleNavale: CompileMainTestBatailleNavale
 	tests/MainTestBatailleNavale

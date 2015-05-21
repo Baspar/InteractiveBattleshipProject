@@ -38,7 +38,7 @@ class Controleur{
         ///
         /// Constructeur de notre Controleur
         /// On crée un nouveau jeu, et une IHM ayant comme paramètre ce jeu
-        Controleur();
+        Controleur(int i);
 
         /// \fn void tourDeJeu()
         /// \brief tour De Jeu

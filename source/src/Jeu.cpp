@@ -19,21 +19,30 @@ Jeu::Jeu(){//TODO
 
 Jeu::Jeu(Combat* comb){//WIP
 
-    int nbPersonnageNonJouables=1;
-    vector<int> listeIdCarte = vector<int>();
-    vector<Coordonnees> listeCoord = vector<Coordonnees>();
-
+    //int nbPersonnageNonJouables=1;
+    vector<int> listeIdCarte;
+    vector<Coordonnees> listeCoord;
+	vector<Personnage*> listPers;
+	
+	listeIdCarte.clear();
+	listeCoord.clear();
+	listPers.clear();
 
     actionEnCours = nullptr;
+    
+    combat=comb;
 
-    personnagesNonJouables.push_back( new PersonnageNonJouable("Ann"));//a faire
+    //personnagesNonJouables.push_back( new PersonnageNonJouable("Ann"));//a faire
 	
 
-    personnageJouable=new JoueurHumain("Ann");// ou new JoueurIA();
+    personnageJouable=new JoueurHumain("Testo");// ou new JoueurIA();
 
-    vector<Personnage*> listPers= vector<Personnage*>();
-    listPers.push_back(personnagesNonJouables[0]); //FAIRE UNE BOUCLE SUR TOUS LES PERSOS
-    listPers.push_back(personnageJouable);
+
+
+    listPers.push_back(personnageJouable); //FAIRE UNE BOUCLE SUR TOUS LES PERSOS
+    listeCoord.push_back(Coordonnees(5,5));
+    listeIdCarte.push_back(0);
+    
     monde.placerJoueurs(listPers,listeIdCarte, listeCoord);
 }
 

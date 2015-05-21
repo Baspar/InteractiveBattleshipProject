@@ -5,18 +5,49 @@
 #include "TailleGrille.hpp"
 #include "Cellule.hpp"
 #include "CelluleAccessible.hpp"
+#include "CelluleObstacle.hpp"
 #include <vector>
 
 using namespace std;
 
 Carte::Carte(int id, TailleGrille tailleGrilleInit) : tailleGrille(tailleGrilleInit){//WIP
     switch (id){
+            case 0 :{
+						cellules.clear();
+						cellules.resize(10);
+						for(int i=0;i<10;i++){
+							cellules[0].clear();
+							cellules[0].push_back(new CelluleObstacle());
+							cellules[9].clear();
+							cellules[9].push_back(new CelluleObstacle());
+						}
+						for(int i=1;i<9;i++){
+												cellules[i].push_back(new CelluleObstacle());
+												for (int j=1;j<6;j++)
+													cellules[i].push_back(new CelluleAccessible());
+												if(i==4)
+													cellules[4].push_back(new CelluleObstacle());
+												else
+													cellules[4].push_back(new CelluleAccessible());
+												for (int j=8;j<9;j++) cellules[i].push_back(new CelluleAccessible());
+												cellules[i].push_back(new CelluleObstacle());
+												break;
+						}
+				}
             case 1 :{
-            //on fait la carte préfaites n°1!
-        }
-            case 2 :{
-            //on fait la carte préfaites n°2! etc...
-        }
+						cellules.clear();
+						cellules.resize(10);
+						for(int i=0;i<10;i++) cellules[0].push_back(new CelluleObstacle());
+						for(int i=0;i<10;i++) cellules[1].push_back(new CelluleObstacle());
+						for(int i=2;i<9;i++) {
+												cellules[i].push_back(new CelluleObstacle());
+												for (int j=1;j<6;j++) cellules[i].push_back(new CelluleAccessible());
+												if(i==4) cellules[4].push_back(new CelluleObstacle()); else cellules[4].push_back(new CelluleAccessible());
+												for (int j=8;j<9;j++) cellules[i].push_back(new CelluleAccessible());												cellules[i].push_back(new CelluleObstacle());
+											}
+						for(int i=0;i<10;i++) cellules[9].push_back(new CelluleObstacle());
+						break;
+	   }
     }
  }
 
