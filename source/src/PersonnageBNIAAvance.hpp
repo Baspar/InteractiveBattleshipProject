@@ -18,8 +18,9 @@ using namespace std;
 
 class PersonnageBNIAAvance : public PersonnageBN{
     private:
-        Coordonnees caseTouchee;
         Coordonnees casePrecedente;
+        vector<Coordonnees> casesT;
+
 
     public:
         /// \fn PersonnageBNIAAvance(string nomnv)
@@ -110,18 +111,6 @@ class PersonnageBNIAAvance : public PersonnageBN{
         /// \return booleen
         Coordonnees aucuneToucheeAutour(Grille* grille,Coordonnees coordonneesCT);
 
-        /// \brief Getter de case touchee
-        ///
-        /// Getter de la case touchee
-        /// \return case touchee
-        Coordonnees getCaseTouchee();
-
-        /// \brief Setter de case touchee
-        ///
-        /// Setter de la case touchee
-        /// \param  case touchee
-        void setCaseTouchee(Coordonnees c);
-
         /// \brief Getter de case precedente
         ///
         /// Getter de la case precedente
@@ -133,6 +122,16 @@ class PersonnageBNIAAvance : public PersonnageBN{
         /// Setter de la case precedente
         /// \param  case precedente
         void setCasePrecedente(Coordonnees c);
+
+        /// \fn setCases(const vector<Coordonnees> cases)
+        /// \brief setter de cases
+        /// \param cases : cases de notre grille
+        void addCases(const Coordonnees c);
+
+        /// \fn vector<vector<Case> > getCases() const
+        /// \brief Getter de cases
+        /// \return cases : cases de notre grille
+       Coordonnees getCases(const int c) const;
 
 };
 #endif
