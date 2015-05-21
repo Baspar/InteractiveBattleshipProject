@@ -5,7 +5,7 @@ all: MainTestBateau MainTestCase MainTestGrill
 %.o: %.cpp
 	g++ -c $(FLAGS) $<
 
-CompileMainTestActionChangementCarte: ActionChangementCarte.o
+CompileMainTestActionChangementCarte: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o
 	g++ $(FLAGS) tests/MainTestActionChangementCarte.cpp $^ -o tests/MainTestActionChangementCarte
 MainTestActionChangementCarte: CompileMainTestActionChangementCarte
 	tests/MainTestActionChangementCarte
@@ -29,6 +29,12 @@ CompileMainTestArmeCroix:  ArmeCroix.o Coordonnees.o Grille.o  Case.o TailleGril
 	g++ $(FLAGS) tests/MainTestArmeCroix.cpp $^ -o tests/MainTestArmeCroix
 MainTestArmeCroix: CompileMainTestArmeCroix
 	tests/MainTestArmeCroix
+
+
+CompileMainTestArmeFatale:  ArmeFatale.o Coordonnees.o Grille.o  Case.o TailleGrille.o Bateau.o Arme.o
+	g++ $(FLAGS) tests/MainTestArmeFatale.cpp $^ -o tests/MainTestArmeFatale
+MainTestArmeFatale: CompileMainTestArmeFatale
+	tests/MainTestArmeFatale
 
 CompileMainTestArme: Arme.o
 	g++ $(FLAGS) tests/MainTestArme.cpp $^ -o tests/MainTestArme
