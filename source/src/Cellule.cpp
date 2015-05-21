@@ -8,6 +8,10 @@ void Cellule::setAction(Action* const actionCp){//DONE
     action=actionCp;
 }
 
+void Cellule::setTypeDeCellule(const string type){//DONE
+    typeDeCellule=type;
+}
+
 Cellule::Cellule(string typeCell){//DONE
     action=nullptr;
     typeDeCellule=typeCell;

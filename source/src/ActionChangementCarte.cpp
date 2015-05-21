@@ -9,13 +9,18 @@
 using namespace std;
 
 void ActionChangementCarte::lancerAction(){//DONE
-    // Recuperation de la celluleInit
-    CelluleAccessible* cellInit = (CelluleAccessible*) carteInitiale->getCel(coordonneesInitiales);
+    cout << "Tu pars de la grille n°" << carteInitiale << " et tu vas en "<< carteDestination << endl;
+    vector<vector<Cellule*> > tmp;
+    tmp = carteInitiale->getCellules();
+    cout << "Oui" << endl;
 
-    // Recuperation du personnage
+    // Recuperation de la celluleInit
+    CelluleAccessible* cellInit = (CelluleAccessible*) carteInitiale->getCellules()[1][1];
+
+    //// Recuperation du personnage
     Personnage* perso = cellInit->getPersonnage();
 
-    // Deplacement du personnage
+    //// Deplacement du personnage
     perso->deplacer(coordonneesDestination, carteDestination);
 }
 ActionChangementCarte::ActionChangementCarte(Carte* carteInit, Carte* carteDest, Coordonnees coordInit, Coordonnees coordDest) : coordonneesInitiales(coordInit),coordonneesDestination(coordDest), Action("Vous changez de carte"){//DONE
