@@ -89,7 +89,7 @@ if (casesT.size()==0){
     casePrecedente.copy(solution);
     return solution;
 }
-if (casesT.size()>0&&casesT.size()<1){
+if (casesT.size()>0&&casesT.size()<2){
             Coordonnees coordonneesN(getCases(0).getAbscisse(),getCases(0).getOrdonnee()+1);
             Coordonnees coordonneesS(getCases(0).getAbscisse(),getCases(0).getOrdonnee()-1);
             Coordonnees coordonneesE(getCases(0).getAbscisse()+1,getCases(0).getOrdonnee());
