@@ -43,6 +43,7 @@ PersonnageBNHumain --|>PersonnageBN
 Arme <|-- ArmeFatale
 Arme <|-- ArmeClassique
 Arme <|-- ArmeCroix
+Arme <|-- ArmeChercheuse
 Arme o- PersonnageBN
 PersonnageBN o-- Bateau
 
