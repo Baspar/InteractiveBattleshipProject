@@ -34,7 +34,7 @@ class ArmeChercheuse : public Arme{
         ///tire sur une case et inflige des dégats sur ladite case
         ///
         /// \param *grille : pointeur sur la grille sur lequel le joueur tire
-        void tirer(Grille *grille);
+        void tirer(Coordonnees coordonnees, Grille *grille);
 };
 #endif
 

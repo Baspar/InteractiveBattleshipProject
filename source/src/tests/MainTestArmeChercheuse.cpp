@@ -45,7 +45,7 @@ void afficherGrille(Grille g){
 
 
 int main(){
-ArmeClassique arme=ArmeClassique();
+ArmeChercheuse arme=ArmeChercheuse();
 cout<<"On cree une grille 10x10"<<endl;
 Grille g=Grille(10,10);
 Bateau bat=Bateau(4);
@@ -56,19 +56,19 @@ afficherGrille(g);
 
 
 cout <<"On tape 2 fois" << endl << endl;
-arme.tirer(&g);
-arme.tirer(&g);
+arme.tirer(Coordonnees(0, 0), &g);
+arme.tirer(Coordonnees(0, 0), &g);
  cout << "   Bateau coule " << (bat.estCoule()?"Oui":"Non") << endl;
 afficherGrille(g);
 
 cout << "On tape " << endl ;
-arme.tirer(&g);
+arme.tirer(Coordonnees(0, 0), &g);
  cout << "   Bateau coule " << (bat.estCoule()?"Oui":"Non") << endl;
 cout << "On tape " << endl ;
-arme.tirer(&g);
+arme.tirer(Coordonnees(0, 0), &g);
  cout << "   Bateau coule " << (bat.estCoule()?"Oui":"Non") << endl;
 cout << "On tape " << endl ;
-arme.tirer(&g);
+arme.tirer(Coordonnees(0, 0), &g);
  cout << "   Bateau coule " << (bat.estCoule()?"Oui":"Non") << endl <<endl;
 
 

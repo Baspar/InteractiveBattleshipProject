@@ -4,7 +4,7 @@
 #include "JoueurIACheate.hpp"
 #include "JoueurHumain.hpp"
 #include "JoueurIA.hpp"
-#include "ArmeCroix.hpp"
+#include "ArmeChercheuse.hpp"
 
 using namespace std;
 
@@ -14,7 +14,7 @@ int main(){
 
     batailleNavale->initialiserJoueurCourant(
             (PersonnageBN*)new JoueurIACheate("JoueurCheate"),
-            (PersonnageBN*)new JoueurIACheate("JoueurCheate1", 20, 20, new ArmeCroix()));
+            (PersonnageBN*)new JoueurIA("Looser", 20, 20, new ArmeChercheuse()));
 
     controleurBN.actionBatailleNavale();
 

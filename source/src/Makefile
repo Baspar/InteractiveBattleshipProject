@@ -25,6 +25,11 @@ CompileMainTestArmeClassique:  ArmeClassique.o Coordonnees.o Grille.o  Case.o Ta
 MainTestArmeClassique: CompileMainTestArmeClassique
 	tests/MainTestArmeClassique
 
+CompileMainTestArmeChercheuse:  ArmeChercheuse.o Coordonnees.o Grille.o  Case.o TailleGrille.o Bateau.o Arme.o
+	g++ $(FLAGS) tests/MainTestArmeChercheuse.cpp $^ -o tests/MainTestArmeChercheuse
+MainTestArmeChercheuse: CompileMainTestArmeChercheuse
+	tests/MainTestArmeChercheuse
+
 CompileMainTestArmeCroix:  ArmeCroix.o Coordonnees.o Grille.o  Case.o TailleGrille.o Bateau.o Arme.o
 	g++ $(FLAGS) tests/MainTestArmeCroix.cpp $^ -o tests/MainTestArmeCroix
 MainTestArmeCroix: CompileMainTestArmeCroix
@@ -171,7 +176,7 @@ CompileMainTestTailleGrille: TailleGrille.o
 MainTestTailleGrille: CompileMainTestTailleGrille
 	tests/MainTestTailleGrille
 
-CompileMainTestControleurBN: ControleurBN.o  BatailleNavale.o IHMBN.o Grille.o Coordonnees.o TailleGrille.o PersonnageBN.o Bateau.o JoueurIA.o JoueurIACheate.o Case.o PersonnageBNIA.o PersonnageNonJouable.o ArmeClassique.o PersonnageBNIACheate.o  Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o ArmeCroix.o JoueurHumain.o  PersonnageJouable.o PersonnageBNHumain.o 
+CompileMainTestControleurBN: ControleurBN.o  BatailleNavale.o IHMBN.o Grille.o Coordonnees.o TailleGrille.o PersonnageBN.o Bateau.o JoueurIA.o JoueurIACheate.o Case.o PersonnageBNIA.o PersonnageNonJouable.o ArmeClassique.o PersonnageBNIACheate.o  Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o ArmeCroix.o JoueurHumain.o  PersonnageJouable.o PersonnageBNHumain.o ArmeChercheuse.o
 	g++ $(FLAGS) tests/MainTestControleurBN.cpp $^ -o tests/MainTestControleurBN
 MainTestControleurBN: CompileMainTestControleurBN
 	tests/MainTestControleurBN
