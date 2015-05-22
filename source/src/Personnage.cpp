@@ -1,7 +1,6 @@
 #include "Personnage.hpp"
 #include "Carte.hpp"
 #include "Coordonnees.hpp"
-#include "CelluleAccessible.hpp"
 
 #include <iostream>
 
@@ -16,20 +15,9 @@ Personnage::Personnage(string nomnv):coord(-1,-1) { //WIP
 
 
 void Personnage::deplacer(Coordonnees coordonnees, Carte* carteEntree){//DONE
-    Cellule* cel=carteEntree->getCel(coordonnees);
-    string type=cel->getTypeDeCellule();
-    bool acces=false;
-
-
-    if(cel->getTypeDeCellule)
-
-    cout << "On veut aller en (" << coordonnees.getAbscisse() << ", " << coordonnees.getOrdonnee() << "), case qui est " << (acces?"accessible.":"non accessible")<< endl;
-
-    if(acces){
-        carteEntree->deplacerPersonnage(this, coordonnees);
-        coord.copy(coordonnees);
-        carte=carteEntree;
-    }
+    carteEntree->deplacerPersonnage(this, coordonnees);
+    coord.copy(coordonnees);
+    carte=carteEntree;
 }
 
 

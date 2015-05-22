@@ -12,19 +12,20 @@
 using namespace std;
 
 Carte::Carte(int id, TailleGrille tailleGrilleInit) : tailleGrille(tailleGrilleInit){//WIP
+    cellules.clear();
     switch (id){
         case 0 :{
-                    cellules.clear();
                     cellules.resize(10);
                     for(int i=0; i<10; i++){
                         cellules[i].clear();
+                        for(int j=0; j<10; j++)
+                            cellules[i].push_back(new CelluleAccessible());
                     }
+                    break;
                 }
         case 1 :{
-                    cellules.clear();
                     cellules.resize(10);
                     for(int i=0;i<10;i++) cellules[0].push_back(new CelluleObstacle());
-                    //for(int i=0;i<10;i++) cellules[9].push_back(new CelluleObstacle());
                     for(int i=1;i<9;i++) {
                         cellules[i].push_back(new CelluleObstacle());
                         for (int j=1;j<9;j++)
