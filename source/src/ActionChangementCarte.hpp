@@ -22,10 +22,10 @@ class ActionChangementCarte : public Action{
     private:
         /// Carte d'origine
         Carte* carteInitiale;
-        /// Coordonnees d'origine
-        Coordonnees coordonneesInitiales;
         /// Carte de destination
         Carte* carteDestination;
+        /// Coordonnees d'origine
+        Coordonnees coordonneesInitiales;
         /// Coordonnees de destination
         Coordonnees coordonneesDestination;
 

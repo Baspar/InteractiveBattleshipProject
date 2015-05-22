@@ -35,8 +35,5 @@ int Coordonnees::getOrdonnee() const{//DONE
 }
 
 bool Coordonnees::coordonneesVides(){//DONE
-	bool bol=false;
-	if((getAbscisse()==-1)&&(getOrdonnee()==-1)){
-		bol=true;
-	}
+    return (getAbscisse()==-1)&&(getOrdonnee()==-1);
 }

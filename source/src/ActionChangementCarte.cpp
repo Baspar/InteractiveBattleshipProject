@@ -23,7 +23,7 @@ void ActionChangementCarte::lancerAction(){//DONE
     //// Deplacement du personnage
     perso->deplacer(coordonneesDestination, carteDestination);
 }
-ActionChangementCarte::ActionChangementCarte(Carte* carteInit, Carte* carteDest, Coordonnees coordInit, Coordonnees coordDest) : coordonneesInitiales(coordInit),coordonneesDestination(coordDest), Action("Vous changez de carte"){//DONE
+ActionChangementCarte::ActionChangementCarte(Carte* carteInit, Carte* carteDest, Coordonnees coordInit, Coordonnees coordDest) : Action("Vous changez de carte"), coordonneesInitiales(coordInit),coordonneesDestination(coordDest){//DONE
     carteInitiale = carteInit;
     carteDestination = carteDest;
 }
