@@ -106,7 +106,7 @@ if (casesT.size()==1){
 if (casesT.size()>1){
         solution.setAbscisse(casesT[0].getAbscisse());
         solution.setOrdonnee(casesT[0].getOrdonnee()+1);
-        while(!grilleAdverse->coupValide(solution)){
+        while(!grilleAdverse->getCaseElt(solution).getToucheBateau()){
             solution.setOrdonnee(casesT[0].getOrdonnee()+1);
         }
         if(grilleAdverse->coupValide(solution)){
@@ -115,7 +115,7 @@ if (casesT.size()>1){
         }
         else{
             solution.setOrdonnee(casesT[0].getOrdonnee()-1);
-            while(!grilleAdverse->coupValide(solution)){
+            while(!grilleAdverse->getCaseElt(solution).getToucheBateau()){
                 solution.setOrdonnee(casesT[0].getOrdonnee()-1);
             }
             if(grilleAdverse->coupValide(solution)){
@@ -125,7 +125,7 @@ if (casesT.size()>1){
             else{
                 solution.setOrdonnee(casesT[0].getOrdonnee());
                 solution.setOrdonnee(casesT[0].getAbscisse()+1);
-                while(!grilleAdverse->coupValide(solution)){
+                while(!grilleAdverse->getCaseElt(solution).getToucheBateau()){
                     solution.setOrdonnee(casesT[0].getAbscisse()+1);
                 }
                 if(grilleAdverse->coupValide(solution)){
@@ -135,7 +135,7 @@ if (casesT.size()>1){
                 else{
                     solution.setOrdonnee(casesT[0].getOrdonnee());
                     solution.setOrdonnee(casesT[0].getAbscisse()-1);
-                    while(!grilleAdverse->coupValide(solution)){
+                    while(!grilleAdverse->getCaseElt(solution).getToucheBateau()){
                         solution.setOrdonnee(casesT[0].getAbscisse()-1);
                     }
                  casePrecedente.copy(solution);
