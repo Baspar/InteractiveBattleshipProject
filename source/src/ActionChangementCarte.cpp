@@ -8,10 +8,11 @@
 
 using namespace std;
 
-void ActionChangementCarte::lancerAction(){//DONE
+void ActionChangementCarte::lancerAction(){//WIP
     cout << "Tu pars de la grille n°" << carteInitiale << " et tu vas en "<< carteDestination << endl;
-    vector<vector<Cellule*> > tmp;
-    tmp = carteInitiale->getCellules();
+    CelluleAccessible* tmp = (CelluleAccessible*)carteInitiale->getCel(Coordonnees(1, 1));
+    cout << "Recup OK: " << tmp << endl;
+    cout << "La cellule est de type " << tmp->getTypeDeCellule() << endl;
     cout << "Oui" << endl;
 
     // Recuperation de la celluleInit
