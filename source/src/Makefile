@@ -1,4 +1,4 @@
-FLAGS=-std=c++11 -I . -Wall
+FLAGS=-std=c++11 -I .
 
 all: MainTestBateau MainTestCase MainTestGrill
 
