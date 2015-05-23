@@ -71,39 +71,21 @@ Coordonnees PersonnageBNIAAvance::tirerAleatoirement(Grille* grilleAdverse){ //D
 }
 
 Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
-//Initialisation de la solution
 Coordonnees solution(0,0);
 int i;
-//On regarde si la case prevedente a ete touchee
+
 if (grilleAdverse->caseValide(casePrecedente)&&grilleAdverse->getCaseElt(casePrecedente).getToucheBateau())
     addCases(casePrecedente);
 for (i=0;i<casesT.size();i++){
     if (grilleAdverse->getCaseElt(casesT[i]).getBateau()->estCoule())
         casesT.erase(casesT.begin());
 }
- //On tire aléatoirement si la case precedente n'a pas ete touchee
+
 if (casesT.size()==0){
     solution.copy(tirerAleatoirement(grilleAdverse));
     casePrecedente.copy(solution);
     return solution;
 }
-if (casesT.size()==1){
-            Coordonnees coordonneesN(casesT[0].getAbscisse(),casesT[0].getOrdonnee()+1);
-            Coordonnees coordonneesS(casesT[0].getAbscisse(),casesT[0].getOrdonnee()-1);
-            Coordonnees coordonneesE(casesT[0].getAbscisse()+1,casesT[0].getOrdonnee());
-            Coordonnees coordonneesO(casesT[0].getAbscisse()-1,casesT[0].getOrdonnee());
-            if(grilleAdverse->coupValide(coordonneesN))
-                solution.copy(coordonneesN);
-            if(grilleAdverse->coupValide(coordonneesS))
-                solution.copy(coordonneesS);
-            if(grilleAdverse->coupValide(coordonneesE))
-                solution.copy(coordonneesE);
-            if(grilleAdverse->coupValide(coordonneesO))
-                solution.copy(coordonneesO);
-            casePrecedente.copy(solution);
-            return solution;
-        }
-if (casesT.size()>1){
         solution.setAbscisse(casesT[0].getAbscisse());
         solution.setOrdonnee(casesT[0].getOrdonnee()+1);
         while(grilleAdverse->getCaseElt(solution).getToucheBateau()){
@@ -144,7 +126,7 @@ if (casesT.size()>1){
             }
         }
 }
-}
+
 
 
 //Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//DONE
