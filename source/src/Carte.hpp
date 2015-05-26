@@ -36,7 +36,7 @@ class Carte{
         /// Constructeur de la classe Carte
         /// \param id: entier numero carte
         /// \param tailleGrille: taille de la grille
-        Carte(int id, TailleGrille tailleGrilleInit);
+        Carte(int idC, TailleGrille tailleGrilleInit);
 
         /// \fn void deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees)
         /// \brief déplace le personnage

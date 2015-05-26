@@ -19,3 +19,7 @@ bool Action::isActive(){//DONE
 string Action::getTexteInteraction(){//DONE
     return texteInteraction;
 }
+
+void Action::setTexteInteraction(string texte){//DONE
+    texteInteraction=texte;
+}

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-JoueurIA::JoueurIA(string nomnv):PersonnageBNIA(nomnv), PersonnageNonJouable(nomnv){//WIP
+JoueurIA::JoueurIA(string nomnv):PersonnageBNIA(nomnv), PersonnageNonJouable(nomnv){//DONE
 }
 
 JoueurIA::JoueurIA(string nomnv, int l, int h, Arme* a):PersonnageBNIA(nomnv, l, h, a), PersonnageNonJouable(nomnv){//WIP

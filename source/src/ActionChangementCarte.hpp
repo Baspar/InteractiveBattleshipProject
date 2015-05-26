@@ -22,15 +22,15 @@ class ActionChangementCarte : public Action{
     private:
         /// Carte d'origine
         Carte* carteInitiale;
-        /// Carte de destination
-        Carte* carteDestination;
         /// Coordonnees d'origine
         Coordonnees coordonneesInitiales;
+        /// Carte de destination
+        Carte* carteDestination;
         /// Coordonnees de destination
         Coordonnees coordonneesDestination;
 
     public:
-        /// \fn virtual void lancerAction()
+        /// \fn void lancerAction()
         /// \brief Changement de carte
         ///
         /// Cette classe gère le changement de carte quand le joueur accède à une case qui permet de changer de carte

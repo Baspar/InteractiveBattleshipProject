@@ -6,6 +6,10 @@
 #include "Grille.hpp"
 #include <vector>
 
+
+#include <iostream>
+
+
 using namespace std;
 
 PersonnageBN* BatailleNavale::getPersonnage1() const {//DONE
@@ -63,6 +67,7 @@ void BatailleNavale::initialiserJoueurCourant(PersonnageBN* joueur1, PersonnageB
 	grilles.clear();
 	grilles.push_back(Grille(joueur1->getTailleGrille().getLongueur(),joueur1->getTailleGrille().getHauteur()));
 	grilles.push_back(Grille(joueur2->getTailleGrille().getLongueur(),joueur2->getTailleGrille().getHauteur()));
+
 
 	for(PersonnageBN* jou : joueurs)
 		jou->restaurerBateaux();

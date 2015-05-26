@@ -31,7 +31,7 @@ PersonnageBNIA::PersonnageBNIA(string nomnv, int l, int h, vector<int> tBateaux)
 }
 
 
-Coordonnees PersonnageBNIA::coordonneesAViser(Grille* grilleAdverse){//DONE
+Coordonnees PersonnageBNIA::coordonneesAViser(Grille* grilleAdverse){ //DONE
     Coordonnees impact(-1,-1);
     int hauteur = grilleAdverse->getTailleGrille().getHauteur();
     int longueur = grilleAdverse->getTailleGrille().getLongueur();

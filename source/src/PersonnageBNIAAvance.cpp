@@ -36,7 +36,9 @@ void PersonnageBNIAAvance::addCases(const Coordonnees c){
 casesT.push_back(c);
 }
 
-
+Coordonnees PersonnageBNIAAvance::getCases(const int c) const{
+return casesT[c];
+}
 
 Coordonnees PersonnageBNIAAvance::getCasePrecedente(){//DONE
     return casePrecedente;
@@ -71,62 +73,99 @@ Coordonnees PersonnageBNIAAvance::tirerAleatoirement(Grille* grilleAdverse){ //D
 }
 
 Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
+//Initialisation de la solution
 Coordonnees solution(0,0);
 int i;
-
+//On regarde si la case prevedente a ete touchee
 if (grilleAdverse->caseValide(casePrecedente)&&grilleAdverse->getCaseElt(casePrecedente).getToucheBateau())
     addCases(casePrecedente);
 for (i=0;i<casesT.size();i++){
-    if (grilleAdverse->getCaseElt(casesT[i]).getBateau()->estCoule())
-        casesT.erase(casesT.begin());
+    if (grilleAdverse->getCaseElt(casePrecedente).getBateau()->estCoule())
+        casesT.erase(casesT.begin()+i-1);
 }
-
+ //On tire aléatoirement si la case precedente n'a pas ete touchee
 if (casesT.size()==0){
     solution.copy(tirerAleatoirement(grilleAdverse));
     casePrecedente.copy(solution);
     return solution;
 }
-        solution.setAbscisse(casesT[0].getAbscisse());
-        solution.setOrdonnee(casesT[0].getOrdonnee()+1);
-        while(grilleAdverse->getCaseElt(solution).getToucheBateau()){
-            solution.setOrdonnee(casesT[0].getOrdonnee()+1);
+if (casesT.size()>0&&casesT.size()<2){
+            Coordonnees coordonneesN(getCases(0).getAbscisse(),getCases(0).getOrdonnee()+1);
+            Coordonnees coordonneesS(getCases(0).getAbscisse(),getCases(0).getOrdonnee()-1);
+            Coordonnees coordonneesE(getCases(0).getAbscisse()+1,getCases(0).getOrdonnee());
+            Coordonnees coordonneesO(getCases(0).getAbscisse()-1,getCases(0).getOrdonnee());
+            if(grilleAdverse->coupValide(coordonneesN))
+                solution.copy(coordonneesN);
+            if(grilleAdverse->coupValide(coordonneesS))
+                solution.copy(coordonneesS);
+            if(grilleAdverse->coupValide(coordonneesE))
+                solution.copy(coordonneesE);
+            if(grilleAdverse->coupValide(coordonneesO))
+                solution.copy(coordonneesO);
+            casePrecedente.copy(solution);
+            return solution;
         }
-        if(grilleAdverse->coupValide(solution)){
+if (casesT.size()>2){
+    if(casesT[0].getAbscisse()==casesT[1].getAbscisse()){
+        solution.setAbscisse(casesT[1].getAbscisse());
+        solution.setOrdonnee(casesT[1].getOrdonnee()+casesT[1].getOrdonnee()-casesT[0].getOrdonnee());
+        if (grilleAdverse->coupValide(solution)){
             casePrecedente.copy(solution);
             return solution;
         }
         else{
-            solution.setOrdonnee(casesT[0].getOrdonnee()-1);
-            while(grilleAdverse->getCaseElt(solution).getToucheBateau()){
-                solution.setOrdonnee(casesT[0].getOrdonnee()-1);
-            }
-            if(grilleAdverse->coupValide(solution)){
+        solution.setOrdonnee(casesT[0].getOrdonnee()+casesT[0].getOrdonnee()-casesT[1].getOrdonnee());
+        };
+        if (grilleAdverse->coupValide(solution)){
             casePrecedente.copy(solution);
             return solution;
-            }
-            else{
-                solution.setOrdonnee(casesT[0].getOrdonnee());
-                solution.setOrdonnee(casesT[0].getAbscisse()+1);
-                while(grilleAdverse->getCaseElt(solution).getToucheBateau()){
-                    solution.setOrdonnee(casesT[0].getAbscisse()+1);
-                }
-                if(grilleAdverse->coupValide(solution)){
-                    casePrecedente.copy(solution);
-                    return solution;
-                }
-                else{
-                    solution.setOrdonnee(casesT[0].getOrdonnee());
-                    solution.setOrdonnee(casesT[0].getAbscisse()-1);
-                    while(grilleAdverse->getCaseElt(solution).getToucheBateau()){
-                        solution.setOrdonnee(casesT[0].getAbscisse()-1);
-                    }
-                 casePrecedente.copy(solution);
-                 return solution;
-                }
-            }
+        }else{
+        solution.setAbscisse(casesT[0].getAbscisse()+1);
+        solution.setOrdonnee(casesT[0].getOrdonnee());
+        };
+        if (grilleAdverse->coupValide(solution)){
+            casePrecedente.copy(solution);
+            return solution;
+        }else{
+        solution.setAbscisse(casesT[0].getAbscisse()-1);
+        solution.setOrdonnee(casesT[0].getOrdonnee());
+        casePrecedente.copy(solution);
+        return solution;
         }
+
+    }
+
+    if(casesT[0].getOrdonnee()==casesT[1].getOrdonnee()){
+        solution.setOrdonnee(casesT[1].getOrdonnee());
+        solution.setAbscisse(casesT[1].getAbscisse()+casesT[1].getAbscisse()-casesT[0].getAbscisse());
+        if (grilleAdverse->coupValide(solution)){
+            casePrecedente.copy(solution);
+            return solution;
+        }
+        else{
+            solution.setAbscisse(casesT[0].getAbscisse()+casesT[0].getAbscisse()-casesT[1].getAbscisse());
+        };
+        if (grilleAdverse->coupValide(solution)){
+            casePrecedente.copy(solution);
+            return solution;
+        }else{
+        solution.setAbscisse(casesT[0].getAbscisse());
+        solution.setOrdonnee(casesT[0].getOrdonnee()+1);
+        };
+        if (grilleAdverse->coupValide(solution)){
+            casePrecedente.copy(solution);
+            return solution;
+        }else{
+        solution.setAbscisse(casesT[0].getAbscisse());
+        solution.setOrdonnee(casesT[0].getOrdonnee()-1);
+        casePrecedente.copy(solution);
+        return solution;
+        }
+    }
+
 }
 
+}
 
 
 //Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//DONE

@@ -35,5 +35,11 @@ class Monde{
         ///
         /// méthode qui place les joueurs dans le monde
         void placerJoueurs(vector<Personnage*> listePerso, vector<int> listeIdCarte, vector<Coordonnees> listeCoord);
+        
+        /// \fn void void placerActions()
+        /// \brief Methode placerActions
+        ///
+        /// méthode qui place les actions dans le monde
+        void placerActions();
 };
 #endif

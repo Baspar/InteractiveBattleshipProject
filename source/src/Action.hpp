@@ -40,6 +40,11 @@ class Action{
         /// \brief Getter texteInteraction
         /// \return Le texte correspondant à l'action
         string getTexteInteraction();
+        
+        /// \fn string setTexteInteraction(string texte)
+        /// \brief Setter texteInteraction
+        /// \param texte : Le texte correspondant à l'action
+        void setTexteInteraction(string texte);
 
         /// \fn void toggleActive()
         /// \brief Passe la variable active de VRAI a FAUX et vise verca

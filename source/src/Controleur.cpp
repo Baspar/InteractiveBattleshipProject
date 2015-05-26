@@ -5,7 +5,8 @@
 #include "IHMBN.hpp"
 #include "ActionCombat.hpp"
 #include "PersonnageBN.hpp"
-#include "ControleurBN.hpp"
+#include "JoueurHumain.hpp"
+#include "JoueurIA.hpp"
 
 using namespace std;
 Controleur::Controleur(int i){//DONE
@@ -21,12 +22,12 @@ void Controleur::tourDeJeu(){//DONE
     ihmJeu->afficherJeu();
     jeu->jouer(ihmJeu->saisieDeplacement());
     //code pour lancer la partie controleur correspondant à l'action effectuée (si besoin)
-
+	
 
 	//Si l'action est un Combaaat
 	if(jeu->getActionEnCours()!=nullptr)
 		if(jeu->getActionEnCours()->getTexteInteraction()=="COMBAT!!!") {
-			batailleNavale->initialiserJoueurCourant((PersonnageBN*) jeu->getPersonnageJouable(),(PersonnageBN*) ((ActionCombat*) jeu->getActionEnCours())->getAdversaire());
+			batailleNavale->initialiserJoueurCourant((PersonnageBN*) (JoueurHumain*) jeu->getPersonnageJouable(),(PersonnageBN*) (JoueurIA*) ((ActionCombat*) jeu->getActionEnCours())->getAdversaire());
 			controlBN->actionBatailleNavale();
 			if (batailleNavale->retournerGagnant((Personnage*) jeu->getPersonnageJouable(),(Personnage*) ((ActionCombat*) jeu->getActionEnCours())->getAdversaire())==jeu->getPersonnageJouable())
 				jeu->getActionEnCours()->toggleActive();
@@ -41,7 +42,7 @@ void Controleur::lancerJeu(){//DONE
 
 
 void Controleur::actionBatailleNavale(){//DONE
-
+	
 	batailleNavale->initialiserJoueurCourant((PersonnageBN*) jeu->getPersonnageJouable(),(PersonnageBN*) ((ActionCombat*) jeu->getActionEnCours())->getAdversaire());
 
 	//si placerBateaux renvoie NULL, on demande une saisie dans l'IHM sinon on copie les données de l'IA
@@ -74,7 +75,7 @@ void Controleur::tourDeJeuBatailleNavale(){//DONE
 		coord.copy(ihmBN->saisieCoup());
 		batailleNavale->jouer(coord);
 	}
-	else {
+	else { 
 		coord.copy(batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser(batailleNavale->getGrilles()[(batailleNavale->getIndiceJoueurCourant()+1)%2]));
 		batailleNavale->jouer(coord);
 	}

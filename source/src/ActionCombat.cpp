@@ -5,7 +5,7 @@
 
 using namespace std;
 
-ActionCombat::ActionCombat(Personnage* adversairenv, string texte):Action(texte){//DONE
+ActionCombat::ActionCombat(Personnage* adversairenv, string texte):Action("COMBAT!!!"){//DONE
 	adversaire=adversairenv;
 }
 

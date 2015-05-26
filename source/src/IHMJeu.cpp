@@ -3,6 +3,7 @@
 #include "Jeu.hpp"
 #include "Coordonnees.hpp"
 #include "CelluleAccessible.hpp"
+#include "JoueurHumain.hpp"
 #include <iostream>
 
 
@@ -28,8 +29,9 @@ Coordonnees IHMJeu::saisieDeplacement (){//DONE
 }
 
 void IHMJeu::afficherJeu (){//DONE
+
     this->afficherCarteCourante();
-    //this->afficherInteraction();
+    this->afficherInteraction();
     this->afficherSaisie();
 }
 
@@ -40,8 +42,11 @@ void IHMJeu::afficherSaisie (){//DONE
 }
 
 void IHMJeu::afficherInteraction(){//DONE
-    cout << "Affichage de l'action en cours" << endl;
-    cout << jeu->getActionEnCours()->getTexteInteraction() << endl;
+	cout << "Affichage de l'action en cours" << endl;
+	if(jeu->getActionEnCours()!=nullptr){
+		cout << jeu->getActionEnCours()->getTexteInteraction() << endl;
+	}
+	else cout<< endl;
 }
 
 void IHMJeu::afficherCarteCourante(){//WIP
@@ -53,9 +58,16 @@ void IHMJeu::afficherCarteCourante(){//WIP
 			string type = cel->getTypeDeCellule();
 			
 			if(type==" ")
-				if( ((CelluleAccessible*) cel)->getPersonnage()!=nullptr)
-					cout << "ô";
-				else cout<<type;
+				if( ((CelluleAccessible*) cel)->getPersonnage()!=nullptr) {
+					if(((CelluleAccessible*) cel)->getPersonnage() == jeu->getPersonnageJouable())
+						cout << "ô";
+					else cout << "8";
+				}
+				else {
+						if(cel->getActionCellule()!=nullptr)
+							cout << "?";
+						else cout << type;
+					}
 				
 			else cout << type;
 		cout <<" ";

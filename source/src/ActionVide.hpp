@@ -13,9 +13,9 @@ using namespace std;
 /// \brief Lance une action vide
 class ActionVide: public Action{
     public:
-        /// \fn ActionVide()
-        // \ brief Constructeur
-        ActionVide();
+        /// \fn ActionVide(string texteInit)
+        /// \ brief Constructeur
+        ActionVide(string texteInit);
 
         /// \fn void lancerAction()
         /// \brief lancer autre action

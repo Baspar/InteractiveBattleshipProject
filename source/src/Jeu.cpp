@@ -5,6 +5,7 @@
 #include "PersonnageNonJouable.hpp"
 #include "PersonnageJouable.hpp"
 #include "JoueurHumain.hpp"
+#include "JoueurIA.hpp"
 #include "Monde.hpp"
 #include "Combat.hpp"
 #include <vector>
@@ -22,29 +23,44 @@ Jeu::Jeu(Combat* comb){//WIP
     //int nbPersonnageNonJouables=1;
     vector<int> listeIdCarte;
     vector<Coordonnees> listeCoord;
-    vector<Personnage*> listPers;
-
-    listeIdCarte.clear();
-    listeCoord.clear();
-    listPers.clear();
+	vector<Personnage*> listPers;
+	
+	listeIdCarte.clear();
+	listeCoord.clear();
+	listPers.clear();
 
     actionEnCours = nullptr;
-
+    
     combat=comb;
-
-    //personnagesNonJouables.push_back( new PersonnageNonJouable("Ann"));//a faire
-
-
-    personnageJouable=new JoueurHumain("Testo");// ou new JoueurIA();
-
-
-
+    
+    
+    personnageJouable=new JoueurHumain("PoloLePluBô");// ou new JoueurIA();
+    
     listPers.push_back(personnageJouable); //FAIRE UNE BOUCLE SUR TOUS LES PERSOS
-    listeCoord.push_back(Coordonnees(2,5));
-    listeIdCarte.push_back(1);
-    listeIdCarte.push_back(1);
+    listeCoord.push_back(Coordonnees(3,3));
+    listeIdCarte.push_back(0);
 
+	//Personnages IA
+
+    personnagesNonJouables.push_back( new JoueurIA("Ann"));//a faire
+    listPers.push_back(personnagesNonJouables[0]);
+    listeCoord.push_back(Coordonnees(6,3));
+    listeIdCarte.push_back(0);
+    
+    personnagesNonJouables.push_back( new JoueurIA("Damien"));//a faire
+	listPers.push_back(personnagesNonJouables[1]);
+    listeCoord.push_back(Coordonnees(1,9));
+    listeIdCarte.push_back(0);
+    
+    personnagesNonJouables.push_back( new JoueurIA("Blaine"));//a faire
+	listPers.push_back(personnagesNonJouables[2]);
+    listeCoord.push_back(Coordonnees(4,6));
+    listeIdCarte.push_back(1);
+	
+
+    //on place le monde et les actions
     monde.placerJoueurs(listPers,listeIdCarte, listeCoord);
+    monde.placerActions();
 }
 
 
@@ -56,9 +72,8 @@ bool Jeu::partieFinie(){//DONE
 void Jeu::jouer(Coordonnees coordonnees){//WIP
     personnageJouable->deplacer(coordonnees, personnageJouable->getCarte());
     actionEnCours = personnageJouable->getCarte()->getCel((personnageJouable->getCoordonnees()))->getActionCellule();
-    if(actionEnCours!=nullptr){
+    if(actionEnCours!=0)
         actionEnCours->lancerAction();
-    }
 }
 
 

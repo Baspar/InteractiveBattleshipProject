@@ -2,25 +2,55 @@
 
 #include "Carte.hpp"
 #include "CelluleAccessible.hpp"
+#include "ActionChangementCarte.hpp"
+#include "ActionCombat.hpp"
+#include "ActionVide.hpp"
 #include <vector>
 
 using namespace std;
 
-Monde::Monde(){//WIP
-    int nbCartes=2;
-    for(int i=0;i<nbCartes;i++)
-        cartes.push_back(Carte(1,TailleGrille(10,10)));
+Monde::Monde(){//DONE
+    cartes.push_back(Carte(0,TailleGrille(8,12)));
+    cartes.push_back(Carte(1,TailleGrille(9,8)));
+		
 }
 
-void Monde::placerJoueurs(vector<Personnage*> listePerso, vector<int> listeIdCarte, vector<Coordonnees> listeCoord){//WIP
+void Monde::placerJoueurs(vector<Personnage*> listePerso, vector<int> listeIdCarte, vector<Coordonnees> listeCoord){//DONE
     int i=0;
-    for (Personnage* perso : listePerso){
-        Coordonnees coordPerso(listeCoord[i]);
-        Carte* pointeurCartePerso = &(cartes[listeIdCarte[i]]);
+    if(!(listePerso.empty()))
+        for (Personnage* perso : listePerso){
+            Coordonnees coordPerso(-1,-1); 
+			coordPerso.copy(listeCoord[i]);
+            Carte* pointeurCartePerso = &(cartes[listeIdCarte[i]]);
 
-        perso->setCoordonnees(coordPerso);
-        perso->setCarte(pointeurCartePerso);
-        ((CelluleAccessible*) (perso->getCarte()->getCel(coordPerso)))->setPersonnage(perso);
-        i++;
-    }
+            perso->setCoordonnees(coordPerso);
+            perso->setCarte(pointeurCartePerso);
+            ((CelluleAccessible*) (perso->getCarte()->getCel(coordPerso)))->setPersonnage(perso);
+			i++;
+        }	
 }
+
+
+void Monde::placerActions(){//WIP {
+	
+	//Carte 0
+	//Transports
+	cartes[0].getCellules()[6][10]->setAction(new ActionChangementCarte(&cartes[0], &cartes[1], Coordonnees(6,10), Coordonnees(4,1)));
+	
+	//Textes
+	cartes[0].getCellules()[3][3]->setAction(new ActionVide("Tu es passé devant moi 1"));
+	cartes[0].getCellules()[1][5]->setAction(new ActionVide("Tu es passé devant moi 2"));
+	
+	
+	//Carte 1
+	//Transports
+	cartes[1].getCellules()[4][1]->setAction(new ActionChangementCarte(&cartes[1], &cartes[0], Coordonnees(4,1), Coordonnees(6,10)));
+
+	//Textes
+	cartes[1].getCellules()[4][5]->setAction(new ActionVide("Tu es passé devant moi 3"));
+
+	//Combats
+	//cartes[1].getCellules()[8][7]->setAction(new ActionCombat(listePerso[1], ""));
+		
+}
+

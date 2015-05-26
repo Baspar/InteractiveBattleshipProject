@@ -8,23 +8,18 @@
 
 using namespace std;
 
-void ActionChangementCarte::lancerAction(){//WIP
-    cout << "Tu pars de la grille n°" << carteInitiale << " et tu vas en "<< carteDestination << endl;
-    CelluleAccessible* tmp = (CelluleAccessible*)carteInitiale->getCel(Coordonnees(1, 1));
-    cout << "Recup OK: " << tmp << endl;
-    cout << "La cellule est de type " << tmp->getTypeDeCellule() << endl;
-    cout << "Oui" << endl;
-
+void ActionChangementCarte::lancerAction(){//DONE
     // Recuperation de la celluleInit
-    CelluleAccessible* cellInit = (CelluleAccessible*) carteInitiale->getCellules()[1][1];
+    CelluleAccessible* cellInit = (CelluleAccessible*) carteInitiale->getCel(coordonneesInitiales);
 
-    //// Recuperation du personnage
+    // Recuperation du personnage
     Personnage* perso = cellInit->getPersonnage();
 
-    //// Deplacement du personnage
+    // Deplacement du personnage
     perso->deplacer(coordonneesDestination, carteDestination);
 }
-ActionChangementCarte::ActionChangementCarte(Carte* carteInit, Carte* carteDest, Coordonnees coordInit, Coordonnees coordDest) : Action("Vous changez de carte"), coordonneesInitiales(coordInit),coordonneesDestination(coordDest){//DONE
+
+ActionChangementCarte::ActionChangementCarte(Carte* carteInit, Carte* carteDest, Coordonnees coordInit, Coordonnees coordDest) : coordonneesInitiales(coordInit),coordonneesDestination(coordDest), Action("Zoooooop, vous vous téléportez dans une autre zone"){//DONE
     carteInitiale = carteInit;
     carteDestination = carteDest;
 }

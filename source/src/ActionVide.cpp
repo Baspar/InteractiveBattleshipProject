@@ -4,7 +4,7 @@
 
 using namespace std;
 
-ActionVide::ActionVide():Action(""){//DONE
+ActionVide::ActionVide(string texteInit):Action(texteInit){//DONE
 }
 void ActionVide::lancerAction(){//DONE
 }

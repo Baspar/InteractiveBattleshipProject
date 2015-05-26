@@ -6,43 +6,43 @@
 #include "Cellule.hpp"
 #include "CelluleAccessible.hpp"
 #include "CelluleObstacle.hpp"
-#include "CelluleChangementCarte.hpp"
 #include <vector>
 
 using namespace std;
 
-Carte::Carte(int id, TailleGrille tailleGrilleInit) : tailleGrille(tailleGrilleInit){//WIP
-    cellules.clear();
-    switch (id){
-        case 0 :{
-                    cellules.resize(10);
-                    for(int i=0; i<10; i++){
-                        cellules[i].clear();
-                        for(int j=0; j<10; j++)
-                            cellules[i].push_back(new CelluleAccessible());
-                    }
-                    break;
-                }
-        case 1 :{
-                    cellules.resize(10);
-                    for(int i=0;i<10;i++) cellules[0].push_back(new CelluleObstacle());
-                    for(int i=1;i<9;i++) {
-                        cellules[i].push_back(new CelluleObstacle());
-                        for (int j=1;j<9;j++)
-                            if(i==j)
-                                cellules[i].push_back(new CelluleObstacle());
-                            else
-                                if(i==3 && j==5)
-                                    cellules[i].push_back(new CelluleChangementCarte(this, this, Coordonnees(3, 5), Coordonnees(9, 8)));
-                                else
-                                    cellules[i].push_back(new CelluleAccessible());
-                        cellules[i].push_back(new CelluleObstacle());
-                    }
-                    for(int i=0;i<10;i++) cellules[9].push_back(new CelluleObstacle());
-                    break;
-                }
-    }
-}
+Carte::Carte(int idC, TailleGrille tailleGrilleInit) : tailleGrille(tailleGrilleInit){//WIP
+	id=idC;
+	vector<int> vecGrille;
+    switch (id) {
+		case 0 :{
+			vecGrille = {1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,0,0,0,1,0,0,0,0,0,0,0,1,2,1,0,0,0,1,0,1,0,0,0,0,0,1,2,1,0,1,0,1,0,1,0,0,0,0,0,1,2,1,0,1,0,1,0,1,0,0,0,0,0,1,2,1,0,1,0,0,0,1,0,0,0,0,0,1,2,1,0,1,0,0,0,1,0,0,0,0,0,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1};
+			break;
+		}
+		case 1: {
+			vecGrille ={1,1,1,1,1,1,1,1,2,1,0,0,0,1,1,1,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,0,0,0,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,1,1,1,1,2,1,1,1,1,1,1,1,1};
+			break;
+		}
+	}
+		
+		
+	cellules.resize(tailleGrille.getLongueur());
+	int j =0;
+	for (int indice : vecGrille)
+		switch (indice) {
+			case 0 : {
+				cellules[j].push_back(new CelluleAccessible());
+				break;
+			}
+			case 1 : {
+				cellules[j].push_back(new CelluleObstacle());
+				break;
+			}
+			case 2 : {
+				j=j+1;
+				break;
+			}
+	}
+ }
 
 void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){//WIP
     // On recupere la carte
@@ -65,5 +65,5 @@ Cellule* Carte::getCel(Coordonnees coord){//DONE
 
 
 vector<vector<Cellule*> > Carte::getCellules(){//DONE
-    return cellules;
+     return cellules;
 }
