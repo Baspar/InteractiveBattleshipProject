@@ -32,6 +32,7 @@ void IHMJeu::afficherJeu (){//DONE
 
     this->afficherCarteCourante();
     this->afficherInteraction();
+    cout << jeu->getPersonnageJouable()->getCarte()->getCel(Coordonnees(3,3))->getActionCellule()->isActive();
     this->afficherSaisie();
 }
 
