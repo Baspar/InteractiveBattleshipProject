@@ -17,8 +17,7 @@ Personnage::Personnage(string nomnv):coord(-1,-1) { //WIP
 
 
 void Personnage::deplacer(Coordonnees coordonnees, Carte* carteEntree){//DONE
-	if((carteEntree->getCel(coordonnees)->getTypeDeCellule()!="#") || (( ((CelluleAccessible*) carteEntree->getCel(coordonnees))->getPersonnage())==nullptr)) {
-		cout<<"xddd"<<endl;
+	if( (carteEntree->getCel(coordonnees)->getTypeDeCellule()!="#") && (( ((CelluleAccessible*) carteEntree->getCel(coordonnees))->getPersonnage())==nullptr)) {
 		carteEntree->deplacerPersonnage(this, coordonnees);
 		coord.copy(coordonnees);
 		carte=carteEntree;
