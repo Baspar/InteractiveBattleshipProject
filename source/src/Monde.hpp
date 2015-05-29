@@ -40,6 +40,6 @@ class Monde{
         /// \brief Methode placerActions
         ///
         /// méthode qui place les actions dans le monde
-        void placerActions();
+        void placerActions(vector<Personnage*> listePerso);
 };
 #endif

@@ -60,7 +60,7 @@ Jeu::Jeu(Combat* comb){//WIP
 
     //on place le monde et les actions
     monde.placerJoueurs(listPers,listeIdCarte, listeCoord);
-    monde.placerActions();
+    monde.placerActions(listPers);
 }
 
 

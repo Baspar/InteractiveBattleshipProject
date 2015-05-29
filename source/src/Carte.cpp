@@ -10,21 +10,8 @@
 
 using namespace std;
 
-Carte::Carte(int idC, TailleGrille tailleGrilleInit) : tailleGrille(tailleGrilleInit){//WIP
-	id=idC;
-	vector<int> vecGrille;
-    switch (id) {
-		case 0 :{
-			vecGrille = {1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,0,0,0,1,0,0,0,0,0,0,0,1,2,1,0,0,0,1,0,1,0,0,0,0,0,1,2,1,0,1,0,1,0,1,0,0,0,0,0,1,2,1,0,1,0,1,0,1,0,0,0,0,0,1,2,1,0,1,0,0,0,1,0,0,0,0,0,1,2,1,0,1,0,0,0,1,0,0,0,0,0,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1};
-			break;
-		}
-		case 1: {
-			vecGrille ={1,1,1,1,1,1,1,1,2,1,0,0,0,1,1,1,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,0,0,0,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,1,1,1,1,2,1,1,1,1,1,1,1,1};
-			break;
-		}
-	}
-		
-		
+Carte::Carte(int idC, vector<int> vecGrille, TailleGrille tailleGrilleInit) : tailleGrille(tailleGrilleInit){//WIP
+	id=idC;	
 	cellules.resize(tailleGrille.getLongueur());
 	int j =0;
 	for (int indice : vecGrille)

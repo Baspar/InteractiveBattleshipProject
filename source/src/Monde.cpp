@@ -10,8 +10,10 @@
 using namespace std;
 
 Monde::Monde(){//DONE
-    cartes.push_back(Carte(0,TailleGrille(8,12)));
-    cartes.push_back(Carte(1,TailleGrille(9,8)));
+    vector<int> vecGrille={1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,0,0,0,1,0,0,0,0,0,0,0,1,2,1,0,0,0,1,0,1,0,0,0,0,0,1,2,1,0,1,0,1,0,1,0,0,0,0,0,1,2,1,0,1,0,1,0,1,0,0,0,0,0,1,2,1,0,1,0,0,0,1,0,0,0,0,0,1,2,1,0,1,0,0,0,1,0,0,0,0,0,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1};
+    cartes.push_back(Carte(0,vecGrille,TailleGrille(8,12)));
+	vector<int> vecGrille1={1,1,1,1,1,1,1,1,2,1,0,0,0,1,1,1,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,0,0,0,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,1,1,1,1,2,1,1,1,1,1,1,1,1};
+    cartes.push_back(Carte(1,vecGrille1,TailleGrille(9,8)));
 		
 }
 
@@ -31,7 +33,7 @@ void Monde::placerJoueurs(vector<Personnage*> listePerso, vector<int> listeIdCar
 }
 
 
-void Monde::placerActions(){//WIP {
+void Monde::placerActions(vector<Personnage*> listePerso){//WIP {
 	
 	//Carte 0
 	//Transports
@@ -50,7 +52,7 @@ void Monde::placerActions(){//WIP {
 	cartes[1].getCellules()[4][5]->setAction(new ActionVide("Tu es passé devant moi 3"));
 
 	//Combats
-	//cartes[1].getCellules()[8][7]->setAction(new ActionCombat(listePerso[1], ""));
+	cartes[1].getCellules()[3][3]->setAction(new ActionCombat(listePerso[1], ""));
 		
 }
 
