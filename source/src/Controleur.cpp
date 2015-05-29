@@ -9,7 +9,7 @@
 #include "JoueurIA.hpp"
 
 using namespace std;
-Controleur::Controleur(int i){//DONE
+Controleur::Controleur(){//DONE
     batailleNavale = new BatailleNavale();
     jeu = new Jeu(batailleNavale);
     ihmJeu = new IHMJeu(jeu);
