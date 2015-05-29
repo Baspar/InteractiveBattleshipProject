@@ -20,7 +20,7 @@ CompileBestMainEver: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action
 MainBestMainEver: CompileBestMainEver
 	tests/bestMainEver
 
-CompileMainTestActionCombat: ActionCombat.o
+CompileMainTestActionCombat: ActionCombat.o PersonnageNonJouable.o Action.o Personnage.o Coordonnees.o Carte.o Cellule.o CelluleAccessible.o TailleGrille.o CelluleObstacle.o
 	g++ $(FLAGS) tests/MainTestActionCombat.cpp $^ -o tests/MainTestActionCombat
 MainTestActionCombat: CompileMainTestActionCombat
 	tests/MainTestActionCombat
