@@ -10,6 +10,11 @@ CompileMainTestActionChangementCarte: ActionChangementCarte.o TailleGrille.o Coo
 MainTestActionChangementCarte: CompileMainTestActionChangementCarte
 	tests/MainTestActionChangementCarte
 
+CompileMainTestActionVide: ActionVide.o Action.o 
+	g++ $(FLAGS) tests/MainTestActionVide.cpp $^ -o tests/MainTestVide
+MainTestActionVide: CompileMainTestActionVide
+	tests/MainTestActionVide
+
 CompileBestMainEver: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o Controleur.o CelluleObstacle.o Jeu.o Grille.o BatailleNavale.o IHMBN.o Case.o Bateau.o PersonnageBN.o IHMJeu.o Monde.o PersonnageBN.o ActionCombat.o ArmeClassique.o Arme.o ControleurBN.o JoueurHumain.o  PersonnageBNHumain.o PersonnageJouable.o CelluleChangementCarte.o ActionVide.o JoueurIA.o PersonnageNonJouable.o PersonnageBNIA.o
 	g++ $(FLAGS) tests/bestMainEver.cpp $^ -o tests/bestMainEver
 MainBestMainEver: CompileBestMainEver
@@ -50,11 +55,6 @@ CompileMainTestArme: Arme.o
 	g++ $(FLAGS) tests/MainTestArme.cpp $^ -o tests/MainTestArme
 MainTestArme: CompileMainTestArme
 	tests/MainTestArme
-
-CompileMainTestActionVide: ActionVide.o
-	g++ $(FLAGS) tests/MainTestActionVide.cpp $^ -o tests/MainTestActionVide
-MainTestActionVide: CompileMainTestActionVide
-	tests/MainTestActionVide
 
 CompileMainTestBatailleNavale: PersonnageJouable.o Combat.o BatailleNavale.o Grille.o PersonnageBN.o TailleGrille.o Coordonnees.o Case.o Bateau.o Personnage.o Carte.o CelluleAccessible.o Cellule.o ArmeClassique.o Arme.o PersonnageNonJouable.o PersonnageBNIA.o JoueurIA.o JoueurIACheate.o PersonnageBNIACheate.o ArmeCroix.o PersonnageBNIAAvance.o JoueurIAAvance.o CelluleObstacle.o CelluleChangementCarte.o Controleur.o ActionChangementCarte.o
 	g++ $(FLAGS) tests/MainTestBatailleNavale.cpp $^ -o tests/MainTestBatailleNavale
