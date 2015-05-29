@@ -5,7 +5,7 @@ all: MainTestBateau MainTestCase MainTestGrill
 %.o: %.cpp
 	g++ -c $(FLAGS) $<
 
-CompileMainTestActionChangementCarte: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o CelluleObstacle.o
+CompileMainTestActionChangementCarte: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o CelluleObstacle.o PersonnageJouable.o
 	g++ $(FLAGS) tests/MainTestActionChangementCarte.cpp $^ -o tests/MainTestActionChangementCarte
 MainTestActionChangementCarte: CompileMainTestActionChangementCarte
 	tests/MainTestActionChangementCarte
