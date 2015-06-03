@@ -14,7 +14,7 @@ CelluleAccessible::CelluleAccessible():Cellule(" "){//DONE
 }
 
 bool CelluleAccessible::estAccessible(){//DONE
-    return true;
+    return (occupant==nullptr);
 }
 
 void CelluleAccessible::setPersonnage(Personnage* personnage){//DONE
