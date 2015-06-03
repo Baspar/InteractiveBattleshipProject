@@ -5,6 +5,10 @@
 
 using namespace std;
 
+CelluleAccessible::CelluleAccessible(string type):Cellule(type){//DONE
+	occupant=nullptr;
+}
+
 CelluleAccessible::CelluleAccessible(Personnage* perso):Cellule(" "){//DONE
 	occupant=perso;
 }

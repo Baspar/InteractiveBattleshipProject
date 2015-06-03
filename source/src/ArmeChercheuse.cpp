@@ -10,12 +10,12 @@ ArmeChercheuse::ArmeChercheuse() : Arme("Arme Chercheuse"){//DONE
 
 
 
-void ArmeChercheuse::tirer(Coordonnees coordonnees, Grille* grilleAdverse){//DONE
-  for(int i=0; i<grilleAdverse->getTailleGrille().getHauteur(); i++){
-        for(int j=0; j<grilleAdverse->getTailleGrille().getLongueur(); j++){
-            Case kase = grilleAdverse->getCaseElt(Coordonnees(j, i));
+void ArmeChercheuse::tirer(Coordonnees coordonnees, Grille* grille){//DONE
+  for(int i=0; i<grille->getTailleGrille().getHauteur(); i++){
+        for(int j=0; j<grille->getTailleGrille().getLongueur(); j++){
+            Case kase = grille->getCaseElt(Coordonnees(j, i));
             if (!kase.getTouche() && kase.getBateau()!=nullptr ){
-                grilleAdverse->tirerDessus(Coordonnees(j,i));
+                grille->tirerDessus(Coordonnees(j,i));
 		return;
             }
         }
