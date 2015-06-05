@@ -21,9 +21,9 @@ class Monde{
 
     private :
         /// liste des cartes accessible du monde
-        vector<Carte> cartes;
 
     public:
+        vector<Carte> cartes;
         /// \fn Monde()
         /// \brief Constructeur par défaut
         ///
@@ -35,11 +35,23 @@ class Monde{
         ///
         /// méthode qui place les joueurs dans le monde
         void placerJoueurs(vector<Personnage*> listePerso, vector<int> listeIdCarte, vector<Coordonnees> listeCoord);
-        
+
+        /// \fn void lireCarte()
+        /// \brief Permet la lecture de la carte
+        void lireCarte();
+
+        /// \fn void lireCasesChangementCarte()
+        /// \brief Permet la lecture des case de changement carte
+        void lireCasesChangementCarte();
+
         /// \fn void void placerActions()
         /// \brief Methode placerActions
         ///
         /// méthode qui place les actions dans le monde
         void placerActions(vector<Personnage*> listePerso);
+
+        /// \fn vector<Carte> getCartes() const
+        /// \brief getter du vector de Carte
+        vector<Carte> getCartes();
 };
 #endif

@@ -16,7 +16,7 @@ using namespace std;
 class PersonnageJouable : public Personnage{
 
     public :
-    /// \fn PersonnageJouable(string nomnv)
+        /// \fn PersonnageJouable(string nomnv)
         /// \brief constructeur
         ///
         /// \param nomnv : nom du joueur

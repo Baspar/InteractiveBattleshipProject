@@ -29,6 +29,10 @@ class Cellule{
         /// \brief set l'action
         void setAction(Action* const actionCp);
 
+        /// \fn void setType(string const typeCp)
+        /// \brief set le type
+        void setType(string const typeCp);
+
         /// \fn void lancerAction()
         /// \brief Lance l'action et effectue les modifications nécessaires suite à cette action
         void lancerAction() const;

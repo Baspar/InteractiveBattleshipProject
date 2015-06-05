@@ -2,57 +2,96 @@
 
 #include "Carte.hpp"
 #include "CelluleAccessible.hpp"
+#include "CelluleChangementCarte.hpp"
 #include "ActionChangementCarte.hpp"
 #include "ActionCombat.hpp"
 #include "ActionVide.hpp"
+#include "JoueurIA.hpp"
+#include "JoueurIAAvance.hpp"
+#include "JoueurIACheate.hpp"
+#include "JoueurHumain.hpp"
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
 Monde::Monde(){//DONE
-    vector<int> vecGrille={1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,0,0,0,1,0,0,0,0,0,0,0,1,2,1,0,0,0,1,0,1,0,0,0,0,0,1,2,1,0,1,0,1,0,1,0,0,0,0,0,1,2,1,0,1,0,1,0,1,0,0,0,0,0,1,2,1,0,1,0,0,0,1,0,0,0,0,0,1,2,1,0,1,0,0,0,1,0,0,0,0,0,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1};
-    cartes.push_back(Carte(0,vecGrille,TailleGrille(8,12)));
-	vector<int> vecGrille1={1,1,1,1,1,1,1,1,2,1,0,0,0,1,1,1,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,0,0,0,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,1,0,0,1,2,1,0,0,0,1,1,1,1,2,1,1,1,1,1,1,1,1};
-    cartes.push_back(Carte(1,vecGrille1,TailleGrille(9,8)));
-
+    lireCarte();
+    lireCasesChangementCarte();
 }
+
+void Monde::lireCasesChangementCarte(){//DONE
+    ifstream file("Transport.d", ios::in);
+    int nbCases;
+    file >> nbCases;
+    for(int i=0; i<nbCases; i++){
+        int idCarteDep, xDep, yDep;
+        int idCarteFin, xFin, yFin;
+        file >> idCarteDep >> xDep >> yDep >> idCarteFin >> xFin >> yFin;
+        cartes[idCarteDep].getCellules()[xDep][yDep]->setType("@");
+        cartes[idCarteDep].getCellules()[xDep][yDep]->setAction(
+                new ActionChangementCarte(
+                    &cartes[idCarteDep],
+                    &cartes[idCarteFin],
+                    Coordonnees(xDep, yDep),
+                    Coordonnees(xFin, yFin)
+                    ));
+    }
+}
+void Monde::lireCarte(){//DONE
+    ifstream file("Monde.d", ios::in);
+    int nbCarte;
+    file >> nbCarte;
+    for(int i=0; i<nbCarte; i++){
+        int x, y;
+        file >> x >> y;
+
+        vector<vector<char> > carte;
+
+        for(int j=0; j<y; j++){
+            carte.push_back(vector<char>());
+            for(int k=0; k<x; k++){
+                char car;
+                file >> car;
+                carte[j].push_back(car);
+            }
+        }
+
+        cartes.push_back(Carte(i, carte));
+    }
+    file.close();
+}
+
+
+
 
 void Monde::placerJoueurs(vector<Personnage*> listePerso, vector<int> listeIdCarte, vector<Coordonnees> listeCoord){//DONE
     int i=0;
     if(!(listePerso.empty()))
         for (Personnage* perso : listePerso){
             Coordonnees coordPerso(-1,-1);
-			coordPerso.copy(listeCoord[i]);
+            coordPerso.copy(listeCoord[i]);
             Carte* pointeurCartePerso = &(cartes[listeIdCarte[i]]);
 
             perso->setCoordonnees(coordPerso);
             perso->setCarte(pointeurCartePerso);
             ((CelluleAccessible*) (perso->getCarte()->getCel(coordPerso)))->setPersonnage(perso);
-			i++;
+            i++;
         }
 }
 
 
 void Monde::placerActions(vector<Personnage*> listePerso){//WIP
 
-	//Carte 0
-	//Transports
-	cartes[0].getCellules()[6][10]->setAction(new ActionChangementCarte(&cartes[0], &cartes[1], Coordonnees(6,10), Coordonnees(4,1)));
+    //Textes
+    cartes[0].getCellules()[3][3]->setAction(new ActionVide("Tu es passé devant moi 1"));
+    cartes[0].getCellules()[1][5]->setAction(new ActionVide("Tu es passé devant moi 2"));
 
-	//Textes
-	cartes[0].getCellules()[3][3]->setAction(new ActionVide("Tu es passé devant moi 1"));
-	cartes[0].getCellules()[1][5]->setAction(new ActionVide("Tu es passé devant moi 2"));
+    //Textes
+    cartes[1].getCellules()[4][5]->setAction(new ActionVide("Tu es passé devant moi 3"));
 
-
-	//Carte 1
-	//Transports
-	cartes[1].getCellules()[4][1]->setAction(new ActionChangementCarte(&cartes[1], &cartes[0], Coordonnees(4,1), Coordonnees(6,10)));
-
-	//Textes
-	cartes[1].getCellules()[4][5]->setAction(new ActionVide("Tu es passé devant moi 3"));
-
-	//Combats
-	cartes[1].getCellules()[3][3]->setAction(new ActionCombat(listePerso[1], ""));
+    //Combats
+    cartes[1].getCellules()[3][3]->setAction(new ActionCombat(listePerso[1], ""));
 
 }
 

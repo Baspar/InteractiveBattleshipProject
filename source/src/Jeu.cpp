@@ -1,14 +1,18 @@
 #include "Jeu.hpp"
 
 #include "Coordonnees.hpp"
+#include "Carte.hpp"
 #include "Action.hpp"
 #include "PersonnageNonJouable.hpp"
 #include "PersonnageJouable.hpp"
 #include "JoueurHumain.hpp"
 #include "JoueurIA.hpp"
+#include "JoueurIAAvance.hpp"
+#include "JoueurIACheate.hpp"
 #include "Monde.hpp"
 #include "Combat.hpp"
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -16,58 +20,71 @@ using namespace std;
 Jeu::Jeu(){//TODO
 }
 
-
-
 Jeu::Jeu(Combat* comb){//WIP
-
-    //int nbPersonnageNonJouables=1;
-    vector<int> listeIdCarte;
-    vector<Coordonnees> listeCoord;
-	vector<Personnage*> listPers;
-	
-	listeIdCarte.clear();
-	listeCoord.clear();
-	listPers.clear();
+    lireJoueurs();
 
     actionEnCours = nullptr;
-    
+
     combat=comb;
-    
-    
-    personnageJouable=new JoueurHumain("PoloLePluBô");// ou new JoueurIA();
-    
-    listPers.push_back(personnageJouable); //FAIRE UNE BOUCLE SUR TOUS LES PERSOS
-    listeCoord.push_back(Coordonnees(3,3));
-    listeIdCarte.push_back(0);
 
-	//Personnages IA
-
-    personnagesNonJouables.push_back( new JoueurIA("Ann"));//a faire
-    listPers.push_back(personnagesNonJouables[0]);
-    listeCoord.push_back(Coordonnees(6,3));
-    listeIdCarte.push_back(0);
-    
-    personnagesNonJouables.push_back( new JoueurIA("Damien"));//a faire
-	listPers.push_back(personnagesNonJouables[1]);
-    listeCoord.push_back(Coordonnees(1,9));
-    listeIdCarte.push_back(0);
-    
-    personnagesNonJouables.push_back( new JoueurIA("Blaine"));//a faire
-	listPers.push_back(personnagesNonJouables[2]);
-    listeCoord.push_back(Coordonnees(4,6));
-    listeIdCarte.push_back(1);
-	
-
-    //on place le monde et les actions
-    monde.placerJoueurs(listPers,listeIdCarte, listeCoord);
-    monde.placerActions(listPers);
+    //monde.placerActions(listPers);
 }
 
+void Jeu::lireJoueurs(){//DONE
+    ifstream file("Joueurs.d", ios::in);
+    int idCartePerso, xPerso, yPerso;
+    string nomPerso;
+    file >> nomPerso
+         >> idCartePerso
+         >> xPerso
+         >> yPerso;
+    Carte* cartePerso = &(monde.cartes[idCartePerso]);
+    personnageJouable = new JoueurHumain(nomPerso);
+    personnageJouable->setCarte(cartePerso);
+    personnageJouable->setCoordonnees(Coordonnees(xPerso, yPerso));
+    ((CelluleAccessible*)cartePerso->getCellules()[xPerso][yPerso])->setPersonnage(personnageJouable);
+
+    int nbAdversaire;
+    file >> nbAdversaire;
+    for(int i=0; i<nbAdversaire; i++){
+        int typePerso;
+        string aCasesCombat;
+        file >> typePerso
+             >> nomPerso
+             >> idCartePerso
+             >> xPerso
+             >> yPerso
+             >> aCasesCombat;
+
+        PersonnageNonJouable* perso;
+        switch(typePerso) {
+            case 1: //JoueurIA
+                perso = new JoueurIA(nomPerso);
+                break;
+            case 2: //JoueurIAAvance
+                perso = new JoueurIAAvance(nomPerso);
+                break;
+            case 3: //JoueurIACheate
+                perso = new JoueurIACheate(nomPerso);
+                break;
+        }
+
+        perso->setCarte(cartePerso);
+        perso->setCoordonnees(Coordonnees(xPerso, yPerso));
+        ((CelluleAccessible*)cartePerso->getCellules()[xPerso][yPerso])->setPersonnage(perso);
+
+        personnagesNonJouables.push_back(perso);
+
+
+        if(aCasesCombat == "Y"){
+        }
+    }
+    file.close();
+}
 
 bool Jeu::partieFinie(){//DONE
     return terminee;
 }
-
 
 void Jeu::jouer(Coordonnees coordonnees){//WIP
     personnageJouable->deplacer(coordonnees, personnageJouable->getCarte());
@@ -76,11 +93,9 @@ void Jeu::jouer(Coordonnees coordonnees){//WIP
         actionEnCours->lancerAction();
 }
 
-
 Action* Jeu::getActionEnCours(){//DONE
     return actionEnCours;
 }
-
 
 PersonnageJouable* Jeu::getPersonnageJouable(){//DONE
     return personnageJouable;

@@ -32,22 +32,18 @@ void IHMJeu::afficherJeu (){//DONE
 
     this->afficherCarteCourante();
     this->afficherInteraction();
-    cout << jeu->getPersonnageJouable()->getCarte()->getCel(Coordonnees(3,3))->getActionCellule()->isActive();
     this->afficherSaisie();
 }
 
 void IHMJeu::afficherSaisie (){//DONE
-    cout<<endl;
-    cout<<"Affichage de la zone de saisie";
-    cout<<endl;
+    cout<<"Action ?"<< endl;
 }
 
 void IHMJeu::afficherInteraction(){//DONE
-	cout << "Affichage de l'action en cours" << endl;
 	if(jeu->getActionEnCours()!=nullptr){
+        cout << "Affichage de l'action en cours" << endl;
 		cout << jeu->getActionEnCours()->getTexteInteraction() << endl;
 	}
-	else cout<< endl;
 }
 
 void IHMJeu::afficherCarteCourante(){//WIP
@@ -57,20 +53,16 @@ void IHMJeu::afficherCarteCourante(){//WIP
     for(vector<Cellule*> cels : jeu->getPersonnageJouable()->getCarte()->getCellules()) {
         for(Cellule* cel : cels) {
 			string type = cel->getTypeDeCellule();
-			
+
 			if(type==" ")
 				if( ((CelluleAccessible*) cel)->getPersonnage()!=nullptr) {
 					if(((CelluleAccessible*) cel)->getPersonnage() == jeu->getPersonnageJouable())
 						cout << "ô";
 					else cout << "8";
-				}
-				else {
-						if(cel->getActionCellule()!=nullptr)
-							cout << "?";
-						else cout << type;
-					}
-				
-			else cout << type;
+				} else
+                    cout << type;
+			else
+                cout << type;
 		cout <<" ";
         }
         cout<< endl;

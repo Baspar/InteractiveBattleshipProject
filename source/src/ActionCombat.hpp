@@ -35,7 +35,7 @@ class ActionCombat : public Action{
         void lancerAction();
 
 
-    /// \fn Personnage* getAdversaire() const
+        /// \fn Personnage* getAdversaire() const
         /// \brief getter
         ///
         /// \return adversaire

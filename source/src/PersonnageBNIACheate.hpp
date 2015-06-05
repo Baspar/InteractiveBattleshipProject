@@ -1,7 +1,7 @@
 #ifndef PERSONNAGEBNIACheateCHEATE_H
 #define PERSONNAGEBNIACheateCHEATE_H
 
-/// \file PersonnageBNIACheateCheate.hpp
+/// \file PersonnageBNIACheate.hpp
 /// \brief Personnages de bataille navale dotés d'une intelligence artificielle
 /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 

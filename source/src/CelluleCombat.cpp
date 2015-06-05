@@ -6,7 +6,7 @@
 
 using namespace std;
 
-CelluleCombat::CelluleCombat(Personnage* adv):CelluleAccessible(){//DONE
+CelluleCombat::CelluleCombat(Personnage* adv):CelluleAccessible("x"){//DONE
 	adversaire=adv;
     setAction(new ActionCombat(adv, "J'aime les shorts"));
 }

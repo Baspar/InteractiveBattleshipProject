@@ -50,14 +50,14 @@ class Coordonnees {
         /// \return entier correspondant à l'ordonnée
         int getOrdonnee() const;
 
-        /// \fn int setOrdonnee()
+        /// \fn int setOrdonnee(const int o)
         /// \brief setteur de l'ordonnée
-        /// \param entier correspondant à l'ordonnée
+        /// \param o : entier correspondant à l'ordonnée
         void setOrdonnee(const int o);
 
-        /// \fn int setAbscisse()
+        /// \fn int setAbscisse(const int a)
         /// \brief setteur de l'abscisse
-        /// \param entier correspondant à l'abscisse
+        /// \param a : entier correspondant à l'abscisse
         void setAbscisse(const int a);
 
 

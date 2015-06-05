@@ -10,7 +10,7 @@
 
 using namespace std;
 
-/// \class JoueurDhumainBNia
+/// \class JoueurIAAvance
 /// \brief classe définissant un joueur IA
 ///
 /// La classe représente un joueur IA se déplaçant sur la carte
