@@ -9,6 +9,10 @@
 
 using namespace std;
 
+void ClearScreen(){
+    cout << string( 100, '\n' );
+}
+
 IHMJeu::IHMJeu (Jeu* jeuEntree){//DONE
     jeu=jeuEntree;
 }
@@ -29,9 +33,9 @@ Coordonnees IHMJeu::saisieDeplacement (){//DONE
 }
 
 void IHMJeu::afficherJeu (){//DONE
-
-    this->afficherCarteCourante();
+    ClearScreen();
     this->afficherInteraction();
+    this->afficherCarteCourante();
     this->afficherSaisie();
 }
 
@@ -40,30 +44,26 @@ void IHMJeu::afficherSaisie (){//DONE
 }
 
 void IHMJeu::afficherInteraction(){//DONE
-	if(jeu->getActionEnCours()!=nullptr){
-        cout << "Affichage de l'action en cours" << endl;
-		cout << jeu->getActionEnCours()->getTexteInteraction() << endl;
-	}
+    if(jeu->getActionEnCours()!=nullptr)
+        cout << jeu->getActionEnCours()->getTexteInteraction() << endl;
 }
 
 void IHMJeu::afficherCarteCourante(){//WIP
-    cout<<endl;
-    cout<<"Affichage de la carte courante";
-    cout<<endl;
     for(vector<Cellule*> cels : jeu->getPersonnageJouable()->getCarte()->getCellules()) {
         for(Cellule* cel : cels) {
-			string type = cel->getTypeDeCellule();
+            string type = cel->getTypeDeCellule();
 
-			if(type==" ")
-				if( ((CelluleAccessible*) cel)->getPersonnage()!=nullptr) {
-					if(((CelluleAccessible*) cel)->getPersonnage() == jeu->getPersonnageJouable())
-						cout << "ô";
-					else cout << "8";
-				} else
+            if(type==" " || type=="@" || type=="x"){
+                if( ((CelluleAccessible*) cel)->getPersonnage()!=nullptr) {
+                    if(((CelluleAccessible*) cel)->getPersonnage() == jeu->getPersonnageJouable())
+                        cout << "ô";
+                    else cout << "8";
+                } else
                     cout << type;
-			else
-                cout << type;
-		cout <<" ";
+            } else
+                    cout << type;
+
+            cout <<" ";
         }
         cout<< endl;
     }

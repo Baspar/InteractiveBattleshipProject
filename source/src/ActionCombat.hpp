@@ -24,8 +24,8 @@ class ActionCombat : public Action{
         /// \brief Constructeur
         ///
         /// Constructeur de la classe ActionCombat
-    /// \param texte: texte a afficher
-    /// \param adversairenv: adversaire a affronter
+        /// \param texte: texte a afficher
+        /// \param adversairenv: adversaire a affronter
         ActionCombat(Personnage* adversairenv, string texte);
 
         /// \fn void lancerAction()

@@ -7,8 +7,10 @@ PoloLePluBô 0 3 3
 1 Damien
     0
     1 9
-    N
-1 Blaine
+    Y 1
+        0 2 9
+3 Blaine
     1
     4 6
-    N
+    Y 1
+        1 4 5

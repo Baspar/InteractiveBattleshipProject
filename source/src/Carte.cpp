@@ -50,11 +50,9 @@ void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){
     cell2->setPersonnage(personnage);
 }
 
-
 Cellule* Carte::getCel(Coordonnees coord){//DONE
     return cellules[coord.getAbscisse()][coord.getOrdonnee()];
 }
-
 
 vector<vector<Cellule*> > Carte::getCellules(){//DONE
      return cellules;

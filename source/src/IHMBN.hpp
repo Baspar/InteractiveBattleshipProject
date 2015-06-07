@@ -26,8 +26,12 @@ class IHMBN{
         /// \brief Affichage grille bateaux
         ///
         /// Affiche la grille où les bateaux du joueur courant sont placés
-	/// \param Grille* que l'on 
+        /// \param Grille* que l'on
         void afficherGrilleBateaux(Grille grille);
+
+        /// \fn void ClearScreen()
+        /// \brief Nettoi l'écran
+        void ClearScreen();
 
         // Pointeur sur la bataille navale affichée
         BatailleNavale* batailleNavale;
@@ -83,7 +87,7 @@ class IHMBN{
         /// \return La grille après placement des bateaux
         Grille saisirPlacementBateaux(PersonnageBN* pers);
 
-   
+
 
 };
 #endif

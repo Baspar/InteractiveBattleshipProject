@@ -3,6 +3,8 @@
 #include "Coordonnees.hpp"
 #include "Carte.hpp"
 #include "Action.hpp"
+#include "ActionCombat.hpp"
+#include "CelluleCombat.hpp"
 #include "PersonnageNonJouable.hpp"
 #include "PersonnageJouable.hpp"
 #include "JoueurHumain.hpp"
@@ -38,7 +40,7 @@ void Jeu::lireJoueurs(){//DONE
          >> idCartePerso
          >> xPerso
          >> yPerso;
-    Carte* cartePerso = &(monde.cartes[idCartePerso]);
+    Carte* cartePerso = monde.getCarte(idCartePerso);
     personnageJouable = new JoueurHumain(nomPerso);
     personnageJouable->setCarte(cartePerso);
     personnageJouable->setCoordonnees(Coordonnees(xPerso, yPerso));
@@ -69,6 +71,7 @@ void Jeu::lireJoueurs(){//DONE
                 break;
         }
 
+        cartePerso = monde.getCarte(idCartePerso);
         perso->setCarte(cartePerso);
         perso->setCoordonnees(Coordonnees(xPerso, yPerso));
         ((CelluleAccessible*)cartePerso->getCellules()[xPerso][yPerso])->setPersonnage(perso);
@@ -77,6 +80,17 @@ void Jeu::lireJoueurs(){//DONE
 
 
         if(aCasesCombat == "Y"){
+            int nbCasesCombat;
+            file >> nbCasesCombat;
+            for(int j=0; j<nbCasesCombat; j++){
+                int xCase, yCase, idCarteCase;
+                file >> idCarteCase >> xCase >> yCase;
+                //vector<vector<Cellule*> > Cartes = monde.cartes[idCarteCase].getCellules();
+                //Cartes[xCase][yCase]=new CelluleCombat(perso);
+                //cout << monde.cartes[idCarteCase].getCellules()[xCase][yCase]->getTypeDeCellule();
+                monde.getCarte(idCarteCase)->getCellules()[xCase][yCase]->setType("x");
+                monde.getCarte(idCarteCase)->getCellules()[xCase][yCase]->setAction(new ActionCombat(perso, "J'aime les short"));
+            }
         }
     }
     file.close();

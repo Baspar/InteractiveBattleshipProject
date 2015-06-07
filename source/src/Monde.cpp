@@ -61,6 +61,9 @@ void Monde::lireCarte(){//DONE
     }
     file.close();
 }
+Carte* Monde::getCarte(int id){
+    return &cartes[id];
+}
 
 
 

@@ -21,9 +21,9 @@ class Monde{
 
     private :
         /// liste des cartes accessible du monde
+        vector<Carte> cartes;
 
     public:
-        vector<Carte> cartes;
         /// \fn Monde()
         /// \brief Constructeur par défaut
         ///
@@ -50,8 +50,9 @@ class Monde{
         /// méthode qui place les actions dans le monde
         void placerActions(vector<Personnage*> listePerso);
 
-        /// \fn vector<Carte> getCartes() const
-        /// \brief getter du vector de Carte
-        vector<Carte> getCartes();
+        /// \fn Carte* getCarte(int id)
+        /// \brief getter
+        /// \param id : numero de la carte
+        Carte* getCarte(int id);
 };
 #endif
