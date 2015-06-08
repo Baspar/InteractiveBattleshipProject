@@ -49,8 +49,21 @@ void IHMJeu::afficherSaisie (){//DONE
 }
 
 void IHMJeu::afficherInteraction(){//DONE
-    if(jeu->getActionEnCours()!=nullptr)
-        cout << jeu->getActionEnCours()->getTexteInteraction() << endl;
+    if(jeu->getActionEnCours()!=nullptr){
+        string txt = jeu->getActionEnCours()->getTexteInteraction();
+        cout << "+-";
+        for (int i=0; i<txt.length(); i++)
+            cout << "-";
+        cout << "-+"<< endl;
+
+        cout << "| " << txt << " |" << endl;
+
+        cout << "+-";
+        for (int i=0; i<txt.length(); i++)
+            cout << "-";
+        cout << "-+"<< endl;
+    }
+
 }
 
 void IHMJeu::afficherCarteCourante(){//WIP

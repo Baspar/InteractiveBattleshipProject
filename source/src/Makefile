@@ -1,9 +1,14 @@
-FLAGS=-std=c++11 -I .
+FLAGS=-std=c++11
 
-all: MainTestBateau MainTestCase MainTestGrill
+all: Main
 
 %.o: %.cpp
 	g++ -c $(FLAGS) $<
+
+CompileMain: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o Controleur.o CelluleObstacle.o Jeu.o Grille.o BatailleNavale.o IHMBN.o Case.o Bateau.o PersonnageBN.o IHMJeu.o Monde.o PersonnageBN.o ActionCombat.o ArmeClassique.o Arme.o ControleurBN.o JoueurHumain.o  PersonnageBNHumain.o PersonnageJouable.o CelluleChangementCarte.o ActionVide.o JoueurIA.o PersonnageNonJouable.o PersonnageBNIA.o JoueurIAAvance.o  JoueurIACheate.o PersonnageBNIACheate.o PersonnageBNIAAvance.o CelluleCombat.o
+	g++ $(FLAGS) main.cpp $^ -o main
+Main: CompileMain
+	./main
 
 CompileMainTestActionChangementCarte: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o CelluleObstacle.o PersonnageJouable.o
 	g++ $(FLAGS) tests/MainTestActionChangementCarte.cpp $^ -o tests/MainTestActionChangementCarte
@@ -15,7 +20,7 @@ CompileMainTestActionVide: ActionVide.o Action.o
 MainTestActionVide: CompileMainTestActionVide
 	tests/MainTestActionVide
 
-CompileBestMainEver: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o Controleur.o CelluleObstacle.o Jeu.o Grille.o BatailleNavale.o IHMBN.o Case.o Bateau.o PersonnageBN.o IHMJeu.o Monde.o PersonnageBN.o ActionCombat.o ArmeClassique.o Arme.o ControleurBN.o JoueurHumain.o  PersonnageBNHumain.o PersonnageJouable.o CelluleChangementCarte.o ActionVide.o JoueurIA.o PersonnageNonJouable.o PersonnageBNIA.o JoueurIAAvance.o  JoueurIACheate.o PersonnageBNIACheate.o PersonnageBNIAAvance.o CelluleCombat.o
+CompileBestMainEver: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o Controleur.o CelluleObstacle.o Jeu.o Grille.o BatailleNavale.o IHMBN.o Case.o Bateau.o PersonnageBN.o IHMJeu.o Monde.o PersonnageBN.o ActionCombat.o ArmeClassique.o Arme.o ControleurBN.o JoueurHumain.o  PersonnageBNHumain.o PersonnageJouable.o CelluleChangementCarte.o ActionVide.o JoueurIA.o PersonnageNonJouable.o PersonnageBNIA.o
 	g++ $(FLAGS) tests/bestMainEver.cpp $^ -o tests/bestMainEver
 MainBestMainEver: CompileBestMainEver
 	tests/bestMainEver
@@ -188,4 +193,4 @@ MainTestControleurBN: CompileMainTestControleurBN
 	tests/MainTestControleurBN
 
 clean:
-	rm -rf *.o *~ tests/*~; find ./tests/ -type f ! -name "*.*" -exec rm {} \;
+	rm -rf *.o *~ tests/*~ main; find ./tests/ -type f ! -name "*.*" -exec rm {} \;
