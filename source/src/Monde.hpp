@@ -30,25 +30,17 @@ class Monde{
         /// Constructeur de la classe Monde par défaut
         Monde();
 
-        /// \fn void placerJoueurs(vector<Personnage> listePerso, vector<int> listeIdCarte, vector<Coordonnees> listeCoord)
-        /// \brief Methode placerJoueurs
-        ///
-        /// méthode qui place les joueurs dans le monde
-        void placerJoueurs(vector<Personnage*> listePerso, vector<int> listeIdCarte, vector<Coordonnees> listeCoord);
-
         /// \fn void lireCarte()
         /// \brief Permet la lecture de la carte
         void lireCarte();
 
+        /// \fn void lireAction()
+        /// \brief Lit les action vide à inserer
+        void lireAction();
+
         /// \fn void lireCasesChangementCarte()
         /// \brief Permet la lecture des case de changement carte
         void lireCasesChangementCarte();
-
-        /// \fn void void placerActions()
-        /// \brief Methode placerActions
-        ///
-        /// méthode qui place les actions dans le monde
-        void placerActions(vector<Personnage*> listePerso);
 
         /// \fn Carte* getCarte(int id)
         /// \brief getter

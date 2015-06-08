@@ -5,11 +5,12 @@
 #include "CelluleAccessible.hpp"
 #include "JoueurHumain.hpp"
 #include <iostream>
+#include <limits>
 
 
 using namespace std;
 
-void ClearScreen(){
+void IHMJeu::ClearScreen(){
     cout << string( 100, '\n' );
 }
 
@@ -19,7 +20,11 @@ IHMJeu::IHMJeu (Jeu* jeuEntree){//DONE
 
 Coordonnees IHMJeu::saisieDeplacement (){//DONE
     int deplacement=0;
-    cin >> deplacement;
+    while(!(cin >> deplacement)){
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Entrée invalide, réessayez: ";
+    }
 
     Coordonnees coord(jeu->getPersonnageJouable()->getCoordonnees());
 
@@ -40,7 +45,7 @@ void IHMJeu::afficherJeu (){//DONE
 }
 
 void IHMJeu::afficherSaisie (){//DONE
-    cout<<"Action ?"<< endl;
+    cout<<"Action ? (2, 4, 6 ou 8)"<< endl;
 }
 
 void IHMJeu::afficherInteraction(){//DONE

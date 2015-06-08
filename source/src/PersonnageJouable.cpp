@@ -6,6 +6,9 @@
 using namespace std;
 
 
-PersonnageJouable::PersonnageJouable(string nomnv):Personnage(nomnv) {//WIP
-
+PersonnageJouable::PersonnageJouable(string nomnv, Coordonnees coord, Carte* idCarte):Personnage(nomnv), coordInit(coord){//DONE
+    idCarteInit = idCarte;
+}
+void PersonnageJouable::deplacementInitial(){
+    deplacer(coordInit, idCarteInit);
 }

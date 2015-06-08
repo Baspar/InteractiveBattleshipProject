@@ -18,10 +18,11 @@ using namespace std;
 Monde::Monde(){//DONE
     lireCarte();
     lireCasesChangementCarte();
+    lireAction();
 }
 
 void Monde::lireCasesChangementCarte(){//DONE
-    ifstream file("Transport.d", ios::in);
+    ifstream file("donnees/Transport.d", ios::in);
     int nbCases;
     file >> nbCases;
     for(int i=0; i<nbCases; i++){
@@ -39,7 +40,7 @@ void Monde::lireCasesChangementCarte(){//DONE
     }
 }
 void Monde::lireCarte(){//DONE
-    ifstream file("Monde.d", ios::in);
+    ifstream file("donnees/Monde.d", ios::in);
     int nbCarte;
     file >> nbCarte;
     for(int i=0; i<nbCarte; i++){
@@ -61,40 +62,20 @@ void Monde::lireCarte(){//DONE
     }
     file.close();
 }
-Carte* Monde::getCarte(int id){
+void Monde::lireAction(){//DONE
+    ifstream file("donnees/Textes.d", ios::in);
+    int nbActionsVide;
+    file >> nbActionsVide;
+    for(int i=0; i<nbActionsVide; i++){
+        int idCarte, xCase, yCase;
+        string texte;
+        file >> idCarte >> xCase >> yCase;
+        getline(file, texte);
+        cartes[idCarte].getCellules()[xCase][yCase]->setAction(new ActionVide(texte));
+    }
+    file.close();
+}
+
+Carte* Monde::getCarte(int id){//DONE
     return &cartes[id];
 }
-
-
-
-
-void Monde::placerJoueurs(vector<Personnage*> listePerso, vector<int> listeIdCarte, vector<Coordonnees> listeCoord){//DONE
-    int i=0;
-    if(!(listePerso.empty()))
-        for (Personnage* perso : listePerso){
-            Coordonnees coordPerso(-1,-1);
-            coordPerso.copy(listeCoord[i]);
-            Carte* pointeurCartePerso = &(cartes[listeIdCarte[i]]);
-
-            perso->setCoordonnees(coordPerso);
-            perso->setCarte(pointeurCartePerso);
-            ((CelluleAccessible*) (perso->getCarte()->getCel(coordPerso)))->setPersonnage(perso);
-            i++;
-        }
-}
-
-
-void Monde::placerActions(vector<Personnage*> listePerso){//WIP
-
-    //Textes
-    cartes[0].getCellules()[3][3]->setAction(new ActionVide("Tu es passé devant moi 1"));
-    cartes[0].getCellules()[1][5]->setAction(new ActionVide("Tu es passé devant moi 2"));
-
-    //Textes
-    cartes[1].getCellules()[4][5]->setAction(new ActionVide("Tu es passé devant moi 3"));
-
-    //Combats
-    cartes[1].getCellules()[3][3]->setAction(new ActionCombat(listePerso[1], ""));
-
-}
-

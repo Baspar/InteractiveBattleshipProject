@@ -1,10 +1,11 @@
-PoloLePluBô 0 3 3
+PoloLePluBô 0 6 1
 3
 1 Ann
     0
-    6 3
-    N
-1 Damien
+    6 4
+    Y 1
+        0 5 5
+2 Damien
     0
     1 9
     Y 1

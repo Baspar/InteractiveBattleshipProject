@@ -33,7 +33,7 @@ Jeu::Jeu(Combat* comb){//WIP
 }
 
 void Jeu::lireJoueurs(){//DONE
-    ifstream file("Joueurs.d", ios::in);
+    ifstream file("donnees/Joueurs.d", ios::in);
     int idCartePerso, xPerso, yPerso;
     string nomPerso;
     file >> nomPerso
@@ -41,7 +41,7 @@ void Jeu::lireJoueurs(){//DONE
          >> xPerso
          >> yPerso;
     Carte* cartePerso = monde.getCarte(idCartePerso);
-    personnageJouable = new JoueurHumain(nomPerso);
+    personnageJouable = new JoueurHumain(nomPerso, Coordonnees(xPerso, yPerso), cartePerso);
     personnageJouable->setCarte(cartePerso);
     personnageJouable->setCoordonnees(Coordonnees(xPerso, yPerso));
     ((CelluleAccessible*)cartePerso->getCellules()[xPerso][yPerso])->setPersonnage(personnageJouable);
