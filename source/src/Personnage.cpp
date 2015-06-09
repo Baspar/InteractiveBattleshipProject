@@ -11,7 +11,7 @@ using namespace std;
 
 
 
-Personnage::Personnage(string nomnv):coord(-1,-1) { //WIP
+Personnage::Personnage(string nomnv):coord(-1,-1) { //DONE
 	carte=nullptr;
 	inventaire=new Inventaire();
 	nom=nomnv;

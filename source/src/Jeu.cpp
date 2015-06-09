@@ -20,7 +20,7 @@
 using namespace std;
 
 
-Jeu::Jeu(Combat* comb){//WIP
+Jeu::Jeu(Combat* comb){//DONE
     lireJoueurs();
 
     actionEnCours = nullptr;
@@ -102,7 +102,7 @@ bool Jeu::partieFinie(){//DONE
 
 }
 
-void Jeu::jouer(Coordonnees coordonnees){//WIP
+void Jeu::jouer(Coordonnees coordonnees){//DONE
     personnageJouable->deplacer(coordonnees, personnageJouable->getCarte());
     actionEnCours = personnageJouable->getCarte()->getCel((personnageJouable->getCoordonnees()))->getAction();
     if(actionEnCours!=0)
