@@ -244,7 +244,7 @@ CompileTestPersonnageBNHumain: PersonnageBNHumain.o
 CompileTestPersonnageBNIA: PersonnageBNIA.o
 	g++ $(FLAGSTEST) tests/TestPersonnageBNIA.cpp $^ -o tests/TestPersonnageBNIA
 
-CompileTestPersonnage: Personnage.o
+CompileTestPersonnage: Personnage.o Coordonnees.o Carte.o Inventaire.o BadgeFinal.o Cellule.o CelluleAccessible.o TailleGrille.o CelluleObstacle.o Objet.o
 	g++ $(FLAGSTEST) tests/TestPersonnage.cpp $^ -o tests/TestPersonnage
 
 CompileTestPersonnageJouable: PersonnageJouable.o Personnage.o Coordonnees.o Carte.o TailleGrille.o CelluleAccessible.o Cellule.o
