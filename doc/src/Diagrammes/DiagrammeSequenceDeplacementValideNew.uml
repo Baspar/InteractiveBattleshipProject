@@ -1,0 +1,28 @@
+@startuml
+activate Controleur
+    Controleur -> Joueur : getJoueurCourant()
+    activate Joueur
+    deactivate Joueur
+
+    Joueur -> Carte :getCarte()
+    activate Carte
+    deactivate Carte
+
+    Carte-> Cellule:getCellule()
+    note right of Carte
+        On prend les coordonnées en entrée, 
+        on prend la carte du joueur, 
+        on regarde si la cellule 
+        de déplacement est valide
+    end note
+    activate Cellule
+        Cellule -> Cellule :celluleValide()
+        activate Cellule
+            Controleur <-- Cellule: VRAI
+        deactivate Cellule
+        Controleur <-- Cellule: FAUX
+    deactivate Cellule
+
+
+deactivate Controleur
+@enduml
