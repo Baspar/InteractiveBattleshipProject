@@ -52,6 +52,9 @@ TestArmeFatale: CompileTestArmeFatale
 TestArme: CompileTestArme
 	tests/TestArme
 
+TestBadgeFinal: CompileTestBadgeFinal
+	tests/TestBadgeFinal
+
 TestBatailleNavale: CompileTestBatailleNavale
 	tests/TestBatailleNavale
 
@@ -168,6 +171,9 @@ CompileTestArmeFatale:  ArmeFatale.o Coordonnees.o Grille.o  Case.o TailleGrille
 
 CompileTestArme: Arme.o
 	g++ $(FLAGSTEST) tests/TestArme.cpp $^ -o tests/TestArme
+
+CompileTestBadgeFinal: BadgeFinal.o Objet.o
+	g++ $(FLAGSTEST) tests/TestBadgeFinal.cpp $^ -o tests/TestBadgeFinal
 
 CompileTestBatailleNavale: PersonnageJouable.o Combat.o BatailleNavale.o Grille.o PersonnageBN.o TailleGrille.o Coordonnees.o Case.o Bateau.o Personnage.o Carte.o CelluleAccessible.o Cellule.o ArmeClassique.o Arme.o PersonnageNonJouable.o PersonnageBNIA.o JoueurIA.o JoueurIACheate.o PersonnageBNIACheate.o ArmeCroix.o PersonnageBNIAAvance.o JoueurIAAvance.o CelluleObstacle.o CelluleChangementCarte.o Controleur.o ActionChangementCarte.o
 	g++ $(FLAGSTEST) tests/TestBatailleNavale.cpp $^ -o tests/TestBatailleNavale
