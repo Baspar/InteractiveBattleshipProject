@@ -35,43 +35,38 @@ class Jeu{
         bool terminee;
 
     public:
+        /// \fn Jeu(Combat* comb)
+        /// \brief Constructeur parametre
+        /// \param comb : combat à utiliser
+        Jeu(Combat* comb);
 
-    /// \fn Jeu()
-    /// \brief Constructeur
-    Jeu();
+        /// \fn void lireJoueurs()
+        /// \brief Lit les joueurs
+        void lireJoueurs();
 
-    /// \fn Jeu(Combat* comb)
-    /// \brief Constructeur parametre
-    /// \param comb : combat à utiliser
-    Jeu(Combat* comb);
+        /// \fn bool partieFinie()
+        /// \brief voir si partie finie
+        /// \return Renvoie vrai si le jeu est fini, sinon faux
+        bool partieFinie();
 
-    /// \fn void lireJoueurs()
-    /// \brief Lit les joueurs
-    void lireJoueurs();
+        /// \fn void jouer(Coordonnees coordonnees)
+        /// \brief déplacement héros, lancement action
+        ///  Déplace notre héros puis lance l'action
+        void jouer(Coordonnees coordonnees);
 
-    /// \fn bool partieFinie()
-    /// \brief voir si partie finie
-    /// \return Renvoie vrai si le jeu est fini, sinon faux
-    bool partieFinie();
+        /// \fn Action getActionEnCours()
+        /// \brief Getter actionEnCours
+        /// \return Action en cours
+        Action* getActionEnCours();
 
-    /// \fn void jouer(Coordonnees coordonnees)
-    /// \brief déplacement héros, lancement action
-    ///  Déplace notre héros puis lance l'action
-    void jouer(Coordonnees coordonnees);
+        /// \fn PersonnageJouable* getPersonnageJouable()
+        /// \brief Getter personnageJouable
+        /// \return Personnage jouable
+        PersonnageJouable* getPersonnageJouable();
 
-    /// \fn Action getActionEnCours()
-    /// \brief Getter actionEnCours
-    /// \return Action en cours
-    Action* getActionEnCours();
-
-    /// \fn PersonnageJouable* getPersonnageJouable()
-    /// \brief Getter personnageJouable
-    /// \return Personnage jouable
-    PersonnageJouable* getPersonnageJouable();
-
-    /// \fn void setTerminee(bool bol)
-    /// \brief Setter terminee
-    /// \param bol :la valeur de terminee
-    void setTerminee(bool bol);
+        /// \fn void setTerminee(bool bol)
+        /// \brief Setter terminee
+        /// \param bol :la valeur de terminee
+        void setTerminee(bool bol);
 };
 #endif

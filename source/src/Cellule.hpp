@@ -45,14 +45,14 @@ class Cellule{
         /// \return un booleen: vrai si la cellule est accessible, faux sinon
         virtual bool estAccessible()=0;
 
-        /// \fn string getTypeDeCellule() const
+        /// \fn string getType() const
         /// \brief Getter typeDeCellule
         /// \return Type de cellule
-        string getTypeDeCellule() const;
+        string getType() const;
 
-        /// \fn Action* getActionCellule()
+        /// \fn Action* getAction()
         /// \brief Getter Action
         /// \return action de la cellule
-        Action* getActionCellule() const;
+        Action* getAction() const;
 };
 #endif
