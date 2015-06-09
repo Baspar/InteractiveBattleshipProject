@@ -26,7 +26,7 @@ void Personnage::deplacer(Coordonnees coordonnees, Carte* carteEntree){//DONE
 	}
 }
 
-string Personnage::getNom() const{
+string Personnage::getNom() const{//DONE
 	return nom;
 }
 
@@ -48,6 +48,6 @@ void Personnage::setCarte(Carte* carteSet){//DONE
 }
 
 
-Inventaire* Personnage::getInventaire() {
+Inventaire* Personnage::getInventaire() {//DONE
 	return inventaire;
 }
