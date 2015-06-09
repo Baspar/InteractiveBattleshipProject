@@ -81,7 +81,7 @@ void Jeu::lireJoueurs(){//DONE
         if(aCasesCombat == "Y"){
             int nbCasesCombat;
             file >> nbCasesCombat;
-            Action* action = new ActionCombat(perso, "")
+            Action* action = new ActionCombat(perso, "");
             for(int j=0; j<nbCasesCombat; j++){
                 int xCase, yCase, idCarteCase;
                 file >> idCarteCase >> xCase >> yCase;
