@@ -99,7 +99,7 @@ bool Jeu::partieFinie(){//DONE
 
 void Jeu::jouer(Coordonnees coordonnees){//WIP
     personnageJouable->deplacer(coordonnees, personnageJouable->getCarte());
-    actionEnCours = personnageJouable->getCarte()->getCel((personnageJouable->getCoordonnees()))->getActionCellule();
+    actionEnCours = personnageJouable->getCarte()->getCel((personnageJouable->getCoordonnees()))->getAction();
     if(actionEnCours!=0)
         actionEnCours->lancerAction();
 }

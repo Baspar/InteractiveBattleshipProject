@@ -69,7 +69,7 @@ void IHMJeu::afficherInteraction(){//DONE
 void IHMJeu::afficherCarteCourante(){//WIP
     for(vector<Cellule*> cels : jeu->getPersonnageJouable()->getCarte()->getCellules()) {
         for(Cellule* cel : cels) {
-            string type = cel->getTypeDeCellule();
+            string type = cel->getType();
 
             if(type==" " || type=="@" || type=="x"){
                 if( ((CelluleAccessible*) cel)->getPersonnage()!=nullptr) {
