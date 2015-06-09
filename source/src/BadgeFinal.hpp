@@ -22,7 +22,7 @@ class BadgeFinal : public Objet{
         BadgeFinal();
 
         /// \fn bool metFinAuJeu() const
-        /// \brief Methode Virtuelle pure retournant si l'objet
-        bool metFinAuJeu() const;
+        /// \brief Methode Virtuelle pure retournant si l'objet met fin au jeu
+        virtual bool metFinAuJeu() const;
 };
 #endif
