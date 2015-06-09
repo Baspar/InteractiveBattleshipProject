@@ -9,9 +9,8 @@
 using namespace std;
 
 int main(){
-	vector<int> vec={0,0,2,0,0}; 
-	Carte* carteD = new Carte(0,vec,TailleGrille(2,2));
-	Carte* carteA = new Carte(1,vec,TailleGrille(2,2));
+	Carte* carteD = new Carte(0,vec);
+	Carte* carteA = new Carte(1,vec);
 	Coordonnees coordD(0,0);
 	Coordonnees coordA(1,0);
 	PersonnageJouable* pers = new PersonnageJouable("Jerôme");
