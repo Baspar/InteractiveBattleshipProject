@@ -1,33 +1,20 @@
 @startuml
-activate Controleur
-       Controleur->Controleur : Jouer()
-           note right of Controleur
-                loop tant que la partie n'est pas finie
-           end note
-       Controleur-> IHM: afficherGrille()
-       activate IHM
-       deactivate IHM
-          note right of IHM 
-              affiche deux grilles pour le joueur courant (ses bateaux et la grille sur laquelle il touche l'adversaire)
-          end note
-       Controleur->Jeu : getJoueurCourant()
-       activate Jeu
-       deactivate Jeu
-       Controleur->IHM : saisirCoup()
-       activate IHM
-       deactivate IHM 
-          note right of IHM
-              scénario dans le cas d'un joueur humain
-          end note
-       Controleur->Jeu: jouerCoup()
-       activate Jeu
-       deactivate Jeu
-        Controleur->Jeu: PartieFinie()
-       activate Jeu
-       deactivate Jeu
-           note right of Jeu
-              vrai ou faux
-           end note
-       
-deactivate Controleur
+activate ControleurBN
+activate IHMBN
+ControleurBN->IHMBN:afficherJeu()
+ControleurBN->IHMBN:getJoueur()
+alt Si le joueur est un joueur Humain
+activate Coordonnees
+IHMBN->Coordonnees:getCoordonneesAViser
+IHMBN <-- Coordonnees:CoordonneesAViser
+IHMBN->ControleurBN:jouer(CoordonneesAViser)
+else Si le joueur est un joueur Ordinateur
+IHMBN->Coordonnees:getCoordonneesParDefaut
+IHMBN<--Coordonnees:CoordonneesParDefaut
+IHMBN->ControleurBN:jouer(CoordonneesParDefaut)
+end
+deactivate Coordonnees
+deactivate IHMBN
+ControleurBN->ControleurBN:Resultat()
+deactivate ControleurBN
 @enduml

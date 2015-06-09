@@ -13,6 +13,7 @@ using namespace std;
 
 Personnage::Personnage(string nomnv):coord(-1,-1) { //WIP
 	carte=nullptr;
+	inventaire=new Inventaire();
 	nom=nomnv;
 }
 
@@ -47,6 +48,6 @@ void Personnage::setCarte(Carte* carteSet){//DONE
 }
 
 
-Inventaire Personnage::getInventaire() const{
+Inventaire* Personnage::getInventaire() {
 	return inventaire;
 }
