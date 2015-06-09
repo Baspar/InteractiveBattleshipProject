@@ -17,10 +17,6 @@ using namespace std;
 /// Cette classe contient les informations sur les personnages de bataille navale dotés d'une intelligence artificielle
 
 class PersonnageBNIAAvance : public PersonnageBN{
-    private:
-        Coordonnees casePrecedente;
-        vector<Coordonnees> casesT;
-
 
     public:
         /// \fn PersonnageBNIAAvance(string nomnv)
@@ -104,39 +100,5 @@ class PersonnageBNIAAvance : public PersonnageBN{
         /// \param grilleAdverse : grille sur laquelle le joueur vise
         /// \return les coordonnees de la case à attaquer
         Coordonnees coordonneesAViser(Grille* grilleAdverse);
-
-        /// \fn Coordonnees aucuneToucheeAutour(Grille* grille,Coordonnees coordonneesCT)
-        /// \brief Booleen autour d une case
-        /// Indique si auncune case autour est touchee
-        ///
-        /// \param grille: grille sur laquelle le joueur vise
-        /// \param coordonneesCT : case touchée
-        /// \return booleen
-        Coordonnees aucuneToucheeAutour(Grille* grille,Coordonnees coordonneesCT);
-
-        /// \fn Coordonnees getCasePrecedente()
-        /// \brief Getter de case precedente
-        ///
-        /// Getter de la case precedente
-        /// \return case precedente
-        Coordonnees getCasePrecedente();
-
-        /// \fn void setCasePrecedente(Coordonnees c)
-        /// \brief Setter de case precedente
-        ///
-        /// Setter de la case precedente
-        /// \param c : case precedente
-        void setCasePrecedente(Coordonnees c);
-
-        /// \fn void addCases(const Coordonnees c)
-        /// \brief setter de cases
-        /// \param c : cases de notre grille
-        void addCases(const Coordonnees c);
-
-        /// \fn vector<vector<Case> > getCases() const
-        /// \brief Getter de cases
-        /// \return cases : cases de notre grille
-       Coordonnees getCases(const int c) const;
-
 };
 #endif
