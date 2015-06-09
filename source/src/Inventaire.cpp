@@ -7,6 +7,9 @@ Inventaire::Inventaire(vector<Objet*> obj){//DONE
     objets=obj;
 }
 
+Inventaire::Inventaire(){//DONE
+}
+
 vector<Objet*> Inventaire::getObjet() const{//DONE
     return objets;
 }

@@ -29,6 +29,12 @@ class Inventaire{
         /// \param objets: objets de l'inventaire
         Inventaire(vector<Objet*> obj);
 
+		/// \fn Inventaire()
+        /// \brief Constructeur
+        ///
+        /// Constructeur de la classe Inventaire
+        Inventaire();
+
         /// \fn vector<Objet*> getObjet() const;
         /// \brief Getter de Objet
         ///

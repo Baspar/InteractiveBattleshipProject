@@ -6,6 +6,7 @@
 /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Coordonnees.hpp"
+#include "Inventaire.hpp"
 #include <iostream>
 
 using namespace std;
@@ -26,6 +27,8 @@ class Personnage{
         Coordonnees coord;
         /// nom du personnage
         string nom;
+	/// inventaire du joueur
+	Inventaire inventaire;
 
     public:
 
@@ -44,15 +47,15 @@ class Personnage{
         /// \param carte : pointeur sur la carte de destination
         void deplacer(Coordonnees coordonnees, Carte* carteEntree);
 
-        /// \fn Coordonnees getCoordonnees()
+        /// \fn Coordonnees getCoordonnees() const
         /// \brief Getter Coordonnees
         /// \return Les coordonnees du personnage
-        Coordonnees getCoordonnees();
+        Coordonnees getCoordonnees() const;
 
-        /// \fn Carte getCarte()
+        /// \fn Carte getCarte() const
         /// \brief Getter Carte
         /// \return Un pointeur sur la carte du personnage
-        Carte* getCarte();
+        Carte* getCarte() const;
 
         /// \fn vodi setCoordonnees(Coordonnees coordSet)
         /// \brief Setter Coordonnees
@@ -63,5 +66,11 @@ class Personnage{
         /// \brief Setter Carte
         /// \param carteSet : la carte à pointer en attribut
         void setCarte(Carte* carteSet);
+
+	/// \fn Inventaire getInventaire() const
+        /// \brief Getter Inventaire
+        /// \return l'inventaire du personnage
+        Inventaire getInventaire() const;
+
 };
 #endif
