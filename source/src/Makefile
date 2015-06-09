@@ -6,7 +6,7 @@ all: Main
 %.o: %.cpp
 	g++ -c $(FLAGS) $<
 
-CompileMain: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o Controleur.o CelluleObstacle.o Jeu.o Grille.o BatailleNavale.o IHMBN.o Case.o Bateau.o PersonnageBN.o IHMJeu.o Monde.o PersonnageBN.o ActionCombat.o ArmeClassique.o Arme.o ControleurBN.o JoueurHumain.o  PersonnageBNHumain.o PersonnageJouable.o CelluleChangementCarte.o ActionVide.o JoueurIA.o PersonnageNonJouable.o PersonnageBNIA.o JoueurIAAvance.o  JoueurIACheate.o PersonnageBNIACheate.o PersonnageBNIAAvance.o CelluleCombat.o Inventaire.o BadgeFinal.o
+CompileMain: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o Controleur.o CelluleObstacle.o Jeu.o Grille.o BatailleNavale.o IHMBN.o Case.o Bateau.o PersonnageBN.o IHMJeu.o Monde.o PersonnageBN.o ActionCombat.o ArmeClassique.o Arme.o ControleurBN.o JoueurHumain.o  PersonnageBNHumain.o PersonnageJouable.o CelluleChangementCarte.o ActionVide.o JoueurIA.o PersonnageNonJouable.o PersonnageBNIA.o JoueurIAAvance.o  JoueurIACheate.o PersonnageBNIACheate.o PersonnageBNIAAvance.o CelluleCombat.o Inventaire.o BadgeFinal.o Objet.o
 	g++ $(FLAGS) main.cpp $^ -o main
 Main: CompileMain
 	./main
