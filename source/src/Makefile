@@ -115,8 +115,6 @@ TestJoueurIA: CompileTestJoueurIA
 TestMonde: CompileTestMonde
 	tests/TestMonde
 
-TestPersonnageBN: CompileTestPersonnageBN
-	tests/TestPersonnageBN
 
 TestPersonnageBNHumain: CompileTestPersonnageBNHumain
 	tests/TestPersonnageBNHumain
@@ -214,7 +212,7 @@ CompileTestCoordonnees: Coordonnees.o
 CompileTestGrille: Grille.o TailleGrille.o Coordonnees.o Case.o Bateau.o
 	g++ $(FLAGSTEST) tests/TestGrille.cpp $^ -o tests/TestGrille
 
-CompileTestIHMBN: IHMBN.o Coordonnees.o Grille.o BatailleNavale.o PersonnageBN.o IHMBN.o Bateau.o TailleGrille.o Case.o ArmeClassique.o Arme.o PersonnageNonJouable.o JoueurHumain.o PersonnageBN.o PersonnageBNHumain.o PersonnageBNIA.o Personnage.o PersonnageJouable.o Carte.o CelluleAccessible.o Cellule.o
+CompileTestIHMBN: IHMBN.o Coordonnees.o Grille.o BatailleNavale.o PersonnageBN.o IHMBN.o Bateau.o TailleGrille.o Case.o ArmeClassique.o Arme.o PersonnageNonJouable.o JoueurHumain.o PersonnageBN.o PersonnageBNHumain.o PersonnageBNIA.o Personnage.o PersonnageJouable.o Carte.o CelluleAccessible.o Cellule.o Inventaire.o CelluleObstacle.o JoueurIA.o
 	g++ $(FLAGSTEST) tests/TestIHMBN.cpp $^ -o tests/TestIHMBN
 
 CompileTestIHMJeu: IHMJeu.o
@@ -229,14 +227,12 @@ CompileTestJeu: Jeu.o
 CompileTestJoueurHumain: JoueurHumain.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNHumain.o JoueurHumain.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o
 	g++ $(FLAGSTEST) tests/TestJoueurHumain.cpp $^ -o tests/TestJoueurHumain
 
-CompileTestJoueurIA: JoueurIA.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNIA.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o 
+CompileTestJoueurIA: JoueurIA.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNIA.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o JoueurIA.o PersonnageNonJouable.o CelluleObstacle.o Inventaire.o JoueurDhumainBNia.o
 	g++ $(FLAGSTEST) tests/TestJoueurIA.cpp $^ -o tests/TestJoueurIA
 
 CompileTestMonde: Monde.o
 	g++ $(FLAGSTEST) tests/TestMonde.cpp $^ -o tests/TestMonde
 
-CompileTestPersonnageBN: PersonnageBN.o TailleGrille.o ArmeClassique.o Bateau.o Arme.o Coordonnees.o Grille.o Case.o
-	g++ $(FLAGSTEST) tests/TestPersonnageBN.cpp $^ -o tests/TestPersonnageBN
 
 CompileTestPersonnageBNHumain: PersonnageBNHumain.o
 	g++ $(FLAGSTEST) tests/TestPersonnageBNHumain.cpp $^ -o tests/TestPersonnageBNHumain
@@ -247,7 +243,7 @@ CompileTestPersonnageBNIA: PersonnageBNIA.o
 CompileTestPersonnage: Personnage.o
 	g++ $(FLAGSTEST) tests/TestPersonnage.cpp $^ -o tests/TestPersonnage
 
-CompileTestPersonnageJouable: PersonnageJouable.o Personnage.o Coordonnees.o Carte.o TailleGrille.o CelluleAccessible.o Cellule.o
+CompileTestPersonnageJouable: PersonnageJouable.o Personnage.o Coordonnees.o Carte.o TailleGrille.o CelluleAccessible.o Cellule.o CelluleObstacle.o Inventaire.o
 	g++ $(FLAGSTEST) tests/TestPersonnageJouable.cpp $^ -o tests/TestPersonnageJouable
 
 CompileTestPersonnageNonJouable: PersonnageNonJouable.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNIA.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o 

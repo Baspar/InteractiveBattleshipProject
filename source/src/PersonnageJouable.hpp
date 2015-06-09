@@ -30,6 +30,13 @@ class PersonnageJouable : public Personnage{
         /// \param idCarte : pointeur sur carte où se trouve le joueur
         PersonnageJouable(string nomnv, Coordonnees coord, Carte* idCarte);
 
+
+	/// \fn PersonnageJouable(string nomnv)
+        /// \brief constructeur
+        ///
+        /// \param nomnv : nom du joueur
+        PersonnageJouable(string nomnv);
+
         /// \fn void deplacementInitial()
         /// \brief Remet le personnage à son emplacement initial
         void deplacementInitial();
