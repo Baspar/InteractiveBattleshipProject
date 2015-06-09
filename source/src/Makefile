@@ -165,19 +165,19 @@ CompileTestCarte: Carte.o
 CompileTestCase: Case.o Bateau.o
 	g++ $(FLAGSTEST) tests/TestCase.cpp $^ -o tests/TestCase
 
-CompileTestCelluleChangementCarte: CelluleChangementCarte.o Cellule.o CelluleAccessible.o Carte.o Coordonnees.o
-	g++ $(FLAGS) tests/TestCelluleChangementCarte.cpp $^ -o tests/TestCelluleChangementCarte
+CompileTestCelluleChangementCarte: CelluleChangementCarte.o Cellule.o CelluleAccessible.o Carte.o Coordonnees.o TailleGrille.o CelluleObstacle.o Personnage.o ActionChangementCarte.o Inventaire.o Action.o
+	g++ $(FLAGSTEST) tests/TestCelluleChangementCarte.cpp $^ -o tests/TestCelluleChangementCarte
 
 CompileTestCelluleAccessible: CelluleAccessible.o Cellule.o PersonnageJouable.o Personnage.o Coordonnees.o Carte.o PersonnageNonJouable.o Inventaire.o TailleGrille.o CelluleObstacle.o 
 	g++ $(FLAGSTEST) tests/TestCelluleAccessible.cpp $^ -o tests/TestCelluleAccessible 
 
-CompileTestCelluleCombat: CelluleCombat.o Personnage.o ActionCombat.o CelluleAccessible.o Coordonnees.o Carte.o Action.o Cellule.o TailleGrille.o 
+CompileTestCelluleCombat: CelluleCombat.o Personnage.o ActionCombat.o CelluleAccessible.o Coordonnees.o Carte.o Action.o Cellule.o TailleGrille.o CelluleObstacle.o Inventaire.o
 	g++ $(FLAGSTEST) tests/TestCelluleCombat.cpp $^ -o tests/TestCelluleCombat
 
 CompileTestCellule: Cellule.o
 	g++ $(FLAGSTEST) tests/TestCellule.cpp $^ -o tests/TestCellule
 
-CompileTestCelluleObstacle: CelluleObstacle.o
+CompileTestCelluleObstacle: CelluleObstacle.o Cellule.o
 	g++ $(FLAGSTEST) tests/TestCelluleObstacle.cpp $^ -o tests/TestCelluleObstacle
 
 CompileTestCombat: Combat.o
