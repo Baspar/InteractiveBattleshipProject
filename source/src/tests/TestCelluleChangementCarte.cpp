@@ -11,5 +11,6 @@ int main(){
 	Carte* cA = new Carte(1,{{'_','_','#'},{'#','_','#'},{'#','_','#'}});
 	Coordonnees coordD(0,1);
 	Coordonnees coordA(1,2);
-	CelluleChangementCarte(cD,cA,coordD,coordA);
+	CelluleChangementCarte cellu(cD,cA,coordD,coordA);
+	cout << "Le type de cellule est " << cellu.getType() << endl;
 }

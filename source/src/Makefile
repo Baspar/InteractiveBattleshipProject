@@ -145,16 +145,16 @@ TestControleurBN: CompileTestControleurBN
 ########################
 #  Action compilation  #
 ########################
-CompileTestActionChangementCarte: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o CelluleObstacle.o PersonnageJouable.o
+CompileTestActionChangementCarte: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o CelluleObstacle.o PersonnageJouable.o Inventaire.o
 	g++ $(FLAGSTEST) tests/TestActionChangementCarte.cpp $^ -o tests/TestActionChangementCarte
 
 CompileTestActionVide: ActionVide.o Action.o 
-	g++ $(FLAGSTEST) tests/TestActionVide.cpp $^ -o tests/TestVide
+	g++ $(FLAGSTEST) tests/TestActionVide.cpp $^ -o tests/TestActionVide
 
 CompileBestEver: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o Controleur.o CelluleObstacle.o Jeu.o Grille.o BatailleNavale.o IHMBN.o Case.o Bateau.o PersonnageBN.o IHMJeu.o Monde.o PersonnageBN.o ActionCombat.o ArmeClassique.o Arme.o ControleurBN.o JoueurHumain.o  PersonnageBNHumain.o PersonnageJouable.o CelluleChangementCarte.o ActionVide.o JoueurIA.o PersonnageNonJouable.o PersonnageBNIA.o
 	g++ $(FLAGSTEST) tests/bestEver.cpp $^ -o tests/bestEver
 
-CompileTestActionCombat: ActionCombat.o PersonnageNonJouable.o Action.o Personnage.o Coordonnees.o Carte.o Cellule.o CelluleAccessible.o TailleGrille.o CelluleObstacle.o
+CompileTestActionCombat: ActionCombat.o PersonnageNonJouable.o Action.o Personnage.o Coordonnees.o Carte.o Cellule.o CelluleAccessible.o TailleGrille.o CelluleObstacle.o Inventaire.o
 	g++ $(FLAGSTEST) tests/TestActionCombat.cpp $^ -o tests/TestActionCombat
 
 CompileTestArmeClassique:  ArmeClassique.o Coordonnees.o Grille.o  Case.o TailleGrille.o Bateau.o Arme.o
@@ -175,7 +175,7 @@ CompileTestArme: Arme.o
 CompileTestBadgeFinal: BadgeFinal.o Objet.o
 	g++ $(FLAGSTEST) tests/TestBadgeFinal.cpp $^ -o tests/TestBadgeFinal
 
-CompileTestBatailleNavale: PersonnageJouable.o Combat.o BatailleNavale.o Grille.o PersonnageBN.o TailleGrille.o Coordonnees.o Case.o Bateau.o Personnage.o Carte.o CelluleAccessible.o Cellule.o ArmeClassique.o Arme.o PersonnageNonJouable.o PersonnageBNIA.o JoueurIA.o JoueurIACheate.o PersonnageBNIACheate.o ArmeCroix.o PersonnageBNIAAvance.o JoueurIAAvance.o CelluleObstacle.o CelluleChangementCarte.o Controleur.o ActionChangementCarte.o
+CompileTestBatailleNavale: PersonnageJouable.o Combat.o BatailleNavale.o Grille.o PersonnageBN.o TailleGrille.o Coordonnees.o Case.o Bateau.o Personnage.o Carte.o CelluleAccessible.o Cellule.o ArmeClassique.o Arme.o PersonnageNonJouable.o PersonnageBNIA.o JoueurIA.o JoueurIACheate.o PersonnageBNIACheate.o ArmeCroix.o PersonnageBNIAAvance.o JoueurIAAvance.o CelluleObstacle.o CelluleChangementCarte.o Controleur.o ActionChangementCarte.o Inventaire.o IHMBN.o ControleurBN.o Jeu.o ActionCombat.o Action.o IHMJeu.o Monde.o ArmeChercheuse.o BadgeFinal.o ArmeFatale.o ActionVide.o JoueurHumain.o PersonnageBNHumain.o Objet.o
 	g++ $(FLAGSTEST) tests/TestBatailleNavale.cpp $^ -o tests/TestBatailleNavale
 
 CompileTestBateau: Bateau.o
@@ -256,7 +256,7 @@ CompileTestPersonnageNonJouable: PersonnageNonJouable.o Bateau.o TailleGrille.o 
 CompileTestTailleGrille: TailleGrille.o
 	g++ $(FLAGSTEST) tests/TestTailleGrille.cpp $^ -o tests/TestTailleGrille
 
-CompileTestControleurBN: ControleurBN.o  BatailleNavale.o IHMBN.o Grille.o Coordonnees.o TailleGrille.o PersonnageBN.o Bateau.o JoueurIA.o JoueurIACheate.o Case.o PersonnageBNIA.o PersonnageNonJouable.o ArmeClassique.o PersonnageBNIACheate.o  Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o ArmeCroix.o JoueurHumain.o  PersonnageJouable.o PersonnageBNHumain.o ArmeChercheuse.o
+CompileTestControleurBN: ControleurBN.o  BatailleNavale.o IHMBN.o Grille.o Coordonnees.o TailleGrille.o PersonnageBN.o Bateau.o JoueurIA.o JoueurIACheate.o Case.o PersonnageBNIA.o PersonnageNonJouable.o ArmeClassique.o PersonnageBNIACheate.o  Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o ArmeCroix.o JoueurHumain.o  PersonnageJouable.o PersonnageBNHumain.o ArmeChercheuse.o CelluleObstacle.o Inventaire.o
 	g++ $(FLAGSTEST) tests/TestControleurBN.cpp $^ -o tests/TestControleurBN
 
 

@@ -97,7 +97,7 @@ void Jeu::lireJoueurs(){//DONE
         }
 
         if(bossFinal=='Y')
-            perso->getInventaire().ajoutObjet(new BadgeFinal());
+            perso->getInventaire()->ajoutObjet(new BadgeFinal());
 
         cartePerso = monde.getCarte(idCartePerso);
         perso->setCarte(cartePerso);
