@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void IHMJeu::ClearScreen(){
+void IHMJeu::ClearScreen(){//DONE
     cout << string( 100, '\n' );
 }
 

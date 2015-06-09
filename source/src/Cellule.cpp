@@ -17,7 +17,7 @@ void Cellule::lancerAction() const{//DONE
     action->lancerAction();
 }
 
-void Cellule::setType(string const typeCp){
+void Cellule::setType(string const typeCp){//DONE
     typeDeCellule=typeCp;
 }
 

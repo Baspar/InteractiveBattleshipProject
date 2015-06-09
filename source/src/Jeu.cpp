@@ -19,9 +19,6 @@
 using namespace std;
 
 
-Jeu::Jeu(){//TODO
-}
-
 Jeu::Jeu(Combat* comb){//WIP
     lireJoueurs();
 
