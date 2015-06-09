@@ -1,5 +1,9 @@
 #include "Jeu.hpp"
 
+#include "ArmeChercheuse.hpp"
+#include "ArmeCroix.hpp"
+#include "ArmeFatale.hpp"
+#include "ArmeClassique.hpp"
 #include "BadgeFinal.hpp"
 #include "Coordonnees.hpp"
 #include "Carte.hpp"
@@ -47,38 +51,63 @@ void Jeu::lireJoueurs(){//DONE
     int nbAdversaire;
     file >> nbAdversaire;
     for(int i=0; i<nbAdversaire; i++){
-        int typePerso;
-        string aCasesCombat;
+        int typePerso, xTailleGrille, yTailleGrille;
+        char bossFinal;
+        string aCasesCombat, armePerso;
         file >> typePerso
              >> nomPerso
              >> idCartePerso
              >> xPerso
              >> yPerso
-             >> aCasesCombat;
+             >> armePerso
+             >> bossFinal
+             >> xTailleGrille
+             >> yTailleGrille;
+
+        int nbBateauFlotte;
+        vector<int> bateaux;
+        file >> nbBateauFlotte;
+        for(int i=0; i<nbBateauFlotte; i++){
+            int tailleBateau;
+            file >> tailleBateau;
+            bateaux.push_back(tailleBateau);
+        }
+
+        Arme* arme;
+        if(armePerso == "ArmeFatale")
+            arme = new ArmeFatale();
+        else if (armePerso == "ArmeChercheuse")
+            arme = new ArmeChercheuse();
+        else if (armePerso == "ArmeCroix")
+            arme = new ArmeCroix();
+        else
+            arme = new ArmeClassique();
 
         PersonnageNonJouable* perso;
         switch(typePerso) {
             case 1: //JoueurIA
-                perso = new JoueurIA(nomPerso);
+                perso = new JoueurIA(nomPerso, xTailleGrille, yTailleGrille, bateaux, arme);
                 break;
             case 2: //JoueurIAAvance
-                perso = new JoueurIAAvance(nomPerso);
+                perso = new JoueurIAAvance(nomPerso, xTailleGrille, yTailleGrille, bateaux, arme);
                 break;
             case 3: //JoueurIACheate
-                perso = new JoueurIACheate(nomPerso);
+                perso = new JoueurIACheate(nomPerso, xTailleGrille, yTailleGrille, bateaux, arme);
                 break;
         }
 
+        if(bossFinal=='Y')
+            perso->getInventaire().ajoutObjet(new BadgeFinal());
+
         cartePerso = monde.getCarte(idCartePerso);
         perso->setCarte(cartePerso);
-        perso->getInventaire()->ajoutObjet(new BadgeFinal());
-	cout << perso->getInventaire()->getObjet().size() << endl;
         perso->setCoordonnees(Coordonnees(xPerso, yPerso));
         ((CelluleAccessible*)cartePerso->getCellules()[xPerso][yPerso])->setPersonnage(perso);
 
         personnagesNonJouables.push_back(perso);
 
 
+        file >> aCasesCombat;
         if(aCasesCombat == "Y"){
             int nbCasesCombat;
             file >> nbCasesCombat;
