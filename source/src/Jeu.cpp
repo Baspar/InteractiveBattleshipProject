@@ -1,5 +1,6 @@
 #include "Jeu.hpp"
 
+#include "BadgeFinal.hpp"
 #include "Coordonnees.hpp"
 #include "Carte.hpp"
 #include "Action.hpp"
@@ -70,6 +71,7 @@ void Jeu::lireJoueurs(){//DONE
 
         cartePerso = monde.getCarte(idCartePerso);
         perso->setCarte(cartePerso);
+        perso->getInventaire().ajoutObjet(new BadgeFinal());
         perso->setCoordonnees(Coordonnees(xPerso, yPerso));
         ((CelluleAccessible*)cartePerso->getCellules()[xPerso][yPerso])->setPersonnage(perso);
 
@@ -94,9 +96,9 @@ void Jeu::lireJoueurs(){//DONE
 bool Jeu::partieFinie(){//DONE
     for(Objet* obj: personnageJouable->getInventaire().getObjet())
     	if(obj->metFinAuJeu())
-		return true;	
+		return true;
     return false;
-	
+
 }
 
 void Jeu::jouer(Coordonnees coordonnees){//WIP
