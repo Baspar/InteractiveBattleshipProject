@@ -25,6 +25,7 @@ using namespace std;
 
 
 Jeu::Jeu(Combat* comb){//DONE
+    cout << "Ok" << endl;
     lireJoueurs();
 
     actionEnCours = nullptr;
@@ -35,7 +36,9 @@ Jeu::Jeu(Combat* comb){//DONE
 }
 
 void Jeu::lireJoueurs(){//DONE
+    cout << "debut OK" << endl;
     ifstream file("donnees/Joueurs.d", ios::in);
+    cout <<"Ouverture fichier OK" << endl;
     int idCartePerso, xPerso, yPerso;
     string nomPerso;
     file >> nomPerso
@@ -48,6 +51,7 @@ void Jeu::lireJoueurs(){//DONE
     personnageJouable->setCoordonnees(Coordonnees(xPerso, yPerso));
     ((CelluleAccessible*)cartePerso->getCellules()[xPerso][yPerso])->setPersonnage(personnageJouable);
 
+    cout << "Perso OK" << endl;
     int nbAdversaire;
     file >> nbAdversaire;
     for(int i=0; i<nbAdversaire; i++){
@@ -97,7 +101,7 @@ void Jeu::lireJoueurs(){//DONE
         }
 
         if(bossFinal=='Y')
-            perso->getInventaire().ajoutObjet(new BadgeFinal());
+            perso->getInventaire()->ajoutObjet(new BadgeFinal());
 
         cartePerso = monde.getCarte(idCartePerso);
         perso->setCarte(cartePerso);
