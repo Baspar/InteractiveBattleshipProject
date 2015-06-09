@@ -1,16 +1,21 @@
 @startuml
-    activate Jeu
-        loop sur chaque joueur
-            Jeu -> BatailleNavale : getJoueur()
-            activate BatailleNavale 
-                BatailleNavale -> BatailleNavale : getNombreBateauxRestantADétruire()
-                activate BatailleNavale 
-                    alt SI il ne reste aucun bateau à détruire 
-                        BatailleNavale --> Jeu : VRAI
-                    end
-                deactivate BatailleNavale
-                Jeu <-- BatailleNavale: FAUX
-            deactivate BatailleNavale 
-        end
-    deactivate Jeu
+activate BatailleNavale
+BatailleNavale->Joueur0:getJoueur0()
+activate Joueur0
+Joueur0->Joueur0:flotteCoulee()
+deactivate Joueur0
+alt Si la flotte est coulee 
+BatailleNavale->BatailleNavale:Joueur1
+else Si la flotte n'est pas coulee
+BatailleNavale->Joueur1:getJoueur1()
+activate Joueur1
+Joueur1->Joueur1:flotteCoulee()
+deactivate Joueur1
+alt si la flotte est coulee 
+BatailleNavale->BatailleNavale:Joueur0
+else si la flotte n'est pas coulee 
+BatailleNavale->BatailleNavale:nullptr
+end
+end
+deactivate BatailleNavale
 @enduml

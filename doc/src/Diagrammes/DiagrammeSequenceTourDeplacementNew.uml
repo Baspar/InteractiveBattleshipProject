@@ -1,27 +1,23 @@
 @startuml
 activate Controleur
-    loop Tant que la partie n'est pas finie
-        Controleur-> IHM: afficherCarteCourante()
-        activate IHM
-            Controleur <-- IHM
-        deactivate IHM
-
-        alt Si le joueur est humain
-            Controleur->IHM : saisirDéplacement()
-            activate IHM
-                Controleur<--IHM : deplacement
-            deactivate IHM 
-        else Si le joueur est une IA
-            Controleur->IHM : determinerDeplacementAuHasard()
-            activate IHM
-                Controleur<--IHM : deplacement
-            deactivate IHM 
-        end
-
-        Controleur -> Jeu: deplacerjoueur(deplacement)
-        activate Jeu
-            Jeu-->Controleur
-        deactivate Jeu
+    activate IHMJEU
+    Controleur->IHMJEU:afficherJeu()
+    activate Jeu
+    IHMJEU->Jeu:jouer(SaisieDeplacement)
+    deactivate Jeu
+    alt Si l'action est un combat
+    Controleur->IHMJEU:initialiserJoueurCourant()
+    Controleur->IHMJEU:actionBatailleNavale()
+    alt Si le joueur a gagné
+    activate Jeu
+    Jeu->Jeu:ToogleActionActive()
+    deactivate Jeu
+    else Sinon
+    activate Joueur
+    IHMJEU->Joueur:deplacementInitial()
+    deactivate Joueur
+    end
     end
 deactivate Controleur
 @enduml
+

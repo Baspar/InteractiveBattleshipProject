@@ -1,24 +1,20 @@
 @startuml
-activate Controleur
-    Controleur -> BatailleNavale : getBatailleNavale()
-    activate BatailleNavale
-        BatailleNavale-> GrilleBN:getGrille()
-    deactivate BatailleNavale
-    activate GrilleBN
-        GrilleBN-> CaseBN : getCase()
-    deactivate GrilleBN
-    note right of GrilleBN
-        On prend le coup en entrée, 
-        on prend la grille du joueur, 
-        on regarde si la case
-        du coup est valide
-    end note
-    activate CaseBN
-        CaseBN-> CaseBN:caseValide()
-        activate CaseBN
-            Controleur <-- CaseBN : VRAI
-        deactivate CaseBN
-    Controleur <-- CaseBN : FAUX
-    deactivate CaseBN
-deactivate Controleur
+activate Grille
+activate Coordonnees
+Grille->Coordonnees:getAbscisse()
+Grille->Coordonnees:getOrdonnee()
+Grille->Grille:getTailleGrille()
+deactivate Coordonnees
+alt Si l'abscisse est trop courte ou trop longue
+Grille->Grille:FALSE
+end
+alt Si l'ordonne est trop courte ou trop longue
+Grille->Grille:FALSE
+end
+Grille->Coordonnees:getCaseElt()
+alt Si la case est touchee
+Grille->Grille:FALSE
+end
+Grille->Grille:TRUE
+deactivate Grille
 @enduml
