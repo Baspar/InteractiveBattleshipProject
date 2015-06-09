@@ -1,9 +1,9 @@
 #include "Objet.hpp"
 
-Objet::Objet(const string nomObjet){
+Objet::Objet(const string nomObjet){//DONE
     nom=nomObjet;
 }
 
-string Objet::getNom() const{
+string Objet::getNom() const{//DONE
     return nom;
 }

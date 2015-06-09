@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void IHMBN::ClearScreen(){
+void IHMBN::ClearScreen(){//DONE
     cout << string( 100, '\n' );
 }
 
