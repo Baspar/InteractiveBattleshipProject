@@ -50,7 +50,6 @@ Coordonnees PersonnageBNIA::coordonneesAViser(Grille* grilleAdverse){ //DONE
                     pointVise/longueur
                     )
                 );
-        //cout << hauteur << "x" << longueur << " = " << nbCases << "   point vise :" << pointVise << " (" << impact.getAbscisse() << ", " << impact.getOrdonnee() << ")" << endl;
     }
     while (!grilleAdverse->coupValide(impact));
     return impact ;

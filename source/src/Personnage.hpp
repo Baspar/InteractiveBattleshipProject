@@ -28,7 +28,7 @@ class Personnage{
         /// nom du personnage
         string nom;
 	/// inventaire du joueur
-	Inventaire inventaire;
+	Inventaire* inventaire;
 
     public:
 
@@ -72,10 +72,10 @@ class Personnage{
         /// \param carteSet : la carte à pointer en attribut
         void setCarte(Carte* carteSet);
 
-	/// \fn Inventaire getInventaire() const
+	/// \fn Inventaire* getInventaire()
         /// \brief Getter Inventaire
         /// \return l'inventaire du personnage
-        Inventaire getInventaire() const;
+        Inventaire* getInventaire();
 
 };
 #endif

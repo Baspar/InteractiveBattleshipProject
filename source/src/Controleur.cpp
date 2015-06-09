@@ -32,8 +32,8 @@ void Controleur::tourDeJeu(){//DONE
 			controlBN->actionBatailleNavale();
 			if (batailleNavale->retournerGagnant((Personnage*) jeu->getPersonnageJouable(),(Personnage*) ((ActionCombat*) jeu->getActionEnCours())->getAdversaire())==jeu->getPersonnageJouable()){
 				jeu->getActionEnCours()->toggleActive();
-				for(Objet* obj: ((ActionCombat*) jeu->getActionEnCours())->getAdversaire()->getInventaire().getObjet() )
-					jeu->getPersonnageJouable()->getInventaire().getObjet().push_back(obj);
+				for(Objet* obj: ((ActionCombat*) jeu->getActionEnCours())->getAdversaire()->getInventaire()->getObjet() )
+					jeu->getPersonnageJouable()->getInventaire()->ajoutObjet(obj);
 				jeu->getActionEnCours()->setTexteInteraction("Vous m'avez battu");
 			} 
 			else {
@@ -46,7 +46,8 @@ void Controleur::tourDeJeu(){//DONE
 
 
 void Controleur::lancerJeu(){//DONE
-    while(true)//(!jeu->partieFinie())
+    ihmJeu->afficherDebut();
+    while(!jeu->partieFinie())
         tourDeJeu();
 }
 

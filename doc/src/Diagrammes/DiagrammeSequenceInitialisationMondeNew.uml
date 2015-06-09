@@ -1,10 +1,7 @@
 @startuml
 activate Monde
-    loop Pour toutes les cartes du monde
-        Monde -> Carte : initialiserCarte(int longueur, int largeur)
-        activate Carte
-            Monde <-- Carte
-        deactivate Carte
-    end loop
+Monde->Monde:lireCarte()
+Monde->Monde:lireCasesChangementCarte()
+Monde->Monde:lireAction()
 deactivate Monde
 @enduml

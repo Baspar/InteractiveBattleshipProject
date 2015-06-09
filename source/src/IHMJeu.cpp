@@ -44,6 +44,21 @@ void IHMJeu::afficherJeu (){//DONE
     this->afficherSaisie();
 }
 
+void IHMJeu::afficherDebut(){//DONE
+    string test;
+    cout << endl << endl << endl ;
+    cout << "Bonjour et bienvenue pour une partie endiablée de Bataille Navale Interactive" << endl << endl ;
+    cout << "Depuis votre plus jeune age vous êtes fan de Pokemon et vous avez toujours rever de devenir marin. Ce jeu est fait pour vous" << endl ;
+    cout << "Au cours de cette expérience unique, vous allez devoir vous deplacer dans un monde ou de nombreux experts en bataille navale vont tenter de déjouer vos plans" << endl;
+    cout << "Votre mission, si vous l'acceptez est d'arriver à récupérer le badge final" << endl;
+    cout << "Entrez un caractère pour démarer" << endl;
+    cin >>  test ;
+}
+
+void IHMJeu::afficherFin(){//DONE
+    cout << "Félicitations, vous avez récupéré le badge final" << endl;
+}
+
 void IHMJeu::afficherSaisie (){//DONE
     cout<<"Action ? (2, 4, 6 ou 8)"<< endl;
 }
@@ -66,7 +81,7 @@ void IHMJeu::afficherInteraction(){//DONE
 
 }
 
-void IHMJeu::afficherCarteCourante(){//WIP
+void IHMJeu::afficherCarteCourante(){//DONE
     for(vector<Cellule*> cels : jeu->getPersonnageJouable()->getCarte()->getCellules()) {
         for(Cellule* cel : cels) {
             string type = cel->getType();

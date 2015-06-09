@@ -8,5 +8,5 @@
 using namespace std;
 
 
-PersonnageNonJouable::PersonnageNonJouable(string nomnv):Personnage(nomnv) {//WIP
+PersonnageNonJouable::PersonnageNonJouable(string nomnv):Personnage(nomnv) {//DONE
 }

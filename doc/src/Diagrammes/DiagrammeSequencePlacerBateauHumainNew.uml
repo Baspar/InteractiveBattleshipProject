@@ -1,19 +1,22 @@
 @startuml 
-activate Controleur 
-activate Vue 
-Controleur -> Vue : saisirPlacementBateau() 
-Controleur <- Vue 
-deactivate Vue 
-activate GrilleBN 
-Controleur -> GrilleBN: PlacementBateauValide() 
-Controleur <- GrilleBN
-deactivate GrilleBN 
-activate BatailleNavale
-Controleur -> BatailleNavale: PlacerBateau() 
-Controleur <- BatailleNavale
-deactivate BatailleNavale 
-activate Vue 
-Controleur -> Vue: afficherGrille() 
-deactivate Vue 
-deactivate Controleur 
+activate IHMBN 
+IHMBN->IHMBN:ClearScreen()
+activate Grille
+IHMBN->Grille:InitialiserGrilleJoueur
+loop nombre de bateaux du joueur
+activate Personnage
+IHMBN->Personnage:getTailleBateau();
+activate Coordonnees
+IHMBN->Coordonnees:coordDepart
+IHMBN->Coordonnees:coordArrivee
+loop Tant que le placement du bateau n'est pas valide
+IHMBN->Coordonnees:coordDepart
+IHMBN->Coordonnees:coordArrivee
+end
+deactivate Coordonnees
+IHMBN->Grille:placerBateau()
+end
+IHMBN->Grille:afficherGrilleBateaux()
+deactivate Grille
+deactivate IHMBN
 @enduml

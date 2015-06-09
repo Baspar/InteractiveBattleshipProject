@@ -10,7 +10,7 @@
 
 using namespace std;
 
-Carte::Carte(int idC, vector<vector<char> > vecGrille):tailleGrille(0,0){//WIP
+Carte::Carte(int idC, vector<vector<char> > vecGrille):tailleGrille(0,0){//DONE
     id=idC;
     int longueur=vecGrille.size();
     int hauteur=vecGrille[0].size();
@@ -36,7 +36,7 @@ Carte::Carte(int idC, vector<vector<char> > vecGrille):tailleGrille(0,0){//WIP
     }
  }
 
-void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){//WIP
+void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){//DONE
     // On recupere la carte
     Carte* carte = personnage->getCarte();
     // On recupere les coordonnees du joueur
