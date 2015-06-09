@@ -92,6 +92,12 @@ CompileMainTestCelluleCombat: CelluleCombat.o Personnage.o ActionCombat.o Cellul
 MainTestCelluleCombat: CompileMainTestCelluleCombat
 	tests/MainTestCelluleCombat
 
+CompileMainTestCelluleChangementCarte: CelluleChangementCarte.o Cellule.o CelluleAccessible.o Carte.o Coordonnees.o
+	g++ $(FLAGS) tests/MainTestCelluleChangementCarte.cpp $^ -o tests/MainTestCelluleChangementCarte
+MainTestCelluleChangementCarte: CompileMainTestCelluleChangementCarte
+	tests/MainTestCelluleChangementCarte
+
+
 CompileMainTestCellule: Cellule.o
 	g++ $(FLAGS) tests/MainTestCellule.cpp $^ -o tests/MainTestCellule
 MainTestCellule: CompileMainTestCellule
