@@ -1,8 +1,0 @@
-@startuml
-class JoueurHumain{
-    ==<b>Constructeurs</b>==
-        +<color:orange>JoueurHumain(string nomnv)</color>
-}
-@enduml
-'ad83fae12c5e0a3b5f8d5d6466cc54f3  src/JoueurHumain.hpp
-'45ac00e300831a50c5a145dfc1db6faa  src/JoueurHumain.cpp

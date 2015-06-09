@@ -46,7 +46,15 @@ void IHMBN::afficherJeu(){//DONE
         }
         cout << "|" << endl;
     }
-
+    cout << "Adversaire";
+    for(int i=10; i<grilleAdverse->getTailleGrille().getLongueur()*2+6; i++)
+        cout << " ";
+    cout << "Votre grille" << endl;
+    cout << "----------";
+    for(int i=10; i<grilleAdverse->getTailleGrille().getLongueur()*2+6; i++)
+        cout << " ";
+    cout << "------------" << endl;
+    cout << endl;
     // Affichage unités
     for (int i=0;i<grilleAdverse->getTailleGrille().getLongueur();i++)
         cout << "|" << i%10;

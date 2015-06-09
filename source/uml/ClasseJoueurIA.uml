@@ -1,6 +1,0 @@
-@startuml
-class JoueurIA{
-}
-@enduml
-'2c289308bf85d8c29e6d6fef61bb80d2  src/JoueurIA.hpp
-'

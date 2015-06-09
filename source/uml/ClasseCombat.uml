@@ -1,8 +1,0 @@
-@startuml
-class Combat{
-    ==<b>Methodes</b>==
-        +<color:green>{abstract}retournerGagnant(Personnage* joueur1, Personnage* joueur2) : Personnage*</color>
-}
-@enduml
-'0673008d99a852ec6b266a6862355f0d  src/Combat.hpp
-'8aca2bd8ea8f1a5e085645fc36367b4c  src/Combat.cpp

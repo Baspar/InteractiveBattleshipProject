@@ -66,19 +66,19 @@ Grille PersonnageBNIACheate::placerBateaux(){//DONE
             {
                 case 1 :
                     x = coordDebut.getAbscisse();
-                    y = coordFin.getOrdonnee() + bat->getTailleBateau()- 1;
+                    y = coordDebut.getOrdonnee() + bat->getTailleBateau()- 1;
                     break ;
                 case 2 :
                     x = coordDebut.getAbscisse()+ bat->getTailleBateau()- 1;
-                    y = coordFin.getOrdonnee();
+                    y = coordDebut.getOrdonnee();
                     break ;
                 case 3 :
                     x = coordDebut.getAbscisse();
-                    y = coordFin.getOrdonnee() - bat->getTailleBateau() + 1;
+                    y = coordDebut.getOrdonnee() - bat->getTailleBateau() + 1;
                     break ;
                 case 4 :
                     x = coordDebut.getAbscisse() - bat->getTailleBateau() + 1;
-                    y = coordFin.getOrdonnee();
+                    y = coordDebut.getOrdonnee();
                     break ;
             }
             coordFin.copy(Coordonnees(x,y));

@@ -1,8 +1,0 @@
-@startuml
-class AutreAction{
-    ==<b>Methodes</b>==
-        +<color:red>lancerAction() : void</color>
-}
-@enduml
-'71ec036de9e5657047b247a982e13f76  src/AutreAction.hpp
-'2a1b9ea577653cd9581279eadafbd8d7  src/AutreAction.cpp
