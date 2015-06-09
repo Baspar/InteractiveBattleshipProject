@@ -4,13 +4,16 @@
 #include "IHMBN.hpp"
 #include "PersonnageNonJouable.hpp"
 #include "JoueurHumain.hpp"
+#include "Coordonnees.hpp"
+#include "Carte.hpp"
 
 using namespace std;
 
 int main(){
 	BatailleNavale bn=BatailleNavale();
 	PersonnageNonJouable pbn1("Joueur1");
-    JoueurHumain pbn2("Joueur2");
+	Carte* cD = new Carte(0,{{'#','_','#'},{'#','_','#'},{'#','_','_'}});
+    JoueurHumain pbn2("Joueur2",Coordonnees(1,1), cD);
 
     pbn1.setTailleGrille(TailleGrille(10, 10));
     pbn2.setTailleGrille(TailleGrille(10, 10));
