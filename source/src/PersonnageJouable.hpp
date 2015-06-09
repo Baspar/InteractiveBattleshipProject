@@ -31,7 +31,7 @@ class PersonnageJouable : public Personnage{
         PersonnageJouable(string nomnv, Coordonnees coord, Carte* idCarte);
 
 
-	/// \fn PersonnageJouable(string nomnv)
+        /// \fn PersonnageJouable(string nomnv)
         /// \brief constructeur
         ///
         /// \param nomnv : nom du joueur

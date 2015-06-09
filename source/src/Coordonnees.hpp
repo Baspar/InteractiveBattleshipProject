@@ -1,9 +1,9 @@
 #ifndef COORDONNEE_H
 #define COORDONNEE_H
 
- /// \file Coordonnees.hpp
- /// \brief Coordonnées sur une carte
- /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
+/// \file Coordonnees.hpp
+/// \brief Coordonnées sur une carte
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 using namespace std;
 

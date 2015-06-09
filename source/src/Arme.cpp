@@ -6,13 +6,13 @@
 using namespace std;
 
 string Arme::getNomArme() const{//DONE
-	return nomArme;
+    return nomArme;
 }
 
 void Arme::setNomArme(const string nvNomArme){//DONE
-	nomArme = nvNomArme;
+    nomArme = nvNomArme;
 }
 
 Arme::Arme(string nom){//DONE
-	nomArme=nom;
+    nomArme=nom;
 }

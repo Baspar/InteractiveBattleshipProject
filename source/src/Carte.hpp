@@ -35,7 +35,7 @@ class Carte{
         ///
         /// Constructeur de la classe Carte
         /// \param idC : entier numero carte
-	    /// \param vecGrille : vecteur avec l'ensemble des données de la carte
+        /// \param vecGrille : vecteur avec l'ensemble des données de la carte
         Carte(int idC, vector<vector<char> > vecGrille);
 
         /// \fn void deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees)

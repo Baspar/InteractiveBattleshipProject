@@ -37,10 +37,10 @@ PersonnageBNHumain::PersonnageBNHumain(string nomnv, int l, int h, vector<int> t
 
 
 Grille PersonnageBNHumain::placerBateaux(){//DONE
-	TailleGrille t=TailleGrille(0,0);
-	return Grille(t.getLongueur(),t.getHauteur());
+    TailleGrille t=TailleGrille(0,0);
+    return Grille(t.getLongueur(),t.getHauteur());
 }
 
 Coordonnees PersonnageBNHumain::coordonneesAViser(Grille* grilleAdverse){//DONE
-	return Coordonnees(-1,-1);
+    return Coordonnees(-1,-1);
 }

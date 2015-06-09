@@ -23,7 +23,7 @@ Jeu o--PersonnageJouable
 PersonnageNonJouable -|> Personnage
 Personnage <|- PersonnageJouable
 Inventaire o-- Objet
-Objet <|-- BadgeFinal
+Objet <|- BadgeFinal
 
 PersonnageJouable <|--JoueurHumain
 PersonnageJouable <|--JoueurDhumainBNia

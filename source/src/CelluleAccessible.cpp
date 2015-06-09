@@ -6,15 +6,15 @@
 using namespace std;
 
 CelluleAccessible::CelluleAccessible(string type):Cellule(type){//DONE
-	occupant=nullptr;
+    occupant=nullptr;
 }
 
 CelluleAccessible::CelluleAccessible(Personnage* perso):Cellule(" "){//DONE
-	occupant=perso;
+    occupant=perso;
 }
 
 CelluleAccessible::CelluleAccessible():Cellule(" "){//DONE
-	occupant=nullptr;
+    occupant=nullptr;
 }
 
 bool CelluleAccessible::estAccessible(){//DONE

@@ -65,14 +65,14 @@ class IHMJeu{
         void afficherJeu();
 
 
-	/// \fn void afficherDebut()
+        /// \fn void afficherDebut()
         /// \brief affichage Debut du jeu
         ///
         /// Affiche le debut (présentation du jeu)
         void afficherDebut();
 
 
-	/// \fn void afficherDebut()
+        /// \fn void afficherDebut()
         /// \brief affichage Debut du jeu
         ///
         /// Affiche le debut (présentation du jeu)

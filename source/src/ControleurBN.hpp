@@ -1,9 +1,9 @@
 #ifndef CONTROLEURBN_H
 #define CONTROLEURBN_H
 
- /// \file ControleurBN.hpp
- /// \brief ControleurBN de notre jeu
- /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
+/// \file ControleurBN.hpp
+/// \brief ControleurBN de notre jeu
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "IHMBN.hpp"
 #include "BatailleNavale.hpp"
@@ -12,10 +12,10 @@ using namespace std;
 
 class ControleurBN{
 
-/// \class ControleurBN
-/// \brief Controleur de notre BN
-///
-/// Classe Controleur permettant la connexion entre notre modèle et notre vue du côté BN
+    /// \class ControleurBN
+    /// \brief Controleur de notre BN
+    ///
+    /// Classe Controleur permettant la connexion entre notre modèle et notre vue du côté BN
 
     private:
         ///Bataille Navale en cours ou null si il n'y en a pas

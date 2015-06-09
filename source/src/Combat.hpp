@@ -1,9 +1,9 @@
 #ifndef COMBAT_H
 #define COMBAT_H
 
- /// \file Combat.hpp
- /// \brief Gestion d'un combat à deux joueurs
- /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
+/// \file Combat.hpp
+/// \brief Gestion d'un combat à deux joueurs
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "Personnage.hpp"
 
@@ -17,7 +17,7 @@ using namespace std;
 
 
 class Combat{
-     public:
+    public:
         /// \fn Personnage retournerGagnant(Personnage joueur1, Personnage joueur2)
         /// \brief Retourner Gagnant
         /// \param joueur1: représente le premier joueur initial de notre combat

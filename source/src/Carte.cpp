@@ -24,17 +24,17 @@ Carte::Carte(int idC, vector<vector<char> > vecGrille):tailleGrille(0,0){//DONE
             char car=ligne[j];
             switch(car){
                 case '_' : {
-                    cellules[i].push_back(new CelluleAccessible());
-                    break;
-                }
+                               cellules[i].push_back(new CelluleAccessible());
+                               break;
+                           }
                 case '#' : {
-                    cellules[i].push_back(new CelluleObstacle());
-                    break;
-                }
+                               cellules[i].push_back(new CelluleObstacle());
+                               break;
+                           }
             }
         }
     }
- }
+}
 
 void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){//DONE
     // On recupere la carte
@@ -55,5 +55,5 @@ Cellule* Carte::getCel(Coordonnees coord){//DONE
 }
 
 vector<vector<Cellule*> > Carte::getCellules(){//DONE
-     return cellules;
+    return cellules;
 }

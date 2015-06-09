@@ -5,44 +5,44 @@
 using namespace std;
 
 Case::Case(){//DONE
-	touche=false;
-	bateau=0;
+    touche=false;
+    bateau=0;
 }
 Case::Case(Bateau* bat){//DONE
-	touche=false;
-	bateau=bat;
+    touche=false;
+    bateau=bat;
 }
 
 void Case::tirerDessus(){//DONE
-	if(touche==false){
-		touche=true;
-		if(bateau!=nullptr)
-			(*bateau).retirerPV();
-	}
+    if(touche==false){
+        touche=true;
+        if(bateau!=nullptr)
+            (*bateau).retirerPV();
+    }
 }
 
 void Case::setBateau(Bateau *bateaucp){//DONE
-	bateau=bateaucp;
+    bateau=bateaucp;
 }
 
 void Case::setTouche(bool touchecp){//DONE
-	touche=touchecp;
+    touche=touchecp;
 }
 
 bool Case::getTouche() const{//DONE
-	return touche;
+    return touche;
 }
 
 bool Case::getToucheBateau() const{//DONE
-	return touche && bateau!=nullptr;
+    return touche && bateau!=nullptr;
 }
 
 Bateau* Case::getBateau() const{//DONE
-	return bateau;
+    return bateau;
 }
 
 void Case::copy(const Case kase){//DONE
-	setTouche(kase.getTouche());
-	setBateau(kase.getBateau());
+    setTouche(kase.getTouche());
+    setBateau(kase.getBateau());
 }
 

@@ -94,7 +94,7 @@ void IHMJeu::afficherCarteCourante(){//DONE
                 } else
                     cout << type;
             } else
-                    cout << type;
+                cout << type;
 
             cout <<" ";
         }

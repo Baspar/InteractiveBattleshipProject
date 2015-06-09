@@ -83,7 +83,7 @@ class IHMBN{
         /// \brief Saisie placements bateaux
         ///
         /// Permet une saisie des placements de chacun des bateaux du joueur
-    /// \param pers : personnage plaçant ses bateaux
+        /// \param pers : personnage plaçant ses bateaux
         /// \return La grille après placement des bateaux
         Grille saisirPlacementBateaux(PersonnageBN* pers);
 

@@ -19,11 +19,11 @@ class PersonnageNonJouable : public Personnage{
 
 
     public :
-    /// \fn PersonnageNonJouable(string nomnv);
-    /// \brief constructeur de PNJ
-    ///
-    /// \param nomnv: nom du personnage
-    PersonnageNonJouable(string nomnv);
+        /// \fn PersonnageNonJouable(string nomnv);
+        /// \brief constructeur de PNJ
+        ///
+        /// \param nomnv: nom du personnage
+        PersonnageNonJouable(string nomnv);
 
 };
 #endif

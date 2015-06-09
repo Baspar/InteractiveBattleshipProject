@@ -39,9 +39,9 @@ void Jeu::lireJoueurs(){//DONE
     int idCartePerso, xPerso, yPerso;
     string nomPerso;
     file >> nomPerso
-         >> idCartePerso
-         >> xPerso
-         >> yPerso;
+        >> idCartePerso
+        >> xPerso
+        >> yPerso;
     Carte* cartePerso = monde.getCarte(idCartePerso);
     personnageJouable = new JoueurHumain(nomPerso, Coordonnees(xPerso, yPerso), cartePerso);
     personnageJouable->setCarte(cartePerso);
@@ -55,14 +55,14 @@ void Jeu::lireJoueurs(){//DONE
         char bossFinal;
         string aCasesCombat, armePerso;
         file >> typePerso
-             >> nomPerso
-             >> idCartePerso
-             >> xPerso
-             >> yPerso
-             >> armePerso
-             >> bossFinal
-             >> xTailleGrille
-             >> yTailleGrille;
+            >> nomPerso
+            >> idCartePerso
+            >> xPerso
+            >> yPerso
+            >> armePerso
+            >> bossFinal
+            >> xTailleGrille
+            >> yTailleGrille;
 
         int nbBateauFlotte;
         vector<int> bateaux;
@@ -126,8 +126,8 @@ void Jeu::lireJoueurs(){//DONE
 
 bool Jeu::partieFinie(){//DONE
     for(Objet* obj: personnageJouable->getInventaire()->getObjet())
-    	if(obj->metFinAuJeu())
-		return true;
+        if(obj->metFinAuJeu())
+            return true;
     return false;
 
 }

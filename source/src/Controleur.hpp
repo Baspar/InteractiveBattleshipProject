@@ -1,9 +1,9 @@
 #ifndef CONTROLEUR_H
 #define CONTROLEUR_H
 
- /// \file Controleur.hpp
- /// \brief Controleur de notre jeu
- /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
+/// \file Controleur.hpp
+/// \brief Controleur de notre jeu
+/// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
 #include "IHMJeu.hpp"
 #include "IHMBN.hpp"
@@ -15,11 +15,11 @@ using namespace std;
 
 class Controleur{
 
-/// \class Controleur
-/// \brief Controleur de notre partie
-///
-/// Classe Controleur permettant la connexion entre notre modèle et notre vue
-/// Le Controleur contient le jeu courant et la bataille navale en cours
+    /// \class Controleur
+    /// \brief Controleur de notre partie
+    ///
+    /// Classe Controleur permettant la connexion entre notre modèle et notre vue
+    /// Le Controleur contient le jeu courant et la bataille navale en cours
 
     private:
         ///IHM gérant la partie correspondant au déplacement sur la carte

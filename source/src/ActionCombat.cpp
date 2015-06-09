@@ -6,13 +6,13 @@
 using namespace std;
 
 ActionCombat::ActionCombat(Personnage* adversairenv, string texte):Action("COMBAT!!!"){//DONE
-	adversaire=adversairenv;
+    adversaire=adversairenv;
 }
 
 void ActionCombat::lancerAction(){//DONE
 }
 
 Personnage* ActionCombat::getAdversaire() const{//DONE
-	return adversaire;
+    return adversaire;
 }
 

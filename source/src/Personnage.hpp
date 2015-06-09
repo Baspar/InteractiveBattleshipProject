@@ -27,16 +27,16 @@ class Personnage{
         Coordonnees coord;
         /// nom du personnage
         string nom;
-	/// inventaire du joueur
-	Inventaire* inventaire;
+        /// inventaire du joueur
+        Inventaire* inventaire;
 
     public:
 
-    	/// \fn Personnage(string nomnv)
+        /// \fn Personnage(string nomnv)
         /// \brief constructeur
         ///
         /// \param nomnv : nom du joueur
-    	Personnage(string nomnv);
+        Personnage(string nomnv);
 
 
         /// \fn void deplacer(Coordonnees coordonnees, Carte* carte)
@@ -57,7 +57,7 @@ class Personnage{
         /// \return Un pointeur sur la carte du personnage
         Carte* getCarte() const;
 
-	/// \fn string getNom() const
+        /// \fn string getNom() const
         /// \brief Getter Nom
         /// \return Le nom du joueur
         string getNom() const;
@@ -72,7 +72,7 @@ class Personnage{
         /// \param carteSet : la carte à pointer en attribut
         void setCarte(Carte* carteSet);
 
-	/// \fn Inventaire* getInventaire()
+        /// \fn Inventaire* getInventaire()
         /// \brief Getter Inventaire
         /// \return l'inventaire du personnage
         Inventaire* getInventaire();

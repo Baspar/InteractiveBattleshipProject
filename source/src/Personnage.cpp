@@ -12,30 +12,30 @@ using namespace std;
 
 
 Personnage::Personnage(string nomnv):coord(-1,-1) { //DONE
-	carte=nullptr;
-	inventaire=new Inventaire();
-	nom=nomnv;
+    carte=nullptr;
+    inventaire=new Inventaire();
+    nom=nomnv;
 }
 
 
 void Personnage::deplacer(Coordonnees coordonnees, Carte* carteEntree){//DONE
-	if( (carteEntree->getCel(coordonnees)->getType()!="#") && (( ((CelluleAccessible*) carteEntree->getCel(coordonnees))->getPersonnage())==nullptr)) {
-		carteEntree->deplacerPersonnage(this, coordonnees);
-		coord.copy(coordonnees);
-		carte=carteEntree;
-	}
+    if( (carteEntree->getCel(coordonnees)->getType()!="#") && (( ((CelluleAccessible*) carteEntree->getCel(coordonnees))->getPersonnage())==nullptr)) {
+        carteEntree->deplacerPersonnage(this, coordonnees);
+        coord.copy(coordonnees);
+        carte=carteEntree;
+    }
 }
 
 string Personnage::getNom() const{//DONE
-	return nom;
+    return nom;
 }
 
 Coordonnees Personnage::getCoordonnees() const {//DONE
-	return coord;
+    return coord;
 }
 
 Carte* Personnage::getCarte() const {//DONE
-	return carte;
+    return carte;
 }
 
 void Personnage::setCoordonnees(Coordonnees coordSet){//DONE
@@ -49,5 +49,5 @@ void Personnage::setCarte(Carte* carteSet){//DONE
 
 
 Inventaire* Personnage::getInventaire() {//DONE
-	return inventaire;
+    return inventaire;
 }

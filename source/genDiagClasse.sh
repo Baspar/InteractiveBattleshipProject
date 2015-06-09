@@ -1,6 +1,8 @@
 #!/bin/bash
 rm -rf uml/Classes.uml Classes.png
-[ "$1" == "clean" ] && rm uml/Classe*.uml
+[ "$1" == "clean" ] && rm -f uml/Classe*.uml
+[ "$1" == "clear" ] && rm -f uml/Classe*.uml && echo "Suppression fichier OK" && exit 0
+[ "$1" == "nocheck" ] && nocheck=1 || nocheck=0
 
 echo "@startuml" >> uml/Classes.uml
 echo "!include skin.uml" >> uml/Classes.uml
@@ -37,7 +39,7 @@ do
 
 
 
-    if [ "$dejaFait" == "" ]
+    if [ "$dejaFait" == "" ]&&[ $nocheck -ne 1 ]
     then
         echo "  (O)  Classe $name" # Debug
         rm -f uml/Classe$name.uml

@@ -14,13 +14,13 @@ void Bateau::retirerPV (){//DONE
         PV--;
 }
 int Bateau::getTailleBateau() const{//DONE
-	return taille;
+    return taille;
 }
 
 int Bateau::getPV() const{//DONE
-	return PV;
+    return PV;
 }
 
 void Bateau::restaurerPV(){//DONE
-        PV=getTailleBateau();	
+    PV=getTailleBateau();
 }

@@ -31,7 +31,7 @@ class Jeu{
         Monde monde;
         /// combat
         Combat* combat;
-      
+
 
     public:
         /// \fn Jeu(Combat* comb)
@@ -63,6 +63,6 @@ class Jeu{
         /// \return Personnage jouable
         PersonnageJouable* getPersonnageJouable();
 
-       
+
 };
 #endif
