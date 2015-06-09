@@ -2,6 +2,7 @@
 #include "Carte.hpp"
 #include "Coordonnees.hpp"
 #include "CelluleAccessible.hpp"
+#include "Inventaire.hpp"
 
 
 #include <iostream>
@@ -12,24 +13,27 @@ using namespace std;
 
 Personnage::Personnage(string nomnv):coord(-1,-1) { //WIP
 	carte=nullptr;
-	nomnv=nom;
+	nom=nomnv;
 }
 
 
 void Personnage::deplacer(Coordonnees coordonnees, Carte* carteEntree){//DONE
-	if( (carteEntree->getCel(coordonnees)->getTypeDeCellule()!="#") && (( ((CelluleAccessible*) carteEntree->getCel(coordonnees))->getPersonnage())==nullptr)) {
+	if( (carteEntree->getCel(coordonnees)->getType()!="#") && (( ((CelluleAccessible*) carteEntree->getCel(coordonnees))->getPersonnage())==nullptr)) {
 		carteEntree->deplacerPersonnage(this, coordonnees);
 		coord.copy(coordonnees);
 		carte=carteEntree;
 	}
 }
 
+string Personnage::getNom() const{
+	return nom;
+}
 
-Coordonnees Personnage::getCoordonnees(){//DONE
+Coordonnees Personnage::getCoordonnees() const {//DONE
 	return coord;
 }
 
-Carte* Personnage::getCarte(){//DONE
+Carte* Personnage::getCarte() const {//DONE
 	return carte;
 }
 
@@ -40,4 +44,9 @@ void Personnage::setCoordonnees(Coordonnees coordSet){//DONE
 
 void Personnage::setCarte(Carte* carteSet){//DONE
     carte = carteSet;
+}
+
+
+Inventaire Personnage::getInventaire() const{
+	return inventaire;
 }

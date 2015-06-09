@@ -1,5 +1,5 @@
-#ifndef ARME_H
-#define ARME_H
+#ifndef OBJET_H
+#define OBJET_H
 
 /// \file Objet.hpp
 /// \brief Gestion des objets de l'inventaire
@@ -31,7 +31,7 @@ class Objet{
         /// \brief Getter du nom de l'objet
         string getNom() const;
 
-        /// \fn virtual bool metFinAuJeu()=0
+        /// \fn virtual bool metFinAuJeu() const=0
         /// \brief Methode Virtuelle pure retournant si l'objet
         virtual bool metFinAuJeu() const=0;
 };

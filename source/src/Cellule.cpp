@@ -17,14 +17,14 @@ void Cellule::lancerAction() const{//DONE
     action->lancerAction();
 }
 
-void Cellule::setType(string const typeCp){
+void Cellule::setType(string const typeCp){//DONE
     typeDeCellule=typeCp;
 }
 
-Action* Cellule::getActionCellule() const{//DONE
+Action* Cellule::getAction() const{//DONE
     return action;
 }
 
-string Cellule::getTypeDeCellule() const{//DONE
+string Cellule::getType() const{//DONE
     return typeDeCellule;
 }

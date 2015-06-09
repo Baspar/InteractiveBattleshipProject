@@ -43,7 +43,7 @@ class TailleGrille{
         /// \fn void setLongueur(const int longueurcp)
         /// \brief Setter de longueur
         /// \param longueurcp : La longueur de la Grille
-           void setLongueur(const int longueurcp) ;
+        void setLongueur(const int longueurcp) ;
 
         /// \fn int setHauteur(const int hauteurcp)
         /// \brief Setter de hauteur

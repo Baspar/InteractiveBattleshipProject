@@ -1,21 +1,21 @@
 #include "Inventaire.hpp"
-#include "Objet.hpp"
 
 
 using namespace std;
 
-Inventaire(vector<*Objet> obj){
-	objets=obj;
+Inventaire::Inventaire(vector<Objet*> obj){//DONE
+    objets=obj;
 }
 
-        
-vector<*Objet> getObjet() const{
-	return objets;
+Inventaire::Inventaire(){//DONE
+}
+
+vector<Objet*> Inventaire::getObjet() const{//DONE
+    return objets;
 }
 
 
-		
-void ajoutObjet(*Objet obj){
-	objets.push_back(obj);
+void Inventaire::ajoutObjet(Objet* obj){//DONE
+    objets.push_back(obj);
 }
 

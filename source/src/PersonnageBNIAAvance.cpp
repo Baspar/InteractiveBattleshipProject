@@ -7,44 +7,28 @@
 
 using namespace std;
 
-PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv):PersonnageBN(nomnv), casePrecedente(0, 0){//DONE
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv):PersonnageBN(nomnv){//DONE
 }
 
-PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, int l, int h, Arme* a):PersonnageBN(nomnv, l, h, a), casePrecedente(0, 0){//DONE
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, int l, int h, Arme* a):PersonnageBN(nomnv, l, h, a){//DONE
 }
 
-PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, Arme* a):PersonnageBN(nomnv, a), casePrecedente(0, 0){//DONE
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, Arme* a):PersonnageBN(nomnv, a){//DONE
 }
 
-PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, int l, int h):PersonnageBN(nomnv, l, h), casePrecedente(0, 0){//DONE
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, int l, int h):PersonnageBN(nomnv, l, h){//DONE
 }
 
-PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, vector<int> tBateaux):PersonnageBN(nomnv, tBateaux), casePrecedente(0, 0){//DONE
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, vector<int> tBateaux):PersonnageBN(nomnv, tBateaux){//DONE
 }
 
-PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, int l, int h, vector<int> tBateaux, Arme* a):PersonnageBN(nomnv, l, h, tBateaux, a), casePrecedente(0, 0){//DONE
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, int l, int h, vector<int> tBateaux, Arme* a):PersonnageBN(nomnv, l, h, tBateaux, a){//DONE
 }
 
-PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, vector<int> tBateaux, Arme* a):PersonnageBN(nomnv, tBateaux, a), casePrecedente(0, 0){//DONE
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, vector<int> tBateaux, Arme* a):PersonnageBN(nomnv, tBateaux, a){//DONE
 }
 
-PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, int l, int h, vector<int> tBateaux):PersonnageBN(nomnv, l, h, tBateaux), casePrecedente(0, 0){//DONE
-}
-
-void PersonnageBNIAAvance::addCases(const Coordonnees c){//DONE
-    casesT.push_back(c);
-}
-
-Coordonnees PersonnageBNIAAvance::getCases(const int c) const{
-return casesT[c];
-}
-
-Coordonnees PersonnageBNIAAvance::getCasePrecedente(){//DONE
-    return casePrecedente;
-}
-
-void PersonnageBNIAAvance::setCasePrecedente(Coordonnees c){//DONE
-    casePrecedente.copy(c);
+PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, int l, int h, vector<int> tBateaux):PersonnageBN(nomnv, l, h, tBateaux){//DONE
 }
 
 Coordonnees PersonnageBNIAAvance::tirerAleatoirement(Grille* grilleAdverse){ //DONE
@@ -72,98 +56,44 @@ Coordonnees PersonnageBNIAAvance::tirerAleatoirement(Grille* grilleAdverse){ //D
 }
 
 Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
-//Initialisation de la solution
-Coordonnees solution(0,0);
-int i;
-//On regarde si la case prevedente a ete touchee
-if (grilleAdverse->caseValide(casePrecedente)&&grilleAdverse->getCaseElt(casePrecedente).getToucheBateau())
-    addCases(casePrecedente);
-for (i=0;i<casesT.size();i++){
-    if (grilleAdverse->getCaseElt(casePrecedente).getBateau()->estCoule())
-        casesT.erase(casesT.begin()+i-1);
-}
- //On tire aléatoirement si la case precedente n'a pas ete touchee
-if (casesT.size()==0){
-    solution.copy(tirerAleatoirement(grilleAdverse));
-    casePrecedente.copy(solution);
-    return solution;
-}
-if (casesT.size()>0&&casesT.size()<2){
-            Coordonnees coordonneesN(getCases(0).getAbscisse(),getCases(0).getOrdonnee()+1);
-            Coordonnees coordonneesS(getCases(0).getAbscisse(),getCases(0).getOrdonnee()-1);
-            Coordonnees coordonneesE(getCases(0).getAbscisse()+1,getCases(0).getOrdonnee());
-            Coordonnees coordonneesO(getCases(0).getAbscisse()-1,getCases(0).getOrdonnee());
-            if(grilleAdverse->coupValide(coordonneesN))
-                solution.copy(coordonneesN);
-            if(grilleAdverse->coupValide(coordonneesS))
-                solution.copy(coordonneesS);
-            if(grilleAdverse->coupValide(coordonneesE))
-                solution.copy(coordonneesE);
-            if(grilleAdverse->coupValide(coordonneesO))
-                solution.copy(coordonneesO);
-            casePrecedente.copy(solution);
-            return solution;
-        }
-if (casesT.size()>2){
-    if(casesT[0].getAbscisse()==casesT[1].getAbscisse()){
-        solution.setAbscisse(casesT[1].getAbscisse());
-        solution.setOrdonnee(casesT[1].getOrdonnee()+casesT[1].getOrdonnee()-casesT[0].getOrdonnee());
-        if (grilleAdverse->coupValide(solution)){
-            casePrecedente.copy(solution);
-            return solution;
-        }
-        else{
-        solution.setOrdonnee(casesT[0].getOrdonnee()+casesT[0].getOrdonnee()-casesT[1].getOrdonnee());
-        };
-        if (grilleAdverse->coupValide(solution)){
-            casePrecedente.copy(solution);
-            return solution;
-        }else{
-        solution.setAbscisse(casesT[0].getAbscisse()+1);
-        solution.setOrdonnee(casesT[0].getOrdonnee());
-        };
-        if (grilleAdverse->coupValide(solution)){
-            casePrecedente.copy(solution);
-            return solution;
-        }else{
-        solution.setAbscisse(casesT[0].getAbscisse()-1);
-        solution.setOrdonnee(casesT[0].getOrdonnee());
-        casePrecedente.copy(solution);
-        return solution;
-        }
+    int hauteur=grilleAdverse->getTailleGrille().getHauteur();
+    int longueur=grilleAdverse->getTailleGrille().getLongueur();
+    for(int i=0; i<hauteur; i++){
+        for(int j=0; j<longueur; j++){
+            Coordonnees coord(j, i);
+            if (grilleAdverse->getCaseElt(coord).getToucheBateau() && !grilleAdverse->getCaseElt(coord).getBateau()->estCoule()){
+                Coordonnees coordN(coord.getAbscisse(),coord.getOrdonnee());
+                Coordonnees coordS(coord.getAbscisse(),coord.getOrdonnee());
+                Coordonnees coordE(coord.getAbscisse(),coord.getOrdonnee());
+                Coordonnees coordO(coord.getAbscisse(),coord.getOrdonnee());
 
-    }
+                while(grilleAdverse->caseValide(coordS) && grilleAdverse->getCaseElt(coordS).getBateau()!=nullptr && grilleAdverse->getCaseElt(coordS).getToucheBateau() && !grilleAdverse->getCaseElt(coordS).getBateau()->estCoule()){
+                    coordS.setOrdonnee(coordS.getOrdonnee()+1);
+                    if(grilleAdverse->caseValide(coordS) && !grilleAdverse->getCaseElt(coordS).getTouche())
+                        return coordS;
+                }
 
-    if(casesT[0].getOrdonnee()==casesT[1].getOrdonnee()){
-        solution.setOrdonnee(casesT[1].getOrdonnee());
-        solution.setAbscisse(casesT[1].getAbscisse()+casesT[1].getAbscisse()-casesT[0].getAbscisse());
-        if (grilleAdverse->coupValide(solution)){
-            casePrecedente.copy(solution);
-            return solution;
-        }
-        else{
-            solution.setAbscisse(casesT[0].getAbscisse()+casesT[0].getAbscisse()-casesT[1].getAbscisse());
-        };
-        if (grilleAdverse->coupValide(solution)){
-            casePrecedente.copy(solution);
-            return solution;
-        }else{
-        solution.setAbscisse(casesT[0].getAbscisse());
-        solution.setOrdonnee(casesT[0].getOrdonnee()+1);
-        };
-        if (grilleAdverse->coupValide(solution)){
-            casePrecedente.copy(solution);
-            return solution;
-        }else{
-        solution.setAbscisse(casesT[0].getAbscisse());
-        solution.setOrdonnee(casesT[0].getOrdonnee()-1);
-        casePrecedente.copy(solution);
-        return solution;
+                while(grilleAdverse->caseValide(coordN) && grilleAdverse->getCaseElt(coordN).getBateau()!=nullptr && grilleAdverse->getCaseElt(coordN).getToucheBateau() && !grilleAdverse->getCaseElt(coordN).getBateau()->estCoule()){
+                    coordN.setOrdonnee(coordN.getOrdonnee()-1);
+                    if(grilleAdverse->caseValide(coordN) && !grilleAdverse->getCaseElt(coordN).getTouche())
+                        return coordN;
+                }
+
+                while(grilleAdverse->caseValide(coordE) && grilleAdverse->getCaseElt(coordE).getBateau()!=nullptr && grilleAdverse->getCaseElt(coordE).getToucheBateau() && !grilleAdverse->getCaseElt(coordE).getBateau()->estCoule()){
+                    coordE.setAbscisse(coordE.getAbscisse()+1);
+                    if(grilleAdverse->caseValide(coordE) && !grilleAdverse->getCaseElt(coordE).getTouche())
+                        return coordE;
+                }
+
+                while(grilleAdverse->caseValide(coordO) && grilleAdverse->getCaseElt(coordO).getBateau()!=nullptr && grilleAdverse->getCaseElt(coordO).getToucheBateau() && !grilleAdverse->getCaseElt(coordO).getBateau()->estCoule()){
+                    coordO.setAbscisse(coordO.getAbscisse()-1);
+                    if(grilleAdverse->caseValide(coordO) && !grilleAdverse->getCaseElt(coordO).getTouche())
+                        return coordO;
+                }
+            }
         }
     }
-
-}
-
+    return tirerAleatoirement(grilleAdverse);
 }
 
 Grille PersonnageBNIAAvance::placerBateaux(){//DONE

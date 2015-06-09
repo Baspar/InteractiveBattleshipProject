@@ -22,10 +22,12 @@ class PersonnageJouable : public Personnage{
         Carte* idCarteInit;
 
     public :
-        /// \fn PersonnageJouable(string nomnv)
+        /// \fn PersonnageJouable(string nomnv, Coordonnees coord, Carte* idCarte)
         /// \brief constructeur
         ///
         /// \param nomnv : nom du joueur
+        /// \param coord : coordonnees du joueur
+        /// \param idCarte : pointeur sur carte où se trouve le joueur
         PersonnageJouable(string nomnv, Coordonnees coord, Carte* idCarte);
 
         /// \fn void deplacementInitial()
