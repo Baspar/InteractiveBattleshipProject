@@ -1,0 +1,10 @@
+@startuml
+activate Monde
+    loop Pour toutes les cartes du monde
+        Monde -> Carte : initialiserCarte(int longueur, int largeur)
+        activate Carte
+            Monde <-- Carte
+        deactivate Carte
+    end loop
+deactivate Monde
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+activate Combat
+    loop Sur les 2 grilles des 2 joueurs
+        activate Grille
+        Combat -> Grille : initialiserGrille(int longueur, int largeur)
+        Combat <-- Grille
+        Combat -> Grille : placerBateau(liste bateaux)
+        deactivate Grille
+        Combat <-- Grille
+    end
+deactivate Combat
+@enduml

@@ -39,6 +39,8 @@ MainTestCarte: CompileMainTestCarte
 	tests/MainTestCarte
 MainTestCase: CompileMainTestCase
 	tests/MainTestCase
+MainTestCelluleChangementCarte: CompileMainTestCelluleChangementCarte
+	tests/MainTestCelluleChangementCarte
 MainTestCelluleAccessible: CompileMainTestCelluleAccessible
 	tests/MainTestCelluleAccessible
 MainTestCelluleCombat: CompileMainTestCelluleCombat
@@ -114,6 +116,8 @@ CompileMainTestCarte: Carte.o
 	g++ $(FLAGSTEST) tests/MainTestCarte.cpp $^ -o tests/MainTestCarte
 CompileMainTestCase: Case.o Bateau.o
 	g++ $(FLAGSTEST) tests/MainTestCase.cpp $^ -o tests/MainTestCase
+CompileMainTestCelluleChangementCarte: CelluleChangementCarte.o Cellule.o CelluleAccessible.o Carte.o Coordonnees.o
+	g++ $(FLAGS) tests/MainTestCelluleChangementCarte.cpp $^ -o tests/MainTestCelluleChangementCarte
 CompileMainTestCelluleAccessible: CelluleAccessible.o Cellule.o PersonnageJouable.o Personnage.o Coordonnees.o Carte.o PersonnageNonJouable.o
 	g++ $(FLAGSTEST) tests/MainTestCelluleAccessible.cpp $^ -o tests/MainTestCelluleAccessible TailleGrille.o CelluleObstacle.o
 CompileMainTestCelluleCombat: CelluleCombat.o Personnage.o ActionCombat.o CelluleAccessible.o Coordonnees.o Carte.o Action.o Cellule.o TailleGrille.o 
@@ -158,5 +162,6 @@ CompileMainTestTailleGrille: TailleGrille.o
 	g++ $(FLAGSTEST) tests/MainTestTailleGrille.cpp $^ -o tests/MainTestTailleGrille
 CompileMainTestControleurBN: ControleurBN.o  BatailleNavale.o IHMBN.o Grille.o Coordonnees.o TailleGrille.o PersonnageBN.o Bateau.o JoueurIA.o JoueurIACheate.o Case.o PersonnageBNIA.o PersonnageNonJouable.o ArmeClassique.o PersonnageBNIACheate.o  Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o ArmeCroix.o JoueurHumain.o  PersonnageJouable.o PersonnageBNHumain.o ArmeChercheuse.o
 	g++ $(FLAGSTEST) tests/MainTestControleurBN.cpp $^ -o tests/MainTestControleurBN
+
 clean:
 	rm -rf *.o *~ tests/*~ main; find ./tests/ -type f ! -name "*.*" -exec rm {} \;

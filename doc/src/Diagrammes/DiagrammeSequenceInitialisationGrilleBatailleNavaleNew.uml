@@ -1,0 +1,10 @@
+@startuml
+activate Grille
+    loop Sur chacune des cases de la grille
+        Grille -> Case : creerCase(int abscisse, int ordonnee)
+        activate Case
+            Grille <-- Case
+        deactivate Case
+    end
+deactivate Grille
+@enduml

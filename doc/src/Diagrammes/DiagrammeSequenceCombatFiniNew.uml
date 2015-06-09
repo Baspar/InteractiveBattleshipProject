@@ -1,0 +1,16 @@
+@startuml
+    activate Jeu
+        loop sur chaque joueur
+            Jeu -> BatailleNavale : getJoueur()
+            activate BatailleNavale 
+                BatailleNavale -> BatailleNavale : getNombreBateauxRestantADétruire()
+                activate BatailleNavale 
+                    alt SI il ne reste aucun bateau à détruire 
+                        BatailleNavale --> Jeu : VRAI
+                    end
+                deactivate BatailleNavale
+                Jeu <-- BatailleNavale: FAUX
+            deactivate BatailleNavale 
+        end
+    deactivate Jeu
+@enduml

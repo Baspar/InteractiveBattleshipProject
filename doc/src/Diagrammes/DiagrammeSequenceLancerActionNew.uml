@@ -1,0 +1,15 @@
+@startuml
+activate Controleur
+    Controleur -> Jeu : getCelluleCourante()
+    activate Jeu
+        Jeu -> Cellule : getActionCellule()
+        activate Cellule
+            Cellule -> Cellule : lancerAction()
+            activate Cellule
+            deactivate Cellule
+            Jeu <-- Cellule
+        deactivate Cellule
+        Controleur <-- Jeu
+    deactivate Jeu
+deactivate Controleur
+@enduml

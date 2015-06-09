@@ -1,0 +1,17 @@
+@startuml
+activate IHM
+
+    IHM->Jeu : getJeu()
+    activate Jeu
+        Jeu-->IHM : batailleNavale
+    deactivate Jeu
+
+    IHM -> IHM : afficherJeu(batailleNavale)
+    activate IHM
+        note right of IHM
+            La méthode afficherJeu() va dépendre de l'IHM choisie
+        end note
+    deactivate IHM
+
+deactivate IHM
+@enduml

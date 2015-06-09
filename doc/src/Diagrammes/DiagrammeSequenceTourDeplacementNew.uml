@@ -1,0 +1,27 @@
+@startuml
+activate Controleur
+    loop Tant que la partie n'est pas finie
+        Controleur-> IHM: afficherCarteCourante()
+        activate IHM
+            Controleur <-- IHM
+        deactivate IHM
+
+        alt Si le joueur est humain
+            Controleur->IHM : saisirDéplacement()
+            activate IHM
+                Controleur<--IHM : deplacement
+            deactivate IHM 
+        else Si le joueur est une IA
+            Controleur->IHM : determinerDeplacementAuHasard()
+            activate IHM
+                Controleur<--IHM : deplacement
+            deactivate IHM 
+        end
+
+        Controleur -> Jeu: deplacerjoueur(deplacement)
+        activate Jeu
+            Jeu-->Controleur
+        deactivate Jeu
+    end
+deactivate Controleur
+@enduml
