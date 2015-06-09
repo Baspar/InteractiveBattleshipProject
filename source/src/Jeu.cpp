@@ -79,14 +79,12 @@ void Jeu::lireJoueurs(){//DONE
         if(aCasesCombat == "Y"){
             int nbCasesCombat;
             file >> nbCasesCombat;
+            Action* action = new ActionCombat(perso, "")
             for(int j=0; j<nbCasesCombat; j++){
                 int xCase, yCase, idCarteCase;
                 file >> idCarteCase >> xCase >> yCase;
-                //vector<vector<Cellule*> > Cartes = monde.cartes[idCarteCase].getCellules();
-                //Cartes[xCase][yCase]=new CelluleCombat(perso);
-                //cout << monde.cartes[idCarteCase].getCellules()[xCase][yCase]->getTypeDeCellule();
                 monde.getCarte(idCarteCase)->getCellules()[xCase][yCase]->setType("x");
-                monde.getCarte(idCarteCase)->getCellules()[xCase][yCase]->setAction(new ActionCombat(perso, "J'aime les short"));
+                monde.getCarte(idCarteCase)->getCellules()[xCase][yCase]->setAction(action);
             }
         }
     }

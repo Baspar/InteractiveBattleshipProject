@@ -8,8 +8,6 @@
 int main(){
 	Personnage* advers = new Personnage("Ann");
 	ActionCombat* actCombat = new ActionCombat(advers,"bla");
-	CelluleCombat cell();
-	CelluleCombat cellu(advers,actCombat);
-	cout << "cell est elle accesssible? " << cell.estAccessible() << endl;
+	CelluleCombat cellu(advers);
 	cout << "cellu est elle accesssible? " << cellu.estAccessible() << endl;
 }

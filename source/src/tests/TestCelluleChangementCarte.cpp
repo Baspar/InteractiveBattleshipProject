@@ -7,10 +7,9 @@
 #include <vector>
 
 int main(){
-	vector<int> vec={0,0,2,0,0}
-	Carte* cD = new Carte(0,vec,TailleGrille(2,2));
-	Carte* cA = new Carte(1,vec,TailleGrille(2,2));
-	Coordonnees coordD(0,0);
-	Coordonnees coordA(1,0);
+	Carte* cD = new Carte(0,{{'#','_','#'},{'#','_','#'},{'#','_','_'}});
+	Carte* cA = new Carte(1,{{'_','_','#'},{'#','_','#'},{'#','_','#'}});
+	Coordonnees coordD(0,1);
+	Coordonnees coordA(1,2);
 	CelluleChangementCarte(cD,cA,coordD,coordA);
 }

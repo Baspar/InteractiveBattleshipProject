@@ -2,6 +2,7 @@
 #include "Carte.hpp"
 #include "Coordonnees.hpp"
 #include "CelluleAccessible.hpp"
+#include "Inventaire.hpp"
 
 
 #include <iostream>
