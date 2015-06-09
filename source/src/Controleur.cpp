@@ -46,6 +46,7 @@ void Controleur::tourDeJeu(){//DONE
 
 
 void Controleur::lancerJeu(){//DONE
+    ihmJeu->afficherDebut();
     while(!jeu->partieFinie())
         tourDeJeu();
 }
