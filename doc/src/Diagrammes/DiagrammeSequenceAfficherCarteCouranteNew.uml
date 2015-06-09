@@ -1,16 +1,21 @@
 @startuml 
-activate IHM 
-    IHM->Jeu : getCarteCourant() 
-    activate Jeu 
-        IHM<--Jeu : carteCourante
+activate IHMJEU
+    IHMJEU->JEU : getCarteCourant() 
+    activate JEU 
+        IHMJEU<--JEU : carteCourante
+        
     deactivate Jeu 
 
-    IHM -> IHM : afficherCarte(carteCourante)
-    activate IHM
-        note right of IHM
-            La méthode afficherCarte() va dépendre de l'IHM choisie
+    IHMJEU -> IHMJEU : afficherCarte(carteCourante)
+    loop [largeur cellule]
+		loop [longueur cellule]
+			afficherTypeCellule()
+		end
+	end
+        note right of IHMJEU
+            La méthode afficherCarte() va afficher un symbole différent en fonction du type de cellule.
         end note
-    deactivate IHM
+    deactivate IHMJEU
 
-deactivate IHM 
+deactivate IHMJEU
 @enduml

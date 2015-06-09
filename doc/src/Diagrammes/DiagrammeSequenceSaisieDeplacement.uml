@@ -1,0 +1,25 @@
+@startuml
+activate IHMJeu
+loop Tant qu'un deplacement n'est pas validé
+IHMJeu->IHMJeu:"Entrée invalide"
+end
+activate Coordonnees
+IHMJeu->Coordonnees:getCoordonnees(Personnage)
+alt Le chiffre saisi est 8
+IHMJeu->Coordonnees:(Abscisse-1,Ordonnee)
+end
+alt Le chiffre saisi est 4
+IHMJeu->Coordonnees:(Abscisse,Ordonnee-1)
+end
+alt Le chiffre saisi est 2
+IHMJeu->Coordonnees:(Abscisse+1,Ordonnee)
+end
+alt Le chiffre saisi est 6
+IHMJeu->Coordonnees:(Abscisse,Ordonnee+1)
+end
+alt default
+IHMJeu->Coordonnees:(Abscisse,Ordonnee)
+end
+deactivate Coordonnees
+deactivate IHMJeu
+@enduml

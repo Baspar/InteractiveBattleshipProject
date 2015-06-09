@@ -1,0 +1,14 @@
+@startuml
+activate BatailleNavale
+activate PersonnageBN
+BatailleNavale->PersonnageBN:joueurs[0]=joueur1
+BatailleNavale->PersonnageBN:joueurs[1]=joueur2
+BatailleNavale->BatailleNavale:clear()
+note right: On vide les grilles
+BatailleNavale->BatailleNavale:InitialisationGrilleJoueur1
+BatailleNavale->BatailleNavale:InitialisationGrilleJoueur2
+loop Sur le nombre de joueurs
+BatailleNavale->PersonnageBN:RestaurerBateaux()
+end
+deactivate BatailleNavale
+@enduml

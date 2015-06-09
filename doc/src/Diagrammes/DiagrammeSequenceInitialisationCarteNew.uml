@@ -1,17 +1,11 @@
 @startuml
 activate Carte
-    loop Pour chaque cellule de la carte
-        Carte -> Cellule : creerCellule(String type)
-        activate Cellule
-            note right of Carte
-                En fonction du type en entrée
-                on crééera soit une 
-                celluleTransport, soit une 
-                celluleAccessible, soit une 
-                celluleObstacle.
-            end note
-            Carte <-- Cellule
-        deactivate Cellule
-    end
+Carte->Carte:SetHauteur
+Carte->Carte:SetLongueur
+loop sur la longueur
+loop sur la hauteur
+Carte->Carte:PlacerSymbole
+end
+end
 deactivate Carte
 @enduml

@@ -13,8 +13,8 @@ using namespace std;
 
 Personnage::Personnage(string nomnv):coord(-1,-1) { //WIP
 	carte=nullptr;
-	nomnv=nom;
 	inventaire=new Inventaire();
+	nom=nomnv;
 }
 
 

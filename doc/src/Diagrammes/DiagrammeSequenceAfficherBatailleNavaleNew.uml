@@ -1,17 +1,23 @@
 @startuml
-activate IHM
+activate IHMBN
 
-    IHM->Jeu : getJeu()
-    activate Jeu
-        Jeu-->IHM : batailleNavale
-    deactivate Jeu
+    IHMBN->BN : getGrille()
+    activate BN
+        BN-->IHMBN : grille
+    deactivate BN
+    
+    IHMBN->BN : getGrilleAdverse()
+    activate BN
+        BN-->IHMBN : grilleAdverse
+    deactivate BN
 
-    IHM -> IHM : afficherJeu(batailleNavale)
-    activate IHM
-        note right of IHM
-            La méthode afficherJeu() va dépendre de l'IHM choisie
+    IHMBN -> IHMBN : afficherGrille()
+    activate IHMBN
+        note right of IHMBN
+            La méthode afficherGrille() va dépendre de l'IHM choisie
+            Pour la console il ne s'agit que de boucles POUR.
         end note
-    deactivate IHM
+    deactivate IHMBN
 
-deactivate IHM
+deactivate IHMBN
 @enduml

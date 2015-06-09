@@ -1,15 +1,13 @@
 @startuml
-activate Controleur
-    Controleur -> Jeu : getCelluleCourante()
-    activate Jeu
-        Jeu -> Cellule : getActionCellule()
-        activate Cellule
-            Cellule -> Cellule : lancerAction()
-            activate Cellule
-            deactivate Cellule
-            Jeu <-- Cellule
-        deactivate Cellule
-        Controleur <-- Jeu
-    deactivate Jeu
-deactivate Controleur
+activate Cellule
+activate Action
+Cellule->Action:lancerAction()
+note right
+On lance une certaine action en fonction de la case
+ActionCombat: On retourne l'adversaire
+ActionChangementCarte: On change la carte
+ActionVide: Dialogue entre joueur et personnage
+end note
+deactivate Action
+deactivate Cellule
 @enduml
