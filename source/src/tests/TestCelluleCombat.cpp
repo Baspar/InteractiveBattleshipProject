@@ -7,7 +7,8 @@
 
 int main(){
 	Personnage* advers = new Personnage("Ann");
+	cout << "Nom de l'adversaire passé en paramètre? " << advers->getNom() <<endl;
 	CelluleCombat cellu(advers);
 	cout << "cellu est elle accesssible? " << cellu.estAccessible() << endl;
-	cout << "nom de l'adversaire?" <<((ActionCombat*)cellu.getAction())->getAdversaire()  << endl;
+	cout << "nom de l'adversaire pendant le combat? " <<((ActionCombat*)cellu.getAction())->getAdversaire()->getNom() << endl;
 }

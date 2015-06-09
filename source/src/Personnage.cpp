@@ -13,7 +13,7 @@ using namespace std;
 
 Personnage::Personnage(string nomnv):coord(-1,-1) { //WIP
 	carte=nullptr;
-	nomnv=nom;
+	nom=nomnv;
 }
 
 
