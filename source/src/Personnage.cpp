@@ -25,6 +25,9 @@ void Personnage::deplacer(Coordonnees coordonnees, Carte* carteEntree){//DONE
 	}
 }
 
+string Personnage::getNom() const{
+	return nom;
+}
 
 Coordonnees Personnage::getCoordonnees() const {//DONE
 	return coord;

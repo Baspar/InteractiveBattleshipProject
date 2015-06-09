@@ -7,7 +7,7 @@
 
 int main(){
 	Personnage* advers = new Personnage("Ann");
-	ActionCombat* actCombat = new ActionCombat(advers,"bla");
 	CelluleCombat cellu(advers);
 	cout << "cellu est elle accesssible? " << cellu.estAccessible() << endl;
+	cout << "nom de l'adversaire?" <<((ActionCombat*)cellu.getAction())->getAdversaire()  << endl;
 }

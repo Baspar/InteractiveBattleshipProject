@@ -57,6 +57,11 @@ class Personnage{
         /// \return Un pointeur sur la carte du personnage
         Carte* getCarte() const;
 
+	/// \fn string getNom() const
+        /// \brief Getter Nom
+        /// \return Le nom du joueur
+        string getNom() const;
+
         /// \fn vodi setCoordonnees(Coordonnees coordSet)
         /// \brief Setter Coordonnees
         /// \param coordSet Les coordonnees du personnage
