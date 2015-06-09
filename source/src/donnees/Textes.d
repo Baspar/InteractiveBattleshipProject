@@ -1,3 +1,3 @@
-2
+0
     0 5 3 Tu te crois fort en Bataille Navale ?
     0 5 4 On va voir ça...

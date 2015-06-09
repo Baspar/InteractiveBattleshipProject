@@ -25,10 +25,13 @@ void Monde::lireCasesChangementCarte(){//DONE
     ifstream file("donnees/Transport.d", ios::in);
     int nbCases;
     file >> nbCases;
+    cout << "On a " << nbCases << " Cases"<< endl;
     for(int i=0; i<nbCases; i++){
         int idCarteDep, xDep, yDep;
         int idCarteFin, xFin, yFin;
         file >> idCarteDep >> xDep >> yDep >> idCarteFin >> xFin >> yFin;
+        cout << "Case n°"<< i << ": [" << idCarteDep << "] "<< xDep << "->" << yDep <<endl;
+        cout << "        : [" << idCarteFin << "] "<< xFin << "->" << yFin <<endl;
         cartes[idCarteDep].getCellules()[xDep][yDep]->setType("@");
         cartes[idCarteDep].getCellules()[xDep][yDep]->setAction(
                 new ActionChangementCarte(
