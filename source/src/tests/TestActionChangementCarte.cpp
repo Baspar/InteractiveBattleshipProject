@@ -9,13 +9,11 @@
 using namespace std;
 
 int main(){
-	Carte* carteD = new Carte(0,vec);
-	Carte* carteA = new Carte(1,vec);
+	Carte* carteD = new Carte(0,{{'#','_','#'},{'#','_','#'},{'#','_','_'}});
+	Carte* carteA = new Carte(1,{{'_','_','#'},{'#','_','#'},{'#','_','#'}});
 	Coordonnees coordD(0,0);
 	Coordonnees coordA(1,0);
-	PersonnageJouable* pers = new PersonnageJouable("Jerôme");
-	pers->setCarte(carteD);
-	pers->setCoordonnees(coordD);
+	PersonnageJouable* pers = new PersonnageJouable("Jerôme",coordD,carteD);
 	((CelluleAccessible*)carteD->getCel(coordD))->setPersonnage(pers);
 	ActionChangementCarte act(carteD,carteA,coordD,coordA);
 	cout << "Personnage présent dans la carte de départ?" << ((CelluleAccessible*)carteD->getCel(coordD))->getPersonnage() << endl;

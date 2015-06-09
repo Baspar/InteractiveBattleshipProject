@@ -55,7 +55,7 @@ Coordonnees PersonnageBNIAAvance::tirerAleatoirement(Grille* grilleAdverse){ //D
     return impact ;
 }
 
-Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//WIP
+Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//DONE
     int hauteur=grilleAdverse->getTailleGrille().getHauteur();
     int longueur=grilleAdverse->getTailleGrille().getLongueur();
     for(int i=0; i<hauteur; i++){

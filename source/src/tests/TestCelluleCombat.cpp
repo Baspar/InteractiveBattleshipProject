@@ -11,4 +11,5 @@ int main(){
 	CelluleCombat cellu(advers);
 	cout << "cellu est elle accesssible? " << cellu.estAccessible() << endl;
 	cout << "nom de l'adversaire pendant le combat? " <<((ActionCombat*)cellu.getAction())->getAdversaire()->getNom() << endl;
+	cout << "Le type de cellule est " << cellu.getType() << endl;
 }
