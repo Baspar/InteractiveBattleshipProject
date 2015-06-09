@@ -24,6 +24,11 @@ class CelluleAccessible:public Cellule{
         /// \brief Construit une CelluleAccessible
         CelluleAccessible();
 
+        /// \fn CelluleAccessible(string type)
+        /// \brief Construit une CelluleAccessible
+        /// \param type caractere du type a ajouter
+        CelluleAccessible(string type);
+
         /// \fn CelluleAccessible(Personnage* perso)
         /// \brief Construit une CelluleAccessible
         /// \param perso : Personnage a affecter

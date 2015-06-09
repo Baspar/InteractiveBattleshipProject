@@ -83,12 +83,14 @@ class PersonnageBNIAAvance : public PersonnageBN{
         /// \param h : hauteur de la grille
         PersonnageBNIAAvance(string nomnv, int l, int h, vector<int> tBateaux);
 
+        /// \fn Grille placerBateaux()
         /// \brief Place les bateaux
         ///
         /// Place les bateaux de manière aléatoire
         /// \return une grille avec les bateaux placés
         Grille placerBateaux();
 
+        /// \fn Coordonnees tirerAleatoirement(Grille* grilleAdverse)
         /// \brief Attaque du PNJ
         ///
         /// Indique où le PNJ attaque
@@ -103,29 +105,32 @@ class PersonnageBNIAAvance : public PersonnageBN{
         /// \return les coordonnees de la case à attaquer
         Coordonnees coordonneesAViser(Grille* grilleAdverse);
 
+        /// \fn Coordonnees aucuneToucheeAutour(Grille* grille,Coordonnees coordonneesCT)
         /// \brief Booleen autour d une case
-        ///
         /// Indique si auncune case autour est touchee
-        /// \param grilleAdverse : grille sur laquelle le joueur vise
-        /// \param coordonnees : case
+        ///
+        /// \param grille: grille sur laquelle le joueur vise
+        /// \param coordonneesCT : case touchée
         /// \return booleen
         Coordonnees aucuneToucheeAutour(Grille* grille,Coordonnees coordonneesCT);
 
+        /// \fn Coordonnees getCasePrecedente()
         /// \brief Getter de case precedente
         ///
         /// Getter de la case precedente
         /// \return case precedente
         Coordonnees getCasePrecedente();
 
+        /// \fn void setCasePrecedente(Coordonnees c)
         /// \brief Setter de case precedente
         ///
         /// Setter de la case precedente
-        /// \param  case precedente
+        /// \param c : case precedente
         void setCasePrecedente(Coordonnees c);
 
-        /// \fn setCases(const vector<Coordonnees> cases)
+        /// \fn void addCases(const Coordonnees c)
         /// \brief setter de cases
-        /// \param cases : cases de notre grille
+        /// \param c : cases de notre grille
         void addCases(const Coordonnees c);
 
         /// \fn vector<vector<Case> > getCases() const

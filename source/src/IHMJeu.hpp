@@ -26,6 +26,10 @@ class IHMJeu{
         /// Methode permettant l'affichage des textes que le jeu souhaite envoyer aux joueurs
         void afficherInteraction();
 
+        /// \fn void ClearScreen()
+        /// \brief Efface le contenu de l'écran
+        void ClearScreen();
+
         /// \fn afficherCarteCourante()
         /// \brief affichage cellule ou joueur place
         ///

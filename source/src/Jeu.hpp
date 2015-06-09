@@ -40,10 +40,14 @@ class Jeu{
     /// \brief Constructeur
     Jeu();
 
-    /// \fn Jeu(Combat comb)
+    /// \fn Jeu(Combat* comb)
     /// \brief Constructeur parametre
     /// \param comb : combat à utiliser
     Jeu(Combat* comb);
+
+    /// \fn void lireJoueurs()
+    /// \brief Lit les joueurs
+    void lireJoueurs();
 
     /// \fn bool partieFinie()
     /// \brief voir si partie finie

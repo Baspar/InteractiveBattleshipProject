@@ -6,6 +6,11 @@
 #include <iostream>
 
 using namespace std;
+
+void IHMBN::ClearScreen(){
+    cout << string( 100, '\n' );
+}
+
 IHMBN::IHMBN (BatailleNavale* bn){//DONE
 	batailleNavale=bn;
 }
@@ -15,6 +20,7 @@ BatailleNavale* IHMBN::getBN(){//DONE
 }
 
 void IHMBN::afficherJeu(){//DONE
+    ClearScreen();
 	 // Affichage dizaines
    Grille* grille=getBN()->getGrilles()[getBN()->getIndiceJoueurCourant()];
    Grille* grilleAdverse=getBN()->getGrilles()[(getBN()->getIndiceJoueurCourant()+1)%2];
@@ -145,6 +151,7 @@ Coordonnees IHMBN::saisieCoup () const{//DONE
 }
 
 Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
+    ClearScreen();
 	Grille grille(pers->getTailleGrille().getLongueur(),pers->getTailleGrille().getHauteur());
 	afficherGrilleBateaux(grille);
 	cout << "DEBUT DU PLACEMENT DES BATEAUX DE " << pers->getNomBN() << endl;
@@ -282,5 +289,3 @@ void IHMBN::afficherResultatTour(Coordonnees coord){//DONE
 	}
 	cout << endl;
 }
-
-

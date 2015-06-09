@@ -15,12 +15,22 @@ using namespace std;
 /// La classe représente un personnage jouable
 class PersonnageJouable : public Personnage{
 
+    private:
+        /// Coordonnées initiales du personnge, sur lesquels il sera remis en cas de perte
+        Coordonnees coordInit;
+        /// Coordonnées initiales du personnge, sur lesquels il sera remis en cas de perte
+        Carte* idCarteInit;
+
     public :
-    /// \fn PersonnageJouable(string nomnv)
+        /// \fn PersonnageJouable(string nomnv)
         /// \brief constructeur
         ///
         /// \param nomnv : nom du joueur
-    PersonnageJouable(string nomnv);
+        PersonnageJouable(string nomnv, Coordonnees coord, Carte* idCarte);
+
+        /// \fn void deplacementInitial()
+        /// \brief Remet le personnage à son emplacement initial
+        void deplacementInitial();
 
 };
 #endif

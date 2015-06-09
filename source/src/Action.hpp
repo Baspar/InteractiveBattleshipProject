@@ -32,7 +32,7 @@ class Action{
         /// \fn Action(string txtInt)
         /// \brief Constructeur
         ///
-        /// \param txtInteraction : le texte d'interaction
+        /// \param txtInt: le texte d'interaction
         /// Constructeur de la classe Action
         Action(string txtInt);
 
@@ -40,7 +40,7 @@ class Action{
         /// \brief Getter texteInteraction
         /// \return Le texte correspondant à l'action
         string getTexteInteraction();
-        
+
         /// \fn string setTexteInteraction(string texte)
         /// \brief Setter texteInteraction
         /// \param texte : Le texte correspondant à l'action

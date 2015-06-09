@@ -5,9 +5,14 @@
 #include "CelluleAccessible.hpp"
 #include "JoueurHumain.hpp"
 #include <iostream>
+#include <limits>
 
 
 using namespace std;
+
+void IHMJeu::ClearScreen(){
+    cout << string( 100, '\n' );
+}
 
 IHMJeu::IHMJeu (Jeu* jeuEntree){//DONE
     jeu=jeuEntree;
@@ -15,7 +20,11 @@ IHMJeu::IHMJeu (Jeu* jeuEntree){//DONE
 
 Coordonnees IHMJeu::saisieDeplacement (){//DONE
     int deplacement=0;
-    cin >> deplacement;
+    while(!(cin >> deplacement)){
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Entrée invalide, réessayez: ";
+    }
 
     Coordonnees coord(jeu->getPersonnageJouable()->getCoordonnees());
 
@@ -29,49 +38,50 @@ Coordonnees IHMJeu::saisieDeplacement (){//DONE
 }
 
 void IHMJeu::afficherJeu (){//DONE
-
-    this->afficherCarteCourante();
+    ClearScreen();
     this->afficherInteraction();
-    cout << jeu->getPersonnageJouable()->getCarte()->getCel(Coordonnees(3,3))->getActionCellule()->isActive();
+    this->afficherCarteCourante();
     this->afficherSaisie();
 }
 
 void IHMJeu::afficherSaisie (){//DONE
-    cout<<endl;
-    cout<<"Affichage de la zone de saisie";
-    cout<<endl;
+    cout<<"Action ? (2, 4, 6 ou 8)"<< endl;
 }
 
 void IHMJeu::afficherInteraction(){//DONE
-	cout << "Affichage de l'action en cours" << endl;
-	if(jeu->getActionEnCours()!=nullptr){
-		cout << jeu->getActionEnCours()->getTexteInteraction() << endl;
-	}
-	else cout<< endl;
+    if(jeu->getActionEnCours()!=nullptr){
+        string txt = jeu->getActionEnCours()->getTexteInteraction();
+        cout << "+-";
+        for (int i=0; i<txt.length(); i++)
+            cout << "-";
+        cout << "-+"<< endl;
+
+        cout << "| " << txt << " |" << endl;
+
+        cout << "+-";
+        for (int i=0; i<txt.length(); i++)
+            cout << "-";
+        cout << "-+"<< endl;
+    }
+
 }
 
 void IHMJeu::afficherCarteCourante(){//WIP
-    cout<<endl;
-    cout<<"Affichage de la carte courante";
-    cout<<endl;
     for(vector<Cellule*> cels : jeu->getPersonnageJouable()->getCarte()->getCellules()) {
         for(Cellule* cel : cels) {
-			string type = cel->getTypeDeCellule();
-			
-			if(type==" ")
-				if( ((CelluleAccessible*) cel)->getPersonnage()!=nullptr) {
-					if(((CelluleAccessible*) cel)->getPersonnage() == jeu->getPersonnageJouable())
-						cout << "ô";
-					else cout << "8";
-				}
-				else {
-						if(cel->getActionCellule()!=nullptr)
-							cout << "?";
-						else cout << type;
-					}
-				
-			else cout << type;
-		cout <<" ";
+            string type = cel->getTypeDeCellule();
+
+            if(type==" " || type=="@" || type=="x"){
+                if( ((CelluleAccessible*) cel)->getPersonnage()!=nullptr) {
+                    if(((CelluleAccessible*) cel)->getPersonnage() == jeu->getPersonnageJouable())
+                        cout << "ô";
+                    else cout << "8";
+                } else
+                    cout << type;
+            } else
+                    cout << type;
+
+            cout <<" ";
         }
         cout<< endl;
     }

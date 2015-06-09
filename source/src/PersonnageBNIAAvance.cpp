@@ -31,9 +31,8 @@ PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, vector<int> tBateaux, A
 PersonnageBNIAAvance::PersonnageBNIAAvance(string nomnv, int l, int h, vector<int> tBateaux):PersonnageBN(nomnv, l, h, tBateaux), casePrecedente(0, 0){//DONE
 }
 
-
-void PersonnageBNIAAvance::addCases(const Coordonnees c){
-casesT.push_back(c);
+void PersonnageBNIAAvance::addCases(const Coordonnees c){//DONE
+    casesT.push_back(c);
 }
 
 Coordonnees PersonnageBNIAAvance::getCases(const int c) const{
@@ -166,50 +165,6 @@ if (casesT.size()>2){
 }
 
 }
-
-
-//Coordonnees PersonnageBNIAAvance::coordonneesAViser(Grille* grilleAdverse){//DONE
-//    int hauteur=grilleAdverse->getTailleGrille().getHauteur();
-//    int longueur=grilleAdverse->getTailleGrille().getLongueur();
-//    for(int i=0; i<hauteur; i++){
-//        for(int j=0; j<longueur; j++){
-//            Coordonnees coord(j, i);
-//            if (grilleAdverse->getCaseElt(coord).getToucheBateau() && !grilleAdverse->getCaseElt(coord).getBateau()->estCoule()){
-//                Coordonnees coordN(coord.getAbscisse(),coord.getOrdonnee());
-//                Coordonnees coordS(coord.getAbscisse(),coord.getOrdonnee());
-//                Coordonnees coordE(coord.getAbscisse(),coord.getOrdonnee());
-//                Coordonnees coordO(coord.getAbscisse(),coord.getOrdonnee());
-//
-//                while(grilleAdverse->caseValide(coordS) && grilleAdverse->getCaseElt(coordS).getBateau()!=nullptr && grilleAdverse->getCaseElt(coordS).getToucheBateau() && !grilleAdverse->getCaseElt(coordS).getBateau()->estCoule()){
-//                    coordS.setOrdonnee(coordS.getOrdonnee()+1);
-//                    if(grilleAdverse->caseValide(coordS) && !grilleAdverse->getCaseElt(coordS).getTouche())
-//                        return coordS;
-//                }
-//
-//                while(grilleAdverse->caseValide(coordN) && grilleAdverse->getCaseElt(coordN).getBateau()!=nullptr && grilleAdverse->getCaseElt(coordN).getToucheBateau() && !grilleAdverse->getCaseElt(coordN).getBateau()->estCoule()){
-//                    coordN.setOrdonnee(coordN.getOrdonnee()-1);
-//                    if(grilleAdverse->caseValide(coordN) && !grilleAdverse->getCaseElt(coordN).getTouche())
-//                        return coordN;
-//                }
-//
-//                while(grilleAdverse->caseValide(coordE) && grilleAdverse->getCaseElt(coordE).getBateau()!=nullptr && grilleAdverse->getCaseElt(coordE).getToucheBateau() && !grilleAdverse->getCaseElt(coordE).getBateau()->estCoule()){
-//                    coordE.setAbscisse(coordE.getAbscisse()+1);
-//                    if(grilleAdverse->caseValide(coordE) && !grilleAdverse->getCaseElt(coordE).getTouche())
-//                        return coordE;
-//                }
-//
-//                while(grilleAdverse->caseValide(coordO) && grilleAdverse->getCaseElt(coordO).getBateau()!=nullptr && grilleAdverse->getCaseElt(coordO).getToucheBateau() && !grilleAdverse->getCaseElt(coordO).getBateau()->estCoule()){
-//                    coordO.setAbscisse(coordO.getAbscisse()-1);
-//                    if(grilleAdverse->caseValide(coordO) && !grilleAdverse->getCaseElt(coordO).getTouche())
-//                        return coordO;
-//                }
-//            }
-//        }
-//    }
-//    return tirerAleatoirement(grilleAdverse);
-//}
-
-
 
 Grille PersonnageBNIAAvance::placerBateaux(){//DONE
     Grille grilleIA(getTailleGrille().getLongueur(), getTailleGrille().getHauteur());

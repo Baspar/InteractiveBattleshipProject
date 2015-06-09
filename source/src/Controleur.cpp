@@ -22,7 +22,7 @@ void Controleur::tourDeJeu(){//DONE
     ihmJeu->afficherJeu();
     jeu->jouer(ihmJeu->saisieDeplacement());
     //code pour lancer la partie controleur correspondant à l'action effectuée (si besoin)
-	
+
 
 	//Si l'action est un Combaaat
 	if(jeu->getActionEnCours()!=nullptr)
@@ -33,7 +33,9 @@ void Controleur::tourDeJeu(){//DONE
 				cout << jeu->getActionEnCours()->isActive() << endl ;
 				jeu->getActionEnCours()->toggleActive();
 				cout << jeu->getActionEnCours()->isActive() << endl ;
-			}
+			} else {
+                jeu->getPersonnageJouable()->deplacementInitial();
+            }
 	}
 }
 
@@ -45,7 +47,7 @@ void Controleur::lancerJeu(){//DONE
 
 
 void Controleur::actionBatailleNavale(){//DONE
-	
+
 	batailleNavale->initialiserJoueurCourant((PersonnageBN*) jeu->getPersonnageJouable(),(PersonnageBN*) ((ActionCombat*) jeu->getActionEnCours())->getAdversaire());
 
 	//si placerBateaux renvoie NULL, on demande une saisie dans l'IHM sinon on copie les données de l'IA
@@ -78,7 +80,7 @@ void Controleur::tourDeJeuBatailleNavale(){//DONE
 		coord.copy(ihmBN->saisieCoup());
 		batailleNavale->jouer(coord);
 	}
-	else { 
+	else {
 		coord.copy(batailleNavale->getJoueurs()[batailleNavale->getIndiceJoueurCourant()]->coordonneesAViser(batailleNavale->getGrilles()[(batailleNavale->getIndiceJoueurCourant()+1)%2]));
 		batailleNavale->jouer(coord);
 	}

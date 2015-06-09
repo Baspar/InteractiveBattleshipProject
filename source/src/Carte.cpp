@@ -10,25 +10,30 @@
 
 using namespace std;
 
-Carte::Carte(int idC, vector<int> vecGrille, TailleGrille tailleGrilleInit) : tailleGrille(tailleGrilleInit){//WIP
-	id=idC;	
-	cellules.resize(tailleGrille.getLongueur());
-	int j =0;
-	for (int indice : vecGrille)
-		switch (indice) {
-			case 0 : {
-				cellules[j].push_back(new CelluleAccessible());
-				break;
-			}
-			case 1 : {
-				cellules[j].push_back(new CelluleObstacle());
-				break;
-			}
-			case 2 : {
-				j=j+1;
-				break;
-			}
-	}
+Carte::Carte(int idC, vector<vector<char> > vecGrille):tailleGrille(0,0){//WIP
+    id=idC;
+    int longueur=vecGrille.size();
+    int hauteur=vecGrille[0].size();
+    tailleGrille.setHauteur(hauteur);
+    tailleGrille.setLongueur(longueur);
+    cellules.resize(tailleGrille.getLongueur());
+
+    for(int i=0; i<vecGrille.size(); i++){
+        vector<char> ligne=vecGrille[i];
+        for(int j=0; j<ligne.size(); j++){
+            char car=ligne[j];
+            switch(car){
+                case '_' : {
+                    cellules[i].push_back(new CelluleAccessible());
+                    break;
+                }
+                case '#' : {
+                    cellules[i].push_back(new CelluleObstacle());
+                    break;
+                }
+            }
+        }
+    }
  }
 
 void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){//WIP
@@ -45,11 +50,9 @@ void Carte::deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees){
     cell2->setPersonnage(personnage);
 }
 
-
 Cellule* Carte::getCel(Coordonnees coord){//DONE
     return cellules[coord.getAbscisse()][coord.getOrdonnee()];
 }
-
 
 vector<vector<Cellule*> > Carte::getCellules(){//DONE
      return cellules;

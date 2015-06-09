@@ -53,7 +53,7 @@ class Case{
         /// \return la valeur de touche
     bool getTouche() const;
 
-    /// \fn bool getToucheBatea() const
+    /// \fn bool getToucheBateau() const
     /// \brief Getter de touche
     /// \return Si la case et touchee et contient un bateau
     bool getToucheBateau() const;

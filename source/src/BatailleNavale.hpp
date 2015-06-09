@@ -103,7 +103,7 @@ class BatailleNavale : public Combat{
         /// \return vector<Grille>: Ensemble des grilles
         vector<Grille*> getGrilles() ;
 
-        /// \fn PersonnageBN* retournerGagnant(PersonnageBN* joueur1, PersonnageBN* joueur2)
+        /// \fn Personnage* retournerGagnant(Personnage* joueur1, Personnage* joueur2)
         /// \brief Retourner Gagnant
         /// \param joueur1: représente le premier joueur initial de notre combat
         /// \param joueur2: représente le deuxième joueur initial de notre combat

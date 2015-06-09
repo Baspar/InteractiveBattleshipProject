@@ -30,15 +30,14 @@ class Carte{
         vector<vector<Cellule*> > cellules;
 
     public:
-        /// \fn Carte(int id, vector<int> vecGrille, TailleGrille tailleGrille)
+        /// \fn Carte(int idC, vector<vector<char> > vecGrille)
         /// \brief Constructeur
         ///
         /// Constructeur de la classe Carte
-        /// \param id: entier numero carte
+        /// \param idC : entier numero carte
 	    /// \param vecGrille : vecteur avec l'ensemble des données de la carte
-        /// \param tailleGrille: taille de la grille
-        Carte(int idC, vector<int> vecGrille, TailleGrille tailleGrilleInit);
-        
+        Carte(int idC, vector<vector<char> > vecGrille);
+
         /// \fn void deplacerPersonnage(Personnage* personnage, Coordonnees coordonnees)
         /// \brief déplace le personnage
         ///

@@ -28,13 +28,13 @@ class ArmeChercheuse : public Arme{
         ArmeChercheuse();
 
 
-        /// \fn void tirer(Coordonnees coordonnees, Grille *grille)
+        /// \fn void tirer(Coordonnees coordonnees, Grille* grille)
         /// \brief Attaque Chercheuse
         ///
         ///tire sur une case et inflige des dégats sur ladite case
-        ///
-        /// \param *grille : pointeur sur la grille sur lequel le joueur tire
-        void tirer(Coordonnees coordonnees, Grille *grille);
+        /// \param grille : pointeur sur la grille sur lequel le joueur tire
+        /// \param coordonnees: Coordonnees visées
+        void tirer(Coordonnees coordonnees, Grille* grille);
 };
 #endif
 
