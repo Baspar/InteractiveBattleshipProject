@@ -97,6 +97,9 @@ TestIHMBN: CompileTestIHMBN
 TestIHMJeu: CompileTestIHMJeu
 	tests/TestIHMJeu
 
+TestInventaire:CompileTestInventaire
+	tests/TestInventaire
+
 TestJeu: CompileTestJeu
 	tests/TestJeu
 
@@ -210,6 +213,9 @@ CompileTestIHMBN: IHMBN.o Coordonnees.o Grille.o BatailleNavale.o PersonnageBN.o
 
 CompileTestIHMJeu: IHMJeu.o
 	g++ $(FLAGSTEST) tests/TestIHMJeu.cpp $^ -o tests/TestIHMJeu
+
+CompileTestInventaire: Inventaire.o Objet.o BadgeFinal.o
+	g++ $(FLAGSTEST) tests/TestInventaire.cpp $^ -o tests/TestInventaire
 
 CompileTestJeu: Jeu.o
 	g++ $(FLAGSTEST) tests/TestJeu.cpp $^ -o tests/TestJeu
