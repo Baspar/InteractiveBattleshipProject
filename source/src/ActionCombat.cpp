@@ -10,9 +10,7 @@ ActionCombat::ActionCombat(Personnage* adversairenv, string texte):Action("COMBA
 }
 
 void ActionCombat::lancerAction(){//DONE
-
 }
-
 
 Personnage* ActionCombat::getAdversaire() const{//DONE
 	return adversaire;
