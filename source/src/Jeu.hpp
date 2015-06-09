@@ -31,8 +31,7 @@ class Jeu{
         Monde monde;
         /// combat
         Combat* combat;
-        /// partie terminee?
-        bool terminee;
+      
 
     public:
         /// \fn Jeu(Combat* comb)
@@ -64,9 +63,6 @@ class Jeu{
         /// \return Personnage jouable
         PersonnageJouable* getPersonnageJouable();
 
-        /// \fn void setTerminee(bool bol)
-        /// \brief Setter terminee
-        /// \param bol :la valeur de terminee
-        void setTerminee(bool bol);
+       
 };
 #endif
