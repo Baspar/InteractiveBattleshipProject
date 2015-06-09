@@ -11,10 +11,8 @@ using namespace std;
 void ActionChangementCarte::lancerAction(){//DONE
     // Recuperation de la celluleInit
     CelluleAccessible* cellInit = (CelluleAccessible*) carteInitiale->getCel(coordonneesInitiales);
-
     // Recuperation du personnage
     Personnage* perso = cellInit->getPersonnage();
-
     // Deplacement du personnage
     perso->deplacer(coordonneesDestination, carteDestination);
 }

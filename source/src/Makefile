@@ -77,12 +77,12 @@ CompileMainTestCase: Case.o Bateau.o
 MainTestCase: CompileMainTestCase
 	tests/MainTestCase
 
-CompileMainTestCelluleAccessible: CelluleAccessible.o
-	g++ $(FLAGS) tests/MainTestCelluleAccessible.cpp $^ -o tests/MainTestCelluleAccessible
+CompileMainTestCelluleAccessible: CelluleAccessible.o Cellule.o PersonnageJouable.o Personnage.o Coordonnees.o Carte.o PersonnageNonJouable.o
+	g++ $(FLAGS) tests/MainTestCelluleAccessible.cpp $^ -o tests/MainTestCelluleAccessible TailleGrille.o CelluleObstacle.o
 MainTestCelluleAccessible: CompileMainTestCelluleAccessible
 	tests/MainTestCelluleAccessible
 
-CompileMainTestCelluleCombat: CelluleCombat.o Personnage.o ActionCombat.o CelluleAccessible.o Coordonnees.o Carte.o Action.o Cellule.o TailleGrille.o
+CompileMainTestCelluleCombat: CelluleCombat.o Personnage.o ActionCombat.o CelluleAccessible.o Coordonnees.o Carte.o Action.o Cellule.o TailleGrille.o 
 	g++ $(FLAGS) tests/MainTestCelluleCombat.cpp $^ -o tests/MainTestCelluleCombat
 MainTestCelluleCombat: CompileMainTestCelluleCombat
 	tests/MainTestCelluleCombat
