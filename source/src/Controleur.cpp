@@ -23,23 +23,25 @@ void Controleur::tourDeJeu(){//DONE
     jeu->jouer(ihmJeu->saisieDeplacement());
     //code pour lancer la partie controleur correspondant à l'action effectuée (si besoin)
 
-	cout << "ok" << endl;
+
 
 	//Si l'action est un Combaaat
 	if(jeu->getActionEnCours()!=nullptr){
-		cout << "ok1" << endl;
-		if((jeu->getActionEnCours()->getTexteInteraction()=="COMBAT!!!") && jeu->getActionEnCours()->isActive()) {
-			cout<<"ok2"<<endl;
+		if( ( (jeu->getActionEnCours()->getTexteInteraction()=="COMBAT!!!") || (jeu->getActionEnCours()->getTexteInteraction()=="COMBAT!!! Vous avez perdu") )  && jeu->getActionEnCours()->isActive() ) {
 			batailleNavale->initialiserJoueurCourant((PersonnageBN*) (JoueurHumain*) jeu->getPersonnageJouable(),(PersonnageBN*) (JoueurIA*) ((ActionCombat*) jeu->getActionEnCours())->getAdversaire());
 			controlBN->actionBatailleNavale();
 			if (batailleNavale->retournerGagnant((Personnage*) jeu->getPersonnageJouable(),(Personnage*) ((ActionCombat*) jeu->getActionEnCours())->getAdversaire())==jeu->getPersonnageJouable()){
 				jeu->getActionEnCours()->toggleActive();
 				for(Objet* obj: ((ActionCombat*) jeu->getActionEnCours())->getAdversaire()->getInventaire().getObjet() )
 					jeu->getPersonnageJouable()->getInventaire().getObjet().push_back(obj);
-			} else {
-                jeu->getPersonnageJouable()->deplacementInitial();
-            }
-	}}
+				jeu->getActionEnCours()->setTexteInteraction("Vous m'avez battu");
+			} 
+			else {
+               			 jeu->getPersonnageJouable()->deplacementInitial();
+				 jeu->getActionEnCours()->setTexteInteraction("COMBAT!!! Vous avez perdu");
+           	        }
+		}
+	}
 }
 
 

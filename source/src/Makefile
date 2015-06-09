@@ -6,11 +6,25 @@ all: Main
 %.o: %.cpp
 	g++ -c $(FLAGS) $<
 
+
+
+
+
+
+#################
+#  Action Main  #
+#################
 CompileMain: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o Controleur.o CelluleObstacle.o Jeu.o Grille.o BatailleNavale.o IHMBN.o Case.o Bateau.o PersonnageBN.o IHMJeu.o Monde.o PersonnageBN.o ActionCombat.o ArmeClassique.o Arme.o ControleurBN.o JoueurHumain.o  PersonnageBNHumain.o PersonnageJouable.o CelluleChangementCarte.o ActionVide.o JoueurIA.o PersonnageNonJouable.o PersonnageBNIA.o JoueurIAAvance.o  JoueurIACheate.o PersonnageBNIACheate.o PersonnageBNIAAvance.o CelluleCombat.o Inventaire.o BadgeFinal.o Objet.o
 	g++ $(FLAGS) main.cpp $^ -o main
 Main: CompileMain
 	./main
 
+
+
+
+######################
+#  Action execution  #
+######################
 TestActionChangementCarte: CompileTestActionChangementCarte
 	tests/TestActionChangementCarte
 
@@ -22,9 +36,6 @@ BestEver: CompileBestEver
 
 TestActionCombat: CompileTestActionCombat
 	tests/TestActionCombat
-
-TestAction: CompileTestAction
-	tests/TestAction
 
 TestArmeClassique: CompileTestArmeClassique
 	tests/TestArmeClassique
@@ -123,6 +134,11 @@ TestControleurBN: CompileTestControleurBN
 	tests/TestControleurBN
 
 
+
+
+########################
+#  Action compilation  #
+########################
 CompileTestActionChangementCarte: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o CelluleAccessible.o Carte.o Personnage.o Cellule.o CelluleObstacle.o PersonnageJouable.o
 	g++ $(FLAGSTEST) tests/TestActionChangementCarte.cpp $^ -o tests/TestActionChangementCarte
 
@@ -134,9 +150,6 @@ CompileBestEver: ActionChangementCarte.o TailleGrille.o Coordonnees.o Action.o C
 
 CompileTestActionCombat: ActionCombat.o PersonnageNonJouable.o Action.o Personnage.o Coordonnees.o Carte.o Cellule.o CelluleAccessible.o TailleGrille.o CelluleObstacle.o
 	g++ $(FLAGSTEST) tests/TestActionCombat.cpp $^ -o tests/TestActionCombat
-
-CompileTestAction: Action.o
-	g++ $(FLAGSTEST) tests/TestAction.cpp $^ -o tests/TestAction
 
 CompileTestArmeClassique:  ArmeClassique.o Coordonnees.o Grille.o  Case.o TailleGrille.o Bateau.o Arme.o
 	g++ $(FLAGSTEST) tests/TestArmeClassique.cpp $^ -o tests/TestArmeClassique
@@ -235,5 +248,11 @@ CompileTestControleurBN: ControleurBN.o  BatailleNavale.o IHMBN.o Grille.o Coord
 	g++ $(FLAGSTEST) tests/TestControleurBN.cpp $^ -o tests/TestControleurBN
 
 
+
+
+
+######################
+#  Action nettoyage  #
+######################
 clean:
 	rm -rf *.o *~ tests/*~ main; find ./tests/ -type f ! -name "*.*" -exec rm {} \;
