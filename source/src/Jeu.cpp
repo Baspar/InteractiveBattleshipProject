@@ -92,7 +92,11 @@ void Jeu::lireJoueurs(){//DONE
 }
 
 bool Jeu::partieFinie(){//DONE
-    return terminee;
+    for(Objet* obj: personnageJouable->getInventaire().getObjet())
+    	if(obj->metFinAuJeu())
+		return true;	
+    return false;
+	
 }
 
 void Jeu::jouer(Coordonnees coordonnees){//WIP
@@ -110,6 +114,4 @@ PersonnageJouable* Jeu::getPersonnageJouable(){//DONE
     return personnageJouable;
 }
 
-void Jeu::setTerminee(bool bol){//DONE
-    terminee=bol;
-}
+
