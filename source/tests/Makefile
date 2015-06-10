@@ -100,6 +100,9 @@ TestPersonnageBNHumain: CompileTestPersonnageBNHumain
 TestPersonnageBNIA: CompileTestPersonnageBNIA
 	./TestPersonnageBNIA
 
+TestPersonnageBNIAAvance: CompileTestPersonnageBNIAAvance
+	./TestPersonnageBNIAAvance
+
 TestPersonnage: CompileTestPersonnage
 	./TestPersonnage
 
@@ -212,8 +215,11 @@ CompileTestMonde: Monde.o Carte.o Cellule.o CelluleAccessible.o ActionChangement
 CompileTestPersonnageBNHumain: PersonnageBNHumain.o PersonnageBN.o Bateau.o TailleGrille.o Grille.o Coordonnees.o Case.o ArmeClassique.o Arme.o ArmeCroix.o ArmeFatale.o
 	g++ $(FLAGS) TestPersonnageBNHumain.cpp $^ -o TestPersonnageBNHumain
 
-CompileTestPersonnageBNIA: PersonnageBNIA.o
+CompileTestPersonnageBNIA: PersonnageBNIA.o Coordonnees.o Grille.o TailleGrille.o Grille.o Coordonnees.o PersonnageBN.o Bateau.o Case.o Arme.o ArmeCroix.o ArmeFatale.o ArmeClassique.o
 	g++ $(FLAGS) TestPersonnageBNIA.cpp $^ -o TestPersonnageBNIA
+
+CompileTestPersonnageBNIAAvance: PersonnageBNIAAvance.o Coordonnees.o Grille.o TailleGrille.o Grille.o Coordonnees.o PersonnageBN.o Bateau.o Case.o Arme.o ArmeCroix.o ArmeFatale.o ArmeClassique.o
+	g++ $(FLAGS) TestPersonnageBNIAAvance.cpp $^ -o TestPersonnageBNIAAvance
 
 CompileTestPersonnage: Personnage.o Coordonnees.o Carte.o Inventaire.o BadgeFinal.o Cellule.o CelluleAccessible.o TailleGrille.o CelluleObstacle.o Objet.o
 	g++ $(FLAGS) TestPersonnage.cpp $^ -o TestPersonnage
