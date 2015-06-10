@@ -1,0 +1,6 @@
+Listes des commandes utiles :
+
+    Compilation du programme          =>   "make bina" (executable dans le dossier bin/)
+    Creation de la documentation      =>   "make docu" (html et latex dans le dossier doc/)
+    Execution des tests               =>   "make TestNomDuTest" (A lancer dans le dossier tests/)
+    Generation  diagramme de classe   =>   "./genererDiagrammeDeClasses.sh" (A lancer dans le dossier uml)
