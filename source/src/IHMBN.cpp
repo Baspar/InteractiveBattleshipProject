@@ -4,6 +4,7 @@
 #include "Grille.hpp"
 #include "BatailleNavale.hpp"
 #include <iostream>
+#include <limits>
 
 using namespace std;
 
@@ -21,6 +22,18 @@ BatailleNavale* IHMBN::getBN(){//DONE
 
 void IHMBN::afficherJeu(){//DONE
     ClearScreen();
+
+    cout << "Legende :" << endl;
+    cout << "---------" << endl;
+    cout << endl;
+    cout <<"   ' ' représente une case vierge, non touchée" << endl;
+    cout <<"   'x' représente un bateau touché, mais non coulé" << endl;
+    cout <<"   '#' représente un bateau coulé" << endl;
+    cout <<"   '-' représente un coup dans l'eau" << endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
+
     // Affichage dizaines
     Grille* grille=getBN()->getGrilles()[getBN()->getIndiceJoueurCourant()];
     Grille* grilleAdverse=getBN()->getGrilles()[(getBN()->getIndiceJoueurCourant()+1)%2];
@@ -160,8 +173,16 @@ Coordonnees IHMBN::saisieCoup () const{//DONE
         cout << "Veuillez saisir les coordonnées de la case que vous souhaitez viser" << endl;
         int x;
         int y;
-        cin >> x;
-        cin >> y;
+        while(!(cin >> x)){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Entrée invalide, réessayez: ";
+        }
+        while(!(cin >> y)){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Entrée invalide, réessayez: ";
+        }
         coord.copy(Coordonnees(x,y));
         if(batailleNavale->getGrilles()[(batailleNavale->getIndiceJoueurCourant()+1)%2]->coupValide(coord)==false)
             cout << "Erreur! ";
@@ -244,13 +265,29 @@ Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
         cout << "Veuillez placer le bateau de longueur "<< bat->getTailleBateau() << endl;
         cout << "Veuillez saisir les coordonnées de départ"<< endl;
         int x,y;
-        cin >> x;
-        cin >> y;
+        while(!(cin >> x)){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Entrée invalide, réessayez: ";
+        }
+        while(!(cin >> y)){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Entrée invalide, réessayez: ";
+        }
         Coordonnees coordDepart(x,y);
         cout << "Veuillez saisir les coordonnées d'arrivée" << endl;
         int a,b;
-        cin >> a;
-        cin >> b;
+        while(!(cin >> a)){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Entrée invalide, réessayez: ";
+        }
+        while(!(cin >> b)){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Entrée invalide, réessayez: ";
+        }
         Coordonnees coordArrivee(a,b);
         while(grille.placementBateauValide(bat,coordDepart,coordArrivee)==false){
             cout << "Erreur! Veuillez replacer le bateau de longueur "<< bat->getTailleBateau() <<endl;
