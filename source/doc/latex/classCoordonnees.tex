@@ -1,0 +1,158 @@
+\hypertarget{classCoordonnees}{\section{Coordonnees Class Reference}
+\label{classCoordonnees}\index{Coordonnees@{Coordonnees}}
+}
+
+
+\hyperlink{classCoordonnees}{Coordonnees} sur une carte.  
+
+
+
+
+{\ttfamily \#include $<$Coordonnees.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCoordonnees_a6ec732bf5bf8b43d458340b9f2be9edb}{Coordonnees} (const int abs, const int ord)
+\begin{DoxyCompactList}\small\item\em Contructeur paramétré \end{DoxyCompactList}\item 
+\hyperlink{classCoordonnees_a30d6f3b61bfb6762709f9ae7c62dc4b7}{Coordonnees} (const \hyperlink{classCoordonnees}{Coordonnees} \&coord)
+\begin{DoxyCompactList}\small\item\em Contructeur par recopie. \end{DoxyCompactList}\item 
+\hypertarget{classCoordonnees_a0f5af89bc4c49a5cf265c8362567cbe1}{void \hyperlink{classCoordonnees_a0f5af89bc4c49a5cf265c8362567cbe1}{copy} (const \hyperlink{classCoordonnees}{Coordonnees} coordcp)}\label{classCoordonnees_a0f5af89bc4c49a5cf265c8362567cbe1}
+
+\begin{DoxyCompactList}\small\item\em Copieur de coordonnes. \end{DoxyCompactList}\item 
+int \hyperlink{classCoordonnees_ad265ffa4100fe0abfab4f85b0f5a1ad9}{get\-Abscisse} () const 
+\begin{DoxyCompactList}\small\item\em getteur de l'abscisse \end{DoxyCompactList}\item 
+int \hyperlink{classCoordonnees_aa85ba028b69971541d3f236d7abaa132}{get\-Ordonnee} () const 
+\begin{DoxyCompactList}\small\item\em getteur de l'ordonnée \end{DoxyCompactList}\item 
+void \hyperlink{classCoordonnees_a3755536bdb242d6d78fc486423007448}{set\-Ordonnee} (const int o)
+\begin{DoxyCompactList}\small\item\em setteur de l'ordonnée \end{DoxyCompactList}\item 
+void \hyperlink{classCoordonnees_abf053f302f5b1f25af39036d5a85a80a}{set\-Abscisse} (const int a)
+\begin{DoxyCompactList}\small\item\em setteur de l'abscisse \end{DoxyCompactList}\item 
+bool \hyperlink{classCoordonnees_af5bf5f6a84b87f6d980669f583167a8a}{coordonnees\-Vides} ()
+\begin{DoxyCompactList}\small\item\em vérifie si la coordonnee est vide ou non(créé par un I\-A ou non) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCoordonnees}{Coordonnees} sur une carte. 
+
+Classe \hyperlink{classCoordonnees}{Coordonnees} représentant les coordonnées de notre joueur ou de notre obstacle sur la carte 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCoordonnees_a6ec732bf5bf8b43d458340b9f2be9edb}{\index{Coordonnees@{Coordonnees}!Coordonnees@{Coordonnees}}
+\index{Coordonnees@{Coordonnees}!Coordonnees@{Coordonnees}}
+\subsubsection[{Coordonnees}]{\setlength{\rightskip}{0pt plus 5cm}Coordonnees\-::\-Coordonnees (
+\begin{DoxyParamCaption}
+\item[{const int}]{abs, }
+\item[{const int}]{ord}
+\end{DoxyParamCaption}
+)}}\label{classCoordonnees_a6ec732bf5bf8b43d458340b9f2be9edb}
+
+
+Contructeur paramétré 
+
+Constructeur permettant d'instancier une coordonnée avec une abscisse et une ordonnée 
+\begin{DoxyParams}{Parameters}
+{\em abs} & entier correspondant à l'abscisse \\
+\hline
+{\em ord} & entier correspondant à l'ordonnée \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCoordonnees_a30d6f3b61bfb6762709f9ae7c62dc4b7}{\index{Coordonnees@{Coordonnees}!Coordonnees@{Coordonnees}}
+\index{Coordonnees@{Coordonnees}!Coordonnees@{Coordonnees}}
+\subsubsection[{Coordonnees}]{\setlength{\rightskip}{0pt plus 5cm}Coordonnees\-::\-Coordonnees (
+\begin{DoxyParamCaption}
+\item[{const {\bf Coordonnees} \&}]{coord}
+\end{DoxyParamCaption}
+)}}\label{classCoordonnees_a30d6f3b61bfb6762709f9ae7c62dc4b7}
+
+
+Contructeur par recopie. 
+
+Constructeur permettant d'instancier une coordonnée avec instance de \hyperlink{classCoordonnees}{Coordonnees} 
+\begin{DoxyParams}{Parameters}
+{\em coord} & \-: \hyperlink{classCoordonnees}{Coordonnees} a recopier \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCoordonnees_af5bf5f6a84b87f6d980669f583167a8a}{\index{Coordonnees@{Coordonnees}!coordonnees\-Vides@{coordonnees\-Vides}}
+\index{coordonnees\-Vides@{coordonnees\-Vides}!Coordonnees@{Coordonnees}}
+\subsubsection[{coordonnees\-Vides}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} Coordonnees\-::coordonnees\-Vides (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCoordonnees_af5bf5f6a84b87f6d980669f583167a8a}
+
+
+vérifie si la coordonnee est vide ou non(créé par un I\-A ou non) 
+
+\begin{DoxyReturn}{Returns}
+bool true si la coordonnee est vide, false sinon 
+\end{DoxyReturn}
+\hypertarget{classCoordonnees_ad265ffa4100fe0abfab4f85b0f5a1ad9}{\index{Coordonnees@{Coordonnees}!get\-Abscisse@{get\-Abscisse}}
+\index{get\-Abscisse@{get\-Abscisse}!Coordonnees@{Coordonnees}}
+\subsubsection[{get\-Abscisse}]{\setlength{\rightskip}{0pt plus 5cm}int Coordonnees\-::get\-Abscisse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCoordonnees_ad265ffa4100fe0abfab4f85b0f5a1ad9}
+
+
+getteur de l'abscisse 
+
+\begin{DoxyReturn}{Returns}
+entier correspondant à l'abscisse 
+\end{DoxyReturn}
+\hypertarget{classCoordonnees_aa85ba028b69971541d3f236d7abaa132}{\index{Coordonnees@{Coordonnees}!get\-Ordonnee@{get\-Ordonnee}}
+\index{get\-Ordonnee@{get\-Ordonnee}!Coordonnees@{Coordonnees}}
+\subsubsection[{get\-Ordonnee}]{\setlength{\rightskip}{0pt plus 5cm}int Coordonnees\-::get\-Ordonnee (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCoordonnees_aa85ba028b69971541d3f236d7abaa132}
+
+
+getteur de l'ordonnée 
+
+\begin{DoxyReturn}{Returns}
+entier correspondant à l'ordonnée 
+\end{DoxyReturn}
+\hypertarget{classCoordonnees_abf053f302f5b1f25af39036d5a85a80a}{\index{Coordonnees@{Coordonnees}!set\-Abscisse@{set\-Abscisse}}
+\index{set\-Abscisse@{set\-Abscisse}!Coordonnees@{Coordonnees}}
+\subsubsection[{set\-Abscisse}]{\setlength{\rightskip}{0pt plus 5cm}int Coordonnees\-::set\-Abscisse (
+\begin{DoxyParamCaption}
+\item[{const int}]{a}
+\end{DoxyParamCaption}
+)}}\label{classCoordonnees_abf053f302f5b1f25af39036d5a85a80a}
+
+
+setteur de l'abscisse 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \-: entier correspondant à l'abscisse \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCoordonnees_a3755536bdb242d6d78fc486423007448}{\index{Coordonnees@{Coordonnees}!set\-Ordonnee@{set\-Ordonnee}}
+\index{set\-Ordonnee@{set\-Ordonnee}!Coordonnees@{Coordonnees}}
+\subsubsection[{set\-Ordonnee}]{\setlength{\rightskip}{0pt plus 5cm}int Coordonnees\-::set\-Ordonnee (
+\begin{DoxyParamCaption}
+\item[{const int}]{o}
+\end{DoxyParamCaption}
+)}}\label{classCoordonnees_a3755536bdb242d6d78fc486423007448}
+
+
+setteur de l'ordonnée 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & \-: entier correspondant à l'ordonnée \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/\hyperlink{Coordonnees_8hpp}{Coordonnees.\-hpp}\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/Coordonnees.\-cpp\end{DoxyCompactItemize}

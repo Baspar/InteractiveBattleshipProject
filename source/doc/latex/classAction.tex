@@ -1,0 +1,126 @@
+\hypertarget{classAction}{\section{Action Class Reference}
+\label{classAction}\index{Action@{Action}}
+}
+
+
+gestion actions  
+
+
+
+
+{\ttfamily \#include $<$Action.\-hpp$>$}
+
+Inheritance diagram for Action\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAction}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classAction_a47d25fc7d6ef58692a7a4c5bc7e7fbd0}{lancer\-Action} ()=0
+\begin{DoxyCompactList}\small\item\em Lancement de l'action. \end{DoxyCompactList}\item 
+\hyperlink{classAction_ae7e1142cb3535c940dbc86f9a3b2da52}{Action} (string txt\-Int)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+string \hyperlink{classAction_a4d7ef820e27b3e23ae3e145e4ed3cb93}{get\-Texte\-Interaction} ()
+\begin{DoxyCompactList}\small\item\em Getter texte\-Interaction. \end{DoxyCompactList}\item 
+void \hyperlink{classAction_a2524956139b3e1bbd780270a2208356f}{set\-Texte\-Interaction} (string texte)
+\begin{DoxyCompactList}\small\item\em Setter texte\-Interaction. \end{DoxyCompactList}\item 
+\hypertarget{classAction_a2a71b81a01d34c124e9e13368be67d38}{void \hyperlink{classAction_a2a71b81a01d34c124e9e13368be67d38}{toggle\-Active} ()}\label{classAction_a2a71b81a01d34c124e9e13368be67d38}
+
+\begin{DoxyCompactList}\small\item\em Passe la variable active de V\-R\-A\-I a F\-A\-U\-X et vise verca. \end{DoxyCompactList}\item 
+bool \hyperlink{classAction_ab4fe74ad00f9192b4ab9959638d31a5e}{is\-Active} ()
+\begin{DoxyCompactList}\small\item\em dit si l'action est active \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+gestion actions 
+
+Cette classe gère les actions enclenchées par l'accès à une case particulière 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAction_ae7e1142cb3535c940dbc86f9a3b2da52}{\index{Action@{Action}!Action@{Action}}
+\index{Action@{Action}!Action@{Action}}
+\subsubsection[{Action}]{\setlength{\rightskip}{0pt plus 5cm}Action\-::\-Action (
+\begin{DoxyParamCaption}
+\item[{string}]{txt\-Int}
+\end{DoxyParamCaption}
+)}}\label{classAction_ae7e1142cb3535c940dbc86f9a3b2da52}
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em txt\-Int} & le texte d'interaction Constructeur de la classe \hyperlink{classAction}{Action} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAction_a4d7ef820e27b3e23ae3e145e4ed3cb93}{\index{Action@{Action}!get\-Texte\-Interaction@{get\-Texte\-Interaction}}
+\index{get\-Texte\-Interaction@{get\-Texte\-Interaction}!Action@{Action}}
+\subsubsection[{get\-Texte\-Interaction}]{\setlength{\rightskip}{0pt plus 5cm}string Action\-::get\-Texte\-Interaction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classAction_a4d7ef820e27b3e23ae3e145e4ed3cb93}
+
+
+Getter texte\-Interaction. 
+
+\begin{DoxyReturn}{Returns}
+Le texte correspondant à l'action 
+\end{DoxyReturn}
+\hypertarget{classAction_ab4fe74ad00f9192b4ab9959638d31a5e}{\index{Action@{Action}!is\-Active@{is\-Active}}
+\index{is\-Active@{is\-Active}!Action@{Action}}
+\subsubsection[{is\-Active}]{\setlength{\rightskip}{0pt plus 5cm}bool Action\-::is\-Active (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classAction_ab4fe74ad00f9192b4ab9959638d31a5e}
+
+
+dit si l'action est active 
+
+\begin{DoxyReturn}{Returns}
+L'état de l'action 
+\end{DoxyReturn}
+\hypertarget{classAction_a47d25fc7d6ef58692a7a4c5bc7e7fbd0}{\index{Action@{Action}!lancer\-Action@{lancer\-Action}}
+\index{lancer\-Action@{lancer\-Action}!Action@{Action}}
+\subsubsection[{lancer\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void Action\-::lancer\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAction_a47d25fc7d6ef58692a7a4c5bc7e7fbd0}
+
+
+Lancement de l'action. 
+
+Cette classe gère le lancement de l'action en fonction de la case où le joueur se trouve Cette méthode est abstraite, elle sera réimplémentée dans les classes héritant de \hyperlink{classAction}{Action} 
+
+Implemented in \hyperlink{classActionChangementCarte_ac494368d1a8f41259761071bc27575e9}{Action\-Changement\-Carte}, \hyperlink{classActionCombat_a5f84011b92f33ea68b67e861d2c1a222}{Action\-Combat}, and \hyperlink{classActionVide_a6f318dcbb3cece06a8bd25a54842eeb0}{Action\-Vide}.
+
+\hypertarget{classAction_a2524956139b3e1bbd780270a2208356f}{\index{Action@{Action}!set\-Texte\-Interaction@{set\-Texte\-Interaction}}
+\index{set\-Texte\-Interaction@{set\-Texte\-Interaction}!Action@{Action}}
+\subsubsection[{set\-Texte\-Interaction}]{\setlength{\rightskip}{0pt plus 5cm}string Action\-::set\-Texte\-Interaction (
+\begin{DoxyParamCaption}
+\item[{string}]{texte}
+\end{DoxyParamCaption}
+)}}\label{classAction_a2524956139b3e1bbd780270a2208356f}
+
+
+Setter texte\-Interaction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texte} & \-: Le texte correspondant à l'action \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/\hyperlink{Action_8hpp}{Action.\-hpp}\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/Action.\-cpp\end{DoxyCompactItemize}

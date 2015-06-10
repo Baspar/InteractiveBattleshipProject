@@ -1,0 +1,166 @@
+\hypertarget{classCase}{\section{Case Class Reference}
+\label{classCase}\index{Case@{Case}}
+}
+
+
+La \hyperlink{classCase}{Case} est comprise dans une grille de Bataille Navale.  
+
+
+
+
+{\ttfamily \#include $<$Case.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCase_a14237e17aab1829965adab76b747db6c}{\hyperlink{classCase_a14237e17aab1829965adab76b747db6c}{Case} ()}\label{classCase_a14237e17aab1829965adab76b747db6c}
+
+\begin{DoxyCompactList}\small\item\em Construit une \hyperlink{classCase}{Case} Vide. \end{DoxyCompactList}\item 
+\hyperlink{classCase_a4fb5ed5f753f26b31708113796f90f6c}{Case} (\hyperlink{classBateau}{Bateau} $\ast$bat)
+\begin{DoxyCompactList}\small\item\em Construit une \hyperlink{classCase}{Case} et l'associe à un bateau. \end{DoxyCompactList}\item 
+void \hyperlink{classCase_a10683ff62deeb3399a4a114711fed1b3}{tirer\-Dessus} ()
+\begin{DoxyCompactList}\small\item\em Effectue les changements lorsqu'on tire sur une \hyperlink{classCase}{Case}. \end{DoxyCompactList}\item 
+void \hyperlink{classCase_a781dba42f3e38654f0c71a6c09f7309f}{set\-Bateau} (\hyperlink{classBateau}{Bateau} $\ast$bateaucp)
+\begin{DoxyCompactList}\small\item\em Setter de bateau. \end{DoxyCompactList}\item 
+void \hyperlink{classCase_a5c1554200c1146cdbfa7b02cd6105cc2}{set\-Touche} (bool touchecp)
+\begin{DoxyCompactList}\small\item\em Setter de touche. \end{DoxyCompactList}\item 
+bool \hyperlink{classCase_ac5aad4f4792af479f29617f2b420e1cd}{get\-Touche} () const 
+\begin{DoxyCompactList}\small\item\em Getter de touche. \end{DoxyCompactList}\item 
+bool \hyperlink{classCase_a30646f101d4f322ea48ef8a397bafa4a}{get\-Touche\-Bateau} () const 
+\begin{DoxyCompactList}\small\item\em Getter de touche. \end{DoxyCompactList}\item 
+\hyperlink{classBateau}{Bateau} $\ast$ \hyperlink{classCase_a70e3f95466100d7be6d737d9f53bd71b}{get\-Bateau} () const 
+\begin{DoxyCompactList}\small\item\em Getter de bateau. \end{DoxyCompactList}\item 
+void \hyperlink{classCase_a589d202f1c265145ab18258dbf0ce18b}{copy} (const \hyperlink{classCase}{Case} kase)
+\begin{DoxyCompactList}\small\item\em copie la kase \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+La \hyperlink{classCase}{Case} est comprise dans une grille de Bataille Navale. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCase_a4fb5ed5f753f26b31708113796f90f6c}{\index{Case@{Case}!Case@{Case}}
+\index{Case@{Case}!Case@{Case}}
+\subsubsection[{Case}]{\setlength{\rightskip}{0pt plus 5cm}Case\-::\-Case (
+\begin{DoxyParamCaption}
+\item[{{\bf Bateau} $\ast$}]{bat}
+\end{DoxyParamCaption}
+)}}\label{classCase_a4fb5ed5f753f26b31708113796f90f6c}
+
+
+Construit une \hyperlink{classCase}{Case} et l'associe à un bateau. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bat} & pointeur sur le bateau à associer à la \hyperlink{classCase}{Case} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCase_a589d202f1c265145ab18258dbf0ce18b}{\index{Case@{Case}!copy@{copy}}
+\index{copy@{copy}!Case@{Case}}
+\subsubsection[{copy}]{\setlength{\rightskip}{0pt plus 5cm}void Case\-::copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf Case}}]{kase}
+\end{DoxyParamCaption}
+)}}\label{classCase_a589d202f1c265145ab18258dbf0ce18b}
+
+
+copie la kase 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kase} & la case a preparer \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCase_a70e3f95466100d7be6d737d9f53bd71b}{\index{Case@{Case}!get\-Bateau@{get\-Bateau}}
+\index{get\-Bateau@{get\-Bateau}!Case@{Case}}
+\subsubsection[{get\-Bateau}]{\setlength{\rightskip}{0pt plus 5cm}$\ast${\bf Bateau} Case\-::get\-Bateau (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCase_a70e3f95466100d7be6d737d9f53bd71b}
+
+
+Getter de bateau. 
+
+\begin{DoxyReturn}{Returns}
+la valeur de bateau 
+\end{DoxyReturn}
+\hypertarget{classCase_ac5aad4f4792af479f29617f2b420e1cd}{\index{Case@{Case}!get\-Touche@{get\-Touche}}
+\index{get\-Touche@{get\-Touche}!Case@{Case}}
+\subsubsection[{get\-Touche}]{\setlength{\rightskip}{0pt plus 5cm}bool Case\-::get\-Touche (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCase_ac5aad4f4792af479f29617f2b420e1cd}
+
+
+Getter de touche. 
+
+\begin{DoxyReturn}{Returns}
+la valeur de touche 
+\end{DoxyReturn}
+\hypertarget{classCase_a30646f101d4f322ea48ef8a397bafa4a}{\index{Case@{Case}!get\-Touche\-Bateau@{get\-Touche\-Bateau}}
+\index{get\-Touche\-Bateau@{get\-Touche\-Bateau}!Case@{Case}}
+\subsubsection[{get\-Touche\-Bateau}]{\setlength{\rightskip}{0pt plus 5cm}bool Case\-::get\-Touche\-Bateau (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCase_a30646f101d4f322ea48ef8a397bafa4a}
+
+
+Getter de touche. 
+
+\begin{DoxyReturn}{Returns}
+Si la case et touchee et contient un bateau 
+\end{DoxyReturn}
+\hypertarget{classCase_a781dba42f3e38654f0c71a6c09f7309f}{\index{Case@{Case}!set\-Bateau@{set\-Bateau}}
+\index{set\-Bateau@{set\-Bateau}!Case@{Case}}
+\subsubsection[{set\-Bateau}]{\setlength{\rightskip}{0pt plus 5cm}void Case\-::set\-Bateau (
+\begin{DoxyParamCaption}
+\item[{{\bf Bateau} $\ast$}]{bateaucp}
+\end{DoxyParamCaption}
+)}}\label{classCase_a781dba42f3e38654f0c71a6c09f7309f}
+
+
+Setter de bateau. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bateaucp} & \-: bateau à placer sur la case \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCase_a5c1554200c1146cdbfa7b02cd6105cc2}{\index{Case@{Case}!set\-Touche@{set\-Touche}}
+\index{set\-Touche@{set\-Touche}!Case@{Case}}
+\subsubsection[{set\-Touche}]{\setlength{\rightskip}{0pt plus 5cm}void Case\-::set\-Touche (
+\begin{DoxyParamCaption}
+\item[{bool}]{touchecp}
+\end{DoxyParamCaption}
+)}}\label{classCase_a5c1554200c1146cdbfa7b02cd6105cc2}
+
+
+Setter de touche. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em touchecp} & est la valeau de touche \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCase_a10683ff62deeb3399a4a114711fed1b3}{\index{Case@{Case}!tirer\-Dessus@{tirer\-Dessus}}
+\index{tirer\-Dessus@{tirer\-Dessus}!Case@{Case}}
+\subsubsection[{tirer\-Dessus}]{\setlength{\rightskip}{0pt plus 5cm}void Case\-::tirer\-Dessus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCase_a10683ff62deeb3399a4a114711fed1b3}
+
+
+Effectue les changements lorsqu'on tire sur une \hyperlink{classCase}{Case}. 
+
+Modifie le boolean touche, indique au bateau qu'il s'est fait toucher 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/\hyperlink{Case_8hpp}{Case.\-hpp}\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/Case.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,456 @@
+\hypertarget{classPersonnageBN}{\section{Personnage\-B\-N Class Reference}
+\label{classPersonnageBN}\index{Personnage\-B\-N@{Personnage\-B\-N}}
+}
+
+
+\hyperlink{classPersonnage}{Personnage} pouvant jouer au combat\-: \hyperlink{classBatailleNavale}{Bataille\-Navale}.  
+
+
+
+
+{\ttfamily \#include $<$Personnage\-B\-N.\-hpp$>$}
+
+Inheritance diagram for Personnage\-B\-N\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.086957cm]{classPersonnageBN}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPersonnageBN_a09564d1f60e3e8ac05e7197cf886d45c}{Personnage\-B\-N} (string nomnv)
+\begin{DoxyCompactList}\small\item\em Constructeur des perso\-B\-N. \end{DoxyCompactList}\item 
+\hyperlink{classPersonnageBN_a6391c5c85d03608e309883c965638de5}{Personnage\-B\-N} (string nomnv, int l, int h, \hyperlink{classArme}{Arme} $\ast$a)
+\begin{DoxyCompactList}\small\item\em Constructeur (très) parametre de personnage\-B\-N. \end{DoxyCompactList}\item 
+\hyperlink{classPersonnageBN_af5a557a3a1114ef67ac5ac37ffec6d8a}{Personnage\-B\-N} (string nomnv, \hyperlink{classArme}{Arme} $\ast$a)
+\begin{DoxyCompactList}\small\item\em Constructeur (très) parametre de personnage\-B\-N. \end{DoxyCompactList}\item 
+\hyperlink{classPersonnageBN_aa5b7ac10ef5611e0e869a681c2cda915}{Personnage\-B\-N} (string nomnv, int l, int h)
+\begin{DoxyCompactList}\small\item\em Constructeur (très) parametre de personnage\-B\-N. \end{DoxyCompactList}\item 
+\hyperlink{classPersonnageBN_ae701e953e890a4168268f003b44c886f}{Personnage\-B\-N} (string nomnv, vector$<$ int $>$ t\-Bateaux)
+\begin{DoxyCompactList}\small\item\em Constructeur des perso\-B\-N. \end{DoxyCompactList}\item 
+\hyperlink{classPersonnageBN_a24f6e9b0b2ce83fdd3d49e77fac63ce3}{Personnage\-B\-N} (string nomnv, int l, int h, vector$<$ int $>$ t\-Bateaux, \hyperlink{classArme}{Arme} $\ast$a)
+\begin{DoxyCompactList}\small\item\em Constructeur (très) parametre de personnage\-B\-N. \end{DoxyCompactList}\item 
+\hyperlink{classPersonnageBN_a49265459e63c0bea4f9dfb702dd76c40}{Personnage\-B\-N} (string nomnv, vector$<$ int $>$ t\-Bateaux, \hyperlink{classArme}{Arme} $\ast$a)
+\begin{DoxyCompactList}\small\item\em Constructeur (très) parametre de personnage\-B\-N. \end{DoxyCompactList}\item 
+\hyperlink{classPersonnageBN_ad0c724004d5896a6ca9bd3501c432039}{Personnage\-B\-N} (string nomnv, int l, int h, vector$<$ int $>$ t\-Bateaux)
+\begin{DoxyCompactList}\small\item\em Constructeur (très) parametre de personnage\-B\-N. \end{DoxyCompactList}\item 
+\hyperlink{classTailleGrille}{Taille\-Grille} \hyperlink{classPersonnageBN_a79d3d1e8c0b174ac9659edb26787380d}{get\-Taille\-Grille} () const 
+\begin{DoxyCompactList}\small\item\em getters de taille\-Grille \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnageBN_a00256daec53f83cd70540647cdff2fa8}{ajouter\-Bateau} (const int taille)
+\begin{DoxyCompactList}\small\item\em Ajoute un baeatu à la flotte. \end{DoxyCompactList}\item 
+string \hyperlink{classPersonnageBN_af8957d888f3065180f12919ff6a04948}{get\-Nom\-B\-N} () const 
+\begin{DoxyCompactList}\small\item\em getters du nom\-B\-N \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnageBN_a5b63a8a11fbb52a26c8aa29407dc2071}{set\-Nom\-B\-N} (const string nvnom)
+\begin{DoxyCompactList}\small\item\em Setter du nom\-B\-N. \end{DoxyCompactList}\item 
+\hyperlink{classArme}{Arme} $\ast$ \hyperlink{classPersonnageBN_a6ff27cfd1a82e6127accfcfebd09be08}{get\-Arme} () const 
+\begin{DoxyCompactList}\small\item\em getters du pointeur sur \hyperlink{classArme}{Arme} \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classBateau}{Bateau} $\ast$ $>$ \hyperlink{classPersonnageBN_a7f230cf0537de207fcc170f9663e8c6b}{get\-Bateaux} () const 
+\begin{DoxyCompactList}\small\item\em getters du vecteur de pointeurs sur Bateaux \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnageBN_a41cd6da402ac37e5631942ca5156420c}{set\-Taille\-Grille} (const \hyperlink{classTailleGrille}{Taille\-Grille} tg)
+\begin{DoxyCompactList}\small\item\em setters de taille\-Grille \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnageBN_a2d9befe652ed12cc68451a6855dac07e}{set\-Arme} (\hyperlink{classArme}{Arme} $\ast$nv\-Arme)
+\begin{DoxyCompactList}\small\item\em setters d'\hyperlink{classArme}{Arme} \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnageBN_aded99fbc0a1314128d435ee8095d78b8}{set\-Bateaux} (const vector$<$ \hyperlink{classBateau}{Bateau} $\ast$ $>$ nv\-Bateaux)
+\begin{DoxyCompactList}\small\item\em setters de bateaux \end{DoxyCompactList}\item 
+virtual \hyperlink{classGrille}{Grille} \hyperlink{classPersonnageBN_a72b5b94a8e06f39c608c7310d4785579}{placer\-Bateaux} ()=0
+\begin{DoxyCompactList}\small\item\em le \hyperlink{classPersonnageBN}{Personnage\-B\-N} place les Bateaux sur sa \hyperlink{classGrille}{Grille} \end{DoxyCompactList}\item 
+virtual \hyperlink{classCoordonnees}{Coordonnees} \hyperlink{classPersonnageBN_aaf4e97d763adba22bc5a89b2537e6dbe}{coordonnees\-A\-Viser} (\hyperlink{classGrille}{Grille} $\ast$grille\-Adverse)=0
+\begin{DoxyCompactList}\small\item\em le \hyperlink{classPersonnageBN}{Personnage\-B\-N} veux tirer sur la grille du joueur adverse \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnageBN_a6d8837669e41914b1494d040e455ee1d}{restaurer\-Bateaux} ()
+\begin{DoxyCompactList}\small\item\em restaure les P\-V des bateaux \end{DoxyCompactList}\item 
+bool \hyperlink{classPersonnageBN_ad8fb6423ac3e2b7f48348eb3b7a9992e}{flotte\-Coulee} ()
+\begin{DoxyCompactList}\small\item\em verifie si la flotte est coulee \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPersonnage}{Personnage} pouvant jouer au combat\-: \hyperlink{classBatailleNavale}{Bataille\-Navale}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPersonnageBN_a09564d1f60e3e8ac05e7197cf886d45c}{\index{Personnage\-B\-N@{Personnage\-B\-N}!Personnage\-B\-N@{Personnage\-B\-N}}
+\index{Personnage\-B\-N@{Personnage\-B\-N}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{Personnage\-B\-N}]{\setlength{\rightskip}{0pt plus 5cm}Personnage\-B\-N\-::\-Personnage\-B\-N (
+\begin{DoxyParamCaption}
+\item[{string}]{nomnv}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_a09564d1f60e3e8ac05e7197cf886d45c}
+
+
+Constructeur des perso\-B\-N. 
+
+Constructeur des perso\-B\-N 
+\begin{DoxyParams}{Parameters}
+{\em nomnv} & \-: nom du joueur \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnageBN_a6391c5c85d03608e309883c965638de5}{\index{Personnage\-B\-N@{Personnage\-B\-N}!Personnage\-B\-N@{Personnage\-B\-N}}
+\index{Personnage\-B\-N@{Personnage\-B\-N}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{Personnage\-B\-N}]{\setlength{\rightskip}{0pt plus 5cm}Personnage\-B\-N\-::\-Personnage\-B\-N (
+\begin{DoxyParamCaption}
+\item[{string}]{nomnv, }
+\item[{int}]{l, }
+\item[{int}]{h, }
+\item[{{\bf Arme} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_a6391c5c85d03608e309883c965638de5}
+
+
+Constructeur (très) parametre de personnage\-B\-N. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nomnv} & \-: nom du personnage \\
+\hline
+{\em l} & \-: longueur de la grille \\
+\hline
+{\em h} & \-: hauteur de la grille \\
+\hline
+{\em a} & \-: pointeur sur l'arme souhaitée \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnageBN_af5a557a3a1114ef67ac5ac37ffec6d8a}{\index{Personnage\-B\-N@{Personnage\-B\-N}!Personnage\-B\-N@{Personnage\-B\-N}}
+\index{Personnage\-B\-N@{Personnage\-B\-N}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{Personnage\-B\-N}]{\setlength{\rightskip}{0pt plus 5cm}Personnage\-B\-N\-::\-Personnage\-B\-N (
+\begin{DoxyParamCaption}
+\item[{string}]{nomnv, }
+\item[{{\bf Arme} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_af5a557a3a1114ef67ac5ac37ffec6d8a}
+
+
+Constructeur (très) parametre de personnage\-B\-N. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nomnv} & \-: nom du personnage \\
+\hline
+{\em a} & \-: pointeur sur l'arme souhaitée \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnageBN_aa5b7ac10ef5611e0e869a681c2cda915}{\index{Personnage\-B\-N@{Personnage\-B\-N}!Personnage\-B\-N@{Personnage\-B\-N}}
+\index{Personnage\-B\-N@{Personnage\-B\-N}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{Personnage\-B\-N}]{\setlength{\rightskip}{0pt plus 5cm}Personnage\-B\-N\-::\-Personnage\-B\-N (
+\begin{DoxyParamCaption}
+\item[{string}]{nomnv, }
+\item[{int}]{l, }
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_aa5b7ac10ef5611e0e869a681c2cda915}
+
+
+Constructeur (très) parametre de personnage\-B\-N. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nomnv} & \-: nom du personnage \\
+\hline
+{\em l} & \-: longueur de la grille \\
+\hline
+{\em h} & \-: hauteur de la grille \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnageBN_ae701e953e890a4168268f003b44c886f}{\index{Personnage\-B\-N@{Personnage\-B\-N}!Personnage\-B\-N@{Personnage\-B\-N}}
+\index{Personnage\-B\-N@{Personnage\-B\-N}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{Personnage\-B\-N}]{\setlength{\rightskip}{0pt plus 5cm}Personnage\-B\-N\-::\-Personnage\-B\-N (
+\begin{DoxyParamCaption}
+\item[{string}]{nomnv, }
+\item[{vector$<$ int $>$}]{t\-Bateaux}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_ae701e953e890a4168268f003b44c886f}
+
+
+Constructeur des perso\-B\-N. 
+
+Constructeur des perso\-B\-N 
+\begin{DoxyParams}{Parameters}
+{\em t\-Bateaux} & \-: vector de taille de bateaux \\
+\hline
+{\em nomnv} & \-: nom du joueur \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnageBN_a24f6e9b0b2ce83fdd3d49e77fac63ce3}{\index{Personnage\-B\-N@{Personnage\-B\-N}!Personnage\-B\-N@{Personnage\-B\-N}}
+\index{Personnage\-B\-N@{Personnage\-B\-N}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{Personnage\-B\-N}]{\setlength{\rightskip}{0pt plus 5cm}Personnage\-B\-N\-::\-Personnage\-B\-N (
+\begin{DoxyParamCaption}
+\item[{string}]{nomnv, }
+\item[{int}]{l, }
+\item[{int}]{h, }
+\item[{vector$<$ int $>$}]{t\-Bateaux, }
+\item[{{\bf Arme} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_a24f6e9b0b2ce83fdd3d49e77fac63ce3}
+
+
+Constructeur (très) parametre de personnage\-B\-N. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nomnv} & \-: nom du personnage \\
+\hline
+{\em t\-Bateaux} & \-: vector de taille de bateaux \\
+\hline
+{\em l} & \-: longueur de la grille \\
+\hline
+{\em h} & \-: hauteur de la grille \\
+\hline
+{\em a} & \-: pointeur sur l'arme souhaitée \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnageBN_a49265459e63c0bea4f9dfb702dd76c40}{\index{Personnage\-B\-N@{Personnage\-B\-N}!Personnage\-B\-N@{Personnage\-B\-N}}
+\index{Personnage\-B\-N@{Personnage\-B\-N}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{Personnage\-B\-N}]{\setlength{\rightskip}{0pt plus 5cm}Personnage\-B\-N\-::\-Personnage\-B\-N (
+\begin{DoxyParamCaption}
+\item[{string}]{nomnv, }
+\item[{vector$<$ int $>$}]{t\-Bateaux, }
+\item[{{\bf Arme} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_a49265459e63c0bea4f9dfb702dd76c40}
+
+
+Constructeur (très) parametre de personnage\-B\-N. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\-Bateaux} & \-: vector de taille de bateaux \\
+\hline
+{\em nomnv} & \-: nom du personnage \\
+\hline
+{\em a} & \-: pointeur sur l'arme souhaitée \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnageBN_ad0c724004d5896a6ca9bd3501c432039}{\index{Personnage\-B\-N@{Personnage\-B\-N}!Personnage\-B\-N@{Personnage\-B\-N}}
+\index{Personnage\-B\-N@{Personnage\-B\-N}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{Personnage\-B\-N}]{\setlength{\rightskip}{0pt plus 5cm}Personnage\-B\-N\-::\-Personnage\-B\-N (
+\begin{DoxyParamCaption}
+\item[{string}]{nomnv, }
+\item[{int}]{l, }
+\item[{int}]{h, }
+\item[{vector$<$ int $>$}]{t\-Bateaux}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_ad0c724004d5896a6ca9bd3501c432039}
+
+
+Constructeur (très) parametre de personnage\-B\-N. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nomnv} & \-: nom du personnage \\
+\hline
+{\em t\-Bateaux} & \-: vector de taille de bateaux \\
+\hline
+{\em l} & \-: longueur de la grille \\
+\hline
+{\em h} & \-: hauteur de la grille \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPersonnageBN_a00256daec53f83cd70540647cdff2fa8}{\index{Personnage\-B\-N@{Personnage\-B\-N}!ajouter\-Bateau@{ajouter\-Bateau}}
+\index{ajouter\-Bateau@{ajouter\-Bateau}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{ajouter\-Bateau}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-B\-N\-::ajouter\-Bateau (
+\begin{DoxyParamCaption}
+\item[{const int}]{taille}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_a00256daec53f83cd70540647cdff2fa8}
+
+
+Ajoute un baeatu à la flotte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em taille} & \-: taille du bateau \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnageBN_aaf4e97d763adba22bc5a89b2537e6dbe}{\index{Personnage\-B\-N@{Personnage\-B\-N}!coordonnees\-A\-Viser@{coordonnees\-A\-Viser}}
+\index{coordonnees\-A\-Viser@{coordonnees\-A\-Viser}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{coordonnees\-A\-Viser}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} Personnage\-B\-N\-::coordonnees\-A\-Viser (
+\begin{DoxyParamCaption}
+\item[{{\bf Grille} $\ast$}]{grille\-Adverse}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classPersonnageBN_aaf4e97d763adba22bc5a89b2537e6dbe}
+
+
+le \hyperlink{classPersonnageBN}{Personnage\-B\-N} veux tirer sur la grille du joueur adverse 
+
+Cette méthode est virtuelle car cette classe est abstraite, elle sera implémentée dans les classes filles 
+\begin{DoxyParams}{Parameters}
+{\em grille\-Adverse} & \-: grille de l'adversaire à viser \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCoordonnees}{Coordonnees} de la case à viser 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classPersonnageBNIAAvance_a1927c24fe375190ad1d1f96a23c3e060}{Personnage\-B\-N\-I\-A\-Avance}, \hyperlink{classPersonnageBNHumain_a31e1a81b570fe5aa77122b1b8beabb2e}{Personnage\-B\-N\-Humain}, \hyperlink{classPersonnageBNIA_a8a4246573cddf782fb4a0d9bcbd25832}{Personnage\-B\-N\-I\-A}, and \hyperlink{classPersonnageBNIACheate_a7b81f85712b0f3d51427466b6fc4ebfd}{Personnage\-B\-N\-I\-A\-Cheate}.
+
+\hypertarget{classPersonnageBN_ad8fb6423ac3e2b7f48348eb3b7a9992e}{\index{Personnage\-B\-N@{Personnage\-B\-N}!flotte\-Coulee@{flotte\-Coulee}}
+\index{flotte\-Coulee@{flotte\-Coulee}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{flotte\-Coulee}]{\setlength{\rightskip}{0pt plus 5cm}bool Personnage\-B\-N\-::flotte\-Coulee (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_ad8fb6423ac3e2b7f48348eb3b7a9992e}
+
+
+verifie si la flotte est coulee 
+
+renvoie vrai si la flotte est coulee \begin{DoxyReturn}{Returns}
+bool vrai si flotte est coulee, faux sinon 
+\end{DoxyReturn}
+\hypertarget{classPersonnageBN_a6ff27cfd1a82e6127accfcfebd09be08}{\index{Personnage\-B\-N@{Personnage\-B\-N}!get\-Arme@{get\-Arme}}
+\index{get\-Arme@{get\-Arme}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{get\-Arme}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Arme} $\ast$ Personnage\-B\-N\-::get\-Arme (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPersonnageBN_a6ff27cfd1a82e6127accfcfebd09be08}
+
+
+getters du pointeur sur \hyperlink{classArme}{Arme} 
+
+\begin{DoxyReturn}{Returns}
+Arme$\ast$ pointeur sur \hyperlink{classArme}{Arme} 
+\end{DoxyReturn}
+\hypertarget{classPersonnageBN_a7f230cf0537de207fcc170f9663e8c6b}{\index{Personnage\-B\-N@{Personnage\-B\-N}!get\-Bateaux@{get\-Bateaux}}
+\index{get\-Bateaux@{get\-Bateaux}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{get\-Bateaux}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Bateau} $\ast$ $>$ Personnage\-B\-N\-::get\-Bateaux (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPersonnageBN_a7f230cf0537de207fcc170f9663e8c6b}
+
+
+getters du vecteur de pointeurs sur Bateaux 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\-Bateau$\ast$$>$ vecteur de pointeurs sur Bateaux 
+\end{DoxyReturn}
+\hypertarget{classPersonnageBN_af8957d888f3065180f12919ff6a04948}{\index{Personnage\-B\-N@{Personnage\-B\-N}!get\-Nom\-B\-N@{get\-Nom\-B\-N}}
+\index{get\-Nom\-B\-N@{get\-Nom\-B\-N}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{get\-Nom\-B\-N}]{\setlength{\rightskip}{0pt plus 5cm}string Personnage\-B\-N\-::get\-Nom\-B\-N (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPersonnageBN_af8957d888f3065180f12919ff6a04948}
+
+
+getters du nom\-B\-N 
+
+\begin{DoxyReturn}{Returns}
+string nom\-B\-N du \hyperlink{classPersonnageBN}{Personnage\-B\-N} 
+\end{DoxyReturn}
+\hypertarget{classPersonnageBN_a79d3d1e8c0b174ac9659edb26787380d}{\index{Personnage\-B\-N@{Personnage\-B\-N}!get\-Taille\-Grille@{get\-Taille\-Grille}}
+\index{get\-Taille\-Grille@{get\-Taille\-Grille}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{get\-Taille\-Grille}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Taille\-Grille} Personnage\-B\-N\-::get\-Taille\-Grille (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPersonnageBN_a79d3d1e8c0b174ac9659edb26787380d}
+
+
+getters de taille\-Grille 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTailleGrille}{Taille\-Grille} 
+\end{DoxyReturn}
+\hypertarget{classPersonnageBN_a72b5b94a8e06f39c608c7310d4785579}{\index{Personnage\-B\-N@{Personnage\-B\-N}!placer\-Bateaux@{placer\-Bateaux}}
+\index{placer\-Bateaux@{placer\-Bateaux}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{placer\-Bateaux}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grille} Personnage\-B\-N\-::placer\-Bateaux (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classPersonnageBN_a72b5b94a8e06f39c608c7310d4785579}
+
+
+le \hyperlink{classPersonnageBN}{Personnage\-B\-N} place les Bateaux sur sa \hyperlink{classGrille}{Grille} 
+
+Cette méthode est virtuelle car cette classe est abstraite, elle sera implémentée dans les classes filles \begin{DoxyReturn}{Returns}
+\hyperlink{classGrille}{Grille} dotée de tous les bateaux placés 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classPersonnageBNHumain_a66b59496aa63d4bc89183f600fa7f5df}{Personnage\-B\-N\-Humain}, \hyperlink{classPersonnageBNIA_ab9c5a33f853fb25c024ab12793256f88}{Personnage\-B\-N\-I\-A}, \hyperlink{classPersonnageBNIAAvance_a9b6b532452a97556e50a9d44f19092f3}{Personnage\-B\-N\-I\-A\-Avance}, and \hyperlink{classPersonnageBNIACheate_a76eabf30fe7ee8d8d00af7e4bac4cd3f}{Personnage\-B\-N\-I\-A\-Cheate}.
+
+\hypertarget{classPersonnageBN_a6d8837669e41914b1494d040e455ee1d}{\index{Personnage\-B\-N@{Personnage\-B\-N}!restaurer\-Bateaux@{restaurer\-Bateaux}}
+\index{restaurer\-Bateaux@{restaurer\-Bateaux}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{restaurer\-Bateaux}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-B\-N\-::restaurer\-Bateaux (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_a6d8837669e41914b1494d040e455ee1d}
+
+
+restaure les P\-V des bateaux 
+
+restaure les P\-V des bateaux \hypertarget{classPersonnageBN_a2d9befe652ed12cc68451a6855dac07e}{\index{Personnage\-B\-N@{Personnage\-B\-N}!set\-Arme@{set\-Arme}}
+\index{set\-Arme@{set\-Arme}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{set\-Arme}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-B\-N\-::set\-Arme (
+\begin{DoxyParamCaption}
+\item[{{\bf Arme} $\ast$}]{nv\-Arme}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_a2d9befe652ed12cc68451a6855dac07e}
+
+
+setters d'\hyperlink{classArme}{Arme} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nv\-Arme} & nouvel \hyperlink{classArme}{Arme(pointeur)} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnageBN_aded99fbc0a1314128d435ee8095d78b8}{\index{Personnage\-B\-N@{Personnage\-B\-N}!set\-Bateaux@{set\-Bateaux}}
+\index{set\-Bateaux@{set\-Bateaux}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{set\-Bateaux}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-B\-N\-::set\-Bateaux (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Bateau} $\ast$ $>$}]{nv\-Bateaux}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_aded99fbc0a1314128d435ee8095d78b8}
+
+
+setters de bateaux 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nv\-Bateaux} & nouveau vecteur de pointeurs sur \hyperlink{classBateau}{Bateau} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnageBN_a5b63a8a11fbb52a26c8aa29407dc2071}{\index{Personnage\-B\-N@{Personnage\-B\-N}!set\-Nom\-B\-N@{set\-Nom\-B\-N}}
+\index{set\-Nom\-B\-N@{set\-Nom\-B\-N}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{set\-Nom\-B\-N}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-B\-N\-::set\-Nom\-B\-N (
+\begin{DoxyParamCaption}
+\item[{const string}]{nvnom}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_a5b63a8a11fbb52a26c8aa29407dc2071}
+
+
+Setter du nom\-B\-N. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nvnom} & nom du \hyperlink{classPersonnageBN}{Personnage\-B\-N} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnageBN_a41cd6da402ac37e5631942ca5156420c}{\index{Personnage\-B\-N@{Personnage\-B\-N}!set\-Taille\-Grille@{set\-Taille\-Grille}}
+\index{set\-Taille\-Grille@{set\-Taille\-Grille}!PersonnageBN@{Personnage\-B\-N}}
+\subsubsection[{set\-Taille\-Grille}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-B\-N\-::set\-Taille\-Grille (
+\begin{DoxyParamCaption}
+\item[{const {\bf Taille\-Grille}}]{tg}
+\end{DoxyParamCaption}
+)}}\label{classPersonnageBN_a41cd6da402ac37e5631942ca5156420c}
+
+
+setters de taille\-Grille 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tg} & nouvelle taille de grille \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/\hyperlink{PersonnageBN_8hpp}{Personnage\-B\-N.\-hpp}\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/Personnage\-B\-N.\-cpp\end{DoxyCompactItemize}

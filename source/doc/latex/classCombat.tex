@@ -1,0 +1,62 @@
+\hypertarget{classCombat}{\section{Combat Class Reference}
+\label{classCombat}\index{Combat@{Combat}}
+}
+
+
+\hyperlink{classCombat}{Combat} à deux joueurs.  
+
+
+
+
+{\ttfamily \#include $<$Combat.\-hpp$>$}
+
+Inheritance diagram for Combat\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCombat}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classPersonnage}{Personnage} $\ast$ \hyperlink{classCombat_a5b480832873d1bf4e8a91f1c7054e646}{retourner\-Gagnant} (\hyperlink{classPersonnage}{Personnage} $\ast$joueur1, \hyperlink{classPersonnage}{Personnage} $\ast$joueur2)=0
+\begin{DoxyCompactList}\small\item\em Retourner Gagnant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCombat}{Combat} à deux joueurs. 
+
+Classe permettant la gestion d'un combat à deux joueurs avec les fonctions génériques qui reviennent pour tous les combats. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classCombat_a5b480832873d1bf4e8a91f1c7054e646}{\index{Combat@{Combat}!retourner\-Gagnant@{retourner\-Gagnant}}
+\index{retourner\-Gagnant@{retourner\-Gagnant}!Combat@{Combat}}
+\subsubsection[{retourner\-Gagnant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Personnage} Combat\-::retourner\-Gagnant (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{joueur1, }
+\item[{{\bf Personnage} $\ast$}]{joueur2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCombat_a5b480832873d1bf4e8a91f1c7054e646}
+
+
+Retourner Gagnant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joueur1} & représente le premier joueur initial de notre combat \\
+\hline
+{\em joueur2} & représente le deuxième joueur initial de notre combat\\
+\hline
+\end{DoxyParams}
+Méthode qui renvoie le gagnant du combat \begin{DoxyReturn}{Returns}
+un personnage correspondant au gagnant et null si la partie n'est pas finie 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classBatailleNavale_acff7cd9717a2ed3084b232d95ea9042a}{Bataille\-Navale}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/\hyperlink{Combat_8hpp}{Combat.\-hpp}\end{DoxyCompactItemize}

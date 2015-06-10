@@ -1,0 +1,305 @@
+\hypertarget{classGrille}{\section{Grille Class Reference}
+\label{classGrille}\index{Grille@{Grille}}
+}
+
+
+\hyperlink{classGrille}{Grille} de bataille navale.  
+
+
+
+
+{\ttfamily \#include $<$Grille.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGrille_a8ab8101441bd383097961f336220de09}{Grille} (int longueur, int hauteur)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{classGrille_aa54a85fa86139365ed3e0202b3309a0d}{Grille} (const \hyperlink{classGrille}{Grille} \&grille)
+\begin{DoxyCompactList}\small\item\em Constructeur par recopie. \end{DoxyCompactList}\item 
+\hyperlink{classCase}{Case} \hyperlink{classGrille_ae5085ad2d200b40b4b51dc7e5a20a960}{get\-Case\-Elt} (\hyperlink{classCoordonnees}{Coordonnees} coordonnees)
+\begin{DoxyCompactList}\small\item\em récupere la case à partir de \hyperlink{classCoordonnees}{Coordonnees} \end{DoxyCompactList}\item 
+void \hyperlink{classGrille_a6be182df8cd575bf2ce1a9b81ae01736}{placer\-Bateau} (\hyperlink{classBateau}{Bateau} $\ast$bateau, const \hyperlink{classCoordonnees}{Coordonnees} case\-Depart, const \hyperlink{classCoordonnees}{Coordonnees} case\-Arrivee)
+\begin{DoxyCompactList}\small\item\em place le bateau \end{DoxyCompactList}\item 
+bool \hyperlink{classGrille_aaa6d9cfaa0c62d357ddd64b46f07353a}{placement\-Bateau\-Valide} (\hyperlink{classBateau}{Bateau} $\ast$bateau, const \hyperlink{classCoordonnees}{Coordonnees} case\-Depart, const \hyperlink{classCoordonnees}{Coordonnees} case\-Arrivee)
+\begin{DoxyCompactList}\small\item\em vérifie le placement bateau \end{DoxyCompactList}\item 
+bool \hyperlink{classGrille_a89a1c6c280b45be14a037be5f24b290c}{coup\-Valide} (const \hyperlink{classCoordonnees}{Coordonnees} kase)
+\begin{DoxyCompactList}\small\item\em vérifie la validité du coup \end{DoxyCompactList}\item 
+bool \hyperlink{classGrille_a6e17e393ec162454199c3c91dd5c6904}{case\-Valide} (const \hyperlink{classCoordonnees}{Coordonnees} kase)
+\begin{DoxyCompactList}\small\item\em vérifie la validité d une case \end{DoxyCompactList}\item 
+void \hyperlink{classGrille_a57c832d829dfed5349cbedf8108f375c}{copy} (const \hyperlink{classGrille}{Grille} grille\-Cp)
+\begin{DoxyCompactList}\small\item\em copie la grille \end{DoxyCompactList}\item 
+void \hyperlink{classGrille_a87e7d232d399626e5a6ca582cc975205}{tirer\-Dessus} (const \hyperlink{classCoordonnees}{Coordonnees} coordonnees)
+\begin{DoxyCompactList}\small\item\em Tire sur la case indiquée. \end{DoxyCompactList}\item 
+void \hyperlink{classGrille_a45ab4bdd18513e38c389324da70a2bf7}{set\-Taille\-Grille} (const \hyperlink{classTailleGrille}{Taille\-Grille} taille\-Grille\-Cp)
+\begin{DoxyCompactList}\small\item\em setter de taille\-Grille \end{DoxyCompactList}\item 
+void \hyperlink{classGrille_a45f61eed4f4a3fe5ef2677a72bf43fbe}{set\-Cases} (const vector$<$ vector$<$ \hyperlink{classCase}{Case} $>$ $>$ casescp)
+\begin{DoxyCompactList}\small\item\em setter de cases \end{DoxyCompactList}\item 
+vector$<$ vector$<$ \hyperlink{classCase}{Case} $>$ $>$ \hyperlink{classGrille_a0702f9273c5704719522cb57b45e95e1}{get\-Cases} () const 
+\begin{DoxyCompactList}\small\item\em Getter de cases. \end{DoxyCompactList}\item 
+\hyperlink{classTailleGrille}{Taille\-Grille} \hyperlink{classGrille_a13295ac8bacac1da22865fa885c2c15e}{get\-Taille\-Grille} () const 
+\begin{DoxyCompactList}\small\item\em Getter de taille\-Grille. \end{DoxyCompactList}\item 
+bool \hyperlink{classGrille_aae899fb894d1068bbed5f7787859ad9a}{grille\-Vide} () const 
+\begin{DoxyCompactList}\small\item\em Vérifie si une \hyperlink{classGrille}{Grille} est vide ou non. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classGrille}{Grille} de bataille navale. 
+
+La classe \hyperlink{classGrille}{Grille} contient une grille qui correspondraà la grille d'n joueur pendant une bataille navale 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGrille_a8ab8101441bd383097961f336220de09}{\index{Grille@{Grille}!Grille@{Grille}}
+\index{Grille@{Grille}!Grille@{Grille}}
+\subsubsection[{Grille}]{\setlength{\rightskip}{0pt plus 5cm}Grille\-::\-Grille (
+\begin{DoxyParamCaption}
+\item[{int}]{longueur, }
+\item[{int}]{hauteur}
+\end{DoxyParamCaption}
+)}}\label{classGrille_a8ab8101441bd383097961f336220de09}
+
+
+Constructeur. 
+
+Constructeur paramétré de la classe \hyperlink{classGrille}{Grille} 
+\begin{DoxyParams}{Parameters}
+{\em longueur} & \-: longueur de la grille \\
+\hline
+{\em hauteur} & \-: hauteur de la grille \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGrille_aa54a85fa86139365ed3e0202b3309a0d}{\index{Grille@{Grille}!Grille@{Grille}}
+\index{Grille@{Grille}!Grille@{Grille}}
+\subsubsection[{Grille}]{\setlength{\rightskip}{0pt plus 5cm}Grille\-::\-Grille (
+\begin{DoxyParamCaption}
+\item[{const {\bf Grille} \&}]{grille}
+\end{DoxyParamCaption}
+)}}\label{classGrille_aa54a85fa86139365ed3e0202b3309a0d}
+
+
+Constructeur par recopie. 
+
+Constructeur par recopie de la classe \hyperlink{classGrille}{Grille} 
+\begin{DoxyParams}{Parameters}
+{\em grille} & \-: \hyperlink{classGrille}{Grille} à recopier \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGrille_a6e17e393ec162454199c3c91dd5c6904}{\index{Grille@{Grille}!case\-Valide@{case\-Valide}}
+\index{case\-Valide@{case\-Valide}!Grille@{Grille}}
+\subsubsection[{case\-Valide}]{\setlength{\rightskip}{0pt plus 5cm}bool Grille\-::case\-Valide (
+\begin{DoxyParamCaption}
+\item[{const {\bf Coordonnees}}]{kase}
+\end{DoxyParamCaption}
+)}}\label{classGrille_a6e17e393ec162454199c3c91dd5c6904}
+
+
+vérifie la validité d une case 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kase} & \-: case que l'on veux vérifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool \-: retourne vrai si on peut toucher la case 
+\end{DoxyReturn}
+\hypertarget{classGrille_a57c832d829dfed5349cbedf8108f375c}{\index{Grille@{Grille}!copy@{copy}}
+\index{copy@{copy}!Grille@{Grille}}
+\subsubsection[{copy}]{\setlength{\rightskip}{0pt plus 5cm}void Grille\-::copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf Grille}}]{grille\-Cp}
+\end{DoxyParamCaption}
+)}}\label{classGrille_a57c832d829dfed5349cbedf8108f375c}
+
+
+copie la grille 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grille\-Cp} & \-: grille que l'on va copier\\
+\hline
+\end{DoxyParams}
+copie toutes les données de la grille en entrée dans notre grille \hypertarget{classGrille_a89a1c6c280b45be14a037be5f24b290c}{\index{Grille@{Grille}!coup\-Valide@{coup\-Valide}}
+\index{coup\-Valide@{coup\-Valide}!Grille@{Grille}}
+\subsubsection[{coup\-Valide}]{\setlength{\rightskip}{0pt plus 5cm}bool Grille\-::coup\-Valide (
+\begin{DoxyParamCaption}
+\item[{const {\bf Coordonnees}}]{kase}
+\end{DoxyParamCaption}
+)}}\label{classGrille_a89a1c6c280b45be14a037be5f24b290c}
+
+
+vérifie la validité du coup 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kase} & \-: case que l'on veux vérifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool \-: retourne vrai si on peut toucher la case 
+\end{DoxyReturn}
+\hypertarget{classGrille_ae5085ad2d200b40b4b51dc7e5a20a960}{\index{Grille@{Grille}!get\-Case\-Elt@{get\-Case\-Elt}}
+\index{get\-Case\-Elt@{get\-Case\-Elt}!Grille@{Grille}}
+\subsubsection[{get\-Case\-Elt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Case} Grille\-::get\-Case\-Elt (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees}}]{coordonnees}
+\end{DoxyParamCaption}
+)}}\label{classGrille_ae5085ad2d200b40b4b51dc7e5a20a960}
+
+
+récupere la case à partir de \hyperlink{classCoordonnees}{Coordonnees} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordonnees} & \-: coordonnees de la case \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCoordonnees}{Coordonnees} 
+\end{DoxyReturn}
+\hypertarget{classGrille_a0702f9273c5704719522cb57b45e95e1}{\index{Grille@{Grille}!get\-Cases@{get\-Cases}}
+\index{get\-Cases@{get\-Cases}!Grille@{Grille}}
+\subsubsection[{get\-Cases}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ vector$<$ {\bf Case} $>$ $>$ Grille\-::get\-Cases (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGrille_a0702f9273c5704719522cb57b45e95e1}
+
+
+Getter de cases. 
+
+\begin{DoxyReturn}{Returns}
+cases \-: cases de notre grille 
+\end{DoxyReturn}
+\hypertarget{classGrille_a13295ac8bacac1da22865fa885c2c15e}{\index{Grille@{Grille}!get\-Taille\-Grille@{get\-Taille\-Grille}}
+\index{get\-Taille\-Grille@{get\-Taille\-Grille}!Grille@{Grille}}
+\subsubsection[{get\-Taille\-Grille}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Taille\-Grille} Grille\-::get\-Taille\-Grille (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGrille_a13295ac8bacac1da22865fa885c2c15e}
+
+
+Getter de taille\-Grille. 
+
+\begin{DoxyReturn}{Returns}
+taille\-Grille \-: taille\-Grille de notre grille 
+\end{DoxyReturn}
+\hypertarget{classGrille_aae899fb894d1068bbed5f7787859ad9a}{\index{Grille@{Grille}!grille\-Vide@{grille\-Vide}}
+\index{grille\-Vide@{grille\-Vide}!Grille@{Grille}}
+\subsubsection[{grille\-Vide}]{\setlength{\rightskip}{0pt plus 5cm}bool Grille\-::grille\-Vide (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGrille_aae899fb894d1068bbed5f7787859ad9a}
+
+
+Vérifie si une \hyperlink{classGrille}{Grille} est vide ou non. 
+
+\begin{DoxyReturn}{Returns}
+bool \-: true si grille est vide, false sinon 
+\end{DoxyReturn}
+\hypertarget{classGrille_aaa6d9cfaa0c62d357ddd64b46f07353a}{\index{Grille@{Grille}!placement\-Bateau\-Valide@{placement\-Bateau\-Valide}}
+\index{placement\-Bateau\-Valide@{placement\-Bateau\-Valide}!Grille@{Grille}}
+\subsubsection[{placement\-Bateau\-Valide}]{\setlength{\rightskip}{0pt plus 5cm}bool Grille\-::placement\-Bateau\-Valide (
+\begin{DoxyParamCaption}
+\item[{{\bf Bateau} $\ast$}]{bateau, }
+\item[{const {\bf Coordonnees}}]{case\-Depart, }
+\item[{const {\bf Coordonnees}}]{case\-Arrivee}
+\end{DoxyParamCaption}
+)}}\label{classGrille_aaa6d9cfaa0c62d357ddd64b46f07353a}
+
+
+vérifie le placement bateau 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bateau} & \-: bateau à placer sur la case \\
+\hline
+{\em case\-Depart} & \-: case de départ sur laquelle nous placons le bateau \\
+\hline
+{\em case\-Arrivee} & \-: case d'arrivee sur laquelle nous placons le bateau \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool \-: retourne vrai si on peut placer le bateau faux sinon 
+\end{DoxyReturn}
+\hypertarget{classGrille_a6be182df8cd575bf2ce1a9b81ae01736}{\index{Grille@{Grille}!placer\-Bateau@{placer\-Bateau}}
+\index{placer\-Bateau@{placer\-Bateau}!Grille@{Grille}}
+\subsubsection[{placer\-Bateau}]{\setlength{\rightskip}{0pt plus 5cm}void Grille\-::placer\-Bateau (
+\begin{DoxyParamCaption}
+\item[{{\bf Bateau} $\ast$}]{bateau, }
+\item[{const {\bf Coordonnees}}]{case\-Depart, }
+\item[{const {\bf Coordonnees}}]{case\-Arrivee}
+\end{DoxyParamCaption}
+)}}\label{classGrille_a6be182df8cd575bf2ce1a9b81ae01736}
+
+
+place le bateau 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bateau} & \-: bateau à placer sur la case \\
+\hline
+{\em case\-Depart} & \-: case de départ sur laquelle nous placons le bateau \\
+\hline
+{\em case\-Arrivee} & \-: case d'arrivee sur laquelle nous placons le bateau \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGrille_a45f61eed4f4a3fe5ef2677a72bf43fbe}{\index{Grille@{Grille}!set\-Cases@{set\-Cases}}
+\index{set\-Cases@{set\-Cases}!Grille@{Grille}}
+\subsubsection[{set\-Cases}]{\setlength{\rightskip}{0pt plus 5cm}Grille\-::set\-Cases (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ vector$<$ {\bf Case} $>$ $>$}]{cases}
+\end{DoxyParamCaption}
+)}}\label{classGrille_a45f61eed4f4a3fe5ef2677a72bf43fbe}
+
+
+setter de cases 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cases} & \-: cases de notre grille \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGrille_a45ab4bdd18513e38c389324da70a2bf7}{\index{Grille@{Grille}!set\-Taille\-Grille@{set\-Taille\-Grille}}
+\index{set\-Taille\-Grille@{set\-Taille\-Grille}!Grille@{Grille}}
+\subsubsection[{set\-Taille\-Grille}]{\setlength{\rightskip}{0pt plus 5cm}Grille\-::set\-Taille\-Grille (
+\begin{DoxyParamCaption}
+\item[{const {\bf Taille\-Grille}}]{taille\-Grille\-Cp}
+\end{DoxyParamCaption}
+)}}\label{classGrille_a45ab4bdd18513e38c389324da70a2bf7}
+
+
+setter de taille\-Grille 
+
+
+\begin{DoxyParams}{Parameters}
+{\em taille\-Grille\-Cp} & \-: taille\-Grille de notre grille \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGrille_a87e7d232d399626e5a6ca582cc975205}{\index{Grille@{Grille}!tirer\-Dessus@{tirer\-Dessus}}
+\index{tirer\-Dessus@{tirer\-Dessus}!Grille@{Grille}}
+\subsubsection[{tirer\-Dessus}]{\setlength{\rightskip}{0pt plus 5cm}void Grille\-::tirer\-Dessus (
+\begin{DoxyParamCaption}
+\item[{const {\bf Coordonnees}}]{coordonnees}
+\end{DoxyParamCaption}
+)}}\label{classGrille_a87e7d232d399626e5a6ca582cc975205}
+
+
+Tire sur la case indiquée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordonnees} & \-: les coordonnees de la case sur laquelle tirer \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/\hyperlink{Grille_8hpp}{Grille.\-hpp}\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/Grille.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,111 @@
+\hypertarget{classCarte}{\section{Carte Class Reference}
+\label{classCarte}\index{Carte@{Carte}}
+}
+
+
+classe représentant une carte  
+
+
+
+
+{\ttfamily \#include $<$Carte.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCarte_a7b0b6451f5eda0debb91f85eca7f7d07}{Carte} (int id\-C, vector$<$ vector$<$ char $>$ $>$ vec\-Grille)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+void \hyperlink{classCarte_a276dc4e72a6cd5d5a32ebb5f56378230}{deplacer\-Personnage} (\hyperlink{classPersonnage}{Personnage} $\ast$personnage, \hyperlink{classCoordonnees}{Coordonnees} coordonnees)
+\begin{DoxyCompactList}\small\item\em déplace le personnage \end{DoxyCompactList}\item 
+vector$<$ vector$<$ \hyperlink{classCellule}{Cellule} $\ast$ $>$ $>$ \hyperlink{classCarte_a4d02432842f01a1ea4027294e404793f}{get\-Cellules} ()
+\begin{DoxyCompactList}\small\item\em Getter Cellules. \end{DoxyCompactList}\item 
+\hyperlink{classCellule}{Cellule} $\ast$ \hyperlink{classCarte_ab3c15550ca7cf7153a7976b8c3d78fd9}{get\-Cel} (\hyperlink{classCoordonnees}{Coordonnees} coord)
+\begin{DoxyCompactList}\small\item\em Getter Cel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+classe représentant une carte 
+
+La classe représente une carte 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCarte_a7b0b6451f5eda0debb91f85eca7f7d07}{\index{Carte@{Carte}!Carte@{Carte}}
+\index{Carte@{Carte}!Carte@{Carte}}
+\subsubsection[{Carte}]{\setlength{\rightskip}{0pt plus 5cm}Carte\-::\-Carte (
+\begin{DoxyParamCaption}
+\item[{int}]{id\-C, }
+\item[{vector$<$ vector$<$ char $>$ $>$}]{vec\-Grille}
+\end{DoxyParamCaption}
+)}}\label{classCarte_a7b0b6451f5eda0debb91f85eca7f7d07}
+
+
+Constructeur. 
+
+Constructeur de la classe \hyperlink{classCarte}{Carte} 
+\begin{DoxyParams}{Parameters}
+{\em id\-C} & \-: entier numero carte \\
+\hline
+{\em vec\-Grille} & \-: vecteur avec l'ensemble des données de la carte \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCarte_a276dc4e72a6cd5d5a32ebb5f56378230}{\index{Carte@{Carte}!deplacer\-Personnage@{deplacer\-Personnage}}
+\index{deplacer\-Personnage@{deplacer\-Personnage}!Carte@{Carte}}
+\subsubsection[{deplacer\-Personnage}]{\setlength{\rightskip}{0pt plus 5cm}void Carte\-::deplacer\-Personnage (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{personnage, }
+\item[{{\bf Coordonnees}}]{coordonnees}
+\end{DoxyParamCaption}
+)}}\label{classCarte_a276dc4e72a6cd5d5a32ebb5f56378230}
+
+
+déplace le personnage 
+
+Méthode permettant de supprimer le personnage en entrée de sa case de départ, et le place sur la case associée aux coordonnées en entrée 
+\begin{DoxyParams}{Parameters}
+{\em personnage} & pointeur sur personnage \\
+\hline
+{\em coordonnees} & coordonnées destination \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCarte_ab3c15550ca7cf7153a7976b8c3d78fd9}{\index{Carte@{Carte}!get\-Cel@{get\-Cel}}
+\index{get\-Cel@{get\-Cel}!Carte@{Carte}}
+\subsubsection[{get\-Cel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cellule} $\ast$ Carte\-::get\-Cel (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees}}]{coord}
+\end{DoxyParamCaption}
+)}}\label{classCarte_ab3c15550ca7cf7153a7976b8c3d78fd9}
+
+
+Getter Cel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & \-: coordonnées de la cellule \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la cellule de coordonnées coord 
+\end{DoxyReturn}
+\hypertarget{classCarte_a4d02432842f01a1ea4027294e404793f}{\index{Carte@{Carte}!get\-Cellules@{get\-Cellules}}
+\index{get\-Cellules@{get\-Cellules}!Carte@{Carte}}
+\subsubsection[{get\-Cellules}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ vector$<$ {\bf Cellule} $>$ $>$ Carte\-::get\-Cellules (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCarte_a4d02432842f01a1ea4027294e404793f}
+
+
+Getter Cellules. 
+
+\begin{DoxyReturn}{Returns}
+La liste des cellules de la carte 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/\hyperlink{Carte_8hpp}{Carte.\-hpp}\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/Carte.\-cpp\end{DoxyCompactItemize}

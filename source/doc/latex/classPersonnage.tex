@@ -1,0 +1,177 @@
+\hypertarget{classPersonnage}{\section{Personnage Class Reference}
+\label{classPersonnage}\index{Personnage@{Personnage}}
+}
+
+
+classe définissant un personnage  
+
+
+
+
+{\ttfamily \#include $<$Personnage.\-hpp$>$}
+
+Inheritance diagram for Personnage\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.153846cm]{classPersonnage}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPersonnage_a93723cd22a0b4c2e6edd62e07e09a745}{Personnage} (string nomnv)
+\begin{DoxyCompactList}\small\item\em constructeur \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_a91f650f5ede9c187560dd5c03907b337}{deplacer} (\hyperlink{classCoordonnees}{Coordonnees} coordonnees, \hyperlink{classCarte}{Carte} $\ast$carte\-Entree)
+\begin{DoxyCompactList}\small\item\em fonction déplacer \end{DoxyCompactList}\item 
+\hyperlink{classCoordonnees}{Coordonnees} \hyperlink{classPersonnage_ae66327fd2d09e133d049f96e6b3a68cf}{get\-Coordonnees} () const 
+\begin{DoxyCompactList}\small\item\em Getter \hyperlink{classCoordonnees}{Coordonnees}. \end{DoxyCompactList}\item 
+\hyperlink{classCarte}{Carte} $\ast$ \hyperlink{classPersonnage_a9c4fd5657f04f3b9defc603fc05b99da}{get\-Carte} () const 
+\begin{DoxyCompactList}\small\item\em Getter \hyperlink{classCarte}{Carte}. \end{DoxyCompactList}\item 
+string \hyperlink{classPersonnage_ad05ce70497e8321d81795776a5b77948}{get\-Nom} () const 
+\begin{DoxyCompactList}\small\item\em Getter Nom. \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_a13269350d46d0a5a32454b51b5dce7af}{set\-Coordonnees} (\hyperlink{classCoordonnees}{Coordonnees} coord\-Set)
+\begin{DoxyCompactList}\small\item\em Setter \hyperlink{classCoordonnees}{Coordonnees}. \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_afd695f3d63d2a1093476997230e3a055}{set\-Carte} (\hyperlink{classCarte}{Carte} $\ast$carte\-Set)
+\begin{DoxyCompactList}\small\item\em Setter \hyperlink{classCarte}{Carte}. \end{DoxyCompactList}\item 
+\hyperlink{classInventaire}{Inventaire} $\ast$ \hyperlink{classPersonnage_a1ec8306749f543f4396d511bb8b80621}{get\-Inventaire} ()
+\begin{DoxyCompactList}\small\item\em Getter \hyperlink{classInventaire}{Inventaire}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+classe définissant un personnage 
+
+La classe représente un personnage du jeu, contrôlable ou non, humain ou non 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPersonnage_a93723cd22a0b4c2e6edd62e07e09a745}{\index{Personnage@{Personnage}!Personnage@{Personnage}}
+\index{Personnage@{Personnage}!Personnage@{Personnage}}
+\subsubsection[{Personnage}]{\setlength{\rightskip}{0pt plus 5cm}Personnage\-::\-Personnage (
+\begin{DoxyParamCaption}
+\item[{string}]{nomnv}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a93723cd22a0b4c2e6edd62e07e09a745}
+
+
+constructeur 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nomnv} & \-: nom du joueur \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPersonnage_a91f650f5ede9c187560dd5c03907b337}{\index{Personnage@{Personnage}!deplacer@{deplacer}}
+\index{deplacer@{deplacer}!Personnage@{Personnage}}
+\subsubsection[{deplacer}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::deplacer (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees}}]{coordonnees, }
+\item[{{\bf Carte} $\ast$}]{carte}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a91f650f5ede9c187560dd5c03907b337}
+
+
+fonction déplacer 
+
+Permet le déplacement d'un personnage sur la carte et les coordonnées en entrée 
+\begin{DoxyParams}{Parameters}
+{\em coordonnees} & \-: coordonnées de destination \\
+\hline
+{\em carte} & \-: pointeur sur la carte de destination \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnage_a9c4fd5657f04f3b9defc603fc05b99da}{\index{Personnage@{Personnage}!get\-Carte@{get\-Carte}}
+\index{get\-Carte@{get\-Carte}!Personnage@{Personnage}}
+\subsubsection[{get\-Carte}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Carte} Personnage\-::get\-Carte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPersonnage_a9c4fd5657f04f3b9defc603fc05b99da}
+
+
+Getter \hyperlink{classCarte}{Carte}. 
+
+\begin{DoxyReturn}{Returns}
+Un pointeur sur la carte du personnage 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_ae66327fd2d09e133d049f96e6b3a68cf}{\index{Personnage@{Personnage}!get\-Coordonnees@{get\-Coordonnees}}
+\index{get\-Coordonnees@{get\-Coordonnees}!Personnage@{Personnage}}
+\subsubsection[{get\-Coordonnees}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} Personnage\-::get\-Coordonnees (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPersonnage_ae66327fd2d09e133d049f96e6b3a68cf}
+
+
+Getter \hyperlink{classCoordonnees}{Coordonnees}. 
+
+\begin{DoxyReturn}{Returns}
+Les coordonnees du personnage 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_a1ec8306749f543f4396d511bb8b80621}{\index{Personnage@{Personnage}!get\-Inventaire@{get\-Inventaire}}
+\index{get\-Inventaire@{get\-Inventaire}!Personnage@{Personnage}}
+\subsubsection[{get\-Inventaire}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Inventaire} $\ast$ Personnage\-::get\-Inventaire (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a1ec8306749f543f4396d511bb8b80621}
+
+
+Getter \hyperlink{classInventaire}{Inventaire}. 
+
+\begin{DoxyReturn}{Returns}
+l'inventaire du personnage 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_ad05ce70497e8321d81795776a5b77948}{\index{Personnage@{Personnage}!get\-Nom@{get\-Nom}}
+\index{get\-Nom@{get\-Nom}!Personnage@{Personnage}}
+\subsubsection[{get\-Nom}]{\setlength{\rightskip}{0pt plus 5cm}string Personnage\-::get\-Nom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPersonnage_ad05ce70497e8321d81795776a5b77948}
+
+
+Getter Nom. 
+
+\begin{DoxyReturn}{Returns}
+Le nom du joueur 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_afd695f3d63d2a1093476997230e3a055}{\index{Personnage@{Personnage}!set\-Carte@{set\-Carte}}
+\index{set\-Carte@{set\-Carte}!Personnage@{Personnage}}
+\subsubsection[{set\-Carte}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::set\-Carte (
+\begin{DoxyParamCaption}
+\item[{{\bf Carte} $\ast$}]{carte\-Set}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_afd695f3d63d2a1093476997230e3a055}
+
+
+Setter \hyperlink{classCarte}{Carte}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carte\-Set} & \-: la carte à pointer en attribut \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnage_a13269350d46d0a5a32454b51b5dce7af}{\index{Personnage@{Personnage}!set\-Coordonnees@{set\-Coordonnees}}
+\index{set\-Coordonnees@{set\-Coordonnees}!Personnage@{Personnage}}
+\subsubsection[{set\-Coordonnees}]{\setlength{\rightskip}{0pt plus 5cm}vodi Personnage\-::set\-Coordonnees (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees}}]{coord\-Set}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a13269350d46d0a5a32454b51b5dce7af}
+
+
+Setter \hyperlink{classCoordonnees}{Coordonnees}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord\-Set} & Les coordonnees du personnage \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/\hyperlink{Personnage_8hpp}{Personnage.\-hpp}\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/Personnage.\-cpp\end{DoxyCompactItemize}

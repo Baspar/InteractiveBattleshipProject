@@ -1,0 +1,115 @@
+\hypertarget{classArme}{\section{Arme Class Reference}
+\label{classArme}\index{Arme@{Arme}}
+}
+
+
+gestion de l'arme  
+
+
+
+
+{\ttfamily \#include $<$Arme.\-hpp$>$}
+
+Inheritance diagram for Arme\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classArme}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classArme_a46baac89e7062c4f111c1ee8b26e59df}{get\-Nom\-Arme} () const 
+\begin{DoxyCompactList}\small\item\em getter de nom\-Arme \end{DoxyCompactList}\item 
+void \hyperlink{classArme_a0aaf1c316ba1aa46768d73de58e059e2}{set\-Nom\-Arme} (const string nv\-Nom\-Arme)
+\begin{DoxyCompactList}\small\item\em setter de nom\-Arme \end{DoxyCompactList}\item 
+virtual void \hyperlink{classArme_a2092f960c2fb796bea3d9887775fa90e}{tirer} (const \hyperlink{classCoordonnees}{Coordonnees} coordonnees, \hyperlink{classGrille}{Grille} $\ast$grille)=0
+\begin{DoxyCompactList}\small\item\em Attaque. \end{DoxyCompactList}\item 
+\hyperlink{classArme_a31f873e62d4cc6f9c055ead94147ee77}{Arme} (string nom)
+\begin{DoxyCompactList}\small\item\em Constructeur parametre de la classe \hyperlink{classArme}{Arme}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+gestion de l'arme 
+
+Cette classe gère les informations concernant l'arme du joueur 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classArme_a31f873e62d4cc6f9c055ead94147ee77}{\index{Arme@{Arme}!Arme@{Arme}}
+\index{Arme@{Arme}!Arme@{Arme}}
+\subsubsection[{Arme}]{\setlength{\rightskip}{0pt plus 5cm}Arme\-::\-Arme (
+\begin{DoxyParamCaption}
+\item[{string}]{nom}
+\end{DoxyParamCaption}
+)}}\label{classArme_a31f873e62d4cc6f9c055ead94147ee77}
+
+
+Constructeur parametre de la classe \hyperlink{classArme}{Arme}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & \-: nom de l'arme \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classArme_a46baac89e7062c4f111c1ee8b26e59df}{\index{Arme@{Arme}!get\-Nom\-Arme@{get\-Nom\-Arme}}
+\index{get\-Nom\-Arme@{get\-Nom\-Arme}!Arme@{Arme}}
+\subsubsection[{get\-Nom\-Arme}]{\setlength{\rightskip}{0pt plus 5cm}string Arme\-::get\-Nom\-Arme (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classArme_a46baac89e7062c4f111c1ee8b26e59df}
+
+
+getter de nom\-Arme 
+
+retourne le nom de l'\hyperlink{classArme}{Arme} \begin{DoxyReturn}{Returns}
+string nom de l'arme 
+\end{DoxyReturn}
+\hypertarget{classArme_a0aaf1c316ba1aa46768d73de58e059e2}{\index{Arme@{Arme}!set\-Nom\-Arme@{set\-Nom\-Arme}}
+\index{set\-Nom\-Arme@{set\-Nom\-Arme}!Arme@{Arme}}
+\subsubsection[{set\-Nom\-Arme}]{\setlength{\rightskip}{0pt plus 5cm}void Arme\-::set\-Nom\-Arme (
+\begin{DoxyParamCaption}
+\item[{const string}]{nv\-Nom\-Arme}
+\end{DoxyParamCaption}
+)}}\label{classArme_a0aaf1c316ba1aa46768d73de58e059e2}
+
+
+setter de nom\-Arme 
+
+modifie le nom de l'\hyperlink{classArme}{Arme} 
+\begin{DoxyParams}{Parameters}
+{\em nv\-Nom\-Arme} & nom de l'\hyperlink{classArme}{Arme} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classArme_a2092f960c2fb796bea3d9887775fa90e}{\index{Arme@{Arme}!tirer@{tirer}}
+\index{tirer@{tirer}!Arme@{Arme}}
+\subsubsection[{tirer}]{\setlength{\rightskip}{0pt plus 5cm}void Arme\-::tirer (
+\begin{DoxyParamCaption}
+\item[{const {\bf Coordonnees}}]{coordonnees, }
+\item[{{\bf Grille} $\ast$}]{grille}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classArme_a2092f960c2fb796bea3d9887775fa90e}
+
+
+Attaque. 
+
+tire sur une case et inflige des dégâts en fonction de l'arme utilisée 
+\begin{DoxyParams}{Parameters}
+{\em coordonnees} & \-: coordonnées de la case que le joueur souhaite viser \\
+\hline
+{\em $\ast$grille} & \-: pointeur sur la grille sur lequel le joueur tire \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classArmeChercheuse_ad3584a57b7b4fcee261b87fdd3c33806}{Arme\-Chercheuse}, \hyperlink{classArmeClassique_a0260158e5047726e694f376948dcaeca}{Arme\-Classique}, \hyperlink{classArmeCroix_a66a52523c2e6acf8f6c73fea8eb1cbcf}{Arme\-Croix}, and \hyperlink{classArmeFatale_a2e0c981f498b14ca79312d0a3ec34c70}{Arme\-Fatale}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/\hyperlink{Arme_8hpp}{Arme.\-hpp}\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/Arme.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,264 @@
+\hypertarget{classBatailleNavale}{\section{Bataille\-Navale Class Reference}
+\label{classBatailleNavale}\index{Bataille\-Navale@{Bataille\-Navale}}
+}
+
+
+classe combat bataille navale  
+
+
+
+
+{\ttfamily \#include $<$Bataille\-Navale.\-hpp$>$}
+
+Inheritance diagram for Bataille\-Navale\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBatailleNavale}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBatailleNavale_a74cc728a7d2f09243e938cca13c16f59}{Bataille\-Navale} ()
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+void \hyperlink{classBatailleNavale_a2dae6d08ff0e391f23e2775ff01de3d0}{jouer} (\hyperlink{classCoordonnees}{Coordonnees} coordonnees)
+\begin{DoxyCompactList}\small\item\em Joueur vise case choisie. \end{DoxyCompactList}\item 
+\hyperlink{classPersonnageBN}{Personnage\-B\-N} $\ast$ \hyperlink{classBatailleNavale_a06536e39a82ccaee6cc415a79d471427}{get\-Personnage1} () const 
+\begin{DoxyCompactList}\small\item\em Getter du Joueur 1. \end{DoxyCompactList}\item 
+\hyperlink{classPersonnageBN}{Personnage\-B\-N} $\ast$ \hyperlink{classBatailleNavale_a21fdc28f984238126557f7a5d5a005ba}{get\-Personnage2} () const 
+\begin{DoxyCompactList}\small\item\em Getter du Joueur 2. \end{DoxyCompactList}\item 
+\hyperlink{classGrille}{Grille} $\ast$ \hyperlink{classBatailleNavale_a8af0c5c56b59b7fbbf13e40f3bd1d703}{get\-Grille1} ()
+\begin{DoxyCompactList}\small\item\em Getter de la grille 1. \end{DoxyCompactList}\item 
+\hyperlink{classGrille}{Grille} $\ast$ \hyperlink{classBatailleNavale_a14d7cccff168cd71b0dedaa9f9b1cb68}{get\-Grille2} ()
+\begin{DoxyCompactList}\small\item\em Getter de la grille 2. \end{DoxyCompactList}\item 
+int \hyperlink{classBatailleNavale_a3ad348fe72fe0c727ffb59aea478a2f1}{get\-Indice\-Joueur\-Courant} () const 
+\begin{DoxyCompactList}\small\item\em Getter de l indice du joueur courant. \end{DoxyCompactList}\item 
+void \hyperlink{classBatailleNavale_a7afd1b0024f7e3df851880ce63289b21}{set\-Indice\-Joueur\-Courant} (const int nv\-Indice)
+\begin{DoxyCompactList}\small\item\em Setter de l indice du joueur courant. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classPersonnageBN}{Personnage\-B\-N} $\ast$ $>$ \hyperlink{classBatailleNavale_a9fadbc201334aac3d7e181363483f12c}{get\-Joueurs} () const 
+\begin{DoxyCompactList}\small\item\em Getter de la liste de Joueurs. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classGrille}{Grille} $\ast$ $>$ \hyperlink{classBatailleNavale_a2834333a3f934ea4d25f6f09139e740e}{get\-Grilles} ()
+\begin{DoxyCompactList}\small\item\em Getter de l'ensemble des grilles. \end{DoxyCompactList}\item 
+\hyperlink{classPersonnage}{Personnage} $\ast$ \hyperlink{classBatailleNavale_acff7cd9717a2ed3084b232d95ea9042a}{retourner\-Gagnant} (\hyperlink{classPersonnage}{Personnage} $\ast$joueur1, \hyperlink{classPersonnage}{Personnage} $\ast$joueur2)
+\begin{DoxyCompactList}\small\item\em Retourner Gagnant. \end{DoxyCompactList}\item 
+\hyperlink{classPersonnageBN}{Personnage\-B\-N} $\ast$ \hyperlink{classBatailleNavale_a6dd55fdc58c85d5fc7d2aceec872dcc0}{retourner\-Gagnant} ()
+\begin{DoxyCompactList}\small\item\em Retourner Gagnant. \end{DoxyCompactList}\item 
+void \hyperlink{classBatailleNavale_a503ea394595b67fb2101dc5a77c46e7c}{initialiser\-Joueur\-Courant} (\hyperlink{classPersonnageBN}{Personnage\-B\-N} $\ast$joueur1, \hyperlink{classPersonnageBN}{Personnage\-B\-N} $\ast$joueur2)
+\begin{DoxyCompactList}\small\item\em initialise le joueur et les grilles \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+classe combat bataille navale 
+
+La classe gère la partie\-: l'initialise, crée les grilles, place les bateaux, permet aux joueurs de viser les cases, et modifie les grilles à chaque tour 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classBatailleNavale_a74cc728a7d2f09243e938cca13c16f59}{\index{Bataille\-Navale@{Bataille\-Navale}!Bataille\-Navale@{Bataille\-Navale}}
+\index{Bataille\-Navale@{Bataille\-Navale}!BatailleNavale@{Bataille\-Navale}}
+\subsubsection[{Bataille\-Navale}]{\setlength{\rightskip}{0pt plus 5cm}Bataille\-Navale\-::\-Bataille\-Navale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBatailleNavale_a74cc728a7d2f09243e938cca13c16f59}
+
+
+Constructeur. 
+
+Constructeur de la classe Bataille Navale Initialise les 2 joueurs, crée les 2 grilles de taille taille\-Grille à partir des joueurs puis va demander aux joueurs de placer leurs bateaux via la méthode placer\-Bateaux 
+
+\subsection{Member Function Documentation}
+\hypertarget{classBatailleNavale_a8af0c5c56b59b7fbbf13e40f3bd1d703}{\index{Bataille\-Navale@{Bataille\-Navale}!get\-Grille1@{get\-Grille1}}
+\index{get\-Grille1@{get\-Grille1}!BatailleNavale@{Bataille\-Navale}}
+\subsubsection[{get\-Grille1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grille} Bataille\-Navale\-::get\-Grille1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBatailleNavale_a8af0c5c56b59b7fbbf13e40f3bd1d703}
+
+
+Getter de la grille 1. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classGrille}{Grille}\-: grille 1 
+\end{DoxyReturn}
+\hypertarget{classBatailleNavale_a14d7cccff168cd71b0dedaa9f9b1cb68}{\index{Bataille\-Navale@{Bataille\-Navale}!get\-Grille2@{get\-Grille2}}
+\index{get\-Grille2@{get\-Grille2}!BatailleNavale@{Bataille\-Navale}}
+\subsubsection[{get\-Grille2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grille} Bataille\-Navale\-::get\-Grille2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBatailleNavale_a14d7cccff168cd71b0dedaa9f9b1cb68}
+
+
+Getter de la grille 2. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classGrille}{Grille}\-: grille 2 
+\end{DoxyReturn}
+\hypertarget{classBatailleNavale_a2834333a3f934ea4d25f6f09139e740e}{\index{Bataille\-Navale@{Bataille\-Navale}!get\-Grilles@{get\-Grilles}}
+\index{get\-Grilles@{get\-Grilles}!BatailleNavale@{Bataille\-Navale}}
+\subsubsection[{get\-Grilles}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Grille} $>$ Bataille\-Navale\-::get\-Grilles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBatailleNavale_a2834333a3f934ea4d25f6f09139e740e}
+
+
+Getter de l'ensemble des grilles. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\-Grille$>$\-: Ensemble des grilles 
+\end{DoxyReturn}
+\hypertarget{classBatailleNavale_a3ad348fe72fe0c727ffb59aea478a2f1}{\index{Bataille\-Navale@{Bataille\-Navale}!get\-Indice\-Joueur\-Courant@{get\-Indice\-Joueur\-Courant}}
+\index{get\-Indice\-Joueur\-Courant@{get\-Indice\-Joueur\-Courant}!BatailleNavale@{Bataille\-Navale}}
+\subsubsection[{get\-Indice\-Joueur\-Courant}]{\setlength{\rightskip}{0pt plus 5cm}int Bataille\-Navale\-::get\-Indice\-Joueur\-Courant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classBatailleNavale_a3ad348fe72fe0c727ffb59aea478a2f1}
+
+
+Getter de l indice du joueur courant. 
+
+\begin{DoxyReturn}{Returns}
+int\-:indice du personnage courant 
+\end{DoxyReturn}
+\hypertarget{classBatailleNavale_a9fadbc201334aac3d7e181363483f12c}{\index{Bataille\-Navale@{Bataille\-Navale}!get\-Joueurs@{get\-Joueurs}}
+\index{get\-Joueurs@{get\-Joueurs}!BatailleNavale@{Bataille\-Navale}}
+\subsubsection[{get\-Joueurs}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Personnage\-B\-N} $\ast$ $>$ Bataille\-Navale\-::get\-Joueurs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classBatailleNavale_a9fadbc201334aac3d7e181363483f12c}
+
+
+Getter de la liste de Joueurs. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\-Personnage\-B\-N$\ast$$>$\-:vecteur des 2 joueurs s'affrontant à la Bataille Navale 
+\end{DoxyReturn}
+\hypertarget{classBatailleNavale_a06536e39a82ccaee6cc415a79d471427}{\index{Bataille\-Navale@{Bataille\-Navale}!get\-Personnage1@{get\-Personnage1}}
+\index{get\-Personnage1@{get\-Personnage1}!BatailleNavale@{Bataille\-Navale}}
+\subsubsection[{get\-Personnage1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Personnage\-B\-N} $\ast$ Bataille\-Navale\-::get\-Personnage1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classBatailleNavale_a06536e39a82ccaee6cc415a79d471427}
+
+
+Getter du Joueur 1. 
+
+\begin{DoxyReturn}{Returns}
+Personnage\-B\-N$\ast$\-: pointeur sur personnage 1 
+\end{DoxyReturn}
+\hypertarget{classBatailleNavale_a21fdc28f984238126557f7a5d5a005ba}{\index{Bataille\-Navale@{Bataille\-Navale}!get\-Personnage2@{get\-Personnage2}}
+\index{get\-Personnage2@{get\-Personnage2}!BatailleNavale@{Bataille\-Navale}}
+\subsubsection[{get\-Personnage2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Personnage\-B\-N} $\ast$ Bataille\-Navale\-::get\-Personnage2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classBatailleNavale_a21fdc28f984238126557f7a5d5a005ba}
+
+
+Getter du Joueur 2. 
+
+\begin{DoxyReturn}{Returns}
+Personnage\-B\-N$\ast$\-: pointeur sur personnage 2 
+\end{DoxyReturn}
+\hypertarget{classBatailleNavale_a503ea394595b67fb2101dc5a77c46e7c}{\index{Bataille\-Navale@{Bataille\-Navale}!initialiser\-Joueur\-Courant@{initialiser\-Joueur\-Courant}}
+\index{initialiser\-Joueur\-Courant@{initialiser\-Joueur\-Courant}!BatailleNavale@{Bataille\-Navale}}
+\subsubsection[{initialiser\-Joueur\-Courant}]{\setlength{\rightskip}{0pt plus 5cm}void Bataille\-Navale\-::initialiser\-Joueur\-Courant (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage\-B\-N} $\ast$}]{joueur1, }
+\item[{{\bf Personnage\-B\-N} $\ast$}]{joueur2}
+\end{DoxyParamCaption}
+)}}\label{classBatailleNavale_a503ea394595b67fb2101dc5a77c46e7c}
+
+
+initialise le joueur et les grilles 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joueur1} & \-: représente le premier joueur du combat \\
+\hline
+{\em joueur2} & \-: représente le deuxième joueur du combat\\
+\hline
+\end{DoxyParams}
+Méthode qui initialise les joueurs \hypertarget{classBatailleNavale_a2dae6d08ff0e391f23e2775ff01de3d0}{\index{Bataille\-Navale@{Bataille\-Navale}!jouer@{jouer}}
+\index{jouer@{jouer}!BatailleNavale@{Bataille\-Navale}}
+\subsubsection[{jouer}]{\setlength{\rightskip}{0pt plus 5cm}void Bataille\-Navale\-::jouer (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees}}]{coordonnees}
+\end{DoxyParamCaption}
+)}}\label{classBatailleNavale_a2dae6d08ff0e391f23e2775ff01de3d0}
+
+
+Joueur vise case choisie. 
+
+Le joueur courant vise la case à jouer et tire avec son arme (actualisation des grilles) puis changement de joueur courant 
+\begin{DoxyParams}{Parameters}
+{\em coordonnees} & coordonnées choisies par le joueur \\
+\hline
+\end{DoxyParams}
+\hypertarget{classBatailleNavale_acff7cd9717a2ed3084b232d95ea9042a}{\index{Bataille\-Navale@{Bataille\-Navale}!retourner\-Gagnant@{retourner\-Gagnant}}
+\index{retourner\-Gagnant@{retourner\-Gagnant}!BatailleNavale@{Bataille\-Navale}}
+\subsubsection[{retourner\-Gagnant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Personnage} $\ast$ Bataille\-Navale\-::retourner\-Gagnant (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{joueur1, }
+\item[{{\bf Personnage} $\ast$}]{joueur2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classBatailleNavale_acff7cd9717a2ed3084b232d95ea9042a}
+
+
+Retourner Gagnant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joueur1} & représente le premier joueur initial de notre combat \\
+\hline
+{\em joueur2} & représente le deuxième joueur initial de notre combat\\
+\hline
+\end{DoxyParams}
+Méthode qui renvoie le gagnant du combat \begin{DoxyReturn}{Returns}
+un personnage correspondant au gagnant et null si la partie n'est pas finie 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classCombat_a5b480832873d1bf4e8a91f1c7054e646}{Combat}.
+
+\hypertarget{classBatailleNavale_a6dd55fdc58c85d5fc7d2aceec872dcc0}{\index{Bataille\-Navale@{Bataille\-Navale}!retourner\-Gagnant@{retourner\-Gagnant}}
+\index{retourner\-Gagnant@{retourner\-Gagnant}!BatailleNavale@{Bataille\-Navale}}
+\subsubsection[{retourner\-Gagnant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Personnage\-B\-N} $\ast$ Bataille\-Navale\-::retourner\-Gagnant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBatailleNavale_a6dd55fdc58c85d5fc7d2aceec872dcc0}
+
+
+Retourner Gagnant. 
+
+Méthode qui renvoie le gagnant du combat \begin{DoxyReturn}{Returns}
+un personnage correspondant au gagnant et null si la partie n'est pas finie 
+\end{DoxyReturn}
+\hypertarget{classBatailleNavale_a7afd1b0024f7e3df851880ce63289b21}{\index{Bataille\-Navale@{Bataille\-Navale}!set\-Indice\-Joueur\-Courant@{set\-Indice\-Joueur\-Courant}}
+\index{set\-Indice\-Joueur\-Courant@{set\-Indice\-Joueur\-Courant}!BatailleNavale@{Bataille\-Navale}}
+\subsubsection[{set\-Indice\-Joueur\-Courant}]{\setlength{\rightskip}{0pt plus 5cm}void Bataille\-Navale\-::set\-Indice\-Joueur\-Courant (
+\begin{DoxyParamCaption}
+\item[{const int}]{nv\-Indice}
+\end{DoxyParamCaption}
+)}}\label{classBatailleNavale_a7afd1b0024f7e3df851880ce63289b21}
+
+
+Setter de l indice du joueur courant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nv\-Indice} & \-: indice du personnage courant \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/\hyperlink{BatailleNavale_8hpp}{Bataille\-Navale.\-hpp}\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/Bataille\-Navale.\-cpp\end{DoxyCompactItemize}

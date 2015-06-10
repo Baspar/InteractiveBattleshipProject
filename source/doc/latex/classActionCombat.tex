@@ -1,0 +1,92 @@
+\hypertarget{classActionCombat}{\section{Action\-Combat Class Reference}
+\label{classActionCombat}\index{Action\-Combat@{Action\-Combat}}
+}
+
+
+gestion lancement du combat  
+
+
+
+
+{\ttfamily \#include $<$Action\-Combat.\-hpp$>$}
+
+Inheritance diagram for Action\-Combat\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classActionCombat}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classActionCombat_a42da7041c76b15801f864c61e6e369d4}{Action\-Combat} (\hyperlink{classPersonnage}{Personnage} $\ast$adversairenv, string texte)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+void \hyperlink{classActionCombat_a5f84011b92f33ea68b67e861d2c1a222}{lancer\-Action} ()
+\begin{DoxyCompactList}\small\item\em Lancement de l'action. \end{DoxyCompactList}\item 
+\hyperlink{classPersonnage}{Personnage} $\ast$ \hyperlink{classActionCombat_ae9260ae03854f087cb60fd4a13dc395a}{get\-Adversaire} () const 
+\begin{DoxyCompactList}\small\item\em getter \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+gestion lancement du combat 
+
+Cette classe lance un \hyperlink{classCombat}{Combat} lorsque le Joueur se trouve sur une case où il est menacé 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classActionCombat_a42da7041c76b15801f864c61e6e369d4}{\index{Action\-Combat@{Action\-Combat}!Action\-Combat@{Action\-Combat}}
+\index{Action\-Combat@{Action\-Combat}!ActionCombat@{Action\-Combat}}
+\subsubsection[{Action\-Combat}]{\setlength{\rightskip}{0pt plus 5cm}Action\-Combat\-::\-Action\-Combat (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{adversairenv, }
+\item[{string}]{texte}
+\end{DoxyParamCaption}
+)}}\label{classActionCombat_a42da7041c76b15801f864c61e6e369d4}
+
+
+Constructeur. 
+
+Constructeur de la classe \hyperlink{classActionCombat}{Action\-Combat} 
+\begin{DoxyParams}{Parameters}
+{\em texte} & texte a afficher \\
+\hline
+{\em adversairenv} & adversaire a affronter \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classActionCombat_ae9260ae03854f087cb60fd4a13dc395a}{\index{Action\-Combat@{Action\-Combat}!get\-Adversaire@{get\-Adversaire}}
+\index{get\-Adversaire@{get\-Adversaire}!ActionCombat@{Action\-Combat}}
+\subsubsection[{get\-Adversaire}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Personnage} $\ast$ Action\-Combat\-::get\-Adversaire (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classActionCombat_ae9260ae03854f087cb60fd4a13dc395a}
+
+
+getter 
+
+\begin{DoxyReturn}{Returns}
+adversaire 
+\end{DoxyReturn}
+\hypertarget{classActionCombat_a5f84011b92f33ea68b67e861d2c1a222}{\index{Action\-Combat@{Action\-Combat}!lancer\-Action@{lancer\-Action}}
+\index{lancer\-Action@{lancer\-Action}!ActionCombat@{Action\-Combat}}
+\subsubsection[{lancer\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void Action\-Combat\-::lancer\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classActionCombat_a5f84011b92f33ea68b67e861d2c1a222}
+
+
+Lancement de l'action. 
+
+Cette classe gère le lancement du combat en fonction de la case où le joueur se trouve 
+
+Implements \hyperlink{classAction_a47d25fc7d6ef58692a7a4c5bc7e7fbd0}{Action}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/\hyperlink{ActionCombat_8hpp}{Action\-Combat.\-hpp}\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/Action\-Combat.\-cpp\end{DoxyCompactItemize}

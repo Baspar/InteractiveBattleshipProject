@@ -1,0 +1,124 @@
+\hypertarget{classBateau}{\section{Bateau Class Reference}
+\label{classBateau}\index{Bateau@{Bateau}}
+}
+
+
+classe représentant bateaux  
+
+
+
+
+{\ttfamily \#include $<$Bateau.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBateau_acf585ce278c84cc8b7d944561fdb5f9d}{Bateau} (int taille\-In)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+int \hyperlink{classBateau_a598fd54cab4bdcd08729dc48284cc43a}{get\-P\-V} () const 
+\begin{DoxyCompactList}\small\item\em Getter de P\-V. \end{DoxyCompactList}\item 
+bool \hyperlink{classBateau_a6e4d8fc7cf8b265592dd009ecac72be2}{est\-Coule} ()
+\begin{DoxyCompactList}\small\item\em bateau coulé ou non \end{DoxyCompactList}\item 
+void \hyperlink{classBateau_a06889371c3db52edf08407776933f3de}{retirer\-P\-V} ()
+\begin{DoxyCompactList}\small\item\em enlève point de vie au bateau \end{DoxyCompactList}\item 
+void \hyperlink{classBateau_a6cfab80b6b8b767238b425c7814598cb}{restaurer\-P\-V} ()
+\begin{DoxyCompactList}\small\item\em ajoute point de vie au bateau \end{DoxyCompactList}\item 
+int \hyperlink{classBateau_a77c0f52ee0630a108a05898c8a7a439e}{get\-Taille\-Bateau} () const 
+\begin{DoxyCompactList}\small\item\em renvoie la taille du bateau \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+classe représentant bateaux 
+
+La classe définit les bateaux de la bataille navale 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classBateau_acf585ce278c84cc8b7d944561fdb5f9d}{\index{Bateau@{Bateau}!Bateau@{Bateau}}
+\index{Bateau@{Bateau}!Bateau@{Bateau}}
+\subsubsection[{Bateau}]{\setlength{\rightskip}{0pt plus 5cm}Bateau\-::\-Bateau (
+\begin{DoxyParamCaption}
+\item[{int}]{taille}
+\end{DoxyParamCaption}
+)}}\label{classBateau_acf585ce278c84cc8b7d944561fdb5f9d}
+
+
+Constructeur. 
+
+Constructeur de la classe \hyperlink{classBateau}{Bateau} 
+\begin{DoxyParams}{Parameters}
+{\em taille} & entier taille du bateau \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classBateau_a6e4d8fc7cf8b265592dd009ecac72be2}{\index{Bateau@{Bateau}!est\-Coule@{est\-Coule}}
+\index{est\-Coule@{est\-Coule}!Bateau@{Bateau}}
+\subsubsection[{est\-Coule}]{\setlength{\rightskip}{0pt plus 5cm}bool Bateau\-::est\-Coule (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBateau_a6e4d8fc7cf8b265592dd009ecac72be2}
+
+
+bateau coulé ou non 
+
+méthode permettant de dire si un bateau est coulé ou non \begin{DoxyReturn}{Returns}
+true si bateau a 0 point de vie, faux sinon 
+\end{DoxyReturn}
+\hypertarget{classBateau_a598fd54cab4bdcd08729dc48284cc43a}{\index{Bateau@{Bateau}!get\-P\-V@{get\-P\-V}}
+\index{get\-P\-V@{get\-P\-V}!Bateau@{Bateau}}
+\subsubsection[{get\-P\-V}]{\setlength{\rightskip}{0pt plus 5cm}int Bateau\-::get\-P\-V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classBateau_a598fd54cab4bdcd08729dc48284cc43a}
+
+
+Getter de P\-V. 
+
+\begin{DoxyReturn}{Returns}
+int les P\-V restant au bateau 
+\end{DoxyReturn}
+\hypertarget{classBateau_a77c0f52ee0630a108a05898c8a7a439e}{\index{Bateau@{Bateau}!get\-Taille\-Bateau@{get\-Taille\-Bateau}}
+\index{get\-Taille\-Bateau@{get\-Taille\-Bateau}!Bateau@{Bateau}}
+\subsubsection[{get\-Taille\-Bateau}]{\setlength{\rightskip}{0pt plus 5cm}int Bateau\-::get\-Taille\-Bateau (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classBateau_a77c0f52ee0630a108a05898c8a7a439e}
+
+
+renvoie la taille du bateau 
+
+getter de taille bateau \begin{DoxyReturn}{Returns}
+int\-: la taille du bateau 
+\end{DoxyReturn}
+\hypertarget{classBateau_a6cfab80b6b8b767238b425c7814598cb}{\index{Bateau@{Bateau}!restaurer\-P\-V@{restaurer\-P\-V}}
+\index{restaurer\-P\-V@{restaurer\-P\-V}!Bateau@{Bateau}}
+\subsubsection[{restaurer\-P\-V}]{\setlength{\rightskip}{0pt plus 5cm}void Bateau\-::restaurer\-P\-V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBateau_a6cfab80b6b8b767238b425c7814598cb}
+
+
+ajoute point de vie au bateau 
+
+méthode restaure un point de vie au bateau \hypertarget{classBateau_a06889371c3db52edf08407776933f3de}{\index{Bateau@{Bateau}!retirer\-P\-V@{retirer\-P\-V}}
+\index{retirer\-P\-V@{retirer\-P\-V}!Bateau@{Bateau}}
+\subsubsection[{retirer\-P\-V}]{\setlength{\rightskip}{0pt plus 5cm}void Bateau\-::retirer\-P\-V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBateau_a06889371c3db52edf08407776933f3de}
+
+
+enlève point de vie au bateau 
+
+méthode retire un point de vie au bateau s'il a été touché 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/\hyperlink{Bateau_8hpp}{Bateau.\-hpp}\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/Bateau.\-cpp\end{DoxyCompactItemize}

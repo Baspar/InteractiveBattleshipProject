@@ -1,0 +1,115 @@
+\hypertarget{classJeu}{\section{Jeu Class Reference}
+\label{classJeu}\index{Jeu@{Jeu}}
+}
+
+
+déplacement sur la carte  
+
+
+
+
+{\ttfamily \#include $<$Jeu.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classJeu_a631b0ba2e7be229fe4753f21a945169f}{Jeu} (\hyperlink{classCombat}{Combat} $\ast$comb)
+\begin{DoxyCompactList}\small\item\em Constructeur parametre. \end{DoxyCompactList}\item 
+bool \hyperlink{classJeu_a9aeb73667d13bf323fbeae0452164e25}{partie\-Finie} ()
+\begin{DoxyCompactList}\small\item\em voir si partie finie \end{DoxyCompactList}\item 
+\hypertarget{classJeu_a7a53f9ad522f2d315c4772ea298a2ebd}{void \hyperlink{classJeu_a7a53f9ad522f2d315c4772ea298a2ebd}{jouer} (\hyperlink{classCoordonnees}{Coordonnees} coordonnees)}\label{classJeu_a7a53f9ad522f2d315c4772ea298a2ebd}
+
+\begin{DoxyCompactList}\small\item\em déplacement héros, lancement action Déplace notre héros puis lance l'action \end{DoxyCompactList}\item 
+\hyperlink{classAction}{Action} $\ast$ \hyperlink{classJeu_ad20b3695183c5f09e650adef593791f3}{get\-Action\-En\-Cours} ()
+\begin{DoxyCompactList}\small\item\em Getter action\-En\-Cours. \end{DoxyCompactList}\item 
+\hyperlink{classPersonnageJouable}{Personnage\-Jouable} $\ast$ \hyperlink{classJeu_a43406840720ad6938890f5e212295e4b}{get\-Personnage\-Jouable} ()
+\begin{DoxyCompactList}\small\item\em Getter personnage\-Jouable. \end{DoxyCompactList}\item 
+\hyperlink{classMonde}{Monde} \hyperlink{classJeu_af42015551eab7e585e8006454bdd7673}{get\-Monde} () const 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMonde}{Monde}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+déplacement sur la carte 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classJeu_a631b0ba2e7be229fe4753f21a945169f}{\index{Jeu@{Jeu}!Jeu@{Jeu}}
+\index{Jeu@{Jeu}!Jeu@{Jeu}}
+\subsubsection[{Jeu}]{\setlength{\rightskip}{0pt plus 5cm}Jeu\-::\-Jeu (
+\begin{DoxyParamCaption}
+\item[{{\bf Combat} $\ast$}]{comb}
+\end{DoxyParamCaption}
+)}}\label{classJeu_a631b0ba2e7be229fe4753f21a945169f}
+
+
+Constructeur parametre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comb} & \-: combat à utiliser \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classJeu_ad20b3695183c5f09e650adef593791f3}{\index{Jeu@{Jeu}!get\-Action\-En\-Cours@{get\-Action\-En\-Cours}}
+\index{get\-Action\-En\-Cours@{get\-Action\-En\-Cours}!Jeu@{Jeu}}
+\subsubsection[{get\-Action\-En\-Cours}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Action} Jeu\-::get\-Action\-En\-Cours (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classJeu_ad20b3695183c5f09e650adef593791f3}
+
+
+Getter action\-En\-Cours. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classAction}{Action} en cours 
+\end{DoxyReturn}
+\hypertarget{classJeu_af42015551eab7e585e8006454bdd7673}{\index{Jeu@{Jeu}!get\-Monde@{get\-Monde}}
+\index{get\-Monde@{get\-Monde}!Jeu@{Jeu}}
+\subsubsection[{get\-Monde}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Monde} Jeu\-::get\-Monde (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classJeu_af42015551eab7e585e8006454bdd7673}
+
+
+\hyperlink{classMonde}{Monde}. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classMonde}{Monde} 
+\end{DoxyReturn}
+\hypertarget{classJeu_a43406840720ad6938890f5e212295e4b}{\index{Jeu@{Jeu}!get\-Personnage\-Jouable@{get\-Personnage\-Jouable}}
+\index{get\-Personnage\-Jouable@{get\-Personnage\-Jouable}!Jeu@{Jeu}}
+\subsubsection[{get\-Personnage\-Jouable}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Personnage\-Jouable} $\ast$ Jeu\-::get\-Personnage\-Jouable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classJeu_a43406840720ad6938890f5e212295e4b}
+
+
+Getter personnage\-Jouable. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classPersonnage}{Personnage} jouable 
+\end{DoxyReturn}
+\hypertarget{classJeu_a9aeb73667d13bf323fbeae0452164e25}{\index{Jeu@{Jeu}!partie\-Finie@{partie\-Finie}}
+\index{partie\-Finie@{partie\-Finie}!Jeu@{Jeu}}
+\subsubsection[{partie\-Finie}]{\setlength{\rightskip}{0pt plus 5cm}bool Jeu\-::partie\-Finie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classJeu_a9aeb73667d13bf323fbeae0452164e25}
+
+
+voir si partie finie 
+
+\begin{DoxyReturn}{Returns}
+Renvoie vrai si le jeu est fini, sinon faux 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/\hyperlink{Jeu_8hpp}{Jeu.\-hpp}\item 
+/home/damien/\-Bureau/projetcpp\-\_\-gm42/source/src/Jeu.\-cpp\end{DoxyCompactItemize}
