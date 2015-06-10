@@ -16,3 +16,13 @@ PersonnageJouable::PersonnageJouable(string nomnv, Coordonnees coord, Carte* idC
 void PersonnageJouable::deplacementInitial(){//DONE
     deplacer(coordInit, idCarteInit);
 }
+
+
+Carte* PersonnageJouable::getIdCarteInit() const{
+	return idCarteInit;
+}
+
+	
+Coordonnees PersonnageJouable::getCoordonneesInit() const{
+	return coordInit;
+}

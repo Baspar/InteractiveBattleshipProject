@@ -41,5 +41,17 @@ class PersonnageJouable : public Personnage{
         /// \brief Remet le personnage à son emplacement initial
         void deplacementInitial();
 
+	/// \fn  Carte* getIdCarteInit() const
+        /// \brief getter
+	///
+	/// \return Carte
+        Carte* getIdCarteInit() const;
+
+	/// \fn  Coordonnees getCoordonneesInit() const
+        /// \brief getter
+	///
+	/// \return Coordonnees
+        Coordonnees getCoordonneesInit() const;
+
 };
 #endif
