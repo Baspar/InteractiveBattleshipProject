@@ -84,6 +84,9 @@ TestJoueurIA: CompileTestJoueurIA
 TestJoueurIAAvance: CompileTestJoueurIAAvance
 	./TestJoueurIAAvance
 
+TestJoueurIACheate: CompileTestJoueurIACheate
+	./TestJoueurIACheate
+
 TestMonde: CompileTestMonde
 	./TestMonde
 
@@ -198,6 +201,9 @@ CompileTestJoueurIA: JoueurIA.o Bateau.o TailleGrille.o PersonnageBN.o Personnag
 
 CompileTestJoueurIAAvance: JoueurIAAvance.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNIA.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o JoueurIA.o PersonnageNonJouable.o CelluleObstacle.o Inventaire.o JoueurDhumainBNia.o ArmeCroix.o ArmeFatale.o PersonnageBNIAAvance.o 
 	g++ $(FLAGS) TestJoueurIAAvance.cpp $^ -o TestJoueurIAAvance
+
+CompileTestJoueurIACheate: JoueurIACheate.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNIA.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o JoueurIA.o PersonnageNonJouable.o CelluleObstacle.o Inventaire.o JoueurDhumainBNia.o ArmeCroix.o ArmeFatale.o PersonnageBNIACheate.o 
+	g++ $(FLAGS) TestJoueurIACheate.cpp $^ -o TestJoueurIACheate
 
 CompileTestMonde: Monde.o Carte.o Cellule.o CelluleAccessible.o ActionChangementCarte.o ActionVide.o TailleGrille.o Coordonnees.o Personnage.o Action.o CelluleObstacle.o Inventaire.o
 	g++ $(FLAGS) TestMonde.cpp $^ -o TestMonde
