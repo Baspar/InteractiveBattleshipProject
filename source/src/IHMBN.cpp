@@ -24,6 +24,15 @@ void IHMBN::afficherJeu(){//DONE
     // Affichage dizaines
     Grille* grille=getBN()->getGrilles()[getBN()->getIndiceJoueurCourant()];
     Grille* grilleAdverse=getBN()->getGrilles()[(getBN()->getIndiceJoueurCourant()+1)%2];
+    cout << "Adversaire";
+    for(int i=10; i<grilleAdverse->getTailleGrille().getLongueur()*2+6; i++)
+        cout << " ";
+    cout << "Votre grille" << endl;
+    cout << "----------";
+    for(int i=10; i<grilleAdverse->getTailleGrille().getLongueur()*2+6; i++)
+        cout << " ";
+    cout << "------------" << endl;
+    cout << endl;
     if(grilleAdverse->getTailleGrille().getLongueur()>10 || grille->getTailleGrille().getLongueur()>10 ){
         for (int i=0;i<grilleAdverse->getTailleGrille().getLongueur();i++){
             cout << "|";
@@ -46,15 +55,6 @@ void IHMBN::afficherJeu(){//DONE
         }
         cout << "|" << endl;
     }
-    cout << "Adversaire";
-    for(int i=10; i<grilleAdverse->getTailleGrille().getLongueur()*2+6; i++)
-        cout << " ";
-    cout << "Votre grille" << endl;
-    cout << "----------";
-    for(int i=10; i<grilleAdverse->getTailleGrille().getLongueur()*2+6; i++)
-        cout << " ";
-    cout << "------------" << endl;
-    cout << endl;
     // Affichage unités
     for (int i=0;i<grilleAdverse->getTailleGrille().getLongueur();i++)
         cout << "|" << i%10;
