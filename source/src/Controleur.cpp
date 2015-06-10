@@ -10,10 +10,15 @@
 
 using namespace std;
 Controleur::Controleur(){//DONE
+    cout << "ok" << endl;
     batailleNavale = new BatailleNavale();
+    cout << "ok2" << endl;
     jeu = new Jeu(batailleNavale);
+    cout << "ok3" << endl;
     ihmJeu = new IHMJeu(jeu);
+    cout << "ok4" << endl;
     controlBN= new ControleurBN(batailleNavale);
+    cout << "ok5" << endl;
     lancerJeu();
 }
 
