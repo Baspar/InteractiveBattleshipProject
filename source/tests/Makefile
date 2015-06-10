@@ -160,7 +160,6 @@ CompileTestCelluleCombat: CelluleCombat.o Personnage.o ActionCombat.o CelluleAcc
 CompileTestCelluleObstacle: CelluleObstacle.o Cellule.o
 	g++ $(FLAGS) TestCelluleObstacle.cpp $^ -o TestCelluleObstacle
 
-
 CompileTestControleur: Controleur.o
 	g++ $(FLAGS) TestControleur.cpp $^ -o TestControleur
 
