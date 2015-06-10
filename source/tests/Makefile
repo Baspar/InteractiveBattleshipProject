@@ -27,9 +27,6 @@ TestArmeCroix: CompileTestArmeCroix
 TestArmeFatale: CompileTestArmeFatale
 	./TestArmeFatale
 
-TestArme: CompileTestArme
-	./TestArme
-
 TestBadgeFinal: CompileTestBadgeFinal
 	./TestBadgeFinal
 
@@ -54,14 +51,8 @@ TestCelluleAccessible: CompileTestCelluleAccessible
 TestCelluleCombat: CompileTestCelluleCombat
 	./TestCelluleCombat
 
-TestCellule: CompileTestCellule
-	./TestCellule
-
 TestCelluleObstacle: CompileTestCelluleObstacle
 	./TestCelluleObstacle
-
-TestCombat: CompileTestCombat
-	./TestCombat
 
 TestControleur: CompileTestControleur
 	./TestControleur
@@ -92,7 +83,6 @@ TestJoueurIA: CompileTestJoueurIA
 
 TestMonde: CompileTestMonde
 	./TestMonde
-
 
 TestPersonnageBNHumain: CompileTestPersonnageBNHumain
 	./TestPersonnageBNHumain
@@ -142,9 +132,6 @@ CompileTestArmeCroix:  ArmeCroix.o Coordonnees.o Grille.o  Case.o TailleGrille.o
 CompileTestArmeFatale:  ArmeFatale.o Coordonnees.o Grille.o  Case.o TailleGrille.o Bateau.o Arme.o
 	g++ $(FLAGS) TestArmeFatale.cpp $^ -o TestArmeFatale
 
-CompileTestArme: Arme.o
-	g++ $(FLAGS) TestArme.cpp $^ -o TestArme
-
 CompileTestBadgeFinal: BadgeFinal.o Objet.o
 	g++ $(FLAGS) TestBadgeFinal.cpp $^ -o TestBadgeFinal
 
@@ -169,14 +156,10 @@ CompileTestCelluleAccessible: CelluleAccessible.o Cellule.o PersonnageJouable.o 
 CompileTestCelluleCombat: CelluleCombat.o Personnage.o ActionCombat.o CelluleAccessible.o Coordonnees.o Carte.o Action.o Cellule.o TailleGrille.o CelluleObstacle.o Inventaire.o
 	g++ $(FLAGS) TestCelluleCombat.cpp $^ -o TestCelluleCombat
 
-CompileTestCellule: Cellule.o
-	g++ $(FLAGS) TestCellule.cpp $^ -o TestCellule
 
 CompileTestCelluleObstacle: CelluleObstacle.o Cellule.o
 	g++ $(FLAGS) TestCelluleObstacle.cpp $^ -o TestCelluleObstacle
 
-CompileTestCombat: Combat.o
-	g++ $(FLAGS) TestCombat.cpp $^ -o TestCombat
 
 CompileTestControleur: Controleur.o
 	g++ $(FLAGS) TestControleur.cpp $^ -o TestControleur
