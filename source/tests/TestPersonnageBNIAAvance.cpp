@@ -1,5 +1,5 @@
 #include <iostream>
-#include "JoueurHumain.hpp"
+#include "PersonnageBNIAAvance.hpp"
 #include "Arme.hpp"
 #include "ArmeClassique.hpp"
 #include "ArmeCroix.hpp"
@@ -7,7 +7,6 @@
 #include "Grille.hpp"
 #include "TailleGrille.hpp"
 #include "Coordonnees.hpp"
-#include "Carte.hpp"
 
 void afficherGrille(Grille grille){
     cout << endl << endl << " Affichage Grille : " << endl << endl;
@@ -53,9 +52,7 @@ void afficherGrille(Grille grille){
 
 int main(){
 	cout << endl << endl << endl;
-	Carte* carte = new Carte(0,{{'#','_','#'},{'#','_','#'},{'#','_','_'}});
-	Coordonnees coord(0,1);
-	JoueurHumain pbn("pôl_é_kockduhi",coord,carte);
+	PersonnageBNIAAvance pbn("pôl_é_kockduhi");
 	cout << "pbn : " << pbn.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn.getTailleGrille().getLongueur() << "," << pbn.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -98,7 +95,7 @@ int main(){
 
 	cout << endl << endl << endl;
 	Arme* ar = new ArmeClassique();
-	JoueurHumain pbn2("Léauéclem",6,10,ar,coord,carte);
+	PersonnageBNIAAvance pbn2("Léauéclem",6,10,ar);
 	cout << "pbn2 : " << pbn2.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn2.getTailleGrille().getLongueur() << "," << pbn2.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -119,7 +116,7 @@ int main(){
 
 	cout << endl << endl << endl;
 	Arme* arm = new ArmeCroix();
-	JoueurHumain pbn3("Bas ti 1 et Da mi 1",arm,coord,carte);
+	PersonnageBNIAAvance pbn3("Bas ti 1 et Da mi 1",arm);
 	cout << "pbn3 : " << pbn3.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn3.getTailleGrille().getLongueur() << "," << pbn3.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -134,7 +131,7 @@ int main(){
 
 
 	cout << endl << endl << endl;
-	JoueurHumain pbn4("BasssssssssssssttttiennéVivi",8,12,coord,carte);
+	PersonnageBNIAAvance pbn4("BasssssssssssssttttiennéVivi",8,12);
 	cout << "pbn4 : " << pbn4.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn4.getTailleGrille().getLongueur() << "," << pbn4.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -149,7 +146,7 @@ int main(){
 
 	cout << endl << endl << endl;
 	vector<int> vec={5,4,3,3,2};
-	JoueurHumain pbn5("Perso",vec,coord,carte);
+	PersonnageBNIAAvance pbn5("Perso",vec);
 	cout << "pbn5 : " << pbn5.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn5.getTailleGrille().getLongueur() << "," << pbn5.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -159,19 +156,16 @@ int main(){
 	cout << endl;
 	cout << "J'ai une " << pbn5.getArme()->getNomArme() << endl;
 	Grille gr=pbn5.placerBateaux();
-	cout << "Voici la grille renvoyée par le placement bateau chez un JoueurHumain : " << endl;
+	cout << "Voici la grille renvoyée par le placement bateau chez un PersonnageBNIAAvance : " << endl;
 	afficherGrille(gr);
-	cout << "C'est bien ce que l'on cherchait car on ne peut pas placer de bateau dans la partie modèle, on créé donc une grille vide en attendant le travail de l'IHM" << endl;
 	Grille* gr2 = new Grille(8,10);
-	Coordonnees coord2 = pbn5.coordonneesAViser(gr2);
-	cout << "Les cordonnees a viser sont" << coord2.getAbscisse() << coord2.getOrdonnee() << endl;
-	cout << "C'est bien ce que l'on cherchait car on ne peut pas savoir quelles sont les coordonnees visees dans la partie modèle, on créé donc des coordonnees vides en attendant le travail de l'IHM" << endl;
-
+	Coordonnees coord = pbn5.coordonneesAViser(gr2);
+	cout << "Les cordonnees a viser sont" << coord.getAbscisse() << coord.getOrdonnee() << endl;
 
 
 	cout << endl << endl << endl;
 	vector<int> vec2={9,6,3,4};
-	JoueurHumain pbn6("DaméAnn",3,3,vec2,coord,carte);
+	PersonnageBNIAAvance pbn6("DaméAnn",3,3,vec2);
 	cout << "pbn6 : " << pbn6.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn6.getTailleGrille().getLongueur() << "," << pbn6.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -188,7 +182,7 @@ int main(){
 	cout << endl << endl << endl;
 	vector<int> vec3={4,6,6,2,1};
 	Arme* arme = new ArmeFatale();
-	JoueurHumain pbn7("jesaispasqui",vec3,arme,coord,carte);
+	PersonnageBNIAAvance pbn7("jesaispasqui",vec3,arme);
 	cout << "pbn7 : " << pbn7.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn7.getTailleGrille().getLongueur() << "," << pbn7.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -208,7 +202,7 @@ int main(){
 	cout << endl << endl << endl;
 	vector<int> vec4={5,7,6,4,9,3};
 	Arme* armm = new ArmeFatale();
-	JoueurHumain pbn8("jesaistout",7,6,vec4,armm,coord,carte);
+	PersonnageBNIAAvance pbn8("jesaistout",7,6,vec4,armm);
 	cout << "pbn8 : " << pbn8.getNomBN() << endl;	
 	cout << " J'ai une grille de taille : (" << pbn8.getTailleGrille().getLongueur() << "," << pbn8.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";

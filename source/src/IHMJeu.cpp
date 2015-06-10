@@ -45,22 +45,32 @@ void IHMJeu::afficherJeu (){//DONE
 }
 
 void IHMJeu::afficherDebut(){//DONE
-    string test;
-    cout << endl << endl << endl ;
+    ClearScreen();
     cout << "Bonjour et bienvenue pour une partie endiablée de Bataille Navale Interactive" << endl << endl ;
     cout << "Depuis votre plus jeune age vous êtes fan de Pokemon et vous avez toujours rever de devenir marin. Ce jeu est fait pour vous" << endl ;
     cout << "Au cours de cette expérience unique, vous allez devoir vous deplacer dans un monde ou de nombreux experts en bataille navale vont tenter de déjouer vos plans" << endl;
     cout << "Votre mission, si vous l'acceptez est d'arriver à récupérer le badge final" << endl;
-    cout << "Entrez un caractère pour démarer" << endl;
+    cout << endl;
+    cout << endl;
+    cout << "Sur la carte, vous êtes representé par un 'ô', alors que vos ennemis sont représenté par des '8'"<< endl;
+    cout << "Attention aux case 'x' ! Si vous y passez, un combat vous y attend." << endl;
+    cout << "Les '#' quant a eux sont des murs" << endl;
+    cout << endl;
+    cout << "Pour vous deplacer, tapez 2 pour bas, 4 pour gauche, 6 pour droite et 8 pour haut" << endl;
+    cout << endl;
+    cout << endl;
+    cout << "Entrez un caractère pour démarrer" << endl;
+    string test;
     cin >>  test ;
 }
 
 void IHMJeu::afficherFin(){//DONE
-    cout << "Félicitations, vous avez récupéré le badge final" << endl;
+    ClearScreen();
+    cout << "Félicitations, vous avez récupéré le badge final, vous avez gagné !" << endl;
 }
 
 void IHMJeu::afficherSaisie (){//DONE
-    cout<<"Action ? (2, 4, 6 ou 8)"<< endl;
+    cout<<"Déplacement? (2, 4, 6 ou 8)"<< endl;
 }
 
 void IHMJeu::afficherInteraction(){//DONE
