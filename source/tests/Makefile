@@ -93,6 +93,9 @@ TestPersonnageBNIA: CompileTestPersonnageBNIA
 TestPersonnageBNIAAvance: CompileTestPersonnageBNIAAvance
 	./TestPersonnageBNIAAvance
 
+TestPersonnageBNIACheate: CompileTestPersonnageBNIACheate
+	./TestPersonnageBNIACheate
+
 TestPersonnage: CompileTestPersonnage
 	./TestPersonnage
 
@@ -203,6 +206,9 @@ CompileTestPersonnageBNIA: PersonnageBNIA.o Coordonnees.o Grille.o TailleGrille.
 
 CompileTestPersonnageBNIAAvance: PersonnageBNIAAvance.o Coordonnees.o Grille.o TailleGrille.o Grille.o Coordonnees.o PersonnageBN.o Bateau.o Case.o Arme.o ArmeCroix.o ArmeFatale.o ArmeClassique.o
 	g++ $(FLAGS) TestPersonnageBNIAAvance.cpp $^ -o TestPersonnageBNIAAvance
+
+CompileTestPersonnageBNIACheate: PersonnageBNIA.o Coordonnees.o Grille.o TailleGrille.o Grille.o Coordonnees.o PersonnageBN.o Bateau.o Case.o Arme.o ArmeCroix.o ArmeFatale.o ArmeClassique.o PersonnageBNIACheate.o Coordonnees.o Bateau.o
+	g++ $(FLAGS) TestPersonnageBNIACheate.cpp $^ -o TestPersonnageBNIACheate
 
 CompileTestPersonnage: Personnage.o Coordonnees.o Carte.o Inventaire.o BadgeFinal.o Cellule.o CelluleAccessible.o TailleGrille.o CelluleObstacle.o Objet.o
 	g++ $(FLAGS) TestPersonnage.cpp $^ -o TestPersonnage
