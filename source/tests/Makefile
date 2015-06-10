@@ -205,7 +205,7 @@ CompileTestJoueurHumain: JoueurHumain.o Bateau.o TailleGrille.o PersonnageBN.o P
 CompileTestJoueurIA: JoueurIA.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNIA.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o JoueurIA.o PersonnageNonJouable.o CelluleObstacle.o Inventaire.o JoueurDhumainBNia.o
 	g++ $(FLAGS) TestJoueurIA.cpp $^ -o TestJoueurIA
 
-CompileTestMonde: Monde.o
+CompileTestMonde: Monde.o Carte.o Cellule.o CelluleAccessible.o ActionChangementCarte.o ActionVide.o TailleGrille.o Coordonnees.o Personnage.o Action.o CelluleObstacle.o Inventaire.o
 	g++ $(FLAGS) TestMonde.cpp $^ -o TestMonde
 
 
