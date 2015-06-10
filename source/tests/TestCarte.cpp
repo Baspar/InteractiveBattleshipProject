@@ -27,6 +27,19 @@ void afficherCarteCourante(Carte* carte){
 
 
 int main(){
-	Carte* carteD = new Carte(0,{{'_','_','_'},{'#','_','#'},{'#','_','_'}});
+	Carte* carteD = new Carte(0,{{'#','#','#','#'},{'#','_','_','#'},{'#','_','_','#'},{'#','#','#','#'}});
+	cout << "On crée une carte 4*4 entouré de mur" << endl;
+	cout << "On affiche la carte" << endl;
+	afficherCarteCourante(carteD);
+	cout << "On place un personnage en (1,1)" << endl;
+	cout << "On affiche de nouveau la carte" << endl;
+	Personnage* pers= new Personnage("Ann");
+	pers->setCarte(carteD);
+	pers->setCoordonnees(Coordonnees(1,1));
+	( (CelluleAccessible*) carteD->getCel(Coordonnees(1,1)))->setPersonnage(pers);
+	afficherCarteCourante(carteD);
+	cout << "On deplace le personnage en (2,1)" << endl;
+	cout << "On affiche de nouveau la carte" << endl;
+	carteD->deplacerPersonnage(pers, Coordonnees(2,1));
 	afficherCarteCourante(carteD);
 }

@@ -154,7 +154,7 @@ CompileTestBatailleNavale: PersonnageJouable.o Combat.o BatailleNavale.o Grille.
 CompileTestBateau: Bateau.o
 	g++ $(FLAGS) TestBateau.cpp $^ -o TestBateau
 
-CompileTestCarte: Carte.o
+CompileTestCarte: Carte.o Coordonnees.o CelluleAccessible.o Cellule.o Personnage.o CelluleObstacle.o TailleGrille.o Inventaire.o
 	g++ $(FLAGS) TestCarte.cpp $^ -o TestCarte
 
 CompileTestCase: Case.o Bateau.o
