@@ -18,11 +18,11 @@ void PersonnageJouable::deplacementInitial(){//DONE
 }
 
 
-Carte* PersonnageJouable::getIdCarteInit() const{
+Carte* PersonnageJouable::getIdCarteInit() const{//DONE
 	return idCarteInit;
 }
 
 	
-Coordonnees PersonnageJouable::getCoordonneesInit() const{
+Coordonnees PersonnageJouable::getCoordonneesInit() const{//DONE
 	return coordInit;
 }
