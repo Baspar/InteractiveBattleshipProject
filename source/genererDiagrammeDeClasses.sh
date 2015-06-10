@@ -215,8 +215,7 @@ done
 
 echo "@enduml" >> uml/Classes.uml
 echo "Fichier .uml generé. Création du fichier PNG en cours..."
-java -jar plantuml.jar uml/Classes.uml
-mv uml/Classes.png .
+java -jar uml/plantuml.jar uml/Classes.uml
 rm uml/Classes.uml
 
-[ -e Classes.png ] && eog Classes.png || xdg-open Classes.png
+[ -e uml/Classes.png ] && eog uml/Classes.png || xdg-open uml/Classes.png

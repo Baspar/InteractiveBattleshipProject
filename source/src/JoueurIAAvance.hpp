@@ -1,7 +1,7 @@
 #ifndef JOUEURIAAVANCE_H
 #define JOUEURIAAVANCE_H
 
-/// \file JoueurDhumainBNia.hpp
+/// \file JoueurIAAvance.hpp
 /// \brief classe joueur IA
 /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 

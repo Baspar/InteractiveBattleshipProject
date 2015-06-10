@@ -1,7 +1,7 @@
 #ifndef JOUEURIACHEATE_H
 #define JOUEURIACHEATE_H
 
-/// \file JoueurDhumainBNia.hpp
+/// \file JoueurIACheate.hpp
 /// \brief classe joueur IA
 /// \author BESNARD CAVAROC CHAVANE LAINE LHUISSIER NGUYEN POINTIN
 
