@@ -72,10 +72,10 @@ class IHMJeu{
         void afficherDebut();
 
 
-        /// \fn void afficherDebut()
-        /// \brief affichage Debut du jeu
+        /// \fn void afficherFin()
+        /// \brief affichage Fin du jeu
         ///
-        /// Affiche le debut (présentation du jeu)
+        /// Affiche la fin
         void afficherFin();
 
 };

@@ -63,7 +63,8 @@ void IHMBN::afficherJeu(){//DONE
         cout << " ";
     for (int i=0;i<grille->getTailleGrille().getLongueur();i++)
         cout << "|" << i%10;
-    cout << "|" << endl;
+    cout << "|";
+    cout << "        Bateaux adverses" << endl;
 
     // Affichage ligne separation
     for (int i=0;i<grilleAdverse->getTailleGrille().getLongueur();i++)
@@ -73,7 +74,10 @@ void IHMBN::afficherJeu(){//DONE
         cout << " ";
     for (int i=0;i<grille->getTailleGrille().getLongueur();i++)
         cout << "--";
-    cout << "-" << endl;
+    cout << "-";
+    cout << "        ---------------" << endl;
+
+    vector<Bateau*> bateaux = batailleNavale->getJoueurs()[(batailleNavale->getIndiceJoueurCourant()+1)%2]->getBateaux();
 
     // Affichage tableau
     for (int i=0;i<max(grilleAdverse->getTailleGrille().getHauteur(), grille->getTailleGrille().getHauteur());i++){
@@ -137,6 +141,14 @@ void IHMBN::afficherJeu(){//DONE
             if(grille->getTailleGrille().getHauteur()>10)
                 cout << " ";
         }
+
+        if (i<bateaux.size()){
+            cout << "   ";
+            int tailleBateau = bateaux[i]->getTailleBateau();
+            bool estCoule = bateaux[i]->estCoule();
+            for(int k=0; k<tailleBateau; k++)
+                cout << (estCoule?"#":"o");
+        }
         cout << endl;
     }
 }
@@ -161,9 +173,74 @@ Coordonnees IHMBN::saisieCoup () const{//DONE
 Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
     ClearScreen();
     Grille grille(pers->getTailleGrille().getLongueur(),pers->getTailleGrille().getHauteur());
-    afficherGrilleBateaux(grille);
     cout << "DEBUT DU PLACEMENT DES BATEAUX DE " << pers->getNomBN() << endl;
+    int cpt=0;
     for (Bateau* bat : pers->getBateaux()){
+        ClearScreen();
+
+
+
+
+        cout << "Grille personnelle" << endl;
+        cout << "------------------" << endl;
+        cout << endl;
+
+        if(grille.getTailleGrille().getLongueur()>10){
+            for (int i=0;i<grille.getTailleGrille().getLongueur();i++){
+                cout << "|";
+                if(i/10 == 0)
+                    cout << " ";
+                else
+                    cout << i/10;
+            }
+            cout << "|" << endl;
+        }
+        for (int i=0;i<grille.getTailleGrille().getLongueur();i++)
+            cout << "|" << i%10;
+        cout << "|";
+        cout << "     Vos bateaux encore a placer"<< endl;
+
+        for (int i=0;i<grille.getTailleGrille().getLongueur();i++)
+            cout << "--";
+
+        cout << "-";
+        cout << "     ---------------------------"<< endl;
+        for (int i=0;i<grille.getTailleGrille().getHauteur();i++){
+            for (int j=0;j<grille.getTailleGrille().getLongueur();j++){
+                Coordonnees coord(j,i);
+                cout << "|";
+                if(grille.getCaseElt(coord).getBateau()!=nullptr){
+                    if(grille.getCaseElt(coord).getTouche()==false)
+                        cout << "o";
+                    else cout << "x";
+                }
+                else {
+                    if(grille.getCaseElt(coord).getTouche()==false)
+                        cout << " ";
+                    else cout << "-";
+                }
+            }
+            cout << "|" << i ;
+            cout << "     ";
+            if(i<pers->getBateaux().size()){
+                if(i==cpt)
+                    cout << "-> ";
+                else
+                    cout << "   ";
+                for(int k=0; k<pers->getBateaux()[i]->getTailleBateau(); k++)
+                    if(i<cpt)
+                        cout << "o";
+                    else
+                        cout << "#";
+            }
+            cout << endl;
+        }
+        cout<< endl << endl;
+        cpt++;
+
+
+
+
         cout << "Veuillez placer le bateau de longueur "<< bat->getTailleBateau() << endl;
         cout << "Veuillez saisir les coordonnées de départ"<< endl;
         int x,y;
@@ -189,7 +266,6 @@ Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
             coordArrivee.copy(Coordonnees(a,b));
         }
         grille.placerBateau(bat,coordDepart,coordArrivee);
-        afficherGrilleBateaux(grille);
     }
     cout << "FIN DU PLACEMENT DES BATEAUX DE " << pers->getNomBN() << endl << endl;
     return grille;
@@ -197,7 +273,7 @@ Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
 
 void IHMBN::afficherGrilleBateaux(Grille grille ){//DONE
 
-    cout << endl << "Grille personnelle" << endl;
+    cout << "Grille personnelle" << endl;
 
     if(grille.getTailleGrille().getLongueur()>10){
         for (int i=0;i<grille.getTailleGrille().getLongueur();i++){

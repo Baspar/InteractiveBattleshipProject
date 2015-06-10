@@ -22,7 +22,7 @@ class Objet{
 
 
     public:
-        /// \fn Objet(const string nom)
+        /// \fn Objet(const string nomObjet)
         /// \brief constructeur parametré de Objet
         /// \param nomObjet : Le nom de l'objet
         Objet(const string nomObjet);

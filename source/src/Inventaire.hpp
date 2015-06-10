@@ -26,7 +26,7 @@ class Inventaire{
         /// \brief Constructeur
         ///
         /// Constructeur de la classe Inventaire
-        /// \param objets: objets de l'inventaire
+        /// \param obj: objets de l'inventaire
         Inventaire(vector<Objet*> obj);
 
         /// \fn Inventaire()

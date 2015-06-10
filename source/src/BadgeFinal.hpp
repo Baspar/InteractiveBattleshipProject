@@ -17,7 +17,7 @@ using namespace std;
 
 class BadgeFinal : public Objet{
     public:
-        /// \fn Badgefinal();
+        /// \fn BadgeFinal();
         /// \brief constructeur du badge final
         BadgeFinal();
 
