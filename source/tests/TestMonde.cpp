@@ -25,7 +25,11 @@ void afficherCarte(Carte* carte){
 
 
 int main(){
+	cout << "Création d'un monde à partir des données" << endl;
 	Monde monde;
-	for(int i=0;i<8;i++)
+	for(int i=0;i<7;i++){
+		cout << "Carte " << i << endl;
 		afficherCarte(monde.getCarte(i));
+		cout << endl << endl;
+	}
 }

@@ -196,7 +196,7 @@ CompileTestIHMJeu: IHMJeu.o
 CompileTestInventaire: Inventaire.o Objet.o BadgeFinal.o
 	g++ $(FLAGS) TestInventaire.cpp $^ -o TestInventaire
 
-CompileTestJeu: Jeu.o
+CompileTestJeu: Jeu.o Cellule.o Carte.o Monde.o Personnage.o Inventaire.o BadgeFinal.o Coordonnees.o Objet.o ActionChangementCarte.o CelluleAccessible.o TailleGrille.o ArmeFatale.o ArmeCroix.o ArmeChercheuse.o ArmeClassique.o BatailleNavale.o Action.o PersonnageBN.o Grille.o Bateau.o Case.o ActionVide.o JoueurHumain.o JoueurIA.o PersonnageBNIA.o PersonnageNonJouable.o PersonnageJouable.o PersonnageBNHumain.o JoueurIAAvance.o CelluleObstacle.o Arme.o PersonnageBNIAAvance.o JoueurIACheate.o PersonnageBNIACheate.o ActionCombat.o
 	g++ $(FLAGS) TestJeu.cpp $^ -o TestJeu
 
 CompileTestJoueurHumain: JoueurHumain.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNHumain.o JoueurHumain.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o

@@ -147,4 +147,8 @@ PersonnageJouable* Jeu::getPersonnageJouable(){//DONE
     return personnageJouable;
 }
 
+Monde Jeu::getMonde() const{//DONE
+	return monde;
+}
+
 
