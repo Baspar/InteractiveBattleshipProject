@@ -11,9 +11,7 @@
 using namespace std;
 Controleur::Controleur(){//DONE
     batailleNavale = new BatailleNavale();
-    cout <<"a"<<endl;
     jeu = new Jeu(batailleNavale);
-    cout <<"a"<<endl;
     ihmJeu = new IHMJeu(jeu);
     controlBN= new ControleurBN(batailleNavale);
     lancerJeu();
