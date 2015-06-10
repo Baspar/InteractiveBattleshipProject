@@ -1,3 +1,5 @@
+all : DOC BIN
+
 DOC:
 	cd doc; doxygen; cd ..
 

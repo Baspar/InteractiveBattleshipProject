@@ -1,24 +1,24 @@
 #!/bin/bash
-rm -rf uml/Classes.uml Classes.png
-[ "$1" == "clean" ] && rm -f uml/Classe*.uml
-[ "$1" == "clear" ] && rm -f uml/Classe*.uml && echo "Suppression fichier OK" && exit 0
+rm -rf Classes.uml Classes.png
+[ "$1" == "clean" ] && rm -f Classe*.uml
+[ "$1" == "clear" ] && rm -f Classe*.uml && echo "Suppression fichier OK" && exit 0
 [ "$1" == "nocheck" ] && nocheck=1 || nocheck=0
 
-echo "@startuml" >> uml/Classes.uml
-echo "!include skin.uml" >> uml/Classes.uml
-echo "!include liaisons.uml" >> uml/Classes.uml
+echo "@startuml" >> Classes.uml
+echo "!include skin.uml" >> Classes.uml
+echo "!include liaisons.uml" >> Classes.uml
 
 
 
-nbFichier=$(ls src/*.hpp | wc -l)
+nbFichier=$(ls ../src/*.hpp | wc -l)
 indic=0
 
 echo "Analyse des fichiers .hpp en cours"
-for i in $(ls src/*.hpp)
+for i in $(ls ../src/*.hpp)
 do
 
     name=$(basename -s .hpp $i) # Nom du fichier sans extenstion
-    echo "!include Classe$name.uml" >> uml/Classes.uml
+    echo "!include Classe$name.uml" >> Classes.uml
 
     indic=$(($indic + 1)) # Numero du fichier traité
     if [ $indic -lt 10 ]
@@ -28,11 +28,11 @@ do
         echo -n "[$indic/$nbFichier]" #debug
     fi
 
-    md5sumHPP=$(md5sum src/$name.hpp)
-    md5sumCPP=$(md5sum src/$name.cpp)
-    if [ -e uml/Classe$name.uml ]
+    md5sumHPP=$(md5sum ../src/$name.hpp)
+    md5sumCPP=$(md5sum ../src/$name.cpp)
+    if [ -e Classe$name.uml ]
     then
-        dejaFait=$(cat uml/Classe$name.uml | tail -n 2 | tr "\n" " " | grep "'$md5sumHPP '$md5sumCPP")
+        dejaFait=$(cat Classe$name.uml | tail -n 2 | tr "\n" " " | grep "'$md5sumHPP '$md5sumCPP")
     else
         dejaFait=""
     fi
@@ -42,16 +42,16 @@ do
     if [ "$dejaFait" == "" ]&&[ $nocheck -ne 1 ]
     then
         echo "  (O)  Classe $name" # Debug
-        rm -f uml/Classe$name.uml
+        rm -f Classe$name.uml
         debut=0
         constr=""
         meth=""
         getter=""
         setter=""
         attribut=""
-        cpp=$(cat "src/$name.cpp" | grep "$name::" | sed 's/ //g')
+        cpp=$(cat "../src/$name.cpp" | grep "$name::" | sed 's/ //g')
 
-        echo "@startuml" >> uml/Classe$name.uml
+        echo "@startuml" >> Classe$name.uml
 
         #On detecte les Methode/Attributs
         while read line
@@ -172,50 +172,50 @@ do
         done < $i
 
         #Affichage de ces dernier
-            echo "class $name{" >> uml/Classe$name.uml
+            echo "class $name{" >> Classe$name.uml
 
             if [ "$attribut" != "" ]
             then
-                echo "    ==<b>Attributs</b>==" >> uml/Classe$name.uml
-                echo -en "$attribut" | sed 's/\\\*/\*/g'|sort >> uml/Classe$name.uml
+                echo "    ==<b>Attributs</b>==" >> Classe$name.uml
+                echo -en "$attribut" | sed 's/\\\*/\*/g'|sort >> Classe$name.uml
             fi
             if [ "$constr" != "" ]
             then
-                echo "    ==<b>Constructeurs</b>==" >> uml/Classe$name.uml
-                echo -en "$constr" | sed 's/\\\*/\*/g'|sort >> uml/Classe$name.uml
+                echo "    ==<b>Constructeurs</b>==" >> Classe$name.uml
+                echo -en "$constr" | sed 's/\\\*/\*/g'|sort >> Classe$name.uml
             fi
             if [ "$destr" != "" ]
             then
-                echo "    ==<b>Destructeurs</b>==" >> uml/Classe$name.uml
-                echo -en "$destr" | sed 's/\\\*/\*/g'|sort >> uml/Classe$name.uml
+                echo "    ==<b>Destructeurs</b>==" >> Classe$name.uml
+                echo -en "$destr" | sed 's/\\\*/\*/g'|sort >> Classe$name.uml
             fi
             if [ "$setter" != "" ]
             then
-                echo "    ==<b>Setters</b>==" >> uml/Classe$name.uml
-                echo -en "$setter" | sed 's/\\\*/\*/g'|sort >> uml/Classe$name.uml
+                echo "    ==<b>Setters</b>==" >> Classe$name.uml
+                echo -en "$setter" | sed 's/\\\*/\*/g'|sort >> Classe$name.uml
             fi
             if [ "$getter" != "" ]
             then
-                echo "    ==<b>Getters</b>==" >> uml/Classe$name.uml
-                echo -en "$getter" | sed 's/\\\*/\*/g'|sort >> uml/Classe$name.uml
+                echo "    ==<b>Getters</b>==" >> Classe$name.uml
+                echo -en "$getter" | sed 's/\\\*/\*/g'|sort >> Classe$name.uml
             fi
             if [ "$meth" != "" ]
             then
-                echo "    ==<b>Methodes</b>==" >> uml/Classe$name.uml
-                echo -en "$meth" | sed 's/\\\*/\*/g'|sort >> uml/Classe$name.uml
+                echo "    ==<b>Methodes</b>==" >> Classe$name.uml
+                echo -en "$meth" | sed 's/\\\*/\*/g'|sort >> Classe$name.uml
             fi
-            echo "}" >> uml/Classe$name.uml
-        echo "@enduml" >> uml/Classe$name.uml
-        echo "'$md5sumHPP" >> uml/Classe$name.uml
-        echo "'$md5sumCPP" >> uml/Classe$name.uml
+            echo "}" >> Classe$name.uml
+        echo "@enduml" >> Classe$name.uml
+        echo "'$md5sumHPP" >> Classe$name.uml
+        echo "'$md5sumCPP" >> Classe$name.uml
     else
         echo "  (X)  Classe $name" # Debug
     fi
 done
 
-echo "@enduml" >> uml/Classes.uml
+echo "@enduml" >> Classes.uml
 echo "Fichier .uml generé. Création du fichier PNG en cours..."
-java -jar uml/plantuml.jar uml/Classes.uml
-rm uml/Classes.uml
+java -jar plantuml.jar Classes.uml
+rm Classes.uml
 
-[ -e uml/Classes.png ] && eog uml/Classes.png || xdg-open uml/Classes.png
+[ -e Classes.png ] && eog Classes.png || xdg-open Classes.png
