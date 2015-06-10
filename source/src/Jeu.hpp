@@ -32,6 +32,9 @@ class Jeu{
         /// combat
         Combat* combat;
 
+	/// \fn void lireJoueurs()
+        /// \brief Lit les joueurs
+        void lireJoueurs();
 
     public:
         /// \fn Jeu(Combat* comb)
@@ -39,9 +42,6 @@ class Jeu{
         /// \param comb : combat à utiliser
         Jeu(Combat* comb);
 
-        /// \fn void lireJoueurs()
-        /// \brief Lit les joueurs
-        void lireJoueurs();
 
         /// \fn bool partieFinie()
         /// \brief voir si partie finie
@@ -62,6 +62,11 @@ class Jeu{
         /// \brief Getter personnageJouable
         /// \return Personnage jouable
         PersonnageJouable* getPersonnageJouable();
+
+	/// \fn  Monde getMonde() const
+        /// \brief Monde
+        /// \return Monde
+        Monde getMonde() const;
 
 
 };

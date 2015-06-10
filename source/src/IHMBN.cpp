@@ -254,12 +254,12 @@ Grille IHMBN::saisirPlacementBateaux (PersonnageBN* pers){//DONE
         Coordonnees coordArrivee(a,b);
         while(grille.placementBateauValide(bat,coordDepart,coordArrivee)==false){
             cout << "Erreur! Veuillez replacer le bateau de longueur "<< bat->getTailleBateau() <<endl;
-            cout << "Veuillez resaisir les coordonnées de départ";
+            cout << "Veuillez resaisir les coordonnées de départ" << endl;
             int x,y;
             cin >> x;
             cin >> y;
             coordDepart.copy(Coordonnees(x,y));
-            cout << "Veuillez resaisir les coordonnées d'arrivée";
+            cout << "Veuillez resaisir les coordonnées d'arrivée" << endl;
             int a,b;
             cin >> a;
             cin >> b;
