@@ -27,4 +27,13 @@
         On verifie l'état du bateau après plusieur de retrait de PV. On veut verifier que le bateau passe a coulé une fois seulement que les PVs sont décendus à zéro.
     \section{TestCase.cpp}
         On verifie qu'en plaçant un bateau sur une case, le premier tir sur la case retire bien des PV, mais les suivants non.
-
+    \section{TestCelluleAccessible.cpp}
+        On verifie si le palcement d'un personnage sur une cellule accessible est possible.\\
+        Dans ce cas, on verifie donc que le bon personnage est ajouté, et on verifie que cette cellule ne contient pas d'action
+    \section{TestCelluleChangementCarte.cpp}
+        On instantie une CelluleChangementCarte, et on verifie que ses paramètre sont bien ceux souhaités
+    \section{TestCelluleCombat.cpp}
+        On crée une cellule combat et on verifie que le personnage du constructeur est bien celui présent sur la case.\\
+        On verifie si la cellule est bien inaccessible une fois le personnage dessus
+    \section{TestCelluleObstacle.cpp}
+        On verifie que la cellule est bien innaccessible et que son type est le bon
