@@ -6,12 +6,14 @@ activate IHMJEU
         
     deactivate Jeu 
 
-    IHMJEU -> IHMJEU : afficherCarte(carteCourante)
+    activate Carte
+    IHMJEU -> Carte: getCarteCourante()
     loop [largeur cellule]
 		loop [longueur cellule]
-			afficherTypeCellule()
+			Carte -> Carte :afficherTypeCellule(i,j)
 		end
 	end
+    deactivate Carte
         note right of IHMJEU
             La méthode afficherCarte() va afficher un symbole différent en fonction du type de cellule.
         end note

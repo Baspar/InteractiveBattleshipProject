@@ -1,0 +1,26 @@
+@startuml
+Joueur --> (Initialiser Jeu)
+    (Initialiser Jeu) ..> (Initialiser Joueur) : << include >>
+    (Initialiser Jeu) ..> (Initialiser Personnages NonJouables) : << include >>
+    (Initialiser Jeu) ..> (Placer Joueur) : << include >>
+Joueur --> (Jouer)
+    (Jouer) ..> (Deplacer) : << include >>
+    (Jouer) ..> (Lancer Action) : << include >>
+        (Lancer Action) <.. (Combat) : << extend >>
+            (Combat) ..> (Initialiser Combat) : << include >>
+                (Initialiser Combat) ..> (Initialiser Grilles) : << include >>
+                (Initialiser Combat) ..> (Placer Bateaux) : << include >>
+            (Combat) ..> (Jouer Combat) : << include >>
+                (Jouer Combat) ..> (Jouer coup) : << include >>
+                    (Jouer coup) ..> (Saisir coup) : << include >>
+                    (Jouer coup) ..> (Coup valide) : << include >>
+                    (Jouer coup) ..> (Changer joueur) : << include >>
+                (Jouer Combat) ..> (Afficher Combat) : << include >>
+                (Jouer Combat) ..> (Partie finie) : << include >>
+        (Lancer Action) <.. (Changement Carte) : << extend >>
+        (Lancer Action) <.. (Mise à jour compétences) : << extend >>
+    (Jouer) ..> (Afficher Carte) : << include >>
+
+(Placer Joueur) <.. (Placement valide) : << extend >>
+(Deplacer) <.. (Placement valide) : << extend >>
+@enduml

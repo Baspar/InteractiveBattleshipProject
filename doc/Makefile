@@ -1,4 +1,3 @@
-#all: graphe mvgraph tex mvdoc pseudoclean
 all: graphes mvgraph tex mvdoc pseudoclean
 
 tex: texRapport
@@ -19,4 +18,4 @@ pseudoclean:
 	rm -rf src/*.log src/*.aux src/*.toc src/*.out
 
 clean: pseudoclean
-	rm -rf graph/*.png doc/*.pdf
+	rm -rf graph/DiagrammeSequence*.png graph/DiagrammeDeCasDUtilisation.png src/Diagrammes/*.cmapx doc/*.pdf
