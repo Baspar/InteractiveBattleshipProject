@@ -1,1 +1,20 @@
 \chapter{Méthodes de travail}
+    Nos méthodes de travail ont plutôt été classiques, tout d'abord nous nous sommes 
+    appliqués à  suivre les consignes dictées par l'enseignant. Ainsi, nous avons tout 
+    d'abord réalisé les différentes étapes afin de compléter le pré-rapport.\\
+    Pour parvenir a nos moyens, nous avons utilisé différents logiciels :
+    \section{GIT}
+        Pour la répartition des fichiers, nous avons utilisé le logiciel \textbf{GIT}.\\
+        Ce dernier à permis un partage optimal de fichier, facilitant l'envoi et réception de ces derniers.\\
+        En plus de cela, GIT nous a permis de travailler en simultané à partir de plusieur poste, sur les même ficheirs et ce, sans aucun problème.\\
+    \section{PlantUML}
+        Nous avons utilisé \textbf{PlantUML} afin de concevoir le diagramme de classes, de séquence, ainsi que celui de cas d'utilisation.\\
+        Ce dernier permet de saisir les diagrammes sous forme de texte très simplement (Via l'utilisation de flèches majoritairement). \\
+        Grâce à cela, nous pouvions même modifier en simultané les diagramme de classe grâce à git, à condition de regenerer ces images avant chaque PDF (Le tout fait grâce à un \textbf{Makefile}).\\
+    \section{Script génération diagramme de classe}
+        Pour optimiser noter temps de travail, et du fait que notre structure de données était imposante, nous avons décidé de prendre un temps pour créer un script nous permettant de generer automatiquement le diagramme de classe en fonction de notre avancée du code dans le CPP et le HPP.\\
+        Cela fonctionne grâce à un \textbf{script BASH}, qui trace les classes et leurs liaisons (indiquées dans un fichier externe), mais surtout de maintenir à jour les méthodes et attributs de nos classes. \\
+        En plus de cela, nous avons optimisé le code et avons ajouté la possibilité d'indiquer l'avancement du code d'une méthode via des balises //TODO (À faire), //WIP (Work In Progress <=> En cours) et //DONE (Terminé), et que cela soit retranscrit sur le graphique.
+    \section{Doxygen}
+        Pour la documentation du projet, nous avons utilisé le logiciel \textbf{Doxygen}. Ce dernier nous a permis de pouvoir generer simplement une documentation HTML et PDF. \\
+        En contrepartie, nous devions simplement commenter dans chaque HPP chacun des membres présent, en y specifiant ses composant et une description.
