@@ -209,7 +209,7 @@ CompileTestMonde: Monde.o
 	g++ $(FLAGS) TestMonde.cpp $^ -o TestMonde
 
 
-CompileTestPersonnageBNHumain: PersonnageBNHumain.o
+CompileTestPersonnageBNHumain: PersonnageBNHumain.o PersonnageBN.o Bateau.o TailleGrille.o Grille.o Coordonnees.o Case.o ArmeClassique.o Arme.o ArmeCroix.o
 	g++ $(FLAGS) TestPersonnageBNHumain.cpp $^ -o TestPersonnageBNHumain
 
 CompileTestPersonnageBNIA: PersonnageBNIA.o
