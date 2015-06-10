@@ -1,45 +1,145 @@
 \chapter{Tests Unitaires}
     Pour chacun de nos tests, nous avons créés un Main qui instanciait l'objet à l'aide de ses différents constructeurs et qui testait l'ensemble des fonctions de la classe à l'aide de ses différents cas au limite.
     \section{TestActionChangementCarte.cpp}
-        On va tester sur un personnage est bien transporté comme indiqué dans le constructeur de notre ActionChangementCarte. On verifiera par la même occasion le texte d'interaction de l'action, et voir si l'on peut changer son attribut "Active".
+        \subsection{Description}
+            On va tester si un personnage est bien transporté comme indiqué dans le constructeur de notre ActionChangementCarte. On verifiera par la même occasion le texte d'interaction de l'action, et voir si l'on peut changer son attribut "Active".
+        \subsection{Code}
     \section{TestActionCombat.cpp}
-        On va tester si le personnage donnée dans le constructeur est bien celui présent dans l'action.
+        \subsection{Description}
+            On va tester si le personnage donné dans le constructeur est bien celui présent dans l'action.
+        \subsection{Code}
     \section{TestActionVide.cpp}
-        On verifie que le texte donné en constructeur est bien celui stocké et affiché dans l'appel de la méthode.
+        \subsection{Description}
+            On verifie que le texte donné en constructeur est bien celui stocké et affiché dans l'appel de la méthode.
+        \subsection{Code}
     \section{TestArmeChercheuse.cpp}
-        On va verifier l'état de la grille après des coup d'arme chercheyse.\\
-        On verifie entre autre que les coups ne touchent que des bateaux, et ce même si la coordonnées donnée ne correspond pas.
+        \subsection{Description}
+            On va verifier l'état de la grille après des coup d'arme chercheuse.\\
+            On verifie entre autre que les coups ne touchent que des bateaux, et ce même si la coordonnées donnée ne correspond pas.
+        \subsection{Code}
     \section{TestArmeClassique.cpp}
-        On verifie l'état de la grille après chaque coup d'arme classique.\\
-        On verifie de plus que le bateau est bien touché, pui coulé, avec l'utilisation de cette arme
+        \subsection{Description}
+            On verifie l'état de la grille après chaque coup d'arme classique.\\
+            On verifie de plus que le bateau est bien touché, pui coulé, avec l'utilisation de cette arme
+        \subsection{Code}
     \section{TestArmeCroix.cpp}
-        On verifie l'état de la grille après chaque coup d'arme croix.\\
-        On verifie entre autre si les coups sur le bords ne touchent que les cases à l'interieur de la grille, et que les bateau touché par les "bras" de la croix le sont bien.
+        \subsection{Description}
+            On verifie l'état de la grille après chaque coup d'arme croix.\\
+            On verifie entre autre si les coups sur le bords ne touchent que les cases à l'interieur de la grille, et que les bateau touché par les "bras" de la croix le sont bien.
+        \subsection{Code}
     \section{TestArmeFatale.cpp}
-        On verifie l'état de la grille après chaque coup d'arme fatale.\\
-        On regarde si lors des coups dans l'eau, une seule case est touchée, alors que si on touche un bateau, ce dernier est bien directement coulé.
+        \subsection{Description}
+            On verifie l'état de la grille après chaque coup d'arme fatale.\\
+            On regarde si lors des coups dans l'eau, une seule case est touchée, alors que si on touche un bateau, ce dernier est bien directement coulé.
+        \subsection{Code}
     \section{TestBadgeFinal.cpp}
-        On verifie juste si le badge final met bien fin au jeu.
+        \subsection{Description}
+            On verifie juste si le badge final met bien fin au jeu.
+        \subsection{Code}
     \section{TestBatailleNavale.cpp}
-        On simule une parte complète de bataille navale entre deux IA (Une IA et IA Avancée) avec des taille de grille différentes, des flottes différentes et des armes différentes.\\
-        Le bon déroulement de la partie assure le fonctionnement de cette classe
+        \subsection{Description}
+            On simule une parte complète de bataille navale entre deux IA (Une IA et IA Avancée) avec des taille de grille différentes, des flottes différentes et des armes différentes.\\
+            Le bon déroulement de la partie assure le fonctionnement de cette classe
+        \subsection{Code}
     \section{TestBateau.cpp}
-        On verifie l'état du bateau après plusieur de retrait de PV. On veut verifier que le bateau passe a coulé une fois seulement que les PVs sont décendus à zéro.
+        \subsection{Description}
+            On verifie l'état du bateau après plusieur de retrait de PV. On veut verifier que le bateau passe a coulé une fois seulement que les PVs sont décendus à zéro.
+        \subsection{Code}
     \section{TestCase.cpp}
-        On verifie qu'en plaçant un bateau sur une case, le premier tir sur la case retire bien des PV, mais les suivants non.
+        \subsection{Description}
+            On verifie qu'en plaçant un bateau sur une case, le premier tir sur la case retire bien des PV, mais les suivants non.
+        \subsection{Code}
     \section{TestCelluleAccessible.cpp}
-        On verifie si le palcement d'un personnage sur une cellule accessible est possible.\\
-        Dans ce cas, on verifie donc que le bon personnage est ajouté, et on verifie que cette cellule ne contient pas d'action
+        \subsection{Description}
+            On verifie si le placement d'un personnage sur une cellule accessible est possible.\\
+            Dans ce cas, on verifie donc que le bon personnage est ajouté, et on verifie que cette cellule ne contient pas d'action
+        \subsection{Code}
     \section{TestCelluleChangementCarte.cpp}
-        On instantie une CelluleChangementCarte, et on verifie que ses paramètre sont bien ceux souhaités
+        \subsection{Description}
+            On instancie une CelluleChangementCarte, et on verifie que ses paramètre sont bien ceux souhaités
+        \subsection{Code}
     \section{TestCelluleCombat.cpp}
-        On crée une cellule combat et on verifie que le personnage du constructeur est bien celui présent sur la case.\\
-        On verifie si la cellule est bien inaccessible une fois le personnage dessus
+        \subsection{Description}
+            On crée une cellule combat et on verifie que le personnage du constructeur est bien celui présent sur la case.\\
+            On verifie si la cellule est bien inaccessible une fois le personnage dessus
+        \subsection{Code}
     \section{TestCelluleObstacle.cpp}
-        On verifie que la cellule est bien innaccessible et que son type est le bon
+        \subsection{Description}
+            On verifie que la cellule est bien innaccessible et que son type est le bon
+        \subsection{Code}
     \section{TestControleurBN.cpp}
-        On instantie un controleur BN prenant en paramèter une bataille navale, a laquelle on ajoute deux personnage.\\
-        Après le bon deroulement de la première partie, on re-initialise une seconde fois la bataille navale avec de nouveaux joueurs et on verifie le second bon déroulement de la partie.
+        \subsection{Description}
+            On instancie un controleur BN prenant en paramèter une bataille navale, a laquelle on ajoute deux personnage.\\
+            Après le bon deroulement de la première partie, on re-initialise une seconde fois la bataille navale avec de nouveaux joueurs et on verifie le second bon déroulement de la partie.
+        \subsection{Code}
     \section{TestCoordonnees.cpp}
-        On instantie tour a tour des coordonnées nulle, puis vide, puis par recopie et on teste toutes les méthodes sur ces dernières
+        \subsection{Description}
+            On instancie tour a tour des coordonnées nulle, puis vide, puis par recopie et on teste toutes les méthodes sur ces dernières
+        \subsection{Code}
     \section{TestGrille.cpp}
+        \subsection{Description}
+            On instancie différentes grilles pour effectuer les tests de placements.
+        \subsection{Code}
+    \section{TestIHMBN.cpp}
+        \subsection{Description}
+            On crée une bataille navale et on simule une partie de bataille navale grâce a des fonctions copiée-collée de controleurBN.
+        \subsection{Code}
+    \section{TestInventaire.cpp}
+        \subsection{Description}
+            On Instancie deux inventaires, auxquels on ajoute des badges finaux, et on teste leurs tailles en fin de test.
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{Test.cpp}
+        \subsection{Description}
+        \subsection{Code}
+    \section{TestTailleGrille.cpp}
+        \subsection{Description}
+            On instancie 3 grilles (1 nulle, une non nulle, une par recopie) et on teste les différentes méthode sur les 3.
+        \subsection{Code}
