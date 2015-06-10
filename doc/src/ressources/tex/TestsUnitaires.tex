@@ -1,8 +1,8 @@
 \chapter{Tests Unitaires}
-    Pour chacun de nos tests, nous avons crees un Main qui instanciait l'objet à l'aide de ses differents constructeurs et qui testait l'ensemble des fonctions de la classe à l'aide de ses differents cas au limite.
+    Pour chacun de nos tests, nous avons crees un Main qui instanciait l'objet a l'aide de ses differents constructeurs et qui testait l'ensemble des fonctions de la classe a l'aide de ses differents cas au limite.
     \section{TestActionChangementCarte.cpp}
         \subsection{Description}
-            On va tester si un personnage est bien transporte comme indique dans le constructeur de notre ActionChangementCarte. On verifiera par la même occasion le texte d'interaction de l'action, et voir si l'on peut changer son attribut "Active".
+            On va tester si un personnage est bien transporte comme indique dans le constructeur de notre ActionChangementCarte. On verifiera par la meme occasion le texte d'interaction de l'action, et voir si l'on peut changer son attribut "Active".
         \subsection{Code}
 	\begin{lstlisting}
 		Carte* carteD = new Carte(0,{{'#','_','#'},{'#','_','#'},{'#','_','_'}});
@@ -49,15 +49,15 @@ cout << act.getTexteInteraction() << endl << endl;
 	\end{lstlisting}
     \section{TestArmeChercheuse.cpp}
         \subsection{Description}
-            On va verifier l'etat de la grille après des coup d'arme chercheuse.\\
-            On verifie entre autre que les coups ne touchent que des bateaux, et ce même si la coordonnees donnee ne correspond pas.
+            On va verifier l'etat de la grille apres des coup d'arme chercheuse.\\
+            On verifie entre autre que les coups ne touchent que des bateaux, et ce meme si la coordonnees donnee ne correspond pas.
         \subsection{Code}
 	\begin{lstlisting}
 		ArmeChercheuse arme=ArmeChercheuse();
 cout<<"On cree une grille 10x10"<<endl;
 Grille g=Grille(10,10);
 Bateau bat=Bateau(4);
-cout<<"On place un bateau de 4 cases de (0,1) à (0,4)"<<endl;
+cout<<"On place un bateau de 4 cases de (0,1) a (0,4)"<<endl;
 g.placerBateau(&bat,Coordonnees(0,1),Coordonnees(0,4));
 
 afficherGrille(g);
@@ -85,7 +85,7 @@ afficherGrille(g);
 	\end{lstlisting}
     \section{TestArmeClassique.cpp}
         \subsection{Description}
-            On verifie l'etat de la grille après chaque coup d'arme classique.\\
+            On verifie l'etat de la grille apres chaque coup d'arme classique.\\
             On verifie de plus que le bateau est bien touche, pui coule, avec l'utilisation de cette arme
         \subsection{Code}
 	\begin{lstlisting}
@@ -93,7 +93,7 @@ afficherGrille(g);
 cout<<"On cree un grille 10x10"<<endl;
 Grille g=Grille(10,10);
 Bateau bat=Bateau(4);
-cout<<"On place un bateau de 4 cases de (0,1) à (0,4)"<<endl;
+cout<<"On place un bateau de 4 cases de (0,1) a (0,4)"<<endl;
 g.placerBateau(&bat,Coordonnees(0,1),Coordonnees(0,4));
 	
 afficherGrille(g);	
@@ -121,15 +121,15 @@ afficherGrille(g);
 	\end{lstlisting}
     \section{TestArmeCroix.cpp}
         \subsection{Description}
-            On verifie l'etat de la grille après chaque coup d'arme croix.\\
-            On verifie entre autre si les coups sur le bords ne touchent que les cases à l'interieur de la grille, et que les bateau touche par les "bras" de la croix le sont bien.
+            On verifie l'etat de la grille apres chaque coup d'arme croix.\\
+            On verifie entre autre si les coups sur le bords ne touchent que les cases a l'interieur de la grille, et que les bateau touche par les "bras" de la croix le sont bien.
         \subsection{Code}
 \begin{lstlisting}
 	ArmeCroix arme=ArmeCroix();
 cout<<"On cree une grille 10x10"<<endl;
 Grille g=Grille(10,10);
 Bateau bat=Bateau(4);
-cout<<"On place un bateau de 4 cases de (0,1) à (0,4)"<<endl;
+cout<<"On place un bateau de 4 cases de (0,1) a (0,4)"<<endl;
 g.placerBateau(&bat,Coordonnees(0,1),Coordonnees(0,4));
 
 afficherGrille(g);
@@ -165,7 +165,7 @@ afficherGrille(g);
 	\end{lstlisting}
     \section{TestArmeFatale.cpp}
         \subsection{Description}
-            On verifie l'etat de la grille après chaque coup d'arme fatale.\\
+            On verifie l'etat de la grille apres chaque coup d'arme fatale.\\
             On regarde si lors des coups dans l'eau, une seule case est touchee, alors que si on touche un bateau, ce dernier est bien directement coule.
         \subsection{Code}
 \begin{lstlisting}
@@ -173,7 +173,7 @@ afficherGrille(g);
 cout<<"On cree une grille 10x10"<<endl;
 Grille g=Grille(10,10);
 Bateau bat=Bateau(4);
-cout<<"On place un bateau de 4 cases de (0,1) à (0,4)"<<endl;
+cout<<"On place un bateau de 4 cases de (0,1) a (0,4)"<<endl;
 g.placerBateau(&bat,Coordonnees(0,1),Coordonnees(0,4));
 
 afficherGrille(g);
@@ -204,7 +204,7 @@ afficherGrille(g);
 	\end{lstlisting}
     \section{TestBatailleNavale.cpp}
         \subsection{Description}
-            On simule une parte complète de bataille navale entre deux IA (Une IA et IA Avancee) avec des taille de grille differentes, des flottes differentes et des armes differentes.\\
+            On simule une parte complete de bataille navale entre deux IA (Une IA et IA Avancee) avec des taille de grille differentes, des flottes differentes et des armes differentes.\\
             Le bon deroulement de la partie assure le fonctionnement de cette classe
         \subsection{Code}
 \begin{lstlisting}
@@ -226,7 +226,7 @@ afficherGrille(g);
         coups++;
         int joueurCourant = bn.getIndiceJoueurCourant();
         int joueurNonCourant = (joueurCourant+1)%2;
-        cout << bn.getJoueurs()[joueurCourant]->getNomBN() << ", à votre tour de jouer." << endl;
+        cout << bn.getJoueurs()[joueurCourant]->getNomBN() << ", a votre tour de jouer." << endl;
 
         Grille* grilleCourante = bn.getGrilles()[joueurCourant];
         Grille* grilleAdverse = bn.getGrilles()[joueurNonCourant];
@@ -243,25 +243,25 @@ afficherGrille(g);
 	\end{lstlisting}
     \section{TestBateau.cpp}
         \subsection{Description}
-            On verifie l'etat du bateau après plusieur de retrait de PV. On veut verifier que le bateau passe a coule une fois seulement que les PVs sont decendus à zero.
+            On verifie l'etat du bateau apres plusieur de retrait de PV. On veut verifier que le bateau passe a coule une fois seulement que les PVs sont decendus a zero.
         \subsection{Code}
 \begin{lstlisting}
 	Bateau bat(5);
 cout << "Le PV initial du bateau est " << bat.getPV() << endl;
 bat.retirerPV();
 cout << " Retire 1 PV : " << bat.getPV() << endl;
-cout << " Bateau coulé? " << (bat.estCoule()? "oui":"non") << endl;
+cout << " Bateau coule? " << (bat.estCoule()? "oui":"non") << endl;
 for(int i=0;i<bat.getTailleBateau();i++){
 	bat.retirerPV();
 	cout << " Retire 1 PV :" << bat.getPV() << endl;
 }
-cout << " Bateau coulé? " << (bat.estCoule()? "oui":"non") << endl;
+cout << " Bateau coule? " << (bat.estCoule()? "oui":"non") << endl;
 bat.restaurerPV();
 cout << "restauration nombre initial de PV " << bat.getPV() << endl;
 	\end{lstlisting}
     \section{TestCase.cpp}
         \subsection{Description}
-            On verifie qu'en plaçant un bateau sur une case, le premier tir sur la case retire bien des PV, mais les suivants non.
+            On verifie qu'en placant un bateau sur une case, le premier tir sur la case retire bien des PV, mais les suivants non.
         \subsection{Code}
 \begin{lstlisting}
 	Bateau bateau(5);
@@ -289,16 +289,16 @@ CelluleAccessible cellu("@");
 CelluleAccessible cell(pers);
 cout << "Personnage Jouable:" << perso << endl;
 cout << "Personnage Non Jouable:" << pers << endl;
-cout << "Personnage Non Jouable associé à la cellule?" << pers << endl;
+cout << "Personnage Non Jouable associe a la cellule?" << pers << endl;
 cell.setPersonnage(perso);
-cout << "Re association du personnage Jouable associé à la cellule. Personnage Jouable associé à la cellule?" << perso << endl;
+cout << "Re association du personnage Jouable associe a la cellule. Personnage Jouable associe a la cellule?" << perso << endl;
 cout << "Le type de cellule est '" << cell.getType() << "'"<< endl;
 cell.setType(" ");
-cout << "L'action associée à une cellule construite grâce au constructeur prenant en paramètre un type de cellule est " << cellu.getAction()<< endl;
+cout << "L'action associee a une cellule construite grace au constructeur prenant en parametre un type de cellule est " << cellu.getAction()<< endl;
 	\end{lstlisting}
     \section{TestCelluleChangementCarte.cpp}
         \subsection{Description}
-            On instancie une CelluleChangementCarte, et on verifie que ses paramètre sont bien ceux souhaites
+            On instancie une CelluleChangementCarte, et on verifie que ses parametre sont bien ceux souhaites
         \subsection{Code}
 \begin{lstlisting}
 	Carte* cD = new Carte(0,{{'#','_','#'},{'#','_','#'},{'#','_','_'}});
@@ -315,7 +315,7 @@ cout << "L'action associée à une cellule construite grâce au constructeur pre
         \subsection{Code}
 \begin{lstlisting}
 	Personnage* advers = new Personnage("Ann");
-	cout << "Nom de l'adversaire passé en paramètre? " << advers->getNom() <<endl;
+	cout << "Nom de l'adversaire passe en parametre? " << advers->getNom() <<endl;
 	CelluleCombat cellu(advers);
 	cout << "cellu est elle accesssible? " << cellu.estAccessible() << endl;
 	cout << "nom de l'adversaire pendant le combat? " <<((ActionCombat*)cellu.getAction())->getAdversaire()->getNom() << endl;
@@ -332,8 +332,8 @@ cout << "L'action associée à une cellule construite grâce au constructeur pre
 	\end{lstlisting}
     \section{TestControleurBN.cpp}
         \subsection{Description}
-            On instancie un controleur BN prenant en paramèter une bataille navale, a laquelle on ajoute deux personnage.\\
-            Après le bon deroulement de la première partie, on re-initialise une seconde fois la bataille navale avec de nouveaux joueurs et on verifie le second bon deroulement de la partie.
+            On instancie un controleur BN prenant en parameter une bataille navale, a laquelle on ajoute deux personnage.\\
+            Apres le bon deroulement de la premiere partie, on re-initialise une seconde fois la bataille navale avec de nouveaux joueurs et on verifie le second bon deroulement de la partie.
         \subsection{Code}
 \begin{lstlisting}
 	BatailleNavale* batailleNavale=new BatailleNavale();
@@ -353,7 +353,7 @@ cout << "L'action associée à une cellule construite grâce au constructeur pre
 	\end{lstlisting}
     \section{TestCoordonnees.cpp}
         \subsection{Description}
-            On instancie tour a tour des coordonnees nulle, puis vide, puis par recopie et on teste toutes les methodes sur ces dernières
+            On instancie tour a tour des coordonnees nulle, puis vide, puis par recopie et on teste toutes les methodes sur ces dernieres
         \subsection{Code}
 \begin{lstlisting}
 	Coordonnees coordonneesNulle(0,0);
@@ -365,7 +365,7 @@ cout << "L'action associée à une cellule construite grâce au constructeur pre
     cout << "   Coordonnees : (" << coordonnees.getAbscisse()  << " et " << coordonnees.getOrdonnee() << ")" << endl;
     cout << "   Coordonnees nulles? " << endl;
 
-    cout << "On crée une coordonnee par recopie" << endl;
+    cout << "On cree une coordonnee par recopie" << endl;
     Coordonnees coordonneesCopy(coordonnees);
     cout << "   coordonneesCopy nulle? " << coordonneesCopy.getAbscisse()  << " et " << coordonneesCopy.getOrdonnee() << ")"   << endl;
 
@@ -401,7 +401,7 @@ Grille grilleVide(0, 0);
     cout << "   Debordement Largeur max: " << (grille.placementBateauValide(&bat1, Coordonnees(14, 0), Coordonnees(15, 0))?"OK":"Pas OK") << endl;
     cout << "   Debordement Largeur min: " << (grille.placementBateauValide(&bat1, Coordonnees(-1, 0), Coordonnees(0, 0))?"OK":"Pas OK") << endl;
 
-    cout << "On teste pas aligné" << endl;
+    cout << "On teste pas aligne" << endl;
     cout << "   Resultat: " << (grille.placementBateauValide(&bat1, Coordonnees(0, 0), Coordonnees(1, 1))?"OK":"Pas OK") << endl;
 
     cout << "On place un bateau" << endl;
@@ -414,7 +414,7 @@ Grille grilleVide(0, 0);
     grille.placerBateau(&bat2, Coordonnees(4, 3), Coordonnees(0, 3));
 
 
-    cout << "On crée une grille par recopie" << endl;
+    cout << "On cree une grille par recopie" << endl;
     Grille grilleCopy(grille);
     cout << "   GrilleCopy vide? " << (grilleCopy.grilleVide()?"Oui":"Non") << endl;
 
@@ -438,11 +438,11 @@ Grille grilleVide(0, 0);
     cout << "   Debordement Largeur max: " << (grilleCopy.coupValide(Coordonnees(15, 0))?"Pas OK":"OK") << endl;
     cout << "   Debordement Largeur min: " << (grilleCopy.coupValide(Coordonnees(-1, 0))?"Pas OK":"OK") << endl;
     grilleCopy.tirerDessus(Coordonnees(0, 0));
-    cout << "   Case deja touchée: " << (grilleCopy.coupValide(Coordonnees(0, 0))?"Pas OK":"OK") << endl;	
+    cout << "   Case deja touchee: " << (grilleCopy.coupValide(Coordonnees(0, 0))?"Pas OK":"OK") << endl;	
 	\end{lstlisting}
     \section{TestIHMBN.cpp}
         \subsection{Description}
-            On cree une bataille navale et on simule une partie de bataille navale grâce a des fonctions copiee-collee de controleurBN.
+            On cree une bataille navale et on simule une partie de bataille navale grace a des fonctions copiee-collee de controleurBN.
         \subsection{Code}
 \begin{lstlisting}
 	BatailleNavale bn=BatailleNavale();
@@ -491,21 +491,13 @@ cout << "On ajoute 20 element. taille de l'inventaire? " << inv.getObjet().size(
 	\end{lstlisting}
     \section{TestJoueurHumain.cpp}
         \subsection{Description}
-
-
-
-
-
-
-
-
-
+            On cree des joueurs Humain pour effectuer des tests des methodes de base
         \subsection{Code}
 \begin{lstlisting}
 	cout << endl << endl << endl;
 	Carte* carte = new Carte(0,{{'#','_','#'},{'#','_','#'},{'#','_','_'}});
 	Coordonnees coord(0,1);
-	JoueurHumain pbn("pôl_é_kockduhi",coord,carte);
+	JoueurHumain pbn("pol_e_kockduhi",coord,carte);
 	cout << "pbn : " << pbn.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn.getTailleGrille().getLongueur() << "," << pbn.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -537,7 +529,7 @@ cout << "On ajoute 20 element. taille de l'inventaire? " << inv.getObjet().size(
 	cout << "Flotte Coulee?? " << pbn.flotteCoulee() << endl;
 	cout << endl << endl << endl;
 	Arme* ar = new ArmeClassique();
-	JoueurHumain pbn2("Léauéclem",6,10,ar,coord,carte);
+	JoueurHumain pbn2("Leaueclem",6,10,ar,coord,carte);
 	cout << "pbn2 : " << pbn2.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn2.getTailleGrille().getLongueur() << "," << pbn2.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -548,7 +540,7 @@ cout << "On ajoute 20 element. taille de l'inventaire? " << inv.getObjet().size(
 	cout << "J'ai une " << pbn2.getArme()->getNomArme() << endl;
 	pbn2.placerBateaux();
 	for(int i=0;i<pbn2.getBateaux().size();i++){
-		cout << "La taille du bateau n° " << i << " est : " << pbn2.getBateaux()[i]->getTailleBateau() <<endl;
+		cout << "La taille du bateau # " << i << " est : " << pbn2.getBateaux()[i]->getTailleBateau() <<endl;
 		for(int j=0; j<pbn2.getBateaux()[i]->getTailleBateau();j++){
 			cout << "Il a : " << pbn2.getBateaux()[i]->getPV() << " PV" << endl;
 			pbn2.getBateaux()[i]->retirerPV();
@@ -566,7 +558,7 @@ cout << "On ajoute 20 element. taille de l'inventaire? " << inv.getObjet().size(
 	cout << endl;
 	cout << "J'ai une " << pbn3.getArme()->getNomArme() << endl;
 	cout << endl << endl << endl;
-	JoueurHumain pbn4("BasssssssssssssttttiennéVivi",8,12,coord,carte);
+	JoueurHumain pbn4("BasssssssssssssttttienneVivi",8,12,coord,carte);
 	cout << "pbn4 : " << pbn4.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn4.getTailleGrille().getLongueur() << "," << pbn4.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -587,16 +579,16 @@ cout << "On ajoute 20 element. taille de l'inventaire? " << inv.getObjet().size(
 	cout << endl;
 	cout << "J'ai une " << pbn5.getArme()->getNomArme() << endl;
 	Grille gr=pbn5.placerBateaux();
-	cout << "Voici la grille renvoyée par le placement bateau chez un JoueurHumain : " << endl;
+	cout << "Voici la grille renvoyee par le placement bateau chez un JoueurHumain : " << endl;
 	afficherGrille(gr);
-	cout << "C'est bien ce que l'on cherchait car on ne peut pas placer de bateau dans la partie modèle, on créé donc une grille vide en attendant le travail de l'IHM" << endl;
+	cout << "C'est bien ce que l'on cherchait car on ne peut pas placer de bateau dans la partie modele, on cree donc une grille vide en attendant le travail de l'IHM" << endl;
 	Grille* gr2 = new Grille(8,10);
 	Coordonnees coord2 = pbn5.coordonneesAViser(gr2);
 	cout << "Les cordonnees a viser sont" << coord2.getAbscisse() << coord2.getOrdonnee() << endl;
-	cout << "C'est bien ce que l'on cherchait car on ne peut pas savoir quelles sont les coordonnees visees dans la partie modèle, on créé donc des coordonnees vides en attendant le travail de l'IHM" << endl;
+	cout << "C'est bien ce que l'on cherchait car on ne peut pas savoir quelles sont les coordonnees visees dans la partie modele, on cree donc des coordonnees vides en attendant le travail de l'IHM" << endl;
 	cout << endl << endl << endl;
 	vector<int> vec2={9,6,3,4};
-	JoueurHumain pbn6("DaméAnn",3,3,vec2,coord,carte);
+	JoueurHumain pbn6("DameAnn",3,3,vec2,coord,carte);
 	cout << "pbn6 : " << pbn6.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn6.getTailleGrille().getLongueur() << "," << pbn6.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -636,7 +628,7 @@ cout << "On ajoute 20 element. taille de l'inventaire? " << inv.getObjet().size(
         \subsection{Code}
 \begin{lstlisting}
 	cout << endl << endl << endl;
-	JoueurIA pbn("pôl_é_kockduhi");
+	JoueurIA pbn("pol_e_kockduhi");
 	cout << "pbn : " << pbn.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn.getTailleGrille().getLongueur() << "," << pbn.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -668,7 +660,7 @@ cout << "On ajoute 20 element. taille de l'inventaire? " << inv.getObjet().size(
 	cout << "Flotte Coulee?? " << pbn.flotteCoulee() << endl;
 	cout << endl << endl << endl;
 	Arme* ar = new ArmeClassique();
-	JoueurIA pbn2("Léauéclem",6,10,ar);
+	JoueurIA pbn2("Leaueclem",6,10,ar);
 	cout << "pbn2 : " << pbn2.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn2.getTailleGrille().getLongueur() << "," << pbn2.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -679,7 +671,7 @@ cout << "On ajoute 20 element. taille de l'inventaire? " << inv.getObjet().size(
 	cout << "J'ai une " << pbn2.getArme()->getNomArme() << endl;
 	pbn2.placerBateaux();
 	for(int i=0;i<pbn2.getBateaux().size();i++){
-		cout << "La taille du bateau n° " << i << " est : " << pbn2.getBateaux()[i]->getTailleBateau() <<endl;
+		cout << "La taille du bateau # " << i << " est : " << pbn2.getBateaux()[i]->getTailleBateau() <<endl;
 		for(int j=0; j<pbn2.getBateaux()[i]->getTailleBateau();j++){
 			cout << "Il a : " << pbn2.getBateaux()[i]->getPV() << " PV" << endl;
 			pbn2.getBateaux()[i]->retirerPV();
@@ -697,7 +689,7 @@ cout << "On ajoute 20 element. taille de l'inventaire? " << inv.getObjet().size(
 	cout << endl;
 	cout << "J'ai une " << pbn3.getArme()->getNomArme() << endl;
 	cout << endl << endl << endl;
-	JoueurIA pbn4("BasssssssssssssttttiennéVivi",8,12);
+	JoueurIA pbn4("BasssssssssssssttttienneVivi",8,12);
 	cout << "pbn4 : " << pbn4.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn4.getTailleGrille().getLongueur() << "," << pbn4.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -718,14 +710,14 @@ cout << "On ajoute 20 element. taille de l'inventaire? " << inv.getObjet().size(
 	cout << endl;
 	cout << "J'ai une " << pbn5.getArme()->getNomArme() << endl;
 	Grille gr=pbn5.placerBateaux();
-	cout << "Voici la grille renvoyée par le placement bateau chez un JoueurIA : " << endl;
+	cout << "Voici la grille renvoyee par le placement bateau chez un JoueurIA : " << endl;
 	afficherGrille(gr);
 	Grille* gr2 = new Grille(8,10);
 	Coordonnees coord = pbn5.coordonneesAViser(gr2);
 	cout << "Les cordonnees a viser sont" << coord.getAbscisse() << coord.getOrdonnee() << endl;
 	cout << endl << endl << endl;
 	vector<int> vec2={9,6,3,4};
-	JoueurIA pbn6("DaméAnn",3,3,vec2);
+	JoueurIA pbn6("DameAnn",3,3,vec2);
 	cout << "pbn6 : " << pbn6.getNomBN() << endl;
 	cout << " J'ai une grille de taille : (" << pbn6.getTailleGrille().getLongueur() << "," << pbn6.getTailleGrille().getHauteur() << ")" << endl;
 	cout << "J'ai des bateaux de taille : ";
@@ -819,7 +811,7 @@ cout << "Carte init " << pj2->getIdCarteInit() << endl;
 cout << endl;
 
 
-cout << "On deplace le pj2 grâce à ses setter" << endl;
+cout << "On deplace le pj2 grace a ses setter" << endl;
 Coordonnees coord(0,0);
 pj2->setCarte(carte);
 pj2->setCoordonnees(coord);
@@ -827,7 +819,7 @@ cout << "nom du joueur " << pj2->getNom() << endl;
 cout << "Coordonnees " << pj2->getCoordonnees().getAbscisse() << "," << pj2->getCoordonnees().getOrdonnee() << endl;
 cout << "Carte" << pj2->getCarte() << endl << endl;
 
-cout << "On deplace le pj2 à sa position Init" << endl;
+cout << "On deplace le pj2 a sa position Init" << endl;
 pj2->deplacementInitial();
 cout << "nom du joueur " << pj2->getNom() << endl;
 cout << "Coordonnees " << pj2->getCoordonnees().getAbscisse() << "," << pj2->getCoordonnees().getOrdonnee() << endl;
@@ -860,7 +852,7 @@ TailleGrille tailleGrilleNulle(0,0);
     cout << "   Taille : (" << tailleGrille.getLongueur()  << "x" << tailleGrille.getHauteur() << ")" << endl;
     cout << "   tailleGrille vide? " << endl;
 
-    cout << "On crée une taille de grille par recopie" << endl;
+    cout << "On cree une taille de grille par recopie" << endl;
     TailleGrille tailleGrilleCopy(tailleGrille);
     cout << "   tailleGrilleCopy nulle? " << tailleGrilleCopy.getLongueur()  << "x" << tailleGrilleCopy.getHauteur() << ")"   << endl;
 
@@ -872,17 +864,10 @@ TailleGrille tailleGrilleNulle(0,0);
 	\end{lstlisting}
 \section{TestJeu.cpp}
         \subsection{Description}
-            
-
-
-
-
-
-
-
+            On cree un nouveau Jeu (ici une bataille navale), on affiche les cartes crees. Une fois cela fait, nous pouvons tester si la partie est finie, avant et apres avoir donne le badge de fin au joueur principal.
         \subsection{Code}
 \begin{lstlisting}
-cout << "Création d'un monde à partir des données" << endl;
+cout << "Creation d'un monde a partir des donnees" << endl;
 	Jeu* jeu= new Jeu(new BatailleNavale());
 	for(int i=0;i<7;i++){
 		cout << "Carte " << i << endl;
@@ -905,19 +890,11 @@ cout << "Création d'un monde à partir des données" << endl;
 	\end{lstlisting}
 \section{TestCarte.cpp}
         \subsection{Description}
-            
-
-
-
-
-
-
-
-
+            On cree une carte que l'on modifie avec des ajout et deplacement de personnage, puis on verifie visuellement les changements.
         \subsection{Code}
 \begin{lstlisting}
 Carte* carteD = new Carte(0,{{'#','#','#','#'},{'#','_','_','#'},{'#','_','_','#'},{'#','#','#','#'}});
-	cout << "On crée une carte 4*4 entouré de mur" << endl;
+	cout << "On cree une carte 4*4 entoure de mur" << endl;
 	cout << "On affiche la carte" << endl;
 	afficherCarteCourante(carteD);
 	cout << "On place un personnage en (1,1)" << endl;
@@ -934,18 +911,10 @@ Carte* carteD = new Carte(0,{{'#','#','#','#'},{'#','_','_','#'},{'#','_','_','#
 	\end{lstlisting}
 \section{TestMonde.cpp}
         \subsection{Description}
-            
-
-
-
-
-
-
-
-
+            On lit un monde a partir des donnees d'entree, puis on affiche chacune des cartes
         \subsection{Code}
 \begin{lstlisting}
-cout << "Création d'un monde à partir des données" << endl;
+cout << "Creation d'un monde a partir des donnees" << endl;
 	Monde monde;
 	for(int i=0;i<7;i++){
 		cout << "Carte " << i << endl;
