@@ -23,14 +23,7 @@ class Monde{
         /// liste des cartes accessible du monde
         vector<Carte> cartes;
 
-    public:
-        /// \fn Monde()
-        /// \brief Constructeur par défaut
-        ///
-        /// Constructeur de la classe Monde par défaut
-        Monde();
-
-        /// \fn void lireCarte()
+	/// \fn void lireCarte()
         /// \brief Permet la lecture de la carte
         void lireCarte();
 
@@ -41,6 +34,14 @@ class Monde{
         /// \fn void lireCasesChangementCarte()
         /// \brief Permet la lecture des case de changement carte
         void lireCasesChangementCarte();
+
+
+    public:
+        /// \fn Monde()
+        /// \brief Constructeur par défaut
+        ///
+        /// Constructeur de la classe Monde par défaut
+        Monde();
 
         /// \fn Carte* getCarte(int id)
         /// \brief getter

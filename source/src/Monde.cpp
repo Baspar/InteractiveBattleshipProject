@@ -57,7 +57,6 @@ void Monde::lireCarte(){//DONE
                 carte[j].push_back(car);
             }
         }
-
         cartes.push_back(Carte(i, carte));
     }
     file.close();

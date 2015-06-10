@@ -154,7 +154,7 @@ CompileTestBatailleNavale: PersonnageJouable.o Combat.o BatailleNavale.o Grille.
 CompileTestBateau: Bateau.o
 	g++ $(FLAGS) TestBateau.cpp $^ -o TestBateau
 
-CompileTestCarte: Carte.o
+CompileTestCarte: Carte.o Coordonnees.o CelluleAccessible.o Cellule.o Personnage.o CelluleObstacle.o TailleGrille.o Inventaire.o
 	g++ $(FLAGS) TestCarte.cpp $^ -o TestCarte
 
 CompileTestCase: Case.o Bateau.o
@@ -205,11 +205,11 @@ CompileTestJoueurHumain: JoueurHumain.o Bateau.o TailleGrille.o PersonnageBN.o P
 CompileTestJoueurIA: JoueurIA.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNIA.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o JoueurIA.o PersonnageNonJouable.o CelluleObstacle.o Inventaire.o JoueurDhumainBNia.o
 	g++ $(FLAGS) TestJoueurIA.cpp $^ -o TestJoueurIA
 
-CompileTestMonde: Monde.o
+CompileTestMonde: Monde.o Carte.o Cellule.o CelluleAccessible.o ActionChangementCarte.o ActionVide.o TailleGrille.o Coordonnees.o Personnage.o Action.o CelluleObstacle.o Inventaire.o
 	g++ $(FLAGS) TestMonde.cpp $^ -o TestMonde
 
 
-CompileTestPersonnageBNHumain: PersonnageBNHumain.o PersonnageBN.o Bateau.o TailleGrille.o Grille.o Coordonnees.o Case.o ArmeClassique.o Arme.o ArmeCroix.o
+CompileTestPersonnageBNHumain: PersonnageBNHumain.o PersonnageBN.o Bateau.o TailleGrille.o Grille.o Coordonnees.o Case.o ArmeClassique.o Arme.o ArmeCroix.o ArmeFatale.o
 	g++ $(FLAGS) TestPersonnageBNHumain.cpp $^ -o TestPersonnageBNHumain
 
 CompileTestPersonnageBNIA: PersonnageBNIA.o
