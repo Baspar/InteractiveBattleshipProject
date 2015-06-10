@@ -221,7 +221,7 @@ CompileTestPersonnage: Personnage.o Coordonnees.o Carte.o Inventaire.o BadgeFina
 CompileTestPersonnageJouable: PersonnageJouable.o Personnage.o Coordonnees.o Carte.o TailleGrille.o CelluleAccessible.o Cellule.o CelluleObstacle.o Inventaire.o
 	g++ $(FLAGS) TestPersonnageJouable.cpp $^ -o TestPersonnageJouable
 
-CompileTestPersonnageNonJouable: PersonnageNonJouable.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNIA.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o 
+CompileTestPersonnageNonJouable: PersonnageNonJouable.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNIA.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o  CelluleObstacle.o Inventaire.o
 	g++ $(FLAGS) TestPersonnageNonJouable.cpp $^ -o TestPersonnageNonJouable
 
 CompileTestTailleGrille: TailleGrille.o
