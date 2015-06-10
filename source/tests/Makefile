@@ -81,6 +81,9 @@ TestJoueurHumain: CompileTestJoueurHumain
 TestJoueurIA: CompileTestJoueurIA
 	./TestJoueurIA
 
+TestJoueurIAAvance: CompileTestJoueurIAAvance
+	./TestJoueurIAAvance
+
 TestMonde: CompileTestMonde
 	./TestMonde
 
@@ -190,8 +193,11 @@ CompileTestJeu: Jeu.o Cellule.o Carte.o Monde.o Personnage.o Inventaire.o BadgeF
 CompileTestJoueurHumain: JoueurHumain.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNHumain.o JoueurHumain.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o ArmeCroix.o ArmeFatale.o Personnage.o Inventaire.o CelluleObstacle.o
 	g++ $(FLAGS) TestJoueurHumain.cpp $^ -o TestJoueurHumain
 
-CompileTestJoueurIA: JoueurIA.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNIA.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o JoueurIA.o PersonnageNonJouable.o CelluleObstacle.o Inventaire.o JoueurDhumainBNia.o ArmeCroix.o ArmeFatale.o 
+CompileTestJoueurIA: JoueurIA.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNIA.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o PersonnageNonJouable.o CelluleObstacle.o Inventaire.o JoueurDhumainBNia.o ArmeCroix.o ArmeFatale.o 
 	g++ $(FLAGS) TestJoueurIA.cpp $^ -o TestJoueurIA
+
+CompileTestJoueurIAAvance: JoueurIAAvance.o Bateau.o TailleGrille.o PersonnageBN.o PersonnageJouable.o PersonnageBNIA.o ArmeClassique.o Grille.o Coordonnees.o Case.o Personnage.o Arme.o Carte.o CelluleAccessible.o Cellule.o JoueurIA.o PersonnageNonJouable.o CelluleObstacle.o Inventaire.o JoueurDhumainBNia.o ArmeCroix.o ArmeFatale.o PersonnageBNIAAvance.o 
+	g++ $(FLAGS) TestJoueurIAAvance.cpp $^ -o TestJoueurIAAvance
 
 CompileTestMonde: Monde.o Carte.o Cellule.o CelluleAccessible.o ActionChangementCarte.o ActionVide.o TailleGrille.o Coordonnees.o Personnage.o Action.o CelluleObstacle.o Inventaire.o
 	g++ $(FLAGS) TestMonde.cpp $^ -o TestMonde
